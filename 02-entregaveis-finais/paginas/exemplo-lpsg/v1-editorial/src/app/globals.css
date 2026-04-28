@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  /* Editorial Premium · 60/30/10 */
+  --color-ink: #0A0A0A;
+  --color-paper: #F4F1EA;
+  --color-champagne: #D4AF37;
+  --color-paper-muted: rgba(244, 241, 234, 0.62);
+  --color-paper-faint: rgba(244, 241, 234, 0.18);
+  --color-ink-muted: rgba(10, 10, 10, 0.62);
+
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --tracking-editorial-tight: -0.04em;
+  --tracking-ticker: 0.18em;
+}
+
+/* ────────────────────────────────────────
+   Base · Editorial Premium
+   ──────────────────────────────────────── */
+
+html {
+  background-color: #0A0A0A;
+  color: #F4F1EA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0A0A0A;
+  color: #F4F1EA;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Texture · grão papel imprensa muito sutil */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Selection · cor accent */
+::selection {
+  background-color: #D4AF37;
+  color: #0A0A0A;
+}
+
+/* Focus visível · WCAG AA · outline accent */
+*:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Hierarquia editorial · headings em serif italic display */
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+}
+
+/* Eyebrow editorial · microcopy uppercase com fonte serif normal
+   (assinatura/edição em rodapés · NUNCA usar font-serif-display
+   e cancelar metade das propriedades em seguida) */
+.editorial-eyebrow {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ────────────────────────────────────────
+   Animações · só se motion-ok
+   ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: editorial-fade-in 600ms cubic-bezier(0.32, 0.72, 0, 1) forwards;
+  }
+
+  .editorial-fade-in-delay-1 { animation-delay: 120ms; }
+  .editorial-fade-in-delay-2 { animation-delay: 240ms; }
+
+  @keyframes editorial-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .editorial-link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 500ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .editorial-link-underline:hover {
+    background-size: 100% 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .editorial-link-underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+/* Editorial rule · linha fina dourada · separador */
+.editorial-rule {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background-color: #D4AF37;
+  border: 0;
+  margin: 0;
+}
+
+/* Notebook · margens manuscritas (caderno de campo) */
+.notebook-line {
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.notebook-line::before {
+  content: attr(data-marker);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.78em;
+  color: #D4AF37;
+  letter-spacing: 0.05em;
+}

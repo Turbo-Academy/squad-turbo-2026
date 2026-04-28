@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual LPSG 4.0 · Squad Turbo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FBFAF7;
+  --bg-alt: #F4F2EC;
+  --bg-card: #FFFFFF;
+  --bg-dark: #0A0A0B;
+  --bg-hero: linear-gradient(180deg, #FBFAF7 0%, #FFFFFF 100%);
+  --text: #0A0A0A;
+  --text-soft: #3A3A3A;
+  --text-muted: #6B6B6B;
+  --text-faded: #A0A0A0;
+  --accent: #FF5C00;
+  --accent-2: #FFB800;
+  --accent-soft: #FFEDE0;
+  --accent-glow: rgba(255, 92, 0, 0.18);
+  --success: #10B981;
+  --border: #ECEAE3;
+  --border-soft: #F4F2EC;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+  --shadow-lg: 0 24px 48px rgba(0,0,0,0.08);
+  --shadow-xl: 0 32px 80px rgba(0,0,0,0.14);
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*::selection{background:var(--accent-soft);color:var(--accent)}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:'cv02','cv03','cv11','ss01';
+}
+/* ========== TOP NAV ========== */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,250,247,0.85);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:var(--max-width);margin:0 auto;
+  padding:14px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.brand-mark{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:800;font-size:14px;
+  box-shadow:0 4px 12px var(--accent-glow);
+}
+.brand-name{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:22px;font-weight:400;letter-spacing:-0.02em;
+}
+.brand-version{
+  font-size:11px;color:var(--text-muted);
+  font-family:'JetBrains Mono',monospace;
+  background:var(--bg-alt);padding:2px 7px;border-radius:5px;
+  margin-left:6px;
+}
+.nav-links{
+  display:flex;align-items:center;gap:4px;
+  list-style:none;
+}
+.nav-link{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 16px;
+  font-size:14px;font-weight:500;
+  color:var(--text-soft);
+  text-decoration:none;
+  border-radius:8px;
+  transition:var(--transition);
+  cursor:pointer;
+}
+.nav-link:hover{background:var(--bg-alt);color:var(--text)}
+.nav-link.active{background:var(--text);color:white}
+.nav-link.active .nav-num{color:rgba(255,255,255,0.5)}
+.nav-num{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:var(--text-faded);
+  font-weight:600;
+}
+.nav-cta{
+  background:var(--accent);color:white;padding:9px 18px;
+  border-radius:8px;font-weight:600;font-size:14px;
+  text-decoration:none;
+  transition:var(--transition);
+  border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.nav-cta:hover{background:#E04E00;transform:translateY(-1px);box-shadow:0 4px 14px var(--accent-glow)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+/* ========== PAGES ========== */
+.page{display:none;animation:fadeIn 0.4s cubic-bezier(0.4,0,0.2,1)}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 32px}
+.container-narrow{max-width:880px;margin:0 auto;padding:0 32px}
+/* ========== HERO ========== */
+.hero{
+  padding:80px 32px 64px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(ellipse 800px 600px at 50% 0%, var(--accent-glow), transparent 50%),
+    radial-gradient(ellipse 600px 400px at 80% 30%, rgba(255, 184, 0, 0.08), transparent 60%);
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;
+  background:white;border:1px solid var(--border);
+  border-radius:999px;
+  font-size:12px;font-weight:600;
+  color:var(--text-soft);
+  margin-bottom:32px;
+  box-shadow:var(--shadow-xs);
+}
+.hero-tag .pulse{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-glow);
+}
+.hero h1{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(40px, 7vw, 88px);
+  line-height:0.98;letter-spacing:-0.04em;
+  font-weight:400;
+  margin:0 0 24px;
+  max-width:1000px;margin-left:auto;margin-right:auto;
+}
+.hero h1 em{
+  font-style:italic;
+  background:linear-gradient(120deg,var(--accent) 0%,#FF8C00 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-family:'Instrument Serif',serif;
+}
+.hero p.lead{
+  font-size:clamp(17px, 2vw, 21px);line-height:1.5;
+  color:var(--text-soft);
+  max-width:620px;margin:0 auto 40px;
+}
+.hero-cta{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:64px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;
+  font-size:15px;font-weight:600;font-family:inherit;
+  border:none;border-radius:10px;cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+  letter-spacing:-0.01em;
+}
+.btn-primary{
+  background:var(--text);color:white;
+  box-shadow:var(--shadow-md);
+}
+.btn-primary:hover{
+  background:var(--accent);transform:translateY(-2px);
+  box-shadow:0 12px 32px var(--accent-glow);
+}
+.btn-secondary{
+  background:white;color:var(--text);
+  border:1px solid var(--border);
+}
+.btn-secondary:hover{
+  border-color:var(--text);transform:translateY(-1px);
+}
+.btn-lg{padding:16px 32px;font-size:16px}
+.btn-ghost{
+  background:transparent;color:var(--text-soft);
+  border:1px solid var(--border);
+}
+.btn-ghost:hover{background:var(--bg-alt);color:var(--text)}
+/* ========== STATS BAR ========== */
+.stats-bar{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:880px;margin:0 auto 80px;
+  padding:32px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm);
+}
+.stat{text-align:center;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{
+  font-family:'Instrument Serif',serif;
+  font-size:42px;font-weight:400;
+  color:var(--text);line-height:1;
+  letter-spacing:-0.03em;
+}
+.stat-num em{font-style:italic;color:var(--accent)}
+.stat-label{
+  font-size:11px;color:var(--text-muted);
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-top:8px;font-weight:600;
+}
+/* ========== SECTIONS ========== */
+.section{padding:80px 0}
+.section-header{text-align:center;margin-bottom:56px}
+.section-eyebrow{
+  display:inline-block;
+  font-size:11px;color:var(--accent);
+  letter-spacing:0.12em;text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.section h2{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(32px, 5vw, 56px);
+  line-height:1.05;letter-spacing:-0.03em;
+  font-weight:400;
+  margin:0 0 16px;
+}
+.section h2 em{font-style:italic;color:var(--accent)}
+.section-sub{
+  font-size:18px;color:var(--text-muted);
+  max-width:580px;margin:0 auto;
+}
+/* ========== FEATURE CARDS ========== */
+.features{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  max-width:1100px;margin:0 auto;
+}
+.feature{
+  padding:32px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  transition:var(--transition);
+  position:relative;overflow:hidden;
+}
+.feature:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-md);
+  border-color:#DDD;
+}
+.feature-icon{
+  width:48px;height:48px;
+  background:var(--accent-soft);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  font-size:24px;
+}
+.feature h3{
+  font-family:'Instrument Serif',serif;
+  font-size:24px;font-weight:500;
+  letter-spacing:-0.02em;
+  margin-bottom:10px;
+}
+.feature p{color:var(--text-muted);font-size:14.5px;line-height:1.55}
+.feature-arrow{
+  position:absolute;top:32px;right:32px;
+  color:var(--text-faded);
+  transition:var(--transition);
+}
+.feature:hover .feature-arrow{color:var(--accent);transform:translate(4px,-4px)}
+/* ========== TIMELINE ========== */
+.timeline{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:8px;
+  max-width:1100px;margin:0 auto;
+  padding:32px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+}
+.day{
+  padding:20px 12px;
+  border-radius:var(--radius);
+  background:var(--bg-alt);
+  text-align:center;
+  transition:var(--transition);
+  position:relative;
+  cursor:pointer;
+}
+.day:hover{transform:translateY(-2px);background:#EAE6DC}
+.day-num{
+  font-family:'Instrument Serif',serif;
+  font-size:32px;font-weight:400;
+  color:var(--text);line-height:1;
+  letter-spacing:-0.02em;
+}
+.day-label{
+  font-size:11px;color:var(--text-muted);
+  margin-top:6px;font-weight:500;
+}
+.day.day-final{background:linear-gradient(135deg,var(--accent),#FF8C00);color:white}
+.day.day-final .day-num,.day.day-final .day-label{color:white}
+/* ========== CHECKLIST ========== */
+.checklist{
+  max-width:880px;margin:0 auto;
+}
+.checklist-block{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  margin-bottom:16px;
+  overflow:hidden;
+  transition:var(--transition);
+}
+.checklist-block:hover{border-color:#DDD}
+.checklist-header{
+  padding:24px 28px;
+  display:flex;align-items:center;gap:16px;
+  cursor:pointer;
+  user-select:none;
+}
+.checklist-emoji{font-size:24px}
+.checklist-titles{flex:1}
+.checklist-title{
+  font-family:'Instrument Serif',serif;
+  font-size:22px;font-weight:500;
+  letter-spacing:-0.02em;
+}
+.checklist-desc{font-size:13px;color:var(--text-muted);margin-top:2px}
+.checklist-progress{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:var(--text-muted);font-weight:600;
+}
+.progress-circle{
+  width:36px;height:36px;border-radius:50%;
+  background:conic-gradient(var(--accent) 0%, var(--bg-alt) 0%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.progress-circle::before{
+  content:'';position:absolute;inset:4px;
+  background:white;border-radius:50%;
+}
+.progress-text{
+  position:relative;font-size:11px;font-weight:700;
+  font-family:'JetBrains Mono',monospace;
+}
+.checklist-body{
+  padding:0 28px 24px;
+  display:none;
+}
+.checklist-block.open .checklist-body{display:block}
+.checklist-block.open .chev{transform:rotate(180deg)}
+.chev{transition:var(--transition);color:var(--text-faded)}
+.check-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;
+  border-bottom:1px solid var(--border-soft);
+}
+.check-item:last-child{border-bottom:none}
+.check-item input[type="checkbox"]{
+  width:20px;height:20px;
+  margin-top:2px;
+  accent-color:var(--accent);
+  cursor:pointer;flex-shrink:0;
+}
+.check-item input:checked + .check-content .check-title{
+  text-decoration:line-through;color:var(--text-faded);
+}
+.check-content{flex:1}
+.check-title{font-weight:500;font-size:15px;color:var(--text);transition:var(--transition)}
+.check-meta{
+  display:flex;gap:10px;align-items:center;
+  margin-top:4px;font-size:12px;color:var(--text-muted);
+}
+.check-time{
+  background:var(--bg-alt);padding:2px 8px;border-radius:5px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+}
+.check-link{color:var(--accent);text-decoration:none;font-weight:500}
+.check-link:hover{text-decoration:underline}
+/* ========== INTAKE FORM ========== */
+.intake-intro{
+  text-align:center;padding:64px 32px 32px;
+  background:linear-gradient(180deg,var(--bg-alt),transparent);
+}
+.intake-progress-bar{
+  position:sticky;top:62px;z-index:50;
+  background:rgba(251,250,247,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:14px 32px;
+  margin-bottom:32px;
+}
+.intake-progress-inner{
+  max-width:880px;margin:0 auto;
+  display:flex;align-items:center;gap:16px;
+}
+.intake-progress-text{font-size:13px;font-weight:600;color:var(--text-soft);min-width:140px}
+.intake-progress-track{
+  flex:1;height:6px;
+  background:var(--bg-alt);border-radius:3px;overflow:hidden;
+}
+.intake-progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--accent),#FF8C00);
+  border-radius:3px;
+  transition:width 0.3s;
+  width:0%;
+}
+.intake-actions-bar{display:flex;gap:8px}
+.btn-sm{padding:7px 14px;font-size:13px;border-radius:7px}
+.intake-blocks{max-width:880px;margin:0 auto;padding:0 32px 80px}
+.intake-block{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  margin-bottom:16px;
+  transition:var(--transition);
+}
+.intake-block summary{
+  padding:24px 28px;
+  display:flex;align-items:center;gap:18px;
+  cursor:pointer;user-select:none;
+  list-style:none;
+}
+.intake-block summary::-webkit-details-marker{display:none}
+.intake-block[open]{box-shadow:var(--shadow-sm)}
+.block-letter{
+  width:36px;height:36px;border-radius:9px;
+  background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-weight:700;font-size:15px;
+  font-family:'Instrument Serif',serif;flex-shrink:0;
+}
+.intake-block[open] .block-letter{background:var(--accent);color:white}
+.block-info{flex:1}
+.block-info h3{
+  font-family:'Instrument Serif',serif;
+  font-size:21px;font-weight:500;
+  letter-spacing:-0.02em;line-height:1.2;
+}
+.block-info p{font-size:13px;color:var(--text-muted);margin-top:2px}
+.block-status{
+  font-size:12px;font-weight:600;
+  font-family:'JetBrains Mono',monospace;
+  color:var(--text-faded);
+  padding:4px 10px;
+  background:var(--bg-alt);
+  border-radius:6px;
+}
+.block-status.complete{background:var(--success);color:white}
+.intake-block-body{padding:0 28px 28px;border-top:1px solid var(--border-soft);padding-top:24px}
+.intake-block-body h4{
+  font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text-muted);font-weight:700;
+  margin:24px 0 12px;
+  padding-bottom:6px;border-bottom:1px solid var(--border-soft);
+}
+.intake-block-body h4:first-child{margin-top:0}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:600;color:var(--text-soft)}
+.field .req{color:var(--accent)}
+.field input,.field textarea,.field select{
+  font-family:inherit;font-size:14px;
+  padding:10px 14px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:var(--text);
+  transition:var(--transition);
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-glow);
+}
+.field textarea{resize:vertical;min-height:70px;line-height:1.5}
+.subcard{
+  background:#FCFBF8;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  padding:18px 22px;
+  margin-bottom:12px;
+}
+.subcard-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:12px;padding-bottom:10px;
+  border-bottom:1px solid var(--border-soft);
+}
+.subcard-head strong{font-size:14px}
+.subcard-head em{font-size:12px;color:var(--text-muted);font-style:italic}
+.color-input{display:flex;gap:8px;align-items:center}
+.color-input input[type="color"]{
+  width:42px;height:36px;padding:2px;
+  border-radius:8px;cursor:pointer;
+}
+.intake-cta{
+  margin-top:32px;padding:40px;
+  text-align:center;
+  background:linear-gradient(135deg,var(--accent-soft),#FFE0CC);
+  border-radius:var(--radius-lg);
+}
+.intake-cta p{font-size:14px;color:#663C00;margin-top:14px}
+.warning-box{
+  background:#FFF7E6;border:1px solid #FFE4B3;
+  padding:12px 16px;border-radius:8px;
+  font-size:13px;color:#663C00;margin-bottom:18px;
+  display:flex;align-items:flex-start;gap:10px;
+}
+/* ========== EXEC WIZARD ========== */
+.exec-intro{text-align:center;padding:80px 32px 48px}
+.exec-days{max-width:880px;margin:0 auto;padding:0 32px 80px}
+.exec-day{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  margin-bottom:16px;
+  overflow:hidden;
+  transition:var(--transition);
+}
+.exec-day-head{
+  padding:28px 32px;
+  display:flex;align-items:center;gap:24px;
+  cursor:pointer;user-select:none;
+}
+.exec-day:hover{border-color:#DDD;box-shadow:var(--shadow-sm)}
+.day-badge{
+  width:64px;height:64px;
+  border-radius:16px;
+  background:var(--bg-alt);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:var(--transition);
+}
+.exec-day.open .day-badge{background:var(--accent);color:white}
+.day-badge-num{
+  font-family:'Instrument Serif',serif;
+  font-size:28px;font-weight:400;line-height:1;
+  letter-spacing:-0.02em;
+}
+.day-badge-day{
+  font-size:9px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-top:4px;color:var(--text-muted);
+}
+.exec-day.open .day-badge-day{color:rgba(255,255,255,0.7)}
+.day-info{flex:1}
+.day-info h3{
+  font-family:'Instrument Serif',serif;
+  font-size:26px;font-weight:500;
+  letter-spacing:-0.02em;
+}
+.day-info p{font-size:14px;color:var(--text-muted);margin-top:2px}
+.day-tags{display:flex;gap:8px;margin-top:10px}
+.day-tag{
+  font-size:11px;font-weight:600;
+  padding:4px 10px;
+  border-radius:5px;
+  background:var(--bg-alt);
+  color:var(--text-soft);
+}
+.day-tag.tag-human{background:#FEE2E2;color:#991B1B}
+.day-tag.tag-claude{background:#DBEAFE;color:#1E40AF}
+.day-tag.tag-tool{background:#D1FAE5;color:#065F46}
+.exec-day-body{display:none;padding:0 32px 32px;border-top:1px solid var(--border-soft);padding-top:24px}
+.exec-day.open .exec-day-body{display:block}
+.exec-fase{
+  padding:20px;
+  background:#FCFBF8;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  margin-bottom:14px;
+}
+.exec-fase-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.exec-fase-head h4{
+  font-family:'Instrument Serif',serif;
+  font-size:18px;font-weight:500;
+  letter-spacing:-0.01em;text-transform:none;
+  border:none;padding:0;margin:0;color:var(--text);
+}
+.exec-fase-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:var(--text-muted);
+}
+.exec-fase-body{font-size:14px;color:var(--text-soft);line-height:1.55}
+.exec-fase-body code{
+  background:var(--bg-alt);padding:2px 6px;border-radius:4px;
+  font-size:12.5px;color:var(--accent);
+}
+.exec-actions{margin-top:14px;padding-top:14px;border-top:1px dashed var(--border)}
+.exec-actions-title{
+  font-size:11px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:10px;
+}
+.exec-checkpoint{
+  margin-top:18px;padding:14px 18px;
+  background:#ECFDF5;border-left:3px solid var(--success);
+  border-radius:0 8px 8px 0;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.exec-checkpoint-icon{color:var(--success);flex-shrink:0;margin-top:2px}
+.exec-checkpoint-text{font-size:14px;color:#065F46}
+.exec-checkpoint-text strong{color:#064E3B}
+/* ========== RECURSOS TABS ========== */
+.tabs{display:flex;gap:4px;margin-bottom:32px;padding:6px;background:var(--bg-alt);border-radius:12px;max-width:fit-content}
+.tab{
+  padding:9px 18px;
+  font-size:14px;font-weight:600;font-family:inherit;
+  background:transparent;border:none;cursor:pointer;
+  border-radius:8px;color:var(--text-muted);
+  transition:var(--transition);
+}
+.tab.active{background:white;color:var(--text);box-shadow:var(--shadow-xs)}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fadeIn 0.3s}
+.action-grid{display:grid;gap:14px}
+.action-row{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 22px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  transition:var(--transition);
+}
+.action-row:hover{border-color:#CCC}
+.action-row-text strong{display:block;font-size:15px;margin-bottom:2px}
+.action-row-text span{font-size:13px;color:var(--text-muted)}
+.action-row-time{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;color:var(--text-muted);
+  background:var(--bg-alt);padding:5px 10px;border-radius:6px;
+  flex-shrink:0;
+}
+.trouble-item{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  margin-bottom:12px;
+}
+.trouble-head{
+  padding:18px 22px;cursor:pointer;
+  display:flex;align-items:center;gap:14px;
+}
+.trouble-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:#FEE2E2;color:#991B1B;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-weight:700;
+}
+.trouble-title{font-weight:600;font-size:14.5px;flex:1}
+.trouble-body{display:none;padding:0 22px 22px;color:var(--text-soft);font-size:14px;line-height:1.6}
+.trouble-item.open .trouble-body{display:block}
+.trouble-item.open .chev{transform:rotate(180deg)}
+.trouble-body p{margin-bottom:10px}
+.trouble-body strong{color:var(--text)}
+.trouble-body code{background:var(--bg-alt);padding:2px 6px;border-radius:4px;font-size:12.5px}
+/* ========== MODAL ========== */
+.modal{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);animation:fadeIn 0.2s}
+.modal-content{
+  position:relative;background:var(--bg-card);
+  border-radius:var(--radius-lg);max-width:820px;width:100%;
+  max-height:85vh;display:flex;flex-direction:column;
+  box-shadow:var(--shadow-xl);
+  animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-head{padding:22px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.modal-head h3{font-family:'Instrument Serif',serif;font-size:22px;font-weight:500;letter-spacing:-0.02em}
+.modal-close{background:none;border:none;font-size:26px;color:var(--text-muted);cursor:pointer;padding:4px;border-radius:6px}
+.modal-close:hover{background:var(--bg-alt)}
+.modal-actions{display:flex;gap:10px;padding:14px 28px;border-bottom:1px solid var(--border)}
+.modal-yaml{
+  flex:1;margin:0;padding:24px 28px;
+  background:var(--bg-dark);color:#E8E8E8;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12.5px;line-height:1.7;
+  overflow:auto;border:none;
+  border-radius:0 0 var(--radius-lg) var(--radius-lg);
+  white-space:pre;
+}
+/* ========== TOAST ========== */
+.toast{
+  position:fixed;bottom:32px;left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--text);color:white;
+  padding:14px 22px;border-radius:999px;
+  font-size:14px;font-weight:500;
+  box-shadow:var(--shadow-lg);
+  opacity:0;transition:var(--transition);
+  z-index:600;pointer-events:none;
+  display:flex;align-items:center;gap:8px;
+}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+/* ========== FOOTER ========== */
+.footer{
+  padding:48px 32px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  font-size:13px;color:var(--text-muted);
+  background:var(--bg-alt);
+}
+.footer-brand{
+  font-family:'Instrument Serif',serif;
+  font-size:20px;color:var(--text);
+  margin-bottom:8px;
+}
+/* ========== RESPONSIVE ========== */
+@media (max-width:900px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .features{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(4,1fr)}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .hero{padding:48px 24px 32px}
+  .section{padding:48px 0}
+  .container,.container-narrow,.intake-blocks,.exec-days{padding-left:20px;padding-right:20px}
+  .nav-inner{padding:12px 20px}
+}
+@media (max-width:600px){
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .stats-bar{grid-template-columns:1fr;padding:24px}
+  .stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:16px}
+  .stat:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+}
+.check-item-wrap{padding:14px 0;border-bottom:1px solid var(--border-soft)}
+.check-item-wrap:last-child{border-bottom:none}
+.check-item-wrap .check-item{padding:0;border:none}
+.btn-tutorial{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:10px;margin-left:34px;
+  padding:7px 14px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:7px;
+  font-family:inherit;font-size:12.5px;font-weight:600;
+  color:var(--text-soft);
+  cursor:pointer;
+  transition:var(--transition);
+}
+.btn-tutorial:hover{
+  background:var(--accent);color:white;
+  border-color:var(--accent);
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px var(--accent-glow);
+}
+.btn-tutorial svg{flex-shrink:0}
+/* Modal de tutorial */
+.tutorial-modal-content{max-width:780px;display:flex;flex-direction:column;max-height:90vh}
+.tutorial-head{
+  padding:32px 36px 24px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,var(--accent-soft),transparent);
+}
+.tutorial-head .tut-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;
+}
+.tutorial-head h2{
+  font-family:'Instrument Serif',serif;
+  font-size:32px;font-weight:500;
+  letter-spacing:-0.02em;line-height:1.1;
+  margin:0 0 8px;
+}
+.tutorial-head .tut-subtitle{
+  color:var(--text-muted);font-size:15px;
+}
+.tutorial-head .tut-time{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:14px;
+  padding:5px 11px;
+  background:white;border:1px solid var(--border);
+  border-radius:6px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;color:var(--text-soft);
+  font-weight:600;
+}
+.tutorial-body{
+  padding:28px 36px;
+  overflow-y:auto;
+  flex:1;
+}
+.tut-step{
+  display:flex;gap:18px;
+  padding:18px 0;
+  border-bottom:1px solid var(--border-soft);
+}
+.tut-step:last-child{border-bottom:none}
+.tut-step-num{
+  flex-shrink:0;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:var(--text);color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;
+  font-family:'JetBrains Mono',monospace;
+}
+.tut-step-content{flex:1}
+.tut-step-title{
+  font-weight:600;font-size:15.5px;
+  color:var(--text);margin-bottom:6px;
+}
+.tut-step-body{
+  font-size:14px;color:var(--text-soft);
+  line-height:1.6;
+}
+.tut-step-body code{
+  background:var(--bg-alt);
+  padding:2px 6px;border-radius:4px;
+  font-size:12.5px;color:var(--accent);
+}
+.tut-step-body a{color:var(--accent);font-weight:500}
+.tut-tip{
+  margin-top:20px;padding:14px 18px;
+  background:#FFF7E6;border-left:3px solid #E89A00;
+  border-radius:0 8px 8px 0;
+  font-size:13.5px;color:#663C00;
+}
+.tut-validate{
+  margin-top:24px;padding:14px 18px;
+  background:#ECFDF5;border-left:3px solid var(--success);
+  border-radius:0 8px 8px 0;
+  display:flex;gap:10px;align-items:flex-start;
+}
+.tut-validate svg{flex-shrink:0;color:var(--success);margin-top:1px}
+.tut-validate-text{font-size:14px;color:#065F46}
+.tut-validate-text strong{color:#064E3B;display:block;margin-bottom:2px}
+.tutorial-footer{
+  padding:20px 36px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+
+/* ========== EXEC v2 · COMANDO + PIPELINE ========== */
+.command-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+}
+.command-head{
+  padding:24px 28px;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:16px;
+  background:linear-gradient(180deg,var(--accent-soft),transparent);
+  border-bottom:1px solid var(--border);
+}
+.command-tag{
+  display:inline-block;
+  font-size:10.5px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--accent);
+  background:white;padding:4px 10px;
+  border:1px solid var(--accent);border-radius:5px;
+  margin-bottom:6px;
+}
+.command-title{
+  font-family:'Instrument Serif',serif;
+  font-size:21px;font-weight:500;
+  letter-spacing:-0.02em;
+  margin:0;
+}
+.command-body{
+  padding:24px 28px;
+  margin:0;
+  background:#0A0A0B;
+  color:#E8E8E8;
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;line-height:1.65;
+  border:none;border-radius:0;
+  white-space:pre-wrap;
+  overflow-x:auto;
+}
+/* Pipeline */
+.pipeline{
+  display:flex;flex-direction:column;align-items:center;
+  margin-bottom:64px;
+}
+.pipeline-master{
+  display:flex;align-items:center;gap:18px;
+  padding:24px 32px;
+  background:linear-gradient(135deg,#0A0A0B,#1A1A1C);
+  color:white;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-md);
+  z-index:2;position:relative;
+}
+.pip-master-icon{
+  width:52px;height:52px;
+  background:rgba(255,255,255,0.08);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+}
+.pip-master-content strong{
+  font-size:18px;font-weight:700;
+  font-family:'JetBrains Mono',monospace;
+  display:block;
+}
+.pip-master-content span{
+  font-size:13px;color:rgba(255,255,255,0.6);
+}
+.pipeline-line{
+  width:2px;height:32px;
+  background:linear-gradient(180deg,var(--text),transparent);
+}
+.pipeline-skills{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+  width:100%;max-width:780px;
+}
+.pip-skill{
+  display:flex;align-items:center;gap:14px;
+  padding:16px 20px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:var(--transition);
+  position:relative;
+}
+.pip-skill::before{
+  content:'';position:absolute;
+  top:-12px;left:50%;
+  width:1px;height:12px;
+  background:var(--border);
+}
+.pip-skill:hover{border-color:var(--accent);transform:translateX(2px);box-shadow:var(--shadow-sm)}
+.pip-num{
+  width:22px;height:22px;
+  background:var(--accent);color:white;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:700;
+  flex-shrink:0;
+}
+.pip-emoji{font-size:22px;flex-shrink:0}
+.pip-skill strong{
+  font-size:14px;font-family:'JetBrains Mono',monospace;
+  color:var(--text);font-weight:600;display:block;
+}
+.pip-skill small{font-size:12px;color:var(--text-muted);display:block;margin-top:2px}
+/* Subagentes */
+.subagentes{margin-top:64px}
+.subagentes-head{margin-bottom:24px}
+.subagentes-head h3{
+  font-family:'Instrument Serif',serif;
+  font-size:24px;font-weight:500;
+  letter-spacing:-0.02em;margin:0;
+}
+.subagentes-head p{
+  color:var(--text-muted);font-size:14px;
+  margin-top:4px;
+}
+.subagentes-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.subagente{
+  display:flex;gap:16px;
+  padding:20px 22px;
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:var(--transition);
+}
+.subagente:hover{border-color:#CCC;background:white}
+.sub-icon{
+  width:42px;height:42px;
+  background:white;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+  border:1px solid var(--border);
+}
+.sub-content strong{
+  font-size:14.5px;font-family:'JetBrains Mono',monospace;
+  color:var(--text);font-weight:600;display:block;
+  margin-bottom:4px;
+}
+.sub-content p{
+  font-size:13px;color:var(--text-muted);
+  line-height:1.5;margin:0;
+}
+/* Approvals */
+.approvals{margin-top:64px}
+.approvals h3{
+  font-family:'Instrument Serif',serif;
+  font-size:24px;font-weight:500;
+  letter-spacing:-0.02em;margin-bottom:8px;
+}
+.approvals h3 em{font-style:italic;color:var(--accent)}
+.approval-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+}
+.approval-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:16px 20px;
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+}
+.ap-num{
+  width:28px;height:28px;
+  background:var(--accent-soft);
+  color:var(--accent);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;
+  font-family:'JetBrains Mono',monospace;
+  flex-shrink:0;margin-top:1px;
+}
+.ap-text strong{font-size:14px;color:var(--text);display:block}
+.ap-text span{font-size:12.5px;color:var(--text-muted);display:block;margin-top:2px;line-height:1.45}
+/* Timeline summary */
+.timeline-summary{margin-top:64px}
+.timeline-summary h3{
+  font-family:'Instrument Serif',serif;
+  font-size:24px;font-weight:500;
+  letter-spacing:-0.02em;margin-bottom:18px;
+}
+.tl-list{
+  border-left:2px solid var(--border);
+  padding-left:24px;
+}
+.tl-item{
+  position:relative;
+  padding-bottom:18px;
+}
+.tl-item::before{
+  content:'';position:absolute;
+  left:-29px;top:6px;
+  width:10px;height:10px;
+  background:white;
+  border:2px solid var(--accent);
+  border-radius:50%;
+}
+.tl-item.tl-final::before{background:var(--accent)}
+.tl-day{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:4px;
+}
+.tl-out{font-size:14px;color:var(--text-soft);line-height:1.5}
+.tl-final .tl-out{font-weight:600;color:var(--text)}
+@media (max-width:900px){
+  .pipeline-skills{grid-template-columns:1fr}
+  .subagentes-grid,.approval-grid{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand" onclick="goto('home');return false">
+      <span class="brand-mark">L</span>
+      <span class="brand-name">LPSG</span>
+      <span class="brand-version">v4.0</span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link active" data-page="home" onclick="goto('home')"><span class="nav-num">01</span>Home</a></li>
+        <li><a class="nav-link" data-page="setup" onclick="goto('setup')"><span class="nav-num">02</span>Setup</a></li>
+        <li><a class="nav-link" data-page="intake" onclick="goto('intake')"><span class="nav-num">03</span>Cadastro</a></li>
+        <li><a class="nav-link" data-page="execucao" onclick="goto('execucao')"><span class="nav-num">04</span>Execução</a></li>
+        <li><a class="nav-link" data-page="recursos" onclick="goto('recursos')"><span class="nav-num">05</span>Recursos</a></li>
+      </ul>
+    </nav>
+    <button class="btn-primary nav-cta" onclick="goto('intake')">
+      Começar
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+  </div>
+</header>
+
+<!-- ============ PAGE: HOME ============ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <span class="hero-tag"><span class="pulse"></span> Manual interativo · v4.0</span>
+    <h1>Coloque seu LPSG no ar<br>em <em>menos de 1 semana</em>.</h1>
+    <p class="lead">O método LPSG — Lançamento Pago Semanal Gravado — agora num manual passo-a-passo com formulário guiado e checklist visual. Você preenche o intake, o Claude executa.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary btn-lg" onclick="goto('setup')">
+        Começar pelos pré-requisitos
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn btn-secondary btn-lg" onclick="goto('intake')">Já tenho contas · ir pro cadastro</button>
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num"><em>7</em></div><div class="stat-label">dias de setup</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">estruturas</div></div>
+      <div class="stat"><div class="stat-num">14</div><div class="stat-label">workflows</div></div>
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">módulos</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Como funciona</span>
+        <h2>Três passos · <em>uma semana</em></h2>
+        <p class="section-sub">Pré-requisitos primeiro. Intake depois. Claude executa o resto.</p>
+      </div>
+      <div class="features">
+        <div class="feature" onclick="goto('setup')">
+          <div class="feature-icon">🔑</div>
+          <h3>Setup</h3>
+          <p>Crie 16 contas e tokens necessários. Checklist interativo · marca cada item conforme termina.</p>
+          <svg class="feature-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="feature" onclick="goto('intake')">
+          <div class="feature-icon">📝</div>
+          <h3>Cadastro</h3>
+          <p>Preencha um cadastro guiado em 10 blocos. Auto-save embutido · gera YAML pronto pro Claude.</p>
+          <svg class="feature-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+        <div class="feature" onclick="goto('execucao')">
+          <div class="feature-icon">🚀</div>
+          <h3>Execução</h3>
+          <p>Wizard de 7 dias com fases · ações humanas · checkpoints. O Claude faz o trabalho técnico.</p>
+          <svg class="feature-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Cronograma</span>
+        <h2>Os <em>7 dias</em> em uma vista</h2>
+        <p class="section-sub">Time mínimo de 4 pessoas em paralelo. Cada dia foca uma camada do funil.</p>
+      </div>
+      <div class="timeline">
+        <div class="day"><div class="day-num">0</div><div class="day-label">Pré-setup</div></div>
+        <div class="day"><div class="day-num">1</div><div class="day-label">Fundação</div></div>
+        <div class="day"><div class="day-num">2</div><div class="day-label">Mensageria</div></div>
+        <div class="day"><div class="day-num">3</div><div class="day-label">Tráfego</div></div>
+        <div class="day"><div class="day-num">4</div><div class="day-label">Dashboard</div></div>
+        <div class="day"><div class="day-num">5</div><div class="day-label">Gravação</div></div>
+        <div class="day"><div class="day-num">6-7</div><div class="day-label">Pré-edição</div></div>
+        <div class="day day-final"><div class="day-num">→</div><div class="day-label">1ª edição</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <div class="section-header">
+        <span class="section-eyebrow">Resultado final</span>
+        <h2>O que você terá em <em>uma semana</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:780px;margin:0 auto">
+        <div class="action-row"><div class="action-row-text"><strong>5 páginas de venda</strong><span>variações no ar com Lighthouse 95+</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>Ficha de interesse</strong><span>11 etapas · lead score · HOT/WARM/COLD</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>15 criativos ativos</strong><span>5 vídeos · 5 estáticos · 5 carrosseis</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>Campanha Meta Ads</strong><span>ASC · pipeline diário · análise auto</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>14 workflows n8n</strong><span>captação · evento · tsunami · CS</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>Dashboard 11 módulos</strong><span>tempo real · 8 fontes de dados</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>Programa CS</strong><span>onboarding · 90 dias · ascensão</span></div></div>
+        <div class="action-row"><div class="action-row-text"><strong>Time RACI</strong><span>9 papéis · 12 SOPs · 6 rituais</span></div></div>
+      </div>
+      <div style="text-align:center;margin-top:48px">
+        <button class="btn btn-primary btn-lg" onclick="goto('setup')">
+          Começar agora
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PAGE: SETUP ============ -->
+<div class="page" id="page-setup">
+  <section class="hero" style="padding:64px 32px 32px">
+    <span class="hero-tag"><span class="pulse"></span> Etapa 02 · Setup inicial</span>
+    <h1 style="font-size:clamp(36px,5vw,64px)">Crie suas <em>contas</em></h1>
+    <p class="lead">16 passos · 6-12h totais · marca cada um conforme termina. Auto-save embutido.</p>
+  </section>
+  <div class="container-narrow" style="padding-bottom:80px">
+    <div class="warning-box" style="margin-bottom:32px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
+      <div>Tokens são <strong>sensíveis</strong>. Guarde em gerenciador de senhas (1Password · Bitwarden). Nunca commite em repositório público.</div>
+    </div>
+    <div class="checklist">
+
+      <div class="checklist-block open" data-block="básico">
+        <div class="checklist-header" onclick="toggleBlock(this.parentElement)">
+          <span class="checklist-emoji">🌐</span>
+          <div class="checklist-titles">
+            <div class="checklist-title">Domínio e Google</div>
+            <div class="checklist-desc">Conta básica + DNS gerenciado</div>
+          </div>
+          <div class="checklist-progress">
+            <div class="progress-circle" data-progress="0/3">
+              <span class="progress-text">0/3</span>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="checklist-body">
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="básico">
+              <div class="check-content">
+                <div class="check-title">Comprar domínio próprio</div>
+                <div class="check-meta">
+                  <span class="check-time">15 min</span>
+                  <span>registro.br ou Cloudflare Registrar</span>
+                  <a class="check-link" href="https://cloudflare.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('dominio')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="básico">
+              <div class="check-content">
+                <div class="check-title">Criar conta Google (Workspace ou Gmail)</div>
+                <div class="check-meta">
+                  <span class="check-time">5 min</span>
+                  <span>necessário pra Sheets · Calendar · Drive</span>
+                  <a class="check-link" href="https://workspace.google.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('google')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="básico">
+              <div class="check-content">
+                <div class="check-title">Configurar Cloudflare DNS</div>
+                <div class="check-meta">
+                  <span class="check-time">15 min</span>
+                  <span>transfere nameservers · espera propagação</span>
+                  <a class="check-link" href="https://cloudflare.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('cloudflare')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-block" data-block="meta">
+        <div class="checklist-header" onclick="toggleBlock(this.parentElement)">
+          <span class="checklist-emoji">📘</span>
+          <div class="checklist-titles">
+            <div class="checklist-title">Meta Business</div>
+            <div class="checklist-desc">Roda anúncios + WhatsApp Business</div>
+          </div>
+          <div class="checklist-progress">
+            <div class="progress-circle" data-progress="0/5">
+              <span class="progress-text">0/5</span>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="checklist-body">
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="meta">
+              <div class="check-content">
+                <div class="check-title">Criar Meta Business Manager</div>
+                <div class="check-meta">
+                  <span class="check-time">30 min</span>
+                  <span>com CNPJ ou MEI · verificação até 7d</span>
+                  <a class="check-link" href="https://business.facebook.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('meta-bm')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="meta">
+              <div class="check-content">
+                <div class="check-title">Criar Ad Account com pagamento</div>
+                <div class="check-meta">
+                  <span class="check-time">15 min</span>
+                  <span>cartão BR aceito</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('meta-ad')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="meta">
+              <div class="check-content">
+                <div class="check-title">Criar Pixel Meta</div>
+                <div class="check-meta">
+                  <span class="check-time">5 min</span>
+                  <span>anote o Pixel ID (16 dígitos)</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('meta-pixel')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="meta">
+              <div class="check-content">
+                <div class="check-title">Gerar System User Token (CAPI long-lived)</div>
+                <div class="check-meta">
+                  <span class="check-time">15 min</span>
+                  <span>permissões: ads_read, business_management</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('meta-token')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="meta">
+              <div class="check-content">
+                <div class="check-title">Configurar WABA com número dedicado</div>
+                <div class="check-meta">
+                  <span class="check-time">1-2h</span>
+                  <span>número novo · não migrar pessoal</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('waba')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-block" data-block="hotmart">
+        <div class="checklist-header" onclick="toggleBlock(this.parentElement)">
+          <span class="checklist-emoji">💳</span>
+          <div class="checklist-titles">
+            <div class="checklist-title">Hotmart</div>
+            <div class="checklist-desc">Processa vendas + webhooks</div>
+          </div>
+          <div class="checklist-progress">
+            <div class="progress-circle" data-progress="0/4">
+              <span class="progress-text">0/4</span>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="checklist-body">
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="hotmart">
+              <div class="check-content">
+                <div class="check-title">Criar conta Hotmart Pro</div>
+                <div class="check-meta">
+                  <span class="check-time">30 min</span>
+                  <span>necessário pra API · taxa por venda</span>
+                  <a class="check-link" href="https://hotmart.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('hotmart-pro')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="hotmart">
+              <div class="check-content">
+                <div class="check-title">Cadastrar produto Ingresso</div>
+                <div class="check-meta">
+                  <span class="check-time">20 min</span>
+                  <span>ticket baixo · garantia 7 dias</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('hotmart-ingresso')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="hotmart">
+              <div class="check-content">
+                <div class="check-title">Cadastrar produto Premium</div>
+                <div class="check-meta">
+                  <span class="check-time">20 min</span>
+                  <span>ticket alto · garantia 7 dias</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('hotmart-premium')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="hotmart">
+              <div class="check-content">
+                <div class="check-title">Configurar Webhook Hotmart</div>
+                <div class="check-meta">
+                  <span class="check-time">10 min</span>
+                  <span>URL pro n8n · anota HOTTOK</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('hotmart-webhook')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-block" data-block="stack">
+        <div class="checklist-header" onclick="toggleBlock(this.parentElement)">
+          <span class="checklist-emoji">⚡</span>
+          <div class="checklist-titles">
+            <div class="checklist-title">Stack técnico</div>
+            <div class="checklist-desc">Hospedagem + automação + mensageria</div>
+          </div>
+          <div class="checklist-progress">
+            <div class="progress-circle" data-progress="0/4">
+              <span class="progress-text">0/4</span>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="checklist-body">
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="stack">
+              <div class="check-content">
+                <div class="check-title">Criar conta Vercel · conectar domínio</div>
+                <div class="check-meta">
+                  <span class="check-time">20 min</span>
+                  <span>GitHub login recomendado</span>
+                  <a class="check-link" href="https://vercel.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('vercel')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="stack">
+              <div class="check-content">
+                <div class="check-title">Subir n8n (cloud ou self-hosted)</div>
+                <div class="check-meta">
+                  <span class="check-time">5-60 min</span>
+                  <span>n8n Cloud R$ 100/mês ou VPS R$ 30/mês</span>
+                  <a class="check-link" href="https://n8n.io" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('n8n')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="stack">
+              <div class="check-content">
+                <div class="check-title">Criar conta ManyChat Pro · conectar WABA</div>
+                <div class="check-meta">
+                  <span class="check-time">30 min</span>
+                  <span>necessário pra WhatsApp · ~U$ 15/mês</span>
+                  <a class="check-link" href="https://manychat.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('manychat')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="stack">
+              <div class="check-content">
+                <div class="check-title">Service Account Google (JSON)</div>
+                <div class="check-meta">
+                  <span class="check-time">20 min</span>
+                  <span>habilitar Sheets API + Drive API</span>
+                  <a class="check-link" href="https://console.cloud.google.com" target="_blank" onclick="event.stopPropagation()">abrir →</a>
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('google-sa')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-block" data-block="plataforma">
+        <div class="checklist-header" onclick="toggleBlock(this.parentElement)">
+          <span class="checklist-emoji">🎓</span>
+          <div class="checklist-titles">
+            <div class="checklist-title">Plataforma de aulas</div>
+            <div class="checklist-desc">Entrega das aulas pros alunos</div>
+          </div>
+          <div class="checklist-progress">
+            <div class="progress-circle" data-progress="0/1">
+              <span class="progress-text">0/1</span>
+            </div>
+            <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="checklist-body">
+
+          <div class="check-item-wrap">
+            <label class="check-item">
+              <input type="checkbox" onchange="updateProgress(this)" data-block="plataforma">
+              <div class="check-content">
+                <div class="check-title">Configurar Hotmart Club (aulas)</div>
+                <div class="check-meta">
+                  <span class="check-time">30 min</span>
+                  <span>vem com produto · gratuito</span>
+                  
+                </div>
+              </div>
+            </label>
+            <button class="btn-tutorial" onclick="openTutorial('hotmart-club')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Tutorial de configuração
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;padding:32px;background:var(--bg-alt);border-radius:var(--radius-lg)">
+      <h3 style="font-family:'Instrument Serif',serif;font-size:24px;font-weight:500;letter-spacing:-0.02em;margin-bottom:8px">Terminou os pré-requisitos?</h3>
+      <p style="color:var(--text-muted);font-size:15px;margin-bottom:24px">Próximo passo: fazer o cadastro do projeto com tudo que você anotou.</p>
+      <button class="btn btn-primary btn-lg" onclick="goto('intake')">
+        Fazer o cadastro
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE: INTAKE ============ -->
+<div class="page" id="page-intake">
+  <div class="intake-intro">
+    <span class="hero-tag"><span class="pulse"></span> Etapa 03 · Cadastro Necessário</span>
+    <h1 style="font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-0.03em;font-weight:400;margin:24px auto 16px;max-width:800px">Faça o <em style="font-style:italic;color:var(--accent)">cadastro</em> do projeto</h1>
+    <p class="lead" style="max-width:580px;margin:0 auto;color:var(--text-soft);font-size:18px">Um cadastro · 10 blocos · 30-60 min. Auto-save liga sozinho. Ao terminar, gera o YAML pra colar no Claude.</p>
+  </div>
+  <div class="intake-progress-bar">
+    <div class="intake-progress-inner">
+      <span class="intake-progress-text" id="progress-text">0% preenchido</span>
+      <div class="intake-progress-track"><div class="intake-progress-fill" id="progress-fill"></div></div>
+      <div class="intake-actions-bar">
+        <button class="btn btn-ghost btn-sm" onclick="loadFromStorage()">Recuperar</button>
+        <button class="btn btn-ghost btn-sm" onclick="clearStorage()">Limpar</button>
+        <button class="btn btn-primary btn-sm" onclick="generateIntake()">Gerar cadastro →</button>
+      </div>
+    </div>
+  </div>
+  <form id="intake-form" autocomplete="off" oninput="autosave();updateProgress2()">
+    <div class="intake-blocks">
+
+<details class="intake-block" open>
+  <summary><span class="block-letter">A</span><div class="block-info"><h3>Identidade</h3><p>Projeto · especialista · nicho · avatar</p></div><span class="block-status" data-block="A">0/15</span></summary>
+  <div class="intake-block-body">
+    <h4>Projeto</h4>
+    <div class="grid-2">
+      <div class="field"><label>Nome do projeto <span class="req">*</span></label><input type="text" name="projeto.nome" placeholder="LPSG Leo Tabari"></div>
+      <div class="field"><label>Cliente <span class="req">*</span></label><input type="text" name="projeto.cliente"></div>
+      <div class="field"><label>Data de início</label><input type="date" name="projeto.data_inicio"></div>
+    </div>
+    <h4>Especialista</h4>
+    <div class="grid-2">
+      <div class="field"><label>Nome <span class="req">*</span></label><input type="text" name="especialista.nome"></div>
+      <div class="field"><label>Instagram <span class="req">*</span></label><input type="text" name="especialista.instagram" placeholder="@usuario"></div>
+      <div class="field full"><label>Bio curta <span class="req">*</span></label><textarea name="especialista.bio_curta" rows="2" placeholder="2-3 linhas"></textarea></div>
+      <div class="field"><label>URL foto profissional</label><input type="url" name="especialista.foto_url"></div>
+      <div class="field"><label>YouTube</label><input type="text" name="especialista.youtube"></div>
+      <div class="field"><label>Tratamento plural <span class="req">*</span></label><input type="text" name="especialista.tratamento" placeholder="tubos, alunos"></div>
+      <div class="field"><label>Emoji <span class="req">*</span></label><input type="text" name="especialista.emoji" placeholder="🚀" maxlength="4"></div>
+    </div>
+    <h4>Nicho</h4>
+    <div class="grid-2">
+      <div class="field"><label>Nicho principal <span class="req">*</span></label><input type="text" name="nicho.principal"></div>
+      <div class="field"><label>Sub-nicho <span class="req">*</span></label><input type="text" name="nicho.sub"></div>
+      <div class="field full"><label>Benchmark de nicho</label>
+        <select name="nicho.benchmark">
+          <option value="">Selecione…</option>
+          <option value="1">1 · Marketing Digital</option>
+          <option value="2">2 · Saúde / Fitness</option>
+          <option value="3">3 · Finanças / Trade</option>
+          <option value="4">4 · Educação / Idiomas</option>
+          <option value="5">5 · Empreendedorismo</option>
+          <option value="6">6 · Espiritualidade / Coach</option>
+          <option value="7">7 · Beleza / Estética</option>
+          <option value="8">8 · Imóveis</option>
+          <option value="9">9 · Profissões liberais</option>
+          <option value="10">10 · B2B / SaaS</option>
+        </select>
+      </div>
+    </div>
+    <h4>Avatar</h4>
+    <div class="field"><label>Resumo do avatar <span class="req">*</span></label><textarea name="avatar.resumo" rows="3" placeholder="4-6 linhas: idade · profissão · faturamento · dor · sonho"></textarea></div>
+    <div class="grid-2">
+      <div class="field"><label>Dor principal <span class="req">*</span></label><input type="text" name="avatar.dor"></div>
+      <div class="field"><label>Desejo principal <span class="req">*</span></label><input type="text" name="avatar.desejo"></div>
+      <div class="field full"><label>Objeção mais forte</label><input type="text" name="avatar.objecao"></div>
+    </div>
+    <h4>Big Idea</h4>
+    <div class="field"><label>Big idea (1 frase) <span class="req">*</span></label><input type="text" name="big_idea.frase" placeholder="E se o lead pagasse seu tráfego?"></div>
+    <div class="field"><label>Explicação</label><textarea name="big_idea.explicada" rows="3"></textarea></div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">B</span><div class="block-info"><h3>Oferta</h3><p>Evento · datas · ticket · garantia · tsunami</p></div><span class="block-status" data-block="B">0/12</span></summary>
+  <div class="intake-block-body">
+    <h4>Evento</h4>
+    <div class="grid-2">
+      <div class="field"><label>Nome <span class="req">*</span></label><input type="text" name="evento.nome"></div>
+      <div class="field"><label>Sigla 3 letras <span class="req">*</span></label><input type="text" name="evento.sigla" maxlength="3" style="text-transform:uppercase"></div>
+      <div class="field full"><label>Promessa principal <span class="req">*</span></label><input type="text" name="evento.promessa"></div>
+      <div class="field"><label>Ticket ingresso <span class="req">*</span></label><input type="text" name="evento.ticket" placeholder="R$ 62"></div>
+    </div>
+    <h4>1ª edição (datas)</h4>
+    <div class="grid-2">
+      <div class="field"><label>Aula 1 (segunda) <span class="req">*</span></label><input type="date" name="evento.data_a1"></div>
+      <div class="field"><label>Pitch (domingo) <span class="req">*</span></label><input type="date" name="evento.data_pitch"></div>
+    </div>
+    <h4>Produto principal</h4>
+    <div class="grid-2">
+      <div class="field"><label>Nome <span class="req">*</span></label><input type="text" name="produto.nome" placeholder="Acelerador Turbo"></div>
+      <div class="field"><label>Ticket <span class="req">*</span></label><input type="text" name="produto.ticket" placeholder="R$ 25.000"></div>
+      <div class="field"><label>Prazo acompanhamento</label><input type="text" name="produto.prazo" placeholder="3 meses"></div>
+      <div class="field"><label>ROI prometido</label><input type="text" name="produto.roi" placeholder="3 a 5x"></div>
+      <div class="field"><label>Valor PIX</label><input type="text" name="produto.pix"></div>
+      <div class="field"><label>Prazo do ROI</label><input type="text" name="produto.prazo_roi" placeholder="próximos meses"></div>
+    </div>
+    <h4>Garantia</h4>
+    <div class="field"><label>Texto completo <span class="req">*</span></label><textarea name="garantia.texto" rows="3"></textarea></div>
+    <h4>Bônus tsunami (3 ondas)</h4>
+    <div class="subcard"><div class="subcard-head"><strong>Onda 1</strong><em>Seg 7h00-7h10</em></div>
+      <div class="grid-2">
+        <div class="field"><label>Nome do bônus</label><input type="text" name="tsunami.o1.nome"></div>
+        <div class="field"><label>Descrição curta</label><input type="text" name="tsunami.o1.desc"></div>
+      </div>
+    </div>
+    <div class="subcard"><div class="subcard-head"><strong>Onda 2</strong><em>Seg 7h10-8h00</em></div>
+      <div class="grid-2">
+        <div class="field"><label>Nome</label><input type="text" name="tsunami.o2.nome"></div>
+        <div class="field"><label>Descrição</label><input type="text" name="tsunami.o2.desc"></div>
+      </div>
+    </div>
+    <div class="subcard"><div class="subcard-head"><strong>Onda 3</strong><em>Seg 8h00-23h59</em></div>
+      <div class="grid-2">
+        <div class="field"><label>Nome</label><input type="text" name="tsunami.o3.nome"></div>
+        <div class="field"><label>Descrição</label><input type="text" name="tsunami.o3.desc"></div>
+      </div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">C</span><div class="block-info"><h3>Aulas</h3><p>6 títulos públicos + promessas</p></div><span class="block-status" data-block="C">0/12</span></summary>
+  <div class="intake-block-body">
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 1</strong><em>Fundamentação · 'é possível'</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a1.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a1.promessa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 2</strong><em>Construção · 'é pra mim'</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a2.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a2.promessa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 3</strong><em>Marco 1 · 'já valeu'</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a3.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a3.promessa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 4</strong><em>Pré-pitch + abre ficha</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a4.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a4.promessa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 5</strong><em>Marco 2 · checklist</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a5.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a5.promessa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Aula 6</strong><em>Pitch · oferta + tsunami</em></div>
+      <div class="grid-2">
+        <div class="field full"><label>Título público (YouTube)</label><input type="text" name="aula.a6.titulo"></div>
+        <div class="field full"><label>Promessa da aula</label><input type="text" name="aula.a6.promessa"></div>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">D</span><div class="block-info"><h3>Domínios e URLs</h3><p>Subdomínios · checkout</p></div><span class="block-status" data-block="D">0/6</span></summary>
+  <div class="intake-block-body">
+    <div class="grid-2">
+      <div class="field"><label>Domínio raiz <span class="req">*</span></label><input type="text" name="dom.raiz" placeholder="seunome.com.br"></div>
+      <div class="field"><label>Subdomínio LP</label><input type="text" name="dom.lp" placeholder="lp.seunome.com.br"></div>
+      <div class="field"><label>Subdomínio ficha</label><input type="text" name="dom.ficha"></div>
+      <div class="field"><label>Subdomínio dashboard</label><input type="text" name="dom.dash"></div>
+      <div class="field"><label>URL checkout ingresso <span class="req">*</span></label><input type="url" name="checkout.ingresso"></div>
+      <div class="field"><label>URL checkout premium <span class="req">*</span></label><input type="url" name="checkout.premium"></div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">E</span><div class="block-info"><h3>Integrações</h3><p>Tokens · APIs · IDs</p></div><span class="block-status" data-block="E">0/14</span></summary>
+  <div class="intake-block-body">
+    <div class="warning-box">⚠️ Salvo apenas no seu navegador (localStorage). Nada é enviado pra servidor.</div>
+    <h4>Meta</h4>
+    <div class="grid-2">
+      <div class="field"><label>Business Manager ID</label><input type="text" name="meta.bm"></div>
+      <div class="field"><label>Ad Account ID <span class="req">*</span></label><input type="text" name="meta.ad" placeholder="act_..."></div>
+      <div class="field"><label>Pixel ID <span class="req">*</span></label><input type="text" name="meta.pixel"></div>
+      <div class="field"><label>CAPI Token</label><input type="password" name="meta.capi"></div>
+      <div class="field"><label>WABA Phone Number ID</label><input type="text" name="meta.waba_phone"></div>
+      <div class="field"><label>WABA Account ID</label><input type="text" name="meta.waba"></div>
+    </div>
+    <h4>Hotmart</h4>
+    <div class="grid-2">
+      <div class="field"><label>Product ID Ingresso <span class="req">*</span></label><input type="text" name="hot.pid_ing"></div>
+      <div class="field"><label>Offer Key Ingresso</label><input type="text" name="hot.offer_ing"></div>
+      <div class="field"><label>Product ID Premium <span class="req">*</span></label><input type="text" name="hot.pid_pre"></div>
+      <div class="field"><label>Offer Key Premium</label><input type="text" name="hot.offer_pre"></div>
+      <div class="field full"><label>HOTTOK</label><input type="password" name="hot.hottok"></div>
+    </div>
+    <h4>Google · Vercel · n8n · ManyChat</h4>
+    <div class="grid-2">
+      <div class="field"><label>Service Account email</label><input type="email" name="google.sa"></div>
+      <div class="field"><label>Sheets ID master</label><input type="text" name="google.sheets"></div>
+      <div class="field"><label>Vercel project name</label><input type="text" name="vercel.proj"></div>
+      <div class="field"><label>n8n base URL</label><input type="url" name="n8n.url"></div>
+      <div class="field"><label>n8n API key</label><input type="password" name="n8n.key"></div>
+      <div class="field"><label>ManyChat API key</label><input type="password" name="mc.key"></div>
+      <div class="field"><label>GTM Container</label><input type="text" name="gtm.id"></div>
+      <div class="field"><label>GA4 Measurement</label><input type="text" name="ga4.id"></div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">F</span><div class="block-info"><h3>Time</h3><p>6 papéis · contatos do RACI</p></div><span class="block-status" data-block="F">0/6</span></summary>
+  <div class="intake-block-body">
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Expert</strong><em>apresenta as aulas</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.expert.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.expert.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.expert.wa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Gestor de Tráfego</strong><em>cuida da campanha Meta</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.trafego.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.trafego.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.trafego.wa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Copywriter</strong><em>hooks · mensageria</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.copy.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.copy.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.copy.wa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>Designer</strong><em>vídeos · estáticos · slides</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.design.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.design.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.design.wa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>SDR / Closer</strong><em>liga pra HOT</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.sdr.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.sdr.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.sdr.wa"></div>
+      </div>
+    </div>
+
+    <div class="subcard">
+      <div class="subcard-head"><strong>CS Oficial</strong><em>atende alunos do produto</em></div>
+      <div class="grid-3">
+        <div class="field"><label>Nome</label><input type="text" name="time.cs.nome"></div>
+        <div class="field"><label>Email</label><input type="email" name="time.cs.email"></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" name="time.cs.wa"></div>
+      </div>
+    </div>
+
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">G</span><div class="block-info"><h3>Customer Success</h3><p>Plataforma · comunidade · indicação</p></div><span class="block-status" data-block="G">0/6</span></summary>
+  <div class="intake-block-body">
+    <div class="grid-2">
+      <div class="field"><label>CS ativo agora?</label>
+        <select name="cs.ativo">
+          <option value="false">Não · só após primeira venda</option>
+          <option value="true">Sim · ativo</option>
+        </select>
+      </div>
+      <div class="field"><label>Plataforma de aulas</label>
+        <select name="cs.plat">
+          <option>Hotmart Club</option>
+          <option>Members.com</option>
+          <option>Própria</option>
+        </select>
+      </div>
+      <div class="field"><label>Tipo comunidade</label>
+        <select name="cs.com_tipo">
+          <option>Discord</option>
+          <option>WhatsApp</option>
+        </select>
+      </div>
+      <div class="field"><label>Link convite comunidade</label><input type="url" name="cs.com_link"></div>
+    </div>
+    <h4>Programa de indicação</h4>
+    <div class="grid-2">
+      <div class="field"><label>Bronze (1 indicação)</label><input type="text" name="ind.bronze"></div>
+      <div class="field"><label>Prata (3)</label><input type="text" name="ind.prata"></div>
+      <div class="field"><label>Ouro (5)</label><input type="text" name="ind.ouro"></div>
+      <div class="field"><label>Diamante (10)</label><input type="text" name="ind.diamante"></div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">H</span><div class="block-info"><h3>Tráfego e Visual</h3><p>Orçamento · cores · estilo</p></div><span class="block-status" data-block="H">0/7</span></summary>
+  <div class="intake-block-body">
+    <div class="grid-2">
+      <div class="field"><label>Orçamento meta mensal <span class="req">*</span></label><input type="text" name="traf.orca" placeholder="R$ 30.000"></div>
+      <div class="field"><label>Localização</label><input type="text" name="traf.loc" value="Brasil"></div>
+      <div class="field"><label>Faixa idade</label><input type="text" name="traf.idade" value="25-65"></div>
+      <div class="field"><label>Idioma</label><input type="text" name="traf.lang" value="Português"></div>
+    </div>
+    <h4>Identidade visual</h4>
+    <div class="grid-2">
+      <div class="field"><label>Cor primária <span class="req">*</span></label>
+        <div class="color-input">
+          <input type="color" name="cor.p_color" value="#FF5C00">
+          <input type="text" name="cor.p" value="#FF5C00">
+        </div>
+      </div>
+      <div class="field"><label>Cor secundária</label>
+        <div class="color-input">
+          <input type="color" name="cor.s_color" value="#1A1A1A">
+          <input type="text" name="cor.s" value="#1A1A1A">
+        </div>
+      </div>
+      <div class="field full"><label>Estilo visual</label>
+        <select name="cor.estilo">
+          <option value="">Selecione…</option>
+          <option>Editorial · sofisticado</option>
+          <option>Energético · vibrante</option>
+          <option>Minimalista · clean</option>
+          <option>Premium / Luxury</option>
+          <option>Tecnológico / Futurista</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">I</span><div class="block-info"><h3>Mensageria</h3><p>Tom de voz · pacto</p></div><span class="block-status" data-block="I">0/2</span></summary>
+  <div class="intake-block-body">
+    <div class="grid-2">
+      <div class="field"><label>Tom de voz <span class="req">*</span></label>
+        <select name="msg.tom">
+          <option value="">Selecione…</option>
+          <option>Próximo · Informal · Direto</option>
+          <option>Profissional · Educado</option>
+          <option>Energético · Motivacional</option>
+          <option>Técnico · Educacional</option>
+        </select>
+      </div>
+      <div class="field"><label>Palavra do pacto</label><input type="text" name="msg.pacto" value="OK"></div>
+    </div>
+  </div>
+</details>
+
+<details class="intake-block">
+  <summary><span class="block-letter">J</span><div class="block-info"><h3>Metas da 1ª edição</h3><p>Inscritos · vendas · faturamento</p></div><span class="block-status" data-block="J">0/6</span></summary>
+  <div class="intake-block-body">
+    <div class="grid-2">
+      <div class="field"><label>Inscritos mín <span class="req">*</span></label><input type="number" name="meta.insc_min" placeholder="500"></div>
+      <div class="field"><label>Inscritos alvo</label><input type="number" name="meta.insc_alvo"></div>
+      <div class="field"><label>Vendas premium mín</label><input type="number" name="meta.vd_min"></div>
+      <div class="field"><label>Vendas premium alvo</label><input type="number" name="meta.vd_alvo"></div>
+      <div class="field"><label>Faturamento alvo</label><input type="text" name="meta.fat" placeholder="R$ 250.000"></div>
+      <div class="field"><label>CAC máximo</label><input type="text" name="meta.cac" placeholder="R$ 50"></div>
+    </div>
+  </div>
+</details>
+
+    </div>
+
+    <div class="container-narrow">
+      <div class="intake-cta">
+        <h3 style="font-family:'Instrument Serif',serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;margin-bottom:12px">Pronto · gere o cadastro</h3>
+        <p style="color:#663C00;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto">Quando gerar, copia e cola no Claude com a mensagem: <em>"Estou começando o LPSG. Aqui meu cadastro."</em></p>
+        <button type="button" class="btn btn-primary btn-lg" onclick="generateIntake()">
+          Gerar cadastro
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </button>
+      </div>
+      <div style="text-align:center;margin-top:32px">
+        <button class="btn btn-secondary" onclick="goto('execucao')">Pular pra execução →</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- ============ PAGE: EXECUÇÃO ============ -->
+<div class="page" id="page-execucao">
+  <section class="hero" style="padding:64px 32px 32px">
+    <span class="hero-tag"><span class="pulse"></span> Etapa 04 · Execução guiada</span>
+    <h1>Cole <em>um comando</em> ·<br>LPSG vai pro ar.</h1>
+    <p class="lead">O orquestrador <code style="background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:0.85em">@lpsg-master</code> coordena 10 skills + agentes especialistas. Você só apresenta as aulas no fim.</p>
+  </section>
+
+  <!-- ===== COMANDO ÚNICO ===== -->
+  <div class="container-narrow" style="padding-bottom:32px">
+    <div class="command-card">
+      <div class="command-head">
+        <div>
+          <span class="command-tag">⚡ comando único</span>
+          <h3 class="command-title">Cole isso no Claude com seu cadastro</h3>
+        </div>
+        <button class="btn btn-primary" onclick="copyCommand()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="cmd-copy-label">Copiar comando</span>
+        </button>
+      </div>
+      <pre class="command-body" id="cmd-text">@lpsg-master crie meu LPSG</pre>
+    </div>
+  </div>
+
+  <!-- ===== O QUE ACONTECE ===== -->
+  <div class="container-narrow" style="padding-bottom:80px">
+    <div class="section-header" style="margin-bottom:48px">
+      <span class="section-eyebrow">O que acontece em seguida</span>
+      <h2>O orquestrador faz <em>todo o trabalho</em></h2>
+      <p class="section-sub">10 skills especializadas · 3 agentes auxiliares · uma sequência testada · você acompanha pelo dashboard.</p>
+    </div>
+
+    <!-- Pipeline tree -->
+    <div class="pipeline">
+      <div class="pipeline-master">
+        <div class="pip-master-icon">🎼</div>
+        <div class="pip-master-content">
+          <strong>@lpsg-master</strong>
+          <span>orquestrador · diagnóstico multi-camada · benchmarks por nicho</span>
+        </div>
+      </div>
+      <div class="pipeline-line"></div>
+      <div class="pipeline-skills">
+        <div class="pip-skill"><span class="pip-num">1</span><span class="pip-emoji">🌐</span><div><strong>paginas-lpsg</strong><small>5 variações · ficha 11 etapas</small></div></div>
+        <div class="pip-skill"><span class="pip-num">2</span><span class="pip-emoji">🎬</span><div><strong>criativos-lpsg</strong><small>15 criativos · 5+5+5</small></div></div>
+        <div class="pip-skill"><span class="pip-num">3</span><span class="pip-emoji">🎯</span><div><strong>estrutura-aulas-lpsg</strong><small>5+1 aulas · função estratégica</small></div></div>
+        <div class="pip-skill"><span class="pip-num">4</span><span class="pip-emoji">💎</span><div><strong>oferta-lpsg</strong><small>stack · garantia · tsunami</small></div></div>
+        <div class="pip-skill"><span class="pip-num">5</span><span class="pip-emoji">📨</span><div><strong>mensageria-lpsg</strong><small>8 fases · templates Utility</small></div></div>
+        <div class="pip-skill"><span class="pip-num">6</span><span class="pip-emoji">🚀</span><div><strong>trafego-lpsg</strong><small>ASC · pipeline Meta · análise auto</small></div></div>
+        <div class="pip-skill"><span class="pip-num">7</span><span class="pip-emoji">⚙️</span><div><strong>automacoes-lpsg</strong><small>14 workflows n8n</small></div></div>
+        <div class="pip-skill"><span class="pip-num">8</span><span class="pip-emoji">📊</span><div><strong>dashboard-lpsg</strong><small>11 módulos · 8 fontes</small></div></div>
+        <div class="pip-skill"><span class="pip-num">9</span><span class="pip-emoji">👥</span><div><strong>operacao-lpsg</strong><small>9 papéis · RACI · 12 SOPs</small></div></div>
+        <div class="pip-skill"><span class="pip-num">10</span><span class="pip-emoji">🤝</span><div><strong>cs-lpsg</strong><small>onboarding · 90 dias · NPS</small></div></div>
+      </div>
+    </div>
+
+    <!-- Subagentes -->
+    <div class="subagentes">
+      <div class="subagentes-head">
+        <h3>Subagentes especialistas</h3>
+        <p>Chamados pelo orquestrador quando precisa de profundidade num domínio específico</p>
+      </div>
+      <div class="subagentes-grid">
+        <div class="subagente">
+          <div class="sub-icon">🎨</div>
+          <div class="sub-content">
+            <strong>@designer-senior</strong>
+            <p>Identidade visual · landing pages · sistema de design tokens. Invocado pra montar páginas do zero · gerar slides premium.</p>
+          </div>
+        </div>
+        <div class="subagente">
+          <div class="sub-icon">✍️</div>
+          <div class="sub-content">
+            <strong>@copywriter</strong>
+            <p>Hooks · headlines · sequências de mensagem · roteiros de criativo. Invocado quando o output precisa de copy refinada por avatar.</p>
+          </div>
+        </div>
+        <div class="subagente">
+          <div class="sub-icon">📱</div>
+          <div class="sub-content">
+            <strong>@social-turbo</strong>
+            <p>Roteiros de Reels · stories · calendário editorial. Invocado pra produção do conteúdo orgânico que aquece pro evento.</p>
+          </div>
+        </div>
+        <div class="subagente">
+          <div class="sub-icon">🔍</div>
+          <div class="sub-content">
+            <strong>@pesquisador-mercado</strong>
+            <p>Inteligência competitiva · benchmarks · gaps. Invocado pra calibrar oferta e tráfego conforme nicho.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pontos de aprovação humana -->
+    <div class="approvals">
+      <h3>Pontos onde o orquestrador <em>vai te chamar</em></h3>
+      <p style="color:var(--text-muted);font-size:14.5px;margin-bottom:24px">Tudo o resto, ele resolve sozinho.</p>
+      <div class="approval-grid">
+        <div class="approval-item"><div class="ap-num">1</div><div class="ap-text"><strong>Aprovar oferta</strong><span>stack de valor + garantia + tsunami antes de virar página</span></div></div>
+        <div class="approval-item"><div class="ap-num">2</div><div class="ap-text"><strong>Upload de assets</strong><span>foto profissional · prints reais · depoimentos com permissão</span></div></div>
+        <div class="approval-item"><div class="ap-num">3</div><div class="ap-text"><strong>Submeter templates Meta</strong><span>copy gerada · você submete · aprovação 1-3 dias úteis</span></div></div>
+        <div class="approval-item"><div class="ap-num">4</div><div class="ap-text"><strong>Gravar 5 vídeos + 4 áudios</strong><span>roteiros prontos · você grava no celular</span></div></div>
+        <div class="approval-item"><div class="ap-num">5</div><div class="ap-text"><strong>Ativar campanha Meta</strong><span>tudo configurado · você revisa e clica 'Publish'</span></div></div>
+        <div class="approval-item"><div class="ap-num">6</div><div class="ap-text"><strong>Maratona de gravação (Dia 5)</strong><span>6 aulas em 8h · expert + auxiliar técnico</span></div></div>
+        <div class="approval-item"><div class="ap-num">7</div><div class="ap-text"><strong>Apresentar a 1ª edição</strong><span>Seg-Dom · aulas + tira-dúvidas + pitch</span></div></div>
+      </div>
+    </div>
+
+    <!-- Timeline resumido -->
+    <div class="timeline-summary">
+      <h3>Timeline · o que vai estar pronto a cada dia</h3>
+      <div class="tl-list">
+        <div class="tl-item"><div class="tl-day">Dia 1</div><div class="tl-out">8 templates Meta submetidos · 5 vídeos brutos pra gravar · estáticos e carrosseis · 5 páginas no ar</div></div>
+        <div class="tl-item"><div class="tl-day">Dia 2</div><div class="tl-out">Aulas estruturadas · oferta validada · ficha funcionando · 4 áudios gravados · 14 workflows n8n rodando · webhook Hotmart testado</div></div>
+        <div class="tl-item"><div class="tl-day">Dia 3</div><div class="tl-out">Vídeos editados · campanha Meta ativa</div></div>
+        <div class="tl-item"><div class="tl-day">Dia 4</div><div class="tl-out">Dashboard com 11 módulos · 3 testes E2E passando · time tem acesso</div></div>
+        <div class="tl-item"><div class="tl-day">Dia 5</div><div class="tl-out">aulas prontas para gravar · slides finalizados · revisão geral concluída</div></div>
+        <div class="tl-item"><div class="tl-day">Dia 6-7</div><div class="tl-out">Templates aprovados · grupo do evento criado · brief final com o time</div></div>
+        <div class="tl-item tl-final"><div class="tl-day">Semana seguinte</div><div class="tl-out">🎬 Começa a escalar a campanha</div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:64px;padding:40px;background:linear-gradient(135deg,#0A0A0B,#1A1A1C);color:white;border-radius:var(--radius-lg)">
+      <h3 style="font-family:'Instrument Serif',serif;font-size:28px;font-weight:500;letter-spacing:-0.02em;color:white;margin-bottom:12px">Travou em algum ponto?</h3>
+      <p style="color:rgba(255,255,255,0.7);font-size:15px;margin-bottom:24px">Recursos de apoio · troubleshooting · glossário.</p>
+      <button class="btn btn-primary" onclick="goto('recursos')">
+        Ver recursos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE: RECURSOS ============ -->
+<div class="page" id="page-recursos">
+  <section class="hero" style="padding:64px 32px 32px">
+    <span class="hero-tag"><span class="pulse"></span> Etapa 05 · Recursos de apoio</span>
+    <h1 style="font-size:clamp(36px,5vw,64px)">Quando travar, <em>volta aqui</em></h1>
+    <p class="lead">Checklist de ações humanas · troubleshooting de problemas comuns · glossário rápido.</p>
+  </section>
+  <div class="container-narrow" style="padding-bottom:80px">
+    <div class="tabs">
+      <button class="tab active" data-tab="acoes" onclick="showTab(this,'acoes')">👤 Ações humanas</button>
+      <button class="tab" data-tab="trouble" onclick="showTab(this,'trouble')">🆘 Troubleshooting</button>
+      <button class="tab" data-tab="glossario" onclick="showTab(this,'glossario')">📖 Glossário</button>
+    </div>
+
+    <div class="tab-panel active" id="panel-acoes">
+      <h3 style="font-family:'Instrument Serif',serif;font-size:24px;font-weight:500;margin-bottom:8px">Setup (1x · não repete)</h3>
+      <p style="color:var(--text-muted);margin-bottom:24px">~6-12h totais antes de começar.</p>
+      <div class="action-grid" style="margin-bottom:48px">
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Comprar domínio + Cloudflare DNS</strong></div>
+          <span class="action-row-time">30 min</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Meta Business + Pixel + CAPI Token</strong></div>
+          <span class="action-row-time">1h + verificação</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>WABA com número dedicado</strong></div>
+          <span class="action-row-time">1-2h</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Hotmart Pro + 2 produtos</strong></div>
+          <span class="action-row-time">1-1.5h</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Vercel + n8n + ManyChat</strong></div>
+          <span class="action-row-time">1h</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Service Account Google JSON</strong></div>
+          <span class="action-row-time">20 min</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Plataforma de aulas + Discord</strong></div>
+          <span class="action-row-time">1h</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Preencher cadastro completo</strong></div>
+          <span class="action-row-time">30-60 min</span>
+        </div>
+
+      </div>
+
+      <h3 style="font-family:'Instrument Serif',serif;font-size:24px;font-weight:500;margin-bottom:8px">Edição (semanal · perpétuo)</h3>
+      <div class="action-grid" style="margin-bottom:48px">
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Apresentar Aulas 1-5 (Seg-Sex 7h)</strong></div>
+          <span class="action-row-time">60 min/dia</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Conduzir tira-dúvidas Sábado</strong></div>
+          <span class="action-row-time">1-1.5h</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Apresentar pitch Domingo 20h</strong></div>
+          <span class="action-row-time">90-120 min</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Acompanhar dashboard ao vivo</strong></div>
+          <span class="action-row-time">contínuo</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Aplicar 1 sugestão da engine/semana</strong></div>
+          <span class="action-row-time">30 min</span>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Atender HOT em ≤ 24h (SDR)</strong></div>
+          <span class="action-row-time">depende</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-panel" id="panel-trouble">
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Meta Business não verifica</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Meta</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Submeti documentos · faz dias e tá pendente.</p><p><strong>Solução:</strong> verifica se CNPJ bate com nome da empresa nos docs. Resubmete em <code>business.facebook.com/settings/business-info</code>. Se passou 7 dias úteis, abre ticket no suporte Meta.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">WABA não conecta · número rejeitado</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Meta</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Tentei migrar WhatsApp pessoal · deu erro.</p><p><strong>Solução:</strong> compra um número novo dedicado (SIM nova · R$ 30/mês). Não force migração de pessoal — 80% das vezes dá problema.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Produto não aprova</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Hotmart</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Submeti produto · fica em análise ou recusa.</p><p><strong>Solução:</strong> garante página de venda no ar antes de submeter · imagem 1080x1080 profissional · descrição com 2-3 parágrafos detalhados · CNPJ aprovado.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Domínio customizado não conecta</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Vercel</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Adicionei domínio · diz 'Invalid Configuration'.</p><p><strong>Solução:</strong> Cloudflare DNS · clica no ícone laranja · vira <strong>cinza</strong> (DNS only). Espera 1-5 min · Vercel revalida.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Lighthouse mobile < 95</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Vercel</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Páginas no ar mas score baixo.</p><p><strong>Solução:</strong> LCP &gt; 2s = converte hero pra WebP. CLS &gt; 0.1 = define width/height nas imagens. TBT alto = remove libs desnecessárias.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">ROAS baixo nos primeiros 3 dias</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Tráfego</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Campanha rodando 2-3 dias · ROAS 0.2.</p><p><strong>NÃO MEXE.</strong> Advantage+ Shopping precisa de 5-7 dias pra aprender. Mexer agora reseta o aprendizado.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">CPM disparou em 1 dia</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Tráfego</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>CPM era R$ 35 · agora R$ 80.</p><p><strong>Solução:</strong> verifica frequência (≥ 3.0 = saturação). Se sim · renova 5 criativos (1/3 do lote). Se não · espera 2-3 dias · pode ser flutuação.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Template Utility rejeitado pela Meta</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Mensageria</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Submeti · Meta rejeitou.</p><p><strong>Solução:</strong> tira urgência ('ÚLTIMA CHANCE' → 'Lembrete') · tira CTAs de venda direta · reformula como transacional. Resubmete.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Pixel não dispara Purchase</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">Pixel</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Compras acontecendo · Events Manager mostra Purchase em 0.</p><p><strong>Solução:</strong> implementa <strong>CAPI server-side</strong> (Pixel + CAPI = 2x deduplicação). Garante que <code>/obrigado-ingresso</code> carrega o pixel.</p></div>
+      </div>
+
+      <div class="trouble-item" onclick="this.classList.toggle('open')">
+        <div class="trouble-head">
+          <div class="trouble-icon">!</div>
+          <div class="trouble-title">Aluno não fez login até D7</div>
+          <span style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.06em">CS</span>
+          <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="trouble-body"><p>Cenário comum.</p><p><strong>Resposta padrão:</strong> CS Oficial faz call de check-in (15 min) · diagnostica em 3 perguntas · resolve OU oferece reembolso proativo.</p></div>
+      </div>
+
+    </div>
+
+    <div class="tab-panel" id="panel-glossario">
+      <div style="display:grid;gap:14px">
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>LPSG</strong><span>Lançamento Pago Semanal Gravado · 5 aulas + pitch · ciclo perpétuo</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>5+1</strong><span>Estrutura de aulas (5 técnicas + 1 pitch) seguindo escada de crenças</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Ingresso</strong><span>Ticket baixo (R$ 47-97) · entrada do funil · paga o tráfego</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Produto principal</strong><span>Ticket alto (R$ 5-50k) · vendido no pitch + carrinho aberto</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Ficha de interesse</strong><span>Formulário 11 etapas · qualifica leads em HOT/WARM/COLD</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>ASC</strong><span>Advantage+ Shopping Campaign · tipo de campanha Meta usado no LPSG</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Hook Rate</strong><span>Views 3s ÷ Impressões · mede se o gancho do criativo prende atenção</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Hold Rate</strong><span>Assistiu 75% ÷ Views 3s · mede se o miolo segura</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Body Rate</strong><span>Compras ÷ Assistiu 75% · mede se o CTA converte</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Tier HOT/WARM/COLD</strong><span>Classificação do lead pós-ficha · roteamento pro closer/grupo VIP/nutrição</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Tsunami</strong><span>Cronograma de bônus do carrinho aberto (3 ondas escalonadas)</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>CAPI</strong><span>Conversions API · tracking server-side · evita perda por adblocker</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>WABA</strong><span>WhatsApp Business API · necessário pra mensageria automatizada</span></div>
+        </div>
+
+        <div class="action-row">
+          <div class="action-row-text"><strong>Pacto OK</strong><span>Aluno responde 'OK' em cada mensagem · trava algoritmo do WhatsApp</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:64px;padding:32px;background:var(--bg-alt);border-radius:var(--radius-lg)">
+      <p style="color:var(--text-muted);margin-bottom:20px">Não achou o que procurava?</p>
+      <button class="btn btn-secondary" onclick="goto('home')">Voltar pro início</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal de tutorial -->
+<div class="modal" id="tutorial-modal">
+  <div class="modal-overlay" onclick="closeTutorial()"></div>
+  <div class="modal-content tutorial-modal-content">
+    <div class="tutorial-head">
+      <div class="tut-eyebrow">📚 Tutorial de configuração</div>
+      <h2 id="tut-title"></h2>
+      <p class="tut-subtitle" id="tut-subtitle"></p>
+      <div class="tut-time" id="tut-time"></div>
+      <button class="modal-close" onclick="closeTutorial()" style="position:absolute;top:24px;right:24px">×</button>
+    </div>
+    <div class="tutorial-body" id="tut-body"></div>
+    <div class="tutorial-footer">
+      <a class="btn btn-secondary" id="tut-link" target="_blank">
+        Abrir ferramenta →
+      </a>
+      <button class="btn btn-primary" onclick="closeTutorial()">
+        Entendi, fechar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL YAML ============ -->
+<div class="modal" id="yaml-modal">
+  <div class="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal-content">
+    <div class="modal-head">
+      <h3>Cadastro gerado</h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="copyYaml()" id="copy-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="copy-label">Copiar cadastro</span>
+      </button>
+      <button class="btn btn-ghost" onclick="downloadYaml()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
+        Baixar .yaml
+      </button>
+    </div>
+    <pre class="modal-yaml" id="yaml-output"></pre>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toast-msg"></span>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-brand">LPSG 4.0</div>
+  <p>Squad Turbo · Leo Tabari · Turbo Academy</p>
+  <p style="margin-top:8px;font-size:12px">v3.0 · site interativo · setup em 1 semana</p>
+</footer>
+
+<script>
+const STORAGE_KEY = 'lpsg_intake_v3';
+
+// =========== NAVEGAÇÃO ===========
+function goto(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  const link = document.querySelector(`.nav-link[data-page="${page}"]`);
+  if (link) link.classList.add('active');
+  document.querySelector('.nav-links').classList.remove('mobile-open');
+}
+
+// =========== CHECKLIST (setup) ===========
+function toggleBlock(el) { el.classList.toggle('open'); }
+
+function updateProgress(checkbox) {
+  const block = checkbox.dataset.block;
+  const all = document.querySelectorAll(`input[data-block="${block}"]`);
+  const checked = document.querySelectorAll(`input[data-block="${block}"]:checked`).length;
+  const total = all.length;
+  const blockEl = checkbox.closest('.checklist-block');
+  const text = blockEl.querySelector('.progress-text');
+  const circle = blockEl.querySelector('.progress-circle');
+  text.textContent = `${checked}/${total}`;
+  const pct = (checked / total) * 360;
+  circle.style.background = `conic-gradient(var(--accent) ${pct}deg, var(--bg-alt) ${pct}deg)`;
+  // salva
+  localStorage.setItem('checklist_' + checkbox.parentElement.querySelector('.check-title').textContent, checkbox.checked);
+}
+
+// restaura checklists
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.check-item').forEach(item => {
+    const cb = item.querySelector('input');
+    const title = item.querySelector('.check-title')?.textContent;
+    if (cb && title) {
+      const saved = localStorage.getItem('checklist_' + title);
+      if (saved === 'true') {
+        cb.checked = true;
+        updateProgress(cb);
+      }
+    }
+  });
+});
+
+// =========== INTAKE FORM ===========
+function getFormData() {
+  const form = document.getElementById('intake-form');
+  if (!form) return {};
+  const data = {};
+  for (const el of form.querySelectorAll('input, textarea, select')) {
+    if (!el.name) continue;
+    setNested(data, el.name, el.value);
+  }
+  return data;
+}
+
+function setNested(obj, path, value) {
+  const keys = path.split('.');
+  let cur = obj;
+  for (let i = 0; i < keys.length - 1; i++) {
+    if (!cur[keys[i]]) cur[keys[i]] = {};
+    cur = cur[keys[i]];
+  }
+  cur[keys[keys.length - 1]] = value;
+}
+
+function setFormData(data) {
+  const form = document.getElementById('intake-form');
+  if (!form || !data) return;
+  for (const el of form.querySelectorAll('input, textarea, select')) {
+    if (!el.name) continue;
+    const v = getNested(data, el.name);
+    if (v !== undefined) el.value = v;
+  }
+  updateProgress2();
+}
+
+function getNested(obj, path) {
+  return path.split('.').reduce((o, k) => o?.[k], obj);
+}
+
+let saveTimer;
+function autosave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(getFormData()));
+  }, 500);
+}
+
+function loadFromStorage() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return showToast('Nada salvo · comece a preencher');
+  try {
+    setFormData(JSON.parse(raw));
+    showToast('Progresso recuperado');
+  } catch (e) { showToast('Erro ao recuperar'); }
+}
+
+function clearStorage() {
+  if (!confirm('Apagar todos os dados?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('intake-form').reset();
+  updateProgress2();
+  showToast('Formulário limpo');
+}
+
+function updateProgress2() {
+  const form = document.getElementById('intake-form');
+  if (!form) return;
+  const all = form.querySelectorAll('input:not([type="color"]), textarea, select');
+  const filled = Array.from(all).filter(el => el.value && el.value.trim() !== '').length;
+  const pct = Math.round((filled / all.length) * 100);
+  const fill = document.getElementById('progress-fill');
+  const text = document.getElementById('progress-text');
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = `${pct}% preenchido (${filled}/${all.length})`;
+  // por bloco
+  document.querySelectorAll('.intake-block').forEach(block => {
+    const inputs = block.querySelectorAll('input:not([type="color"]), textarea, select');
+    const f = Array.from(inputs).filter(el => el.value && el.value.trim() !== '').length;
+    const status = block.querySelector('.block-status');
+    if (status) {
+      status.textContent = `${f}/${inputs.length}`;
+      if (f === inputs.length) status.classList.add('complete');
+      else status.classList.remove('complete');
+    }
+  });
+}
+
+function objToYaml(obj, indent = 0) {
+  let out = '';
+  const pad = ' '.repeat(indent);
+  for (const [k, v] of Object.entries(obj)) {
+    if (v === '' || v === null || v === undefined) continue;
+    if (typeof v === 'object' && !Array.isArray(v)) {
+      const has = Object.values(v).some(x => x !== '' && x !== null);
+      if (!has) continue;
+      out += `${pad}${k}:\n`;
+      out += objToYaml(v, indent + 2);
+    } else {
+      let val = String(v);
+      const needsQuotes = /[:#@\n"']|^\s|\s$|^[\d-]/.test(val) || val === '';
+      if (val.includes('\n')) {
+        out += `${pad}${k}: |\n`;
+        val.split('\n').forEach(l => out += `${pad}  ${l}\n`);
+      } else {
+        out += `${pad}${k}: ${needsQuotes ? `"${val.replace(/"/g, '\\"')}"` : val}\n`;
+      }
+    }
+  }
+  return out;
+}
+
+function generateIntake() {
+  const data = getFormData();
+  const yaml = `# ════════════════════════════════════════════════════════════════
+# CADASTRO LPSG · gerado em ${new Date().toLocaleString('pt-BR')}
+# ════════════════════════════════════════════════════════════════
+
+${objToYaml(data)}
+# ════════════════════════════════════════════════════════════════
+# FIM
+# ════════════════════════════════════════════════════════════════
+`;
+  document.getElementById('yaml-output').textContent = yaml;
+  document.getElementById('yaml-modal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('yaml-modal').classList.remove('open');
+}
+
+function copyYaml() {
+  const text = document.getElementById('yaml-output').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById('copy-label').textContent = 'Copiado ✓';
+    setTimeout(() => { document.getElementById('copy-label').textContent = 'Copiar YAML'; }, 2000);
+    showToast('Cadastro copiado · cola no Claude');
+  });
+}
+
+function downloadYaml() {
+  const text = document.getElementById('yaml-output').textContent;
+  const blob = new Blob([text], {type: 'text/yaml'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cadastro-lpsg-${new Date().toISOString().slice(0,10)}.yaml`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Arquivo baixado');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+// =========== TABS (recursos) ===========
+function showTab(btn, name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+
+// =========== COLOR INPUTS ===========
+document.querySelectorAll('input[type="color"]').forEach(picker => {
+  const textName = picker.name.replace('_color', '');
+  const text = document.querySelector(`input[name="${textName}"]`);
+  if (text) {
+    picker.addEventListener('input', () => { text.value = picker.value; autosave(); });
+    text.addEventListener('input', () => {
+      if (/^#[0-9A-F]{6}$/i.test(text.value)) picker.value = text.value;
+    });
+  }
+});
+
+// =========== INIT ===========
+window.addEventListener('DOMContentLoaded', () => {
+  // restaura intake se houver
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    try { setFormData(JSON.parse(saved)); } catch (e) {}
+  }
+  updateProgress2();
+});
+
+// ESC fecha modal
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Hash navigation (deep link)
+function checkHash() {
+  const h = location.hash.replace('#', '');
+  if (['home','setup','intake','execucao','recursos'].includes(h)) goto(h);
+}
+window.addEventListener('hashchange', checkHash);
+checkHash();
+
+const TUTORIALS = {"dominio": {"title": "Comprar domínio próprio", "subtitle": "Registro.br ou Cloudflare Registrar · ~R$ 40/ano", "time": "15 min", "steps": [["Escolher um nome", "Pense num nome curto · profissional · que combine com seu posicionamento. Sugestão: <code>seunome.com.br</code> ou <code>seuevento.com.br</code>. Evite hífens e números."], ["Acessar o registrador", "Vai em <a href='https://registro.br' target='_blank'>registro.br</a> (BR) ou <a href='https://cloudflare.com/registrar' target='_blank'>cloudflare.com/registrar</a> (internacional · sem markup)."], ["Verificar disponibilidade", "Digita o nome desejado. Se aparecer 'disponível' · pode comprar. Se 'indisponível' · tenta variações."], ["Concluir o pagamento", "Cartão de crédito ou boleto. Anuidade ~R$ 40 (registro.br) ou ~U$ 9 (Cloudflare)."], ["Anotar credenciais", "Guarda login + senha do painel do registrador. Vai precisar pra mudar nameservers no próximo passo."]], "validate": "Se o domínio aparece no painel do registrador como 'ativo', tá pronto.", "link": "https://registro.br"}, "google": {"title": "Criar conta Google", "subtitle": "Necessário pra Sheets · Calendar · Drive · Service Account", "time": "5 min", "steps": [["Decidir: Gmail ou Workspace?", "Se já tem Gmail, pode usar. Pra ficar mais profissional, assina <a href='https://workspace.google.com' target='_blank'>Google Workspace</a> (~R$ 35/mês) e ganha email <code>seu@dominio.com.br</code>."], ["Se Workspace · vincular ao domínio", "Wizard pede pra adicionar registro TXT no DNS pra confirmar que o domínio é seu. Cola o registro no Cloudflare (próximo tutorial cobre isso)."], ["Ativar 2FA", "Imprescindível. Settings → Security → 2-Step Verification. Ativa por SMS ou autenticador (Authy/1Password)."], ["Confirmar acesso aos serviços", "Faz login em <code>sheets.google.com</code>, <code>drive.google.com</code>, <code>calendar.google.com</code>. Tem que abrir tudo sem pedir mais setup."]], "validate": "Login funciona em sheets.google.com sem erros · 2FA ativo.", "link": "https://workspace.google.com"}, "cloudflare": {"title": "Configurar Cloudflare DNS", "subtitle": "DNS gratuito + proxy + cache", "time": "15 min + propagação até 24h", "steps": [["Criar conta no Cloudflare", "Vai em <a href='https://cloudflare.com' target='_blank'>cloudflare.com</a> · Sign Up · email + senha forte."], ["Adicionar seu site", "Dashboard → Add a Site → digita <code>seunome.com.br</code> (sem 'www'). Plano Free é suficiente."], ["Cloudflare escaneia DNS atual", "Aguarda 30-60s. Se já tinha registros (no registrador), eles aparecem. Confirma e clica Continue."], ["Anotar os 2 nameservers", "Cloudflare mostra algo tipo <code>ada.ns.cloudflare.com</code> e <code>bob.ns.cloudflare.com</code>. Copia os 2."], ["Trocar nameservers no registrador", "Volta no registro.br (ou onde comprou) → painel do domínio → 'Servidores DNS' → cola os 2 nameservers do Cloudflare."], ["Aguardar propagação", "Pode demorar de 5 min até 24h. O Cloudflare manda email quando ativa."], ["Validar", "Em <a href='https://www.whatsmydns.net' target='_blank'>whatsmydns.net</a> verifica se seu domínio aponta pros NS do Cloudflare globalmente."]], "validate": "Cloudflare mostra status 'Active' · email de confirmação chegou.", "link": "https://cloudflare.com"}, "meta-bm": {"title": "Criar Meta Business Manager", "subtitle": "Roda anúncios · gerencia pixel · WABA", "time": "30 min + verificação até 7 dias úteis", "steps": [["Acessar Meta Business", "Vai em <a href='https://business.facebook.com' target='_blank'>business.facebook.com</a>. Faz login com sua conta pessoal do Facebook (precisa ter)."], ["Criar Business", "Clica em <strong>Create Account</strong> ou <strong>Criar conta</strong>. Preenche: nome do negócio, seu nome, email business."], ["Adicionar Página do Facebook", "Settings → Pages → Add → Create New Page. Cria uma página oficial do seu negócio (mesmo que ainda não publique nada)."], ["Adicionar CNPJ ou MEI", "Settings → Business Info → adiciona o CNPJ. Se não tem, abre MEI (gratuito · 5 min em <a href='https://gov.br/empresas' target='_blank'>gov.br/empresas</a>)."], ["Verificar negócio", "Settings → Security Center → Verify Business. Sobe documento (CNPJ Card ou comprovante de endereço da empresa). Análise: 1-7 dias úteis."], ["Anotar Business ID", "Visível em <strong>Settings → Business Info</strong>. Formato: 15 dígitos. Vai precisar no intake."]], "validate": "Status do business 'Verificado' (badge azul) OU pelo menos 'Pending Review'.", "link": "https://business.facebook.com"}, "meta-ad": {"title": "Criar Ad Account (conta de anúncios)", "subtitle": "Onde rodam as campanhas Meta Ads", "time": "15 min", "steps": [["Acessar configurações de Ad Accounts", "Business Manager → Settings (engrenagem) → Accounts → Ad Accounts → <strong>Add</strong> → <strong>Create new ad account</strong>."], ["Preencher dados", "Nome (algo tipo 'LPSG · {seu nome}') · Time zone: <code>America/Sao_Paulo</code> · Currency: BRL · Payment method: depois."], ["Adicionar método de pagamento", "Vai em Billing → Payment Settings → Add payment method. Cartão BR aceito (crédito ou débito). Não cobra nada agora."], ["Atribuir pessoa(s)", "Settings → Ad Accounts → <strong>seu Ad Account</strong> → Add People → adiciona seu próprio user com role <strong>Admin</strong>."], ["Anotar Ad Account ID", "Aparece no topo do painel do Ad Account. Formato: <code>act_1234567890</code> (12 dígitos · prefixo <code>act_</code>)."]], "validate": "Ad Account aparece no menu superior do Ads Manager · método de pagamento ok.", "link": "https://business.facebook.com/adsmanager/manage"}, "meta-pixel": {"title": "Criar Pixel Meta", "subtitle": "Rastrear conversões da página", "time": "5 min", "steps": [["Acessar Events Manager", "Business Manager → All Tools → <a href='https://business.facebook.com/events_manager' target='_blank'>Events Manager</a>."], ["Criar novo Pixel", "Connect Data Sources → <strong>Web</strong> → <strong>Meta Pixel</strong> → Connect."], ["Nomear o Pixel", "Algo descritivo tipo 'LPSG · Pixel principal'. Você pode ter quantos quiser, mas 1 só basta."], ["Adicionar URL do site", "Coloca seu domínio raiz (ex: <code>seunome.com.br</code>). Meta tenta detectar a tecnologia automaticamente."], ["Pular instalação manual", "Você vai instalar via Vercel/Next.js depois. Só clica <strong>Continue</strong> ou <strong>Skip</strong> nas próximas telas."], ["Anotar Pixel ID", "Aparece em destaque no topo do Events Manager. Formato: 15-16 dígitos numéricos."]], "validate": "Pixel aparece em Events Manager com status 'Active' (mesmo que sem eventos chegando ainda).", "link": "https://business.facebook.com/events_manager"}, "meta-token": {"title": "Gerar System User Token (CAPI · long-lived)", "subtitle": "Conversions API · tracking server-side", "time": "15 min", "steps": [["Acessar System Users", "Business Manager → Settings → <strong>Users</strong> → <strong>System Users</strong> (não confunda com 'People')."], ["Criar novo System User", "Add → Nome: 'LPSG-API-User' · Role: <strong>Admin</strong>. Confirma."], ["Atribuir ativos ao System User", "Em System Users → seu user → <strong>Add Assets</strong> → adiciona: Ad Account · Pixel · Página."], ["Gerar token", "Botão <strong>Generate New Token</strong>. Selecionar a App: pode usar uma genérica ou criar uma em <a href='https://developers.facebook.com' target='_blank'>developers.facebook.com</a>."], ["Selecionar permissões", "Marca: <code>ads_read</code> · <code>ads_management</code> · <code>business_management</code> · <code>pages_read_engagement</code>. Define expiração: <strong>Never</strong> (long-lived)."], ["Copiar e guardar com cuidado", "O token aparece UMA VEZ. Copia agora · cola num gerenciador de senhas (1Password · Bitwarden). Se perder, gera outro."]], "validate": "Token salvo no gerenciador de senhas. Formato começa com <code>EAAB...</code> e tem ~200 caracteres.", "tip": "⚠️ NUNCA commita esse token em repositório público. Use sempre como variável de ambiente.", "link": "https://business.facebook.com/settings/system-users"}, "waba": {"title": "Configurar WABA · WhatsApp Business API", "subtitle": "Mensageria automatizada do evento", "time": "1-2h", "steps": [["Decidir: número novo ou migração?", "<strong>Recomendado: número NOVO dedicado.</strong> Migrar pessoal dá problema em 80% dos casos. Compra um chip novo (Vivo · TIM · ~R$ 30/mês)."], ["Acessar WhatsApp Manager", "Vai em <a href='https://business.facebook.com/wa/manage' target='_blank'>business.facebook.com/wa/manage</a>."], ["Criar WhatsApp Business Account (WABA)", "Add account → conecta ao seu Business Manager existente."], ["Adicionar número de telefone", "Add Phone Number → escolhe o número novo. Meta envia código SMS pra confirmar posse."], ["Verificar empresa (display name)", "Settings → Profile → preenche nome do negócio que vai aparecer no WhatsApp dos clientes. Aprovação: 1-3 dias úteis."], ["Anotar IDs essenciais", "Anota: <strong>Phone Number ID</strong> · <strong>WhatsApp Business Account ID</strong>. Visíveis em Settings → API Setup."]], "validate": "Número aparece como 'Connected' · display name aprovado · pode enviar mensagem de teste.", "tip": "⚠️ Não use seu WhatsApp pessoal. WABA exige número dedicado, sem histórico recente de uso pessoal.", "link": "https://business.facebook.com/wa/manage"}, "hotmart-pro": {"title": "Criar conta Hotmart Pro", "subtitle": "Processar venda · API · webhooks", "time": "30 min + aprovação 1-3 dias", "steps": [["Criar conta Hotmart", "Vai em <a href='https://hotmart.com' target='_blank'>hotmart.com</a> → Sign Up. Cadastro com email · CPF · CNPJ (se tiver)."], ["Verificar email", "Confirma o link enviado pro seu email."], ["Subir para Hotmart Pro", "Settings → Plan → Subir pra Pro. <strong>R$ 0/mês de mensalidade</strong> · só taxa por venda. <strong>É necessário pra usar API.</strong>"], ["Cadastrar dados bancários", "Settings → Banking → adiciona conta corrente PJ (preferencial) ou PF. Hotmart usa pra repassar suas vendas."], ["Aprovar verificação de identidade", "Sobe foto do RG/CNH frente e verso · selfie segurando documento · comprovante de endereço. Análise: 1-3 dias úteis."], ["Habilitar 2FA", "Settings → Security → ativa autenticação em 2 etapas. Crítico pra proteger acesso aos seus produtos."]], "validate": "Conta Hotmart Pro · status 'Verificado' · pode acessar Tools/API.", "link": "https://hotmart.com"}, "hotmart-ingresso": {"title": "Cadastrar produto · Ingresso", "subtitle": "Ticket baixo · entrada do funil", "time": "20 min", "steps": [["Acessar criação de produto", "Hotmart Pro → Products → <strong>Create Product</strong>."], ["Escolher tipo: Online Course", "Seleciona <strong>Online Course</strong> (mais flexível e aceita Hotmart Club embutido)."], ["Preencher informações", "Nome: ex. 'Desafio LPSG · Ingresso' · Categoria: Marketing · Idioma: Português."], ["Definir preço", "Preço: <strong>R$ 47-97</strong> (típico LPSG é R$ 62). Currency: BRL. Habilita parcelamento (até 3x sem juros)."], ["Garantia", "Definir <strong>7 dias incondicional</strong>. LPSG exige garantia clara · não negocie."], ["Co-produção: desabilitar", "Pula essa parte. Você é dono único."], ["Página de venda", "Aponta pra <code>https://lp.seudominio.com.br/v1</code> (ou similar · você criou no Vercel)."], ["Anotar Product ID + Offer Key", "Após salvar, vai em Tools → API. Copia <strong>Product ID</strong> e <strong>Offer Key</strong>. Vai precisar."]], "validate": "Produto aparece em 'Meus Produtos' · status 'Ativo' · checkout funciona se acessar a URL.", "link": "https://app-vlc.hotmart.com/products"}, "hotmart-premium": {"title": "Cadastrar produto · Premium", "subtitle": "Ticket alto · vendido no pitch + carrinho", "time": "20 min", "steps": [["Repetir fluxo do produto Ingresso", "Mesmos 8 passos do tutorial anterior · só muda o conteúdo."], ["Diferenças no Premium", "Nome: ex. 'Acelerador Turbo' · Preço: <strong>R$ 5.000-50.000</strong> (típico LPSG: R$ 25.000) · Parcelamento: até 12x · Garantia: 7 dias incondicional."], ["Página de venda condicional", "URL pode ser <code>https://lp.seudominio.com.br/oferta</code>. Mas só fica acessível durante o carrinho aberto."], ["Importante: não confunda", "Manda <strong>Product ID + Offer Key</strong> diferentes de cada produto. Os webhooks usam isso pra distinguir compra de ingresso vs compra premium."]], "validate": "2 produtos cadastrados (ingresso + premium) com IDs distintos · ambos ativos.", "link": "https://app-vlc.hotmart.com/products"}, "hotmart-webhook": {"title": "Configurar Webhook Hotmart", "subtitle": "Notifica n8n quando alguém compra", "time": "10 min", "steps": [["Acessar painel de webhooks", "Hotmart Pro → Tools → API → <strong>Webhook</strong>."], ["Adicionar nova URL", "Add URL · cola o endpoint do n8n: <code>https://n8n.{seudominio}/webhook/hotmart-compra</code>. Você cria esse endpoint depois quando subir n8n · pode deixar uma URL placeholder por enquanto."], ["Selecionar eventos", "Marca: <strong>PURCHASE_APPROVED</strong> · <strong>PURCHASE_CANCELED</strong> · <strong>PURCHASE_REFUNDED</strong>. São os 3 que importam."], ["Anotar HOTTOK", "Hotmart gera um <strong>HOTTOK</strong> (token de validação). Copia · guarda no gerenciador de senhas."], ["Salvar", "Confirma e salva. Status fica 'Pendente' até receber o primeiro evento real."], ["Testar quando n8n estiver pronto", "Faz uma compra de teste de R$ 1 (cupom 99% off no produto) · verifica se chegou no n8n."]], "validate": "URL salva · HOTTOK guardado · 3 eventos selecionados.", "link": "https://app-vlc.hotmart.com/tools/api"}, "vercel": {"title": "Criar conta Vercel · conectar domínio", "subtitle": "Hospedar páginas e dashboard", "time": "20 min", "steps": [["Criar conta", "<a href='https://vercel.com' target='_blank'>vercel.com</a> → Sign Up. Recomendado: login com <strong>GitHub</strong> (facilita deploy depois)."], ["Plano Free é suficiente", "Pra começar. Se passar de 100 GB de bandwidth/mês, sobe pro Pro (~U$ 20/mês)."], ["Conectar domínio Cloudflare", "Settings → Domains → Add → digita seu domínio · Vercel mostra os registros DNS pra você adicionar."], ["Criar registros no Cloudflare", "Volta no Cloudflare → DNS → Records → adiciona os registros A/CNAME que Vercel pediu. Importante: <strong>desativa o proxy</strong> (deixa cinza · não laranja) pra Vercel funcionar."], ["Aguardar verificação", "Vercel revalida em 1-5 min · status muda pra 'Valid Configuration'. SSL é automático (Let's Encrypt)."], ["Anotar team_id (opcional)", "Settings → General → mostra Team ID. Usado depois quando integrar com CI/CD."]], "validate": "Domínio aparece como 'Valid' no Vercel · SSL ativo (cadeado verde no browser).", "tip": "Se o proxy Cloudflare estiver laranja, Vercel diz 'Invalid Configuration'. Vira cinza (DNS only).", "link": "https://vercel.com"}, "n8n": {"title": "Subir n8n", "subtitle": "Executa os 14 workflows de automação", "time": "5-60 min (varia por opção)", "steps": [["Decidir: cloud ou self-hosted?", "<strong>n8n Cloud (recomendado pra começar):</strong> R$ 100/mês · pronto em 5 min · zero configuração de servidor.<br><strong>Self-hosted:</strong> R$ 30/mês num VPS Hetzner · mais barato em escala · requer Docker básico."], ["Opção A · n8n Cloud", "<a href='https://n8n.cloud' target='_blank'>n8n.cloud</a> → Sign Up → escolhe plano <strong>Starter</strong>. Em 5 min você tem URL <code>seu-projeto.n8n.cloud</code>."], ["Opção B · self-hosted (Docker)", "Sobe VPS na Hetzner ou Hostinger (~R$ 30/mês). SSH no servidor · roda <code>docker run -it --rm -p 5678:5678 n8nio/n8n</code>. Tutorial completo: <a href='https://docs.n8n.io/hosting' target='_blank'>docs.n8n.io/hosting</a>."], ["Configurar SSL/HTTPS", "Cloud: já vem. Self-hosted: usa Caddy ou nginx + Let's Encrypt na frente."], ["Criar primeiro usuário", "Faz login · cria conta admin · ativa 2FA."], ["Anotar credenciais", "Anota: <strong>base URL</strong> (<code>https://n8n.{...}</code>) · <strong>API Key</strong> (Settings → API)."]], "validate": "Login no n8n funciona · pode criar workflow vazio sem erro.", "link": "https://n8n.io"}, "manychat": {"title": "Criar ManyChat Pro · conectar WABA", "subtitle": "Disparar mensagens · gerenciar tags", "time": "30 min", "steps": [["Criar conta ManyChat", "<a href='https://manychat.com' target='_blank'>manychat.com</a> → Sign Up. Pode usar conta Facebook pra acelerar."], ["Subir pra Plano Pro", "<strong>Necessário pra WhatsApp.</strong> Pricing → Pro · ~U$ 15/mês. O Free não tem WhatsApp."], ["Conectar WABA", "Channels → WhatsApp → Connect. Precisa do <strong>Phone Number ID</strong> do WABA (do tutorial 'Configurar WABA')."], ["Importar templates aprovados", "Settings → WhatsApp → Templates. Os templates que você submeteu na Meta aparecem aqui automaticamente após aprovação."], ["Criar tags iniciais", "Audience → Tags → adiciona: <code>inscrito-ingresso</code> · <code>presente-aula-1</code> a <code>aula-6</code> · <code>tier-hot</code> · <code>tier-warm</code> · <code>tier-cold</code> · <code>comprou-acelerador</code>."], ["Pegar API key", "Settings → API → Generate Key. Anota · vai usar nos workflows n8n pra aplicar tags via webhook."]], "validate": "WABA conectada · pode mandar mensagem de teste pelo ManyChat · tags criadas.", "link": "https://manychat.com"}, "google-sa": {"title": "Service Account Google · JSON", "subtitle": "Auth pra Sheets e Drive", "time": "20 min", "steps": [["Acessar Google Cloud Console", "<a href='https://console.cloud.google.com' target='_blank'>console.cloud.google.com</a> · faz login com a mesma conta Google de antes."], ["Criar projeto novo", "Topo → seletor de projeto → New Project. Nome: 'lpsg-automation' (qualquer nome serve)."], ["Habilitar APIs necessárias", "APIs & Services → Library → busca e habilita: <strong>Google Sheets API</strong> e <strong>Google Drive API</strong>."], ["Criar Service Account", "IAM & Admin → Service Accounts → Create Service Account. Nome: 'lpsg-bot'. Role: <strong>Editor</strong> (basta)."], ["Gerar chave JSON", "Service Accounts → seu SA → tab <strong>Keys</strong> → Add Key → Create new key → JSON → Download. <strong>Esse arquivo NUNCA pode ser compartilhado.</strong>"], ["Compartilhar planilhas com SA", "Pega o email do SA (formato <code>...@projeto.iam.gserviceaccount.com</code>) · em cada Sheets que vai usar, vai em Share → adiciona esse email com permissão Editor."], ["Guardar JSON em local seguro", "Path tipo <code>~/Documents/lpsg-secrets/sa.json</code>. Codifica em base64 quando subir como variável de ambiente: <code>cat sa.json | base64</code>."]], "validate": "JSON baixado · SA email anotado · 1 planilha de teste compartilhada com o SA.", "tip": "⚠️ NUNCA versiona o JSON num repo Git (mesmo privado). Use sempre via env var ou secret manager.", "link": "https://console.cloud.google.com"}, "hotmart-club": {"title": "Configurar Hotmart Club · plataforma de aulas", "subtitle": "Onde os alunos assistem o conteúdo", "time": "30 min", "steps": [["Acessar Hotmart Club", "Dentro do produto Hotmart → tab <strong>Members Area</strong> ou <strong>Hotmart Club</strong>."], ["Ativar área de membros", "Marca opção 'Use Hotmart Club'. Hotmart cria automaticamente a estrutura básica."], ["Criar módulos do produto", "Para o produto Premium: cria módulos como Module 1, Module 2... O conteúdo é estruturado conforme seu programa de 90 dias."], ["Subir aulas", "Em cada módulo → Add Lesson → upload do vídeo (suporta MP4 até 4GB). Adiciona descrição · materiais (PDFs)."], ["Configurar acesso", "Settings → Access Control → Access duration: <strong>Lifetime</strong> ou tempo definido. Recomendado: lifetime pro produto principal."], ["Personalizar layout", "Settings → Customization → cores · logo · banner. Use as cores da identidade do projeto (do intake bloco H)."], ["Testar acesso", "Compra teste do seu próprio produto (cupom 99% off) e verifica se a área de membros abre · vídeos rodam · materiais baixam."]], "validate": "Aluno teste consegue acessar área de membros · vê aulas disponíveis (mesmo que vazias).", "link": "https://app-vlc.hotmart.com/membersarea"}};
+function openTutorial(id) {
+  const t = TUTORIALS[id];
+  if (!t) return;
+  document.getElementById('tut-title').textContent = t.title;
+  document.getElementById('tut-subtitle').textContent = t.subtitle;
+  document.getElementById('tut-time').innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ' + t.time;
+  let body = '';
+  t.steps.forEach((step, i) => {
+    body += `<div class="tut-step"><div class="tut-step-num">${i+1}</div><div class="tut-step-content"><div class="tut-step-title">${step[0]}</div><div class="tut-step-body">${step[1]}</div></div></div>`;
+  });
+  if (t.tip) body += `<div class="tut-tip">${t.tip}</div>`;
+  if (t.validate) body += `<div class="tut-validate"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><div class="tut-validate-text"><strong>✅ Como saber que terminou</strong>${t.validate}</div></div>`;
+  document.getElementById('tut-body').innerHTML = body;
+  const linkEl = document.getElementById('tut-link');
+  if (t.link) { linkEl.href = t.link; linkEl.style.display = 'inline-flex'; }
+  else linkEl.style.display = 'none';
+  document.getElementById('tutorial-modal').classList.add('open');
+}
+function closeTutorial() {
+  document.getElementById('tutorial-modal').classList.remove('open');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTutorial(); });
+
+
+function copyCommand() {
+  const text = document.getElementById('cmd-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById('cmd-copy-label').textContent = 'Copiado ✓';
+    setTimeout(() => { document.getElementById('cmd-copy-label').textContent = 'Copiar comando'; }, 2000);
+    showToast('Comando copiado · cole no Claude');
+  });
+}
+
+</script>
+</body>
+</html>

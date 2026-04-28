@@ -1,0 +1,83 @@
+# ═══════════════════════════════════════════════════════════════
+# DADOS SENSÍVEIS · NUNCA versionar
+# ═══════════════════════════════════════════════════════════════
+_private/
+secrets/
+*.csv
+**/*-leads.csv
+**/*-pessoal.*
+
+# Tokens · keys · credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+*-credentials.json
+**/credentials/
+
+# ═══════════════════════════════════════════════════════════════
+# Sistema operacional
+# ═══════════════════════════════════════════════════════════════
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+Thumbs.db
+desktop.ini
+
+# Word lock files
+~$*.docx
+~$*.doc
+~$*.xlsx
+
+# ═══════════════════════════════════════════════════════════════
+# IDEs e editores
+# ═══════════════════════════════════════════════════════════════
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+.claude/settings.local.json
+.claude/launch.json
+
+# ═══════════════════════════════════════════════════════════════
+# Node / Vercel / Next.js (caso adicione projeto frontend)
+# ═══════════════════════════════════════════════════════════════
+node_modules/
+.next/
+.vercel/
+dist/
+build/
+.turbo/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ═══════════════════════════════════════════════════════════════
+# Python
+# ═══════════════════════════════════════════════════════════════
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# ═══════════════════════════════════════════════════════════════
+# Artefatos temporários
+# ═══════════════════════════════════════════════════════════════
+*.tmp
+*.bak
+*.old
+.tmp/
+tmp/
+
+# Logs de execução de Claude/agentes
+.claude/.tmp/
+.claude/logs/

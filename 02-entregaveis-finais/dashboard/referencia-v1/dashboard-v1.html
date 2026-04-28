@@ -1,0 +1,2804 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard LPSG — Template Turbo Academy</title>
+<script defer src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js" onload="window._xlsxReady=true;" onerror="window._xlsxReady=false;"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;900&display=swap');
+
+:root {
+  --s1: 0.25rem; --s2: 0.5rem; --s3: 0.75rem; --s4: 1rem;
+  --s5: 1.25rem; --s6: 1.5rem; --s8: 2rem; --s10: 2.5rem;
+  --s12: 3rem; --s16: 4rem;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, sans-serif;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+  --text-lg: 1.125rem; --text-xl: 1.25rem; --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem; --text-4xl: 2.25rem;
+  --weight-regular: 400; --weight-medium: 500;
+  --weight-semibold: 600; --weight-bold: 700; --weight-black: 900;
+  --radius-sm: 4px; --radius-md: 6px; --radius-lg: 10px; --radius-xl: 12px;
+  --brand:        oklch(70% 0.20 38);
+  --brand-hover:  oklch(74% 0.20 40);
+  --brand-dim:    oklch(70% 0.20 38 / 0.15);
+  --accent:       oklch(70% 0.18 285);
+  --accent-dim:   oklch(70% 0.18 285 / 0.15);
+  --success: oklch(72% 0.18 150);
+  --success-dim: oklch(72% 0.18 150 / 0.15);
+  --warning: oklch(80% 0.18 75);
+  --warning-dim: oklch(80% 0.18 75 / 0.15);
+  --danger:  oklch(65% 0.24 22);
+  --danger-dim: oklch(65% 0.24 22 / 0.15);
+  --bg:          oklch(7% 0.008 270);
+  --bg-elevated: oklch(12% 0.010 270);
+  --bg-card:     oklch(15% 0.012 270);
+  --bg-hover:    oklch(18% 0.012 270);
+  --fg:       oklch(97% 0.005 270);
+  --fg-muted: oklch(72% 0.014 270);
+  --fg-sub:   oklch(46% 0.016 270);
+  --border:       oklch(22% 0.012 270 / 0.8);
+  --border-brand: oklch(70% 0.20 38 / 0.3);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.4);
+  --shadow-brand: 0 0 24px -4px oklch(70% 0.20 38 / 0.4);
+}
+[data-theme="light"] {
+  --brand: oklch(58% 0.22 38); --brand-hover: oklch(52% 0.22 38);
+  --brand-dim: oklch(58% 0.22 38 / 0.12);
+  --accent: oklch(52% 0.20 285); --accent-dim: oklch(52% 0.20 285 / 0.12);
+  --success: oklch(48% 0.18 150); --success-dim: oklch(48% 0.18 150 / 0.10);
+  --warning: oklch(52% 0.18 75); --warning-dim: oklch(52% 0.18 75 / 0.10);
+  --danger: oklch(50% 0.22 22); --danger-dim: oklch(50% 0.22 22 / 0.10);
+  --bg: oklch(98% 0.003 270); --bg-elevated: oklch(96% 0.004 270);
+  --bg-card: oklch(100% 0 0); --bg-hover: oklch(94% 0.005 270);
+  --fg: oklch(14% 0.010 270); --fg-muted: oklch(38% 0.014 270);
+  --fg-sub: oklch(58% 0.012 270);
+  --border: oklch(84% 0.010 270 / 0.9); --border-brand: oklch(58% 0.22 38 / 0.3);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.10);
+}
+body, .topbar, .card, .kpi-card, .kanban-col, .kanban-card,
+.fase-card, .filter-select, .tab-btn, .launch-header, .timeline-dot {
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--fg);
+  line-height: 1.5; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+input, select, textarea { font: inherit; color: inherit; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--bg-elevated); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s3) var(--s6); height: 56px;
+}
+.topbar-brand {
+  font-family: var(--font-display); font-weight: var(--weight-bold);
+  font-size: var(--text-base); letter-spacing: -0.01em; color: var(--fg);
+  display: flex; align-items: center; gap: var(--s2); flex-shrink: 0;
+}
+.topbar-brand .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 0 8px var(--brand);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--brand); }
+  50% { opacity: 0.6; box-shadow: 0 0 16px var(--brand); }
+}
+.topbar-meta { display: flex; align-items: center; gap: var(--s4); flex: 1; font-size: var(--text-sm); color: var(--fg-muted); }
+.topbar-badge {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  padding: var(--s1) var(--s3); border-radius: var(--radius-md);
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.badge-green  { background: var(--success-dim); color: var(--success); }
+.badge-orange { background: var(--brand-dim);   color: var(--brand); }
+.badge-yellow { background: var(--warning-dim); color: var(--warning); }
+.badge-red    { background: var(--danger-dim);  color: var(--danger); }
+.badge-purple { background: var(--accent-dim);  color: var(--accent); }
+.tabs-nav { display: flex; gap: var(--s1); margin-left: auto; }
+.tab-btn {
+  padding: var(--s2) var(--s4); border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: var(--weight-medium);
+  color: var(--fg-muted); transition: all 160ms ease; white-space: nowrap;
+}
+.tab-btn:hover { background: var(--bg-hover); color: var(--fg); }
+.tab-btn.active { background: var(--brand-dim); color: var(--brand); font-weight: var(--weight-semibold); }
+.topbar-action-btn {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  padding: var(--s2) var(--s3); border-radius: var(--radius-md);
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--fg-muted); transition: all 160ms ease; white-space: nowrap; flex-shrink: 0;
+}
+.topbar-action-btn:hover { border-color: var(--brand); color: var(--brand); background: var(--brand-dim); }
+.topbar-icon-btn {
+  width: 34px; height: 34px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--fg-muted); flex-shrink: 0;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+.topbar-icon-btn:hover { border-color: var(--brand); color: var(--brand); }
+.data-menu-item {
+  display: flex; align-items: flex-start; gap: var(--s3);
+  padding: var(--s3) var(--s3); border-radius: var(--radius-md);
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  background: transparent; border: 0; color: var(--fg-muted);
+  text-align: left; cursor: pointer; transition: background 140ms ease;
+  width: 100%;
+}
+.data-menu-item:hover { background: var(--brand-dim); color: var(--brand); }
+.data-menu-item svg { flex-shrink: 0; margin-top: 2px; }
+.data-menu-item .dm-title { font-weight: var(--weight-semibold); font-size: var(--text-xs); color: var(--fg); line-height: 1.3; }
+.data-menu-item:hover .dm-title { color: var(--brand); }
+.data-menu-item .dm-sub { font-weight: var(--weight-regular); font-size: 10.5px; color: var(--fg-sub); margin-top: 2px; line-height: 1.3; }
+.drop-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: oklch(7% 0.008 270 / 0.85); border: 3px dashed var(--brand);
+  align-items: center; justify-content: center; flex-direction: column;
+  gap: var(--s4); font-family: var(--font-display);
+  font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--brand);
+}
+.drop-overlay.active { display: flex; }
+.toast-wrap {
+  position: fixed; bottom: var(--s6); right: var(--s6); z-index: 10000;
+  display: flex; flex-direction: column; gap: var(--s3); pointer-events: none;
+}
+.toast {
+  padding: var(--s3) var(--s5); border-radius: var(--radius-lg);
+  font-size: var(--text-sm); font-weight: var(--weight-medium);
+  box-shadow: var(--shadow-md); animation: toast-in 240ms ease forwards; pointer-events: auto;
+}
+.toast-success { background: var(--success-dim); border: 1px solid var(--success); color: var(--success); }
+.toast-error   { background: var(--danger-dim);  border: 1px solid var(--danger);  color: var(--danger); }
+.toast-info    { background: var(--accent-dim);  border: 1px solid var(--accent);  color: var(--accent); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.main-content { max-width: 1400px; margin: 0 auto; padding: var(--s8) var(--s6); }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: var(--s6);
+}
+.card-title {
+  font-family: var(--font-display); font-size: var(--text-sm);
+  font-weight: var(--weight-semibold); color: var(--fg-muted);
+  letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--s4);
+}
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s4); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s4); }
+.section-header { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s6); }
+.section-title {
+  font-family: var(--font-display); font-size: var(--text-xl);
+  font-weight: var(--weight-bold); letter-spacing: -0.02em; color: var(--fg);
+}
+.section-sub { font-size: var(--text-sm); color: var(--fg-muted); margin-left: auto; }
+.divider { height: 1px; background: var(--border); margin: var(--s8) 0; }
+.kpi-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: var(--s5) var(--s6);
+  position: relative; overflow: hidden; transition: border-color 160ms ease, transform 160ms ease;
+}
+.kpi-card:hover { border-color: var(--border-brand); transform: translateY(-1px); }
+.kpi-label {
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  color: var(--fg-sub); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--s2);
+}
+.kpi-value {
+  font-family: var(--font-display); font-size: var(--text-3xl);
+  font-weight: var(--weight-black); letter-spacing: -0.04em;
+  color: var(--fg); line-height: 1; margin-bottom: var(--s2);
+}
+.kpi-meta { font-size: var(--text-xs); color: var(--fg-muted); display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.kpi-delta {
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  padding: 2px var(--s2); border-radius: var(--radius-sm);
+}
+.delta-up      { background: var(--success-dim); color: var(--success); }
+.delta-down    { background: var(--danger-dim);  color: var(--danger); }
+.delta-neutral { background: var(--warning-dim); color: var(--warning); }
+.semaforo {
+  display: inline-flex; align-items: center; gap: var(--s2);
+  padding: var(--s2) var(--s3); border-radius: var(--radius-md);
+  font-size: var(--text-xs); font-weight: var(--weight-semibold); letter-spacing: 0.04em;
+}
+.semaforo-dot { width: 7px; height: 7px; border-radius: 50%; }
+.semaforo.verde    { background: var(--success-dim); color: var(--success); }
+.semaforo.verde    .semaforo-dot { background: var(--success); box-shadow: 0 0 6px var(--success); }
+.semaforo.amarelo  { background: var(--warning-dim); color: var(--warning); }
+.semaforo.amarelo  .semaforo-dot { background: var(--warning); box-shadow: 0 0 6px var(--warning); }
+.semaforo.vermelho { background: var(--danger-dim);  color: var(--danger); }
+.semaforo.vermelho .semaforo-dot { background: var(--danger); box-shadow: 0 0 6px var(--danger); }
+.progress-bar-wrap { height: 6px; background: var(--bg-hover); border-radius: var(--radius-sm); overflow: hidden; margin-top: var(--s2); }
+.progress-bar-fill { height: 100%; border-radius: var(--radius-sm); transition: width 800ms cubic-bezier(0.16,1,0.3,1); }
+/* Launch header */
+.launch-header {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: var(--s5) var(--s8);
+  margin-bottom: var(--s8); position: relative; overflow: hidden;
+}
+.launch-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 100%);
+}
+.lh-top { display: flex; align-items: center; gap: var(--s6); flex-wrap: wrap; }
+.launch-title {
+  font-family: var(--font-display); font-size: var(--text-2xl);
+  font-weight: var(--weight-black); letter-spacing: -0.04em; color: var(--fg);
+}
+.launch-sub { font-size: var(--text-sm); color: var(--fg-muted); }
+.lh-selectors { display: flex; align-items: center; gap: var(--s3); margin-left: auto; flex-wrap: wrap; }
+.lh-select {
+  padding: var(--s2) var(--s3); border-radius: var(--radius-md);
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  color: var(--fg); font-size: var(--text-sm); cursor: pointer;
+  font-family: var(--font-sans);
+}
+.lh-select:focus { outline: none; border-color: var(--brand); }
+.lh-compare-toggle {
+  display: flex; align-items: center; gap: var(--s2);
+  padding: var(--s2) var(--s3); border-radius: var(--radius-md);
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  color: var(--fg-muted); cursor: pointer; transition: all 160ms ease;
+}
+.lh-compare-toggle.active { background: var(--brand-dim); border-color: var(--border-brand); color: var(--brand); }
+.lh-compare-toggle svg { flex-shrink: 0; }
+.lh-stats-row { display: flex; gap: var(--s8); align-items: flex-end; margin-top: var(--s5); padding-top: var(--s5); border-top: 1px solid var(--border); flex-wrap: wrap; }
+.lh-stat { text-align: center; }
+.lh-stat-value { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-bold); letter-spacing: -0.03em; color: var(--fg); display: block; }
+.lh-stat-label { font-size: var(--text-xs); color: var(--fg-sub); text-transform: uppercase; letter-spacing: 0.06em; }
+.lh-stat-delta { font-size: var(--text-xs); font-weight: var(--weight-semibold); padding: 1px var(--s2); border-radius: var(--radius-sm); margin-top: var(--s1); display: inline-block; }
+.kpi-section { margin-bottom: var(--s8); }
+/* Funil */
+.funil-container { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4) 0; }
+.funil-step { display: flex; align-items: center; gap: var(--s4); }
+.funil-bar-wrap { flex: 1; height: 40px; background: var(--bg-hover); border-radius: var(--radius-md); overflow: hidden; }
+.funil-bar {
+  height: 100%; border-radius: var(--radius-md);
+  display: flex; align-items: center; padding-left: var(--s4);
+  font-size: var(--text-sm); font-weight: var(--weight-semibold);
+  font-family: var(--font-display); color: oklch(98% 0.005 270);
+  min-width: 60px; transition: width 1000ms cubic-bezier(0.16,1,0.3,1);
+}
+.funil-label { font-size: var(--text-sm); color: var(--fg-muted); width: 160px; flex-shrink: 0; }
+.funil-pct { font-size: var(--text-xs); color: var(--fg-sub); width: 50px; text-align: right; }
+/* Chart barras evento */
+.event-chart { padding: var(--s2) 0; }
+.chart-bar-group { display: flex; gap: var(--s3); align-items: flex-end; }
+.chart-bar-col { display: flex; flex-direction: column; align-items: center; gap: var(--s2); flex: 1; }
+.chart-bar-label { font-size: 10px; color: var(--fg-sub); text-align: center; }
+.chart-bar-val { font-size: 10px; color: var(--fg-muted); font-weight: var(--weight-semibold); }
+.chart-bar-wrap { width: 100%; display: flex; gap: var(--s1); align-items: flex-end; height: 120px; }
+.chart-bar-item { flex: 1; border-radius: var(--radius-sm) var(--radius-sm) 0 0; transition: height 600ms cubic-bezier(0.16,1,0.3,1); }
+.chart-legend { display: flex; gap: var(--s5); margin-top: var(--s4); flex-wrap: wrap; }
+.chart-legend-item { display: flex; align-items: center; gap: var(--s2); font-size: var(--text-xs); color: var(--fg-muted); }
+.chart-legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+/* Retenção */
+.retencao-row { display: flex; align-items: center; gap: var(--s3); padding: var(--s2) 0; border-bottom: 1px solid var(--border); }
+.retencao-row:last-child { border-bottom: none; }
+.retencao-label { font-size: var(--text-xs); color: var(--fg-muted); width: 70px; flex-shrink: 0; }
+.retencao-bar-wrap { flex: 1; height: 16px; background: var(--bg-hover); border-radius: var(--radius-sm); overflow: hidden; }
+.retencao-bar { height: 100%; border-radius: var(--radius-sm); transition: width 700ms cubic-bezier(0.16,1,0.3,1); }
+.retencao-val { font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg); width: 36px; text-align: right; }
+/* Tabela */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+thead th {
+  padding: var(--s3) var(--s4); text-align: left;
+  font-size: var(--text-xs); font-weight: var(--weight-semibold);
+  color: var(--fg-sub); letter-spacing: 0.06em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+}
+tbody td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--border); vertical-align: middle; }
+tbody tr:hover td { background: var(--bg-hover); }
+tbody tr:last-child td { border-bottom: none; }
+/* Modo comparacao */
+.compare-cols { display: grid; gap: var(--s4); }
+.compare-cols.n2 { grid-template-columns: 1fr 1fr; }
+.compare-cols.n3 { grid-template-columns: 1fr 1fr 1fr; }
+.compare-col-header {
+  padding: var(--s3) var(--s4); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-bottom: none;
+  font-family: var(--font-display); font-size: var(--text-sm); font-weight: var(--weight-bold);
+}
+.compare-kpi-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: var(--s4);
+}
+.compare-label { font-size: var(--text-xs); color: var(--fg-sub); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: var(--s2); }
+.compare-value { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-black); letter-spacing: -0.03em; color: var(--fg); margin-bottom: var(--s1); }
+.compare-delta { font-size: var(--text-xs); font-weight: var(--weight-semibold); padding: 1px var(--s2); border-radius: var(--radius-sm); }
+/* Checklist estrategico */
+.timeline-wrap { overflow-x: auto; padding-bottom: var(--s4); }
+.timeline-track { display: flex; gap: 0; min-width: 900px; position: relative; }
+.timeline-track::before {
+  content: ''; position: absolute; top: 28px; left: 0; right: 0;
+  height: 2px; background: var(--border);
+}
+.timeline-fase { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; padding: 0 var(--s2); }
+.timeline-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--border); background: var(--bg);
+  position: relative; z-index: 1; margin-bottom: var(--s4);
+}
+.timeline-dot.concluida    { background: var(--success); border-color: var(--success); box-shadow: 0 0 8px var(--success); }
+.timeline-dot.em_andamento { background: var(--brand); border-color: var(--brand); box-shadow: 0 0 8px var(--brand); animation: pulse 2s ease-in-out infinite; }
+.timeline-dot.pendente     { background: var(--bg-hover); border-color: var(--border); }
+.timeline-content { text-align: center; }
+.timeline-nome { font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg); margin-bottom: var(--s1); }
+.timeline-dias { font-size: var(--text-xs); color: var(--fg-sub); }
+.checklist-wrap { display: flex; flex-direction: column; gap: var(--s3); }
+.checklist-item {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 3px solid transparent; border-radius: var(--radius-xl); overflow: hidden;
+}
+.checklist-item.fase-concluida    { border-left-color: var(--success); }
+.checklist-item.fase-em_andamento { border-left-color: var(--brand); }
+.checklist-item.fase-pendente     { border-left-color: var(--border); }
+.checklist-fase-header {
+  display: flex; align-items: center; gap: var(--s4);
+  padding: var(--s4) var(--s5); cursor: pointer; user-select: none;
+}
+.checklist-fase-header:hover { background: var(--bg-hover); }
+.checklist-num {
+  font-family: var(--font-display); font-size: var(--text-xs);
+  font-weight: var(--weight-black); color: var(--fg-sub);
+  background: var(--bg-elevated); width: 24px; height: 24px;
+  border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.checklist-nome { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--weight-bold); letter-spacing: -0.01em; flex: 1; }
+.checklist-fase-count {
+  font-size: var(--text-xs); color: var(--fg-sub); white-space: nowrap;
+  padding: 2px var(--s2); background: var(--bg-elevated);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.checklist-fase-count.completa { background: var(--success-dim); color: var(--success); border-color: var(--success); }
+.checklist-fase-chevron { width: 16px; height: 16px; color: var(--fg-sub); transition: transform 200ms ease; flex-shrink: 0; }
+.checklist-item.open .checklist-fase-chevron { transform: rotate(180deg); }
+.checklist-fase-progress { padding: 0 var(--s5) var(--s3); }
+.checklist-progress-bar-wrap { height: 4px; background: var(--bg-hover); border-radius: var(--radius-sm); overflow: hidden; }
+.checklist-progress-bar-fill { height: 100%; border-radius: var(--radius-sm); transition: width 600ms cubic-bezier(0.16,1,0.3,1); }
+.checklist-subtasks { display: none; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+.checklist-item.open .checklist-subtasks { display: flex; }
+.subtask-row {
+  display: flex; align-items: center; gap: var(--s3);
+  padding: var(--s2) var(--s5) var(--s2) calc(var(--s5) + 28px);
+  border-bottom: 1px solid var(--border); cursor: pointer; transition: background 120ms ease;
+}
+.subtask-row:last-child { border-bottom: none; }
+.subtask-row:hover { background: var(--bg-hover); }
+.subtask-check {
+  width: 16px; height: 16px; flex-shrink: 0; border-radius: var(--radius-sm);
+  border: 2px solid var(--border); display: flex; align-items: center; justify-content: center;
+  transition: all 140ms ease;
+}
+.subtask-row.done .subtask-check { background: var(--success); border-color: var(--success); }
+.subtask-check-svg { display: none; }
+.subtask-row.done .subtask-check-svg { display: block; }
+.subtask-label { font-size: var(--text-sm); color: var(--fg-muted); flex: 1; line-height: 1.4; }
+.subtask-row.done .subtask-label { text-decoration: line-through; color: var(--fg-sub); }
+/* Subtask delete button */
+.subtask-delete-btn {
+  opacity: 0; width: 20px; height: 20px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm); color: var(--fg-sub);
+  transition: opacity 120ms ease, background 120ms ease, color 120ms ease;
+}
+.subtask-row:hover .subtask-delete-btn { opacity: 1; }
+.subtask-delete-btn:hover { background: var(--danger-dim); color: var(--danger); }
+/* Subtask add row */
+.subtask-add-row {
+  padding: var(--s2) var(--s5) var(--s2) calc(var(--s5) + 28px);
+  border-top: 1px dashed var(--border);
+}
+.subtask-add-input {
+  width: 100%; background: transparent; border: none; outline: none;
+  font-size: var(--text-sm); color: var(--fg-muted);
+  padding: var(--s1) 0;
+}
+.subtask-add-input::placeholder { color: var(--fg-sub); }
+.subtask-add-input:focus { color: var(--fg); }
+/* Metas grid cards — edição inline */
+.metas-fase-card { cursor: pointer; }
+.metas-fase-card:hover { border-color: var(--border-brand); }
+.metas-meta-fields { margin-top: var(--s3); display: flex; flex-direction: column; gap: var(--s2); }
+.metas-input {
+  width: 100%; background: transparent; border: none; border-bottom: 1px solid transparent;
+  outline: none; font-size: var(--text-xs); color: var(--fg-muted); padding: 2px 0;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.metas-input:hover, .metas-input:focus { border-bottom-color: var(--border); color: var(--fg); }
+.metas-input:focus { border-bottom-color: var(--brand); }
+.metas-input::placeholder { color: var(--fg-sub); }
+.metas-dates { display: flex; align-items: center; gap: var(--s2); }
+.metas-date { flex: 1; min-width: 0; }
+/* date input styling */
+.metas-date::-webkit-calendar-picker-indicator { opacity: 0.4; cursor: pointer; filter: invert(var(--_date-invert, 1)); }
+[data-theme="light"] { --_date-invert: 0; }
+/* Metas progress bar */
+.metas-progress-wrap {
+  height: 4px; background: var(--bg-hover); border-radius: var(--radius-sm); overflow: hidden;
+}
+.metas-progress-bar {
+  height: 100%; border-radius: var(--radius-sm);
+  transition: width 600ms cubic-bezier(0.16,1,0.3,1);
+}
+/* Kanban */
+.kanban-controls { display: flex; gap: var(--s2); margin-bottom: var(--s5); flex-wrap: wrap; align-items: center; }
+.filter-select {
+  padding: var(--s2) var(--s3); border-radius: var(--radius-md);
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--fg); font-size: var(--text-sm); cursor: pointer;
+}
+.filter-select:focus { outline: none; border-color: var(--brand); }
+.kanban-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s5); min-width: 720px; }
+.kanban-col {
+  background: var(--bg-elevated); border-radius: var(--radius-xl);
+  padding: var(--s4); min-height: 400px; border: 1px solid var(--border);
+}
+.kanban-col.drag-over { border-color: var(--brand); background: var(--brand-dim); }
+.kanban-col-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s4); }
+.kanban-col-name { font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.kanban-count { font-size: var(--text-xs); font-weight: var(--weight-bold); padding: 2px var(--s2); border-radius: var(--radius-sm); background: var(--bg-card); color: var(--fg-sub); }
+.kanban-cards { display: flex; flex-direction: column; gap: var(--s2); min-height: 60px; }
+.kanban-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--border);
+  border-radius: var(--radius-lg); padding: var(--s2) var(--s3); cursor: grab;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  user-select: none;
+}
+.kanban-card:hover { border-color: var(--border-brand); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.kanban-card.dragging { opacity: 0.4; cursor: grabbing; }
+.kanban-card[data-tipo="Criativo"]  { border-left-color: var(--success); }
+.kanban-card[data-tipo="Slides"]    { border-left-color: var(--accent); }
+.kanban-card[data-tipo="Copy"]      { border-left-color: var(--success); }
+.kanban-card[data-tipo="Pagina"]    { border-left-color: var(--danger); }
+.kanban-card[data-tipo="Ad"]        { border-left-color: var(--brand); }
+.kanban-card[data-tipo="Aula"]      { border-left-color: oklch(70% 0.18 230); }
+.kanban-card[data-tipo="Relatorio"] { border-left-color: var(--fg-sub); }
+.kanban-card[data-tipo="Mensageria"]{ border-left-color: oklch(72% 0.15 45); }
+.kanban-card-tipo {
+  font-size: 10px; font-weight: var(--weight-semibold); margin-bottom: var(--s1);
+  padding: 1px var(--s2); border-radius: var(--radius-sm); display: inline-block;
+}
+.kanban-card-nome { font-size: var(--text-xs); line-height: 1.4; margin-bottom: var(--s2); color: var(--fg); }
+.kanban-card-footer { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.kanban-agente { font-size: 10px; color: var(--fg-sub); background: var(--bg-elevated); padding: 1px var(--s2); border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.kanban-deadline { font-size: 10px; color: var(--fg-sub); margin-left: auto; }
+.kanban-move-btns { display: none; gap: var(--s1); margin-top: var(--s2); }
+.kanban-move-btn { font-size: 10px; padding: 2px var(--s2); border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border); color: var(--fg-muted); }
+.tipo-criativo    { background: var(--brand-dim);  color: var(--brand); }
+.tipo-slides      { background: var(--accent-dim);  color: var(--accent); }
+.tipo-copy        { background: oklch(72% 0.18 150 / 0.15); color: var(--success); }
+.tipo-pagina      { background: var(--danger-dim);  color: var(--danger); }
+.tipo-mensageria  { background: oklch(72% 0.15 45 / 0.15); color: oklch(72% 0.15 45); }
+.tipo-relatorio   { background: oklch(46% 0.016 270 / 0.3); color: var(--fg-muted); }
+.tipo-aula        { background: oklch(70% 0.18 230 / 0.15); color: oklch(70% 0.18 230); }
+.tipo-ad          { background: var(--brand-dim); color: var(--brand); }
+.tipo-outros      { background: var(--bg-elevated); color: var(--fg-sub); }
+/* Docs */
+.doc-section h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-bold); letter-spacing: -0.02em; margin-bottom: var(--s4); color: var(--fg); }
+.doc-section p  { font-size: var(--text-sm); color: var(--fg-muted); line-height: 1.7; margin-bottom: var(--s2); }
+.doc-section code { font-family: "JetBrains Mono", monospace; font-size: var(--text-xs); background: var(--bg-elevated); padding: 2px var(--s2); border-radius: var(--radius-sm); color: var(--brand); }
+.doc-step { display: flex; gap: var(--s4); align-items: flex-start; padding: var(--s4) 0; border-bottom: 1px solid var(--border); }
+.doc-step:last-child { border-bottom: none; }
+.doc-step-num { font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-black); color: var(--brand); width: 32px; flex-shrink: 0; line-height: 1; }
+.doc-step-body { flex: 1; }
+.doc-step-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: var(--weight-bold); margin-bottom: var(--s1); color: var(--fg); }
+.doc-step-desc  { font-size: var(--text-sm); color: var(--fg-muted); line-height: 1.6; }
+.doc-badge { display: inline-flex; align-items: center; padding: var(--s1) var(--s3); border-radius: var(--radius-md); font-size: var(--text-xs); font-weight: var(--weight-semibold); margin-bottom: var(--s3); }
+.doc-badge-orange { background: var(--brand-dim); color: var(--brand); }
+.doc-badge-blue   { background: var(--accent-dim); color: var(--accent); }
+.doc-badge-gray   { background: var(--bg-elevated); color: var(--fg-sub); border: 1px solid var(--border); }
+.sheet-preview { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin: var(--s4) 0; }
+.sheet-preview-tab { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: var(--s2) var(--s4); font-size: var(--text-xs); font-weight: var(--weight-semibold); color: var(--fg-muted); letter-spacing: 0.04em; text-transform: uppercase; display: flex; gap: var(--s4); }
+.sheet-preview-tab span.active-tab { color: var(--brand); border-bottom: 2px solid var(--brand); padding-bottom: 2px; }
+.sheet-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }
+.sheet-table th { background: var(--bg-card); padding: var(--s2) var(--s3); text-align: left; font-weight: var(--weight-semibold); color: var(--fg-sub); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); white-space: nowrap; }
+.sheet-table td { padding: var(--s2) var(--s3); border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); color: var(--fg-muted); white-space: nowrap; }
+.sheet-table tr:last-child td { border-bottom: none; }
+@media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+  .topbar { padding: var(--s3) var(--s4); gap: var(--s2); }
+  .topbar-meta { display: none; }
+  .topbar-action-btn span { display: none; }
+  .main-content { padding: var(--s6) var(--s4); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .lh-top { flex-direction: column; align-items: flex-start; gap: var(--s3); }
+  .lh-selectors { margin-left: 0; }
+  .funil-label { width: 120px; font-size: var(--text-xs); }
+  .kanban-board { grid-template-columns: 1fr; min-width: unset; }
+  .kanban-move-btns { display: flex; }
+  .compare-cols.n2, .compare-cols.n3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .kpi-value { font-size: var(--text-2xl); } .tabs-nav { gap: 0; } .tab-btn { padding: var(--s2) var(--s3); font-size: var(--text-xs); } }
+</style>
+</head>
+<body>
+<!-- ══ DADOS JSON MOCK (nova estrutura — 1 lançamento por linha) ══ -->
+<script id="dashboard-data" type="application/json">
+{
+  "lancamentos": [
+    {
+      "id": "LPSG_01/26",
+      "produto": "LPSG",
+      "evento": "Lançamento Pago Semanal",
+      "expert": "Leo",
+      "edicao": "01/26",
+      "data": "xx/xx/2026",
+      "ingresso": 62,
+      "ingressos": 1000,
+      "cac": 49.60,
+      "lead_score": 80,
+      "investimento": 49600,
+      "faturamento_captacao": 62000,
+      "saldo_captacao": 12400,
+      "roas_captacao": 1.25,
+      "cpm": 31,
+      "ctr": 3.0,
+      "carregamento": 92,
+      "taxa_checkout": 30,
+      "conv_checkout": 20,
+      "conv_pag": 5,
+      "inscritos_x_a1_pico_pct": 30,
+      "pico": { "a1": 300, "ret1": 70, "a2": 210, "ret2": 85, "a3": 179, "ret3": 85, "a4": 152, "ret4": 85, "a5": 129, "ret5": 70, "zoom": 90, "ret_zoom": 130, "a6": 168 },
+      "unicos": { "inscritos_x_a1_pct": 100, "a1": 1000, "ret1": 70, "a2": 700, "ret2": 85, "a3": 595, "ret3": 85, "a4": 506, "ret4": 85, "a5": 430, "ret5": 85, "a6": 365 },
+      "ficha": 250,
+      "ingresso_x_ficha_pct": 25,
+      "vendas": 70,
+      "conv_pct": 7,
+      "conv_ficha_pct": 28,
+      "conv_a1_pct": 23.33,
+      "conv_a6_pct": 41.75,
+      "fat_bruto": 150000,
+      "imposto": 15000,
+      "liquido": 85400,
+      "roas_total": 3.02
+    },
+    {
+      "id": "LPSG_02/26",
+      "produto": "LPSG",
+      "evento": "Lançamento Pago Semanal",
+      "expert": "Leo",
+      "edicao": "02/26",
+      "data": "xx/xx/2026",
+      "ingresso": 62,
+      "ingressos": 850,
+      "cac": 58.24,
+      "lead_score": 70,
+      "investimento": 49500,
+      "faturamento_captacao": 52700,
+      "saldo_captacao": 3200,
+      "roas_captacao": 1.06,
+      "cpm": 38,
+      "ctr": 2.4,
+      "carregamento": 87,
+      "taxa_checkout": 24,
+      "conv_checkout": 16,
+      "conv_pag": 4,
+      "inscritos_x_a1_pico_pct": 26,
+      "pico": { "a1": 221, "ret1": 65, "a2": 144, "ret2": 82, "a3": 118, "ret3": 80, "a4": 94, "ret4": 78, "a5": 73, "ret5": 68, "zoom": 55, "ret_zoom": 110, "a6": 60 },
+      "unicos": { "inscritos_x_a1_pct": 100, "a1": 850, "ret1": 65, "a2": 553, "ret2": 82, "a3": 454, "ret3": 80, "a4": 363, "ret4": 78, "a5": 283, "ret5": 80, "a6": 226 },
+      "ficha": 180,
+      "ingresso_x_ficha_pct": 21,
+      "vendas": 48,
+      "conv_pct": 5.6,
+      "conv_ficha_pct": 26.7,
+      "conv_a1_pct": 22.17,
+      "conv_a6_pct": 35.40,
+      "fat_bruto": 120000,
+      "imposto": 12000,
+      "liquido": 58500,
+      "roas_total": 2.42
+    },
+    {
+      "id": "LPSG_03/26",
+      "produto": "LPSG",
+      "evento": "Lançamento Pago Semanal",
+      "expert": "Leo",
+      "edicao": "03/26",
+      "data": "xx/xx/2026",
+      "ingresso": 67,
+      "ingressos": 1300,
+      "cac": 38.15,
+      "lead_score": 88,
+      "investimento": 49600,
+      "faturamento_captacao": 87100,
+      "saldo_captacao": 37500,
+      "roas_captacao": 1.76,
+      "cpm": 27,
+      "ctr": 3.8,
+      "carregamento": 95,
+      "taxa_checkout": 36,
+      "conv_checkout": 25,
+      "conv_pag": 6.5,
+      "inscritos_x_a1_pico_pct": 34,
+      "pico": { "a1": 442, "ret1": 74, "a2": 327, "ret2": 88, "a3": 288, "ret3": 88, "a4": 253, "ret4": 88, "a5": 223, "ret5": 74, "zoom": 140, "ret_zoom": 145, "a6": 289 },
+      "unicos": { "inscritos_x_a1_pct": 100, "a1": 1300, "ret1": 74, "a2": 962, "ret2": 88, "a3": 847, "ret3": 88, "a4": 745, "ret4": 88, "a5": 655, "ret5": 88, "a6": 576 },
+      "ficha": 330,
+      "ingresso_x_ficha_pct": 25.4,
+      "vendas": 110,
+      "conv_pct": 8.46,
+      "conv_ficha_pct": 33.33,
+      "conv_a1_pct": 25.0,
+      "conv_a6_pct": 50.87,
+      "fat_bruto": 220000,
+      "imposto": 22000,
+      "liquido": 148400,
+      "roas_total": 4.44
+    }
+  ],
+  "lancamento_ativo": 0,
+  "comparacao": [],
+  "fases": [
+    { "id": "pre-lancamento", "nome": "Pré-lançamento", "objetivo": "Definir briefing, pesquisar avatar, mapear oferta e funil", "meta_numero": 100, "data_inicio": "2025-04-21", "data_fim": "2025-04-27", "responsavel": "Estrategista", "status": "concluida" },
+    { "id": "paginas", "nome": "Páginas", "objetivo": "Criar páginas de captura, obrigado, vendas e checkout", "meta_numero": 4, "data_inicio": "2025-04-22", "data_fim": "2025-04-28", "responsavel": "Designer", "status": "concluida" },
+    { "id": "criativos", "nome": "Criativos", "objetivo": "Produção de anúncios estáticos, vídeo e copy dos ads", "meta_numero": 6, "data_inicio": "2025-04-24", "data_fim": "2025-04-30", "responsavel": "Designer + Copywriter", "status": "concluida" },
+    { "id": "aulas", "nome": "Aulas", "objetivo": "Roteiro das 6 aulas, slides, ensaio e gravação", "meta_numero": 6, "data_inicio": "2025-04-25", "data_fim": "2025-05-03", "responsavel": "Expert + Designer", "status": "em_andamento" },
+    { "id": "trafego", "nome": "Setup de tráfego", "objetivo": "Estrutura de campanhas, públicos, orçamento e pixel", "meta_numero": 100, "data_inicio": "2025-04-28", "data_fim": "2025-05-01", "responsavel": "Gestor de tráfego", "status": "concluida" },
+    { "id": "ads", "nome": "Execução de ads", "objetivo": "Subir campanhas, monitorar CPL, otimizar criativos", "meta_numero": 2500, "data_inicio": "2025-05-01", "data_fim": "2025-05-07", "responsavel": "Gestor de tráfego", "status": "concluida" },
+    { "id": "evento", "nome": "Evento ao vivo", "objetivo": "Transmissão das 6 aulas, Q&A sábado, pitch domingo", "meta_numero": 6, "data_inicio": "2025-05-05", "data_fim": "2025-05-11", "responsavel": "Expert", "status": "em_andamento" },
+    { "id": "pos", "nome": "Análise e pós", "objetivo": "Relatório de métricas, vendas, diagnóstico próxima turma", "meta_numero": 100, "data_inicio": "2025-05-12", "data_fim": "2025-05-14", "responsavel": "Estrategista", "status": "pendente" }
+  ],
+  "pecas_kanban": [
+    { "id": 1, "tipo": "Criativo", "nome": "Criativos estáticos — lote 1", "fase": "criativos", "responsavel": "Designer", "deadline": "2025-04-30", "status": "a_fazer" },
+    { "id": 2, "tipo": "Criativo", "nome": "Criativos em vídeo", "fase": "criativos", "responsavel": "Designer", "deadline": "2025-05-01", "status": "a_fazer" },
+    { "id": 3, "tipo": "Pagina", "nome": "Página de captura LPSG", "fase": "paginas", "responsavel": "Designer", "deadline": "2025-04-29", "status": "a_fazer" },
+    { "id": 4, "tipo": "Pagina", "nome": "Página de vendas (carrinho)", "fase": "paginas", "responsavel": "Designer", "deadline": "2025-04-30", "status": "a_fazer" },
+    { "id": 5, "tipo": "Slides", "nome": "Slides Aula 1", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-03", "status": "a_fazer" },
+    { "id": 6, "tipo": "Slides", "nome": "Slides Aula 2", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-04", "status": "a_fazer" },
+    { "id": 7, "tipo": "Slides", "nome": "Slides Aula 3", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-05", "status": "a_fazer" },
+    { "id": 8, "tipo": "Slides", "nome": "Slides Aula 4 — Pré-pitch", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-06", "status": "a_fazer" },
+    { "id": 9, "tipo": "Slides", "nome": "Slides Aula 5", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-07", "status": "a_fazer" },
+    { "id": 10, "tipo": "Slides", "nome": "Slides Aula 6 — Pitch", "fase": "aulas", "responsavel": "Designer", "deadline": "2025-05-09", "status": "a_fazer" },
+    { "id": 11, "tipo": "Aula", "nome": "Roteiro Aula 1", "fase": "aulas", "responsavel": "Expert", "deadline": "2025-05-01", "status": "a_fazer" },
+    { "id": 12, "tipo": "Aula", "nome": "Roteiro Aula 6 — pitch completo", "fase": "aulas", "responsavel": "Expert", "deadline": "2025-05-09", "status": "a_fazer" },
+    { "id": 13, "tipo": "Relatorio", "nome": "Relatório pós-lançamento", "fase": "pos", "responsavel": "Estrategista", "deadline": "2025-05-13", "status": "a_fazer" },
+    { "id": 14, "tipo": "Copy", "nome": "Copy email abertura carrinho", "fase": "ads", "responsavel": "Copywriter", "deadline": "2025-05-10", "status": "a_fazer" },
+    { "id": 15, "tipo": "Mensageria", "nome": "Sequência emails pré-evento", "fase": "ads", "responsavel": "Copywriter", "deadline": "2025-04-30", "status": "a_fazer" },
+    { "id": 16, "tipo": "Setup", "nome": "Pixel instalado e testado", "fase": "trafego", "responsavel": "Gestor de tráfego", "deadline": "2025-04-28", "status": "a_fazer" }
+  ]
+}
+</script>
+<!-- ══ MODAIS ══ -->
+<div id="mapping-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:oklch(7% 0.008 270 / 0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--s8);max-width:560px;width:90%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-md);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s6);">
+      <div><div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;">Selecionar lançamento na planilha</div>
+      <div style="font-size:var(--text-xs);color:var(--fg-sub);margin-top:var(--s1);">Linha detectada — confirme se é o lançamento correto</div></div>
+      <button onclick="closeMappingModal()" style="width:32px;height:32px;border-radius:var(--radius-md);background:var(--bg-elevated);border:1px solid var(--border);color:var(--fg-muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div id="mapping-modal-body"></div>
+    <div style="display:flex;gap:var(--s3);justify-content:flex-end;margin-top:var(--s6);">
+      <button onclick="closeMappingModal()" class="topbar-action-btn" style="font-size:var(--text-sm);">Cancelar</button>
+      <button onclick="confirmMapping()" style="padding:var(--s2) var(--s5);border-radius:var(--radius-md);background:var(--brand);color:oklch(98% 0.005 270);font-size:var(--text-sm);font-weight:var(--weight-semibold);cursor:pointer;border:none;">Confirmar importação</button>
+    </div>
+  </div>
+</div>
+
+<div id="sheets-sync-indicator" style="display:none;position:fixed;bottom:var(--s5);left:50%;transform:translateX(-50%);z-index:8000;background:var(--bg-card);border:1px solid var(--border-brand);border-radius:var(--radius-lg);padding:var(--s2) var(--s4);font-size:var(--text-xs);color:var(--fg-muted);align-items:center;gap:var(--s2);box-shadow:var(--shadow-md);">
+  <span style="width:6px;height:6px;border-radius:50%;background:var(--success);flex-shrink:0;"></span>
+  <span id="sheets-sync-label">Sincronizado</span>
+  <button id="sheets-sync-now" onclick="syncSheetsNow()" style="margin-left:var(--s2);background:var(--brand);color:#fff;border:0;border-radius:var(--radius-md);padding:4px 10px;font-size:var(--text-xs);font-weight:600;cursor:pointer;">Sincronizar agora</button>
+</div>
+
+<div id="sheets-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:oklch(7% 0.008 270 / 0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--s8);max-width:560px;width:90%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-md);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s6);">
+      <div><div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;">Conectar Google Sheets</div>
+      <div style="font-size:var(--text-xs);color:var(--fg-sub);margin-top:var(--s1);">Puxa a planilha de lançamentos ao vivo</div></div>
+      <button onclick="closeSheetsModal()" style="width:32px;height:32px;border-radius:var(--radius-md);background:var(--bg-elevated);border:1px solid var(--border);color:var(--fg-muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div id="sheets-file-warning" style="display:none;background:var(--warning-dim);border:1px solid oklch(80% 0.18 75 / 0.4);border-radius:var(--radius-lg);padding:var(--s4);margin-bottom:var(--s4);font-size:var(--text-xs);color:oklch(52% 0.18 75);line-height:1.6;display:flex;align-items:flex-start;gap:var(--s3);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-top:1px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><strong>Arquivo aberto com duplo-clique.</strong> O Google Sheets ao vivo nao funciona nesse modo. <button onclick="closeSheetsModal();openLocalServerModal();" style="background:none;border:none;color:oklch(52% 0.18 75);font:inherit;font-weight:var(--weight-semibold);cursor:pointer;text-decoration:underline;padding:0;">Ver como rodar em servidor local.</button></div>
+    </div>
+    <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-lg);padding:var(--s4);margin-bottom:var(--s5);font-size:var(--text-xs);color:var(--fg-muted);line-height:1.6;">
+      Cole o link da sua planilha. Funciona com links de compartilhamento (<strong style="color:var(--fg);">Compartilhar → Qualquer pessoa com o link</strong>) e URLs publicadas (<strong style="color:var(--fg);">Arquivo → Publicar na web → CSV</strong>). A planilha precisa estar acessivel publicamente como Leitor.
+    </div>
+    <div style="margin-bottom:var(--s5);">
+      <label style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:var(--s2);">URL da planilha</label>
+      <input id="sheets-url-dados" type="url" placeholder="https://docs.google.com/spreadsheets/d/..." style="width:100%;padding:var(--s2) var(--s3);border-radius:var(--radius-md);border:1px solid var(--border);background:var(--bg-elevated);color:var(--fg);font-size:var(--text-xs);font-family:inherit;box-sizing:border-box;" />
+      <div style="margin-top:var(--s2);font-size:var(--text-xs);color:var(--fg-sub);line-height:1.5;">Cole qualquer URL do Google Sheets — link de compartilhamento (<code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">/edit?usp=sharing</code>) ou URL publicada (<code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">/d/e/2PACX-...</code>). Requer servidor local.</div>
+    </div>
+    <label style="display:flex;align-items:center;gap:var(--s3);cursor:pointer;margin-bottom:var(--s6);">
+      <input id="sheets-auto-sync" type="checkbox" style="width:16px;height:16px;accent-color:var(--brand);cursor:pointer;" />
+      <span style="font-size:var(--text-sm);color:var(--fg-muted);">Atualizar automaticamente a cada 5 minutos</span>
+    </label>
+    <div id="sheets-status" style="display:none;margin-bottom:var(--s5);padding:var(--s3) var(--s4);border-radius:var(--radius-md);font-size:var(--text-xs);line-height:1.5;"></div>
+    <div style="display:flex;gap:var(--s3);justify-content:space-between;align-items:center;flex-wrap:wrap;">
+      <button id="sheets-disconnect-btn" onclick="disconnectSheets()" style="display:none;padding:var(--s2) var(--s4);border-radius:var(--radius-md);background:var(--danger-dim);border:1px solid var(--danger);color:var(--danger);font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;">Desconectar</button>
+      <div style="display:flex;gap:var(--s3);margin-left:auto;flex-wrap:wrap;">
+        <button onclick="closeSheetsModal()" class="topbar-action-btn" style="font-size:var(--text-sm);">Cancelar</button>
+        <button onclick="testSheetConnection()" style="padding:var(--s2) var(--s4);border-radius:var(--radius-md);background:var(--bg-card);border:1px solid var(--border);color:var(--fg-muted);font-size:var(--text-sm);font-weight:var(--weight-semibold);cursor:pointer;transition:border-color 160ms,color 160ms;" onmouseover="this.style.borderColor='var(--brand)';this.style.color='var(--brand)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--fg-muted)';">Testar conexao</button>
+        <button onclick="connectSheets()" style="padding:var(--s2) var(--s5);border-radius:var(--radius-md);background:var(--brand);color:oklch(98% 0.005 270);font-size:var(--text-sm);font-weight:var(--weight-semibold);cursor:pointer;border:none;">Conectar e sincronizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="claude-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:oklch(7% 0.008 270 / 0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--s8);max-width:620px;width:90%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-md);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s6);">
+      <div><div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;">Atualizar com Claude Code</div>
+      <div style="font-size:var(--text-xs);color:var(--fg-sub);margin-top:var(--s1);">Cole o prompt no Claude e anexe sua planilha</div></div>
+      <button onclick="closeClaudeModal()" style="width:32px;height:32px;border-radius:var(--radius-md);background:var(--bg-elevated);border:1px solid var(--border);color:var(--fg-muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div style="font-size:var(--text-sm);color:var(--fg-muted);margin-bottom:var(--s4);">Copie o prompt abaixo, abra o Claude Code, cole o prompt e anexe sua planilha XLSX de lançamentos.</div>
+    <div style="position:relative;margin-bottom:var(--s5);">
+      <pre id="claude-prompt-text" style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-lg);padding:var(--s5);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);color:var(--fg-muted);line-height:1.7;white-space:pre-wrap;word-break:break-word;margin:0;"></pre>
+      <button onclick="copyClaudePrompt()" id="copy-prompt-btn" style="position:absolute;top:var(--s3);right:var(--s3);padding:var(--s1) var(--s3);border-radius:var(--radius-md);background:var(--brand-dim);border:1px solid var(--border-brand);color:var(--brand);font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;">Copiar prompt</button>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <button onclick="closeClaudeModal()" style="padding:var(--s2) var(--s5);border-radius:var(--radius-md);background:var(--brand);color:oklch(98% 0.005 270);font-size:var(--text-sm);font-weight:var(--weight-semibold);cursor:pointer;border:none;">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DROP OVERLAY ══ -->
+<div id="drop-overlay" class="drop-overlay">
+  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+  <span>Solte o arquivo aqui</span>
+</div>
+<div id="toast-wrap" class="toast-wrap"></div>
+<input type="file" id="file-input" accept=".xlsx,.csv" style="display:none;" />
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar">
+  <div class="topbar-brand"><span class="dot"></span><span>Dashboard LPSG</span></div>
+  <div class="topbar-meta">
+    <span id="topbar-edicao" style="color:var(--fg-sub);font-size:var(--text-xs);"></span>
+    <span id="topbar-semaforo" class="semaforo"></span>
+  </div>
+  <nav class="tabs-nav">
+    <button class="tab-btn active" onclick="switchTab('metricas',this)">Métricas</button>
+    <button class="tab-btn" onclick="switchTab('estrategico',this)">Estratégico</button>
+    <button class="tab-btn" onclick="switchTab('kanban',this)">Kanban</button>
+    <button class="tab-btn" onclick="switchTab('docs',this)">Como Usar</button>
+  </nav>
+  <div style="position:relative;" id="data-menu-wrap">
+    <button class="topbar-action-btn" onclick="toggleDataMenu(event)" title="Fontes de dados" id="data-menu-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+      <span>Dados</span>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:2px;"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="data-menu" style="display:none;position:absolute;top:calc(100% + 6px);right:0;min-width:240px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:var(--s2);z-index:500;flex-direction:column;gap:2px;">
+      <button class="data-menu-item" onclick="closeDataMenu();openSheetsModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <div><div class="dm-title">Conectar Google Sheets</div><div class="dm-sub">Sincronização ao vivo</div></div>
+      </button>
+      <button class="data-menu-item" onclick="closeDataMenu();triggerImport()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <div><div class="dm-title">Importar planilha</div><div class="dm-sub">XLSX ou CSV do seu computador</div></div>
+      </button>
+      <button class="data-menu-item" onclick="closeDataMenu();downloadModelo()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <div><div class="dm-title">Baixar modelo XLSX</div><div class="dm-sub">Planilha pronta pra preencher</div></div>
+      </button>
+      <div style="height:1px;background:var(--border);margin:var(--s1) 0;"></div>
+      <button class="data-menu-item" onclick="closeDataMenu();openClaudeModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <div><div class="dm-title">Atualizar com Claude</div><div class="dm-sub">Avançado (CLI)</div></div>
+      </button>
+      <button class="data-menu-item" onclick="closeDataMenu();resetarDados()" style="color:var(--fg-sub);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.64"/></svg>
+        <div><div class="dm-title">Resetar</div><div class="dm-sub">Voltar pros dados de exemplo</div></div>
+      </button>
+    </div>
+  </div>
+  <button id="theme-toggle" class="topbar-icon-btn" onclick="toggleTheme()" aria-label="Alternar tema">
+    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<!-- ══ BANNER FILE:// ══ -->
+<div id="file-protocol-banner" style="display:none;position:sticky;top:56px;z-index:190;background:oklch(80% 0.18 75 / 0.12);border-bottom:1px solid oklch(80% 0.18 75 / 0.4);padding:var(--s2) var(--s6);align-items:center;gap:var(--s3);font-size:var(--text-xs);color:oklch(52% 0.18 75);">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <span>Voce abriu o dashboard com duplo-clique. O Google Sheets ao vivo <strong>nao vai funcionar</strong> nesse modo.</span>
+  <button onclick="openLocalServerModal()" style="margin-left:var(--s1);background:none;border:none;color:oklch(52% 0.18 75);font:inherit;font-weight:var(--weight-semibold);cursor:pointer;text-decoration:underline;padding:0;">Ver como rodar em servidor local</button>
+  <button onclick="document.getElementById('file-protocol-banner').style.display='none';" style="margin-left:auto;width:20px;height:20px;border-radius:var(--radius-sm);background:none;border:none;color:oklch(52% 0.18 75);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;" aria-label="Fechar aviso">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<!-- ══ MODAL SERVIDOR LOCAL ══ -->
+<div id="local-server-modal" style="display:none;position:fixed;inset:0;z-index:9500;background:oklch(7% 0.008 270 / 0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--s8);max-width:560px;width:90%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-md);">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--s6);">
+      <div>
+        <div style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;">Como rodar em servidor local</div>
+        <div style="font-size:var(--text-xs);color:var(--fg-sub);margin-top:var(--s1);">Necessario para o Google Sheets ao vivo funcionar</div>
+      </div>
+      <button onclick="closeLocalServerModal()" style="width:32px;height:32px;border-radius:var(--radius-md);background:var(--bg-elevated);border:1px solid var(--border);color:var(--fg-muted);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div style="background:var(--warning-dim);border:1px solid oklch(80% 0.18 75 / 0.4);border-radius:var(--radius-md);padding:var(--s4);margin-bottom:var(--s6);font-size:var(--text-xs);color:var(--fg-muted);line-height:1.6;">
+      Quando voce abre o arquivo com duplo-clique, o navegador usa o protocolo <code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">file://</code> — e o Google bloqueia conexoes vindas desse protocolo. Rodar em servidor local (<code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">http://localhost</code>) resolve.
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--s5);">
+      <div>
+        <div style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--s2);">Passo 1 — Abra o Terminal</div>
+        <div style="font-size:var(--text-sm);color:var(--fg-muted);line-height:1.6;">Mac: <strong style="color:var(--fg);">Cmd + Espaco</strong> → digite "Terminal" → Enter<br>Windows: Win + R → "cmd" → Enter</div>
+      </div>
+
+      <div>
+        <div style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--s2);">Passo 2 — Va ate a pasta do arquivo</div>
+        <div style="position:relative;">
+          <code id="cmd-cd" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--s3) var(--s4);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);color:var(--fg);line-height:1.7;word-break:break-all;">cd "PASTA_DO_ARQUIVO"</code>
+          <button onclick="copyCmd('cmd-cd','btn-copy-cd')" id="btn-copy-cd" style="position:absolute;top:var(--s2);right:var(--s2);padding:var(--s1) var(--s3);border-radius:var(--radius-sm);background:var(--brand-dim);border:1px solid var(--border-brand);color:var(--brand);font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;">Copiar</button>
+        </div>
+        <div style="margin-top:var(--s2);font-size:var(--text-xs);color:var(--fg-sub);">No Mac voce pode arrastar a pasta para o terminal — substitui o comando cd.</div>
+      </div>
+
+      <div>
+        <div style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--s2);">Passo 3 — Inicie o servidor</div>
+        <div style="position:relative;">
+          <code id="cmd-server" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--s3) var(--s4);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);color:var(--fg);line-height:1.7;">python3 -m http.server 8765</code>
+          <button onclick="copyCmd('cmd-server','btn-copy-server')" id="btn-copy-server" style="position:absolute;top:var(--s2);right:var(--s2);padding:var(--s1) var(--s3);border-radius:var(--radius-sm);background:var(--brand-dim);border:1px solid var(--border-brand);color:var(--brand);font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;">Copiar</button>
+        </div>
+        <div style="margin-top:var(--s2);font-size:var(--text-xs);color:var(--fg-sub);">Python vem instalado no Mac. Windows: baixe em <strong>python.org</strong> se nao tiver.</div>
+      </div>
+
+      <div>
+        <div style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--s2);">Passo 4 — Abra no navegador</div>
+        <div style="position:relative;">
+          <code id="cmd-url" style="display:block;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--s3) var(--s4);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);color:var(--fg);line-height:1.7;">http://localhost:8765/dashboard-lancamento-lpsg-template.html</code>
+          <button onclick="copyCmd('cmd-url','btn-copy-url')" id="btn-copy-url" style="position:absolute;top:var(--s2);right:var(--s2);padding:var(--s1) var(--s3);border-radius:var(--radius-sm);background:var(--brand-dim);border:1px solid var(--border-brand);color:var(--brand);font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;">Copiar</button>
+        </div>
+      </div>
+
+      <div style="background:var(--success-dim);border:1px solid oklch(72% 0.18 150 / 0.3);border-radius:var(--radius-md);padding:var(--s4);font-size:var(--text-xs);color:var(--fg-muted);line-height:1.6;">
+        <strong style="color:var(--success);">Pronto.</strong> Com o dashboard aberto em <code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">http://localhost</code>, o Google Sheets ao vivo funciona normalmente — incluindo URLs de compartilhamento <code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">/edit?usp=sharing</code>.
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:var(--s6);">
+      <button onclick="closeLocalServerModal()" style="padding:var(--s2) var(--s5);border-radius:var(--radius-md);background:var(--brand);color:oklch(98% 0.005 270);font-size:var(--text-sm);font-weight:var(--weight-semibold);cursor:pointer;border:none;">Entendi</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABA MÉTRICAS ══ -->
+<div id="tab-metricas" class="tab-content active">
+<main class="main-content">
+
+  <!-- Launch Header com seletor + comparação -->
+  <div class="launch-header" id="launch-header">
+    <div class="lh-top">
+      <div>
+        <div class="launch-title" id="lh-produto">LPSG</div>
+        <div class="launch-sub" id="lh-edicao"></div>
+      </div>
+      <div class="lh-selectors">
+        <select class="lh-select" id="lh-select-principal" onchange="onSelectPrincipal(this.value)">
+        </select>
+        <button class="lh-compare-toggle" id="lh-compare-btn" onclick="toggleComparacao()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Comparar
+        </button>
+        <select class="lh-select" id="lh-select-cmp2" style="display:none;" onchange="onSelectComparacao(1,this.value)">
+        </select>
+        <select class="lh-select" id="lh-select-cmp3" style="display:none;" onchange="onSelectComparacao(2,this.value)">
+        </select>
+      </div>
+    </div>
+    <div class="lh-stats-row" id="lh-stats-row"></div>
+  </div>
+
+  <!-- Bloco: Resultado (KPIs principais) -->
+  <div class="kpi-section">
+    <div class="section-header">
+      <div class="section-title">Resultado</div>
+      <div class="section-sub" id="resultado-sub"></div>
+    </div>
+    <div id="resultado-cards"></div>
+  </div>
+
+  <!-- Bloco: Captação -->
+  <div class="kpi-section">
+    <div class="section-header">
+      <div class="section-title">Captação</div>
+      <div class="section-sub" id="captacao-sub"></div>
+    </div>
+    <div id="captacao-cards"></div>
+  </div>
+
+  <!-- Bloco: Tráfego -->
+  <div class="kpi-section">
+    <div class="section-header">
+      <div class="section-title">Tráfego</div>
+      <div class="section-sub" id="trafego-sub"></div>
+    </div>
+    <div id="trafego-cards"></div>
+  </div>
+
+  <!-- Bloco: Evento -->
+  <div style="margin-bottom:var(--s8);">
+    <div class="section-header">
+      <div class="section-title">Evento</div>
+      <div class="section-sub">Pico ao vivo vs. Espectadores únicos</div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Pico Ao Vivo — Espectadores simultâneos</div>
+        <div id="chart-pico" class="event-chart"></div>
+        <div id="ret-pico" style="margin-top:var(--s5);"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Espectadores Únicos por aula</div>
+        <div id="chart-unicos" class="event-chart"></div>
+        <div id="ret-unicos" style="margin-top:var(--s5);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bloco: Conversão -->
+  <div class="kpi-section">
+    <div class="section-header">
+      <div class="section-title">Conversão</div>
+    </div>
+    <div id="conversao-cards"></div>
+  </div>
+
+  <!-- Bloco: Funil visual -->
+  <div style="margin-bottom:var(--s8);">
+    <div class="section-header">
+      <div class="section-title">Funil</div>
+      <div class="section-sub">Inscritos → Únicos A1 → Únicos A6 → Vendas</div>
+    </div>
+    <div class="card"><div class="funil-container" id="funil-visual"></div></div>
+  </div>
+
+</main>
+</div>
+
+<!-- ══ ABA ESTRATÉGICO ══ -->
+<div id="tab-estrategico" class="tab-content">
+<main class="main-content">
+  <div style="margin-bottom:var(--s8);">
+    <div class="section-header">
+      <div class="section-title">Linha do Tempo</div>
+      <div class="section-sub" id="checklist-progresso-geral"></div>
+    </div>
+    <div class="card"><div class="timeline-wrap"><div class="timeline-track" id="timeline-track"></div></div></div>
+  </div>
+  <div style="margin-bottom:var(--s8);">
+    <div class="section-header">
+      <div class="section-title">Checklist do Lançamento</div>
+      <div class="section-sub">8 fases sequenciais — do zero ao pós-evento</div>
+    </div>
+    <div class="checklist-wrap" id="checklist-container"></div>
+  </div>
+  <div style="margin-bottom:var(--s8);">
+    <div class="section-header"><div class="section-title">Resumo de Fases</div></div>
+    <div class="grid-4" id="metas-grid"></div>
+  </div>
+</main>
+</div>
+
+<!-- ══ ABA KANBAN ══ -->
+<div id="tab-kanban" class="tab-content">
+<main class="main-content">
+  <div class="section-header">
+    <div class="section-title">Kanban de Peças</div>
+    <div class="section-sub" id="kanban-count-total"></div>
+  </div>
+  <div class="kanban-controls">
+    <select class="filter-select" id="filter-fase" onchange="renderKanban()"><option value="">Todas as fases</option></select>
+    <select class="filter-select" id="filter-responsavel" onchange="renderKanban()"><option value="">Todos os responsáveis</option></select>
+    <select class="filter-select" id="filter-tipo" onchange="renderKanban()"><option value="">Todos os tipos</option></select>
+  </div>
+  <div style="overflow-x:auto;padding-bottom:var(--s4);">
+    <div class="kanban-board" id="kanban-board"></div>
+  </div>
+</main>
+</div>
+
+<!-- ══ ABA COMO USAR ══ -->
+<div id="tab-docs" class="tab-content">
+<main class="main-content">
+  <div class="section-header" style="margin-bottom:var(--s8);">
+    <div class="section-title">Como usar este dashboard</div>
+    <div class="section-sub">Template Turbo Academy — LPSG</div>
+  </div>
+  <div style="max-width:860px;">
+
+    <!-- Nível 1 -->
+    <div class="card" style="margin-bottom:var(--s6);">
+      <div>
+        <div class="doc-badge doc-badge-orange" style="margin-bottom:var(--s4);">Nível 1 — Uso básico (zero código)</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;margin-bottom:var(--s4);">Planilha oficial + importação direta</h3>
+        <p style="font-size:var(--text-sm);color:var(--fg-muted);margin-bottom:var(--s5);">Cada linha da planilha oficial de dados é um lançamento completo. Preencha, importe e o dashboard mostra todos os lançamentos com seletor e modo comparação.</p>
+
+        <div class="doc-step">
+          <div class="doc-step-num">1</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Clique em "Baixar modelo" no topo</div>
+            <div class="doc-step-desc">Baixa o arquivo <code>planilha-lpsg-modelo.xlsx</code> com a estrutura oficial: linha 1 com títulos de bloco, linha 2 com cabeçalhos, linha 3 com exemplo de dados, demais linhas vazias para preencher.</div>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step-num">2</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Preencha uma linha por lançamento</div>
+            <div class="doc-step-desc">Cada linha da aba <strong>Dados dos Eventos</strong> é um lançamento. Coluna A = identificador (ex: LPSG_01/26). Os blocos são: Captação / Tráfego / Pico Ao Vivo / Espectadores Únicos / Conversão / Resultado. Use os formatos que já estão na planilha — R$ e % são aceitos.</div>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step-num">3</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Importe a planilha</div>
+            <div class="doc-step-desc">Clique em "Importar planilha" no topo ou arraste o arquivo .xlsx para a janela. O dashboard lê todos os lançamentos, ignora linhas sem identificador e converte R$/% automaticamente.</div>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step-num">4</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Selecione o lançamento e compare</div>
+            <div class="doc-step-desc">Na aba Métricas, um seletor no topo mostra todos os lançamentos importados. Clique em "Comparar" para ver 2 ou 3 lançamentos lado a lado com setas de evolução.</div>
+          </div>
+        </div>
+
+        <div class="divider" style="margin:var(--s6) 0;"></div>
+
+        <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;margin-bottom:var(--s4);">Estrutura da planilha oficial</h3>
+        <div class="sheet-preview">
+          <div class="sheet-preview-tab"><span class="active-tab">Dados dos Eventos</span></div>
+          <div style="overflow-x:auto;">
+            <table class="sheet-table">
+              <thead><tr><th>Linha 1</th><th colspan="3">CAPTAÇÃO</th><th colspan="2">TRÁFEGO</th><th colspan="3">...</th></tr>
+              <tr><th>Linha 2</th><th>$ Ingresso</th><th>Ingressos</th><th>CAC</th><th>CPM</th><th>CTR</th><th>...</th></tr></thead>
+              <tbody><tr><td>LPSG_01/26</td><td>R$ 62,00</td><td>1.000</td><td>R$ 49,60</td><td>R$ 31,00</td><td>3,00%</td><td>...</td></tr>
+              <tr><td>LPSG_02/26</td><td colspan="6" style="color:var(--fg-sub);">← seu próximo lançamento aqui</td></tr></tbody>
+            </table>
+          </div>
+          <div style="padding:var(--s3) var(--s4);font-size:var(--text-xs);color:var(--fg-sub);line-height:1.6;">
+            Linha 1 = títulos de bloco (mesclados). Linha 2 = cabeçalhos reais. Linha 3+ = dados (um lançamento por linha). O dashboard filtra linhas sem identificador na coluna A.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nível 2 -->
+    <div class="card" style="margin-bottom:var(--s6);">
+      <div>
+        <div class="doc-badge doc-badge-blue" style="margin-bottom:var(--s4);">Nível 2 — Google Sheets ao vivo</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;margin-bottom:var(--s4);">Dashboard conectado na sua planilha</h3>
+        <p style="font-size:var(--text-sm);color:var(--fg-muted);margin-bottom:var(--s4);">Mantém os dados no Google Sheets e o dashboard puxa direto. Atualiza a planilha, atualiza o painel.</p>
+
+        <div style="margin-bottom:var(--s5);padding:var(--s4);background:var(--warning-dim);border:1px solid oklch(80% 0.18 75 / 0.4);border-radius:var(--radius-md);font-size:var(--text-xs);color:var(--fg);line-height:1.6;">
+          <strong style="color:oklch(52% 0.18 75);">Pre-requisito:</strong> rode o dashboard em servidor local — nao funciona com duplo-clique. <button onclick="switchTab('docs',document.querySelector('.tab-btn[onclick*=docs]'));openLocalServerModal();" style="background:none;border:none;color:var(--brand);font:inherit;font-size:var(--text-xs);font-weight:var(--weight-semibold);cursor:pointer;text-decoration:underline;padding:0;">Ver como rodar em servidor local.</button>
+        </div>
+
+        <div class="doc-step">
+          <div class="doc-step-num">1</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Compartilhe a planilha</div>
+            <div class="doc-step-desc">Na sua planilha, va em <strong>Arquivo → Compartilhar → Acesso geral</strong>. Escolha <strong>Qualquer pessoa com o link → Leitor</strong>. Copie o link gerado — o dashboard aceita qualquer formato de URL do Google Sheets.</div>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step-num">2</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Cole no dashboard e conecte</div>
+            <div class="doc-step-desc">Clique em <strong>Google Sheets</strong> no topo do dashboard. Cole a URL no campo. Use <strong>Testar conexao</strong> para confirmar, depois clique em <strong>Conectar e sincronizar</strong>. A partir de agora, voce atualiza so a planilha — o dashboard reflete sozinho.</div>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step-num">3</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Ative o auto-sync (opcional)</div>
+            <div class="doc-step-desc">Marque <strong>Atualizar automaticamente a cada 5 minutos</strong> antes de conectar para manter o painel atualizado enquanto a aba estiver aberta.</div>
+          </div>
+        </div>
+        <div class="doc-step" style="border-bottom:none;">
+          <div class="doc-step-num" style="background:var(--bg-elevated);color:var(--fg-sub);border-color:var(--border);">Alt</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title" style="color:var(--fg-muted);">Metodo alternativo (se o passo 2 falhar)</div>
+            <div class="doc-step-desc">Publique via <strong>Arquivo → Compartilhar → Publicar na web → CSV</strong> e cole a URL gerada. Ela comeca com <code style="background:oklch(0% 0 0 / 0.15);padding:1px 4px;border-radius:3px;">/d/e/2PACX-...</code>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nível 3 -->
+    <div class="card">
+      <div>
+        <div class="doc-badge doc-badge-gray" style="margin-bottom:var(--s4);">Nível 3 — Claude Code</div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:var(--weight-bold);letter-spacing:-0.02em;margin-bottom:var(--s4);">Atualização via Claude</h3>
+        <p style="font-size:var(--text-sm);color:var(--fg-muted);margin-bottom:var(--s4);">Se quiser que o Claude leia a planilha e atualize o JSON do dashboard, clique em "Claude Code" no topo para copiar o prompt pronto.</p>
+        <div class="doc-step" style="border-bottom:none;">
+          <div class="doc-step-num">1</div>
+          <div class="doc-step-body">
+            <div class="doc-step-title">Clique em "Claude Code" no topo</div>
+            <div class="doc-step-desc">Copia o prompt automático. Abra o Claude Code (CLI ou claude.ai), cole o prompt e anexe a planilha XLSX. O Claude identifica as colunas pelo padrão da planilha oficial e retorna o JSON atualizado para substituir no bloco <code>dashboard-data</code> deste arquivo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</div>
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   CONSTANTES FIXAS
+   ═══════════════════════════════════════════════════════════════ */
+const FASES_FIXAS = [
+  { id:'pre-lancamento', nome:'Pré-lançamento' },
+  { id:'paginas',       nome:'Páginas' },
+  { id:'criativos',     nome:'Criativos' },
+  { id:'aulas',         nome:'Aulas' },
+  { id:'trafego',       nome:'Setup Tráfego' },
+  { id:'ads',           nome:'Execução Ads' },
+  { id:'evento',        nome:'Evento' },
+  { id:'pos',           nome:'Pós' }
+];
+const KANBAN_COLS = [
+  { id:'a_fazer', label:'A fazer' },
+  { id:'em_andamento', label:'Em andamento' },
+  { id:'feito', label:'Feito' }
+];
+const SUBTASKS = {
+  'pre-lancamento': ['Briefing completo com o expert','Avatar definido (dores, desejos, objeções)','Oferta mapeada (produto, bônus, garantia, ticket)','Funil definido (páginas, sequência)','Copy de suporte revisada'],
+  'paginas': ['Página de captura publicada','Página de obrigado publicada','Página de vendas publicada','Checkout configurado e testado'],
+  'criativos': ['Brief criativo aprovado','Criativos estáticos finalizados (mínimo 3)','Criativos em vídeo finalizados (mínimo 1)','Copy dos ads aprovada','UTMs configurados'],
+  'aulas': ['Roteiro Aula 1 aprovado','Roteiro Aula 2 aprovado','Roteiro Aula 3 aprovado','Roteiro Aula 4 aprovado','Roteiro Aula 5 aprovado','Roteiro Aula 6 aprovado (pitch)','Slides de todas as aulas prontos','Ensaio técnico realizado'],
+  'trafego': ['Pixel instalado e disparando','Públicos criados (frio + retargeting)','Campanhas estruturadas e revisadas','Testes de criativo rodando'],
+  'ads': ['Campanhas no ar','CPL monitorado diariamente','Ajustes de orçamento realizados','Troca de criativos conforme necessário'],
+  'evento': ['Transmissão testada (câmera, áudio, luz)','Aula 1 ao vivo — check-in registrado','Aula 2 ao vivo — check-in registrado','Aula 3 ao vivo — check-in registrado','Aula 4 ao vivo — check-in registrado','Aula 5 ao vivo — check-in registrado','Aula 6 — pitch ao vivo','Q&A final realizado'],
+  'pos': ['Relatório de métricas consolidado','Diagnóstico do lançamento escrito','Reunião de review com o time','Próxima turma planejada']
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════════════════════ */
+const MOCK_DATA = JSON.parse(document.getElementById('dashboard-data').textContent);
+let D = deepClone(MOCK_DATA);
+
+function deepClone(obj) { return JSON.parse(JSON.stringify(obj)); }
+
+const LS_KEY      = 'lpsg-data-v3';
+const LS_THEME    = 'lpsg-theme';
+const LS_CHECK    = 'lpsg-checklist-v2';
+const LS_SHEETS   = 'lpsg-gsheets-v2';
+const LS_SUBTASKS = 'lpsg-subtasks-v1';
+const LS_FASES_META = 'lpsg-fases-meta-v1';
+
+function saveToStorage() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(D)); } catch(e) {}
+}
+function loadFromStorage() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) { D = JSON.parse(raw); return true; }
+  } catch(e) {}
+  return false;
+}
+function resetarDados() {
+  D = deepClone(MOCK_DATA);
+  try { localStorage.removeItem(LS_KEY); } catch(e) {}
+  renderAll();
+  toast('Dados resetados para o exemplo.','info');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITÁRIOS
+   ═══════════════════════════════════════════════════════════════ */
+function el(id) { return document.getElementById(id); }
+const fmt = {
+  brl:  v => 'R$ ' + Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0}),
+  brl2: v => 'R$ ' + Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}),
+  pct:  v => Number(v||0).toFixed(1) + '%',
+  num:  v => Number(v||0).toLocaleString('pt-BR'),
+  x:    v => Number(v||0).toFixed(2) + 'x',
+  date: s => { if (!s) return '—'; const p=String(s).split('-'); return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:s; }
+};
+
+/* parseBR: converte formatos BR para número */
+function parseBR(raw) {
+  if (raw === null || raw === undefined || raw === '') return 0;
+  if (typeof raw === 'number') return raw;
+  let s = String(raw).trim();
+  s = s.replace(/^R\$\s*/,'').replace(/\s/g,'');
+  s = s.replace(/%$/,'');
+  // Remove pontos de milhar, converte vírgula decimal
+  if (s.indexOf(',') !== -1 && s.indexOf('.') !== -1) {
+    if (s.lastIndexOf('.') < s.lastIndexOf(',')) {
+      s = s.replace(/\./g,'').replace(',','.');
+    } else {
+      s = s.replace(/,/g,'');
+    }
+  } else if (s.indexOf(',') !== -1) {
+    s = s.replace(',','.');
+  } else if (s.indexOf('.') !== -1 && (s.match(/\./g)||[]).length === 1) {
+    // único ponto — pode ser decimal (ex: 3.02) ou milhar (ex: 1.000)
+    const afterDot = s.split('.')[1];
+    if (afterDot && afterDot.length === 3) s = s.replace('.',''); // milhar
+    // caso contrário, deixa como decimal
+  }
+  const n = parseFloat(s);
+  return isNaN(n) ? 0 : n;
+}
+
+function semaforo(atual, meta, inverter=false) {
+  if (!meta) return 'neutral';
+  const r = atual / meta;
+  if (inverter) { if (r<=1) return 'verde'; if (r<=1.2) return 'amarelo'; return 'vermelho'; }
+  if (r>=0.9) return 'verde'; if (r>=0.75) return 'amarelo'; return 'vermelho';
+}
+
+function deltaTag(atual, base, fmt_fn, inverter=false) {
+  if (base === 0) return '';
+  const pct = ((atual - base) / base * 100);
+  const up = inverter ? pct < 0 : pct > 0;
+  const neu = Math.abs(pct) < 1;
+  const cls = neu ? 'delta-neutral' : (up ? 'delta-up' : 'delta-down');
+  const sinal = pct > 0 ? '+' : '';
+  return `<span class="kpi-delta ${cls}">${sinal}${pct.toFixed(1)}%</span>`;
+}
+
+function deltaTagAbs(atual, base, fmt_fn) {
+  if (base === 0) return '';
+  const diff = atual - base;
+  const up = diff > 0;
+  const neu = diff === 0;
+  const cls = neu ? 'delta-neutral' : (up ? 'delta-up' : 'delta-down');
+  const sinal = diff > 0 ? '+' : '';
+  return `<span class="kpi-delta ${cls}">${sinal}${fmt_fn(diff)}</span>`;
+}
+
+function toast(msg, tipo='success') {
+  const wrap = el('toast-wrap');
+  const div = document.createElement('div');
+  div.className = `toast toast-${tipo}`;
+  div.textContent = msg;
+  wrap.appendChild(div);
+  setTimeout(() => {
+    div.style.transition = 'opacity 300ms ease';
+    div.style.opacity = '0';
+    setTimeout(() => div.remove(), 320);
+  }, 3500);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVEGAÇÃO
+   ═══════════════════════════════════════════════════════════════ */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  el('tab-'+name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  else document.querySelectorAll('.tab-btn').forEach(b => {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+name+"'")) b.classList.add('active');
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SELETOR + COMPARAÇÃO
+   ═══════════════════════════════════════════════════════════════ */
+function getLancamentos() { return D.lancamentos || []; }
+function getLancamentoAtivo() { return (getLancamentos())[D.lancamento_ativo || 0] || getLancamentos()[0]; }
+function isComparando() { return D.comparacao && D.comparacao.length > 0; }
+
+function populateSelectors() {
+  const lns = getLancamentos();
+  const opts = lns.map((l,i) => `<option value="${i}">${l.id} — ${l.edicao || l.data || ''}</option>`).join('');
+  el('lh-select-principal').innerHTML = opts;
+  el('lh-select-principal').value = D.lancamento_ativo || 0;
+
+  const optsAll = `<option value="">— nenhum —</option>` + opts;
+  el('lh-select-cmp2').innerHTML = optsAll;
+  el('lh-select-cmp3').innerHTML = optsAll;
+
+  if (D.comparacao && D.comparacao[0] !== undefined) el('lh-select-cmp2').value = D.comparacao[0];
+  if (D.comparacao && D.comparacao[1] !== undefined) el('lh-select-cmp3').value = D.comparacao[1];
+}
+
+function onSelectPrincipal(val) {
+  D.lancamento_ativo = parseInt(val) || 0;
+  saveToStorage();
+  renderMetricas();
+}
+
+function onSelectComparacao(idx, val) {
+  if (!D.comparacao) D.comparacao = [];
+  if (val === '' || val === null || val === undefined) {
+    D.comparacao.splice(idx, 1);
+  } else {
+    D.comparacao[idx] = parseInt(val);
+  }
+  D.comparacao = D.comparacao.filter(v => v !== undefined && v !== null && !isNaN(v));
+  saveToStorage();
+  renderMetricas();
+}
+
+function toggleComparacao() {
+  const btn = el('lh-compare-btn');
+  const showing = el('lh-select-cmp2').style.display !== 'none';
+  if (showing) {
+    el('lh-select-cmp2').style.display = 'none';
+    el('lh-select-cmp3').style.display = 'none';
+    D.comparacao = [];
+    btn.classList.remove('active');
+  } else {
+    el('lh-select-cmp2').style.display = '';
+    el('lh-select-cmp3').style.display = '';
+    btn.classList.add('active');
+  }
+  saveToStorage();
+  renderMetricas();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOPBAR
+   ═══════════════════════════════════════════════════════════════ */
+function renderTopbar() {
+  const L = getLancamentoAtivo();
+  if (!L) return;
+  el('topbar-edicao').textContent = `${L.id} · ${L.edicao || ''}`;
+  const sv = L.roas_total >= 3 ? 'verde' : L.roas_total >= 2 ? 'amarelo' : 'vermelho';
+  const sEl = el('topbar-semaforo');
+  sEl.className = 'semaforo ' + sv;
+  sEl.innerHTML = `<span class="semaforo-dot"></span>${sv==='verde'?'No alvo':sv==='amarelo'?'Atenção':'Abaixo'} — ROAS ${fmt.x(L.roas_total)}`;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABA MÉTRICAS — RENDER PRINCIPAL
+   ═══════════════════════════════════════════════════════════════ */
+function renderMetricas() {
+  populateSelectors();
+  const L = getLancamentoAtivo();
+  if (!L) return;
+
+  const comparando = isComparando() && D.comparacao.length > 0;
+  const lnsComp = comparando
+    ? D.comparacao.map(i => getLancamentos()[i]).filter(Boolean)
+    : [];
+  const base = lnsComp.length > 0 ? lnsComp[0] : null; // base de comparação = segundo lançamento selecionado
+
+  /* Launch header */
+  el('lh-produto').textContent = L.evento || L.produto || 'LPSG';
+  el('lh-edicao').textContent = `${L.expert || ''} · ${L.id} · ${L.data || ''}`;
+
+  /* Stats row */
+  const statsRow = [
+    { label:'Ingressos', value: fmt.num(L.ingressos) },
+    { label:'Investimento', value: fmt.brl(L.investimento) },
+    { label:'Faturamento Bruto', value: fmt.brl(L.fat_bruto) },
+    { label:'Líquido', value: fmt.brl(L.liquido) },
+    { label:'ROAS Total', value: fmt.x(L.roas_total) },
+    { label:'Vendas', value: fmt.num(L.vendas) }
+  ];
+  el('lh-stats-row').innerHTML = statsRow.map(s => `
+    <div class="lh-stat">
+      <span class="lh-stat-value">${s.value}</span>
+      <span class="lh-stat-label">${s.label}</span>
+    </div>`).join('');
+
+  if (comparando && lnsComp.length > 0) {
+    renderComparacao(L, lnsComp);
+  } else {
+    renderMetricasSimples(L);
+  }
+
+  renderEventoCharts(L, lnsComp);
+  renderFunil(L, lnsComp);
+}
+
+/* ── Render simples (1 lançamento) ── */
+function renderMetricasSimples(L) {
+  /* Resultado */
+  el('resultado-sub').textContent = `${L.id}`;
+  el('resultado-cards').innerHTML = `<div class="grid-4">` + [
+    { label:'Faturamento Bruto', value: fmt.brl(L.fat_bruto), sub: `Líquido: ${fmt.brl(L.liquido)}`, bar: null },
+    { label:'ROAS Total', value: fmt.x(L.roas_total), sub: `Investimento: ${fmt.brl(L.investimento)}`, bar: Math.min(L.roas_total/5,1), barC:'var(--brand)' },
+    { label:'Vendas', value: fmt.num(L.vendas), sub: `Conv: ${fmt.pct(L.conv_pct)}`, bar: null },
+    { label:'Líquido', value: fmt.brl(L.liquido), sub: `Imposto: ${fmt.brl(L.imposto)}`, bar: null }
+  ].map(k => kpiCard(k)).join('') + `</div>`;
+
+  /* Captação */
+  el('captacao-sub').textContent = `ROAS Captação: ${fmt.x(L.roas_captacao)}`;
+  el('captacao-cards').innerHTML = `<div class="grid-4">` + [
+    { label:'Ingressos', value: fmt.num(L.ingressos), sub: `Ingresso: ${fmt.brl2(L.ingresso)}`, bar: null },
+    { label:'CAC', value: fmt.brl2(L.cac), sub: 'Custo por aluno', bar: null },
+    { label:'Fat. Captação', value: fmt.brl(L.faturamento_captacao), sub: `Saldo: ${fmt.brl(L.saldo_captacao)}`, bar: null },
+    { label:'Lead Score', value: L.lead_score + '/100', sub: 'Qualidade do ingresso', bar: L.lead_score/100, barC:'var(--success)' }
+  ].map(k => kpiCard(k)).join('') + `</div>`;
+
+  /* Tráfego */
+  el('trafego-sub').textContent = '';
+  el('trafego-cards').innerHTML = `<div class="grid-4">` + [
+    { label:'CPM', value: fmt.brl2(L.cpm), sub: 'Custo por mil impressões', bar: null },
+    { label:'CTR', value: fmt.pct(L.ctr), sub: 'Taxa de clique', bar: Math.min(L.ctr/5,1), barC:'var(--accent)' },
+    { label:'Carregamento', value: fmt.pct(L.carregamento), sub: 'Taxa de carregamento da página', bar: L.carregamento/100, barC:'var(--success)' },
+    { label:'Taxa Checkout', value: fmt.pct(L.taxa_checkout), sub: 'Inscritos que abriram checkout', bar: L.taxa_checkout/100, barC:'var(--brand)' }
+  ].map(k => kpiCard(k)).join('') + `</div>`;
+
+  /* Conversão */
+  el('conversao-cards').innerHTML = `<div class="grid-4">` + [
+    { label:'Conv. Checkout', value: fmt.pct(L.conv_checkout), sub: 'Checkout → Pag. iniciado', bar: L.conv_checkout/100, barC:'var(--brand)' },
+    { label:'Conv. Pagamento', value: fmt.pct(L.conv_pag), sub: 'Pag. iniciado → Confirmado', bar: L.conv_pag/100, barC:'var(--accent)' },
+    { label:'Conv. A1', value: fmt.pct(L.conv_a1_pct), sub: 'Únicos A1 → Vendas', bar: L.conv_a1_pct/100, barC:'var(--success)' },
+    { label:'Conv. A6', value: fmt.pct(L.conv_a6_pct), sub: 'Únicos A6 → Vendas', bar: L.conv_a6_pct/100, barC:'var(--warning)' }
+  ].map(k => kpiCard(k)).join('') + `</div>`;
+}
+
+function kpiCard(k) {
+  return `<div class="kpi-card">
+    <div class="kpi-label">${k.label}</div>
+    <div class="kpi-value">${k.value}</div>
+    <div class="kpi-meta">${k.sub || ''}${k.delta || ''}</div>
+    ${k.bar !== null && k.bar !== undefined ? `<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${Math.min(k.bar*100,100).toFixed(1)}%;background:${k.barC||'var(--brand)'};"></div></div>` : ''}
+  </div>`;
+}
+
+/* ── Render comparação ── */
+function renderComparacao(L, lnsComp) {
+  const todos = [L, ...lnsComp];
+  const n = todos.length;
+  const cls = n >= 3 ? 'n3' : 'n2';
+
+  function bloco(titulo, campos) {
+    const headers = todos.map(l =>
+      `<div class="compare-col-header" style="background:var(--bg-elevated);">${l.id}</div>`
+    ).join('');
+
+    const rows = campos.map(c => {
+      const vals = todos.map(l => c.fn(l));
+      const base = vals[0];
+      return `<tr>
+        <td style="font-size:var(--text-xs);color:var(--fg-sub);padding:var(--s2) var(--s3);border-bottom:1px solid var(--border);white-space:nowrap;">${c.label}</td>
+        ${vals.map((v,i) => {
+          const delta = i > 0 && base !== 0 ? deltaTag(c.rawFn ? c.rawFn(todos[i]) : 0, c.rawFn ? c.rawFn(todos[0]) : 0, null, c.inverter) : '';
+          return `<td style="font-family:var(--font-display);font-weight:var(--weight-bold);font-size:var(--text-sm);padding:var(--s2) var(--s3);border-bottom:1px solid var(--border);">${v} ${delta}</td>`;
+        }).join('')}
+      </tr>`;
+    }).join('');
+
+    return `<div style="margin-bottom:var(--s6);">
+      <div style="font-family:var(--font-display);font-size:var(--text-base);font-weight:var(--weight-bold);color:var(--fg);margin-bottom:var(--s3);">${titulo}</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:var(--text-sm);">
+          <thead><tr><th style="padding:var(--s2) var(--s3);font-size:var(--text-xs);color:var(--fg-sub);border-bottom:1px solid var(--border);width:140px;">KPI</th>
+          ${todos.map(l=>`<th style="padding:var(--s2) var(--s3);font-size:var(--text-xs);font-weight:var(--weight-semibold);border-bottom:1px solid var(--border);">${l.id}</th>`).join('')}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }
+
+  const resultadoHTML = bloco('Resultado', [
+    { label:'Faturamento Bruto', fn: l=>fmt.brl(l.fat_bruto), rawFn: l=>l.fat_bruto },
+    { label:'Faturamento Líquido', fn: l=>fmt.brl(l.liquido), rawFn: l=>l.liquido },
+    { label:'ROAS Total', fn: l=>fmt.x(l.roas_total), rawFn: l=>l.roas_total },
+    { label:'Vendas', fn: l=>fmt.num(l.vendas), rawFn: l=>l.vendas },
+    { label:'Investimento', fn: l=>fmt.brl(l.investimento), rawFn: l=>l.investimento, inverter:true }
+  ]);
+  const captHTML = bloco('Captação', [
+    { label:'Ingressos', fn: l=>fmt.num(l.ingressos), rawFn: l=>l.ingressos },
+    { label:'CAC', fn: l=>fmt.brl2(l.cac), rawFn: l=>l.cac, inverter:true },
+    { label:'ROAS Captação', fn: l=>fmt.x(l.roas_captacao), rawFn: l=>l.roas_captacao },
+    { label:'Lead Score', fn: l=>(l.lead_score||0)+'/100', rawFn: l=>l.lead_score }
+  ]);
+  const trafHTML = bloco('Tráfego', [
+    { label:'CPM', fn: l=>fmt.brl2(l.cpm), rawFn: l=>l.cpm, inverter:true },
+    { label:'CTR', fn: l=>fmt.pct(l.ctr), rawFn: l=>l.ctr },
+    { label:'Carregamento', fn: l=>fmt.pct(l.carregamento), rawFn: l=>l.carregamento },
+    { label:'Taxa Checkout', fn: l=>fmt.pct(l.taxa_checkout), rawFn: l=>l.taxa_checkout }
+  ]);
+  const convHTML = bloco('Conversão', [
+    { label:'Conv. Checkout', fn: l=>fmt.pct(l.conv_checkout), rawFn: l=>l.conv_checkout },
+    { label:'Conv. Pagamento', fn: l=>fmt.pct(l.conv_pag), rawFn: l=>l.conv_pag },
+    { label:'Conv. A1', fn: l=>fmt.pct(l.conv_a1_pct), rawFn: l=>l.conv_a1_pct },
+    { label:'Conv. A6', fn: l=>fmt.pct(l.conv_a6_pct), rawFn: l=>l.conv_a6_pct }
+  ]);
+
+  el('resultado-sub').textContent = `Comparando ${todos.length} lançamentos`;
+  el('resultado-cards').innerHTML = resultadoHTML;
+  el('captacao-sub').textContent = '';
+  el('captacao-cards').innerHTML = captHTML;
+  el('trafego-sub').textContent = '';
+  el('trafego-cards').innerHTML = trafHTML;
+  el('conversao-cards').innerHTML = convHTML;
+}
+
+/* ── Charts Evento ── */
+function renderEventoCharts(L, lnsComp) {
+  // Pico ao vivo
+  const p = L.pico || {};
+  const picoData = [
+    { label:'A1',label2:'Segunda', val: p.a1||0, ret: p.ret1||0 },
+    { label:'A2',label2:'Terça',   val: p.a2||0, ret: p.ret2||0 },
+    { label:'A3',label2:'Quarta',  val: p.a3||0, ret: p.ret3||0 },
+    { label:'A4',label2:'Quinta',  val: p.a4||0, ret: p.ret4||0 },
+    { label:'A5',label2:'Sexta',   val: p.a5||0, ret: p.ret5||0 },
+    { label:'Z', label2:'Zoom',    val: p.zoom||0, ret: p.ret_zoom||0 },
+    { label:'A6',label2:'Domingo', val: p.a6||0, ret: 0 }
+  ];
+  el('chart-pico').innerHTML = renderBarChart(picoData, 'var(--brand)');
+  el('ret-pico').innerHTML = renderRetencaoList(picoData.filter(d => d.ret > 0), 'Retenção pico');
+
+  // Espectadores únicos
+  const u = L.unicos || {};
+  const unicosData = [
+    { label:'A1', label2:'', val: u.a1||0, ret: u.ret1||0 },
+    { label:'A2', label2:'', val: u.a2||0, ret: u.ret2||0 },
+    { label:'A3', label2:'', val: u.a3||0, ret: u.ret3||0 },
+    { label:'A4', label2:'', val: u.a4||0, ret: u.ret4||0 },
+    { label:'A5', label2:'', val: u.a5||0, ret: u.ret5||0 },
+    { label:'A6', label2:'', val: u.a6||0, ret: 0 }
+  ];
+  el('chart-unicos').innerHTML = renderBarChart(unicosData, 'var(--accent)');
+  el('ret-unicos').innerHTML = renderRetencaoList(unicosData.filter(d => d.ret > 0), 'Retenção únicos');
+}
+
+function renderBarChart(data, color) {
+  const maxVal = Math.max(...data.map(d => d.val), 1);
+  const H = 120;
+  return `<div class="chart-bar-group">` +
+    data.map(d => {
+      const h = Math.round((d.val / maxVal) * H);
+      return `<div class="chart-bar-col">
+        <div class="chart-bar-val">${d.val > 0 ? fmt.num(d.val) : ''}</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar-item" style="height:${h}px;background:${color};min-height:${d.val>0?4:0}px;"></div>
+        </div>
+        <div class="chart-bar-label">${d.label}${d.label2?'<br><span style=\'color:var(--fg-sub);\'>' + d.label2 + '</span>':''}</div>
+      </div>`;
+    }).join('') + `</div>`;
+}
+
+function renderRetencaoList(data, titulo) {
+  if (!data || data.length === 0) return '';
+  return `<div style="font-size:var(--text-xs);font-weight:var(--weight-semibold);color:var(--fg-sub);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--s3);">${titulo}</div>` +
+    data.map(d => `<div class="retencao-row">
+      <div class="retencao-label">${d.label}</div>
+      <div class="retencao-bar-wrap"><div class="retencao-bar" style="width:${Math.min(d.ret,150)}%;background:${d.ret>=100?'var(--success)':d.ret>=80?'var(--brand)':'var(--warning)'};"></div></div>
+      <div class="retencao-val">${d.ret}%</div>
+    </div>`).join('');
+}
+
+/* ── Funil Visual ── */
+function renderFunil(L, lnsComp) {
+  const u = L.unicos || {};
+  const etapas = [
+    { label:'Inscritos', value: L.ingressos, pct: 100, cor:'oklch(70% 0.20 38)' },
+    { label:'Únicos A1', value: u.a1||0, pct: u.a1 ? (u.a1/L.ingressos*100) : 0, cor:'oklch(70% 0.22 50)' },
+    { label:'Únicos A6', value: u.a6||0, pct: u.a6 ? (u.a6/L.ingressos*100) : 0, cor:'oklch(70% 0.20 70)' },
+    { label:'Fichas', value: L.ficha||0, pct: L.ficha ? (L.ficha/L.ingressos*100) : 0, cor:'var(--accent)' },
+    { label:'Vendas', value: L.vendas, pct: L.conv_pct||0, cor:'var(--success)' }
+  ].filter(e => e.value > 0 || e.label === 'Inscritos');
+
+  el('funil-visual').innerHTML = etapas.map(f => `
+    <div class="funil-step">
+      <div class="funil-label">${f.label}</div>
+      <div class="funil-bar-wrap"><div class="funil-bar" style="width:${Math.max(f.pct,4)}%;background:${f.cor};">${fmt.num(f.value)}</div></div>
+      <div class="funil-pct">${f.pct.toFixed(1)}%</div>
+    </div>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABA ESTRATÉGICO
+   ═══════════════════════════════════════════════════════════════ */
+let _checklistState = {};
+let _subtasksData   = {};   // { faseId: ['sub1','sub2',...] }
+let _fasesMeta      = {};   // { faseId: { responsavel, data_inicio, data_fim } }
+let _saveToastShown = false;
+
+function loadChecklistState() {
+  try {
+    const raw = localStorage.getItem(LS_CHECK);
+    if (raw) _checklistState = JSON.parse(raw);
+  } catch(e) {}
+}
+function saveChecklistState() {
+  try { localStorage.setItem(LS_CHECK, JSON.stringify(_checklistState)); } catch(e) {}
+}
+
+function loadSubtasks() {
+  try {
+    const raw = localStorage.getItem(LS_SUBTASKS);
+    if (raw) _subtasksData = JSON.parse(raw);
+  } catch(e) {}
+}
+function saveSubtasks() {
+  try { localStorage.setItem(LS_SUBTASKS, JSON.stringify(_subtasksData)); } catch(e) {}
+  markSaved();
+}
+
+function loadFasesMeta() {
+  try {
+    const raw = localStorage.getItem(LS_FASES_META);
+    if (raw) _fasesMeta = JSON.parse(raw);
+  } catch(e) {}
+}
+function saveFasesMeta() {
+  try { localStorage.setItem(LS_FASES_META, JSON.stringify(_fasesMeta)); } catch(e) {}
+  markSaved();
+}
+
+function markSaved() {
+  if (!_saveToastShown) {
+    _saveToastShown = true;
+    toast('Alteração salva', 'success');
+  }
+}
+
+function escapeHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* Retorna array de sub-tarefas para uma fase: persisted primeiro, fallback hardcoded */
+function getSubtasks(faseId) {
+  if (_subtasksData[faseId] !== undefined) return _subtasksData[faseId];
+  return SUBTASKS[faseId] || [];
+}
+
+/* Retorna meta (responsavel, datas) mesclando localStorage sobre D.fases / FASES_FIXAS */
+function getFaseMeta(fi) {
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS.map(f => ({ ...f }));
+  const base = fases[fi] || {};
+  const over = _fasesMeta[base.id] || {};
+  return {
+    responsavel: over.responsavel !== undefined ? over.responsavel : (base.responsavel || ''),
+    data_inicio: over.data_inicio !== undefined ? over.data_inicio : (base.data_inicio || ''),
+    data_fim:    over.data_fim    !== undefined ? over.data_fim    : (base.data_fim    || ''),
+  };
+}
+
+/* Calcula status real a partir do checklist — usada em timeline E metas */
+function computeFaseStatus(faseId) {
+  const subtasks = getSubtasks(faseId);
+  const doneList = _checklistState[faseId] || [];
+  const total    = subtasks.length;
+  const done     = doneList.filter(Boolean).length;
+  const pct      = total > 0 ? done / total : 0;
+  let status;
+  if (total === 0) {
+    status = 'pendente';
+  } else if (done === total) {
+    status = 'concluida';
+  } else if (done > 0) {
+    status = 'em_andamento';
+  } else {
+    status = 'pendente';
+  }
+  return { status, done, total, pct };
+}
+
+function renderEstrategico() {
+  renderTimeline();
+  renderChecklist();
+  renderMetasGrid();
+}
+
+function renderTimeline() {
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS.map(f => ({ ...f }));
+  let concl = 0;
+  const total = fases.length;
+  el('timeline-track').innerHTML = fases.map((f, fi) => {
+    const cs     = computeFaseStatus(f.id);
+    const meta   = getFaseMeta(fi);
+    if (cs.status === 'concluida') concl++;
+    const d1 = fmt.date(meta.data_inicio), d2 = fmt.date(meta.data_fim);
+    const dias = d1 && d1 !== '—' && d2 && d2 !== '—' ? `${d1} – ${d2}` : '';
+    return `<div class="timeline-fase">
+      <div class="timeline-dot ${cs.status}"></div>
+      <div class="timeline-content">
+        <div class="timeline-nome">${escapeHtml(f.nome)}</div>
+        ${dias ? `<div class="timeline-dias">${dias}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  el('checklist-progresso-geral').textContent = `${concl}/${total} fases concluídas`;
+}
+
+function renderChecklist() {
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS.map(f => ({ ...f, status:'pendente', objetivo:'' }));
+  /* preservar quais items estão abertos antes de re-renderizar */
+  const openSet = new Set();
+  fases.forEach((_,fi) => { if (el('ci-'+fi) && el('ci-'+fi).classList.contains('open')) openSet.add(fi); });
+
+  el('checklist-container').innerHTML = fases.map((fase, fi) => {
+    const subtasks = getSubtasks(fase.id);
+    const doneList = (_checklistState[fase.id] || []);
+    const cs       = computeFaseStatus(fase.id);
+    const pctPx    = Math.round(cs.pct * 100);
+    const barC     = cs.status==='concluida' ? 'var(--success)' : cs.status==='em_andamento' ? 'var(--brand)' : 'var(--fg-sub)';
+    const complete  = cs.status === 'concluida' && cs.total > 0;
+    const isOpen    = openSet.has(fi);
+
+    return `<div class="checklist-item fase-${cs.status}${isOpen?' open':''}" id="ci-${fi}">
+      <div class="checklist-fase-header" onclick="toggleChecklist(${fi})">
+        <div class="checklist-num">${fi+1}</div>
+        <div class="checklist-nome">${escapeHtml(fase.nome)}</div>
+        <span class="checklist-fase-count${complete?' completa':''}">
+          ${cs.total > 0 ? `${cs.done}/${cs.total}` : 'Pendente'}
+        </span>
+        <svg class="checklist-fase-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="checklist-fase-progress">
+        <div class="checklist-progress-bar-wrap">
+          <div class="checklist-progress-bar-fill" style="width:${pctPx}%;background:${barC};"></div>
+        </div>
+      </div>
+      <div class="checklist-subtasks" id="cs-${fi}">
+        ${subtasks.map((sub, si) => {
+          const done = doneList[si];
+          return `<div class="subtask-row${done?' done':''}" onclick="toggleSubtask(${fi},${si})">
+            <div class="subtask-check">
+              <svg class="subtask-check-svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="subtask-label">${escapeHtml(sub)}</div>
+            <button class="subtask-delete-btn" title="Remover sub-tarefa" onclick="deleteSubtask(event,${fi},${si})">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>`;
+        }).join('')}
+        <div class="subtask-add-row">
+          <input class="subtask-add-input" id="subtask-add-${fi}" type="text" placeholder="+ Adicionar sub-tarefa"
+            onkeydown="addSubtaskOnEnter(event,${fi})"
+            onclick="event.stopPropagation()" />
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleChecklist(fi) {
+  const item = el('ci-'+fi);
+  if (item) item.classList.toggle('open');
+}
+
+function toggleSubtask(fi, si) {
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS;
+  const fase  = fases[fi];
+  if (!fase) return;
+  if (!_checklistState[fase.id]) _checklistState[fase.id] = [];
+  _checklistState[fase.id][si] = !_checklistState[fase.id][si];
+  saveChecklistState();
+  renderEstrategico();
+  /* reabrir o accordion que estava aberto */
+  const item = el('ci-'+fi);
+  if (item) item.classList.add('open');
+}
+
+function deleteSubtask(event, fi, si) {
+  event.stopPropagation();
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS;
+  const fase  = fases[fi];
+  if (!fase) return;
+  /* inicializa subtasks persisted se ainda não existia */
+  if (_subtasksData[fase.id] === undefined) {
+    _subtasksData[fase.id] = [...(SUBTASKS[fase.id] || [])];
+  }
+  _subtasksData[fase.id].splice(si, 1);
+  /* também remove o flag correspondente do estado do checklist */
+  if (_checklistState[fase.id]) {
+    _checklistState[fase.id].splice(si, 1);
+    saveChecklistState();
+  }
+  saveSubtasks();
+  renderEstrategico();
+  const item = el('ci-'+fi);
+  if (item) item.classList.add('open');
+}
+
+function addSubtaskOnEnter(event, fi) {
+  if (event.key !== 'Enter') return;
+  event.stopPropagation();
+  const input = el('subtask-add-'+fi);
+  if (!input) return;
+  const val = input.value.trim();
+  if (!val) return;
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS;
+  const fase  = fases[fi];
+  if (!fase) return;
+  if (_subtasksData[fase.id] === undefined) {
+    _subtasksData[fase.id] = [...(SUBTASKS[fase.id] || [])];
+  }
+  _subtasksData[fase.id].push(val);
+  saveSubtasks();
+  renderEstrategico();
+  const item = el('ci-'+fi);
+  if (item) item.classList.add('open');
+  /* foca de volta no input após re-render */
+  const newInput = el('subtask-add-'+fi);
+  if (newInput) { newInput.value = ''; newInput.focus(); }
+}
+
+function saveFaseMetaField(faseId, field, value) {
+  if (!_fasesMeta[faseId]) _fasesMeta[faseId] = {};
+  _fasesMeta[faseId][field] = value;
+  saveFasesMeta();
+  renderEstrategico();
+}
+
+function renderMetasGrid() {
+  const fases = D.fases && D.fases.length > 0 ? D.fases : FASES_FIXAS.map(f => ({ ...f }));
+  const statusMap   = { concluida:'badge-green', em_andamento:'badge-orange', pendente:'badge-yellow' };
+  const labelMap    = { concluida:'Concluída', em_andamento:'Em andamento', pendente:'Pendente' };
+  const pctLabel    = { concluida:'100%', em_andamento:'', pendente:'0%' };
+
+  el('metas-grid').innerHTML = fases.map((f, fi) => {
+    const cs   = computeFaseStatus(f.id);
+    const meta = getFaseMeta(fi);
+    const pctTxt = cs.total > 0 ? Math.round(cs.pct*100)+'%' : pctLabel[cs.status];
+    const progressBar = cs.total > 0
+      ? `<div class="metas-progress-wrap" style="margin-top:var(--s3);">
+           <div class="metas-progress-bar" style="width:${Math.round(cs.pct*100)}%;background:${cs.status==='concluida'?'var(--success)':cs.status==='em_andamento'?'var(--brand)':'var(--fg-sub)'};"></div>
+         </div>
+         <div style="font-size:var(--text-xs);color:var(--fg-sub);margin-top:var(--s1);">${cs.done}/${cs.total} sub-tarefas · ${pctTxt}</div>`
+      : '';
+    return `<div class="kpi-card metas-fase-card" onclick="scrollToFase(${fi})">
+      <div class="kpi-label">${escapeHtml(f.nome)}</div>
+      <div style="margin-top:var(--s2);">
+        <span class="topbar-badge ${statusMap[cs.status]||'badge-yellow'}">${labelMap[cs.status]||'Pendente'}</span>
+      </div>
+      ${progressBar}
+      <div class="metas-meta-fields" onclick="event.stopPropagation()">
+        <input class="metas-input" type="text" placeholder="Responsável"
+          value="${escapeHtml(meta.responsavel)}"
+          onblur="saveFaseMetaField('${f.id}','responsavel',this.value)"
+          onkeydown="if(event.key==='Enter'){this.blur();}" />
+        <div class="metas-dates">
+          <input class="metas-input metas-date" type="date" title="Início"
+            value="${meta.data_inicio||''}"
+            onchange="saveFaseMetaField('${f.id}','data_inicio',this.value)" />
+          <span style="color:var(--fg-sub);font-size:var(--text-xs);">–</span>
+          <input class="metas-input metas-date" type="date" title="Fim"
+            value="${meta.data_fim||''}"
+            onchange="saveFaseMetaField('${f.id}','data_fim',this.value)" />
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function scrollToFase(fi) {
+  const item = el('ci-'+fi);
+  if (!item) return;
+  item.scrollIntoView({ behavior:'smooth', block:'start' });
+  if (!item.classList.contains('open')) item.classList.add('open');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ABA KANBAN
+   ═══════════════════════════════════════════════════════════════ */
+function normalizeStatus(s) {
+  if (!s) return 'a_fazer';
+  const l = String(s).toLowerCase().replace(/\s+/g,'-');
+  if (['feito','done','concluido','concluída','publicado'].includes(l)) return 'feito';
+  if (['em_andamento','em-andamento','in-progress','doing','andamento'].includes(l)) return 'em_andamento';
+  return 'a_fazer';
+}
+function getTipoCls(tipo) {
+  const map = { Criativo:'tipo-criativo', Slides:'tipo-slides', Copy:'tipo-copy',
+    Pagina:'tipo-pagina', Página:'tipo-pagina', Aula:'tipo-aula', Ad:'tipo-ad',
+    Relatorio:'tipo-relatorio', Relatório:'tipo-relatorio', Setup:'tipo-outros', Mensageria:'tipo-mensageria' };
+  return map[tipo] || 'tipo-outros';
+}
+
+function initKanbanFilters() {
+  const faseNames = {};
+  D.fases.forEach(f => faseNames[f.id] = f.nome);
+  FASES_FIXAS.forEach(f => faseNames[f.id] = f.nome);
+  el('filter-fase').innerHTML = '<option value="">Todas as fases</option>' +
+    [...new Set(D.pecas_kanban.map(p => p.fase).filter(Boolean))].map(f =>
+      `<option value="${f}">${faseNames[f]||f}</option>`).join('');
+  el('filter-responsavel').innerHTML = '<option value="">Todos os responsáveis</option>' +
+    [...new Set(D.pecas_kanban.map(p => p.responsavel).filter(Boolean))].map(a =>
+      `<option value="${a}">${a}</option>`).join('');
+  el('filter-tipo').innerHTML = '<option value="">Todos os tipos</option>' +
+    [...new Set(D.pecas_kanban.map(p => p.tipo))].map(t =>
+      `<option value="${t}">${t}</option>`).join('');
+}
+
+let draggedId = null;
+function renderKanban() {
+  const fF = el('filter-fase').value;
+  const fR = el('filter-responsavel').value;
+  const fT = el('filter-tipo').value;
+  let pecas = D.pecas_kanban.map(p => ({...p, status: normalizeStatus(p.status)})).filter(p => {
+    if (fF && p.fase !== fF) return false;
+    if (fR && p.responsavel !== fR) return false;
+    if (fT && p.tipo !== fT) return false;
+    return true;
+  });
+  el('kanban-count-total').textContent = `${pecas.length} peças`;
+  el('kanban-board').innerHTML = KANBAN_COLS.map(col => {
+    const cards = pecas.filter(p => p.status === col.id);
+    return `<div class="kanban-col" id="col-${col.id}"
+        ondragover="onDragOver(event,'${col.id}')"
+        ondrop="onDrop(event,'${col.id}')"
+        ondragleave="onDragLeave(event,'${col.id}')">
+      <div class="kanban-col-header">
+        <span class="kanban-col-name">${col.label}</span>
+        <span class="kanban-count">${cards.length}</span>
+      </div>
+      <div class="kanban-cards" id="cards-${col.id}">
+        ${cards.map(card => renderKanbanCard(card, col.id)).join('')}
+      </div>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('.kanban-card[draggable]').forEach(card => {
+    card.addEventListener('dragstart', e => {
+      draggedId = parseInt(card.dataset.id);
+      card.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('dragging');
+      document.querySelectorAll('.kanban-col').forEach(c => c.classList.remove('drag-over'));
+    });
+  });
+}
+function renderKanbanCard(card, colId) {
+  const allCols = KANBAN_COLS.map(c => c.id);
+  const idx = allCols.indexOf(colId);
+  const canLeft = idx > 0, canRight = idx < allCols.length-1;
+  return `<div class="kanban-card" draggable="true" data-id="${card.id}" data-tipo="${card.tipo||''}">
+    <div class="kanban-card-tipo ${getTipoCls(card.tipo)}">${card.tipo||'Tarefa'}</div>
+    <div class="kanban-card-nome">${card.nome}</div>
+    <div class="kanban-card-footer">
+      <span class="kanban-agente">${card.responsavel||''}</span>
+      <span class="kanban-deadline">${fmt.date(card.deadline)}</span>
+    </div>
+    <div class="kanban-move-btns">
+      ${canLeft  ? `<button class="kanban-move-btn" onclick="moveCard(${card.id},'${allCols[idx-1]}')">&#8592; ${KANBAN_COLS[idx-1].label}</button>` : ''}
+      ${canRight ? `<button class="kanban-move-btn" onclick="moveCard(${card.id},'${allCols[idx+1]}')">&#8594; ${KANBAN_COLS[idx+1].label}</button>` : ''}
+    </div>
+  </div>`;
+}
+function onDragOver(e, colId) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  const col = el('col-'+colId); if (col) col.classList.add('drag-over');
+}
+function onDragLeave(e, colId) {
+  const col = el('col-'+colId);
+  if (col && !col.contains(e.relatedTarget)) col.classList.remove('drag-over');
+}
+function onDrop(e, colId) {
+  e.preventDefault(); if (draggedId == null) return;
+  moveCard(draggedId, colId); draggedId = null;
+}
+function moveCard(id, newStatus) {
+  const peca = D.pecas_kanban.find(p => p.id === id); if (!peca) return;
+  peca.status = newStatus; saveToStorage(); initKanbanFilters(); renderKanban();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEMA
+   ═══════════════════════════════════════════════════════════════ */
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  el('icon-sun').style.display  = theme==='light' ? 'block' : 'none';
+  el('icon-moon').style.display = theme==='dark'  ? 'block' : 'none';
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme')||'dark';
+  const next = cur==='dark' ? 'light' : 'dark';
+  applyTheme(next); try { localStorage.setItem(LS_THEME, next); } catch(e) {}
+}
+function initTheme() {
+  let saved = 'dark'; try { saved = localStorage.getItem(LS_THEME)||'dark'; } catch(e) {}
+  applyTheme(saved);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   IMPORT / EXPORT XLSX
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Schema de colunas da planilha oficial (por índice) ── */
+/*
+  Linha 1 (idx 0): títulos de bloco mesclados
+  Linha 2 (idx 1): cabeçalhos reais
+  Linha 3+ (idx 2+): dados
+
+  Índices de coluna (0-based):
+  0  = Identificador do evento
+  1  = $ Ingresso
+  2  = Ingressos
+  3  = CAC
+  4  = Lead Score
+  5  = Investimento
+  6  = Fat. Captação
+  7  = Saldo Captação
+  8  = ROAS Captação
+  9  = CPM
+  10 = CTR
+  11 = Carregamento
+  12 = Taxa Checkout
+  13 = Conv Checkout
+  14 = Conv Pag
+  15 = Inscritos x A1 (pico %)
+  -- PICO AO VIVO --
+  16 = Pico A1
+  17 = Ret1
+  18 = Pico A2
+  19 = Ret2
+  20 = Pico A3
+  21 = Ret3
+  22 = Pico A4
+  23 = Ret4
+  24 = Pico A5
+  25 = Ret5
+  26 = Zoom
+  27 = Ret Zoom
+  28 = Pico A6
+  -- ÚNICOS --
+  29 = Inscritos x A1 únicos %
+  30 = Unicos A1
+  31 = Ret1u
+  32 = Unicos A2
+  33 = Ret2u
+  34 = Unicos A3
+  35 = Ret3u
+  36 = Unicos A4
+  37 = Ret4u
+  38 = Unicos A5
+  39 = Ret5u
+  40 = Unicos A6
+  41 = Ficha
+  42 = Ingresso x Ficha %
+  43 = Vendas
+  44 = % Conv
+  45 = % Conv Ficha
+  46 = % Conv A1
+  47 = % Conv A6
+  48 = $ Investimento (resultado)
+  49 = $ Faturamento Bruto
+  50 = Imposto
+  51 = $ Líquido
+  52 = ROAS Total
+*/
+/* Schema alinhado com a PLANILHA OFICIAL TURBO (com colunas separadoras vazias entre blocos):
+   col 0  = Identificador
+   col 1  = (separator)
+   cols 2-9   = CAPTAÇÃO (8 cols: $ Ingresso, Ingressos, CAC, Lead Score, Investimento, Faturamento, Saldo, ROAS)
+   col 10 = (separator)
+   cols 11-16 = TRÁFEGO (6 cols: CPM, CTR, Carregamento, Taxa Checkout, Conv Checkout, Conv Pag)
+   col 17 = (separator)
+   cols 18-31 = PICO AO VIVO (14 cols: Inscritos x A1, A1, Ret1p2, A2, Ret2p3, A3, Ret3p4, A4, Ret4p5, A5, Ret5pZ, Zoom, Ret5p6, A6)
+   col 32 = (separator)
+   cols 33-44 = ÚNICOS (12 cols: Inscritos x A1, A1, Ret1p2, A2, Ret2p3, A3, Ret3p4, A4, Ret4p5, A5, Ret5p6, A6)
+   col 45 = (separator)
+   cols 46-52 = CONVERSÃO (7 cols: Ficha, Ingresso x Ficha %, Vendas, % Conv, % Conv Ficha, % Conv A1, % Conv A6)
+   col 53 = (separator)
+   cols 54-58 = RESULTADO (5 cols: $ Investimento, $ Faturamento, Imposto, $ Líquido, ROAS Total)
+*/
+const COL_SCHEMA = {
+  id: 0,
+  /* CAPTAÇÃO */
+  ingresso: 2, ingressos: 3, cac: 4, lead_score: 5,
+  investimento: 6, faturamento_captacao: 7, saldo_captacao: 8, roas_captacao: 9,
+  /* TRÁFEGO */
+  cpm: 11, ctr: 12, carregamento: 13, taxa_checkout: 14, conv_checkout: 15, conv_pag: 16,
+  /* PICO AO VIVO */
+  inscritos_x_a1_pico_pct: 18,
+  pico_a1: 19, pico_ret1: 20, pico_a2: 21, pico_ret2: 22,
+  pico_a3: 23, pico_ret3: 24, pico_a4: 25, pico_ret4: 26,
+  pico_a5: 27, pico_ret5: 28, pico_zoom: 29, pico_ret_zoom: 30, pico_a6: 31,
+  /* ÚNICOS */
+  unicos_x_a1_pct: 33,
+  unicos_a1: 34, unicos_ret1: 35, unicos_a2: 36, unicos_ret2: 37,
+  unicos_a3: 38, unicos_ret3: 39, unicos_a4: 40, unicos_ret4: 41,
+  unicos_a5: 42, unicos_ret5: 43, unicos_a6: 44,
+  /* CONVERSÃO */
+  ficha: 46, ingresso_x_ficha_pct: 47, vendas: 48, conv_pct: 49,
+  conv_ficha_pct: 50, conv_a1_pct: 51, conv_a6_pct: 52,
+  /* RESULTADO */
+  inv_resultado: 54, fat_bruto: 55, imposto: 56, liquido: 57, roas_total: 58
+};
+
+function rowToLancamento(cells) {
+  function c(key) { const idx = COL_SCHEMA[key]; return idx !== undefined ? parseBR(cells[idx]) : 0; }
+  function cs(key) { const idx = COL_SCHEMA[key]; return (cells[idx] !== undefined && cells[idx] !== null) ? String(cells[idx]).trim() : ''; }
+  const id = cs('id');
+  if (!id) return null;
+  return {
+    id,
+    produto: 'LPSG',
+    evento: 'Lançamento Pago Semanal',
+    expert: '',
+    edicao: id,
+    data: '',
+    ingresso: c('ingresso'),
+    ingressos: c('ingressos'),
+    cac: c('cac'),
+    lead_score: c('lead_score'),
+    investimento: c('investimento') || c('inv_resultado'),
+    faturamento_captacao: c('faturamento_captacao'),
+    saldo_captacao: c('saldo_captacao'),
+    roas_captacao: c('roas_captacao'),
+    cpm: c('cpm'), ctr: c('ctr'), carregamento: c('carregamento'),
+    taxa_checkout: c('taxa_checkout'), conv_checkout: c('conv_checkout'), conv_pag: c('conv_pag'),
+    inscritos_x_a1_pico_pct: c('inscritos_x_a1_pico_pct'),
+    pico: {
+      a1: c('pico_a1'), ret1: c('pico_ret1'),
+      a2: c('pico_a2'), ret2: c('pico_ret2'),
+      a3: c('pico_a3'), ret3: c('pico_ret3'),
+      a4: c('pico_a4'), ret4: c('pico_ret4'),
+      a5: c('pico_a5'), ret5: c('pico_ret5'),
+      zoom: c('pico_zoom'), ret_zoom: c('pico_ret_zoom'), a6: c('pico_a6')
+    },
+    unicos: {
+      inscritos_x_a1_pct: c('unicos_x_a1_pct'),
+      a1: c('unicos_a1'), ret1: c('unicos_ret1'),
+      a2: c('unicos_a2'), ret2: c('unicos_ret2'),
+      a3: c('unicos_a3'), ret3: c('unicos_ret3'),
+      a4: c('unicos_a4'), ret4: c('unicos_ret4'),
+      a5: c('unicos_a5'), ret5: c('unicos_ret5'), a6: c('unicos_a6')
+    },
+    ficha: c('ficha'), ingresso_x_ficha_pct: c('ingresso_x_ficha_pct'),
+    vendas: c('vendas'), conv_pct: c('conv_pct'), conv_ficha_pct: c('conv_ficha_pct'),
+    conv_a1_pct: c('conv_a1_pct'), conv_a6_pct: c('conv_a6_pct'),
+    fat_bruto: c('fat_bruto'), imposto: c('imposto'), liquido: c('liquido'), roas_total: c('roas_total')
+  };
+}
+
+function downloadModelo() {
+  if (window._xlsxReady && typeof XLSX !== 'undefined') { downloadXLSX(); }
+  else { toast('Aguarde o SheetJS carregar e tente novamente.','error'); }
+}
+
+function downloadXLSX() {
+  const wb = XLSX.utils.book_new();
+
+  /* Linha 1: títulos de bloco — alinhada com planilha oficial (com colunas separadoras) */
+  const TOTAL_COLS = 59;
+  const row1 = new Array(TOTAL_COLS).fill('');
+  row1[0]  = 'IDENTIFICAÇÃO';
+  row1[2]  = 'CAPTAÇÃO';
+  row1[11] = 'TRÁFEGO';
+  row1[18] = 'EVENTO — PICO AO VIVO';
+  row1[33] = 'EVENTO — ESPECTADORES ÚNICOS';
+  row1[46] = 'CONVERSÃO';
+  row1[54] = 'RESULTADO';
+
+  /* Linha 2: cabeçalhos reais — posições alinhadas a COL_SCHEMA */
+  const row2 = new Array(TOTAL_COLS).fill('');
+  row2[0]  = 'Identificador';
+  /* CAPTAÇÃO */
+  row2[2]='$ Ingresso'; row2[3]='Ingressos'; row2[4]='CAC'; row2[5]='Lead Score';
+  row2[6]='Investimento'; row2[7]='Fat. Captação'; row2[8]='Saldo Captação'; row2[9]='ROAS Captação';
+  /* TRÁFEGO */
+  row2[11]='CPM'; row2[12]='CTR'; row2[13]='Carregamento'; row2[14]='Taxa Checkout'; row2[15]='Conv Checkout'; row2[16]='Conv Pag';
+  /* PICO */
+  row2[18]='Inscritos x A1 %';
+  row2[19]='1|Segunda'; row2[20]='Ret 1'; row2[21]='2|Terça'; row2[22]='Ret 2';
+  row2[23]='3|Quarta'; row2[24]='Ret 3'; row2[25]='4|Quinta'; row2[26]='Ret 4';
+  row2[27]='5|Sexta'; row2[28]='Ret 5'; row2[29]='Zoom|Sáb'; row2[30]='Ret Zoom'; row2[31]='6|Domingo';
+  /* ÚNICOS */
+  row2[33]='Inscritos x A1 %';
+  row2[34]='1|Segunda'; row2[35]='Ret 1u'; row2[36]='2|Terça'; row2[37]='Ret 2u';
+  row2[38]='3|Quarta'; row2[39]='Ret 3u'; row2[40]='4|Quinta'; row2[41]='Ret 4u';
+  row2[42]='5|Sexta'; row2[43]='Ret 5u'; row2[44]='6|Domingo';
+  /* CONVERSÃO */
+  row2[46]='Ficha'; row2[47]='Ingresso x Ficha %'; row2[48]='Vendas'; row2[49]='% Conv';
+  row2[50]='% Conv Ficha'; row2[51]='% Conv A1'; row2[52]='% Conv A6';
+  /* RESULTADO */
+  row2[54]='$ Investimento'; row2[55]='$ Faturamento'; row2[56]='Imposto'; row2[57]='$ Líquido'; row2[58]='ROAS Total';
+
+  /* Linha exemplo (LPSG_01/26) */
+  const rowEx = new Array(TOTAL_COLS).fill('');
+  rowEx[0]='LPSG_01/26';
+  rowEx[2]='R$ 62,00'; rowEx[3]='1.000'; rowEx[4]='R$ 49,60'; rowEx[5]='80,00';
+  rowEx[6]='R$ 49.600,00'; rowEx[7]='R$ 62.000,00'; rowEx[8]='R$ 12.400,00'; rowEx[9]='1,25';
+  rowEx[11]='R$ 31,00'; rowEx[12]='3,00%'; rowEx[13]='92,00%'; rowEx[14]='30,00%'; rowEx[15]='20,00%'; rowEx[16]='5,00%';
+  rowEx[18]='30,00%';
+  rowEx[19]=300; rowEx[20]='70%'; rowEx[21]=210; rowEx[22]='85%';
+  rowEx[23]=179; rowEx[24]='85%'; rowEx[25]=152; rowEx[26]='85%';
+  rowEx[27]=129; rowEx[28]='70%'; rowEx[29]=90; rowEx[30]='130%'; rowEx[31]=168;
+  rowEx[33]='100%';
+  rowEx[34]=1000; rowEx[35]='70%'; rowEx[36]=700; rowEx[37]='85%';
+  rowEx[38]=595; rowEx[39]='85%'; rowEx[40]=506; rowEx[41]='85%';
+  rowEx[42]=430; rowEx[43]='85%'; rowEx[44]=365;
+  rowEx[46]=250; rowEx[47]='25,00%'; rowEx[48]=70; rowEx[49]='7,00%';
+  rowEx[50]='28,00%'; rowEx[51]='23,33%'; rowEx[52]='41,75%';
+  rowEx[54]='R$ 49.600,00'; rowEx[55]='R$ 150.000,00'; rowEx[56]='R$ 15.000,00'; rowEx[57]='R$ 85.400,00'; rowEx[58]='3,02';
+
+  const aoa = [row1, row2, rowEx];
+  for (let i = 0; i < 49; i++) aoa.push(new Array(TOTAL_COLS).fill(''));
+
+  const ws = XLSX.utils.aoa_to_sheet(aoa);
+
+  /* Merges linha 1 — abrangem o título + colunas do bloco */
+  ws['!merges'] = [
+    { s:{r:0,c:2},  e:{r:0,c:9}  },  // CAPTAÇÃO (8 cols)
+    { s:{r:0,c:11}, e:{r:0,c:16} },  // TRÁFEGO (6 cols)
+    { s:{r:0,c:18}, e:{r:0,c:31} },  // PICO AO VIVO (14 cols)
+    { s:{r:0,c:33}, e:{r:0,c:44} },  // ÚNICOS (12 cols)
+    { s:{r:0,c:46}, e:{r:0,c:52} },  // CONVERSÃO (7 cols)
+    { s:{r:0,c:54}, e:{r:0,c:58} }   // RESULTADO (5 cols)
+  ];
+
+  ws['!cols'] = [{ wch: 18 }, ...new Array(TOTAL_COLS - 1).fill({ wch: 12 })];
+  XLSX.utils.book_append_sheet(wb, ws, 'Dados dos Eventos');
+  XLSX.writeFile(wb, 'planilha-lpsg-modelo.xlsx');
+  toast('Modelo baixado com sucesso.','success');
+}
+
+function triggerImport() { el('file-input').click(); }
+
+function initFileInput() {
+  const fi = el('file-input');
+  if (!fi) return;
+  fi.onchange = function(e) {
+    const file = e.target.files[0]; if (!file) return;
+    processFile(file); this.value = '';
+  };
+}
+
+function processFile(file) {
+  const name = file.name.toLowerCase();
+  if (name.endsWith('.xlsx') || name.endsWith('.xls')) {
+    if (!window._xlsxReady || typeof XLSX === 'undefined') {
+      toast('SheetJS ainda carregando — tente novamente em instantes.','error'); return;
+    }
+    const reader = new FileReader();
+    reader.onload = e => {
+      try { const wb = XLSX.read(e.target.result, {type:'array'}); parseXLSX(wb); }
+      catch(err) { toast('Erro ao ler XLSX: '+err.message,'error'); }
+    };
+    reader.readAsArrayBuffer(file);
+  } else if (name.endsWith('.csv')) {
+    const reader = new FileReader();
+    reader.onload = e => parseCSVDados(e.target.result);
+    reader.readAsText(file,'utf-8');
+  } else {
+    toast('Formato inválido. Use .xlsx ou .csv','error');
+  }
+}
+
+function parseXLSX(wb) {
+  const sheetName = wb.SheetNames.find(n => {
+    const l = n.toLowerCase();
+    return l.includes('dados') || l.includes('evento') || l.includes('lancamento') || l.includes('lançamento');
+  }) || wb.SheetNames[0];
+
+  const ws = wb.Sheets[sheetName];
+  if (!ws) { toast('Aba de dados não encontrada.','error'); return; }
+
+  /* aoa: todas as linhas como arrays de células */
+  const aoa = XLSX.utils.sheet_to_json(ws, { header:1, defval:'' });
+
+  /* Pula linha 1 (títulos de bloco) e linha 2 (cabeçalhos) — dados a partir da linha 3 (índice 2) */
+  const dataRows = aoa.slice(2);
+  applyDadosRows(dataRows);
+}
+
+function parseCSVDados(text) {
+  /* Suporta CSV da planilha oficial: linha 1 bloco, linha 2 headers, linha 3+ dados */
+  const lines = text.split('\n');
+  /* Tenta detectar estrutura: pula 2 linhas de cabeçalho se a linha 1 não tiver número em col 0 */
+  let startIdx = 0;
+  for (let i = 0; i < Math.min(lines.length, 3); i++) {
+    const firstCell = splitCSVLine(lines[i])[0] || '';
+    if (!firstCell.trim() || firstCell.toLowerCase().includes('identificad') || firstCell.toLowerCase().includes('captação') || firstCell.toLowerCase().includes('captacao')) {
+      startIdx = i + 1;
+    }
+  }
+  const dataRows = lines.slice(startIdx).map(l => splitCSVLine(l));
+  applyDadosRows(dataRows);
+}
+
+function applyDadosRows(rows) {
+  const lancamentos = rows
+    .map(cells => rowToLancamento(cells))
+    .filter(l => l !== null && l.id !== '' && l.id !== 'Identificador');
+
+  if (lancamentos.length === 0) {
+    toast('Nenhum lançamento encontrado. Verifique o formato da planilha.','error'); return;
+  }
+
+  D.lancamentos = lancamentos;
+  D.lancamento_ativo = 0;
+  D.comparacao = [];
+  saveToStorage();
+  renderAll();
+  toast(`${lancamentos.length} lançamento${lancamentos.length>1?'s':''} importado${lancamentos.length>1?'s':''}.`,'success');
+}
+
+function splitCSVLine(line) {
+  const result = []; let cur = '', inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') { inQ = !inQ; }
+    else if (ch === ',' && !inQ) { result.push(cur); cur = ''; }
+    else { cur += ch; }
+  }
+  result.push(cur);
+  return result.map(v => v.trim());
+}
+
+/* ── Mapping modal (usado para preview/confirmação) ── */
+let _pendingRows = null;
+function openMappingModal(rows, count) {
+  _pendingRows = rows;
+  el('mapping-modal-body').innerHTML = `
+    <p style="font-size:var(--text-sm);color:var(--fg-muted);margin-bottom:var(--s4);">
+      Foram detectados <strong>${count} lançamentos</strong> na planilha. Confirme para importar.
+    </p>
+    <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-md);padding:var(--s3) var(--s4);font-size:var(--text-xs);color:var(--fg-muted);">
+      ${rows.slice(0,5).map(l => `<div style="padding:var(--s1) 0;">${l.id} — ${l.ingressos} ingressos, ${l.vendas} vendas, ROAS ${fmt.x(l.roas_total)}</div>`).join('')}
+      ${rows.length > 5 ? `<div style="color:var(--fg-sub);">... e mais ${rows.length-5}</div>` : ''}
+    </div>`;
+  el('mapping-modal').style.display = 'flex';
+}
+function closeMappingModal() { el('mapping-modal').style.display = 'none'; _pendingRows = null; }
+function confirmMapping() {
+  if (_pendingRows) { D.lancamentos = _pendingRows; D.lancamento_ativo = 0; D.comparacao = []; saveToStorage(); renderAll(); toast(`${_pendingRows.length} lançamentos importados.`,'success'); }
+  closeMappingModal();
+}
+
+/* ── Drag-drop body ── */
+document.addEventListener('dragenter', e => {
+  if (e.dataTransfer.types.includes('Files')) el('drop-overlay').classList.add('active');
+});
+el('drop-overlay').addEventListener('dragleave', e => {
+  if (!e.relatedTarget || e.relatedTarget === document.documentElement) el('drop-overlay').classList.remove('active');
+});
+el('drop-overlay').addEventListener('dragover', e => { e.preventDefault(); });
+el('drop-overlay').addEventListener('drop', e => {
+  e.preventDefault(); el('drop-overlay').classList.remove('active');
+  const file = e.dataTransfer.files[0]; if (file) processFile(file);
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL CLAUDE CODE
+   ═══════════════════════════════════════════════════════════════ */
+function openClaudeModal() {
+  const filePath = window.location.pathname || '/caminho/dashboard-lancamento-lpsg-template.html';
+  const prompt = `Leia a planilha de lançamentos LPSG anexada e atualize o arquivo\n${filePath}\n\nA planilha tem estrutura: linha 1 = títulos de bloco, linha 2 = cabeçalhos, linha 3+ = dados (1 linha = 1 lançamento).\n\nO campo principal de identificação é a coluna A (ex: LPSG_01/26).\nBlocos de colunas:\n- Captação: $ Ingresso, Ingressos, CAC, Lead Score, Investimento, Fat. Captação, Saldo Captação, ROAS Captação\n- Tráfego: CPM, CTR, Carregamento, Taxa Checkout, Conv Checkout, Conv Pag, Inscritos x A1 %\n- Pico Ao Vivo: A1-A6 (pico simultâneo) + Zoom + retenções entre cada aula\n- Espectadores Únicos: A1-A6 únicos + retenções (sem Zoom)\n- Conversão: Ficha, Ingresso x Ficha %, Vendas, % Conv, % Conv Ficha, % Conv A1, % Conv A6\n- Resultado: $ Investimento, $ Faturamento Bruto, Imposto, $ Líquido, ROAS Total\n\nParse: converta R$ 49.600,00 para 49600; 3,00% para 3.0; 1,25 para 1.25; 1.000 para 1000.\n\nSubstitua o array "lancamentos" dentro do bloco <script id="dashboard-data"> mantendo toda a estrutura restante do arquivo.`;
+  el('claude-prompt-text').textContent = prompt;
+  el('claude-modal').style.display = 'flex';
+}
+function closeClaudeModal() { el('claude-modal').style.display = 'none'; }
+function copyClaudePrompt() {
+  const text = el('claude-prompt-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el('copy-prompt-btn'); btn.textContent = 'Copiado!';
+    setTimeout(() => { btn.textContent = 'Copiar prompt'; }, 2000);
+    toast('Prompt copiado.','success');
+  }).catch(() => toast('Selecione e copie manualmente.','info'));
+}
+document.addEventListener('click', e => {
+  if (e.target === el('mapping-modal')) closeMappingModal();
+  if (e.target === el('claude-modal')) closeClaudeModal();
+  if (e.target === el('sheets-modal')) closeSheetsModal();
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   GOOGLE SHEETS AO VIVO
+   ═══════════════════════════════════════════════════════════════ */
+let _sheetsAutoInterval = null, _sheetsLastSync = null;
+
+/**
+ * _looksLikeGSheets(raw)
+ * Rejeita strings que claramente nao sao Google Sheets.
+ */
+function _looksLikeGSheets(raw) {
+  return /docs\.google\.com\/spreadsheets/i.test(raw) ||
+         /^[a-zA-Z0-9_-]{25,}$/.test(raw); // ID solto
+}
+
+/**
+ * _extractSheetParams(raw)
+ * Extrai spreadsheetId e gid de qualquer formato de URL Google Sheets
+ * (/edit, /edit?usp=sharing, /export, /pub, ID solto).
+ * Retorna { type: 'pub', pubkey, gid } para URLs /d/e/{PUBKEY}/pub
+ * ou { type: 'id', spreadsheetId, gid } para todos os outros.
+ */
+function _extractSheetParams(raw) {
+  // URLs publicadas /d/e/{PUBKEY}/pub
+  const pubMatch = raw.match(/spreadsheets\/d\/e\/([^/?#]+)\/pub/);
+  if (pubMatch) {
+    const gidMatch = raw.match(/[?&#]gid=(\d+)/);
+    return { type: 'pub', pubkey: pubMatch[1], gid: gidMatch ? gidMatch[1] : '0' };
+  }
+  // URLs com /d/{ID}/ (edit, export, sharing, view, copy…)
+  const idMatch = raw.match(/spreadsheets\/d\/([a-zA-Z0-9_-]{20,})/);
+  if (idMatch) {
+    const gidMatch = raw.match(/[?&#]gid=(\d+)/);
+    return { type: 'id', spreadsheetId: idMatch[1], gid: gidMatch ? gidMatch[1] : '0' };
+  }
+  // ID solto (sem URL completa)
+  if (/^[a-zA-Z0-9_-]{25,}$/.test(raw)) {
+    return { type: 'id', spreadsheetId: raw, gid: '0' };
+  }
+  return null;
+}
+
+/**
+ * _looksLikeCSV(text)
+ * Heuristica: rejeita HTML, JSON, respostas de erro — aceita CSV.
+ */
+function _looksLikeCSV(text) {
+  const trimmed = (text || '').trimStart();
+  if (!trimmed) return false;
+  // Rejeita HTML/JSON
+  if (/^<!?(doctype|html|head|body)/i.test(trimmed)) return false;
+  if (/^[{[]/.test(trimmed)) return false;
+  // CSV: tem ao menos uma virgula ou ponto-e-virgula nos primeiros 1000 chars
+  // (nao confiavel checar so a primeira linha — celulas multi-linha quebram heuristica)
+  return /[,;]/.test(trimmed.slice(0, 1000));
+}
+
+/**
+ * fetchSheetCSV(rawUrl)
+ * Aceita qualquer formato de URL Google Sheets: /edit, /edit?usp=sharing,
+ * /pub, /export, ID solto. Tenta multiplos endpoints em cascata.
+ *
+ * Cascata:
+ *   Se URL e /d/e/{PUBKEY}/pub → tenta diretamente o endpoint pub CSV.
+ *   Senao → extrai spreadsheetId + gid, tenta:
+ *     1. gviz/tq?tqx=out:csv  (funciona com planilha compartilhada)
+ *     2. export?format=csv     (fallback)
+ */
+async function fetchSheetCSV(rawUrl) {
+  const raw = (rawUrl || '').trim();
+
+  if (!raw) throw new Error('Cole a URL da planilha para conectar.');
+
+  // Rejeita links que claramente nao sao Google Sheets
+  if (!_looksLikeGSheets(raw)) {
+    throw new Error('Link nao reconhecido como Google Sheets. Cole a URL da planilha (comeca com docs.google.com/spreadsheets).');
+  }
+
+  const params = _extractSheetParams(raw);
+  if (!params) {
+    throw new Error('Nao foi possivel identificar o ID da planilha nessa URL. Verifique se o link esta correto.');
+  }
+
+  // Cache-busting: Google (e o browser) podem servir CSV em cache por minutos.
+  // Acrescentar timestamp força resposta fresca a cada chamada.
+  const cb = `_=${Date.now()}`;
+
+  // Monta lista de endpoints para tentar em cascata
+  let endpoints = [];
+  if (params.type === 'pub') {
+    endpoints = [
+      `https://docs.google.com/spreadsheets/d/e/${params.pubkey}/pub?gid=${params.gid}&single=true&output=csv&${cb}`
+    ];
+  } else {
+    const id = params.spreadsheetId;
+    const gid = params.gid;
+    endpoints = [
+      `https://docs.google.com/spreadsheets/d/${id}/gviz/tq?tqx=out:csv&gid=${gid}&${cb}`,
+      `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}&${cb}`
+    ];
+  }
+
+  let lastError = null;
+
+  for (const fetchUrl of endpoints) {
+    console.log('[GSheets fetch] Tentando:', fetchUrl);
+    try {
+      const resp = await fetch(fetchUrl, { redirect: 'follow', mode: 'cors', cache: 'no-store' });
+      const ct = (resp.headers.get('content-type') || '').toLowerCase();
+      console.log(`[GSheets fetch] status: ${resp.status} | content-type: ${ct}`);
+
+      if (resp.status === 404) {
+        lastError = new Error('Planilha nao encontrada. Confira o link — verifique se o ID esta correto.');
+        continue;
+      }
+      if (resp.status === 302 || resp.status === 401 || resp.status === 403) {
+        lastError = new Error('Planilha privada. Va em Compartilhar → Acesso geral → Qualquer pessoa com o link → Leitor.');
+        continue;
+      }
+      if (!resp.ok) {
+        lastError = new Error(`HTTP ${resp.status} — Erro ao acessar a planilha. Tente publicar via Arquivo → Publicar na web → CSV.`);
+        continue;
+      }
+
+      const text = await resp.text();
+
+      // Detecta resposta HTML (pagina de login ou erro do Google)
+      if (/^\s*<!DOCTYPE/i.test(text) || /^\s*<html/i.test(text)) {
+        lastError = new Error('Planilha privada. Va em Compartilhar → Acesso geral → Qualquer pessoa com o link → Leitor.');
+        continue;
+      }
+
+      if (!_looksLikeCSV(text)) {
+        lastError = new Error('O Google retornou uma resposta inesperada. Tente publicar via Arquivo → Compartilhar → Publicar na web → CSV.');
+        continue;
+      }
+
+      console.log('[GSheets fetch] CSV OK via:', fetchUrl);
+      return text;
+
+    } catch(e) {
+      if (e instanceof TypeError) {
+        // Failed to fetch = CORS ou sem rede
+        if (location.protocol === 'file:') {
+          // Nao tenta proximo endpoint — file:// bloqueia tudo
+          throw new Error('Conexao bloqueada porque o dashboard esta rodando em file://. Rode em servidor local para ativar o Google Sheets ao vivo. Clique em "Ver como" no aviso amarelo no topo.');
+        }
+        lastError = new Error('O Google bloqueou a conexao (CORS). Tente publicar via Arquivo → Compartilhar → Publicar na web → CSV e cole a URL gerada.');
+      } else {
+        lastError = e;
+      }
+    }
+  }
+
+  // Todos os endpoints falharam — devolve o erro mais util
+  throw lastError || new Error('Nao foi possivel conectar com a planilha. Verifique o link e tente novamente.');
+}
+
+function openLocalServerModal() { el('local-server-modal').style.display = 'flex'; }
+function closeLocalServerModal() { el('local-server-modal').style.display = 'none'; }
+function copyCmd(codeId, btnId) {
+  const text = el(codeId).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el(btnId);
+    const orig = btn.textContent;
+    btn.textContent = 'Copiado!';
+    setTimeout(() => { btn.textContent = orig; }, 1800);
+  }).catch(() => {});
+}
+
+function openSheetsModal() {
+  const saved = loadSheetsConfig();
+  el('sheets-url-dados').value = saved.rawUrl || saved.dados || '';
+  el('sheets-auto-sync').checked = saved.autoSync || false;
+  el('sheets-status').style.display = 'none';
+  el('sheets-disconnect-btn').style.display = saved.dados ? 'block' : 'none';
+  // Aviso file:// no modal — aponta para o modal de servidor local
+  el('sheets-file-warning').style.display = location.protocol === 'file:' ? 'block' : 'none';
+  el('sheets-modal').style.display = 'flex';
+}
+function closeSheetsModal() { el('sheets-modal').style.display = 'none'; }
+function loadSheetsConfig() {
+  try { const r = localStorage.getItem(LS_SHEETS); if (r) return JSON.parse(r); } catch(e) {}
+  return {};
+}
+function saveSheetsConfig(cfg) { try { localStorage.setItem(LS_SHEETS, JSON.stringify(cfg)); } catch(e) {} }
+function disconnectSheets() {
+  try { localStorage.removeItem(LS_SHEETS); } catch(e) {}
+  if (_sheetsAutoInterval) { clearInterval(_sheetsAutoInterval); _sheetsAutoInterval = null; }
+  el('sheets-sync-indicator').style.display = 'none';
+  el('sheets-disconnect-btn').style.display = 'none';
+  el('sheets-url-dados').value = '';
+  el('sheets-auto-sync').checked = false;
+  setSheetsStatus('Desconectado.','info');
+  toast('Google Sheets desconectado.','info');
+}
+function setSheetsStatus(msg, tipo) {
+  const s = el('sheets-status');
+  const colors = {
+    info:    { bg:'var(--bg-elevated)', border:'var(--border)', color:'var(--fg-muted)' },
+    success: { bg:'var(--brand-dim)', border:'var(--border-brand)', color:'var(--brand)' },
+    error:   { bg:'var(--danger-dim)', border:'var(--danger)', color:'var(--danger)' }
+  };
+  const c = colors[tipo] || colors.info;
+  s.style.background = c.bg; s.style.border = `1px solid ${c.border}`; s.style.color = c.color;
+  s.style.whiteSpace = 'pre-wrap';
+  s.textContent = msg; s.style.display = 'block';
+}
+
+async function testSheetConnection() {
+  const rawUrl = el('sheets-url-dados').value.trim();
+  if (!rawUrl) { setSheetsStatus('Cole a URL da planilha para testar.','error'); return; }
+  setSheetsStatus('Testando conexão...','info');
+  try {
+    const text = await fetchSheetCSV(rawUrl);
+    const result = parseSheetsCSV(text);
+    if (result.length === 0) throw new Error('Planilha acessível, mas nenhum lançamento encontrado. Verifique os dados na aba "Dados dos Eventos".');
+    setSheetsStatus(`Conectado. ${result.length} lançamento${result.length>1?'s':''} encontrado${result.length>1?'s':''}. Tudo certo — clique em "Conectar e sincronizar".`,'success');
+  } catch(e) {
+    setSheetsStatus(e.message,'error');
+  }
+}
+
+async function connectSheets() {
+  const rawUrl = el('sheets-url-dados').value.trim();
+  if (!rawUrl) { setSheetsStatus('Cole a URL da planilha para conectar.','error'); return; }
+  setSheetsStatus('Conectando...','info');
+  try {
+    const text = await fetchSheetCSV(rawUrl);
+    const result = parseSheetsCSV(text);
+    if (result.length === 0) throw new Error('Nenhum lançamento encontrado na planilha. Verifique os dados na aba "Dados dos Eventos".');
+    // Persiste a URL original — fetchSheetCSV re-parseia a cada chamada
+    const cfg = { dados: rawUrl, rawUrl: rawUrl, autoSync: el('sheets-auto-sync').checked };
+    saveSheetsConfig(cfg);
+    D.lancamentos = result; D.lancamento_ativo = 0; D.comparacao = [];
+    _sheetsLastSync = new Date(); saveToStorage(); renderAll();
+    updateSyncIndicator();
+    setSheetsStatus(`Conectado. ${result.length} lançamento${result.length>1?'s':''} encontrado${result.length>1?'s':''}. Auto-sync ativo — atualiza a cada 5 min.`,'success');
+    el('sheets-disconnect-btn').style.display = 'block';
+    if (cfg.autoSync) {
+      if (_sheetsAutoInterval) clearInterval(_sheetsAutoInterval);
+      _sheetsAutoInterval = setInterval(async () => {
+        const s = loadSheetsConfig();
+        if (s.dados) {
+          try {
+            const t = await fetchSheetCSV(s.dados);
+            const r = parseSheetsCSV(t);
+            if (r.length > 0) { D.lancamentos = r; D.lancamento_ativo = 0; D.comparacao = []; saveToStorage(); renderAll(); _sheetsLastSync = new Date(); updateSyncIndicator(); }
+          } catch(e) {}
+        }
+      }, 5*60*1000);
+    }
+    setTimeout(() => closeSheetsModal(), 1200);
+  } catch(e) {
+    setSheetsStatus(e.message,'error');
+  }
+}
+/**
+ * parseCSVRows(text) — parser RFC 4180 compliant.
+ * Respeita aspas duplas e quebras de linha DENTRO de células ("a\nb").
+ * Retorna array de arrays (linhas × células).
+ */
+function parseCSVRows(text) {
+  const rows = [];
+  let row = [];
+  let cell = '';
+  let inQuotes = false;
+  const t = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  for (let i = 0; i < t.length; i++) {
+    const ch = t[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (t[i+1] === '"') { cell += '"'; i++; }
+        else { inQuotes = false; }
+      } else {
+        cell += ch;
+      }
+    } else {
+      if (ch === '"') { inQuotes = true; }
+      else if (ch === ',') { row.push(cell); cell = ''; }
+      else if (ch === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; }
+      else { cell += ch; }
+    }
+  }
+  // Última célula/linha (caso o arquivo não termine com \n)
+  if (cell.length > 0 || row.length > 0) { row.push(cell); rows.push(row); }
+  return rows;
+}
+
+function parseSheetsCSV(text) {
+  const rows = parseCSVRows(text);
+  // Detecta linhas de cabeçalho: primeiras 3 linhas onde a primeira célula é vazia,
+  // contém "EVENTO x DADOS", "CAPTAÇÃO" (ou outros blocos), "$ Ingresso" (sub-headers) etc.
+  // Critério prático: a linha de DADOS começa quando a primeira célula tem um identificador
+  // tipo "LPSG_..." ou texto não vazio que NÃO seja uma palavra de cabeçalho conhecida.
+  const HEADER_HINTS = ['evento x dados','preencher','captação','captacao','tráfego','trafego',
+    'conversão','conversao','resultado','identificad','$ ingresso','ingresso','cpm','ficha'];
+  let startIdx = 0;
+  for (let i = 0; i < Math.min(rows.length, 4); i++) {
+    const first = (rows[i][0] || '').trim().toLowerCase();
+    const isHeader = !first || HEADER_HINTS.some(h => first.includes(h));
+    if (isHeader) startIdx = i + 1;
+    else break;
+  }
+  return rows.slice(startIdx)
+    .map(cells => rowToLancamento(cells))
+    .filter(l => l !== null && l.id !== '');
+}
+function toggleDataMenu(ev) {
+  if (ev) ev.stopPropagation();
+  const m = el('data-menu');
+  if (!m) return;
+  m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
+}
+function closeDataMenu() {
+  const m = el('data-menu'); if (m) m.style.display = 'none';
+}
+document.addEventListener('click', (e) => {
+  const wrap = document.getElementById('data-menu-wrap');
+  if (wrap && !wrap.contains(e.target)) closeDataMenu();
+});
+async function syncSheetsNow() {
+  const saved = loadSheetsConfig();
+  if (!saved.dados) { toast('Nenhuma planilha conectada.','error'); return; }
+  const btn = el('sheets-sync-now');
+  const oldLabel = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'Sincronizando...'; }
+  try {
+    const text = await fetchSheetCSV(saved.dados);
+    const result = parseSheetsCSV(text);
+    if (result.length === 0) throw new Error('Nenhum lançamento encontrado.');
+    D.lancamentos = result; D.lancamento_ativo = 0; D.comparacao = [];
+    saveToStorage(); renderAll();
+    _sheetsLastSync = new Date(); updateSyncIndicator();
+    toast(`Atualizado: ${result.length} lançamento${result.length>1?'s':''}.`,'success');
+  } catch(e) {
+    toast(e.message,'error');
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = oldLabel || 'Sincronizar agora'; }
+  }
+}
+function updateSyncIndicator() {
+  if (!_sheetsLastSync) return;
+  const ind = el('sheets-sync-indicator');
+  ind.style.display = 'flex';
+  const diff = Math.round((Date.now() - _sheetsLastSync)/1000/60);
+  el('sheets-sync-label').textContent = diff < 1 ? 'Sincronizado agora' : `Sincronizado há ${diff} min`;
+}
+async function initSheetsConnection() {
+  const saved = loadSheetsConfig();
+  // saved.dados já é a URL normalizada (persistida pelo connectSheets)
+  if (!saved.dados) return;
+  try {
+    const text = await fetchSheetCSV(saved.dados);
+    const result = parseSheetsCSV(text);
+    if (result.length > 0) {
+      D.lancamentos = result; D.lancamento_ativo = 0; D.comparacao = [];
+      _sheetsLastSync = new Date(); saveToStorage(); renderAll(); updateSyncIndicator();
+      if (saved.autoSync) {
+        _sheetsAutoInterval = setInterval(async () => {
+          const s = loadSheetsConfig();
+          if (s.dados) {
+            try {
+              const t = await fetchSheetCSV(s.dados);
+              const r = parseSheetsCSV(t);
+              if (r.length > 0) { D.lancamentos = r; D.lancamento_ativo = 0; D.comparacao = []; saveToStorage(); renderAll(); _sheetsLastSync = new Date(); updateSyncIndicator(); }
+            } catch(e) {}
+          }
+        }, 5*60*1000);
+      }
+    }
+  } catch(e) {}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER ALL + INIT
+   ═══════════════════════════════════════════════════════════════ */
+function renderAll() {
+  renderTopbar();
+  renderMetricas();
+  renderEstrategico();
+  initKanbanFilters();
+  renderKanban();
+}
+
+function initFileBanner() {
+  if (location.protocol === 'file:') {
+    const banner = el('file-protocol-banner');
+    banner.style.display = 'flex';
+  }
+}
+
+function init() {
+  initTheme();
+  initFileInput();
+  loadFromStorage();
+  loadChecklistState();
+  loadSubtasks();
+  loadFasesMeta();
+  renderAll();
+  initSheetsConnection();
+  initFileBanner();
+  // Fecha modal de servidor local ao clicar fora
+  window.addEventListener('click', function(e) {
+    if (e.target === el('local-server-modal')) closeLocalServerModal();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
