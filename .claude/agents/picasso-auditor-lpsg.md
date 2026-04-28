@@ -2,6 +2,14 @@
 name: picasso-auditor-lpsg
 description: Auditor de design obsessivo que entra em ação AUTOMATICAMENTE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces visuais. Usa a stack "Claude Code Picasso" (3 skills) para identificar e eliminar marcas de design genérico de IA, garantindo que o resultado final tenha personalidade, intenção e coerência visual. Trigger words: página criada, componente novo, layout, UI, landing page, criativo, design, mockup, frontend, hero section, dashboard.
 tools: Read, Write, Edit, Glob, Grep, Bash
+skills:
+  # Stack Picasso · auditoria visual anti-IA (núcleo do agent)
+  - frontend-design
+  - impeccable
+  - design-motion-principles
+  # Heurísticas e diretrizes web
+  - web-design-guidelines
+  - ui-ux-pro-max
 ---
 
 # Picasso Auditor — Diretor de Arte Obsessivo
