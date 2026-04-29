@@ -100,7 +100,7 @@ Pronto. O orquestrador `@lpsg-master` faz tudo.
 
 | Estrutura | Resultado |
 |---|---|
-| 🎯 6 aulas estruturadas | título · função · gancho · tarefa pro aluno |
+| 🎯 6 aulas estruturadas | 5 gravadas (seg-sex) + tira-dúvidas ao vivo sábado + pitch ao vivo dom · título · função · gancho · tarefa pro aluno |
 | 💎 Oferta completa | stack 1.5x+ · tsunami 3 ondas · garantia dupla |
 | 🌐 5 páginas no ar | Lighthouse 95+ · Pixel/CAPI/GTM/GA4 |
 | 📋 Ficha de interesse | 11 etapas · lead score HOT/WARM/COLD |

@@ -60,10 +60,13 @@ DIA 1 (seg)     ── Fundação + venda (aulas · oferta · páginas · ficha)
 DIA 2 (ter)     ── Mensageria + criativos (gravações dos vídeos)        🚨 VOCÊ + 🤖 Claude
 DIA 3 (qua)     ── Tráfego (campanha Meta) + automações n8n             🤖 Claude · ⚙️ Meta/n8n
 DIA 4 (qui)     ── Dashboard + validação técnica                        🤖 Claude · ⚙️ Vercel
-DIA 5 (sex)     ── Gravação das 6 aulas + revisão final                 🚨 VOCÊ
+DIA 5 (sex)     ── Gravação das 5 aulas técnicas + revisão final         🚨 VOCÊ
 DIA 6-7 (fim)   ── Aprovação Meta (templates) · pré-edição              ⚙️ aprovações automáticas
 
-SEMANA SEGUINTE ── 🎬 1ª edição roda (Seg-Dom · pitch domingo)          🚨 VOCÊ apresenta
+SEMANA SEGUINTE ── 🎬 1ª edição roda · 7 dias de evento                  🚨 VOCÊ apresenta
+                  Seg-Sex: 5 aulas técnicas (gravadas)
+                  Sáb 10h: tira-dúvidas AO VIVO (não gravada · descompressão)
+                  Dom 20h: pitch AO VIVO (Aula 6 · oferta + tsunami)
 PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             🚨 VOCÊ + 🤖 Claude
 ```
 
@@ -97,8 +100,8 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 
 > Glossário curto. Termos detalhados nas referências de cada skill.
 
-- **LPSG** · Lançamento Pago Semanal Gravado · 5 aulas + pitch · ciclo perpétuo
-- **5+1** · estrutura de aulas (5 técnicas + 1 pitch)
+- **LPSG** · Lançamento Pago Semanal Gravado · 5 aulas gravadas + tira-dúvidas ao vivo (sáb) + pitch ao vivo (dom) · 7 dias de evento · ciclo perpétuo
+- **5+1** · estrutura de aulas (5 técnicas gravadas + 1 pitch ao vivo). Entre as 5 aulas e o pitch, no **sábado**, há a aula tira-dúvidas **AO VIVO** (não gravada · descompressão · resgate · prepara pro pitch). Já programada na mensageria via template `tira_duvidas_sabado_lpsg_v1`.
 - **Ingresso** · ticket baixo (R$ 47-97) · entrada do funil · paga o tráfego
 - **Produto principal** · ticket alto (R$ 5-50k) · vendido no pitch + carrinho
 - **Ficha de interesse** · formulário 11 etapas · qualifica leads HOT/WARM/COLD
