@@ -60,13 +60,15 @@ DIA 1 (seg)     ── Fundação + venda (aulas · oferta · páginas · ficha)
 DIA 2 (ter)     ── Mensageria + criativos (gravações dos vídeos)        🚨 VOCÊ + 🤖 Claude
 DIA 3 (qua)     ── Tráfego (campanha Meta) + automações n8n             🤖 Claude · ⚙️ Meta/n8n
 DIA 4 (qui)     ── Dashboard + validação técnica                        🤖 Claude · ⚙️ Vercel
-DIA 5 (sex)     ── Gravação das 5 aulas técnicas + revisão final         🚨 VOCÊ
+DIA 5 (sex)     ── Gravação das aulas que serão pré-gravadas + revisão  🚨 VOCÊ
 DIA 6-7 (fim)   ── Aprovação Meta (templates) · pré-edição              ⚙️ aprovações automáticas
 
 SEMANA SEGUINTE ── 🎬 1ª edição roda · 7 dias de evento                  🚨 VOCÊ apresenta
-                  Seg-Sex: 5 aulas técnicas (gravadas)
-                  Sáb 10h: tira-dúvidas AO VIVO (não gravada · descompressão)
-                  Dom 20h: pitch AO VIVO (Aula 6 · oferta + tsunami)
+                  Seg-Sex: 5 aulas técnicas (formato à sua escolha)
+                  Sáb 10h: tira-dúvidas (descompressão · sem replay)
+                  Dom 20h: pitch (Aula 6 · oferta + tsunami)
+                  Formato (ao vivo OU gravado) é decisão interna sua ·
+                  NÃO se comunica pro público em nenhum lugar
 PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             🚨 VOCÊ + 🤖 Claude
 ```
 
@@ -100,8 +102,8 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 
 > Glossário curto. Termos detalhados nas referências de cada skill.
 
-- **LPSG** · Lançamento Pago Semanal Gravado · 5 aulas gravadas + tira-dúvidas ao vivo (sáb) + pitch ao vivo (dom) · 7 dias de evento · ciclo perpétuo
-- **5+1** · estrutura de aulas (5 técnicas gravadas + 1 pitch ao vivo). Entre as 5 aulas e o pitch, no **sábado**, há a aula tira-dúvidas **AO VIVO** (não gravada · descompressão · resgate · prepara pro pitch). Já programada na mensageria via template `tira_duvidas_sabado_lpsg_v1`.
+- **LPSG** · Lançamento Pago Semanal Gravado · 7 dias de evento · 5 aulas técnicas (seg-sex) + tira-dúvidas (sáb) + pitch (dom) · ciclo perpétuo. Formato (ao vivo OU gravado) de cada aula é decisão interna do expert · NÃO se comunica pro público.
+- **5+1** · estrutura de aulas (5 técnicas + 1 pitch). Entre a Aula 5 e o pitch, no **sábado**, há a aula tira-dúvidas (descompressão · resgate · prepara pro pitch). Já programada na mensageria via template `lpsg_tiraduvidas_sabado`. **Única aula sem replay disponível** — todas as outras 5 + pitch ficam disponíveis pra revisão posterior.
 - **Ingresso** · ticket baixo (R$ 47-97) · entrada do funil · paga o tráfego
 - **Produto principal** · ticket alto (R$ 5-50k) · vendido no pitch + carrinho
 - **Ficha de interesse** · formulário 11 etapas · qualifica leads HOT/WARM/COLD

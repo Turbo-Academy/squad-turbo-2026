@@ -18,7 +18,7 @@
 Um método de lançamentos digitais perpétuos, em que:
 
 - O ingresso (R$ 47-97) **paga o tráfego** antes do evento começar
-- 5 aulas técnicas gravadas (seg-sex) + tira-dúvidas ao vivo no sábado (não gravada · já programada na mensageria) + pitch ao vivo no domingo · 7 dias de evento · cadência semanal contínua
+- 7 dias de evento · 5 aulas técnicas (seg-sex) + tira-dúvidas (sáb) + pitch (dom) · cadência semanal contínua. Cada aula pode ser ao vivo ou gravada · decisão interna do expert · NÃO se comunica formato pro público. Única exceção: tira-dúvidas de sábado não tem replay disponível.
 - Carrinho aberto na semana seguinte · com tsunami de bônus
 - Ficha de interesse qualifica leads HOT/WARM/COLD pra closer
 - 14 workflows automatizados (n8n + ManyChat)

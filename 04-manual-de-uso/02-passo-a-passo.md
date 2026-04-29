@@ -55,7 +55,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 |---|---|---|---|
 | **1** | `paginas-lpsg` | Páginas de venda + ficha de interesse | `@designer-senior` · `@copywriter` |
 | **2** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) | `@copywriter` · `@designer-senior` |
-| **3** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 5 gravadas (seg-sex) + tira-dúvidas AO VIVO sáb + pitch AO VIVO dom · 7 dias de evento | `@copywriter` · `gerador-slides-turbo` |
+| **3** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
 | **4** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
 | **5** | `mensageria-lpsg` | 8 fases · ~30 mensagens · templates Utility | `@copywriter` |
 | **6** | `trafego-lpsg` | Campanha Meta ASC + análise auto | — |
@@ -140,19 +140,19 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 ### ⏱️ 1h Claude + dias de gravação · 🤖 + 🚨
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `estrutura-aulas-lpsg`. Estrutura as 6 aulas (5+1) baseado no Bloco C do cadastro. Pra cada uma: tema central · gancho de abertura · tarefa pro aluno · transição. As 5 técnicas (seg-sex) são GRAVADAS · sábado é tira-dúvidas AO VIVO (não gravada · descompressão) · domingo é pitch AO VIVO. Use também `gerador-slides-turbo` pros PPTX premium das 5 gravadas."*
+> *"Use a skill `estrutura-aulas-lpsg`. Estrutura as 6 aulas (5+1) baseado no Bloco C do cadastro. Pra cada uma: tema central · gancho de abertura · tarefa pro aluno · transição. 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · única sem replay) + pitch (dom). Formato (ao vivo OU gravado) é decisão interna do expert · NÃO se comunica formato pro público. Use também `gerador-slides-turbo` pros PPTX premium das aulas que forem pré-gravadas."*
 
 ### O que Claude faz
-- 6 aulas com função estratégica (escada de crenças) — 5 técnicas gravadas + 1 pitch ao vivo · sábado tira-dúvidas ao vivo entra no script da mensageria, não na maratona de gravação
+- 6 aulas com função estratégica (escada de crenças) — 7 dias de evento · sábado tira-dúvidas é a única sem replay disponível · formato (ao vivo/gravado) de cada aula é decisão interna do expert · não comunicado pro público
 - Slides PPTX prontos
 - Cronograma de gravação sugerido
 
 ### 🚨 AÇÃO HUMANA · revisar e gravar
 - [ ] Expert revisa cada aula
-- [ ] **Maratona de gravação · Dia 5** (8h · 5 aulas técnicas gravadas seguidas — tira-dúvidas e pitch são ao vivo na semana do evento, não entram aqui)
+- [ ] **Maratona de gravação · Dia 5** (8h · grava as aulas que serão pré-gravadas · ajuste de duração depende de quantas o expert quer ao vivo · padrão: gravar todas exceto sábado tira-dúvidas)
 
 ### ✅ Checkpoint
-6 aulas estruturadas (5 técnicas + tira-dúvidas + pitch) · slides finalizados das 5 gravadas
+6 aulas estruturadas (5 técnicas + tira-dúvidas + pitch) · slides finalizados das aulas pré-gravadas
 
 ---
 

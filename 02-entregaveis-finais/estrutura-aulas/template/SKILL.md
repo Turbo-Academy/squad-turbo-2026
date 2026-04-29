@@ -27,21 +27,33 @@ Você estrutura as 6 aulas (5 + 1 pitch) de um lançamento pago semanal seguindo
 
 Estrutura ≠ conteúdo da aula. Estrutura é **a arquitetura** que faz qualquer conteúdo converter: quando entregar valor, quando criar marco, quando abrir ficha de interesse, quando fazer seeding, quando apresentar oferta.
 
-**LPSG é PERPÉTUO · 7 dias de evento por ciclo.** Todo ciclo começa segunda 7h (Aula 1 gravada) · pitch domingo 20h (Aula 6 ao vivo) · próxima segunda 7h novo ciclo. Carrinho do ciclo W abre na segunda do ciclo W+1 e roda em paralelo com as aulas do W+1.
+**LPSG é PERPÉTUO · 7 dias de evento por ciclo.** Todo ciclo começa segunda 7h (Aula 1) · pitch domingo 20h (Aula 6) · próxima segunda 7h novo ciclo. Carrinho do ciclo W abre na segunda do ciclo W+1 e roda em paralelo com as aulas do W+1.
 
 ### Calendário canônico (7 dias)
 
-| Dia | Horário padrão | O que rola | Formato |
-|---|---|---|---|
-| Seg | 7h | Aula 1 (Fundamentação) | **Gravada** |
-| Ter | 7h | Aula 2 (Aprofundamento) | **Gravada** |
-| Qua | 7h | Aula 3 (Marco de Resultado 1) | **Gravada** |
-| Qui | 7h | Aula 4 (Pré-pitch · ficha de interesse abre) | **Gravada** |
-| Sex | 7h | Aula 5 (Marco de Resultado 2) | **Gravada** |
-| **Sáb** | **10h** | **Aula tira-dúvidas** (descompressão · resgate · prepara pro pitch) | **AO VIVO · NÃO gravada** |
-| Dom | 20h | Aula 6 (Super Bônus + Oferta · pitch) | **AO VIVO** |
+| Dia | Horário padrão | O que rola |
+|---|---|---|
+| Seg | 7h | Aula 1 (Fundamentação) |
+| Ter | 7h | Aula 2 (Aprofundamento) |
+| Qua | 7h | Aula 3 (Marco de Resultado 1) |
+| Qui | 7h | Aula 4 (Pré-pitch · ficha de interesse abre) |
+| Sex | 7h | Aula 5 (Marco de Resultado 2) |
+| **Sáb** | **10h** | **Aula tira-dúvidas** (descompressão · resgate · prepara pro pitch · única sem replay) |
+| Dom | 20h | Aula 6 (Super Bônus + Oferta · pitch) |
 
-**A aula tira-dúvidas de sábado NÃO faz parte do "5+1"** — não é uma das 6 aulas estruturadas. É um momento de descompressão entre a Aula 5 e o pitch · ao vivo · não gravada · não entra na maratona de gravação. Já tem **mensageria pré-programada** via template `tira_duvidas_sabado_lpsg_v1` (em `mensageria-lpsg`). Função: resgatar quem caiu nas aulas anteriores, responder objeções abertas e esquentar pro pitch de domingo.
+### Formato (ao vivo OU gravado) — decisão interna · NUNCA comunicada
+
+**Cada uma das 6 aulas pode ser ao vivo ou pré-gravada · combinação livre.** O LPSG funciona com qualquer setup:
+
+- Todas pré-gravadas com Q&A no chat (mais comum)
+- Todas ao vivo
+- Híbrido (ex: 1-5 gravadas + sábado/domingo ao vivo)
+
+**REGRA CRÍTICA:** o público NUNCA sabe o formato. Em página de venda · criativo · mensageria · capa de aula · grupo · em LUGAR NENHUM aparece "AO VIVO" ou "GRAVADA". Quem se inscreveu chega no horário e participa do que está rodando.
+
+**Única exceção operacional:** a aula tira-dúvidas de sábado **NÃO tem replay disponível pra revisão posterior** · todas as outras (5 técnicas + pitch) ficam acessíveis pra quem chegou atrasado ou quer rever. Esse detalhe é interno · não é argumento de venda · não vira benefício comunicado.
+
+**A aula tira-dúvidas de sábado NÃO faz parte do "5+1"** — não é uma das 6 aulas estruturadas em escada de crenças. É um momento de descompressão entre a Aula 5 e o pitch. Já tem **mensageria pré-programada** via template `lpsg_tiraduvidas_sabado` (em `mensageria-lpsg`). Função: resgatar quem caiu nas aulas anteriores, responder objeções abertas e esquentar pro pitch de domingo.
 
 ---
 

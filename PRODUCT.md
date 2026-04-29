@@ -17,9 +17,11 @@ Operadores e experts que rodam **Lançamento Pago Semanal Gravado (LPSG)** — m
 O Squad Turbo LPSG 4.0 é uma stack de skills + agents que **gera todos os entregáveis de um lançamento pago semanal** — páginas (5 arquétipos premium), criativos (bateladas de 15 com 5 paletas distintas), aulas, oferta, mensageria, tráfego, automações, dashboard, operação e CS. O produto não é o software; é a **direção de design e o método** que garantem que o output não pareça feito por IA nem por infoprodutor genérico.
 
 **Modelo 5+1 · 7 dias de evento (não-negociável):**
-- **Seg → Sex** · 5 aulas técnicas **gravadas** (a maratona de gravação acontece antes do evento começar)
-- **Sábado** · aula tira-dúvidas **AO VIVO** (não gravada · já programada na mensageria via template `tira_duvidas_sabado_lpsg_v1`) · serve pra descompressão · resgata quem caiu · prepara pro pitch
-- **Domingo** · pitch **AO VIVO** (Aula 6 / aula+1) · oferta + tsunami + abertura de carrinho na segunda
+- **Seg → Sex** · 5 aulas técnicas (escada de crenças)
+- **Sábado** · aula tira-dúvidas (descompressão · resgata quem caiu · prepara pro pitch). Já programada na mensageria via template `lpsg_tiraduvidas_sabado`. **Única aula sem replay disponível** — não fica gravada pra revisão posterior.
+- **Domingo** · pitch (Aula 6 / aula+1) · oferta + tsunami + abertura de carrinho na segunda
+
+**Formato de cada aula (ao vivo OU gravada) é decisão interna do expert.** O LPSG funciona com qualquer combinação (ex: todas gravadas com Q&A ao vivo no chat · todas ao vivo · híbrido aulas-gravadas + sábado/domingo ao vivo · etc). **NUNCA se comunica formato pro público** — em nenhuma página, criativo, mensageria ou peça externa aparece "AO VIVO" ou "GRAVADA". Quem se inscreve aparece no horário · participa do que está rodando · pronto.
 
 Sucesso = o avatar abrir uma peça no feed e pensar "que post bom esse" antes de pensar "que anúncio interessante" — e converter em ingresso pago a ROAS ≥ 1.
 
