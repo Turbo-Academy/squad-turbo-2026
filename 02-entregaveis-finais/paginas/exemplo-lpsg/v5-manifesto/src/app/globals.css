@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============================================================
+     V5 · MANIFESTO / CONTRARIAN OUTLIER · Marina Costa
+     Paleta brutalist · pink chapado · zero textura
+     ============================================================ */
+  --color-pink: #FF2E93;
+  --color-pink-deep: #E6107A;
+  --color-ink: #0A0A0A;
+  --color-ink-soft: #1A1A1A;
+  --color-paper: #FFFFFF;
+  --color-bone: #F4F1EA;
+
+  /* Tipografia · italic + caps brutalist mix */
+  --font-display: var(--font-serif-italic), "Migra", "Domaine Display", Georgia, serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Motion · quebrada · pode bouncear */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: var(--color-pink);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    background: var(--color-pink);
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-pink);
+  }
+
+  *:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 4px;
+  }
+
+  /* Bloco em fundo preto · selection invertida */
+  .on-dark ::selection {
+    background: var(--color-pink);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .display-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
+
+  .display-caps {
+    font-family: var(--font-body);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  .num-brutalist {
+    font-family: var(--font-body);
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+
+  /* CTA pílula brutalist · 56px+ touch target */
+  .cta-brutalist {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 64px;
+    padding: 1rem 1.75rem;
+    background: var(--color-ink);
+    color: var(--color-pink);
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    border: 4px solid var(--color-ink);
+    text-decoration: none;
+    transition: transform 240ms var(--ease-bounce), box-shadow 240ms ease-out;
+    will-change: transform;
+  }
+
+  .cta-brutalist:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 0 var(--color-pink), 8px 8px 0 4px var(--color-ink);
+  }
+
+  .cta-brutalist:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  .cta-brutalist-inverse {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    border-color: var(--color-paper);
+  }
+
+  .cta-brutalist-inverse:hover {
+    box-shadow: 8px 8px 0 0 var(--color-pink), 8px 8px 0 4px var(--color-paper);
+  }
+
+  /* Link sublinhado manifesto */
+  .link-manifesto {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 8px;
+    color: var(--color-ink);
+    transition: text-underline-offset 200ms ease-out;
+  }
+
+  .link-manifesto:hover {
+    text-underline-offset: 14px;
+  }
+
+  /* Pílula data · brutalist */
+  .pill-data {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border: 3px solid var(--color-ink);
+    background: var(--color-pink);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.875rem;
+  }
+
+  /* Ticker rodante */
+  .ticker {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    border-top: 4px solid var(--color-ink);
+    border-bottom: 4px solid var(--color-ink);
+    background: var(--color-paper);
+  }
+
+  .ticker-track {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem 1.5rem;
+    animation: ticker-scroll 32s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Pulso sutil · cor pink no número da opinião */
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+
+  .pulse-num {
+    animation: pulse-soft 2400ms ease-in-out infinite;
+  }
+}
+
+/* Reduced motion · honra preferência do usuário */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ticker-track {
+    animation: none;
+    transform: translateX(0);
+  }
+
+  .pulse-num {
+    animation: none;
+  }
+
+  .cta-brutalist:hover {
+    transform: none;
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
+}

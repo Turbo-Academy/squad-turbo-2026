@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bold Pop · 60/30/10 · zero gradient · cor SÓLIDA chapada */
+  --color-orange: #FF5C00;
+  --color-paper: #FFFFFF;
+  --color-ink: #0F0F10;
+  --color-ink-muted: rgba(15, 15, 16, 0.62);
+  --color-ink-faint: rgba(15, 15, 16, 0.12);
+  --color-paper-muted: rgba(255, 255, 255, 0.78);
+  --color-paper-faint: rgba(255, 255, 255, 0.18);
+
+  --font-display: var(--font-space-grotesk), "Druk Wide", "Söhne Breit", -apple-system, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --tracking-display-tight: -0.04em;
+  --tracking-display-snug: -0.02em;
+  --tracking-cover-line: 0.18em;
+}
+
+/* ────────────────────────────────────────
+   Base · Bold Magazine Cover
+   ──────────────────────────────────────── */
+
+html {
+  background-color: #FFFFFF;
+  color: #0F0F10;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FFFFFF;
+  color: #0F0F10;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Selection · branco sobre laranja */
+::selection {
+  background-color: #0F0F10;
+  color: #FF5C00;
+}
+
+/* Focus visível · WCAG AA · outline laranja sobre branco · preto sobre laranja */
+*:focus-visible {
+  outline: 2px solid #0F0F10;
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+/* Quando o focus cai sobre fundo laranja, troca o outline pra preto continua válido (AA 4.5:1) */
+.bg-orange *:focus-visible,
+[data-on-orange="true"] *:focus-visible {
+  outline-color: #0F0F10;
+}
+
+/* ────────────────────────────────────────
+   Tipografia · capa de revista
+   ──────────────────────────────────────── */
+
+.cover-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.cover-display-tight {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.cover-line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.body-magazine {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.body-bold {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+/* ────────────────────────────────────────
+   Botão · fill sólido · sem gradient · sem glow · SNAPPY
+   Energia: Emil Kowalski · 150-250ms · ease-out crisp
+   ──────────────────────────────────────── */
+
+.btn-bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  min-height: 56px;
+  padding: 1rem 1.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  background-color: #FF5C00;
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 0;
+  text-decoration: none;
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* Hover Bold Pop · escurece o laranja em vez de trocar cor — protagonista continua sendo o laranja. */
+.btn-bold:hover {
+  background-color: #E54E00;
+  transform: translateY(-1px);
+}
+
+.btn-bold:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-bold .arrow {
+  transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-bold:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Variante usada DENTRO de blocos laranja (CTA preto sobre laranja). */
+.btn-bold-on-orange {
+  background-color: #0F0F10;
+  color: #FFFFFF;
+}
+
+.btn-bold-on-orange:hover {
+  background-color: #1F1F22;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Ghost button · texto-link snappy · usado em índice/sumário */
+.link-bold {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 1px;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-bold:hover {
+  opacity: 0.7;
+}
+
+/* ────────────────────────────────────────
+   Animações · só se motion-ok · SNAPPY
+   ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: no-preference) {
+  .magazine-fade-in {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: magazine-fade-in 220ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  .magazine-fade-in-d1 { animation-delay: 80ms; }
+  .magazine-fade-in-d2 { animation-delay: 160ms; }
+  .magazine-fade-in-d3 { animation-delay: 240ms; }
+
+  @keyframes magazine-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-property: none !important;
+  }
+
+  .magazine-fade-in,
+  .magazine-fade-in-d1,
+  .magazine-fade-in-d2,
+  .magazine-fade-in-d3 {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cover seal · selo de garantia em capa · pequeno · sem brilho */
+.cover-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #FFFFFF;
+  color: #0F0F10;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 2px solid #0F0F10;
+}
+
+/* Bleed util · seções full-bleed laranja */
+.bleed-orange {
+  background-color: #FF5C00;
+  color: #FFFFFF;
+}
+
+.bleed-ink {
+  background-color: #0F0F10;
+  color: #FFFFFF;
+}
+
+/* Page-break rule · tipo "página da revista" · linha grossa preta */
+.magazine-rule {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #0F0F10;
+  border: 0;
+}

@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta V4 · Storytelling · documentário quente */
+  --color-paper: #FBFAF7;          /* dominante 60% · papel reciclado */
+  --color-paper-deep: #F3EFE6;     /* variação · seções alternadas */
+  --color-ink: #3A3A3A;            /* secundária 30% · grafite suave */
+  --color-ink-soft: #6B6660;       /* texto muted · contraste ≥ 4.5:1 sobre paper */
+  --color-amber: #FFB300;          /* accent 10% · amarelo otimista */
+  --color-amber-deep: #E29A00;     /* hover/active variant */
+  --color-line: #C9C2B5;           /* linha da timeline · grafite desbotado */
+  --color-rule: rgba(58, 58, 58, 0.12); /* hairlines */
+
+  /* Tipografia (next/font injeta as variáveis) */
+  --font-serif: var(--font-instrument-serif), "Migra", Georgia, serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "IBM Plex Mono", monospace;
+
+  /* Motion */
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base */
+html, body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: var(--color-ink);
+}
+
+/* Foco visível obrigatório */
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scroll-driven reveal · entrada coreografada */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 720ms var(--ease-cinema),
+    transform 720ms var(--ease-cinema);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Linha da timeline — pinta progressivamente conforme rola */
+.timeline-track {
+  background: linear-gradient(
+    to bottom,
+    var(--color-line) 0%,
+    var(--color-line) var(--progress, 0%),
+    rgba(201, 194, 181, 0.35) var(--progress, 0%),
+    rgba(201, 194, 181, 0.35) 100%
+  );
+}
+
+.timeline-dot {
+  transition:
+    background 600ms var(--ease-cinema),
+    transform 600ms var(--ease-cinema),
+    box-shadow 600ms var(--ease-cinema);
+}
+.timeline-dot.is-active {
+  background: var(--color-amber);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(255, 179, 0, 0.18);
+}
+
+/* CTA warm · estado pressionado real */
+.cta-warm {
+  transition:
+    transform 200ms var(--ease-snap),
+    box-shadow 200ms var(--ease-snap),
+    background 200ms var(--ease-snap);
+}
+.cta-warm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -16px rgba(58, 58, 58, 0.4);
+}
+.cta-warm:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Reduced motion · estática equivalente sem perda de hierarquia */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .timeline-dot,
+  .cta-warm {
+    transition: none;
+  }
+  .timeline-track {
+    background: var(--color-line);
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Util · type tracking utilities */
+.tracking-mono {
+  letter-spacing: 0.18em;
+}
