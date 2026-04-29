@@ -62,8 +62,8 @@ W+1   CARRINHO + RECUPERAÇÃO     ← carrinho seg-sex · recuperação até D+
                         "Closer atento ao SLA ≤5min"
 
 07:00:                  "ABRE CARRINHO GERAL do ciclo W-1"
-                        "Aula 1 do ciclo W começa AO VIVO"
-                        "Expert apresenta · time monitora"
+                        "Aula 1 do ciclo W começa (formato interno: ao vivo OU pré-gravado · decisão do expert)"
+                        "Expert apresenta ou monitora chat · time acompanha"
 
 08:00:
   EVENTO_W:             "Pós-aula A1 · review (15min)"
@@ -166,8 +166,8 @@ W+1   CARRINHO + RECUPERAÇÃO     ← carrinho seg-sex · recuperação até D+
 14:00:                  "Recuperação D+2 do W-1 (closer)"
 18:00:                  "Disparo D-2h pitch"
 19:00:                  "Time online · canal #pitch ativo"
-19:50:                  "Disparo 'tô entrando no ar'"
-20:00-22:00:            "PITCH AO VIVO (Expert · 2h)"
+19:50:                  "Disparo 'aula começa em 10min · te vejo lá'"
+20:00-22:00:            "Pitch (Aula 6 · 2h · formato interno: ao vivo OU pré-gravado com Q&A · decisão do expert)"
 22:00:                  "Briefing pós-pitch (15min)"
                         "Closer mapeia top 20 leads quentes pra DM segunda"
 23:59:                  "Encerra ciclo W · vira EX-ALUNO até segunda"

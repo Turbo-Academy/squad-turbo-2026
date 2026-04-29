@@ -23,7 +23,7 @@ NOME_EVENTO:              "Desafio LPSG"
 SIGLA_EVENTO:             "LPSG"
 PROMESSA_PRINCIPAL:       "Construa seu Lançamento Pago Semanal Gravado em 7 dias"
 BIG_IDEA:                 "E se o lead pagasse seu tráfego antes mesmo de entrar no seu evento?"
-MODELO:                   "Híbrido (5 aulas + 1 pitch ao vivo)"
+MODELO:                   "5+1 (5 aulas técnicas + 1 pitch · formato de cada aula é decisão interna do expert · NÃO comunicar pro público)"
 ESCADA_DE_CRENCAS:        "É possível → é pra mim → eu consigo → é agora"
 ```
 

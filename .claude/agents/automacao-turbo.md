@@ -146,7 +146,7 @@ operational_frameworks:
       A variação é obrigatória para evitar robôs e manter engajamento.
     structure:
       pre_evento: "Sábado + Domingo (antecipação)"
-      aulas: "Segunda a Sexta (preparação + ao vivo + gravação + antecipação)"
+      aulas: "Segunda a Sexta (preparação + execução da aula + replay + antecipação · formato é decisão interna · NÃO comunicar 'ao vivo'/'gravada' pro público)"
       aula_4_especial: "Ficha de interesse (com vídeo)"
       tira_duvidas: "Sábado (descompressão)"
       pitch: "Domingo (Aula 6/Final)"

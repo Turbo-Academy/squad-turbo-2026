@@ -113,4 +113,4 @@ Cada `.md` de aula segue exatamente esta estrutura:
 
 ---
 
-**Fonte:** método LPSG de Leo Tabari (Turbo Academy). Transcrito da mentoria 24/04/2026 e das 5 aulas gravadas entre 11-18/05.
+**Fonte:** método LPSG de Leo Tabari (Turbo Academy). Transcrito da mentoria 24/04/2026 e do material das 5 aulas (referência interna).
