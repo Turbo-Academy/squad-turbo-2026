@@ -6,6 +6,8 @@ skills:
   # Tráfego pago (estrutura de campanha, ASC, análise)
   - trafego-lpsg
   - lancamento-pago-semanal
+  # Execução programática (Meta Ads CLI · lançada 29/04/2026)
+  - meta-ads-cli-turbo
   # Criativos (entender o que sobe na ASC)
   - criativos-lpsg
   - criador-criativos

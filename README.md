@@ -2,11 +2,11 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · 12 skills do Claude · 11 agents (Squad Turbo + Picasso Auditor) · stack Picasso anti-IA · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · 13 skills do Claude · 11 agents (Squad Turbo + Picasso Auditor) · stack Picasso anti-IA · Meta Ads CLI integrada · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
-[![Skills: 12](https://img.shields.io/badge/skills-12-orange.svg)](#skills)
+[![Skills: 13](https://img.shields.io/badge/skills-13-orange.svg)](#skills)
 [![Agents: 11](https://img.shields.io/badge/agents-11-purple.svg)](#agents)
 
 ---
@@ -138,13 +138,14 @@ lpsg-method/
 | `operacao-lpsg` | 9 papéis · RACI · 12 SOPs |
 | `cs-lpsg` | Pós-venda 90 dias · NPS · ascensão |
 | `manual-final-lpsg` | ⭐ Gerador de manual de execução HTML personalizado (entregável final) |
+| **`meta-ads-cli-turbo`** | ⭐ **Camada de execução Meta Ads (CLI oficial 29/04/2026)** · 5 scripts shell pra batelada de criativos · 5 testes de página · stop-loss · relatórios · escalonamento |
 
 ### Instalar em outra máquina
 
 ```bash
 # macOS / Linux
 
-# 1. Skills LPSG (12 ao todo)
+# 1. Skills LPSG (13 ao todo)
 mkdir -p ~/.claude/skills
 for z in 99-skills-compartilhaveis/*-lpsg.zip 99-skills-compartilhaveis/lpsg-master.zip; do
   unzip -o "$z" -d ~/.claude/skills/
@@ -210,11 +211,11 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ## 📊 Status do projeto
 
 ```
-✅ 12 skills LPSG instaladas e testadas
+✅ 13 skills LPSG instaladas e testadas (+ meta-ads-cli-turbo · 30/04/2026)
 ✅ 11 agents (10 Squad Turbo + Picasso Auditor)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 10 revisões .docx pra aprovação
-✅ 23 zips compartilháveis
+✅ 24 zips compartilháveis
 ✅ Manual interativo HTML · 5 seções interativas (setup, cadastro, execução, ações humanas, troubleshooting)
 ✅ Stack Picasso anti-IA integrada (frontend-design + impeccable + design-motion-principles)
 ✅ PRODUCT.md + DESIGN.md (fundação de marca + visual system)

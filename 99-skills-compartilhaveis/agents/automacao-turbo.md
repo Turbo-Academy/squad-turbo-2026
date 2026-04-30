@@ -5,6 +5,8 @@ model: sonnet
 skills:
   # Automações n8n + workflows (14 fluxos LPSG)
   - automacoes-lpsg
+  # Execução Meta Ads via shell + cron (stop-loss · relatório · escala)
+  - meta-ads-cli-turbo
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
   - mensageria-lpsg
   # Dashboard + dados em tempo real (alimenta automações)

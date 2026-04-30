@@ -2,8 +2,8 @@
 
 > Mapeamento completo de quais skills cada agent tem disponível. Uma skill pode estar em múltiplos agents quando a função se sobrepõe (ex: `paginas-lpsg` aparece em copywriter, diretor criativo, designer e tráfego — cada um usa pra um ângulo diferente).
 
-**Última atualização:** 2026-04-28
-**Total:** 11 agents · 45 skills mapeadas
+**Última atualização:** 2026-04-30
+**Total:** 11 agents · 46 skills mapeadas (+ `meta-ads-cli-turbo` em 30/04/2026 após lançamento Meta Ads CLI oficial)
 
 ---
 
@@ -102,6 +102,7 @@
 |---|---|
 | `trafego-lpsg` | Estrutura de campanha · ASC · análise (3 cadências) |
 | `lancamento-pago-semanal` | Arco do lançamento · cadência semanal |
+| **`meta-ads-cli-turbo`** | **Execução programática Meta Ads via shell · batelada de 15 criativos em ~30s · stop-loss horário · CLI oficial Meta lançada 29/04/2026** |
 | `criativos-lpsg` | Entender o que sobe · 15 criativos · 5 paletas |
 | `criador-criativos` | Hook/body para variações |
 | `paginas-lpsg` | Destino dos ads (5 arquétipos) · LCP < 1.5s |
@@ -124,6 +125,7 @@
 | Skill | Por quê |
 |---|---|
 | `automacoes-lpsg` | 14 workflows n8n LPSG |
+| **`meta-ads-cli-turbo`** | **Stop-loss horário · relatórios diários · escalonamento de vencedores via shell + cron · substitui Marketing API SDK Python** |
 | `mensageria-lpsg` | WhatsApp Utility · ManyChat · email |
 | `dashboard-lpsg` | Dados em tempo real (alimentam automações) |
 | `dash-lancamento-turbo` | Dashboard ao vivo · webhooks |
