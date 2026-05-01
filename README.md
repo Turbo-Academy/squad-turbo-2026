@@ -2,11 +2,11 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · 13 skills do Claude · 11 agents (Squad Turbo + Picasso Auditor) · stack Picasso anti-IA · Meta Ads CLI integrada · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · 14 skills do Claude · 11 agents (Squad Turbo + Picasso Auditor) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
-[![Skills: 13](https://img.shields.io/badge/skills-13-orange.svg)](#skills)
+[![Skills: 14](https://img.shields.io/badge/skills-14-orange.svg)](#skills)
 [![Agents: 11](https://img.shields.io/badge/agents-11-purple.svg)](#agents)
 
 ---
@@ -139,15 +139,19 @@ lpsg-method/
 | `cs-lpsg` | Pós-venda 90 dias · NPS · ascensão |
 | `manual-final-lpsg` | ⭐ Gerador de manual de execução HTML personalizado (entregável final) |
 | **`meta-ads-cli-turbo`** | ⭐ **Camada de execução Meta Ads (CLI oficial 29/04/2026)** · 5 scripts shell pra batelada de criativos · 5 testes de página · stop-loss · relatórios · escalonamento |
+| **`briefing-aprovacao-turbo`** | ⭐ **Gate de aprovação narrativa** · gerado APÓS pesquisa de mercado e ANTES da Fase 1 · briefing .docx 9 seções (contexto · avatar · posicionamento · big idea · promessa · oferta · cronograma · riscos · próximos passos) · upload Google Drive · pausa execução até expert aprovar |
 
 ### Instalar em outra máquina
 
 ```bash
 # macOS / Linux
 
-# 1. Skills LPSG (13 ao todo)
+# 1. Skills LPSG (14 ao todo)
 mkdir -p ~/.claude/skills
-for z in 99-skills-compartilhaveis/*-lpsg.zip 99-skills-compartilhaveis/lpsg-master.zip; do
+for z in 99-skills-compartilhaveis/*-lpsg.zip \
+         99-skills-compartilhaveis/lpsg-master.zip \
+         99-skills-compartilhaveis/meta-ads-cli-turbo.zip \
+         99-skills-compartilhaveis/briefing-aprovacao-turbo.zip; do
   unzip -o "$z" -d ~/.claude/skills/
 done
 
@@ -211,11 +215,11 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ## 📊 Status do projeto
 
 ```
-✅ 13 skills LPSG instaladas e testadas (+ meta-ads-cli-turbo · 30/04/2026)
+✅ 14 skills LPSG instaladas e testadas (+ briefing-aprovacao-turbo · 30/04/2026)
 ✅ 11 agents (10 Squad Turbo + Picasso Auditor)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 10 revisões .docx pra aprovação
-✅ 24 zips compartilháveis
+✅ 25 zips compartilháveis
 ✅ Manual interativo HTML · 5 seções interativas (setup, cadastro, execução, ações humanas, troubleshooting)
 ✅ Stack Picasso anti-IA integrada (frontend-design + impeccable + design-motion-principles)
 ✅ PRODUCT.md + DESIGN.md (fundação de marca + visual system)

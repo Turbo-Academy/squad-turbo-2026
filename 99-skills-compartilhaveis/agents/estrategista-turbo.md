@@ -7,6 +7,7 @@ skills:
   - lpsg-master
   - lancamento-pago-semanal
   - estruturador-evento-turbo
+  - briefing-aprovacao-turbo
   - manual-final-lpsg
   # Estratégia de marca e funil
   - honor

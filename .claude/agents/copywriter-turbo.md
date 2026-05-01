@@ -7,6 +7,8 @@ skills:
   - lancamento-pago-semanal
   - estruturador-evento-turbo
   - estrutura-aulas-lpsg
+  # Briefing narrativo de aprovação (consome 00-fundacao + 02-mercado)
+  - briefing-aprovacao-turbo
   # Páginas (copy de venda)
   - paginas-lpsg
   - criador-paginas-low-ticket

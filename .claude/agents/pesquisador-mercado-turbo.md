@@ -7,6 +7,8 @@ skills:
   - criador-criativos
   # Análise de conteúdos de concorrentes (lives, podcasts, YouTube)
   - transcrever-youtube
+  # Após pesquisa · gera briefing consolidado pra aprovação do expert
+  - briefing-aprovacao-turbo
   # Utilitários
   - find-skills
 ---
