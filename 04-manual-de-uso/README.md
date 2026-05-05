@@ -84,7 +84,7 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 4. **Preenche o formulário** com todas as suas variáveis
 5. **Manda o intake preenchido pro Claude** com a mensagem:
 
-   > *"Estou começando o LPSG. Aqui está meu intake preenchido. Use o `02-passo-a-passo.md` e me guia da Fase 1 até o fim."*
+   > *"Estou começando o LPSG. Aqui está meu intake preenchido. Use o `02-passo-a-passo.md` e me guia da Fase 1 (estrutura-aulas-lpsg) até o fim."*
 
 6. **Executa fase por fase** — Claude conduz · você aprova · ferramentas executam
 

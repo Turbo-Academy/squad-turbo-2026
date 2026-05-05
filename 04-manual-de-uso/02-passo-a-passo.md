@@ -23,7 +23,7 @@ Quero que você:
 3. Acione subagentes especialistas quando preciso
 4. Reporte progresso ao final de cada fase
 
-Comece pela Fase 1 (paginas-lpsg).
+Comece pela Fase 1 (estrutura-aulas-lpsg).
 ```
 
 A skill `lpsg-master` valida · executa · reporta · pede aprovação humana em pontos críticos.
@@ -53,18 +53,18 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 | # | Skill | Foco | Subagentes |
 |---|---|---|---|
-| **1** | `paginas-lpsg` | Páginas de venda + ficha de interesse | `@designer-senior` · `@copywriter` |
-| **2** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) | `@copywriter` · `@designer-senior` |
-| **3** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
-| **4** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
-| **5** | `mensageria-lpsg` | 8 fases · ~30 mensagens · templates Utility | `@copywriter` |
+| **1** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
+| **2** | `mensageria-lpsg` | 8 fases · ~30 mensagens · templates Utility · entra logo após estrutura porque consome temas das aulas | `@copywriter` |
+| **3** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
+| **4** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) · usa copy/oferta/aulas já definidas | `@copywriter` · `@designer-senior` |
+| **5** | `paginas-lpsg` | Páginas de venda + ficha de interesse · entre criativos e tráfego porque é destino dos ads | `@designer-senior` · `@copywriter` |
 | **6** | `trafego-lpsg` | Campanha Meta ASC + análise auto | — |
 | **7** | `automacoes-lpsg` | 14 workflows n8n + ManyChat | — |
 | **8** | `dashboard-lpsg` | 11 módulos · 8 fontes de dados | `@designer-senior` |
 | **9** | `operacao-lpsg` | RACI · 12 SOPs · 6 rituais | — |
 | **10** | `cs-lpsg` | Pós-venda 90 dias · NPS · ascensão | (após 1ª venda) |
 
-> ⚠️ **Pontos de aprovação humana obrigatória:** Fase 4 (oferta) · Fase 6 (tráfego) · Fase 7 (automações) · Fase 10 (CS)
+> ⚠️ **Pontos de aprovação humana obrigatória:** Fase 3 (oferta) · Fase 6 (tráfego) · Fase 7 (automações) · Fase 10 (CS)
 
 ---
 
@@ -75,7 +75,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🌐 FASE 1 · paginas-lpsg
+# 🌐 FASE 5 · paginas-lpsg
 
 ### ⏱️ 4h · 🚨 + 🤖 + ⚙️
 
@@ -105,7 +105,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🎬 FASE 2 · criativos-lpsg
+# 🎬 FASE 4 · criativos-lpsg
 
 ### ⏱️ 5h · 🚨 humano-intensivo
 
@@ -135,7 +135,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🎯 FASE 3 · estrutura-aulas-lpsg
+# 🎯 FASE 1 · estrutura-aulas-lpsg
 
 ### ⏱️ 1h Claude + dias de gravação · 🤖 + 🚨
 
@@ -156,7 +156,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 💎 FASE 4 · oferta-lpsg
+# 💎 FASE 3 · oferta-lpsg
 
 ### ⚠️ PONTO DE APROVAÇÃO HUMANA OBRIGATÓRIA
 
@@ -182,7 +182,7 @@ Oferta documentada e aprovada pelo expert
 
 ---
 
-# 📨 FASE 5 · mensageria-lpsg
+# 📨 FASE 2 · mensageria-lpsg
 
 ### ⏱️ 2h Claude + 1-3 dias aprovação Meta
 
