@@ -2,6 +2,23 @@
 
 > Template genérico. Substitua as variáveis entre chaves `{ }` pelo contexto do projeto. A estrutura segue o padrão do LPSG (5+1 aulas) e serve pra qualquer nicho.
 
+> **⚠️ REGRA INEGOCIÁVEL (atualizada 2026-04-30) — sobrescreve qualquer estrutura abaixo:**
+>
+> 1. **Cap diário fixo:** **máx. 4 mensagens na API oficial + máx. 4 mensagens no grupo, todos os dias, segunda a domingo.**
+> 2. **4 horários canônicos seg → sex** (aulas técnicas às 7h):
+>    - **06:50** · `lpsg_aviso_aula` (10 min antes da aula)
+>    - **07:00** · `lpsg_link_aula` (link da aula)
+>    - **12:00** · `lpsg_replay_aula` (replay disponível)
+>    - **19:00** · `lpsg_resumo_chamada` (resumo da manhã + chamada da próxima aula)
+> 3. **Sem repescagem.** Sem mensagem 10/15/20 min depois da aula.
+> 4. **Sem reforço.** Sem "última hora" / "tô entrando no ar".
+> 5. **Sem troca de nome de grupo.** Mantém o nome ORIGINAL durante todos os 7 dias.
+> 6. **Sem renomear mensagens existentes** (mantém nomes canônicos acima).
+>
+> Detalhamento completo em `~/.claude/skills/mensageria-lpsg/references/template-dia-de-aula.md`.
+>
+> Tudo abaixo é histórico/contexto · só aplica se passar pelo cap 4+4.
+
 ---
 
 ## 📋 Variáveis do template
