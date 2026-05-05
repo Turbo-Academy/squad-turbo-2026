@@ -14,10 +14,13 @@
 > 4. **Sem reforço.** Sem "última hora" / "tô entrando no ar".
 > 5. **Sem troca de nome de grupo.** Mantém o nome ORIGINAL durante todos os 7 dias.
 > 6. **Sem renomear mensagens existentes** (mantém nomes canônicos acima).
+> 7. **SEM mensageria de sábado pré-evento no grupo** (removida 2026-04-30). O grupo só dispara a partir da SEGUNDA da Aula 1.
+> 8. **Onboarding (pré-evento) é triggered por compra do ingresso** · 4 mensagens via API oficial entre compra e início da Aula 1 (boas-vindas · link grupo · pesquisa de matrícula · antecipação D-1). NÃO conta no cap 4+4. Detalhe em `~/.claude/skills/mensageria-lpsg/references/onboarding.md`.
+> 9. **Carrinho aberto: SÓ no D1** (segunda seguinte) com 5 horários: **06:50 · 07:00 · 08:00 · 10:00 · 19:00**. **D2 → D7: ZERO mensagem de carrinho.**
 >
 > Detalhamento completo em `~/.claude/skills/mensageria-lpsg/references/template-dia-de-aula.md`.
 >
-> Tudo abaixo é histórico/contexto · só aplica se passar pelo cap 4+4.
+> Tudo abaixo é histórico/contexto · só aplica se passar pelas regras acima.
 
 ---
 
