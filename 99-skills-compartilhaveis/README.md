@@ -12,24 +12,38 @@
 | `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
 | `squad-turbo-completo.zip` | **11 agentes** (Squad + Picasso) | `~/.claude/agents/` | — |
 
-## Contagem (atualizada 2026-04-30)
+## Contagem (atualizada 2026-05-21)
 
-- **13 skills do Claude** (lowercase): instalar em `~/.claude/skills/`
+- **15 skills do Claude** (lowercase): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master)
   - 1 manual final (manual-final-lpsg)
-  - 1 execução Meta Ads (meta-ads-cli-turbo) ⭐ adicionada após lançamento da Meta Ads CLI oficial em 29/04/2026
+  - 1 execução Meta Ads (meta-ads-cli-turbo)
+  - 1 briefing de aprovação (briefing-aprovacao-turbo)
+  - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) ⭐ NEW · carregada por TODOS os agentes primeiro
+  - 1 páginas low-ticket (criador-paginas-low-ticket) ⭐ inclui `estudo-de-caso-narrativo.md`
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: 11 agentes (Squad Turbo + Picasso Auditor)
 
-**Total: 24 zips**
+**Total: 26 zips**
+
+## Mapa de skills × agentes ⭐
+
+📍 **`agents/MAPA-SKILLS-AGENTES.md`** · documento canônico de orientação · diz qual skill cada agente carrega · em qual ordem · pra QUE momento da jornada.
+
+Resumo:
+- **`protocolo-conversa-turbo` é skill transversal** · todos os 11 agentes carregam ela primeiro
+- 8 padrões de conversa + anti-bajulação + travas universais + 4 camadas de narrativa
+- 10 travas universais aplicáveis ao squad inteiro (link da bio → toque em saiba mais · começa amanhã → começa segunda · etc)
 
 ## Como instalar
 
 ```bash
-# 1. Skills LPSG (13 ao todo)
+# 1. Skills LPSG (15 ao todo · incluindo protocolo-conversa-turbo transversal)
 mkdir -p ~/.claude/skills
-for z in *-lpsg.zip lpsg-master.zip meta-ads-cli-turbo.zip; do
+for z in *-lpsg.zip lpsg-master.zip meta-ads-cli-turbo.zip \
+         protocolo-conversa-turbo.zip briefing-aprovacao-turbo.zip \
+         criador-paginas-low-ticket.zip; do
   unzip -o "$z" -d ~/.claude/skills/
 done
 

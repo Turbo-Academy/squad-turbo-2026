@@ -3,6 +3,8 @@ name: cs-turbo
 description: Customer Success do Squad Turbo — pós-venda, onboarding e retenção de alunos. Use para onboarding de novos alunos, redução de churn, pesquisa NPS, coleta de depoimentos e prova social, e reativação de ex-alunos. Cliente satisfeito = prova social real para o próximo lançamento.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # CS / pós-venda 90 dias (onboarding, NPS, ascensão)
   - cs-lpsg
   # Método de referência
@@ -11,6 +13,8 @@ skills:
   - mensageria-lpsg
   # Automações de retenção e ascensão
   - automacoes-lpsg
+  # Estudo de caso narrativo (transformar depoimento bruto em prova social estruturada)
+  - criador-paginas-low-ticket
 ---
 
 # cs-turbo

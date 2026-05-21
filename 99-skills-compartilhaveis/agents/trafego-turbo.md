@@ -3,6 +3,8 @@ name: trafego-turbo
 description: Especialista em tráfego pago do Squad Turbo — Meta Ads e Google Ads para lançamento pago. Use para estruturar, otimizar e diagnosticar campanhas. Foco em ROAS 1 na captação de ingresso e escalonamento no produto principal. Domina Funil 8 e estrutura de campanha do LPSG.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Tráfego pago (estrutura de campanha, ASC, análise)
   - trafego-lpsg
   - lancamento-pago-semanal

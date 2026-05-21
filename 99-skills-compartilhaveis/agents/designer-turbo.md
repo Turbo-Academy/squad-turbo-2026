@@ -3,6 +3,8 @@ name: designer-turbo
 description: Designer executor do Squad Turbo — produz arquivos finais sob direção do @diretor-criativo-turbo. Invocar para executar criativos de ads (imagem/vídeo), slides de aula LPSG (HTML ou PPTX via /gerador-slides-turbo), assets de brandbook, thumbnails, artes estáticas, banners. NÃO define direção criativa, NÃO lê 00-fundacao/ diretamente — recebe brief pronto (paleta, tipografia, composição, copy) do @diretor-criativo-turbo e executa. Usa skills locais do Turbo (gerador-slides-turbo, banner-design, ui-ux-pro-max suite) e /designer-senior para HTML.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Execução de páginas e front-end
   - designer-senior
   - frontend-design
