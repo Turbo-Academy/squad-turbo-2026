@@ -14,7 +14,7 @@ Operadores e experts que rodam **Lançamento Pago Semanal Gravado (LPSG)** — m
 
 ## Product Purpose
 
-O Squad Turbo LPSG 4.0 é uma stack de skills + agents que **gera todos os entregáveis de um lançamento pago semanal** — páginas (5 arquétipos premium), criativos (bateladas de 15 com 5 paletas distintas), aulas, oferta, mensageria, tráfego, automações, dashboard, operação e CS. O produto não é o software; é a **direção de design e o método** que garantem que o output não pareça feito por IA nem por infoprodutor genérico.
+O Squad Turbo LPSG 5.0-V1 é uma stack de skills + agents que **gera todos os entregáveis de um lançamento pago semanal** — páginas (5 arquétipos premium), criativos (bateladas de 15 com 5 paletas distintas), aulas, oferta, mensageria, tráfego, automações, dashboard, operação e CS. O produto não é o software; é a **direção de design e o método** que garantem que o output não pareça feito por IA nem por infoprodutor genérico.
 
 **Modelo 5+1 · 7 dias de evento (não-negociável):**
 - **Seg → Sex** · 5 aulas técnicas (escada de crenças)
