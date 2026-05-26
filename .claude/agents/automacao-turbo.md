@@ -6,7 +6,8 @@ skills:
   # Automações n8n + workflows (14 fluxos LPSG)
   - automacoes-lpsg
   # Execução Meta Ads via shell + cron (stop-loss · relatório · escala)
-  - meta-ads-cli-turbo
+  - meta-ads-cli-setup     # Setup do zero → 1ª chamada funcional · pré-req antes de scripts/cron
+  - meta-ads-cli-turbo     # Operação avançada · batelada · stop-loss · escalonamento
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
   - mensageria-lpsg
   # Dashboard + dados em tempo real (alimenta automações)

@@ -3,12 +3,11 @@ name: automacao-turbo
 description: Especialista em automações do Squad Turbo — n8n, ManyChat e mensageria do evento. Use para criar fluxos de automação, mensagens do grupo do evento (WhatsApp/Telegram), onboarding automatizado e chatbots de DM. Cada mensagem tem função definida dentro da jornada do lançamento pago.
 model: sonnet
 skills:
-  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
-  - protocolo-conversa-turbo
   # Automações n8n + workflows (14 fluxos LPSG)
   - automacoes-lpsg
   # Execução Meta Ads via shell + cron (stop-loss · relatório · escala)
-  - meta-ads-cli-turbo
+  - meta-ads-cli-setup     # Setup do zero → 1ª chamada funcional · pré-req antes de scripts/cron
+  - meta-ads-cli-turbo     # Operação avançada · batelada · stop-loss · escalonamento
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
   - mensageria-lpsg
   # Dashboard + dados em tempo real (alimenta automações)

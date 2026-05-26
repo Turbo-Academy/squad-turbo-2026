@@ -7,7 +7,8 @@ skills:
   - trafego-lpsg
   - lancamento-pago-semanal
   # Execução programática (Meta Ads CLI · lançada 29/04/2026)
-  - meta-ads-cli-turbo
+  - meta-ads-cli-setup     # Setup do zero → 1ª chamada funcional · onboarding seguro
+  - meta-ads-cli-turbo     # Operação avançada · batelada · stop-loss · escalonamento
   # Criativos (entender o que sobe na ASC)
   - criativos-lpsg
   - criador-criativos

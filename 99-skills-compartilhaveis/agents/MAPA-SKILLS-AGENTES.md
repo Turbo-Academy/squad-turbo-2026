@@ -97,7 +97,8 @@
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
 | `trafego-lpsg` | Primária | Estrutura de campanha · ASC · análise |
 | `lancamento-pago-semanal` | Primária | Método-base |
-| `meta-ads-cli-turbo` | Primária | Automação shell + cron · batelada · stop-loss |
+| `meta-ads-cli-setup` | Primária | Onboarding seguro da Ads CLI · zero → 1ª chamada funcional · pré-requisito da turbo |
+| `meta-ads-cli-turbo` | Primária | Automação shell + cron · batelada · stop-loss · só após setup concluído |
 | `criativos-lpsg` | Primária | Entender o que sobe na ASC · usar 6 pilares |
 | `criador-criativos` | Primária | Diagnóstico de criativo (hook rate · body rate) |
 | `paginas-lpsg` | Primária | Destino dos ads · LCP < 1.5s |
@@ -130,7 +131,8 @@
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
 | `automacoes-lpsg` | Primária | 14 workflows n8n base · webhook Hotmart · CAPI server-side |
-| `meta-ads-cli-turbo` | Primária | Automação Meta Ads via shell + cron |
+| `meta-ads-cli-setup` | Primária | Onboarding seguro da Ads CLI · pré-req antes de qualquer script/cron de Meta Ads |
+| `meta-ads-cli-turbo` | Primária | Automação Meta Ads via shell + cron · só após setup concluído |
 | `mensageria-lpsg` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
 | `dashboard-lpsg` · `dash-lancamento-turbo` | Primária | Dados em tempo real que alimentam automações |
 

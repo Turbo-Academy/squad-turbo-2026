@@ -12,20 +12,22 @@
 | `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
 | `squad-turbo-completo.zip` | **11 agentes** (Squad + Picasso) | `~/.claude/agents/` | — |
 
-## Contagem (atualizada 2026-05-21)
+## Contagem (atualizada 2026-05-26)
 
-- **15 skills do Claude** (lowercase): instalar em `~/.claude/skills/`
+- **16 skills do Claude** (lowercase): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master)
   - 1 manual final (manual-final-lpsg)
-  - 1 execução Meta Ads (meta-ads-cli-turbo)
+  - **2 execução Meta Ads:**
+    - `meta-ads-cli-setup` ⭐ NEW · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
+    - `meta-ads-cli-turbo` · operação avançada (batelada · stop-loss · escalonamento)
   - 1 briefing de aprovação (briefing-aprovacao-turbo)
-  - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) ⭐ NEW · carregada por TODOS os agentes primeiro
-  - 1 páginas low-ticket (criador-paginas-low-ticket) ⭐ inclui `estudo-de-caso-narrativo.md`
+  - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
+  - 1 páginas low-ticket (criador-paginas-low-ticket) · inclui `estudo-de-caso-narrativo.md`
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: 11 agentes (Squad Turbo + Picasso Auditor)
 
-**Total: 26 zips**
+**Total: 27 zips**
 
 ## Mapa de skills × agentes ⭐
 
@@ -39,9 +41,10 @@ Resumo:
 ## Como instalar
 
 ```bash
-# 1. Skills LPSG (15 ao todo · incluindo protocolo-conversa-turbo transversal)
+# 1. Skills LPSG (16 ao todo · incluindo protocolo-conversa-turbo transversal)
 mkdir -p ~/.claude/skills
-for z in *-lpsg.zip lpsg-master.zip meta-ads-cli-turbo.zip \
+for z in *-lpsg.zip lpsg-master.zip \
+         meta-ads-cli-setup.zip meta-ads-cli-turbo.zip \
          protocolo-conversa-turbo.zip briefing-aprovacao-turbo.zip \
          criador-paginas-low-ticket.zip; do
   unzip -o "$z" -d ~/.claude/skills/
