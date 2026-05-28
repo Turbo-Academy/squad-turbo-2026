@@ -81,6 +81,6 @@ Já coberto pelo `.gitignore`:
 | `nome-lpsg.zip` | skill LPSG proprietária | `~/.claude/skills/` |
 | `nome-turbo.zip` | skill Turbo proprietária | `~/.claude/skills/` |
 | `Nome-LPSG-Template.zip` | entregável completo (legado/consulta) | referência |
-| `squad-turbo-completo.zip` | 11 agentes | `~/.claude/agents/` |
+| `squad-turbo-completo.zip` | 12 agentes | `~/.claude/agents/` |
 
 Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` → seção "Skills externas".

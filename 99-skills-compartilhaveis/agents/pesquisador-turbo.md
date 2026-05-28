@@ -7,8 +7,13 @@ skills:
   - protocolo-conversa-turbo
   # Método de referência
   - lancamento-pago-semanal
-  # Extração de material bruto (aulas, podcasts, lives)
+  # Extração de material bruto · vídeo/áudio
   - transcrever-youtube
+  # Extração de material bruto · documentos do expert (aulas, slides, planilhas, docs)
+  - pdf
+  - docx
+  - pptx
+  - xlsx
   # Consolida 00-fundacao + 02-mercado em briefing pra aprovação do expert
   - briefing-aprovacao-turbo
   # Utilitários

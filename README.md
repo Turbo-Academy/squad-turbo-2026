@@ -2,12 +2,12 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · 14 skills do Claude · 11 agents (Squad Turbo + Picasso Auditor) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · 14 skills do Claude · 12 agents (Squad Turbo + Picasso Auditor + Revisor Copy) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
 [![Skills: 14](https://img.shields.io/badge/skills-14-orange.svg)](#skills)
-[![Agents: 11](https://img.shields.io/badge/agents-11-purple.svg)](#agents)
+[![Agents: 12](https://img.shields.io/badge/agents-12-purple.svg)](#agents)
 
 ---
 
@@ -101,8 +101,8 @@ lpsg-method/
 │   ├── estrutura-aulas-lpsg.zip
 │   ├── oferta-lpsg.zip
 │   ├── ...                        ← 11 skills LPSG no total
-│   ├── squad-turbo-completo.zip   ← 10 agentes Turbo (squad inteiro)
-│   └── agents/                    ← 10 agentes Squad Turbo
+│   ├── squad-turbo-completo.zip   ← 12 agentes Turbo (squad inteiro)
+│   └── agents/                    ← 12 agentes Squad Turbo
 │       ├── estrategista-turbo.md            (orquestrador estratégico)
 │       ├── pesquisador-turbo.md             (fundação · interno)
 │       ├── pesquisador-mercado-turbo.md     (inteligência competitiva)
@@ -155,7 +155,7 @@ for z in 99-skills-compartilhaveis/*-lpsg.zip \
   unzip -o "$z" -d ~/.claude/skills/
 done
 
-# 2. Squad Turbo · 10 agentes + Picasso Auditor
+# 2. Squad Turbo · 12 agentes (inclui Picasso + Revisor Copy)
 mkdir -p ~/.claude/agents
 cp 99-skills-compartilhaveis/agents/*.md ~/.claude/agents/
 
@@ -169,9 +169,9 @@ npx skills add https://github.com/kylezantos/design-motion-principles --skill de
 #    Agentes invocáveis com @nome-do-agente
 ```
 
-### 🤝 Squad Turbo · 10 agentes complementares + Picasso Auditor
+### 🤝 Squad Turbo · 12 agentes (11 complementares + Picasso Auditor)
 
-Além das 12 skills LPSG, o projeto inclui **11 agentes especialistas**:
+Além das 12 skills LPSG, o projeto inclui **12 agentes especialistas**:
 
 | Agente | Função |
 |---|---|
@@ -216,7 +216,7 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 
 ```
 ✅ 14 skills LPSG instaladas e testadas (+ briefing-aprovacao-turbo · 30/04/2026)
-✅ 11 agents (10 Squad Turbo + Picasso Auditor)
+✅ 12 agents (10 Squad Turbo + Picasso Auditor + Revisor Copy)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 10 revisões .docx pra aprovação
 ✅ 25 zips compartilháveis

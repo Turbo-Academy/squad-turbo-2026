@@ -230,6 +230,22 @@
 
 ---
 
+## 🛡️ @revisor-copy-turbo · Tier 0 · GUARDIÃO ANTI-IA TEXTUAL
+
+> Par textual do picasso. Último filtro antes de qualquer copy chegar no expert/cliente. NÃO escreve do zero — audita texto pronto e devolve feedback cirúrgico + versão corrigida.
+
+| Skill | Categoria | Quando usar |
+|---|---|---|
+| `protocolo-conversa-turbo` | TRANSVERSAL + núcleo | Rubrica de auditoria (checklist-anti-ia-universal + travas-universais + feedback-cirurgico) |
+| `mensageria-lpsg` | Primária | Checklist anti-IA de mensageria + formatação SendFlow + cap 4+4 |
+| `criador-paginas-low-ticket` | Primária | Regras de copy persuasiva (estudo de caso narrativo · promessa = número+prazo+mecanismo · expert depois do preço) |
+
+**Saída padrão:** veredito (passa/não passa) + cirurgias numeradas + versão corrigida pronta pra colar.
+
+**Quando acionar:** antes de entregar qualquer página · mensageria · criativo · pitch · email · briefing · roteiro. Recebe de `@copywriter-turbo` (e qualquer agente que produza texto); devolve pro copywriter se precisar reescrita estrutural.
+
+---
+
 ## Matriz de fluxo · quem entrega pra quem
 
 ```

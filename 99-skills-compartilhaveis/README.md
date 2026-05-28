@@ -12,7 +12,7 @@
 | `nome-turbo.zip` | **Skill do Claude** (não-LPSG) | `~/.claude/skills/nome-turbo/` | `meta-ads-cli-turbo.zip` |
 | `Nome-LPSG-Template.zip` | **Entregável completo** (template + exemplo) | Referência / consulta | `Trafego-LPSG-Template.zip` |
 | `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
-| `squad-turbo-completo.zip` | **11 agentes** (Squad + Picasso) | `~/.claude/agents/` | — |
+| `squad-turbo-completo.zip` | **12 agentes** (Squad + Picasso + Revisor) | `~/.claude/agents/` | — |
 
 ## Contagem (atualizada 2026-05-28)
 
@@ -28,7 +28,7 @@
   - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
   - 1 páginas low-ticket (criador-paginas-low-ticket) · inclui `estudo-de-caso-narrativo.md`
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
-- **1 squad completo**: 11 agentes (Squad Turbo + Picasso Auditor)
+- **1 squad completo**: 12 agentes (Squad Turbo + Picasso Auditor + Revisor Copy)
 
 **Total: 29 zips**
 
@@ -39,7 +39,7 @@
 📍 **`agents/MAPA-SKILLS-AGENTES.md`** · documento canônico de orientação · diz qual skill cada agente carrega · em qual ordem · pra QUE momento da jornada.
 
 Resumo:
-- **`protocolo-conversa-turbo` é skill transversal** · todos os 11 agentes carregam ela primeiro
+- **`protocolo-conversa-turbo` é skill transversal** · todos os 12 agentes carregam ela primeiro
 - 8 padrões de conversa + anti-bajulação + travas universais + 4 camadas de narrativa
 - 10 travas universais aplicáveis ao squad inteiro (link da bio → toque em saiba mais · começa amanhã → começa segunda · etc)
 
@@ -55,7 +55,7 @@ for z in *-lpsg.zip lpsg-master.zip \
   unzip -o "$z" -d ~/.claude/skills/
 done
 
-# 2. Squad Turbo (11 agentes · inclui Picasso Auditor)
+# 2. Squad Turbo (12 agentes · inclui Picasso Auditor + Revisor Copy)
 mkdir -p ~/.claude/agents
 cp agents/*.md ~/.claude/agents/
 
@@ -111,7 +111,7 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 
 ## agents/
 
-Pasta com os 11 agentes `.md`:
+Pasta com os 12 agentes `.md`:
 - 10 do Squad Turbo (estrategista, pesquisador, pesquisador-mercado, copywriter, diretor-criativo, designer, trafego, social, automacao, cs)
 - 1 do Picasso Auditor (auditor de design anti-IA)
 

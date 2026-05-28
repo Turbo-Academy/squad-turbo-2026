@@ -22,7 +22,7 @@ ZIP="$REPO_ROOT/99-skills-compartilhaveis/squad-turbo-completo.zip"
 AGENTS=(
   automacao-turbo copywriter-turbo cs-turbo designer-turbo diretor-criativo-turbo
   estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo
-  picasso-auditor-lpsg social-turbo trafego-turbo
+  picasso-auditor-lpsg revisor-copy-turbo social-turbo trafego-turbo
 )
 
 echo "→ Fonte: $SRC"
@@ -42,5 +42,5 @@ rm -f "$ZIP"
 ( cd "$DIST_AGENTS" && zip -q "$ZIP" "${AGENTS[@]/%/.md}" )
 echo "→ squad-turbo-completo.zip regenerado ($(du -h "$ZIP" | cut -f1))"
 
-echo "✅ Sync concluído. 11 agentes propagados pras 2 cópias + zip."
+echo "✅ Sync concluído. ${#AGENTS[@]} agentes propagados pras 2 cópias + zip."
 echo "   Agora: git add -A && git commit"
