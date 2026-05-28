@@ -154,7 +154,7 @@ aulas:
 
   aula_4:
     titulo_publico:       "{TÍTULO COMPLETO}"
-    funcao:               "Pré-pitch + abertura da ficha"
+    funcao:               "PRÉ-PITCH · 100% sobre o produto · cria desejo + abre ficha · SEM preço/bônus"
     promessa_da_aula:     "{1 FRASE}"
 
   aula_5:

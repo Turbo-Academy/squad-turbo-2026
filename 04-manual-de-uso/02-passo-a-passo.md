@@ -36,9 +36,9 @@ A skill `lpsg-master` valida · executa · reporta · pede aprovação humana em
 
 ```
 DIA 0   (sex/sab/dom prévios)  ── Pré-requisitos + cadastro preenchido
-DIA 1   (Segunda)              ── Fases 1-2 (páginas + criativos)
-DIA 2   (Terça)                ── Fases 3-4 (aulas + oferta)
-DIA 3   (Quarta)               ── Fases 5-6 (mensageria + tráfego)
+DIA 1   (Segunda)              ── Fases 1-2 (estrutura aulas + mensageria)
+DIA 2   (Terça)                ── Fases 3-4 (oferta + criativos)
+DIA 3   (Quarta)               ── Fases 5-6 (páginas + tráfego)
 DIA 4   (Quinta)               ── Fases 7-8 (automações + dashboard)
 DIA 5   (Sexta)                ── Fase 9 (operação) + gravação aulas
 DIA 6-7 (Sábado-Domingo)       ── Aprovações Meta + pré-edição
@@ -54,7 +54,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 | # | Skill | Foco | Subagentes |
 |---|---|---|---|
 | **1** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
-| **2** | `mensageria-lpsg` | 8 fases · ~30 mensagens · templates Utility · entra logo após estrutura porque consome temas das aulas | `@copywriter` |
+| **2** | `mensageria-lpsg` | **cap 4+4** (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas | `@copywriter` · `@revisor-copy` |
 | **3** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
 | **4** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) · usa copy/oferta/aulas já definidas | `@copywriter` · `@designer-senior` |
 | **5** | `paginas-lpsg` | Páginas de venda + ficha de interesse · entre criativos e tráfego porque é destino dos ads | `@designer-senior` · `@copywriter` |
@@ -187,12 +187,16 @@ Oferta documentada e aprovada pelo expert
 ### ⏱️ 2h Claude + 1-3 dias aprovação Meta
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `mensageria-lpsg`. Estrutura as 8 fases · escreve copy · gera 8 templates Utility no formato Meta API. Use Bloco I do cadastro (tom de voz)."*
+> *"Use a skill `mensageria-lpsg`. Respeita o cap 4+4 (máx 4 msgs na API oficial + 4 no grupo por dia, seg-dom). Escreve copy + gera os templates Utility no formato Meta API. Use Bloco I do cadastro (tom de voz)."*
 
 ### O que Claude faz
-- 8 fases (Onboard · Antecipação · Evento · Ficha · Sábado · Pitch · Carrinho · Pós-ficha por tier)
-- ~30 mensagens por inscrito
-- 8 templates Utility com variáveis Meta
+- **Cap 4+4 inegociável** · máx 4 msgs API + 4 grupo por dia (seg-dom) · sem repescagem · sem reforço
+- Onboarding: 4 msgs API triggered por compra (NÃO conta no cap)
+- Seg-sex: 4 horários canônicos (06:50 aviso · 07:00 link · 12:00 replay · 19:00 resumo+chamada)
+- Coreografia pitch: **quinta = pré-pitch 100% produto (sem preço/bônus)** · sexta = repitch parcial · domingo = pitch completo
+- Carrinho: só D1 com 5 horários · D2-D7 zero
+- ~19 templates Utility com variáveis Meta (snake_case `lpsg_`)
+- Passar a copy pelo `@revisor-copy-turbo` antes de submeter
 
 ### 🚨 AÇÃO HUMANA · submeter na Meta (30 min)
 - [ ] business.facebook.com/wa/manage/message-templates/
@@ -364,7 +368,7 @@ A partir desta segunda · LPSG vira **modelo perpétuo**.
 | **Seg 7h** | Aula 1 ao vivo | Expert | Apresenta · responde dúvidas |
 | **Ter 7h** | Aula 2 | Expert | Apresenta |
 | **Qua 7h** | Aula 3 (Marco 1) | Expert | Apresenta |
-| **Qui 7h** | Aula 4 + abre ficha | Expert | Apresenta + cita ficha |
+| **Qui 7h** | Aula 4 · PRÉ-PITCH 100% produto + abre ficha | Expert | Apresenta o produto · cria desejo · abre ficha · SEM preço/bônus |
 | **Sex 7h** | Aula 5 (Marco 2) | Expert | Apresenta |
 | **Sáb 10h** | Tira-dúvidas ao vivo | Expert | Conduz live (1-1.5h) |
 | **Dom 20h** | Pitch ao vivo | Expert | Apresenta a oferta |
