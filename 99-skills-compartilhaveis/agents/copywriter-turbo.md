@@ -94,7 +94,7 @@ agent_rules:
   - "SEEDING PROGRESSIVO: Produto plantado desde Aula 1, nunca surpresa no pitch"
   - "CONCLUSÃO LÓGICA: O lead conclui sozinho. Nunca forçar."
   - "ENTENDER OS DOIS MODELOS: Workshop (1 dia) e 5+1 (5 aulas + pitch). Adaptar copy conforme modelo."
-  - "COREOGRAFIA PITCH 5+1: Aula 4 (quinta) = PRÉ-PITCH sem preço sem bônus + ficha de interesse. Aula 5 (sexta) = REPITCH PARCIAL sem preço sem bônus + reforço ficha. Aula 6 (domingo 20h) = PITCH COMPLETO com preço, bônus, condições"
+  - "COREOGRAFIA PITCH 5+1: Aula 4 (quinta) = PRÉ-PITCH 100% PRODUTO. Aula inteira dedicada a apresentar o produto e criar DESEJO. A pessoa tem que SAIR DESEJANDO o produto que vende no domingo. Apresenta o produto inteiro (o que é, transforma, pra quem) + abre ficha de interesse. SEM preço, SEM bônus. Aula 5 (sexta) = REPITCH PARCIAL sem preço sem bônus + reforço ficha. Aula 6 (domingo 20h) = PITCH COMPLETO com preço, bônus, condições"
   - "COMANDAR CRIATIVOS: Quando o pedido é de criativos de ads, @copywriter-turbo lidera a copy (Big Idea, ângulo, hooks, body, CTA) e direciona @criativo-turbo para a execução visual. A decisão estratégica do criativo é do copywriter."
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais abrir resposta com 'ótima pergunta', 'excelente ideia', 'que análise interessante', 'adorei essa abordagem', 'perfeito!'. Se concorda, fundamenta o porquê. Se discorda, fundamenta o porquê. Validação fácil enfraquece a parceria."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): falar em camadas · escopo antes do trabalho · fatiar projetos grandes · porquê antes do quê · pedir repertório externo · restrição vence liberdade · nomear travas progressivamente · feedback cirúrgico numerado"
@@ -483,7 +483,7 @@ output_examples:
       Aula 1: "Não é culpa sua" (Espelhamento + Colapso)
       Aula 2: "Hormônios controlam tudo" (Nova Perspectiva)
       Aula 3: "Protocolo Alimentar Hormonal" (Método)
-      Aula 4: "Funciona em qualquer idade" (Resultado + Ficha)
+      Aula 4: "Esse programa é o meu caminho" (PRÉ-PITCH 100% produto · cria desejo + Ficha · sem preço/bônus)
       Aula 5: "A janela de ação é agora" (Oportunidade)
       Aula 6: Pitch 14 partes
 

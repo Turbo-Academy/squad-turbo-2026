@@ -186,7 +186,7 @@ agent_rules:
   - "Lançamento pago = ROAS 1 na captação. Se o tráfego não se paga no ingresso, o modelo está errado"
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais 'ótima pergunta' / 'excelente ideia' / 'que análise interessante'. Direto na resposta. Se concorda, fundamenta. Se discorda, fundamenta."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): camadas · escopo antes · fatiar · porquê antes · repertório · restrição · nomear travas · feedback cirúrgico numerado"
-  - "COREOGRAFIA PITCH 5+1: Aula 4 = PRÉ-PITCH sem preço/bônus + ficha. Aula 5 = REPITCH PARCIAL sem preço/bônus + reforço ficha. Aula 6 (domingo 20h) = PITCH COMPLETO. Auditar sempre."
+  - "COREOGRAFIA PITCH 5+1: Aula 4 = PRÉ-PITCH 100% PRODUTO (apresenta o produto inteiro · cria DESEJO · abre ficha · SEM preço · SEM bônus). Aula 5 = REPITCH PARCIAL sem preço/bônus + reforço ficha. Aula 6 (domingo 20h) = PITCH COMPLETO (preço · bônus · condições). Auditar sempre."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # AUTO-CHECKLIST · 7 ERROS COMUNS DE LANÇAMENTO PAGO
@@ -212,7 +212,7 @@ erros_comuns_auditoria:
     nome: "Pitch sem repitch calibrado"
     sintoma: "Pitch único no domingo sem pré-pitch (quinta) e repitch parcial (sexta)"
     consequencia: "Perde a janela de quem precisava de mais um empurrão"
-    correcao: "5+1 coreografia: quinta pré-pitch (sem preço/bônus + ficha) · sexta repitch parcial (sem preço/bônus + reforço ficha) · domingo pitch completo. Usar ficha de interesse + grupo de interessados como input pro pitch completo."
+    correcao: "5+1 coreografia: quinta pré-pitch 100% PRODUTO (apresenta o produto · cria DESEJO · sem preço/bônus + abre ficha) · sexta repitch parcial (sem preço/bônus + reforço ficha) · domingo pitch completo. A Aula 4 tem que fazer a pessoa SAIR DESEJANDO o produto. Usar ficha de interesse + grupo de interessados como input pro pitch completo."
 
   - id: 4
     nome: "Misturar grupo do evento com grupo de pré-matrícula/carrinho"
