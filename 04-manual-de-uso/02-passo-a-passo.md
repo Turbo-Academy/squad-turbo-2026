@@ -54,7 +54,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 | # | Skill | Foco | Subagentes |
 |---|---|---|---|
 | **1** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
-| **2** | `mensageria-lpsg` | **cap 4+4** (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas | `@copywriter` · `@revisor-copy` |
+| **2** | `mensageria-lpsg` | <!--F:fase2_desc_longa--><strong>cap 4+4</strong> (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas<!--/F--> | `@copywriter` · `@revisor-copy` |
 | **3** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
 | **4** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) · usa copy/oferta/aulas já definidas | `@copywriter` · `@designer-senior` |
 | **5** | `paginas-lpsg` | Páginas de venda + ficha de interesse · entre criativos e tráfego porque é destino dos ads | `@designer-senior` · `@copywriter` |
@@ -368,7 +368,7 @@ A partir desta segunda · LPSG vira **modelo perpétuo**.
 | **Seg 7h** | Aula 1 ao vivo | Expert | Apresenta · responde dúvidas |
 | **Ter 7h** | Aula 2 | Expert | Apresenta |
 | **Qua 7h** | Aula 3 (Marco 1) | Expert | Apresenta |
-| **Qui 7h** | Aula 4 · PRÉ-PITCH 100% produto + abre ficha | Expert | Apresenta o produto · cria desejo · abre ficha · SEM preço/bônus |
+| **Qui 7h** | Aula 4 · <!--F:aula4_func-->PRÉ-PITCH · 100% produto · cria desejo + abre ficha · sem preço/bônus<!--/F--> | Expert | Apresenta o produto · cria desejo · abre ficha · SEM preço/bônus |
 | **Sex 7h** | Aula 5 (Marco 2) | Expert | Apresenta |
 | **Sáb 10h** | Tira-dúvidas ao vivo | Expert | Conduz live (1-1.5h) |
 | **Dom 20h** | Pitch ao vivo | Expert | Apresenta a oferta |

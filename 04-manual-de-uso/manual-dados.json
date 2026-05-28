@@ -1,0 +1,14 @@
+{
+  "_doc": "Fonte única dos FATOS canônicos do manual. Editar AQUI · rodar build-manual.sh pra propagar pros .md e manual.html. Cada chave tem um par de marcadores <!--F:chave--> ... <!--/F--> nos arquivos. Pra adicionar um fato novo: 1) crie a chave aqui, 2) envolva o trecho no arquivo com os marcadores, 3) rode o script.",
+
+  "versao": "5.0-V1",
+  "n_skills": "14",
+  "n_agentes": "12",
+
+  "fase2_desc_curta": "cap 4+4 · ~19 templates Utility · consome temas",
+  "fase2_desc_longa": "<strong>cap 4+4</strong> (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas",
+
+  "aula4_func": "PRÉ-PITCH · 100% produto · cria desejo + abre ficha · sem preço/bônus",
+
+  "cronograma_dias": "DIA 1 (Seg): Fases 1-2 (estrutura aulas + mensageria) · DIA 2 (Ter): Fases 3-4 (oferta + criativos) · DIA 3 (Qua): Fases 5-6 (páginas + tráfego) · DIA 4 (Qui): Fases 7-8 (automações + dashboard) · DIA 5 (Sex): Fase 9 (operação) + gravação"
+}
