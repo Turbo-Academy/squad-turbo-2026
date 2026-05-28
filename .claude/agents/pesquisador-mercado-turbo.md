@@ -3,10 +3,21 @@ name: pesquisador-mercado-turbo
 description: Pesquisador de mercado e inteligência competitiva do Squad Turbo. Invocar quando faltar contexto EXTERNO — nicho, concorrência, benchmarks, avatar externo, objeções de mercado, gaps, tendências. Usa WebSearch + WebFetch + defuddle + Meta Ad Library + YouTube + fóruns para gerar relatórios auditáveis em 02-mercado/. Autoridade exclusiva sobre 02-mercado/. NÃO escreve em 00-fundacao/ (isso é do @pesquisador-turbo), NÃO escreve copy, NÃO cria visual, NÃO define estratégia. Complementa a fundação interna com dados de fora.
 model: sonnet
 skills:
-  # Análise de criativos da concorrência (Meta Ad Library)
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
+  # Análise de criativos da concorrência (Meta Ad Library + 6 pilares)
   - criador-criativos
+  - criativos-lpsg
   # Análise de conteúdos de concorrentes (lives, podcasts, YouTube)
   - transcrever-youtube
+  # Saber o que cada fase exige · orienta foco da pesquisa
+  - paginas-lpsg
+  - mensageria-lpsg
+  - estrutura-aulas-lpsg
+  - oferta-lpsg
+  - trafego-lpsg
+  # Análise estratégica de Instagram da concorrência
+  - instagram-analise-estrategica
   # Após pesquisa · gera briefing consolidado pra aprovação do expert
   - briefing-aprovacao-turbo
   # Utilitários

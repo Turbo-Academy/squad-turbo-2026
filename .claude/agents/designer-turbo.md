@@ -3,6 +3,8 @@ name: designer-turbo
 description: Designer executor do Squad Turbo — produz arquivos finais sob direção do @diretor-criativo-turbo. Invocar para executar criativos de ads (imagem/vídeo), slides de aula LPSG (HTML ou PPTX via /gerador-slides-turbo), assets de brandbook, thumbnails, artes estáticas, banners. NÃO define direção criativa, NÃO lê 00-fundacao/ diretamente — recebe brief pronto (paleta, tipografia, composição, copy) do @diretor-criativo-turbo e executa. Usa skills locais do Turbo (gerador-slides-turbo, banner-design, ui-ux-pro-max suite) e /designer-senior para HTML.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Execução de páginas e front-end
   - designer-senior
   - frontend-design
@@ -21,7 +23,22 @@ skills:
   - gerador-slides-turbo
   - slides-uipm
   - pptx
+  # Arte estática (poster · PDF · canvas)
+  - canvas-design
+  # Artifacts web claude.ai (React + Tailwind + shadcn)
+  - web-artifacts-builder
+  # Stack Vercel / React (execução de páginas)
+  - deploy-to-vercel
+  - vercel-cli-with-tokens
+  - vercel-composition-patterns
+  - vercel-react-best-practices
+  - vercel-react-view-transitions
+  # Teste e otimização da entrega
+  - webapp-testing
+  - page-optimizer
 ---
+# NOTA: vercel-react-native-skills (RN/Expo) NÃO é carregada — LPSG é web (Next.js).
+# Disponível em ~/.claude/skills/ se um projeto mobile específico aparecer.
 
 # Designer Turbo — Executor Visual (Leo / Turbo Academy)
 

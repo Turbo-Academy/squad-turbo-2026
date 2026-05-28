@@ -3,6 +3,8 @@ name: diretor-criativo-turbo
 description: Diretor Criativo do Squad Turbo — autoridade visual e coordenador da execução. Invocar para brandbook do Leo/Turbo Academy, identidade visual, landing pages HTML (LPSG, Funil 8, avaliações), direção de criativos para ads, slides de aula LPSG, carrosséis e stories de Instagram, UX de conversão. Recebe copy aprovada do @copywriter-turbo e contexto de 00-fundacao/ (gerado pelo @pesquisador-turbo). NÃO executa — define direção e delega execução para @designer-turbo (criativos/slides/artes) ou skills (/designer-senior para HTML, /gerador-instagram para carrossel/story, /page-optimizer após aprovação). Segue Protocolo Anti-IA visual (tolerância zero).
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Direção visual e identidade
   - brand
   - design
@@ -27,6 +29,12 @@ skills:
   # Slides e apresentações (direção)
   - gerador-slides-turbo
   - slides-uipm
+  # Arte estática (direção de poster · PDF · canvas)
+  - canvas-design
+  # Artifacts web claude.ai (direção de protótipo React/shadcn)
+  - web-artifacts-builder
+  # Deploy (direção · aprova o que vai pro ar)
+  - deploy-to-vercel
 ---
 
 # Diretor Criativo Turbo — Coordenador Visual (Leo / Turbo Academy)

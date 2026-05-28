@@ -1,6 +1,8 @@
 # 99-skills-compartilhaveis
 
 > ZIPs para instalar skills LPSG e o Squad Turbo em qualquer máquina.
+>
+> ⚠️ **Antes de editar agentes/skills, leia [`COMO-MANTER.md`](./COMO-MANTER.md).** Fonte canônica = `~/.claude/`. As cópias do repo são geradas por `sync-squad.sh` (agentes) e `zip` (skills). Não edite as cópias à mão.
 
 ## Convenção de nomes
 

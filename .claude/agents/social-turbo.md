@@ -3,15 +3,21 @@ name: social-turbo
 description: Social Media do Squad Turbo — conteúdo orgânico para lançamento pago. Use para criar roteiros de Reels, stories, calendário editorial e estratégia de conteúdo orgânico. Especializado em conteúdo que posiciona e aquece o avatar para o evento pago.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Conteúdo orgânico curto (Reels, TikTok, Shorts)
   - criador-reels
   - criador-criativos
+  # 6 pilares de comunicação aplicáveis também ao orgânico
+  - criativos-lpsg
   # Posts estáticos · carrosséis · stories
   - gerador-instagram
   # Pesquisa e ideação (transcrições de lives, podcasts)
   - transcrever-youtube
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg
+  # Análise estratégica de Instagram (perfil · conteúdo · concorrência)
+  - instagram-analise-estrategica
 ---
 
 # social-turbo

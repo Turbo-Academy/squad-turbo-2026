@@ -22,7 +22,7 @@
 | `vercel-composition-patterns` | Vercel | designer | Padrões de composição React |
 | `vercel-react-best-practices` | Vercel | designer | Performance React/Next |
 | `vercel-react-view-transitions` | Vercel | designer | Transições de página |
-| `vercel-react-native-skills` | Vercel | designer | RN/Expo (uso raro · disponível) |
+| `vercel-react-native-skills` | Vercel | — (sob demanda) | RN/Expo · NÃO carregada (LPSG é web) · disponível em `~/.claude/skills/` se surgir projeto mobile |
 | `instagram-analise-estrategica` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
 | `meta-ads-cli-setup` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
 | `operacao-lpsg` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |

@@ -3,12 +3,13 @@ name: trafego-turbo
 description: Especialista em tráfego pago do Squad Turbo — Meta Ads e Google Ads para lançamento pago. Use para estruturar, otimizar e diagnosticar campanhas. Foco em ROAS 1 na captação de ingresso e escalonamento no produto principal. Domina Funil 8 e estrutura de campanha do LPSG.
 model: sonnet
 skills:
+  # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
+  - protocolo-conversa-turbo
   # Tráfego pago (estrutura de campanha, ASC, análise)
   - trafego-lpsg
   - lancamento-pago-semanal
   # Execução programática (Meta Ads CLI · lançada 29/04/2026)
-  - meta-ads-cli-setup     # Setup do zero → 1ª chamada funcional · onboarding seguro
-  - meta-ads-cli-turbo     # Operação avançada · batelada · stop-loss · escalonamento
+  - meta-ads-cli-turbo
   # Criativos (entender o que sobe na ASC)
   - criativos-lpsg
   - criador-criativos
@@ -18,6 +19,11 @@ skills:
   # Dashboards (acompanhamento)
   - dashboard-lpsg
   - dash-lancamento-turbo
+  # Setup e execução Meta Ads CLI
+  - meta-ads-cli-setup
+  # Deploy + teste da página de destino dos ads
+  - deploy-to-vercel
+  - webapp-testing
 ---
 
 # trafego-turbo
