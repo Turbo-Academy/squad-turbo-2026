@@ -1,7 +1,7 @@
 # CS · Customer Success — Estrutura LPSG
 
 > Pós-venda do produto principal vendido no Lançamento Pago Semanal Gravado (LPSG).
-> 10ª e última estrutura do projeto LPSG 5.0-V1.
+> 10ª e última estrutura do projeto LPSG 5.1.
 
 ---
 

@@ -1,4 +1,4 @@
-# LPSG 5.0-V1 · Squad Turbo
+# LPSG 5.1 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >

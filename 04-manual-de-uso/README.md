@@ -1,4 +1,4 @@
-# Manual de Utilização · LPSG 5.0-V1
+# Manual de Utilização · LPSG 5.1
 
 > Manual passo-a-passo pra rodar um projeto LPSG completo, do zero.
 > Qualquer pessoa consegue seguir — não precisa ser técnico.

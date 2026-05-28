@@ -1,7 +1,7 @@
 {
   "_doc": "Fonte única dos FATOS canônicos do manual. Editar AQUI · rodar build-manual.sh pra propagar pros .md e manual.html. Cada chave tem um par de marcadores <!--F:chave--> ... <!--/F--> nos arquivos. Pra adicionar um fato novo: 1) crie a chave aqui, 2) envolva o trecho no arquivo com os marcadores, 3) rode o script.",
 
-  "versao": "5.0-V1",
+  "versao": "5.1",
   "n_skills": "14",
   "n_agentes": "12",
 
