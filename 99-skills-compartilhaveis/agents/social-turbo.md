@@ -16,6 +16,8 @@ skills:
   - transcrever-youtube
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg
+  # Análise estratégica de Instagram (perfil · conteúdo · concorrência)
+  - instagram-analise-estrategica
 ---
 
 # social-turbo

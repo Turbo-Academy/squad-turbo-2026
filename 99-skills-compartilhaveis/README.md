@@ -12,22 +12,25 @@
 | `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
 | `squad-turbo-completo.zip` | **11 agentes** (Squad + Picasso) | `~/.claude/agents/` | — |
 
-## Contagem (atualizada 2026-05-26)
+## Contagem (atualizada 2026-05-28)
 
-- **16 skills do Claude** (lowercase): instalar em `~/.claude/skills/`
+- **17 skills proprietárias empacotadas** (lowercase): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master)
   - 1 manual final (manual-final-lpsg)
   - **2 execução Meta Ads:**
-    - `meta-ads-cli-setup` ⭐ NEW · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
+    - `meta-ads-cli-setup` · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
     - `meta-ads-cli-turbo` · operação avançada (batelada · stop-loss · escalonamento)
+  - 1 análise de Instagram (`instagram-analise-estrategica`) ⭐ NEW · relatório/auditoria de perfil IG
   - 1 briefing de aprovação (briefing-aprovacao-turbo)
   - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
   - 1 páginas low-ticket (criador-paginas-low-ticket) · inclui `estudo-de-caso-narrativo.md`
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: 11 agentes (Squad Turbo + Picasso Auditor)
 
-**Total: 27 zips**
+**Total: 29 zips**
+
+> **Cobertura total de skills (2026-05-28):** as 54 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Mapa de skills × agentes ⭐
 

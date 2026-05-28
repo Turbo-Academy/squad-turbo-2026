@@ -29,6 +29,12 @@ skills:
   # Slides e apresentações (direção)
   - gerador-slides-turbo
   - slides-uipm
+  # Arte estática (direção de poster · PDF · canvas)
+  - canvas-design
+  # Artifacts web claude.ai (direção de protótipo React/shadcn)
+  - web-artifacts-builder
+  # Deploy (direção · aprova o que vai pro ar)
+  - deploy-to-vercel
 ---
 
 # Diretor Criativo Turbo — Coordenador Visual (Leo / Turbo Academy)

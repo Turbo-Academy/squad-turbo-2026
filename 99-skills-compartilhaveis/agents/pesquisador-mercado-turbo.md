@@ -16,6 +16,8 @@ skills:
   - estrutura-aulas-lpsg
   - oferta-lpsg
   - trafego-lpsg
+  # Análise estratégica de Instagram da concorrência
+  - instagram-analise-estrategica
   # Após pesquisa · gera briefing consolidado pra aprovação do expert
   - briefing-aprovacao-turbo
   # Utilitários

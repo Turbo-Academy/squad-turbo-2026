@@ -4,6 +4,29 @@
 
 > **Convenção:** `@agente` é como o estrategista invoca · "primária" = pão-de-cada-dia · "complementar" = ferramenta auxiliar.
 
+> **Cobertura total (2026-05-28):** todas as **54 skills instaladas** no ambiente estão atribuídas a pelo menos um agente. Skills proprietárias (turbo/lpsg) são empacotadas em `99-skills-compartilhaveis/`. Skills externas (Anthropic · Vercel) são instaladas via plugin/npx e referenciadas na seção "Skills externas" deste mapa.
+
+---
+
+## 📦 Skills distribuídas em 2026-05-28 (cobertura total)
+
+| Skill | Tipo | Agentes que receberam | Função |
+|---|---|---|---|
+| `canvas-design` | Anthropic | designer · diretor-criativo | Arte estática (poster · PDF · canvas) |
+| `web-artifacts-builder` | Anthropic | designer · diretor-criativo | Artifacts web claude.ai (React + Tailwind + shadcn) |
+| `webapp-testing` | Anthropic | designer · trafego · picasso | Teste de webapp ao vivo no browser |
+| `skill-creator` | Anthropic | estrategista | Criar novas skills do squad |
+| `skill-development` | Anthropic | estrategista | Boas práticas de estrutura de skill |
+| `deploy-to-vercel` | Vercel | designer · diretor-criativo · trafego · automacao | Deploy de páginas/serviços |
+| `vercel-cli-with-tokens` | Vercel | designer · automacao | Deploy via token (CI) |
+| `vercel-composition-patterns` | Vercel | designer | Padrões de composição React |
+| `vercel-react-best-practices` | Vercel | designer | Performance React/Next |
+| `vercel-react-view-transitions` | Vercel | designer | Transições de página |
+| `vercel-react-native-skills` | Vercel | designer | RN/Expo (uso raro · disponível) |
+| `instagram-analise-estrategica` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
+| `meta-ads-cli-setup` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
+| `operacao-lpsg` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
+
 ---
 
 ## 🚀 @estrategista-turbo · Tier 0 · ORQUESTRADOR

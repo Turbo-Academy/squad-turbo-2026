@@ -12,6 +12,8 @@ skills:
   # Heurísticas e diretrizes web
   - web-design-guidelines
   - ui-ux-pro-max
+  # Teste ao vivo da interface no browser (validar auditoria)
+  - webapp-testing
 ---
 
 # Picasso Auditor — Diretor de Arte Obsessivo

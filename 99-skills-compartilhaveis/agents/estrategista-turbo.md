@@ -16,6 +16,11 @@ skills:
   # Páginas / dashboards (entrega final orquestrada)
   - criador-paginas-low-ticket
   - dash-lancamento-turbo
+  # Operação e equipe do lançamento (RACI · time mínimo)
+  - operacao-lpsg
+  # Meta · criar e evoluir skills/agentes do próprio squad
+  - skill-creator
+  - skill-development
   # Utilitários
   - find-skills
 ---

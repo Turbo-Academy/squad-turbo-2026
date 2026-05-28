@@ -23,6 +23,20 @@ skills:
   - gerador-slides-turbo
   - slides-uipm
   - pptx
+  # Arte estática (poster · PDF · canvas)
+  - canvas-design
+  # Artifacts web claude.ai (React + Tailwind + shadcn)
+  - web-artifacts-builder
+  # Stack Vercel / React (execução de páginas)
+  - deploy-to-vercel
+  - vercel-cli-with-tokens
+  - vercel-composition-patterns
+  - vercel-react-best-practices
+  - vercel-react-view-transitions
+  - vercel-react-native-skills
+  # Teste e otimização da entrega
+  - webapp-testing
+  - page-optimizer
 ---
 
 # Designer Turbo — Executor Visual (Leo / Turbo Academy)
