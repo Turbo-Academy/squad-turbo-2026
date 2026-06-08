@@ -484,8 +484,8 @@ output_examples:
       Aula 2: "Hormônios controlam tudo" (Nova Perspectiva)
       Aula 3: "Protocolo Alimentar Hormonal" (Método)
       Aula 4: "Esse programa é o meu caminho" (PRÉ-PITCH 100% produto · cria desejo + Ficha · sem preço/bônus)
-      Aula 5: "A janela de ação é agora" (Oportunidade)
-      Aula 6: Pitch 14 partes
+      Aula 5: "Tô equipada pra executar" (Conclusão técnica · lembrete curto da ficha · NÃO é pré-pitch)
+      Aula 6: Pitch completo (preço + bônus + dupla garantia)
 
       SEEDING:
       Aula 1: menção sutil ao programa
