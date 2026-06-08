@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Passo a Passo LPSG · Turbo Academy</title>
+<style>
+  :root{
+    --black:#0A0A0A;        /* preto profundo */
+    --ink:#1A1815;          /* texto */
+    --paper:#FBF9F3;        /* off-white aquecido */
+    --gold:#C9A227;         /* dourado champagne (contraste AA em fundo claro) */
+    --gold-bright:#E7C354;  /* dourado claro em fundo escuro */
+    --muted:#6B6458;
+    --line:#E2DCCD;
+    --cmd:#0E1A14;          /* fundo box comando */
+    --cmd-ink:#BFE8CF;
+    --warn-bg:#F6ECCF;
+    --warn-ink:#7A5B00;
+    --teal:#0E6E63;
+  }
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family: Georgia, 'Times New Roman', serif;
+    color:var(--ink);
+    background:var(--paper);
+    font-size:11pt; line-height:1.62;
+  }
+  h1,h2,h3,h4,.sans{ font-family:'Helvetica Neue', Arial, sans-serif; }
+
+  @page{ size:A4; margin:20mm 18mm 20mm 18mm; }
+
+  /* ---------- CAPA ---------- */
+  .cover{
+    background:var(--black); color:var(--paper);
+    height:257mm; margin:-20mm -18mm 0 -18mm; padding:34mm 22mm;
+    display:flex; flex-direction:column; justify-content:space-between;
+    page-break-after:always; position:relative;
+  }
+  .cover .kicker{ font-family:'Helvetica Neue',Arial,sans-serif; letter-spacing:.42em; text-transform:uppercase; font-size:10pt; color:var(--gold-bright); font-weight:700; }
+  .cover h1{ font-size:46pt; line-height:1.04; margin:8mm 0 0; font-weight:800; letter-spacing:-.5px; }
+  .cover .sub{ font-size:15pt; color:#CFC6B2; margin-top:6mm; font-family:Georgia,serif; font-style:italic; }
+  .cover .rule{ height:3px; width:60mm; background:var(--gold); margin:12mm 0; }
+  .cover .foot{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:10.5pt; color:#9A917C; letter-spacing:.08em; }
+  .cover .brand{ font-family:'Helvetica Neue',Arial,sans-serif; font-weight:800; letter-spacing:.32em; font-size:12pt; color:var(--gold-bright); text-transform:uppercase; }
+  .cover .corner{ position:absolute; top:34mm; right:22mm; font-family:'Helvetica Neue',Arial,sans-serif; font-size:9pt; letter-spacing:.3em; color:#5A5346; text-transform:uppercase; }
+
+  /* ---------- divisor de capítulo ---------- */
+  .divider{
+    background:var(--black); color:var(--paper);
+    height:257mm; margin:-20mm -18mm 0 -18mm; padding:60mm 22mm;
+    page-break-before:always; page-break-after:always;
+  }
+  .divider .num{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:60pt; font-weight:800; color:#27241C; line-height:1; }
+  .divider .etapa{ font-family:'Helvetica Neue',Arial,sans-serif; letter-spacing:.4em; text-transform:uppercase; color:var(--gold-bright); font-size:10pt; font-weight:700; margin-top:4mm; }
+  .divider h2{ font-size:30pt; color:var(--paper); margin:5mm 0 0; border:0; font-weight:800; line-height:1.1; }
+  .divider .lead{ color:#CFC6B2; font-size:13pt; margin-top:7mm; max-width:120mm; }
+  .divider .rule{ height:3px; width:46mm; background:var(--gold); margin:9mm 0; }
+
+  /* ---------- texto ---------- */
+  .page{ page-break-before:always; }
+  h2.sec{ font-size:21pt; font-weight:800; color:var(--black); margin:0 0 2mm; letter-spacing:-.3px; }
+  h2.sec .e{ color:var(--gold); }
+  .sec-rule{ height:2px; background:linear-gradient(90deg,var(--gold),transparent); margin:0 0 6mm; }
+  h3{ font-size:13.5pt; font-weight:800; color:var(--black); margin:7mm 0 2mm; }
+  h4{ font-size:11.5pt; font-weight:800; color:var(--teal); margin:5mm 0 1mm; font-family:'Helvetica Neue',Arial,sans-serif; }
+  p{ margin:0 0 3mm; }
+  .lead-p{ font-size:12pt; color:#2A2620; }
+  strong{ color:var(--black); }
+  .muted{ color:var(--muted); }
+  ul,ol{ margin:0 0 4mm; padding-left:6mm; }
+  li{ margin:0 0 1.6mm; }
+  ul.clean{ list-style:none; padding-left:0; }
+  ul.clean li{ padding-left:7mm; position:relative; }
+  ul.clean li::before{ content:"›"; position:absolute; left:0; color:var(--gold); font-weight:800; font-family:'Helvetica Neue',Arial,sans-serif; }
+
+  .tag{ display:inline-block; font-family:'Helvetica Neue',Arial,sans-serif; font-size:8pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:1.5px 7px; border-radius:3px; vertical-align:middle; }
+  .tag.voce{ background:#F3D9C4; color:#9A4A12; }
+  .tag.claude{ background:#15281F; color:#9FE6BE; }
+  .tag.config{ background:#DCE7F4; color:#1E4E8C; }
+  .tag.tempo{ background:#EDE7D6; color:#7A6A3A; }
+
+  /* command box */
+  .cmd{ background:var(--cmd); border-radius:8px; margin:5mm 0; overflow:hidden; border:1px solid #1d3328; }
+  .cmd .h{ background:var(--teal); color:#EAFBF1; font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700; font-size:9.5pt; padding:5px 12px; letter-spacing:.04em; }
+  .cmd pre{ margin:0; padding:9px 14px; color:var(--cmd-ink); font-family:'SF Mono','Menlo','Consolas',monospace; font-size:9.5pt; line-height:1.55; white-space:pre-wrap; }
+  .cmd pre .c{ color:#6E8B7B; }
+
+  /* callouts */
+  .box{ border-radius:8px; padding:6mm 7mm; margin:5mm 0; border:1px solid var(--line); }
+  .box .t{ font-family:'Helvetica Neue',Arial,sans-serif; font-weight:800; font-size:10.5pt; margin-bottom:2mm; }
+  .box.gold{ background:#FBF4DC; border-color:#E8D79A; }
+  .box.gold .t{ color:var(--warn-ink); }
+  .box.teal{ background:#E4F2EF; border-color:#B9DDD5; }
+  .box.teal .t{ color:var(--teal); }
+  .box p:last-child,.box ul:last-child{ margin-bottom:0; }
+
+  /* tabela */
+  table{ width:100%; border-collapse:collapse; margin:4mm 0; font-size:9.8pt; }
+  th{ background:var(--black); color:var(--paper); font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700; text-align:left; padding:6px 9px; font-size:9pt; }
+  td{ padding:6px 9px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:nth-child(even) td{ background:#F4EFE2; }
+  td.c{ text-align:center; font-weight:700; color:var(--gold); }
+
+  /* checklist */
+  .chk{ list-style:none; padding-left:0; }
+  .chk li{ padding-left:8mm; position:relative; margin-bottom:2.4mm; }
+  .chk li::before{ content:"☐"; position:absolute; left:0; color:var(--gold); font-size:12pt; top:-1px; }
+
+  .step{ border-left:3px solid var(--gold); padding:1mm 0 1mm 6mm; margin:4mm 0; }
+  .step .n{ font-family:'Helvetica Neue',Arial,sans-serif; font-weight:800; color:var(--gold); font-size:9pt; letter-spacing:.06em; text-transform:uppercase; }
+
+  .runfoot{ position:fixed; bottom:6mm; left:18mm; right:18mm; font-family:'Helvetica Neue',Arial,sans-serif; font-size:7.5pt; letter-spacing:.12em; color:#A89F8A; text-transform:uppercase; border-top:1px solid var(--line); padding-top:2mm; display:flex; justify-content:space-between; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+  .toc .row{ display:flex; justify-content:space-between; border-bottom:1px dotted var(--line); padding:2.5mm 0; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10.5pt; }
+  .toc .row .n{ color:var(--gold); font-weight:800; width:14mm; }
+  .toc .row .t{ flex:1; }
+  .first-cap::first-letter{ font-size:300%; font-family:'Helvetica Neue',Arial,sans-serif; font-weight:800; color:var(--gold); float:left; line-height:.82; padding:2mm 3mm 0 0; }
+</style>
+</head>
+<body>
+
+<!-- ============ CAPA ============ -->
+<div class="cover">
+  <div>
+    <div class="corner">Método LPSG · v5.1</div>
+    <div class="kicker">Guia do Aluno</div>
+    <h1>Passo a Passo do<br>Lançamento Pago<br>Semanal Gravado</h1>
+    <div class="sub">Do zero à primeira venda — o que fazer em cada etapa, inclusive no Claude.</div>
+    <div class="rule"></div>
+  </div>
+  <div>
+    <div class="foot">Um ebook prático para rodar seu primeiro LPSG sem se perder.</div>
+    <div class="brand" style="margin-top:8mm;">Turbo Academy</div>
+  </div>
+</div>
+
+<!-- runfoot aparece em todas as páginas -->
+<div class="runfoot"><span>Turbo Academy</span><span>Passo a Passo · LPSG</span></div>
+
+<!-- ============ MANIFESTO ============ -->
+<div class="page">
+  <h2 class="sec">Antes de começar</h2>
+  <div class="sec-rule"></div>
+  <p class="lead-p first-cap">Este ebook não é teoria. É o caminho exato que você percorre para colocar um Lançamento Pago Semanal Gravado no ar — da criação das contas até a primeira venda — com o Claude executando as peças pesadas e você tomando as decisões que importam.</p>
+  <p>O <strong>LPSG</strong> inverte a lógica do lançamento tradicional. Em vez de captar de graça e torcer pela conversão lá no fim, você <strong>vende um ingresso barato (R$ 47 a 97) que paga o tráfego antes do evento começar</strong>. Quem paga aparece. Quem aparece consome. Quem consome compra o produto principal no domingo. E você roda isso toda semana.</p>
+
+  <h3>O que você constrói até o fim deste guia</h3>
+  <ul class="clean">
+    <li>Páginas de venda do ingresso — 5 variações no ar, cada uma com um ângulo diferente.</li>
+    <li>Ficha de interesse que separa os curiosos dos compradores (HOT · WARM · COLD).</li>
+    <li>15 criativos rodando no Meta Ads, organizados por pilar de comunicação.</li>
+    <li>Mensageria automatizada no WhatsApp, com disciplina anti-spam (cap 4+4).</li>
+    <li>Um evento de 7 dias, um carrinho que converte, e um pós-venda que vira prova social.</li>
+  </ul>
+
+  <div class="box teal">
+    <div class="t">A semana do evento em uma frase</div>
+    <p style="margin:0;">Segunda a sexta, 7h: cinco aulas técnicas. Sábado, 10h: tira-dúvidas. Domingo, 20h: o pitch. Na segunda seguinte o carrinho abre — quem preencheu a ficha entra 6h50, o geral às 7h — e fecha na sexta 23h59.</p>
+  </div>
+
+  <div class="box gold">
+    <div class="t">Como o método pensa</div>
+    <p style="margin:0;">Mercado vale 60%. Oferta vale 30%. Copy vale 10%. Por isso a primeira coisa que você faz não é escrever página nenhuma — é pesquisar e aprovar a narrativa. Copy boa em mercado errado é desperdício.</p>
+  </div>
+</div>
+
+<!-- ============ SUMÁRIO ============ -->
+<div class="page">
+  <h2 class="sec">Sumário</h2>
+  <div class="sec-rule"></div>
+  <div class="toc">
+    <div class="row"><span class="n">00</span><span class="t">Como usar este ebook · os 3 atores</span></div>
+    <div class="row"><span class="n">01</span><span class="t">Etapa 0 — Pré-requisitos (as contas)</span></div>
+    <div class="row"><span class="n">02</span><span class="t">Etapa 1 — Cadastro do projeto</span></div>
+    <div class="row"><span class="n">03</span><span class="t">Etapa 2 — Gate inicial: pesquisa + briefing</span></div>
+    <div class="row"><span class="n">04</span><span class="t">Etapa 3 — As 10 fases de construção</span></div>
+    <div class="row"><span class="n">05</span><span class="t">Etapa 4 — A semana do evento (7 dias)</span></div>
+    <div class="row"><span class="n">06</span><span class="t">Etapa 5 — O carrinho</span></div>
+    <div class="row"><span class="n">07</span><span class="t">Etapa 6 — Pós-venda (Customer Success)</span></div>
+    <div class="row"><span class="n">A</span><span class="t">Apêndice — Comandos rápidos pro Claude</span></div>
+    <div class="row"><span class="n">B</span><span class="t">Apêndice — Glossário do método</span></div>
+    <div class="row"><span class="n">✓</span><span class="t">Checklist final</span></div>
+  </div>
+</div>
+
+<!-- ============ 00 · COMO USAR ============ -->
+<div class="page">
+  <h2 class="sec"><span class="e">00 ·</span> Como usar este ebook</h2>
+  <div class="sec-rule"></div>
+  <p>Cada etapa envolve até três atores. Saber quem faz o quê evita travar no meio.</p>
+  <table>
+    <tr><th style="width:26mm;">Ator</th><th>O que faz</th><th style="width:42mm;">Como aparece aqui</th></tr>
+    <tr><td><span class="tag voce">Você</span></td><td>Cria contas, libera acessos, aprova decisões, grava as aulas, apresenta o evento.</td><td>Marcador <span class="tag voce">Ação sua</span></td></tr>
+    <tr><td><span class="tag claude">Claude</span></td><td>Estrutura aulas, escreve copy, monta páginas, gera automações e dashboard.</td><td>Caixa escura “Cole no Claude”</td></tr>
+    <tr><td><span class="tag config">Ferr.</span></td><td>Meta, Hotmart, Vercel, n8n, ManyChat — executam o que foi configurado.</td><td>Marcador <span class="tag config">Config</span></td></tr>
+  </table>
+  <div class="box gold">
+    <div class="t">A regra de ouro</div>
+    <p style="margin:0;">O Claude conduz, você aprova. <strong>Nunca pule o gate inicial</strong> (Etapa 2). Cada fase depende da anterior — siga a ordem. Quando algo travar, peça diagnóstico ao Claude antes de improvisar.</p>
+  </div>
+  <h3>Como falar com o Claude</h3>
+  <p>Ao longo do guia você verá caixas escuras. O texto dentro delas é para <strong>colar direto no Claude</strong>. Os comandos começam com <strong>@</strong> seguido do nome de um especialista do squad — por exemplo <strong>@lpsg-master</strong> (o orquestrador) ou <strong>@copywriter-turbo</strong> (a copy).</p>
+  <div class="cmd"><div class="h">Cole no Claude · exemplo</div><pre>@lpsg-master crie meu LPSG. <span class="c"># o orquestrador assume daqui</span></pre></div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 0 ============ -->
+<div class="divider">
+  <div class="num">00</div>
+  <div class="etapa">Etapa</div>
+  <h2>Pré-requisitos</h2>
+  <div class="rule"></div>
+  <div class="lead">As contas e acessos que precisam existir antes de o Claude começar. Sem isso, a execução trava no meio do caminho.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 0 ·</span> Pré-requisitos</h2>
+  <div class="sec-rule"></div>
+  <p><span class="tag voce">Ação sua</span> &nbsp;<span class="tag tempo">4 a 8 horas</span></p>
+  <p>Esta é a etapa mais chata e a mais importante. São contas em plataformas que o Claude vai operar por você. Faça na ordem abaixo — cada bloco destrava o próximo.</p>
+
+  <h3>As 10 contas, por bloco</h3>
+  <table>
+    <tr><th style="width:8mm;" class="c">#</th><th>Conta</th><th>Para quê</th><th style="width:18mm;">Tempo</th></tr>
+    <tr><td class="c">1</td><td>Domínio + Cloudflare</td><td>Páginas, ficha e dashboard moram em subdomínios seus</td><td>45 min</td></tr>
+    <tr><td class="c">2</td><td>Google + Service Account</td><td>Planilhas (CRM), Drive, Calendar do CS</td><td>25 min</td></tr>
+    <tr><td class="c">3</td><td>Meta Business + Ad Account + Pixel + CAPI</td><td>Rodar anúncios e rastrear conversões</td><td>2-3 h</td></tr>
+    <tr><td class="c">4</td><td>WABA (WhatsApp Business API)</td><td>Mensageria automatizada do evento</td><td>1-2 h</td></tr>
+    <tr><td class="c">5</td><td>Hotmart Pro (2 produtos)</td><td>Vender ingresso e produto principal</td><td>1 h</td></tr>
+    <tr><td class="c">6</td><td>Vercel</td><td>Hospedar páginas e dashboard</td><td>20 min</td></tr>
+    <tr><td class="c">7</td><td>n8n (cloud ou self-hosted)</td><td>Rodar os 14 workflows de automação</td><td>5-60 min</td></tr>
+    <tr><td class="c">8</td><td>ManyChat Pro</td><td>Disparar WhatsApp e gerenciar tags</td><td>30 min</td></tr>
+    <tr><td class="c">9</td><td>Plataforma de aulas (Hotmart Club)</td><td>Entregar o produto principal pós-compra</td><td>30 min</td></tr>
+    <tr><td class="c">10</td><td>Comunidade (Discord ou WhatsApp)</td><td>Casa dos alunos do produto principal</td><td>30 min</td></tr>
+  </table>
+
+  <h3>Os 5 dados críticos que você precisa anotar</h3>
+  <p>Conforme cria as contas, guarde estes — é o que o Claude usa no cadastro:</p>
+  <ul class="clean">
+    <li><strong>Pixel ID</strong> (Meta) — rastreia conversão da página.</li>
+    <li><strong>CAPI Token</strong> (Meta, System User, sem expiração) — rastreamento server-side.</li>
+    <li><strong>Phone Number ID</strong> (WABA) — número dedicado da mensageria.</li>
+    <li><strong>Product ID + Offer Key</strong> dos 2 produtos Hotmart (ingresso e premium).</li>
+    <li><strong>HOTTOK</strong> (Hotmart) — valida o webhook que dispara o onboarding.</li>
+  </ul>
+
+  <div class="box gold">
+    <div class="t">Segurança</div>
+    <p style="margin:0;">Tokens vão num gerenciador de senhas (1Password, Bitwarden). O JSON da Service Account fica numa pasta criptografada. IDs simples (Pixel, Product) podem ficar em texto. Se um token vazar: revoga e gera de novo, não tenta limpar histórico.</p>
+  </div>
+  <div class="box teal">
+    <div class="t">Travou em algo técnico?</div>
+    <p style="margin:0;">Peça ao Claude o passo a passo específico. Exemplo de comando abaixo.</p>
+    <div class="cmd" style="margin-top:3mm;"><div class="h">Cole no Claude</div><pre>Me explica, passo a passo, como criar uma Service Account
+no Google Cloud com acesso a Sheets e Drive.</pre></div>
+  </div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 1 ============ -->
+<div class="divider">
+  <div class="num">01</div>
+  <div class="etapa">Etapa</div>
+  <h2>Cadastro do projeto</h2>
+  <div class="rule"></div>
+  <div class="lead">Um formulário, preenchido uma vez, que alimenta as 10 fases. A fonte da verdade do seu lançamento.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 1 ·</span> Cadastro do projeto</h2>
+  <div class="sec-rule"></div>
+  <p><span class="tag voce">Ação sua</span> &nbsp;<span class="tag tempo">30 a 60 min</span></p>
+  <p>O cadastro (chamado de <em>intake</em>) reúne tudo sobre o seu lançamento num só lugar: quem é o expert, o avatar, o nicho, a oferta, o ticket, as cores, os links e os dados técnicos que você anotou na Etapa 0.</p>
+
+  <div class="step"><div class="n">Passo 1</div><p style="margin:1mm 0 0;">Abra o manual interativo (<strong>manual.html</strong>) no navegador. Ele tem o formulário com salvamento automático.</p></div>
+  <div class="step"><div class="n">Passo 2</div><p style="margin:1mm 0 0;">Preencha os 10 blocos: especialista, oferta, aulas, avatar, mercado, design, técnico, links, equipe, calendário.</p></div>
+  <div class="step"><div class="n">Passo 3</div><p style="margin:1mm 0 0;">No fim, ele gera um <strong>YAML</strong> pronto. Copie esse YAML — é o que você cola no Claude na próxima etapa.</p></div>
+
+  <div class="box gold">
+    <div class="t">Por que caprichar aqui</div>
+    <p style="margin:0;">Preenchido com cuidado uma vez, o cadastro destrava as 10 fases sem fricção. Preenchido pela metade, a execução para no meio pedindo dados que faltaram. Vale a hora.</p>
+  </div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 2 ============ -->
+<div class="divider">
+  <div class="num">02</div>
+  <div class="etapa">Etapa · obrigatória</div>
+  <h2>Gate inicial:<br>pesquisa + briefing</h2>
+  <div class="rule"></div>
+  <div class="lead">Antes de qualquer página ou criativo, o Claude pesquisa o mercado e gera um briefing para você aprovar. Pular isto custa 5 a 10 horas de retrabalho.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 2 ·</span> Gate inicial</h2>
+  <div class="sec-rule"></div>
+  <p>Esta é a etapa que <strong>não pode ser pulada</strong>. É ela que garante que tudo o que vem depois — copy, página, criativo, oferta — fale com o mercado certo, na voz certa.</p>
+
+  <h3>O que acontece, em ordem</h3>
+  <div class="step"><div class="n">1 · Pesquisa interna</div><p style="margin:1mm 0 0;">O Claude organiza a voz do expert, o avatar e a oferta a partir do seu material (aulas, páginas, relatos).</p></div>
+  <div class="step"><div class="n">2 · Pesquisa de mercado</div><p style="margin:1mm 0 0;">Concorrência, benchmarks, objeções reais do público e oportunidades que ninguém no nicho está usando.</p></div>
+  <div class="step"><div class="n">3 · Briefing</div><p style="margin:1mm 0 0;">Tudo vira <strong>um documento</strong> (.docx + Google Docs) que você lê de uma vez: contexto, avatar, big idea, promessa, oferta, diferencial, riscos, cronograma.</p></div>
+  <div class="step"><div class="n">4 · Você aprova</div><p style="margin:1mm 0 0;">Lê, comenta em modo de sugestão, e marca uma das três opções: <strong>aprovo · aprovo com ajustes · não aprovo</strong>.</p></div>
+  <div class="step"><div class="n">5 · Só então</div><p style="margin:1mm 0 0;">Começam as 10 fases. Nem antes.</p></div>
+
+  <div class="cmd"><div class="h">Cole no Claude · inicia tudo</div><pre>@lpsg-master crie meu LPSG.
+
+Aqui está meu cadastro:
+[cole o YAML gerado na Etapa 1]
+
+Quero que você:
+1. Rode o gate inicial: pesquisa + briefing pra eu aprovar
+2. PAUSE e aguarde minha aprovação do briefing
+3. Só então execute as 10 fases na ordem</pre></div>
+
+  <div class="box teal">
+    <div class="t">O que você faz aqui, na prática</div>
+    <ul class="clean" style="margin:0;">
+      <li>Recebe o link do briefing (Google Docs).</li>
+      <li>Lê com calma — é a narrativa inteira do seu lançamento numa folha.</li>
+      <li>Marca alterações em modo de sugestão (não apaga, sugere).</li>
+      <li>Escolhe uma das 3 opções de aprovação.</li>
+      <li>Avisa o Claude: <em>“Briefing aprovado, pode seguir a Fase 1.”</em></li>
+    </ul>
+  </div>
+  <div class="box gold">
+    <div class="t">Tentado a pular?</div>
+    <p style="margin:0;">Se você disser “já tenho tudo na cabeça, vai direto pra página”, o Claude vai recusar e pedir o gate. É de propósito. Sem fundação, a copy sai genérica e o posicionamento sai clonado — você descobre o erro só depois de tudo pronto.</p>
+  </div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 3 ============ -->
+<div class="divider">
+  <div class="num">03</div>
+  <div class="etapa">Etapa</div>
+  <h2>As 10 fases<br>de construção</h2>
+  <div class="rule"></div>
+  <div class="lead">Briefing aprovado, o Claude executa as 10 fases na ordem, uma de cada vez, pedindo sua confirmação ao fim de cada uma.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 3 ·</span> Visão geral das 10 fases</h2>
+  <div class="sec-rule"></div>
+  <table>
+    <tr><th class="c" style="width:8mm;">#</th><th>Fase</th><th>O que o Claude entrega</th><th style="width:34mm;">Sua ação</th></tr>
+    <tr><td class="c">1</td><td>Estrutura de aulas</td><td>6 aulas (5+1) com escada de crenças</td><td>Revisar e gravar</td></tr>
+    <tr><td class="c">2</td><td>Mensageria</td><td>Mensagens do evento (cap 4+4) + templates Meta</td><td>Submeter na Meta</td></tr>
+    <tr><td class="c">3</td><td>Oferta</td><td>Stack de valor, bônus tsunami, dupla garantia</td><td>Aprovar</td></tr>
+    <tr><td class="c">4</td><td>Criativos</td><td>15 criativos (5 vídeos, 5 estáticos, 5 carrosséis)</td><td>Gravar os vídeos</td></tr>
+    <tr><td class="c">5</td><td>Páginas</td><td>5 variações + ficha de interesse</td><td>Subir foto e provas</td></tr>
+    <tr><td class="c">6</td><td>Tráfego</td><td>Campanha Meta Ads (ASC) + análise</td><td>Ativar budget</td></tr>
+    <tr><td class="c">7</td><td>Automações</td><td>14 workflows n8n + webhook Hotmart</td><td>Conectar contas</td></tr>
+    <tr><td class="c">8</td><td>Dashboard</td><td>Painel ao vivo de métricas</td><td>Conferir números</td></tr>
+    <tr><td class="c">9</td><td>Operação</td><td>Papéis do time (RACI) + rotinas</td><td>Definir o time</td></tr>
+    <tr><td class="c">10</td><td>Pós-venda (CS)</td><td>Onboarding 90 dias, NPS, prova social</td><td>Rodar pós-venda</td></tr>
+  </table>
+  <div class="box teal">
+    <div class="t">Comando padrão entre fases</div>
+    <p style="margin:0;">Ao fim de cada fase o Claude pergunta “posso continuar?”. Você responde <strong>sim</strong> ou <strong>pausar</strong>. Para retomar depois: <em>“@lpsg-master continue da Fase X”.</em></p>
+  </div>
+</div>
+
+<div class="page">
+  <h2 class="sec">As fases que pedem mais de você</h2>
+  <div class="sec-rule"></div>
+
+  <h4>Fase 1 · Estrutura de aulas</h4>
+  <p>O Claude entrega o roteiro das 6 aulas com a função estratégica de cada uma. O ponto-chave: a <strong>Aula 4 (quinta) é o pré-pitch</strong> — a única aula 100% sobre o produto. Ela cria desejo, abre a ficha de interesse e <strong>não fala preço nem bônus</strong>. Você grava as aulas (a maratona costuma cair no dia 5).</p>
+
+  <h4>Fase 2 · Mensageria</h4>
+  <p>Regra inegociável: <strong>no máximo 4 mensagens na API + 4 no grupo por dia</strong>. Sem repescagem, sem trocar o nome do grupo. Você submete os templates na Meta — a aprovação leva de 1 a 3 dias úteis, então faça cedo.</p>
+
+  <h4>Fase 4 · Criativos</h4>
+  <p>O Claude entrega os roteiros; você grava os 5 vídeos. Vertical (9:16), microfone de lapela, iluminação frontal, e <strong>sem logo nos 3 primeiros segundos</strong> (é onde se ganha ou perde a atenção).</p>
+
+  <h4>Fase 5 · Páginas</h4>
+  <p>Você sobe a foto profissional do expert e 6 depoimentos reais (com autorização). Atenção: depoimento solto não converte — o Claude transforma cada um em <strong>estudo de caso narrativo</strong> (nome, idade, contexto, obstáculo, resultado).</p>
+
+  <div class="cmd"><div class="h">Cole no Claude · refazer só uma peça</div><pre>@copywriter-turbo reescreve a Aula 4 com mais desejo,
+mantendo os 3 avisos (ficha, carrinho segunda, pitch domingo).</pre></div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 4 ============ -->
+<div class="divider">
+  <div class="num">04</div>
+  <div class="etapa">Etapa</div>
+  <h2>A semana<br>do evento</h2>
+  <div class="rule"></div>
+  <div class="lead">Sete dias. Você (ou o expert) apresenta; a mensageria dispara sozinha. A coreografia do pitch é sagrada.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 4 ·</span> A semana do evento</h2>
+  <div class="sec-rule"></div>
+  <table>
+    <tr><th style="width:20mm;">Dia / hora</th><th>O que acontece</th><th style="width:34mm;">Você faz</th></tr>
+    <tr><td><strong>Seg 7h</strong></td><td>Aula 1 — Fundamentação</td><td>Apresenta + chat</td></tr>
+    <tr><td><strong>Ter 7h</strong></td><td>Aula 2 — Aprofundamento</td><td>Apresenta</td></tr>
+    <tr><td><strong>Qua 7h</strong></td><td>Aula 3 — Marco de resultado (“já valeu”)</td><td>Apresenta</td></tr>
+    <tr><td><strong>Qui 7h</strong></td><td><strong>Aula 4 — PRÉ-PITCH 100% produto.</strong> Cria desejo, abre a ficha. Sem preço/bônus.</td><td>Apresenta + abre ficha</td></tr>
+    <tr><td><strong>Sex 7h</strong></td><td>Aula 5 — Conclusão técnica + lembrete da ficha (não é pré-pitch)</td><td>Apresenta</td></tr>
+    <tr><td><strong>Sáb 10h</strong></td><td>Tira-dúvidas ao vivo (única aula sem replay)</td><td>Conduz a live</td></tr>
+    <tr><td><strong>Dom 20h</strong></td><td>Aula Final — PITCH completo (preço + bônus + dupla garantia)</td><td>Apresenta a oferta</td></tr>
+  </table>
+
+  <div class="box gold">
+    <div class="t">Os 3 avisos obrigatórios da Aula 4 (quinta)</div>
+    <ul class="clean" style="margin:0;">
+      <li>Apresenta o produto inteiro <strong>+ abre a ficha de interesse</strong>.</li>
+      <li>Avisa: <strong>segunda</strong>, quem preencheu a ficha entra <strong>6h50</strong> (10 min antes, com bônus único); o carrinho geral abre <strong>7h</strong>.</li>
+      <li>Avisa: <strong>domingo 20h</strong> tem a revelação de preço e bônus.</li>
+    </ul>
+    <p style="margin:3mm 0 0;"><strong>Na Aula 4 não se fala preço nem bônus.</strong> Isso é só no domingo. Quem joga isso pra sexta está errando a coreografia.</p>
+  </div>
+
+  <div class="box teal">
+    <div class="t">Detalhe que confunde quase todo mundo</div>
+    <p style="margin:0;">Cada aula pode ser <strong>ao vivo OU gravada</strong> — é decisão interna sua. <strong>Nunca</strong> se comunica o formato pro público. Quem se inscreveu chega no horário e participa do que está rodando. Exceção: o tira-dúvidas de sábado não tem replay.</p>
+  </div>
+</div>
+
+<!-- ============ DIVISOR ETAPA 5 ============ -->
+<div class="divider">
+  <div class="num">05</div>
+  <div class="etapa">Etapa</div>
+  <h2>O carrinho</h2>
+  <div class="rule"></div>
+  <div class="lead">Abre na segunda seguinte ao pitch. É onde a maior parte da venda acontece. Toda a energia no primeiro dia.</div>
+</div>
+
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 5 ·</span> O carrinho</h2>
+  <div class="sec-rule"></div>
+  <table>
+    <tr><th style="width:34mm;">Momento</th><th>O que acontece</th></tr>
+    <tr><td><strong>Seg 6h50</strong></td><td>Janela exclusiva: quem preencheu a ficha entra 10 min antes, com bônus único</td></tr>
+    <tr><td><strong>Seg 7h</strong></td><td>Carrinho abre pra todo mundo</td></tr>
+    <tr><td><strong>Seg (D1)</strong></td><td>5 disparos de mensageria: 6h50 · 7h · 8h · 10h · 19h</td></tr>
+    <tr><td><strong>Ter a Sex (D2-D7)</strong></td><td><strong>Zero</strong> mensagem no grupo/API — silêncio proposital</td></tr>
+    <tr><td><strong>Sex 23h59</strong></td><td>Carrinho fecha · você documenta os números</td></tr>
+  </table>
+  <div class="box gold">
+    <div class="t">Por que silêncio de terça a sexta?</div>
+    <p style="margin:0;">A semana inteira preservou atenção pra o D1. Mais mensagens durante o carrinho derrubam a abertura e a conversão. Quem não veio no D1 não vem no D5. A recuperação dos indecisos é feita <strong>1 a 1 pelo time de vendas</strong>, não por disparo em massa.</p>
+  </div>
+  <div class="box teal">
+    <div class="t">85 a 90% das vendas saem aqui</div>
+    <p style="margin:0;">A maior parte do faturamento acontece nos primeiros minutos da abertura, por causa do bônus de quem entra cedo. Por isso a janela 6h50 da ficha é tão valiosa: ela cria um grupo de insiders que compra primeiro.</p>
+  </div>
+</div>
+
+<!-- ============ ETAPA 6 ============ -->
+<div class="page">
+  <h2 class="sec"><span class="e">Etapa 6 ·</span> Pós-venda (Customer Success)</h2>
+  <div class="sec-rule"></div>
+  <p><span class="tag voce">Ação sua</span> <span class="tag claude">+ Claude</span></p>
+  <p>Aluno satisfeito vira <strong>prova social real</strong> pro próximo lançamento. O pós-venda não é caridade — é o que alimenta o ciclo seguinte. Rode após as primeiras vendas.</p>
+  <ul class="clean">
+    <li><strong>Onboarding 90 dias</strong> — boas-vindas, primeiros passos, marcos de progresso para a pessoa não sumir.</li>
+    <li><strong>Pesquisa NPS</strong> — mede satisfação e capta depoimentos no momento certo.</li>
+    <li><strong>Prova social</strong> — o depoimento bruto vira estudo de caso narrativo e volta para as páginas e criativos do próximo ciclo.</li>
+  </ul>
+  <div class="cmd"><div class="h">Cole no Claude · Etapa 6</div><pre>@cs-turbo monte o pós-venda do meu produto principal.
+Onboarding 90 dias + pesquisa NPS + captura de prova social.</pre></div>
+  <div class="box teal">
+    <div class="t">O ciclo fecha aqui — e recomeça</div>
+    <p style="margin:0;">As vitórias dos alunos desta turma viram os criativos e as páginas da próxima. É assim que cada lançamento fica melhor que o anterior: você acumula prova real, não recomeça do zero.</p>
+  </div>
+</div>
+
+<!-- ============ APÊNDICE A ============ -->
+<div class="page">
+  <h2 class="sec"><span class="e">Apêndice A ·</span> Comandos rápidos pro Claude</h2>
+  <div class="sec-rule"></div>
+  <table>
+    <tr><th style="width:52mm;">Quando</th><th>Cole no Claude</th></tr>
+    <tr><td>Começar do zero</td><td><code>@lpsg-master crie meu LPSG. [+ YAML]</code></td></tr>
+    <tr><td>Retomar uma fase</td><td><code>@lpsg-master continue da Fase 5</code></td></tr>
+    <tr><td>Lançamento fraco</td><td><code>@estrategista-turbo meu lançamento não converte, diagnostica</code></td></tr>
+    <tr><td>Revisar copy (anti-IA)</td><td><code>@revisor-copy-turbo revisa este texto: [...]</code></td></tr>
+    <tr><td>Auditar design</td><td><code>@picasso-auditor-lpsg audita esta página</code></td></tr>
+    <tr><td>Refazer uma peça</td><td><code>@copywriter-turbo reescreve a Aula 4 com mais desejo</code></td></tr>
+    <tr><td>Estruturar criativos</td><td><code>@copywriter-turbo monta os 15 criativos nos 6 pilares</code></td></tr>
+    <tr><td>Pós-venda</td><td><code>@cs-turbo monte o onboarding de 90 dias</code></td></tr>
+  </table>
+  <p class="muted" style="font-size:9.5pt;">O <strong>@lpsg-master</strong> orquestra tudo. Os demais são especialistas que você chama quando quer mexer numa peça específica.</p>
+</div>
+
+<!-- ============ APÊNDICE B ============ -->
+<div class="page">
+  <h2 class="sec"><span class="e">Apêndice B ·</span> Glossário do método</h2>
+  <div class="sec-rule"></div>
+  <table>
+    <tr><th style="width:42mm;">Termo</th><th>O que é</th></tr>
+    <tr><td><strong>LPSG</strong></td><td>Lançamento Pago Semanal Gravado — o método deste guia.</td></tr>
+    <tr><td><strong>Ingresso</strong></td><td>Produto de entrada barato (R$ 47-97) que paga o tráfego.</td></tr>
+    <tr><td><strong>Produto principal</strong></td><td>Ticket alto, vendido no pitch de domingo e no carrinho.</td></tr>
+    <tr><td><strong>5+1</strong></td><td>5 aulas técnicas + 1 pitch. A coreografia das aulas.</td></tr>
+    <tr><td><strong>Pré-pitch</strong></td><td>A Aula 4 (quinta) — 100% produto, cria desejo, sem preço/bônus.</td></tr>
+    <tr><td><strong>Ficha de interesse</strong></td><td>Formulário que abre na Aula 4. Qualifica leads em HOT/WARM/COLD e dá a janela 6h50.</td></tr>
+    <tr><td><strong>Cap 4+4</strong></td><td>Limite de 4 mensagens API + 4 no grupo por dia. Anti-spam.</td></tr>
+    <tr><td><strong>Tsunami</strong></td><td>Bônus que diminuem conforme o tempo passa no carrinho. Recompensa quem age rápido.</td></tr>
+    <tr><td><strong>ROAS 1</strong></td><td>O tráfego do ingresso se paga (não dá lucro nem prejuízo). O lucro vem do produto principal.</td></tr>
+    <tr><td><strong>ASC</strong></td><td>Advantage+ Shopping Campaign — o tipo de campanha do Meta usado.</td></tr>
+    <tr><td><strong>Gate inicial</strong></td><td>Pesquisa + briefing aprovado antes de qualquer fase. Obrigatório.</td></tr>
+  </table>
+</div>
+
+<!-- ============ CHECKLIST ============ -->
+<div class="page">
+  <h2 class="sec"><span class="e">✓</span> Checklist final</h2>
+  <div class="sec-rule"></div>
+  <p>Marque cada item. Todos marcados = você rodou um LPSG completo.</p>
+  <ul class="chk">
+    <li>Pré-requisitos: todas as contas criadas e tokens anotados em local seguro</li>
+    <li>Cadastro (YAML) preenchido por completo</li>
+    <li>Gate inicial: briefing gerado, lido e aprovado</li>
+    <li>As 10 fases executadas e aprovadas uma a uma</li>
+    <li>Aulas gravadas — a Aula 4 contém os 3 avisos obrigatórios</li>
+    <li>Templates de mensageria aprovados na Meta</li>
+    <li>Páginas no ar com foto profissional e depoimentos reais</li>
+    <li>Campanha de tráfego ativa e dashboard conferido</li>
+    <li>Coreografia conferida: quinta pré-pitch, sexta conclusão, domingo pitch</li>
+    <li>Carrinho: D1 com 5 disparos, D2-D7 em silêncio, fecha sexta 23h59</li>
+    <li>Pós-venda (CS) pronto para rodar após as primeiras vendas</li>
+  </ul>
+  <div class="box gold" style="margin-top:8mm;">
+    <div class="t" style="font-size:12pt;">Marcou todos?</div>
+    <p style="margin:0; font-size:11pt;">Você acabou de rodar um Lançamento Pago Semanal Gravado de ponta a ponta. O próximo ciclo começa na segunda — e, com a prova social que você captou no pós-venda, ele já começa melhor que este.</p>
+  </div>
+  <p style="text-align:center; margin-top:14mm;" class="sans"><strong style="letter-spacing:.3em; color:var(--gold);">TURBO ACADEMY</strong></p>
+  <p style="text-align:center;" class="muted">Método LPSG · Guia do Aluno</p>
+</div>
+
+</body>
+</html>
