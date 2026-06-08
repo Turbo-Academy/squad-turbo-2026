@@ -29,13 +29,15 @@
   h1,h2,h3,h4,.sans{ font-family:'Helvetica Neue', Arial, sans-serif; }
 
   @page{ size:A4; margin:20mm 18mm 20mm 18mm; }
+  @page nomargin{ size:A4; margin:0; }
 
   /* ---------- CAPA ---------- */
   .cover{
+    page:nomargin;
     background:var(--black); color:var(--paper);
-    height:257mm; margin:-20mm -18mm 0 -18mm; padding:34mm 22mm;
+    min-height:296mm; padding:38mm 24mm;
     display:flex; flex-direction:column; justify-content:space-between;
-    page-break-after:always; position:relative;
+    page-break-after:always; position:relative; overflow:hidden;
   }
   .cover .kicker{ font-family:'Helvetica Neue',Arial,sans-serif; letter-spacing:.42em; text-transform:uppercase; font-size:10pt; color:var(--gold-bright); font-weight:700; }
   .cover h1{ font-size:46pt; line-height:1.04; margin:8mm 0 0; font-weight:800; letter-spacing:-.5px; }
@@ -47,9 +49,11 @@
 
   /* ---------- divisor de capítulo ---------- */
   .divider{
+    page:nomargin;
     background:var(--black); color:var(--paper);
-    height:257mm; margin:-20mm -18mm 0 -18mm; padding:60mm 22mm;
+    min-height:296mm; padding:78mm 24mm; overflow:hidden;
     page-break-before:always; page-break-after:always;
+    display:flex; flex-direction:column; justify-content:center;
   }
   .divider .num{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:60pt; font-weight:800; color:#27241C; line-height:1; }
   .divider .etapa{ font-family:'Helvetica Neue',Arial,sans-serif; letter-spacing:.4em; text-transform:uppercase; color:var(--gold-bright); font-size:10pt; font-weight:700; margin-top:4mm; }
@@ -110,7 +114,7 @@
   .step{ border-left:3px solid var(--gold); padding:1mm 0 1mm 6mm; margin:4mm 0; }
   .step .n{ font-family:'Helvetica Neue',Arial,sans-serif; font-weight:800; color:var(--gold); font-size:9pt; letter-spacing:.06em; text-transform:uppercase; }
 
-  .runfoot{ position:fixed; bottom:6mm; left:18mm; right:18mm; font-family:'Helvetica Neue',Arial,sans-serif; font-size:7.5pt; letter-spacing:.12em; color:#A89F8A; text-transform:uppercase; border-top:1px solid var(--line); padding-top:2mm; display:flex; justify-content:space-between; }
+  .pagefoot{ margin-top:14mm; border-top:1px solid var(--line); padding-top:2mm; font-family:'Helvetica Neue',Arial,sans-serif; font-size:7.5pt; letter-spacing:.12em; color:#A89F8A; text-transform:uppercase; display:flex; justify-content:space-between; }
   .toc a{ color:var(--ink); text-decoration:none; }
   .toc .row{ display:flex; justify-content:space-between; border-bottom:1px dotted var(--line); padding:2.5mm 0; font-family:'Helvetica Neue',Arial,sans-serif; font-size:10.5pt; }
   .toc .row .n{ color:var(--gold); font-weight:800; width:14mm; }
@@ -134,9 +138,6 @@
     <div class="brand" style="margin-top:8mm;">Turbo Academy</div>
   </div>
 </div>
-
-<!-- runfoot aparece em todas as páginas -->
-<div class="runfoot"><span>Turbo Academy</span><span>Passo a Passo · LPSG</span></div>
 
 <!-- ============ MANIFESTO ============ -->
 <div class="page">
