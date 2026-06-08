@@ -6,6 +6,34 @@
 
 ---
 
+## 🚨 PASSO 0 · GATE INICIAL OBRIGATÓRIO (antes de qualquer fase)
+
+> **Inegociável.** Quando você pede pra executar o LPSG, o `@lpsg-master` SEMPRE roda este gate antes das 10 fases. Não tem atalho — pular gera 5-10h de retrabalho depois.
+
+```
+1. @pesquisador-turbo            → extrai 6 dossiês internos (00-fundacao/)
+                                    voz · avatar · oferta · briefing · referências · inventário
+
+2. @pesquisador-mercado-turbo    → extrai 8 frentes externas (02-mercado/)
+                                    concorrência · benchmarks · objeções · gaps
+
+3. briefing-aprovacao-turbo      → consolida tudo em UM .docx narrativo (9 seções)
+                                    + sobe no Google Drive (modo revisão)
+                                    + frase de aprovação no rodapé
+
+4. ⏸️ PAUSA · você lê + expert assina
+                                    3 opções no rodapé:
+                                    (a) aprovo · (b) aprovo com ajustes · (c) não aprovo
+                                    Expert marca alterações em modo de revisão
+                                    Você avisa: "Briefing aprovado · pode seguir Fase 1"
+
+5. SÓ ENTÃO começa Fase 1 (estrutura-aulas-lpsg)
+```
+
+> O briefing sai em **`.docx` (local em `03-revisoes/`) + Google Drive** (link no chat). Lê e aprova onde for mais confortável — os dois ficam sincronizados.
+
+---
+
 ## ⚡ MODO EXECUTOR (recomendado · 1 comando)
 
 Já tem o cadastro preenchido? Cola isso no Claude:
@@ -18,12 +46,11 @@ Aqui está meu cadastro do projeto:
 [YAML gerado no manual interativo]
 
 Quero que você:
-1. Valide o cadastro · me avise se algo crítico está em branco
-2. Execute as 10 estruturas na ordem correta (Fase 1 → Fase 10)
-3. Acione subagentes especialistas quando preciso
-4. Reporte progresso ao final de cada fase
-
-Comece pela Fase 1 (estrutura-aulas-lpsg).
+1. RODA O GATE INICIAL · pesquisa + briefing pra eu aprovar
+2. PAUSA · aguarda minha aprovação do briefing
+3. Só então executa as 10 estruturas (Fase 1 → Fase 10)
+4. Aciona subagentes especialistas quando preciso
+5. Reporta progresso ao final de cada fase
 ```
 
 A skill `lpsg-master` valida · executa · reporta · pede aprovação humana em pontos críticos.

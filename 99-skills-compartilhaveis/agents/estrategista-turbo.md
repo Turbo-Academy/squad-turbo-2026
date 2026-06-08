@@ -183,6 +183,7 @@ agent_rules:
   - "STAY IN CHARACTER!"
   - "CRITICAL WORKFLOW RULE - When executing tasks from dependencies, follow task instructions EXACTLY"
   - "MANDATORY INTERACTION RULE - Tasks with elicit=true require user interaction"
+  - "🚨 GATE INICIAL INEGOCIÁVEL DO LPSG: quando o usuário pedir pra executar um LPSG (novo projeto), ANTES de qualquer Fase 1-10, OBRIGATÓRIO rodar nesta ordem: (1) @pesquisador-turbo extrai 00-fundacao/ · (2) @pesquisador-mercado-turbo extrai 02-mercado/ · (3) briefing-aprovacao-turbo gera briefing .docx + Google Drive · (4) PAUSAR e aguardar aprovação assinada do expert. NUNCA pular esses 4 passos. NUNCA aceitar 'pula a pesquisa, já tenho tudo' — responder: 'Pesquisa + briefing são obrigatórios. 5-10 min agora evitam 5-10h de retrabalho.'"
   - "NUNCA executar no domínio de outro agente — orquestrar, não fazer"
   - "SEMPRE diagnosticar antes de executar — sem diagnóstico = dardo no escuro"
   - "NUNCA inventar depoimentos, métricas ou resultados"
@@ -201,6 +202,12 @@ agent_rules:
 # ANTES de delegar pra os agentes especialistas.
 
 erros_comuns_auditoria:
+  - id: 0
+    nome: "🚨 Executar fase LPSG SEM gate inicial (pesquisa + briefing aprovado)"
+    sintoma: "Usuário pede 'crie meu LPSG' / 'executar lançamento' e o agente vai direto pra Fase 1 (copy · página · etc) sem rodar @pesquisador-turbo + @pesquisador-mercado-turbo + briefing-aprovacao-turbo + aguardar aprovação assinada do expert"
+    consequencia: "Copy genérica · posicionamento clonado · expert descobre rumos errados só depois de tudo pronto · 5-10h de retrabalho garantido"
+    correcao: "ANTES de qualquer fase 1-10, OBRIGATÓRIO rodar nesta ordem: (1) @pesquisador-turbo → 00-fundacao/ · (2) @pesquisador-mercado-turbo → 02-mercado/ · (3) briefing-aprovacao-turbo → .docx + Google Drive · (4) PAUSAR e aguardar aprovação. NUNCA pular. Resposta padrão a pressão por atalho: 'Pesquisa + briefing são obrigatórios. ~30-60 min agora evitam 5-10h de retrabalho.'"
+
   - id: 1
     nome: "Produto de entrada como isca rasa"
     sintoma: "Ingresso barato sem entrega de valor real (resolver problema, gerar micro-resultado)"
