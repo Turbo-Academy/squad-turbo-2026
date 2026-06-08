@@ -49,12 +49,19 @@
 
   /* ---------- divisor de capítulo ---------- */
   .divider{
-    page:nomargin;
+    page:nomargin; position:relative;
     background:var(--black); color:var(--paper);
     min-height:296mm; padding:78mm 24mm; overflow:hidden;
     page-break-before:always; page-break-after:always;
     display:flex; flex-direction:column; justify-content:center;
   }
+  .divider::after{
+    content:""; position:absolute; bottom:24mm; left:24mm;
+    width:34mm; height:17mm;
+    background:url("assets/turbo-negativo.png") left center/contain no-repeat;
+  }
+  .coverlogo{ width:64mm; height:auto; display:block; }
+  .endlogo{ width:52mm; height:auto; display:block; margin:0 auto; }
   .divider .num{ font-family:'Helvetica Neue',Arial,sans-serif; font-size:60pt; font-weight:800; color:#27241C; line-height:1; }
   .divider .etapa{ font-family:'Helvetica Neue',Arial,sans-serif; letter-spacing:.4em; text-transform:uppercase; color:var(--gold-bright); font-size:10pt; font-weight:700; margin-top:4mm; }
   .divider h2{ font-size:30pt; color:var(--paper); margin:5mm 0 0; border:0; font-weight:800; line-height:1.1; }
@@ -134,8 +141,8 @@
     <div class="rule"></div>
   </div>
   <div>
-    <div class="foot">Um ebook prático para rodar seu primeiro LPSG sem se perder.</div>
-    <div class="brand" style="margin-top:8mm;">Turbo Academy</div>
+    <div class="foot" style="margin-bottom:9mm;">Um ebook prático para rodar seu primeiro LPSG sem se perder.</div>
+    <img class="coverlogo" src="assets/turbo-negativo.png" alt="Turbo Academy">
   </div>
 </div>
 
@@ -528,8 +535,8 @@ Onboarding 90 dias + pesquisa NPS + captura de prova social.</pre></div>
     <div class="t" style="font-size:12pt;">Marcou todos?</div>
     <p style="margin:0; font-size:11pt;">Você acabou de rodar um Lançamento Pago Semanal Gravado de ponta a ponta. O próximo ciclo começa na segunda — e, com a prova social que você captou no pós-venda, ele já começa melhor que este.</p>
   </div>
-  <p style="text-align:center; margin-top:14mm;" class="sans"><strong style="letter-spacing:.3em; color:var(--gold);">TURBO ACADEMY</strong></p>
-  <p style="text-align:center;" class="muted">Método LPSG · Guia do Aluno</p>
+  <img class="endlogo" style="margin-top:14mm;" src="assets/turbo-positivo.png" alt="Turbo Academy">
+  <p style="text-align:center; margin-top:4mm;" class="muted">Método LPSG · Guia do Aluno</p>
 </div>
 
 </body>
