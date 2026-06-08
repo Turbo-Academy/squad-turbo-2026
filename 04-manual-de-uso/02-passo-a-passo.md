@@ -399,7 +399,7 @@ A partir desta segunda · LPSG vira **modelo perpétuo**.
 | **Sex 7h** | Aula 5 (Marco 2) | Expert | Apresenta |
 | **Sáb 10h** | Tira-dúvidas ao vivo | Expert | Conduz live (1-1.5h) |
 | **Dom 20h** | Pitch ao vivo | Expert | Apresenta a oferta |
-| **Seg 7h** | Carrinho abre | Mensageria | Acompanha tsunami |
+| **Seg 6h50/7h** | <!--F:carrinho_abertura-->Seg · ficha entra 6h50 (bônus único) · carrinho geral 7h<!--/F--> | Mensageria | Acompanha tsunami |
 | **Sex 23h59** | Carrinho fecha | Sistema | Documenta números |
 
 ### 🚨 AÇÃO HUMANA · dashboard ao vivo
@@ -418,7 +418,7 @@ TODA SEMANA:
    - Seg 7h: nova edição começa (Aula 1)
    - Ter-Sex: aulas + ficha + tira-dúvidas
    - Dom 20h: pitch
-   - Seg seguinte: carrinho abre
+   - Seg seguinte: carrinho abre (ficha 6h50 · geral 7h)
    - Sex seguinte: carrinho fecha + documenta
 
 SIMULTANEAMENTE:

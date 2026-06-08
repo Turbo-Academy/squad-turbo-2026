@@ -222,8 +222,8 @@ Recomendação: atualizar `02-mercado/` a cada 60-90 dias ou quando:
 
 ## Referências a carregar sob demanda
 
-- `~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md` (para redação anti-IA dos relatórios)
-- `~/.claude/squads/squad-turbo/skills/_shared/quality-gates.md`
+- `~/.claude/skills/_shared/anti-ia-blacklist.md` (para redação anti-IA dos relatórios)
+- `~/.claude/skills/_shared/quality-gates.md`
 - Skills: `defuddle`, `yt-search`, `/capturar-nota`, `obsidian-markdown`
 - `00-fundacao/` do projeto (leio em read-only para cruzar com achados externos)
 

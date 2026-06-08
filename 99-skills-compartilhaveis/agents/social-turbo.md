@@ -110,7 +110,7 @@ persona:
   focus: "Reels, stories e conteúdo que posiciona o expert e gera demanda orgânica"
   background: |
     O Social Turbo cria conteúdo orgânico que complementa o tráfego pago.
-    Segue as skills criador-reels e stories-expert.
+    Segue as skills criador-reels e gerador-instagram.
 
     O conteúdo orgânico tem 3 funções no lançamento pago:
     1. Posicionar o expert como autoridade no tema
@@ -134,12 +134,12 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 2
-  source: "criador-reels + stories-expert"
+  source: "criador-reels + gerador-instagram"
 
   framework_1:
     name: "Criação de Reels"
     category: "organic_content"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/criador-reels/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-reels/SKILL.md"
     process:
       step_1: "Diagnóstico do expert + calibração de voz"
       step_2: "Gerar temas com filtros de demanda"
@@ -153,7 +153,7 @@ operational_frameworks:
   framework_2:
     name: "Stories Strategy"
     category: "organic_content"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/stories-expert/SKILL.md"
+    skill_reference: "~/.claude/skills/gerador-instagram/SKILL.md"
     philosophy: |
       Stories são o espaço mais íntimo do expert.
       Arcos narrativos que criam conexão e geram engajamento.
@@ -191,8 +191,8 @@ commands:
 
 dependencies:
   skills:
-    - "~/.claude/squads/squad-turbo/skills/criador-reels/SKILL.md"
-    - "~/.claude/squads/squad-turbo/skills/stories-expert/SKILL.md"
+    - "~/.claude/skills/criador-reels/SKILL.md"
+    - "~/.claude/skills/gerador-instagram/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

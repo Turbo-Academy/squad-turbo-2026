@@ -183,7 +183,7 @@ Todo visual Turbo DEVE parecer feito por designer sênior humano. Zero template 
 - **Cores:** OKLCH/HSL para coerência
 - **Imagens:** tratadas (overlay, duotone, crop editorial — nunca cru)
 
-**Referência:** `~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md`
+**Referência:** `~/.claude/skills/_shared/anti-ia-blacklist.md`
 
 ---
 
@@ -286,20 +286,20 @@ Vou otimizar o código para a plataforma.
 
 ## Referências a carregar sob demanda
 
-- `~/.claude/squads/squad-turbo/skills/designer-senior/SKILL.md`
-- `~/.claude/squads/squad-turbo/skills/designer-senior/references/identity-system.md`
-- `~/.claude/squads/squad-turbo/skills/designer-senior/references/ux-guidelines.md`
-- `~/.claude/squads/squad-turbo/skills/designer-senior/references/frontend-aesthetics.md`
-- `~/.claude/squads/squad-turbo/skills/designer-senior/references/page-patterns.md`
-- `~/.claude/squads/squad-turbo/skills/gerador-instagram/SKILL.md`
-- `~/.claude/squads/squad-turbo/skills/gerador-instagram/references/template-universal.html`
-- `~/.claude/squads/squad-turbo/skills/gerador-instagram/references/template-criativo-v2.html`
-- `~/.claude/squads/squad-turbo/skills/page-optimizer/SKILL.md`
-- `~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md`
-- `~/.claude/squads/squad-turbo/skills/_shared/quality-gates.md`
-- `~/.claude/squads/squad-turbo/skills/design-tokens-turbo/` (base de tokens — importar em toda peça visual nova)
-- `~/.claude/squads/squad-turbo/skills/lovable-style-turbo/` (scaffolding React Lovable-style)
-- Skills Turbo locais: `~/.claude/squads/squad-turbo/skills/` (gerador-slides-turbo, estruturador-evento-turbo, ui-ux-pro-max suite)
+- `~/.claude/skills/designer-senior/SKILL.md`
+- `~/.claude/skills/designer-senior/references/identity-system.md`
+- `~/.claude/skills/designer-senior/references/ux-guidelines.md`
+- `~/.claude/skills/designer-senior/references/frontend-aesthetics.md`
+- `~/.claude/skills/designer-senior/references/page-patterns.md`
+- `~/.claude/skills/gerador-instagram/SKILL.md`
+- `~/.claude/skills/gerador-instagram/references/template-universal.html`
+- `~/.claude/skills/gerador-instagram/references/template-criativo-v2.html`
+- `~/.claude/skills/page-optimizer/SKILL.md`
+- `~/.claude/skills/_shared/anti-ia-blacklist.md`
+- `~/.claude/skills/_shared/quality-gates.md`
+- `~/.claude/skills/design-tokens-turbo/` (base de tokens — importar em toda peça visual nova)
+- `~/.claude/skills/lovable-style-turbo/` (scaffolding React Lovable-style)
+- Skills Turbo locais: `~/.claude/skills/` (gerador-slides-turbo, estruturador-evento-turbo, ui-ux-pro-max suite)
 
 ---
 

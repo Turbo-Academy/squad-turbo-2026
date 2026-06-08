@@ -192,7 +192,7 @@ agent_rules:
   - "Lançamento pago = ROAS 1 na captação. Se o tráfego não se paga no ingresso, o modelo está errado"
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais 'ótima pergunta' / 'excelente ideia' / 'que análise interessante'. Direto na resposta. Se concorda, fundamenta. Se discorda, fundamenta."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): camadas · escopo antes · fatiar · porquê antes · repertório · restrição · nomear travas · feedback cirúrgico numerado"
-  - "COREOGRAFIA PITCH 5+1 INEGOCIÁVEL: Aula 4 (QUINTA) é a ÚNICA aula com pré-pitch. Contém OBRIGATORIAMENTE 3 elementos: (1) apresentação do produto + ficha de interesse · (2) aviso CARRINHO ABRE SEGUNDA 7H · (3) aviso DOMINGO 20H REVELA preço e bônus. Aula 5 (SEXTA) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha. Aula 6 (DOMINGO 20H) é o pitch completo. AUDITAR pelo nome do dia · se a sexta tiver pré-pitch, está ERRADO."
+  - "COREOGRAFIA PITCH 5+1 INEGOCIÁVEL: Aula 4 (QUINTA) é a ÚNICA aula com pré-pitch. Contém OBRIGATORIAMENTE 3 elementos: (1) apresentação do produto + ficha de interesse · (2) aviso CARRINHO (segunda · ficha entra 6h50 · geral 7h) · (3) aviso DOMINGO 20H REVELA preço e bônus. Aula 5 (SEXTA) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha. Aula 6 (DOMINGO 20H) é o pitch completo. AUDITAR pelo nome do dia · se a sexta tiver pré-pitch, está ERRADO."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # AUTO-CHECKLIST · 7 ERROS COMUNS DE LANÇAMENTO PAGO
@@ -222,9 +222,9 @@ erros_comuns_auditoria:
 
   - id: 3
     nome: "Pitch sem repitch calibrado"
-    sintoma: "Pitch sai do lugar canônico. Sintomas comuns: pré-pitch na sexta em vez da quinta · sexta repetindo apresentação do produto · quinta sem os 3 elementos obrigatórios (apresentação+ficha · aviso carrinho seg 7h · aviso domingo 20h preço/bônus)"
+    sintoma: "Pitch sai do lugar canônico. Sintomas comuns: pré-pitch na sexta em vez da quinta · sexta repetindo apresentação do produto · quinta sem os 3 elementos obrigatórios (apresentação+ficha · aviso carrinho seg (ficha 6h50 · geral 7h) · aviso domingo 20h preço/bônus)"
     consequencia: "Perde a janela de quem precisava de mais um empurrão"
-    correcao: "Coreografia 5+1: A QUINTA (Aula 4) é A ÚNICA com pré-pitch. Roteiro obrigatório dela: (1) apresenta o produto + abre ficha de interesse · (2) avisa que CARRINHO ABRE NA SEGUNDA ÀS 7H · (3) avisa que DOMINGO ÀS 20H tem a REVELAÇÃO DE PREÇO E BÔNUS. SEM preço/bônus na quinta. SEXTA (Aula 5) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha · ZERO reapresentação do produto. DOMINGO 20H (Aula 6) = pitch completo. Se a sexta estiver com pré-pitch, AGENTE ESTÁ ERRADO · corrigir."
+    correcao: "Coreografia 5+1: A QUINTA (Aula 4) é A ÚNICA com pré-pitch. Roteiro obrigatório dela: (1) apresenta o produto + abre ficha de interesse · (2) avisa que SEGUNDA quem tem ficha entra 6h50 (10 min antes · bônus único) e o carrinho geral abre 7h · (3) avisa que DOMINGO ÀS 20H tem a REVELAÇÃO DE PREÇO E BÔNUS. SEM preço/bônus na quinta. SEXTA (Aula 5) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha · ZERO reapresentação do produto. DOMINGO 20H (Aula 6) = pitch completo. Se a sexta estiver com pré-pitch, AGENTE ESTÁ ERRADO · corrigir."
 
   - id: 4
     nome: "Misturar grupo do evento com grupo de pré-matrícula/carrinho"
@@ -522,7 +522,7 @@ dependencies:
   checklists:
     - "quality-gate-lancamento.md"
   skills:
-    - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/SKILL.md"
+    - "~/.claude/skills/lancamento-pago-semanal/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

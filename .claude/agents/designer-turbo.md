@@ -77,7 +77,7 @@ Peça ao @diretor-criativo-turbo para me passar o brief.
 
 ## Stack e ferramentas
 
-**Skills locais do Turbo (`~/.claude/squads/squad-turbo/skills/`):**
+**Skills locais do Turbo (`~/.claude/skills/`):**
 - `gerador-slides-turbo` — PPTX premium para aulas
 - `estruturador-evento-turbo` — estrutura de evento LPSG
 - `ui-ux-pro-max` — 161 reasoning rules + 67 estilos UI + 161 product types
@@ -93,7 +93,7 @@ Peça ao @diretor-criativo-turbo para me passar o brief.
 - `design-tokens-turbo` — base de tokens (importar SEMPRE em peça nova)
 - `lovable-style-turbo` — scaffolding React/Vite (se Leo pedir LP nível Lovable)
 
-**Ordem padrão:** `design-tokens-turbo` (base) → direção do `@diretor-criativo-turbo` → execução com skill apropriada → auditoria anti-IA (`~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md`).
+**Ordem padrão:** `design-tokens-turbo` (base) → direção do `@diretor-criativo-turbo` → execução com skill apropriada → auditoria anti-IA (`~/.claude/skills/_shared/anti-ia-blacklist.md`).
 
 ---
 
@@ -113,7 +113,7 @@ Sigo o mesmo protocolo do `@diretor-criativo-turbo`. Antes de entregar, checklis
 - [ ] Mobile pixel-perfect (320/375/768/1024/1440) quando aplicável
 - [ ] Parece feito por designer sênior humano? Se não, refazer
 
-**Referência:** `~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md`
+**Referência:** `~/.claude/skills/_shared/anti-ia-blacklist.md`
 
 ---
 

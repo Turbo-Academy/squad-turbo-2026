@@ -56,11 +56,12 @@ Em **1 semana**, você sai de uma página em branco e termina com:
 PRÉ-DIA 0       ── Pré-requisitos (criar contas Meta · Hotmart · etc)   🚨 VOCÊ
 DIA 0           ── Preencher intake (1 formulário · 30-60 min)          🚨 VOCÊ + 🤖 Claude
 
-DIA 1 (seg)     ── Fundação + venda (aulas · oferta · páginas · ficha)  🤖 Claude · 🚨 aprovações
-DIA 2 (ter)     ── Mensageria + criativos (gravações dos vídeos)        🚨 VOCÊ + 🤖 Claude
-DIA 3 (qua)     ── Tráfego (campanha Meta) + automações n8n             🤖 Claude · ⚙️ Meta/n8n
-DIA 4 (qui)     ── Dashboard + validação técnica                        🤖 Claude · ⚙️ Vercel
-DIA 5 (sex)     ── Gravação das aulas que serão pré-gravadas + revisão  🚨 VOCÊ
+GATE INICIAL    ── Pesquisa (interna + mercado) → briefing pra aprovar  🚨 VOCÊ aprova
+DIA 1 (seg)     ── Fases 1-2: estrutura de aulas + mensageria           🤖 Claude
+DIA 2 (ter)     ── Fases 3-4: oferta + criativos (gravações dos vídeos) 🚨 VOCÊ + 🤖 Claude
+DIA 3 (qua)     ── Fases 5-6: páginas + tráfego (campanha Meta)         🤖 Claude · ⚙️ Meta
+DIA 4 (qui)     ── Fases 7-8: automações n8n + dashboard                🤖 Claude · ⚙️ Vercel
+DIA 5 (sex)     ── Fase 9 (operação) + gravação das aulas + revisão     🚨 VOCÊ
 DIA 6-7 (fim)   ── Aprovação Meta (templates) · pré-edição              ⚙️ aprovações automáticas
 
 SEMANA SEGUINTE ── 🎬 1ª edição roda · 7 dias de evento                  🚨 VOCÊ apresenta

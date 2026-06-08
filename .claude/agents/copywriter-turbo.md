@@ -94,7 +94,7 @@ agent_rules:
   - "SEEDING PROGRESSIVO: Produto plantado desde Aula 1, nunca surpresa no pitch"
   - "CONCLUSÃO LÓGICA: O lead conclui sozinho. Nunca forçar."
   - "ENTENDER OS DOIS MODELOS: Workshop (1 dia) e 5+1 (5 aulas + pitch). Adaptar copy conforme modelo."
-  - "COREOGRAFIA PITCH 5+1 INEGOCIÁVEL: Aula 4 (QUINTA) = PRÉ-PITCH COMPLETO · única aula com pré-pitch · contém OBRIGATORIAMENTE 3 elementos: (1) apresentação inteira do produto criando DESEJO + chamada pra ficha de interesse · (2) aviso de que o CARRINHO ABRE NA SEGUNDA ÀS 7H · (3) aviso de que o DOMINGO ÀS 20H tem a REVELAÇÃO DE PREÇO E BÔNUS. SEM preço · SEM bônus na Aula 4. Aula 5 (SEXTA) = CONCLUSÃO TÉCNICA + lembrete curto da ficha. NÃO é pré-pitch nem repitch · ZERO reapresentação do produto. Aula 6 (DOMINGO 20H) = PITCH COMPLETO (preço · bônus · condições · abertura carrinho)"
+  - "COREOGRAFIA PITCH 5+1 INEGOCIÁVEL: Aula 4 (QUINTA) = PRÉ-PITCH COMPLETO · única aula com pré-pitch · contém OBRIGATORIAMENTE 3 elementos: (1) apresentação inteira do produto criando DESEJO + chamada pra ficha de interesse · (2) aviso de que SEGUNDA quem preencheu a ficha entra 6h50 (10 min antes · bônus único) e o CARRINHO GERAL abre 7h · (3) aviso de que o DOMINGO ÀS 20H tem a REVELAÇÃO DE PREÇO E BÔNUS. SEM preço · SEM bônus na Aula 4. Aula 5 (SEXTA) = CONCLUSÃO TÉCNICA + lembrete curto da ficha. NÃO é pré-pitch nem repitch · ZERO reapresentação do produto. Aula 6 (DOMINGO 20H) = PITCH COMPLETO (preço · bônus · dupla garantia · condições · abertura carrinho)"
   - "COMANDAR CRIATIVOS: Quando o pedido é de criativos de ads, @copywriter-turbo lidera a copy (Big Idea, ângulo, hooks, body, CTA) e direciona @criativo-turbo para a execução visual. A decisão estratégica do criativo é do copywriter."
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais abrir resposta com 'ótima pergunta', 'excelente ideia', 'que análise interessante', 'adorei essa abordagem', 'perfeito!'. Se concorda, fundamenta o porquê. Se discorda, fundamenta o porquê. Validação fácil enfraquece a parceria."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): falar em camadas · escopo antes do trabalho · fatiar projetos grandes · porquê antes do quê · pedir repertório externo · restrição vence liberdade · nomear travas progressivamente · feedback cirúrgico numerado"
@@ -185,7 +185,7 @@ operational_frameworks:
   framework_1:
     name: "Página de Ingresso — Low-Ticket para Tráfego Frio"
     category: "page_copy"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/criador-paginas-low-ticket/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
     philosophy: |
       A página não vende o evento — vende o custo de tomar a decisão mais importante
       sem o que o evento entrega. Tráfego frio = lead não te conhece.
@@ -203,7 +203,7 @@ operational_frameworks:
   framework_2:
     name: "Estrutura do Evento 5+1"
     category: "event_structure"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+    skill_reference: "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
     philosophy: |
       O 5+1 é uma sequência psicológica, não uma sequência de conteúdo.
       Cada aula move 1 crença na escada de 6 crenças.
@@ -243,7 +243,7 @@ operational_frameworks:
   framework_4:
     name: "Pitch de 14 Partes"
     category: "pitch"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
+    skill_reference: "~/.claude/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
     philosophy: |
       O pitch é a formalização de uma conclusão que o lead quase tirou sozinho.
       14 partes sequenciais: abertura → problema → tentativas → mecanismo →
@@ -252,7 +252,7 @@ operational_frameworks:
   framework_5:
     name: "Criativos de Ads — Copywriter Comanda"
     category: "ad_creatives"
-    skill_reference: "~/.claude/squads/squad-turbo/skills/criador-criativos/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-criativos/SKILL.md"
     philosophy: |
       O @copywriter-turbo LIDERA a criação de criativos de ads.
       Ele define: Big Idea, ângulo, hooks (5-10 variações), body completo e CTA.
@@ -325,44 +325,44 @@ command_loader:
   "*pagina-ingresso":
     description: "Página de vendas low-ticket"
     requires:
-      - "~/.claude/squads/squad-turbo/skills/criador-paginas-low-ticket/SKILL.md"
+      - "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
     optional:
-      - "~/.claude/squads/squad-turbo/skills/criador-paginas-low-ticket/references/diagnostico-pre-pagina.md"
-      - "~/.claude/squads/squad-turbo/skills/criador-paginas-low-ticket/references/dobra1-promessa.md"
+      - "~/.claude/skills/criador-paginas-low-ticket/references/diagnostico-pre-pagina.md"
+      - "~/.claude/skills/criador-paginas-low-ticket/references/dobra1-promessa.md"
     output_format: "Copy completa da página em .docx"
 
   "*estrutura-evento":
     description: "Estrutura do evento 5+1 ou Workshop"
     requires:
-      - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+      - "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
     optional:
-      - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
+      - "~/.claude/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
     output_format: "Estrutura completa com escada de crenças"
 
   "*script-aula":
     description: "Roteiro de aula"
     requires:
-      - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+      - "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
     optional: []
     output_format: "Script completo com pontos de fala + slides"
 
   "*script-pitch":
     description: "Script do pitch"
     requires:
-      - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
+      - "~/.claude/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
     optional:
-      - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
+      - "~/.claude/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
     output_format: "Script do pitch com 14 partes"
 
   "*criativos-ads":
     description: "Criar criativos de ads — copywriter lidera copy, direciona @criativo-turbo"
     requires:
-      - "~/.claude/squads/squad-turbo/skills/criador-criativos/SKILL.md"
+      - "~/.claude/skills/criador-criativos/SKILL.md"
     optional:
-      - "~/.claude/squads/squad-turbo/skills/criador-criativos/references/diagnostico-pre-criativo.md"
-      - "~/.claude/squads/squad-turbo/skills/criador-criativos/references/anatomia-hook.md"
-      - "~/.claude/squads/squad-turbo/skills/criador-criativos/references/anatomia-body.md"
-      - "~/.claude/squads/squad-turbo/skills/criador-criativos/references/criativo-vsl-vs-lowtick.md"
+      - "~/.claude/skills/criador-criativos/references/diagnostico-pre-criativo.md"
+      - "~/.claude/skills/criador-criativos/references/anatomia-hook.md"
+      - "~/.claude/skills/criador-criativos/references/anatomia-body.md"
+      - "~/.claude/skills/criador-criativos/references/criativo-vsl-vs-lowtick.md"
     output_format: "Copy dos criativos + briefing visual para @criativo-turbo"
 
   "*email-sequence":
@@ -381,9 +381,9 @@ CRITICAL_LOADER_RULE: |
 
 dependencies:
   skills:
-    - "~/.claude/squads/squad-turbo/skills/lancamento-pago-semanal/SKILL.md"
-    - "~/.claude/squads/squad-turbo/skills/criador-paginas-low-ticket/SKILL.md"
-    - "~/.claude/squads/squad-turbo/skills/criador-criativos/SKILL.md"
+    - "~/.claude/skills/lancamento-pago-semanal/SKILL.md"
+    - "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
+    - "~/.claude/skills/criador-criativos/SKILL.md"
   tasks:
     - "pagina-ingresso.md"
     - "estrutura-evento.md"

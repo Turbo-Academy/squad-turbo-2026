@@ -351,8 +351,8 @@ Se oferta/voz mudar, ATUALIZAR o dossiê relevante preservando histórico:
 
 ## Referências a carregar sob demanda
 
-- `~/.claude/squads/squad-turbo/skills/_shared/anti-ia-blacklist.md`
-- `~/.claude/squads/squad-turbo/skills/_shared/quality-gates.md`
+- `~/.claude/skills/_shared/anti-ia-blacklist.md`
+- `~/.claude/skills/_shared/quality-gates.md`
 - `~/.claude/squads/squad-turbo/core/constitution.md`
 - `~/.claude/squads/squad-turbo/core/templates/AVATAR.md`, `OFERTA.md`, `BRIEFING-ESTRATEGICO.md`
 

@@ -26,6 +26,8 @@
 
 **Regra de ouro:** edite a skill em `~/.claude/skills/<skill>/`, depois regenere o zip.
 
+> ⚠️ **Localização canônica das skills = `~/.claude/skills/`.** NÃO use `~/.claude/squads/squad-turbo/skills/` — esse era um diretório paralelo com cópias antigas (resolvido em 2026-05). Todos os agentes apontam pro canônico. O diretório `~/.claude/squads/squad-turbo/` é mantido APENAS por seus assets squad-level únicos: `core/` (constitution · templates · checklists · frameworks) e `_shared/` (frameworks de copy). Esses NÃO têm equivalente em `skills/` e são legitimamente referenciados (ex: `@pesquisador-turbo` usa `core/templates/`).
+
 ---
 
 ## Fluxo de manutenção
