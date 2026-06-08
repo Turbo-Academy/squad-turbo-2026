@@ -220,7 +220,7 @@ Oferta documentada e aprovada pelo expert
 - **Cap 4+4 inegociável** · máx 4 msgs API + 4 grupo por dia (seg-dom) · sem repescagem · sem reforço
 - Onboarding: 4 msgs API triggered por compra (NÃO conta no cap)
 - Seg-sex: 4 horários canônicos (06:50 aviso · 07:00 link · 12:00 replay · 19:00 resumo+chamada)
-- Coreografia pitch: **quinta = pré-pitch 100% produto (sem preço/bônus)** · sexta = repitch parcial · domingo = pitch completo
+- Coreografia pitch: <!--F:coreografia_pitch-->quinta (Aula 4) = pré-pitch único 100% produto (apresenta produto + ficha · sem preço/bônus) · sexta (Aula 5) = conclusão técnica + lembrete curto da ficha (NÃO é pré-pitch nem repitch) · domingo (Aula 6) = pitch completo (preço + bônus + condições)<!--/F-->
 - Carrinho: só D1 com 5 horários · D2-D7 zero
 - ~19 templates Utility com variáveis Meta (snake_case `lpsg_`)
 - Passar a copy pelo `@revisor-copy-turbo` antes de submeter

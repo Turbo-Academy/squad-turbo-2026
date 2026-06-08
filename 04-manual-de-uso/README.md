@@ -130,12 +130,12 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 Os `.md` e o `manual.html` repetem alguns fatos (versão, contagens, descrição da mensageria, função da Aula 4). Pra eles **nunca divergirem**, esses fatos têm fonte única em **`manual-dados.json`** e são marcados nos arquivos com comentários invisíveis:
 
 ```
-<!--F:chave-->conteúdo<!--/F-->
+<!--F:CHAVE-->conteúdo<!--/F--> (CHAVE = a chave do JSON, em minúsculas)
 ```
 
 **Fluxo:** edite o valor em `manual-dados.json` → rode `bash build-manual.sh` → o script propaga pros `.md` e pro `manual.html` (só mexe no que está entre marcadores · preserva 100% do formulário/JS/CSS). Idempotente.
 
-**Pra marcar um fato novo:** envolva o trecho com `<!--F:chave-->...<!--/F-->` nos arquivos, adicione a `chave` no JSON, rode o script. Comentários HTML são invisíveis em HTML e em markdown — **exceto dentro de blocos de código (```yaml)**, onde NÃO se deve marcar.
+**Pra marcar um fato novo:** envolva o trecho com `<!--F:CHAVE-->...<!--/F-->` nos arquivos, adicione a `chave` no JSON, rode o script. Comentários HTML são invisíveis em HTML e em markdown — **exceto dentro de blocos de código (```yaml)**, onde NÃO se deve marcar.
 
 ---
 

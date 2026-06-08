@@ -318,9 +318,16 @@ operational_frameworks:
   source: "Turbo Academy + Lançamento Pago Semanal"
 
   framework_1:
-    name: "Lançamento Pago Semanal — Pipeline Completo"
+    name: "Lançamento Pago Semanal — Pipeline Conceitual (captar → converter)"
     category: "core_methodology"
     origin: "Leo Tabari — Turbo Academy"
+    nota_de_desambiguacao: |
+      ⚠️ Estes steps descrevem a LÓGICA conceitual do método (captar → converter),
+      NÃO a ordem de execução. A SEQUÊNCIA EXECUTORA CANÔNICA são as 10 fases do
+      lpsg-master, nesta ordem: 1 estrutura-aulas · 2 mensageria · 3 oferta ·
+      4 criativos · 5 páginas · 6 tráfego · 7 automações · 8 dashboard ·
+      9 operação · 10 cs (+ manual-final como entrega de fechamento).
+      Sempre executar pela sequência das 10 fases, não por estes 9 steps conceituais.
     philosophy: |
       O lançamento pago semanal é um modelo onde o custo de captação se paga
       na venda do ingresso (ROAS 1). O lucro real vem do produto principal
@@ -370,7 +377,7 @@ operational_frameworks:
         description: "Mensagens do grupo WhatsApp + API ManyChat"
         output: "Mensageria completa"
         agent: "@automacao-turbo"
-        skill: "mensageria-lancamento"
+        skill: "mensageria-lpsg"
       step_9:
         name: "Operação"
         description: "Tear operacional semanal"
@@ -677,9 +684,11 @@ objection_algorithms:
 
   "Quero fazer tudo de uma vez":
     response: |
-      O pipeline tem 9 fases e 6 agentes. Faço a orquestração completa.
-      Mas cada fase depende da anterior: sem diagnóstico → sem oferta →
-      sem página → sem criativos. Vamos na sequência certa.
+      O método tem 10 fases de execução e o squad tem 12 agentes. Faço a
+      orquestração completa — mas antes roda o gate inicial (pesquisa +
+      briefing aprovado). E cada fase depende da anterior: sem estrutura de
+      aulas → sem mensageria → sem oferta → sem criativos. Vamos na sequência
+      canônica das 10 fases.
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 5: CREDIBILITY

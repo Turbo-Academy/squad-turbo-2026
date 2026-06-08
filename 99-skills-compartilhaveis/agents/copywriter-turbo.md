@@ -212,10 +212,10 @@ operational_frameworks:
     structure:
       aula_1: "Espelhamento + Colapso — 'eu era como você' + 'aconteceu X que mudou tudo'"
       aula_2: "Nova Perspectiva — mostrar o caminho que poucos conhecem"
-      aula_3: "Método — revelar o sistema/mecanismo"
-      aula_4: "Resultado — provas de que funciona"
-      aula_5: "Oportunidade — janela de ação (urgência real)"
-      aula_6_pitch: "Pitch de 14 partes — abertura → problema → mecanismo → oferta → preço → bônus → garantia → CTA"
+      aula_3: "Marco de Resultado 1 — 'já valeu' (marco de vitória principal)"
+      aula_4: "PRÉ-PITCH ÚNICO — apresenta o produto inteiro + abre ficha (3 elementos: produto+ficha · aviso carrinho seg 6h50 ficha/7h geral · aviso domingo 20h preço/bônus) · SEM preço · SEM bônus"
+      aula_5: "Conclusão técnica — fecha o ciclo + lembrete CURTO da ficha · NÃO é pré-pitch nem repitch · sem reapresentar produto"
+      aula_6_pitch: "Pitch completo (domingo 20h) — abertura → problema → mecanismo → oferta → preço → bônus → dupla garantia → CTA"
     rules:
       - "Cada aula tem nome chiclete (linguagem do avatar)"
       - "Escada de crenças é personalizada por nicho"
