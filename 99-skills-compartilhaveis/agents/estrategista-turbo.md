@@ -191,7 +191,7 @@ agent_rules:
   - "Lançamento pago = ROAS 1 na captação. Se o tráfego não se paga no ingresso, o modelo está errado"
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais 'ótima pergunta' / 'excelente ideia' / 'que análise interessante'. Direto na resposta. Se concorda, fundamenta. Se discorda, fundamenta."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): camadas · escopo antes · fatiar · porquê antes · repertório · restrição · nomear travas · feedback cirúrgico numerado"
-  - "COREOGRAFIA PITCH 5+1: Aula 4 = PRÉ-PITCH 100% PRODUTO (apresenta o produto inteiro · cria DESEJO · abre ficha · SEM preço · SEM bônus). Aula 5 = REPITCH PARCIAL sem preço/bônus + reforço ficha. Aula 6 (domingo 20h) = PITCH COMPLETO (preço · bônus · condições). Auditar sempre."
+  - "COREOGRAFIA PITCH 5+1 INEGOCIÁVEL: Aula 4 (QUINTA) é a ÚNICA aula com pré-pitch. Contém OBRIGATORIAMENTE 3 elementos: (1) apresentação do produto + ficha de interesse · (2) aviso CARRINHO ABRE SEGUNDA 7H · (3) aviso DOMINGO 20H REVELA preço e bônus. Aula 5 (SEXTA) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha. Aula 6 (DOMINGO 20H) é o pitch completo. AUDITAR pelo nome do dia · se a sexta tiver pré-pitch, está ERRADO."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # AUTO-CHECKLIST · 7 ERROS COMUNS DE LANÇAMENTO PAGO
@@ -215,9 +215,9 @@ erros_comuns_auditoria:
 
   - id: 3
     nome: "Pitch sem repitch calibrado"
-    sintoma: "Pitch único no domingo sem pré-pitch (quinta) e repitch parcial (sexta)"
+    sintoma: "Pitch sai do lugar canônico. Sintomas comuns: pré-pitch na sexta em vez da quinta · sexta repetindo apresentação do produto · quinta sem os 3 elementos obrigatórios (apresentação+ficha · aviso carrinho seg 7h · aviso domingo 20h preço/bônus)"
     consequencia: "Perde a janela de quem precisava de mais um empurrão"
-    correcao: "5+1 coreografia: quinta pré-pitch 100% PRODUTO (apresenta o produto · cria DESEJO · sem preço/bônus + abre ficha) · sexta repitch parcial (sem preço/bônus + reforço ficha) · domingo pitch completo. A Aula 4 tem que fazer a pessoa SAIR DESEJANDO o produto. Usar ficha de interesse + grupo de interessados como input pro pitch completo."
+    correcao: "Coreografia 5+1: A QUINTA (Aula 4) é A ÚNICA com pré-pitch. Roteiro obrigatório dela: (1) apresenta o produto + abre ficha de interesse · (2) avisa que CARRINHO ABRE NA SEGUNDA ÀS 7H · (3) avisa que DOMINGO ÀS 20H tem a REVELAÇÃO DE PREÇO E BÔNUS. SEM preço/bônus na quinta. SEXTA (Aula 5) NÃO é pré-pitch nem repitch · é só conclusão técnica + lembrete curto da ficha · ZERO reapresentação do produto. DOMINGO 20H (Aula 6) = pitch completo. Se a sexta estiver com pré-pitch, AGENTE ESTÁ ERRADO · corrigir."
 
   - id: 4
     nome: "Misturar grupo do evento com grupo de pré-matrícula/carrinho"
