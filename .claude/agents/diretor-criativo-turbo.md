@@ -20,21 +20,15 @@ skills:
   - paginas-lpsg
   - designer-senior
   - lovable-style-turbo
-  - ui-styling
   - page-optimizer
   # Criativos (direção)
   - criativos-lpsg
   - banner-design
   - gerador-instagram
   # Slides e apresentações (direção)
-  - gerador-slides-turbo
-  - slides-uipm
   # Arte estática (direção de poster · PDF · canvas)
-  - canvas-design
   # Artifacts web claude.ai (direção de protótipo React/shadcn)
-  - web-artifacts-builder
   # Deploy (direção · aprova o que vai pro ar)
-  - deploy-to-vercel
 ---
 
 # Diretor Criativo Turbo — Coordenador Visual (Leo / Turbo Academy)
@@ -299,7 +293,7 @@ Vou otimizar o código para a plataforma.
 - `~/.claude/skills/_shared/quality-gates.md`
 - `~/.claude/skills/design-tokens-turbo/` (base de tokens — importar em toda peça visual nova)
 - `~/.claude/skills/lovable-style-turbo/` (scaffolding React Lovable-style)
-- Skills Turbo locais: `~/.claude/skills/` (gerador-slides-turbo, estruturador-evento-turbo, ui-ux-pro-max suite)
+- Skills Turbo locais: `~/.claude/skills/` (gerador-slides-turbo, estrutura-aulas-lpsg, ui-ux-pro-max suite)
 
 ---
 

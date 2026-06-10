@@ -2,7 +2,7 @@
 
 > ZIPs para instalar skills LPSG e o Squad Turbo em qualquer máquina.
 >
-> ⚠️ **Antes de editar agentes/skills, leia [`COMO-MANTER.md`](./COMO-MANTER.md).** Fonte canônica = `~/.claude/`. As cópias do repo são geradas por `sync-squad.sh` (agentes) e `zip` (skills). Não edite as cópias à mão.
+> ⚠️ **Antes de editar agentes/skills, leia [`COMO-MANTER.md`](./COMO-MANTER.md).** Fonte canônica = `~/.claude/`. As cópias do repo são geradas por `sync-squad.sh` (agentes) e `sync-skills.sh` (skills · detecta stale por mtime e regenera só o necessário). Não edite as cópias à mão.
 
 ## Convenção de nomes
 
@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-05-28)
 
-- **17 skills proprietárias empacotadas** (lowercase): instalar em `~/.claude/skills/`
+- **32 skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master)
   - 1 manual final (manual-final-lpsg)

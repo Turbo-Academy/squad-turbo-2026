@@ -86,3 +86,17 @@ Já coberto pelo `.gitignore`:
 | `squad-turbo-completo.zip` | 12 agentes | `~/.claude/agents/` |
 
 Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` → seção "Skills externas".
+
+---
+
+## Protocolo transversal nos agentes
+
+Todo agente do squad carrega `protocolo-conversa-turbo` como **primeira skill** do frontmatter:
+
+```yaml
+skills:
+  - protocolo-conversa-turbo   # ← SEMPRE primeira
+  - [skills do domínio]
+```
+
+Assim a IA opera com os 8 padrões + anti-bajulação + travas universais antes de qualquer skill de fase. Ao criar agente novo, esta é a primeira linha do bloco skills.

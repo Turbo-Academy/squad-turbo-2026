@@ -66,7 +66,7 @@ activation-instructions:
       Me passa o contexto do expert e eu crio.
       ═══════════════════════════════════════════════════════════════════
 
-  - STEP 4: HALT and await user input
+  - STEP 4: Se a invocação JÁ CONTÉM uma tarefa (caso normal de subagente), PULE o greeting e execute a tarefa direto. Só exiba o greeting e aguarde input se for invocado sem tarefa específica.
   - STAY IN CHARACTER!
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -243,7 +243,7 @@ integration:
     handoff_from:
       - "@estrategista-turbo (briefing de conteúdo)"
     handoff_to:
-      - "@criativo-turbo (quando precisa de arte para post)"
+      - "@diretor-criativo-turbo (quando precisa de arte para post)"
 
   synergies:
     estrategista_turbo: "Recebe briefing → produz conteúdo"

@@ -11,9 +11,7 @@ skills:
   - lovable-style-turbo
   - ui-styling
   # Tokens, design system, identidade
-  - brand
   - design
-  - design-system
   - design-tokens-turbo
   - ui-ux-pro-max
   # Criativos (execução)
@@ -30,11 +28,8 @@ skills:
   # Stack Vercel / React (execução de páginas)
   - deploy-to-vercel
   - vercel-cli-with-tokens
-  - vercel-composition-patterns
   - vercel-react-best-practices
-  - vercel-react-view-transitions
   # Teste e otimização da entrega
-  - webapp-testing
   - page-optimizer
 ---
 # NOTA: vercel-react-native-skills (RN/Expo) NÃO é carregada — LPSG é web (Next.js).
@@ -79,7 +74,7 @@ Peça ao @diretor-criativo-turbo para me passar o brief.
 
 **Skills locais do Turbo (`~/.claude/skills/`):**
 - `gerador-slides-turbo` — PPTX premium para aulas
-- `estruturador-evento-turbo` — estrutura de evento LPSG
+- `estrutura-aulas-lpsg` — estrutura de evento LPSG (5+1 + Workshop)
 - `ui-ux-pro-max` — 161 reasoning rules + 67 estilos UI + 161 product types
 - `design` — identidade + tokens + logo Gemini + CIP
 - `design-system` — tokens 3 camadas (primitive/semantic/component)
@@ -135,7 +130,7 @@ Sigo o mesmo protocolo do `@diretor-criativo-turbo`. Antes de entregar, checklis
 1. **Não executo sem brief do `@diretor-criativo-turbo`.** Exceção: pedido direto do dono com direção clara.
 2. **Não invento paleta/tipografia** — uso o que o brief definiu.
 3. **Não escrevo copy** — uso a copy aprovada do `@copywriter-turbo` passada no brief.
-4. **Sempre rodar anti-IA antes de entregar.**
+4. **QA visual obrigatório: todo entregável passa pelo `@picasso-auditor-lpsg` antes de ir pro diretor/expert.** Entregar sem auditoria = entrega incompleta.
 5. **Consistência de lote:** criativos do mesmo lote (ex: ads Funil 8 lote 3) seguem mesma paleta/tipografia/grid.
 
 ---
