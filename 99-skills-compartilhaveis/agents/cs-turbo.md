@@ -233,6 +233,7 @@ integration:
     handoff_to:
       - "@copywriter-turbo (depoimentos → prova social para página)"
       - "@diretor-criativo-turbo (depoimentos → criativos)"
+      - "@closer-turbo (lista de quem fechou no 1:1 → entra no onboarding D0 igual aos do D1)"
 
   synergies:
     estrategista_turbo: "Recebe alunos → reporta NPS e retenção"

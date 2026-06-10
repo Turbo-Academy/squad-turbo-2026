@@ -45,6 +45,7 @@ REQUEST-RESOLUTION: |
   - "montar evento" / "estruturar evento" → *estruturar-evento
   - "briefing" / "começar do zero" → *briefing
   - "qual modelo" / "workshop ou 5+1" → *escolher-modelo
+  - "debrief" / "análise da semana" / "o que testar na próxima" → *debrief
   ALWAYS ask for clarification if no clear match.
 
 activation-instructions:
@@ -194,6 +195,15 @@ triage:
       - "mensageria"
       - "sendflow"
       - "api"
+    closer-turbo (vendas 1:1 · carrinho D+1 a D+7):
+      - "recuperação de carrinho"
+      - "closer"
+      - "checkout iniciado"
+      - "fechar venda 1:1"
+      - "fila de leads"
+      - "script de venda whatsapp"
+      - "matriz de objeções"
+      NOTE: "D2-D7 = zero massa · TODA recuperação do carrinho é 1:1 do closer"
     cs-turbo:
       - "pós-venda"
       - "onboarding"
@@ -464,6 +474,11 @@ commands:
     description: "Diagnosticar lançamento existente (métricas e problemas)"
     loader: null
 
+  - name: "debrief"
+    visibility: [full, quick, key]
+    description: "Debrief semanal pós-carrinho · cruza ingresso × ficha × matrícula · decide a 1 variável a testar na próxima edição"
+    loader: null
+
   - name: "estruturar-evento"
     visibility: [full, quick]
     description: "Montar estrutura do evento 5+1 (aulas, crenças, seeding)"
@@ -526,6 +541,37 @@ command_loader:
     optional:
       - "templates/briefing-turbo.md"
     output_format: "Briefing completo"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# FRAMEWORK · DEBRIEF SEMANAL (comando *debrief · roda toda sexta pós-fechamento)
+# ═══════════════════════════════════════════════════════════════════════════════
+# O LPSG é perpétuo: edição que termina sexta 23h59 alimenta a que começa segunda.
+# Lançamento amador começa do zero a cada ciclo; o nosso acumula. Este debrief
+# é o erro #5 do auto-checklist ("ignorar as pesquisas") transformado em ritual.
+
+debrief_semanal:
+  quando: "Sexta noite ou sábado · após carrinho fechar · ANTES da edição seguinte"
+  inputs:
+    - "Dashboard (dashboard-lpsg): tráfego · página · retenção por aula · D1"
+    - "Hotmart: vendas de ingresso + vendas do produto principal"
+    - "Ficha de interesse: volume · distribuição HOT/WARM/COLD"
+    - "Relatório do @closer-turbo: fechamentos 1:1 + objeções recorrentes"
+  cruzamentos_obrigatorios:
+    - "Ingresso → presença Aula 1 (esperado ≥30%): mede onboarding/expectativa"
+    - "Presença A1 → ficha preenchida (≥25% dos compradores): mede Aula 4/pré-pitch"
+    - "Ficha → matrícula: mede pitch + carrinho (HOT converte ≥3x mais que WARM?)"
+    - "Pitch (≥130% da A5) → conversão final (≥7%)"
+  output: |
+    1 PÁGINA, sempre nesta estrutura:
+    a) Números da semana vs benchmarks (tabela · verde/amarelo/vermelho)
+    b) O GARGALO da semana (1 só · o elo mais fraco da corrente acima)
+    c) Hipótese de causa (com evidência · não achismo)
+    d) A 1 VARIÁVEL a testar na próxima edição (nunca duas · regra do tráfego
+       vale pro método inteiro: mudou duas coisas, não sabe o que funcionou)
+    e) Objeções recorrentes do closer → encaminhar pro @copywriter-turbo
+       (vira conteúdo da Aula 4 ou criativo de quebra de objeção)
+  trava: "SEM debrief documentado, a edição seguinte NÃO muda nada — roda igual.
+          Mudança sem debrief = chute. Igual sem debrief = ok (baseline)."
 
 CRITICAL_LOADER_RULE: |
   BEFORE executing ANY command (*):
@@ -762,7 +808,8 @@ integration:
     social_turbo: "Recebe briefing → produz conteúdo orgânico"
     trafego_turbo: "Recebe criativos + página → estrutura campanhas"
     automacao_turbo: "Recebe copy da mensageria (do copywriter) → monta fluxos n8n/ManyChat/templates"
-    cs_turbo: "Recebe alunos convertidos → opera onboarding + retenção"
+    closer_turbo: "Recebe fila (ficha + checkouts + presença) → fecha 1:1 no carrinho · devolve relatório de objeções pro debrief"
+    cs_turbo: "Recebe alunos convertidos (do closer e do D1) → opera onboarding + retenção"
     revisor_copy_turbo: "QA GATE textual · toda copy passa por ele ANTES de ir pro expert"
     picasso_auditor_lpsg: "QA GATE visual · todo entregável visual passa por ele ANTES de ir pro expert"
 

@@ -246,6 +246,24 @@
 
 ---
 
+## 💰 @closer-turbo · Tier 1 · VENDAS 1:1 & RECUPERAÇÃO (13º agente · 2026-06)
+
+> Dono da janela do carrinho (segunda 6h50 → sexta 23h59). Como D2-D7 = ZERO mensagem em massa, TODA recuperação é 1:1 humana — e é dele. Não escreve copy de massa · não cuida de quem já comprou.
+
+| Skill | Categoria | Quando usar |
+|---|---|---|
+| `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
+| `oferta-lpsg` | Primária | Recuperação D+1-D+7 · tsunami · dupla garantia (fonte primária) |
+| `mensageria-lpsg` | Primária | Saber o que o lead recebeu em massa (cap 4+4 · D1) |
+| `automacoes-lpsg` | Primária | SLA de checkout iniciado · alertas · fila automatizada |
+| `paginas-lpsg` | Complementar | Ficha de interesse · lead score · tier HOT/WARM/COLD |
+
+**Entregáveis:** fila priorizada (P1 checkout iniciado · SLA 30 min → P5) · scripts 1:1 por tier · sequência D+1-D+7 · matriz de objeções · relatório de fechamento.
+
+**Handoffs:** recebe fila do `@automacao-turbo` · scripts passam pelo `@revisor-copy-turbo` · entrega compradores pro `@cs-turbo` e objeções recorrentes pro `*debrief` do `@estrategista-turbo` (viram Aula 4/criativos da próxima edição).
+
+---
+
 ## Matriz de fluxo · quem entrega pra quem
 
 ```
