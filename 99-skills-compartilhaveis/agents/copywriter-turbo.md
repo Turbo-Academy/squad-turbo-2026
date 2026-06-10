@@ -179,7 +179,7 @@ core_principles:
   - "NÃO INVENTA: Nunca fabricar depoimentos, números ou provas"
 
 operational_frameworks:
-  total_frameworks: 4
+  total_frameworks: 5
   source: "Turbo Academy + Lançamento Pago Semanal"
 
   framework_1:
@@ -549,6 +549,7 @@ integration:
     handoff_from:
       - "@estrategista-turbo (com diagnóstico completo)"
     handoff_to:
+      - "@revisor-copy-turbo (TODA copy · QA obrigatório antes de qualquer entrega)"
       - "@diretor-criativo-turbo (copy aprovada → criativos visuais)"
       - "@automacao-turbo (scripts de aula → mensageria)"
 

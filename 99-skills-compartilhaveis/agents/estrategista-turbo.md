@@ -756,7 +756,7 @@ objection_algorithms:
 
   "Quero fazer tudo de uma vez":
     response: |
-      O método tem 10 fases de execução e o squad tem 12 agentes. Faço a
+      O método tem 10 fases de execução e o squad tem 13 agentes. Faço a
       orquestração completa — mas antes roda o gate inicial (pesquisa +
       briefing aprovado). E cada fase depende da anterior: sem estrutura de
       aulas → sem mensageria → sem oferta → sem criativos. Vamos na sequência
@@ -800,6 +800,7 @@ integration:
       - "@trafego-turbo (campanhas, públicos, orçamento)"
       - "@automacao-turbo (automações, mensageria, ManyChat)"
       - "@cs-turbo (pós-venda, onboarding, retenção)"
+      - "@closer-turbo (carrinho D+1-D+7 · recuperação 1:1)"
 
   synergies:
     copywriter_turbo: "Recebe diagnóstico → entrega copy + estrutura de evento"

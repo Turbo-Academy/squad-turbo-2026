@@ -193,7 +193,7 @@ operational_frameworks:
 commands:
   - name: "onboarding"
     visibility: [full, quick, key]
-    description: "Fluxo de onboarding pós-compra"
+    description: "Onboarding do ALUNO do produto principal (D0-D7 · primeira vitória antes da garantia vencer · 90 dias)"
     loader: null
 
   - name: "retencao"
@@ -262,11 +262,12 @@ integration:
   workflow_integration:
     position_in_flow: "Após conversão D1 — cuida de quem comprou"
     handoff_from:
+      - "@closer-turbo (lista de quem fechou no 1:1 → entra no onboarding D0 igual aos compradores do D1)"
       - "@estrategista-turbo (novos alunos pós-D1)"
     handoff_to:
       - "@copywriter-turbo (depoimentos → prova social para página)"
       - "@diretor-criativo-turbo (depoimentos → criativos)"
-      - "@closer-turbo (lista de quem fechou no 1:1 → entra no onboarding D0 igual aos do D1)"
+
 
   synergies:
     estrategista_turbo: "Recebe alunos → reporta NPS e retenção"

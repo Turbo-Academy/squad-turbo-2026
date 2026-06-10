@@ -49,7 +49,7 @@ A fila se monta cruzando 3 sinais (todos já capturados pelo método):
 
 | Prioridade | Sinais | SLA de contato |
 |---|---|---|
-| 🔴 **P1 · Checkout iniciado** | Iniciou checkout e não concluiu (qualquer tier) | **30 min** (alerta da automação) |
+| 🔴 **P1 · Checkout iniciado** | Iniciou checkout e não concluiu (qualquer tier) | **contato ≤30 min** (o alerta da automação chega em ≤5 min) |
 | 🟠 **P2 · HOT completo** | Ficha HOT + presente no pitch + clicou no link do carrinho | D1 ainda · até 19h |
 | 🟡 **P3 · HOT parcial** | Ficha HOT + presente no pitch (sem clique) | D+1 manhã |
 | 🟢 **P4 · WARM engajado** | Ficha WARM + presença em 3+ aulas | D+2 |
@@ -68,7 +68,11 @@ D+1 (ter) · Primeira onda 1:1 · P2 e P3 · abordagem de DÚVIDA (não de press
 D+2 (qua) · P4 + follow-up de quem respondeu ontem e ficou de pensar
 D+3 (qui) · Última onda de abertura de conversa (P5 se sobrou capacidade)
 D+4 (sex manhã) · SÓ follow-up de conversas abertas · "carrinho fecha hoje 23h59"
-D+4 (sex noite)  · Fechamento real · depois disso, NADA (não existe reabertura)
+D+4 (sex noite)  · Fechamento de VENDA · depois das 23h59, venda nova NÃO existe
+D+5/D+6 (sáb/dom) · RECUPERAÇÃO DE PAGAMENTO (não é venda nova): quem comprou
+            DENTRO da janela e o pagamento falhou — checkout travado,
+            boleto vencido, cartão recusado. Isso não é reabertura.
+D+7 (seg)  · Encerro a fila · relatório de fechamento + objeções → *debrief
 ```
 
 **Travas da sequência:**

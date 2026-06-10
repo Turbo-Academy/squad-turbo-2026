@@ -163,6 +163,7 @@ operational_frameworks:
       tira_duvidas: "Sábado (4 msgs · 09:50/10:00/12:00/19:00)"
       pitch: "Domingo (4 msgs · 12:00/19:50/20:00/22:00)"
       d1: "Segunda · carrinho · 5 horários (06:50 ficha VIP / 07:00 geral / 08:00 / 10:00 / 19:00)"
+      alertas_pro_closer: "D+0 em diante: alerta de checkout iniciado (≤5 min) vai DIRETO pro @closer-turbo (contato 1:1 em ≤30 min). Eu monto o gatilho, ele atende."
       d2_a_d7: "ZERO mensagem (sem follow-up · evita queima de lista)"
 
   framework_2:
@@ -193,7 +194,7 @@ commands:
 
   - name: "onboarding"
     visibility: [full]
-    description: "Fluxo de onboarding pós-compra"
+    description: "Onboarding do comprador de INGRESSO (4 msgs API pós-compra · trigger webhook Hotmart · não conta no cap 4+4)"
     loader: null
 
   - name: "help"
