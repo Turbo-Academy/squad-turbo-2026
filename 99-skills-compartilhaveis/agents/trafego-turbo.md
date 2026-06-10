@@ -147,8 +147,8 @@ core_principles:
   - "ESCALA HORIZONTAL: Mais criativos > mais orçamento no mesmo criativo"
 
 operational_frameworks:
-  total_frameworks: 2
-  source: "Turbo Academy + lancamento-pago-semanal"
+  total_frameworks: 4
+  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg"
 
   framework_1:
     name: "Estrutura de Campanhas para Lançamento Pago"
@@ -181,6 +181,50 @@ operational_frameworks:
       3. CTR baixo (<1.5%) → problema no CTA ou na promessa
       4. CPA alto → problema na página (trocar headline)
       5. ROAS <1 → revisar oferta + preço do ingresso
+    cadencias_de_analise:
+      diaria_10min: "CPA do dia vs preço do ingresso · criativo com gasto e zero venda há 2 dias → pausar · alerta de stop-loss da CLI"
+      semanal_no_debrief: "ROAS da edição · ranking de criativos por pilar · 1 variável definida pro teste da semana seguinte (alimenta o *debrief do @estrategista-turbo)"
+      mensal: "Fadiga de criativo (frequência >2.5 = oxigenar) · CPM trend · saúde da conta"
+
+  framework_3:
+    name: "Orçamento — cálculo e distribuição"
+    category: "budget"
+    philosophy: |
+      O orçamento do LPSG não é "quanto quero gastar" — é derivado da meta
+      de inscritos e do CPA-alvo. A conta anda de trás pra frente.
+    calculo: |
+      1. META DE INSCRITOS da edição (ex: 200 ingressos/semana)
+      2. CPA-ALVO = preço do ingresso (ROAS 1: CPA ≤ R$62 se ingresso é R$62)
+      3. ORÇAMENTO SEMANAL = meta × CPA-alvo (200 × 62 = R$12.400/semana)
+      4. TOLERÂNCIA: o CPA pode passar do ingresso SE a conversão do evento
+         sustentar — "evento converte 6% → aceito ROAS 0.7 no ingresso;
+         caiu pra 5% → só aceito 0.8" (fórmula do CAC da Aula 4 antiga,
+         agora vive aqui)
+    distribuicao:
+      captacao_ingresso: "75-85% — Advantage+ rodando 24/7 (LPSG é perpétuo · captação nunca para)"
+      retargeting: "10-15% — visitou página e não comprou (7d) · engajou (14d)"
+      reserva_de_teste: "5-10% — criativos novos da semana entram aqui antes de ir pro bolo principal"
+    regra_de_escala: |
+      ROAS ≥ 1.0 estável por 3 dias → sobe orçamento +20-30%.
+      NUNCA dobrar de uma vez (reseta o aprendizado do conjunto).
+      ROAS < 0.8 por 3 dias → diagnóstico (framework_2) ANTES de mexer em verba.
+      Escala horizontal (mais criativos) vence escala vertical (mais verba
+      no mesmo criativo) — criativo satura, verba não conserta.
+
+  framework_4:
+    name: "Google Ads no LPSG (papel secundário e específico)"
+    category: "google_ads"
+    philosophy: |
+      Meta é o motor de captação. Google entra em 3 papéis específicos —
+      não tentar replicar a campanha de ingresso no Google (CPA não fecha
+      pra low-ticket frio em search).
+    quando_usar:
+      search_de_marca: "SEMPRE que houver volume de busca pelo nome do expert/evento — defesa barata (concorrente compra teu nome) + captura quem viu o ad no Meta e foi pesquisar. Budget pequeno (5% do total)."
+      youtube_remarketing: "Remarketing de quem visitou a página — vídeo do expert reforçando a promessa. Funciona porque o lead JÁ conhece."
+      performance_max: "SÓ depois do Meta saturado (CPM subindo + frequência alta) e com ROAS folgado. Nunca como primeira frente."
+    quando_NAO_usar:
+      - "Search frio de nicho pra ingresso low-ticket (CPC alto come o ROAS 1)"
+      - "Display prospecting (qualidade de lead baixa pro modelo de evento)"
 
 commands:
   - name: "estrutura-campanha"

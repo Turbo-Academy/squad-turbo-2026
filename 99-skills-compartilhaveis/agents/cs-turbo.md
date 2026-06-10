@@ -129,33 +129,66 @@ core_principles:
   - "CICLO SEMANAL: Cada semana novos alunos — CS escalável"
 
 operational_frameworks:
-  total_frameworks: 2
+  total_frameworks: 4
+  source: "cs-lpsg (fonte primária — detalhe completo nas references da skill)"
 
   framework_1:
-    name: "Onboarding Pós-Compra"
+    name: "Onboarding D0-D7 (6 mensagens · marco: primeira vitória em 7 dias)"
     category: "onboarding"
+    skill_reference: "~/.claude/skills/cs-lpsg/SKILL.md"
     philosophy: |
-      O onboarding acontece em 3 ondas:
-      Onda 1 (0-2h): Email + WhatsApp de boas-vindas + acesso
-      Onda 2 (24h): Primeiro passo / quick win
-      Onda 3 (48h): Check-in + grupo de alunos
-    steps:
-      step_1: "Email de boas-vindas com acesso"
-      step_2: "WhatsApp com primeiro passo"
-      step_3: "Quick win em 24h"
-      step_4: "Check-in em 48h"
-      step_5: "Grupo de alunos ativo"
+      Aluno que não tem uma vitória nos primeiros 7 dias é candidato a
+      reembolso (a garantia incondicional de 7 dias do método torna isso
+      literal: D0-D7 É a janela de reembolso). O onboarding não é boas-
+      vindas — é a corrida pra primeira vitória ANTES da garantia vencer.
+    sequencia:
+      d0_2h: "Boas-vindas + acesso + UMA ação só ('faz isso hoje') — não despejar a plataforma inteira"
+      d0_noite: "Check de acesso funcionando (quem não logou em 24h entra na fila de risco)"
+      d1: "Primeiro passo guiado · quick win desenhado pra ser conquistável em 1 sessão"
+      d2: "Check-in pessoal (não automatizado na cara) + convite ativo pro grupo/comunidade"
+      d4: "Marco: primeira vitória documentada? Sim → celebrar no grupo · Não → contato 1:1"
+      d7: "Fecho da janela de garantia: aluno COM vitória = retido · SEM vitória + sem resposta = sinalizar risco"
+    fila_de_risco: "Sem login em 48h · sem vitória em D7 · sumiu do grupo por 7 dias · NPS ≤ 6. Cada um dispara contato humano, não automação."
 
   framework_2:
-    name: "Coleta de Depoimentos"
+    name: "Cronograma 90 dias (6 marcos) + 4 rituais semanais"
+    category: "retention"
+    skill_reference: "~/.claude/skills/cs-lpsg/SKILL.md"
+    marcos: |
+      D7 primeira vitória → D14 rotina instalada → D30 primeiro resultado
+      mensurável → D45 pesquisa de momento → D60 caso de sucesso candidato
+      → D90 NPS final + convite de ascensão. Aluno fora da curva em
+      qualquer marco = fila de risco.
+    rituais_semanais:
+      - "Live coletiva semanal (mesma hora · presença é o termômetro nº1)"
+      - "Office hours / plantão de dúvidas"
+      - "Cerimônia de vitória (celebrar publicamente 2-3 vitórias da semana no grupo)"
+      - "Plano da semana (segunda: cada aluno declara A ação da semana)"
+    kpis_7: "Ativação D7 · retenção D30 · presença na live · NPS · taxa de reembolso · vitórias documentadas/semana · % alunos em risco"
+
+  framework_3:
+    name: "Pipeline de prova social (depoimento bruto → estudo de caso → próxima edição)"
     category: "social_proof"
     philosophy: |
-      Depoimentos precisam ser coletados com método.
-      Perguntas que geram depoimentos usáveis:
-      1. "Como estava antes?" (dor)
-      2. "O que mudou?" (transformação)
-      3. "O que diria pra quem está em dúvida?" (CTA natural)
-      4. "Pode gravar um vídeo de 30s?" (formato preferido)
+      Depoimento solto não converte — estudo de caso narrativo converte.
+      Meu trabalho não termina em coletar: termina quando a prova chega
+      FORMATADA na mão do @copywriter-turbo pra próxima edição.
+    pipeline:
+      gatilho: "NPS 9-10 · vitória celebrada no grupo · marco D30/D60 batido"
+      coleta_4_perguntas: "1) Como estava antes? (dor literal) · 2) O que mudou? (número+prazo) · 3) O que diria pra quem tá em dúvida? · 4) Topa gravar 30s? (vídeo > texto)"
+      enriquecimento: "Completar a anatomia do estudo de caso: nome · idade · profissão · contexto vulnerável · obstáculos · partida · processo · resultado (ver criador-paginas-low-ticket/references/estudo-de-caso-narrativo.md)"
+      autorizacao: "Por escrito · específica (onde a prova pode aparecer: página? ad? aula?)"
+      entrega: "@copywriter-turbo recebe o caso pronto → vira Bloco 10 da página, criativo de quebra de objeção, ou caso da Aula 4 da próxima edição"
+    trava: "Prova sem autorização escrita NÃO sai do CS. Número sem print/doc NÃO vira claim."
+
+  framework_4:
+    name: "Ascensão e reativação"
+    category: "expansion"
+    philosophy: |
+      A escada: aluno D90 com resultado → próximo degrau (mentoria/
+      sociedade/continuidade). Oferta de ascensão só pra quem TEM resultado
+      — vender degrau acima pra aluno travado gera churn duplo.
+    reativacao: "Ex-aluno recebe VALOR antes de oferta (conteúdo novo · convite pra cerimônia de vitória · case do nicho dele). Reativação com desconto seco = treina a base a esperar desconto."
 
 commands:
   - name: "onboarding"

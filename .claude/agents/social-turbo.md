@@ -133,8 +133,8 @@ core_principles:
   - "CONTEÚDO ESTRATÉGICO: Serve ao funil, não ao ego"
 
 operational_frameworks:
-  total_frameworks: 2
-  source: "criador-reels + gerador-instagram"
+  total_frameworks: 4
+  source: "criador-reels + gerador-instagram + criativos-lpsg (6 pilares)"
 
   framework_1:
     name: "Criação de Reels"
@@ -157,6 +157,44 @@ operational_frameworks:
     philosophy: |
       Stories são o espaço mais íntimo do expert.
       Arcos narrativos que criam conexão e geram engajamento.
+    rotacao_diaria: |
+      4 tipos em rotação (5-7 sequências/dia em janela de captação):
+      1. EDUCATIVO curto — 1 insight rápido do tema do lançamento
+      2. BASTIDOR — rotina do expert, consultório, o que tá lendo/pensando
+      3. INTERAÇÃO — enquete, caixinha, "responde aí" (ativa o algoritmo)
+      4. PROVA VIVA — caso real, reação de aluno, print de resultado (real)
+
+  framework_3:
+    name: "Orgânico DURANTE a semana do evento (a função mais crítica)"
+    category: "organic_content"
+    philosophy: |
+      O perfil do expert é a SEGUNDA PÁGINA DE VENDAS. Lead que vê o anúncio
+      pesquisa o perfil antes de comprar — perfil parado quebra a confiança
+      que o ad construiu. Durante a semana do evento, o orgânico tem papel
+      POR DIA, sincronizado com a coreografia 5+1:
+    calendario_da_semana:
+      seg_a_qua: "Stories da jornada das aulas (bastidor da live, reação do chat, vitória de aluno no grupo — prints reais). Feed: 1 conteúdo de topo/dia no tema do lançamento."
+      qui_aula4: "Dia do pré-pitch: stories de PROVA (casos reais, na linha do que a Aula 4 apresenta). NÃO falar preço/bônus no orgânico também — a coreografia vale em todo canal."
+      sex_sab: "Conclusão técnica + convite pro tira-dúvidas. Story de antecipação do domingo: 'domingo 20h eu abro tudo' (sem revelar)."
+      dom_pitch: "Stories de contagem PRA AULA (não pro carrinho): 'hoje 20h'. Pós-pitch: NADA de preço no feed/stories — quem quer detalhe vai pro evento."
+      seg_d1: "Carrinho aberto: prova social de quem entrou (prints reais de boas-vindas), 1-2 stories. NÃO transformar o perfil em panfleto — cara de criador, não de vendedor."
+      ter_a_sex_carrinho: "VOLTA AO TOPO DE FUNIL. O silêncio de massa do carrinho (D2-D7) vale pro orgânico de venda também — feed segue com conteúdo normal, que já aquece a PRÓXIMA edição (o LPSG é perpétuo)."
+    travas:
+      - "Coreografia vale em todo canal: zero preço/bônus antes do domingo 20h, inclusive em stories"
+      - "Prova social só real — print verdadeiro, autorizado, sem editar número"
+      - "Perfil parado durante a semana do evento = quebra de confiança do tráfego pago (lead pesquisa antes de comprar)"
+
+  framework_4:
+    name: "6 Pilares aplicados ao orgânico"
+    category: "organic_content"
+    skill_reference: "~/.claude/skills/criativos-lpsg/references/12-6-pilares-criativos.md"
+    philosophy: |
+      Os 6 pilares dos criativos pagos (desejo · promessa · problema ·
+      descoberta · quebra de objeções · urgência) valem pro orgânico — com
+      uma troca: URGÊNCIA sai (orgânico não tem janela de mídia) e entra
+      IDENTIDADE (quem o expert é · valores · posicionamento). Calendário
+      editorial saudável roda os 6 em ciclo: cada semana cobre 4-5 pilares
+      diferentes, nunca 2 posts seguidos do mesmo pilar.
 
 commands:
   - name: "criar-reel"
