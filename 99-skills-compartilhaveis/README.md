@@ -22,7 +22,7 @@
   - 1 manual final (manual-final-lpsg)
   - **2 execução Meta Ads:**
     - `meta-ads-cli-setup` · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
-    - `meta-ads-cli-turbo` · operação avançada (batelada · stop-loss · escalonamento)
+    - `meta-ads-cli-turbo` · operação avançada (batelada · stop-loss · escalonamento) ⭐ atualizada 2026-06-11 com runbook end-to-end Graph API + pipeline Python (cobre o que a CLI não faz: ROAS floor, atribuição Incremental, `instagram_user_id`, carrosséis, vídeo resumável)
   - 1 análise de Instagram (`instagram-analise-estrategica`) ⭐ NEW · relatório/auditoria de perfil IG
   - 1 briefing de aprovação (briefing-aprovacao-turbo)
   - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
