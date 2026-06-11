@@ -12,7 +12,7 @@
 | `nome-turbo.zip` | **Skill do Claude** (não-LPSG) | `~/.claude/skills/nome-turbo/` | `meta-ads-cli-turbo.zip` |
 | `Nome-LPSG-Template.zip` | **Entregável completo** (template + exemplo) | Referência / consulta | `Trafego-LPSG-Template.zip` |
 | `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
-| `squad-turbo-completo.zip` | **13 agentes** (Squad + Picasso + Revisor + Closer) | `~/.claude/agents/` | — |
+| `squad-turbo-completo.zip` | **<!--F:n_agentes-->13<!--/F--> agentes** (Squad + Picasso + Revisor + Closer) | `~/.claude/agents/` | — |
 
 ## Contagem (atualizada 2026-05-28)
 
@@ -28,7 +28,7 @@
   - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
   - 1 páginas low-ticket (criador-paginas-low-ticket) · inclui `estudo-de-caso-narrativo.md`
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
-- **1 squad completo**: 13 agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
+- **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
 **Total: 29 zips**
 

@@ -2,7 +2,7 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · 14 skills do Claude · 13 agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · <!--F:n_skills-->14<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()

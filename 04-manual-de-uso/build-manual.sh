@@ -25,7 +25,8 @@ data = json.loads(pathlib.Path("manual-dados.json").read_text(encoding="utf-8"))
 facts = {k: v for k, v in data.items() if not k.startswith("_")}
 
 targets = ["00-pre-requisitos.md", "01-intake.md", "02-passo-a-passo.md",
-           "03-acoes-humanas.md", "04-troubleshooting.md", "README.md", "manual.html"]
+           "03-acoes-humanas.md", "04-troubleshooting.md", "README.md", "manual.html",
+           "../README.md", "../99-skills-compartilhaveis/README.md"]
 
 total_changes = 0
 missing_keys = set()
