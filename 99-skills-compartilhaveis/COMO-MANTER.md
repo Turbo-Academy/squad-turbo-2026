@@ -100,3 +100,21 @@ skills:
 ```
 
 Assim a IA opera com os 8 padrões + anti-bajulação + travas universais antes de qualquer skill de fase. Ao criar agente novo, esta é a primeira linha do bloco skills.
+
+---
+
+## Auto-compact em 50% da janela de contexto
+
+`/compact` é comando do **harness** (Claude Code) — nenhuma skill ou agente consegue invocá-lo. A automação certa é a configuração nativa, em `~/.claude/settings.json` (por máquina · replicar em cada instalação):
+
+```json
+{
+  "autoCompactEnabled": true,
+  "autoCompactWindow": 500000
+}
+```
+
+- `autoCompactEnabled: true` — compacta automaticamente quando o contexto enche
+- `autoCompactWindow: 500000` — trata a janela efetiva como 500k tokens. No modelo de 1M (fable-5[1m]), isso dispara o auto-compact em ~50% da janela real
+- Se usar um modelo de 200k, ajustar pra `100000` (50% de 200k · mínimo aceito pelo schema)
+- `/compact` manual continua disponível a qualquer momento
