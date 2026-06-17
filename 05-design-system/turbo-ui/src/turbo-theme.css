@@ -1,0 +1,70 @@
+/* ============================================================
+   TURBO UI — Tema Editorial Premium (Turbo Academy)
+   Marca: preto #0A0A0A · off-white #FBF9F3 · dourado champagne #C9A227
+   Light = paper editorial (default) · Dark = preto premium
+   ============================================================ */
+
+:root, [data-theme="light"] {
+  /* Brand — dourado champagne (escala derivada de #C9A227) */
+  --brand-50:  #FBF6E6;
+  --brand-100: #F4E8C2;
+  --brand-200: #E9D08A;
+  --brand-300: #DCB955;
+  --brand-400: #D0A93A;
+  --brand-500: #C9A227;  /* primary — dourado Turbo */
+  --brand-600: #A8861C;
+  --brand-700: #856917;
+  --brand-800: #5F4B12;
+  --brand-900: #3D300C;
+
+  /* Neutros — preto/off-white */
+  --paper:     #FBF9F3;  /* off-white */
+  --ink:       #0A0A0A;  /* preto */
+  --gray-100:  #F2EFE6;
+  --gray-200:  #E4DFD2;
+  --gray-300:  #CFC8B6;
+  --gray-500:  #8A8472;
+  --gray-700:  #4A463C;
+  --gray-900:  #1A1813;
+
+  /* Semânticas */
+  --bg:           var(--paper);
+  --bg-elevated:  #FFFFFF;
+  --bg-muted:     var(--gray-100);
+  --bg-inverse:   var(--ink);
+  --fg:           var(--ink);
+  --fg-muted:     var(--gray-700);
+  --fg-subtle:    var(--gray-500);
+  --fg-inverse:   var(--paper);
+  --border:       var(--gray-200);
+  --border-strong: var(--gray-300);
+  --ring:         var(--brand-500);
+  --accent:       var(--brand-500);
+  --accent-hover: var(--brand-600);
+  --accent-fg:    var(--ink);
+
+  --success: #2E7D52;
+  --warning: #C9A227;
+  --danger:  #B23A2E;
+
+  --gradient-brand: linear-gradient(135deg, var(--brand-400), var(--brand-600));
+  --gradient-glow:  radial-gradient(60% 60% at 50% 0%, rgb(201 162 39 / 0.18), transparent 70%);
+}
+
+[data-theme="dark"] {
+  --bg:           var(--ink);
+  --bg-elevated:  #161410;
+  --bg-muted:     #211E18;
+  --bg-inverse:   var(--paper);
+  --fg:           var(--paper);
+  --fg-muted:     #C8C2B2;
+  --fg-subtle:    #8A8472;
+  --fg-inverse:   var(--ink);
+  --border:       #2B2820;
+  --border-strong: #3A362B;
+  --ring:         var(--brand-400);
+  --accent:       var(--brand-500);
+  --accent-hover: var(--brand-400);
+  --accent-fg:    var(--ink);
+  --gradient-glow: radial-gradient(60% 60% at 50% 0%, rgb(201 162 39 / 0.28), transparent 70%);
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@turbo/ui",
+  "version": "0.1.0",
+  "description": "Biblioteca de componentes Turbo Academy — Editorial Premium. Consumida pelo Claude Design via /design-sync.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./preset": "./tailwind.preset.js"
+  },
+  "files": ["dist", "tailwind.preset.js"],
+  "sideEffects": ["*.css"],
+  "scripts": {
+    "build": "tsup && npm run build:css",
+    "build:css": "node scripts/copy-css.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}

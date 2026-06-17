@@ -1,0 +1,10 @@
+// Turbo UI — barrel de componentes (Editorial Premium · Turbo Academy)
+export { Button, type ButtonProps, type ButtonVariant, type ButtonSize } from './components/Button'
+export { Badge, type BadgeProps, type BadgeTone } from './components/Badge'
+export { Card, type CardProps } from './components/Card'
+export { Section, type SectionProps, type SectionWidth, type SectionTone } from './components/Section'
+export { Hero, type HeroProps } from './components/Hero'
+export { Pricing, type PricingProps } from './components/Pricing'
+export { Depoimento, type DepoimentoProps } from './components/Depoimento'
+export { CTA, type CTAProps } from './components/CTA'
+export { cn } from './cn'
