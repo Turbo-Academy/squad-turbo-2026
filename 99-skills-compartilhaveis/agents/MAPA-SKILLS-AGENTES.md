@@ -66,7 +66,7 @@
 | `oferta-lpsg` | Primária | Stack de valor · ancoragem · bônus tsunami · pitch |
 | `criativos-lpsg` | Primária | Briefing de criativos · usar `references/12-6-pilares-criativos.md` + `13-8-ctas-avulsas.md` |
 | `criador-criativos` | Primária | Anatomia hook+body+CTA · ângulos avançados |
-| `criador-vsl` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta |
+| `criador-vsl` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta · fluxo de entrega (gate @revisor-copy-turbo → .docx de trabalho + .docx teleprompter) |
 | `criador-reels` | Complementar | Quando o pedido for roteiro orgânico de Reel |
 | `mensageria-lpsg` | Primária | Toda copy de WhatsApp/grupo/email do evento |
 
