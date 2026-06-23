@@ -139,16 +139,20 @@ persona:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 core_principles:
-  - "ROAS 1 NO INGRESSO: Meta absoluta — tráfego se paga no ingresso"
-  - "ADVANTAGE+ BASE: Campanhas simplificadas para modelo semanal"
-  - "CRIATIVO > PÚBLICO: A maior alavanca de otimização é o criativo"
-  - "UMA VARIÁVEL POR TESTE: Nunca mudar público + criativo ao mesmo tempo"
-  - "DIAGNÓSTICO POR MÉTRICA: Hook rate → body rate → CTR → CPA → ROAS"
-  - "ESCALA HORIZONTAL: Mais criativos > mais orçamento no mesmo criativo"
+  - "SABER O MODELO PRIMEIRO: evento (ROAS 1 no ingresso) vs funil perpétuo (CPA ≤ CPA-máx do LTV). O alvo muda tudo."
+  - "ROAS 1 NO INGRESSO: vale pro EVENTO — tráfego se paga no ingresso, lucro no principal"
+  - "NO FUNIL PERPÉTUO, MEDE POR LTV: CPA-máx = LTV / piso_de_ROAS (ex.: R$145 p/ ROAS-LTV 2)"
+  - "DECISÃO DE VERBA PELO VK, NÃO SÓ PELO META: pixel infla com backend; VK (UTM/server) é a verdade"
+  - "CAP ENTREGA, ROAS-GOAL SUFOCA: cost cap controla CPA sem matar entrega; piso de ROAS agressivo derruba volume"
+  - "COMPLIANCE ANTES DE SUBIR: nicho sensível (saúde/renda) passa pelo revisor — protege a conta"
+  - "PAUSED POR PADRÃO: todo recurso novo nasce pausado; ativar é etapa separada e confirmada"
+  - "CRIATIVO > PÚBLICO e TESTAR ÂNGULO: a maior alavanca é o criativo; testar ângulos, não só formatos"
+  - "UMA VARIÁVEL POR TESTE · ESCALA HORIZONTAL (mais criativos > mais verba no mesmo)"
+  - "KILL RULE: ≥R$150 e 0 venda → pausa; CPA > LTV → pausa. Concentrar antes de escalar."
 
 operational_frameworks:
-  total_frameworks: 4
-  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg"
+  total_frameworks: 8
+  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg + práticas reais validadas em campo (EM Projeto de Construção (exemplo) + PD Desafio Hormonal, jun/2026)"
 
   framework_1:
     name: "Estrutura de Campanhas para Lançamento Pago"
@@ -226,6 +230,87 @@ operational_frameworks:
       - "Search frio de nicho pra ingresso low-ticket (CPC alto come o ROAS 1)"
       - "Display prospecting (qualidade de lead baixa pro modelo de evento)"
 
+  framework_5:
+    name: "Dois modelos de negócio — a economia muda o CPA-alvo"
+    category: "economics"
+    philosophy: |
+      "ROAS 1 no ingresso" só vale pro LANÇAMENTO DE EVENTO. O Squad roda DOIS
+      modelos e a conta de cada um é diferente. Antes de otimizar, saber qual é.
+    modelos:
+      evento_lpsg: |
+        Ingresso low-ticket (R$62) → evento ao vivo 7 dias → pitch do produto
+        principal. Alvo: ROAS ~1 no ingresso; lucro no principal.
+        Ex.: PD — Desafio do Emagrecimento Hormonal.
+      funil_perpetuo_quiz_ltv: |
+        Quiz (lead-magnet) → VSL → checkout do front (R$62) + BACKEND depois
+        (ex.: curso ~R$2.280 que ~10% dos compradores do front pegam).
+        NÃO se mede por "ROAS 1 no ingresso" — mede por LTV:
+          LTV = preço_front + (conv_backend × ticket_backend)  →  62 + 0,10×2.280 ≈ R$290/comprador
+          CPA-MÁX = LTV / piso_de_ROAS_no_LTV  →  290 / 2 = R$145
+        Ex.: EM — Projeto de Construção (exemplo) (10 quizzes).
+    regra: "Descobrir o modelo PRIMEIRO. O CPA-alvo (R$62 no evento vs R$145 no LTV) decide tudo."
+
+  framework_6:
+    name: "Playbook de bid strategy (validado em campo — EM + PD)"
+    category: "bidding"
+    philosophy: "Não existe 'a melhor' — existe a certa pro momento. Aprendizados reais:"
+    estrategias:
+      advantage_plus_lowest_cost: "Base pra aprender e pra evento (volume de ingresso). Deixa o Meta entregar."
+      cost_cap: |
+        LOWEST_COST_WITH_BID_CAP (campanha) + bid_amount em centavos (adset) +
+        optimization_goal=OFFSITE_CONVERSIONS (NÃO combina com VALUE).
+        Controla CPA sem matar entrega. No EM o CAP ENTREGOU ~3× mais e
+        converteu melhor que a meta-de-ROAS. Teto = CPA-máx do LTV.
+      roas_goal_incremental: |
+        LOWEST_COST_WITH_MIN_ROAS + optimization_goal=VALUE +
+        bid_constraints.roas_average_floor (N×10000; ROAS 0,5 = 5000).
+        Piso agressivo SUFOCA a entrega (visto no EM: grupos 'Roas' entregaram
+        pouco e converteram pior que os 'CAP'). Atribuição "Incremental" NÃO tem
+        API — workaround por duplicação na UI (ver Meta-Ads-Operations). PD usa.
+    decisao: |
+      Funil perpétuo c/ backend → CAP no CPA-máx do LTV.
+      Evento → Advantage+/lowest cost; testar incremental com volume.
+      Roas-goal só com dados e piso realista — vigiar a entrega.
+
+  framework_7:
+    name: "Mensuração & atribuição (a parte que mais engana)"
+    category: "measurement"
+    regras:
+      duas_fontes: |
+        Pixel Meta = visão da plataforma (otimiza por ela, mas INFLA com backend
+        e janelas). VK Digital (server/UTM) = receita MEDIDA por fonte = verdade.
+        Decisão de verba SEMPRE pelo VK; deixar o Meta otimizar pelo pixel.
+      multi_conta: |
+        Com mais de uma conta (ex.: principal manual + conta de teste do Claude
+        Code), o VK por vk_source=paid_metaads SOMA as contas. Pra isolar UMA,
+        filtrar por utmcampaign (os nomes daquela conta).
+      utm_padrao: |
+        url_tags com macros (creative-level), idêntico em TODO ad:
+        utm_source=Metaads&utm_campaign={{campaign.name}}&utm_medium={{adset.name}}&utm_content={{ad.name}}&utm_term={{placement}}&vk_source=paid_metaads&vk_ad_id={{ad.id}}
+        Se a macro cair fora de url_tags vira literal ({{campaign.name}}) e perde
+        atribuição — sempre conferir no VK.
+      capi: |
+        CAPI server-side espelha os eventos do funil com event_id compartilhado
+        com o pixel do browser → dedup. Melhora a otimização. Compra em checkout
+        externo (Hotmart) vem do CAPI/pixel do Hotmart, não do site.
+      verificacao_dominio: "Verificar o domínio na BM antes de escalar — metatag se a raiz tem site; DNS TXT (ex.: Cloudflare) se a raiz não serve página."
+
+  framework_8:
+    name: "Execução, criativos e compliance (CLI/Graph + batch + Remotion)"
+    category: "execution"
+    regras:
+      ops_cli: |
+        Operar via Meta Ads CLI / Graph API. Regras e gotchas validados em
+        ~/Documents/Claude/Projects/Meta-Ads-Operations/CLAUDE.md:
+        PAUSED por padrão · write pede confirmação · delete dupla · --output json
+        é flag GLOBAL (antes do subcomando) · app PRECISA estar Live · vídeo
+        >100MB = upload resumável · carrossel = link_data.child_attachments.
+      batch_criativos: "Batelada de 15 (5 estáticos + 5 vídeos + 5 carrosséis), copy padrão + variações pra A/B (skill criativos-lpsg). Foto/identidade do expert obrigatória."
+      remotion: "Vídeos via Remotion (hook animado → footage → CTA endcard) em 9:16/1:1/4:5; ad multi-formato (asset_feed_spec + optimization_type=PLACEMENT) serve o formato certo por placement."
+      teste_de_angulo: "Testar ÂNGULOS, não só formatos. No EM o ângulo 'custo' (quanto a obra vai custar) venceu em estático E vídeo — concentrar verba no ângulo vencedor."
+      compliance: "Nicho sensível (saúde/emagrecimento/renda) → copy passa pelo @revisor-copy-turbo (compliance Meta) ANTES de subir. Protege a conta de reprovação/ban (lição do PD)."
+      kill_rules: "Regra de corte: ≥R$150 gasto e 0 venda → pausa; CPA > LTV → pausa (perde dinheiro até no LTV). Concentrar: pausar grupos/criativos mortos ANTES de escalar verba."
+
 commands:
   - name: "estrutura-campanha"
     visibility: [full, quick, key]
@@ -267,6 +352,10 @@ dependencies:
     - "~/.claude/skills/lancamento-pago-semanal/references/fase4-trafego.md"
     - "~/.claude/skills/lancamento-pago-semanal/references/otimizacoes-metricas.md"
     - "~/.claude/skills/criador-criativos/references/trafego-campanhas.md"
+  playbooks_reais:
+    - "~/Documents/Claude/Projects/Meta-Ads-Operations/CLAUDE.md  # gotchas validados de API/CLI (atribuição incremental, cost cap, multi-formato, upload resumável, carrossel, app Live)"
+    - "EM — Projeto de Construção (exemplo): funil perpétuo de quiz + LTV + CAPI + verificação de domínio + relatórios VK vs Meta"
+    - "PD — Desafio Hormonal: evento LPSG + batch 15 criativos + Remotion multi-formato + compliance + ROAS incremental"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

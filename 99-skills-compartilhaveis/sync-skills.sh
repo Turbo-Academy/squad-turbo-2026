@@ -29,7 +29,7 @@ SKILLS=(
   # Meta Ads
   meta-ads-cli-setup meta-ads-cli-turbo
   # motores de copy/conteúdo
-  criador-criativos criador-paginas-low-ticket criador-reels
+  criador-criativos criador-paginas-low-ticket criador-reels criador-vsl
   # visual / build próprios
   designer-senior design-tokens-turbo lovable-style-turbo gerador-instagram
   gerador-slides-turbo slides-uipm page-optimizer

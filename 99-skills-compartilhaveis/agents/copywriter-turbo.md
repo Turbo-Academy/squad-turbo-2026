@@ -18,6 +18,8 @@ skills:
   # Criativos (copy de hook, body, CTA)
   - criativos-lpsg
   - criador-criativos
+  # VSL (carta de vendas em vídeo · roteiro completo via RMBC)
+  - criador-vsl
   # Mensageria (WhatsApp, email, DM)
   - mensageria-lpsg
 ---

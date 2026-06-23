@@ -66,10 +66,11 @@
 | `oferta-lpsg` | Primária | Stack de valor · ancoragem · bônus tsunami · pitch |
 | `criativos-lpsg` | Primária | Briefing de criativos · usar `references/12-6-pilares-criativos.md` + `13-8-ctas-avulsas.md` |
 | `criador-criativos` | Primária | Anatomia hook+body+CTA · ângulos avançados |
+| `criador-vsl` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta |
 | `criador-reels` | Complementar | Quando o pedido for roteiro orgânico de Reel |
 | `mensageria-lpsg` | Primária | Toda copy de WhatsApp/grupo/email do evento |
 
-**Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta pré-pitch · sexta repitch parcial · domingo pitch completo).
+**Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta = pré-pitch único 100% produto · sexta = conclusão técnica + lembrete da ficha, NÃO é repitch · domingo = pitch completo).
 
 ---
 
