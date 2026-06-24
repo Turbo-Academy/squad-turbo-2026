@@ -72,4 +72,4 @@ Sucesso = o avatar abrir uma peça no feed e pensar "que post bom esse" antes de
 ---
 
 **Última atualização:** 2026-04-28
-**Stack Picasso ativa:** `frontend-design` (Anthropic) · `impeccable` (Paul Bakaus) · `design-motion-principles` (Kyle Zantos) · auditor `picasso-auditor-lpsg`
+**Stack Picasso ativa:** `frontend-design` (Anthropic) · `impeccable` (Paul Bakaus) · `design-motion-principles` (Kyle Zantos) · auditor `picasso-auditor-turbo`

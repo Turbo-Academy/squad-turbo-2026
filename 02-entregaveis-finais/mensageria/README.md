@@ -36,7 +36,7 @@ mensageria/
 
 ## 🔄 2 Modos de output
 
-A skill `mensageria-lpsg` suporta os 2 modos:
+A skill `mensageria-lpsg-turbo` suporta os 2 modos:
 
 | Modo | Quando usar | Output |
 |---|---|---|
@@ -67,9 +67,9 @@ A `whatsapp-templates-meta.md` tem links pras docs oficiais Meta + casos validad
 
 ## 🧭 Skills relacionadas
 
-- `mensageria-lpsg` — esta skill (sequência de mensagens)
-- `oferta-lpsg` — define os horários do tsunami que disparam parte da mensageria (ex: 6h50, 7h00)
-- `estrutura-aulas-lpsg` — define os ganchos das aulas que aparecem nos áudios noturnos
+- `mensageria-lpsg-turbo` — esta skill (sequência de mensagens)
+- `oferta-lpsg-turbo` — define os horários do tsunami que disparam parte da mensageria (ex: 6h50, 7h00)
+- `estrutura-aulas-lpsg-turbo` — define os ganchos das aulas que aparecem nos áudios noturnos
 
 ---
 

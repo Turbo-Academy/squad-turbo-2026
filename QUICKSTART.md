@@ -26,7 +26,7 @@ O manual vai abrir num browser. **Não precisa de servidor**, funciona offline.
 ```bash
 # 11 skills LPSG
 mkdir -p ~/.claude/skills
-for z in 99-skills-compartilhaveis/*-lpsg.zip 99-skills-compartilhaveis/lpsg-master.zip; do
+for z in 99-skills-compartilhaveis/*-lpsg.zip 99-skills-compartilhaveis/lpsg-master-turbo.zip; do
   unzip -o "$z" -d ~/.claude/skills/
 done
 
@@ -38,7 +38,7 @@ cp 99-skills-compartilhaveis/agents/*.md ~/.claude/agents/
 ```
 
 Verifica:
-- `/skills` no Claude Code · deve listar 11 skills LPSG + `lpsg-master`
+- `/skills` no Claude Code · deve listar 11 skills LPSG + `lpsg-master-turbo`
 - 10 agentes invocáveis com `@estrategista-turbo`, `@pesquisador-turbo`, `@copywriter-turbo`, etc.
 
 ## 🔑 4. Cria as contas necessárias
@@ -62,7 +62,7 @@ Quando terminar · clica **"Gerar cadastro"** → modal mostra YAML · botão **
 Abre o Claude Code num projeto novo · cola:
 
 ```
-@lpsg-master crie meu LPSG.
+@lpsg-master-turbo crie meu LPSG.
 
 Aqui está meu cadastro do projeto:
 
@@ -78,7 +78,7 @@ Quero que você:
 Comece pela Fase 1 (estrutura de aulas).
 ```
 
-Pronto. O orquestrador `@lpsg-master` faz tudo.
+Pronto. O orquestrador `@lpsg-master-turbo` faz tudo.
 
 > Tempo até 1ª edição rodando: **6-7 dias**.
 

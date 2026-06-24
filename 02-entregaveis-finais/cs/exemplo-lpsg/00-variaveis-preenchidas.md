@@ -127,11 +127,11 @@ CONVERSAO_CALL_ASCENSAO:        "32-45% (varia por mês)"
 
 | Estrutura | Como |
 |---|---|
-| `paginas-lpsg` | Página `/proximo-nivel` apresenta Sociedade Turbo |
-| `oferta-lpsg` | Acelerador R$ 25k é o ticket do produto principal · CS começa após compra |
-| `mensageria-lpsg` | 8 templates Utility no ManyChat · disparados pelo n8n |
-| `automacoes-lpsg` | Webhook compra Acelerador → onboarding · cron NPS · webhook indicação |
-| `dashboard-lpsg` | Módulo 12 (CS) lê Sheets `Alunos Acelerador` |
-| `operacao-lpsg` | Camila + Júlia + Bruno no RACI · 3 papéis CS |
-| `estrutura-aulas-lpsg` | Aluno vem do LPSG (Aula 6 / pitch) |
-| `criativos-lpsg` | 5 cases gravados no D90 viraram criativos do próximo lançamento |
+| `paginas-lpsg-turbo` | Página `/proximo-nivel` apresenta Sociedade Turbo |
+| `oferta-lpsg-turbo` | Acelerador R$ 25k é o ticket do produto principal · CS começa após compra |
+| `mensageria-lpsg-turbo` | 8 templates Utility no ManyChat · disparados pelo n8n |
+| `automacoes-lpsg-turbo` | Webhook compra Acelerador → onboarding · cron NPS · webhook indicação |
+| `dashboard-lpsg-turbo` | Módulo 12 (CS) lê Sheets `Alunos Acelerador` |
+| `operacao-lpsg-turbo` | Camila + Júlia + Bruno no RACI · 3 papéis CS |
+| `estrutura-aulas-lpsg-turbo` | Aluno vem do LPSG (Aula 6 / pitch) |
+| `criativos-lpsg-turbo` | 5 cases gravados no D90 viraram criativos do próximo lançamento |

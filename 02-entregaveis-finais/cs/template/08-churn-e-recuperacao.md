@@ -230,12 +230,12 @@ Aluno frustrado que sai sem solução vira **detrator público** (Reclame Aqui �
 
 ## 🛡️ Plano de blindagem (preventivo · não reativo)
 
-### Antes de comprar (skill `paginas-lpsg`)
+### Antes de comprar (skill `paginas-lpsg-turbo`)
 - Página com **expectativa real** (sem promessas inflacionadas)
 - Garantia clara visível
 - Depoimentos com **números reais** (não fabricados)
 
-### No D0 (skill `mensageria-lpsg`)
+### No D0 (skill `mensageria-lpsg-turbo`)
 - Boas-vindas que **alinha expectativa do prazo**
 - Pacto de comprometimento (3 passos)
 
@@ -255,8 +255,8 @@ Aluno frustrado que sai sem solução vira **detrator público** (Reclame Aqui �
 
 | Estrutura | Como |
 |---|---|
-| `mensageria-lpsg` | Templates de retomada/reembolso (FASE 4-B análoga · pós-CS) |
-| `automacoes-lpsg` | Webhook reembolso Hotmart · alertas automáticos · pesquisa pós-saída |
-| `oferta-lpsg` | Política de garantia comunicada na venda |
-| `dashboard-lpsg` | KPIs de churn no Módulo 12 |
-| `operacao-lpsg` | RACI de quem responde reembolso (CS · Head CS · Specialist) |
+| `mensageria-lpsg-turbo` | Templates de retomada/reembolso (FASE 4-B análoga · pós-CS) |
+| `automacoes-lpsg-turbo` | Webhook reembolso Hotmart · alertas automáticos · pesquisa pós-saída |
+| `oferta-lpsg-turbo` | Política de garantia comunicada na venda |
+| `dashboard-lpsg-turbo` | KPIs de churn no Módulo 12 |
+| `operacao-lpsg-turbo` | RACI de quem responde reembolso (CS · Head CS · Specialist) |

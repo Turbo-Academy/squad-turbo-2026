@@ -193,7 +193,7 @@ if (request.headers["x-hub-signature-256"] !== expected) {
 
 ### Templates · classificação Utility vs Marketing
 
-> Ver `mensageria-lpsg/whatsapp-templates-meta.md` para regras detalhadas.
+> Ver `mensageria-lpsg-turbo/whatsapp-templates-meta.md` para regras detalhadas.
 
 ```yaml
 UTILITY_OBRIGATORIO_QUANDO:

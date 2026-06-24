@@ -208,8 +208,8 @@
     <p style="margin:0;">O Claude conduz, você aprova. <strong>Nunca pule o gate inicial</strong> (Etapa 2). Cada fase depende da anterior — siga a ordem. Quando algo travar, peça diagnóstico ao Claude antes de improvisar.</p>
   </div>
   <h3>Como falar com o Claude</h3>
-  <p>Ao longo do guia você verá caixas escuras. O texto dentro delas é para <strong>colar direto no Claude</strong>. Os comandos começam com <strong>@</strong> seguido do nome de um especialista do squad — por exemplo <strong>@lpsg-master</strong> (o orquestrador) ou <strong>@copywriter-turbo</strong> (a copy).</p>
-  <div class="cmd"><div class="h">Cole no Claude · exemplo</div><pre>@lpsg-master crie meu LPSG. <span class="c"># o orquestrador assume daqui</span></pre></div>
+  <p>Ao longo do guia você verá caixas escuras. O texto dentro delas é para <strong>colar direto no Claude</strong>. Os comandos começam com <strong>@</strong> seguido do nome de um especialista do squad — por exemplo <strong>@lpsg-master-turbo</strong> (o orquestrador) ou <strong>@copywriter-turbo</strong> (a copy).</p>
+  <div class="cmd"><div class="h">Cole no Claude · exemplo</div><pre>@lpsg-master-turbo crie meu LPSG. <span class="c"># o orquestrador assume daqui</span></pre></div>
 </div>
 
 <!-- ============ DIVISOR ETAPA 0 ============ -->
@@ -310,7 +310,7 @@ no Google Cloud com acesso a Sheets e Drive.</pre></div>
   <div class="step"><div class="n">4 · Você aprova</div><p style="margin:1mm 0 0;">Lê, comenta em modo de sugestão, e marca uma das três opções: <strong>aprovo · aprovo com ajustes · não aprovo</strong>.</p></div>
   <div class="step"><div class="n">5 · Só então</div><p style="margin:1mm 0 0;">Começam as 10 fases. Nem antes.</p></div>
 
-  <div class="cmd"><div class="h">Cole no Claude · inicia tudo</div><pre>@lpsg-master crie meu LPSG.
+  <div class="cmd"><div class="h">Cole no Claude · inicia tudo</div><pre>@lpsg-master-turbo crie meu LPSG.
 
 Aqui está meu cadastro:
 [cole o YAML gerado na Etapa 1]
@@ -363,7 +363,7 @@ Quero que você:
   </table>
   <div class="box teal">
     <div class="t">Comando padrão entre fases</div>
-    <p style="margin:0;">Ao fim de cada fase o Claude pergunta “posso continuar?”. Você responde <strong>sim</strong> ou <strong>pausar</strong>. Para retomar depois: <em>“@lpsg-master continue da Fase X”.</em></p>
+    <p style="margin:0;">Ao fim de cada fase o Claude pergunta “posso continuar?”. Você responde <strong>sim</strong> ou <strong>pausar</strong>. Para retomar depois: <em>“@lpsg-master-turbo continue da Fase X”.</em></p>
   </div>
 </div>
 
@@ -481,16 +481,16 @@ Onboarding 90 dias + pesquisa NPS + captura de prova social.</pre></div>
   <div class="sec-rule"></div>
   <table>
     <tr><th style="width:52mm;">Quando</th><th>Cole no Claude</th></tr>
-    <tr><td>Começar do zero</td><td><code>@lpsg-master crie meu LPSG. [+ YAML]</code></td></tr>
-    <tr><td>Retomar uma fase</td><td><code>@lpsg-master continue da Fase 5</code></td></tr>
+    <tr><td>Começar do zero</td><td><code>@lpsg-master-turbo crie meu LPSG. [+ YAML]</code></td></tr>
+    <tr><td>Retomar uma fase</td><td><code>@lpsg-master-turbo continue da Fase 5</code></td></tr>
     <tr><td>Lançamento fraco</td><td><code>@estrategista-turbo meu lançamento não converte, diagnostica</code></td></tr>
     <tr><td>Revisar copy (anti-IA)</td><td><code>@revisor-copy-turbo revisa este texto: [...]</code></td></tr>
-    <tr><td>Auditar design</td><td><code>@picasso-auditor-lpsg audita esta página</code></td></tr>
+    <tr><td>Auditar design</td><td><code>@picasso-auditor-turbo audita esta página</code></td></tr>
     <tr><td>Refazer uma peça</td><td><code>@copywriter-turbo reescreve a Aula 4 com mais desejo</code></td></tr>
     <tr><td>Estruturar criativos</td><td><code>@copywriter-turbo monta os 15 criativos nos 6 pilares</code></td></tr>
     <tr><td>Pós-venda</td><td><code>@cs-turbo monte o onboarding de 90 dias</code></td></tr>
   </table>
-  <p class="muted" style="font-size:9.5pt;">O <strong>@lpsg-master</strong> orquestra tudo. Os demais são especialistas que você chama quando quer mexer numa peça específica.</p>
+  <p class="muted" style="font-size:9.5pt;">O <strong>@lpsg-master-turbo</strong> orquestra tudo. Os demais são especialistas que você chama quando quer mexer numa peça específica.</p>
 </div>
 
 <!-- ============ APÊNDICE B ============ -->

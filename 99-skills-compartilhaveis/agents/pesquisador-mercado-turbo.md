@@ -6,18 +6,18 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Análise de criativos da concorrência (Meta Ad Library + 6 pilares)
-  - criador-criativos
-  - criativos-lpsg
+  - criador-criativos-turbo
+  - criativos-lpsg-turbo
   # Análise de conteúdos de concorrentes (lives, podcasts, YouTube)
-  - transcrever-youtube
+  - transcrever-youtube-turbo
   # Saber o que cada fase exige · orienta foco da pesquisa
-  - paginas-lpsg
-  - mensageria-lpsg
-  - estrutura-aulas-lpsg
-  - oferta-lpsg
-  - trafego-lpsg
+  - paginas-lpsg-turbo
+  - mensageria-lpsg-turbo
+  - estrutura-aulas-lpsg-turbo
+  - oferta-lpsg-turbo
+  - trafego-lpsg-turbo
   # Análise estratégica de Instagram da concorrência
-  - instagram-analise-estrategica
+  - instagram-analise-estrategica-turbo
   # Após pesquisa · gera briefing consolidado pra aprovação do expert
   - briefing-aprovacao-turbo
   # Utilitários

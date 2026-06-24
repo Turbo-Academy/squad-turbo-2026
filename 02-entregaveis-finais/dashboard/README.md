@@ -1,7 +1,7 @@
 # Dashboard — LPSG v2
 
 > Dashboard operacional do Lançamento Pago Semanal Gravado.
-> Skill: **`dashboard-lpsg`**.
+> Skill: **`dashboard-lpsg-turbo`**.
 
 ---
 
@@ -32,7 +32,7 @@ dashboard/
 │   └── 00-variaveis-preenchidas.md
 │
 └── referencia-v1/                     Dashboard v1 (referência histórica)
-    ├── dashboard-lpsg.html            HTML standalone v1 · 156 KB
+    ├── dashboard-lpsg-turbo.html            HTML standalone v1 · 156 KB
     ├── Como-Usar-Dashboard-LPSG.docx
     └── Planilha-LPSG-v1.xlsx
 ```
@@ -58,12 +58,12 @@ dashboard/
 
 ## 🧭 Skills relacionadas
 
-- `dashboard-lpsg` — esta skill (template do dashboard)
-- `paginas-lpsg` — mesma stack (Next.js + Tailwind + Vercel)
-- `trafego-lpsg` — alimenta `/trafego` (Hook/Hold/Body Rate · 4 ações)
-- `mensageria-lpsg` — alimenta `/mensageria` (Utility vs Marketing · entrega)
-- `oferta-lpsg` — alimenta `/tsunami` (4 janelas · 6h50/7h00/10h/23h59)
-- `estrutura-aulas-lpsg` — alimenta `/aulas` (pico ao vivo · retenção)
+- `dashboard-lpsg-turbo` — esta skill (template do dashboard)
+- `paginas-lpsg-turbo` — mesma stack (Next.js + Tailwind + Vercel)
+- `trafego-lpsg-turbo` — alimenta `/trafego` (Hook/Hold/Body Rate · 4 ações)
+- `mensageria-lpsg-turbo` — alimenta `/mensageria` (Utility vs Marketing · entrega)
+- `oferta-lpsg-turbo` — alimenta `/tsunami` (4 janelas · 6h50/7h00/10h/23h59)
+- `estrutura-aulas-lpsg-turbo` — alimenta `/aulas` (pico ao vivo · retenção)
 
 ---
 

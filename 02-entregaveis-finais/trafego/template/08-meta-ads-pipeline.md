@@ -311,7 +311,7 @@ if (exists.length > 0) {
 | `automacoes/template/09-trafego-analise-meta.md` | Workflows que consomem este pipeline · executam regras D/C/S |
 | `dashboard/template/02-modulos-do-dashboard.md` | Módulo 4 (Tráfego) lê de `MetaAds_Normalized` · Módulo 10 (Sugestões) lê de `Recomendações` |
 | `dashboard/template/03-fonte-de-dados.md` | Adapter Sheets pra ambas as abas |
-| `criativos-lpsg` | Status de qualidade (verde/amarelo/vermelho) usado pra decidir renovação |
+| `criativos-lpsg-turbo` | Status de qualidade (verde/amarelo/vermelho) usado pra decidir renovação |
 
 ---
 

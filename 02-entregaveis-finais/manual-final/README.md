@@ -4,7 +4,7 @@ Pasta destino do entregável final do projeto: um **manual de execução HTML st
 
 ## Como é gerado
 
-Não há template estático aqui. O manual é gerado dinamicamente pela skill `manual-final-lpsg` na **Fase 11** do orquestrador (`@lpsg-master`), consolidando os 10 entregáveis anteriores (estrutura-aulas · oferta · paginas · trafego · criativos · mensageria · automacoes · dashboard · operacao · cs).
+Não há template estático aqui. O manual é gerado dinamicamente pela skill `manual-final-lpsg-turbo` na **Fase 11** do orquestrador (`@lpsg-master-turbo`), consolidando os 10 entregáveis anteriores (estrutura-aulas · oferta · paginas · trafego · criativos · mensageria · automacoes · dashboard · operacao · cs).
 
 ## Estrutura do output esperado
 
@@ -26,17 +26,17 @@ manual-execucao.html       ← arquivo único · auto-contido · abre no browser
 ## Como rodar manualmente
 
 ```
-@manual-final-lpsg gerar manual final do projeto {NOME_DO_PROJETO}
+@manual-final-lpsg-turbo gerar manual final do projeto {NOME_DO_PROJETO}
 ```
 
 Ou via orquestrador:
 
 ```
-@lpsg-master execute Fase 11 do projeto {NOME_DO_PROJETO}
+@lpsg-master-turbo execute Fase 11 do projeto {NOME_DO_PROJETO}
 ```
 
 ## Personalização
 
 Variáveis puxadas automaticamente do cadastro YAML do projeto (Bloco A · I) — nome do expert, datas, ticket, paleta, contas, etc.
 
-Detalhes em `~/.claude/skills/manual-final-lpsg/SKILL.md`.
+Detalhes em `~/.claude/skills/manual-final-lpsg-turbo/SKILL.md`.

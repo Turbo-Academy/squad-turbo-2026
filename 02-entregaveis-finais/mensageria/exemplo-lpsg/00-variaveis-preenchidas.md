@@ -120,8 +120,8 @@ Custo Meta API:                   ~R$ 0,07 por inscrito
 
 | Estrutura | Conexão |
 |---|---|
-| `paginas-lpsg` | Ficha de interesse alimenta tags HOT/WARM/COLD |
-| `automacoes-lpsg` | n8n/ManyChat dispara cada mensagem · webhook ficha calcula tier |
-| `oferta-lpsg` | Mensagens do tsunami no carrinho aberto |
-| `operacao-lpsg` | SDR atende fila HOT após ficha |
-| `dashboard-lpsg` | Módulo Mensageria mostra Utility vs Marketing · entrega · reação |
+| `paginas-lpsg-turbo` | Ficha de interesse alimenta tags HOT/WARM/COLD |
+| `automacoes-lpsg-turbo` | n8n/ManyChat dispara cada mensagem · webhook ficha calcula tier |
+| `oferta-lpsg-turbo` | Mensagens do tsunami no carrinho aberto |
+| `operacao-lpsg-turbo` | SDR atende fila HOT após ficha |
+| `dashboard-lpsg-turbo` | Módulo Mensageria mostra Utility vs Marketing · entrega · reação |

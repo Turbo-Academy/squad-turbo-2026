@@ -343,7 +343,7 @@ CARDS_SEM_DRI:
 SLACK:                    "Comunicação · alertas · canais por área"
 GOOGLE_DRIVE:             "Arquivos finais · brand assets · contratos"
 GOOGLE_CALENDAR:          "Eventos do time · 1:1 · daily"
-GOOGLE_SHEETS:            "Storage de leads (do automacoes-lpsg)"
+GOOGLE_SHEETS:            "Storage de leads (do automacoes-lpsg-turbo)"
 NOTION:                   "Kanban · docs · SOPs · Decision Log"
 LOOM:                     "Vídeo assíncrono (substitui reunião)"
 TOGGL:                    "Timer de reuniões e tasks (opcional)"

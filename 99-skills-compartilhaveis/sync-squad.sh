@@ -22,7 +22,7 @@ ZIP="$REPO_ROOT/99-skills-compartilhaveis/squad-turbo-completo.zip"
 AGENTS=(
   automacao-turbo closer-turbo copywriter-turbo cs-turbo designer-turbo
   diretor-criativo-turbo estrategista-turbo pesquisador-mercado-turbo
-  pesquisador-turbo picasso-auditor-lpsg revisor-copy-turbo social-turbo
+  pesquisador-turbo picasso-auditor-turbo revisor-copy-turbo social-turbo
   trafego-turbo
 )
 

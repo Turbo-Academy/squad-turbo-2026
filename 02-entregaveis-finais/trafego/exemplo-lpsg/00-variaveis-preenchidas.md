@@ -136,7 +136,7 @@ PIXEL:                    "Meta Pixel + Conversions API (CAPI)"
 EVENTOS_MAPEADOS:         "ViewContent · InitiateCheckout · Purchase"
 JANELA_ATRIBUICAO:        "7 dias clique · 1 dia visualização"
 UTMS_PADRAO:              "utm_source=meta&utm_medium=paid&utm_campaign=lpsg_ingresso&utm_content={CRIATIVO_ID}"
-DASHBOARD:                "dashboard-lpsg.html (Aula 4) + planilha Turbo"
+DASHBOARD:                "dashboard-lpsg-turbo.html (Aula 4) + planilha Turbo"
 ```
 
 ---

@@ -77,7 +77,7 @@
 ## 🏗️ Estrutura de pastas (n8n + repositório)
 
 ```
-automacoes-lpsg/
+automacoes-lpsg-turbo/
 │
 ├── n8n-workflows/                       Exportados em JSON (versionar no git)
 │   ├── 01-captacao-anuncio-pagina.json

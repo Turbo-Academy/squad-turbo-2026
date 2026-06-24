@@ -42,6 +42,6 @@ Com CS bem estruturado:
 
 ## 🔗 Skill instalada
 
-`cs-lpsg` (em `~/.claude/skills/cs-lpsg/`)
+`cs-lpsg-turbo` (em `~/.claude/skills/cs-lpsg-turbo/`)
 
 > Use o nome da skill ou seu trigger pra ativar — ver `template/README.md`.

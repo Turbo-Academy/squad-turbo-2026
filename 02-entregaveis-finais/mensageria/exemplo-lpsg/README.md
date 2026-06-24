@@ -40,7 +40,7 @@ exemplo-lpsg/
 
 ## 🔗 Referências cruzadas
 
-- **Estrutura de aulas** → tema das 6 aulas vem de `estrutura-aulas-lpsg`
-- **Ficha de interesse** → tags HOT/WARM/COLD vêm de `paginas-lpsg/08-ficha-interesse.md`
-- **Workflows n8n** → `automacoes-lpsg/02-fluxos-de-captacao.md` (Fluxo 4)
-- **Operação** → SDR pega fila HOT em `operacao-lpsg`
+- **Estrutura de aulas** → tema das 6 aulas vem de `estrutura-aulas-lpsg-turbo`
+- **Ficha de interesse** → tags HOT/WARM/COLD vêm de `paginas-lpsg-turbo/08-ficha-interesse.md`
+- **Workflows n8n** → `automacoes-lpsg-turbo/02-fluxos-de-captacao.md` (Fluxo 4)
+- **Operação** → SDR pega fila HOT em `operacao-lpsg-turbo`

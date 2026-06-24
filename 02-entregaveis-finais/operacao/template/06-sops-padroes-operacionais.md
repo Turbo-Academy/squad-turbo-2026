@@ -188,13 +188,13 @@ Com SOP:  novato faz na 1ª · sênior pula etapas que já internalizou · proce
 
 ```
 ✅ Rascunho (Operação · 30-60min)
-[ ] Mensagem escrita conforme template (mensageria-lpsg)
+[ ] Mensagem escrita conforme template (mensageria-lpsg-turbo)
 [ ] Tom condizente com a fase (PASSADO · PRESENTE · FUTURO)
 [ ] CTA claro · 1 só
 [ ] Variáveis preenchidas ({{nome}}, {{link}}, etc)
 
 ✅ Classificação (Operação · 5min)
-[ ] Marketing OU Utility (decisão de custo · segue mensageria-lpsg)
+[ ] Marketing OU Utility (decisão de custo · segue mensageria-lpsg-turbo)
 [ ] Se Utility · template aprovado pela Meta?
 [ ] Se Marketing · respeitando 80/20?
 

@@ -1,7 +1,7 @@
 # Operação e Equipe — LPSG
 
 > Estrutura de time · papéis · cronograma · rituais · SOPs · contratação.
-> Skill: **`operacao-lpsg`**.
+> Skill: **`operacao-lpsg-turbo`**.
 
 ---
 
@@ -93,12 +93,12 @@ LOOM:                     "Vídeo assíncrono · substitui reunião"
 
 ## 🧭 Skills relacionadas
 
-- `operacao-lpsg` — esta skill
-- `mensageria-lpsg` — define textos que Operação executa
-- `criativos-lpsg` — Designer entrega bateladas
-- `dashboard-lpsg` — métricas que Operação acompanha
-- `automacoes-lpsg` — Operação coordena · Dev configura
-- `estrutura-aulas-lpsg` — Expert grava · Operação coordena
+- `operacao-lpsg-turbo` — esta skill
+- `mensageria-lpsg-turbo` — define textos que Operação executa
+- `criativos-lpsg-turbo` — Designer entrega bateladas
+- `dashboard-lpsg-turbo` — métricas que Operação acompanha
+- `automacoes-lpsg-turbo` — Operação coordena · Dev configura
+- `estrutura-aulas-lpsg-turbo` — Expert grava · Operação coordena
 
 ---
 

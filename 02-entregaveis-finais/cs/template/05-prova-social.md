@@ -102,7 +102,7 @@ estudar. Aplica o que tá no programa."
 ```
 
 ### Onde usar
-- Página de venda da próxima edição (skill `paginas-lpsg`)
+- Página de venda da próxima edição (skill `paginas-lpsg-turbo`)
 - Carrosseis Instagram
 - E-mail nutrição
 
@@ -235,8 +235,8 @@ estudar. Aplica o que tá no programa."
 
 | Estrutura | Como |
 |---|---|
-| `paginas-lpsg` | Block "Testimonials" usa os depoimentos coletados |
-| `criativos-lpsg` | Vídeos/prints viram criativos de Meta Ads |
-| `mensageria-lpsg` | Mensagens de pedido em `04-mensagens.md` |
-| `automacoes-lpsg` | Webhook valida + arquiva + atualiza CRM |
-| `oferta-lpsg` | Casos de sucesso reforçam a oferta |
+| `paginas-lpsg-turbo` | Block "Testimonials" usa os depoimentos coletados |
+| `criativos-lpsg-turbo` | Vídeos/prints viram criativos de Meta Ads |
+| `mensageria-lpsg-turbo` | Mensagens de pedido em `04-mensagens.md` |
+| `automacoes-lpsg-turbo` | Webhook valida + arquiva + atualiza CRM |
+| `oferta-lpsg-turbo` | Casos de sucesso reforçam a oferta |

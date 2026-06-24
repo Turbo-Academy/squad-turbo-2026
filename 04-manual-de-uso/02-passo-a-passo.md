@@ -2,13 +2,13 @@
 
 > **7 dias intensivos** pra sair do zero até a 1ª edição rodando.
 >
-> ⚡ **Atalho:** se preferir, use o **MODO EXECUTOR** — cole 1 comando no Claude e o orquestrador `@lpsg-master` faz tudo. Detalhes no fim deste arquivo.
+> ⚡ **Atalho:** se preferir, use o **MODO EXECUTOR** — cole 1 comando no Claude e o orquestrador `@lpsg-master-turbo` faz tudo. Detalhes no fim deste arquivo.
 
 ---
 
 ## 🚨 PASSO 0 · GATE INICIAL OBRIGATÓRIO (antes de qualquer fase)
 
-> **Inegociável.** Quando você pede pra executar o LPSG, o `@lpsg-master` SEMPRE roda este gate antes das 10 fases. Não tem atalho — pular gera 5-10h de retrabalho depois.
+> **Inegociável.** Quando você pede pra executar o LPSG, o `@lpsg-master-turbo` SEMPRE roda este gate antes das 10 fases. Não tem atalho — pular gera 5-10h de retrabalho depois.
 
 ```
 1. @pesquisador-turbo            → extrai 6 dossiês internos (00-fundacao/)
@@ -27,7 +27,7 @@
                                     Expert marca alterações em modo de revisão
                                     Você avisa: "Briefing aprovado · pode seguir Fase 1"
 
-5. SÓ ENTÃO começa Fase 1 (estrutura-aulas-lpsg)
+5. SÓ ENTÃO começa Fase 1 (estrutura-aulas-lpsg-turbo)
 ```
 
 > O briefing sai em **`.docx` (local em `03-revisoes/`) + Google Drive** (link no chat). Lê e aprova onde for mais confortável — os dois ficam sincronizados.
@@ -39,7 +39,7 @@
 Já tem o cadastro preenchido? Cola isso no Claude:
 
 ```
-@lpsg-master crie meu LPSG.
+@lpsg-master-turbo crie meu LPSG.
 
 Aqui está meu cadastro do projeto:
 
@@ -53,7 +53,7 @@ Quero que você:
 5. Reporta progresso ao final de cada fase
 ```
 
-A skill `lpsg-master` valida · executa · reporta · pede aprovação humana em pontos críticos.
+A skill `lpsg-master-turbo` valida · executa · reporta · pede aprovação humana em pontos críticos.
 
 > Se preferir executar manualmente fase por fase · siga o roteiro abaixo.
 
@@ -71,7 +71,7 @@ DIA 5   (Sexta)                ── Fase 9 (operação) + gravação aulas
 DIA 6-7 (Sábado-Domingo)       ── Aprovações Meta + pré-edição
 
 SEMANA SEGUINTE                ── 1ª EDIÇÃO RODA
-PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
+PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg-turbo)
 ```
 
 ---
@@ -80,16 +80,16 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 | # | Skill | Foco | Subagentes |
 |---|---|---|---|
-| **1** | `estrutura-aulas-lpsg` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
-| **2** | `mensageria-lpsg` | <!--F:fase2_desc_longa--><strong>cap 4+4</strong> (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas<!--/F--> | `@copywriter` · `@revisor-copy` |
-| **3** | `oferta-lpsg` | Stack de valor + tsunami + garantia | `@copywriter` |
-| **4** | `criativos-lpsg` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) · usa copy/oferta/aulas já definidas | `@copywriter` · `@designer-senior` |
-| **5** | `paginas-lpsg` | Páginas de venda + ficha de interesse · entre criativos e tráfego porque é destino dos ads | `@designer-senior` · `@copywriter` |
-| **6** | `trafego-lpsg` | Campanha Meta ASC + análise auto | — |
-| **7** | `automacoes-lpsg` | 14 workflows n8n + ManyChat | — |
-| **8** | `dashboard-lpsg` | 11 módulos · 8 fontes de dados | `@designer-senior` |
-| **9** | `operacao-lpsg` | RACI · 12 SOPs · 6 rituais | — |
-| **10** | `cs-lpsg` | Pós-venda 90 dias · NPS · ascensão | (após 1ª venda) |
+| **1** | `estrutura-aulas-lpsg-turbo` | 6 aulas (5+1) · 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · sem replay) + pitch (dom) · formato é decisão interna | `@copywriter` · `gerador-slides-turbo` |
+| **2** | `mensageria-lpsg-turbo` | <!--F:fase2_desc_longa--><strong>cap 4+4</strong> (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas<!--/F--> | `@copywriter` · `@revisor-copy` |
+| **3** | `oferta-lpsg-turbo` | Stack de valor + tsunami + garantia | `@copywriter` |
+| **4** | `criativos-lpsg-turbo` | 15 criativos (5 vídeos + 5 estáticos + 5 carrosseis) · usa copy/oferta/aulas já definidas | `@copywriter` · `@designer-senior-turbo` |
+| **5** | `paginas-lpsg-turbo` | Páginas de venda + ficha de interesse · entre criativos e tráfego porque é destino dos ads | `@designer-senior-turbo` · `@copywriter` |
+| **6** | `trafego-lpsg-turbo` | Campanha Meta ASC + análise auto | — |
+| **7** | `automacoes-lpsg-turbo` | 14 workflows n8n + ManyChat | — |
+| **8** | `dashboard-lpsg-turbo` | 11 módulos · 8 fontes de dados | `@designer-senior-turbo` |
+| **9** | `operacao-lpsg-turbo` | RACI · 12 SOPs · 6 rituais | — |
+| **10** | `cs-lpsg-turbo` | Pós-venda 90 dias · NPS · ascensão | (após 1ª venda) |
 
 > ⚠️ **Pontos de aprovação humana obrigatória:** Fase 3 (oferta) · Fase 6 (tráfego) · Fase 7 (automações) · Fase 10 (CS)
 
@@ -102,12 +102,12 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🌐 FASE 5 · paginas-lpsg
+# 🌐 FASE 5 · paginas-lpsg-turbo
 
 ### ⏱️ 4h · 🚨 + 🤖 + ⚙️
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `paginas-lpsg`. Cria as 5 variações de página (`/v1` a `/v5`) + ficha de interesse 11 etapas. Stack: Next.js 14 + Tailwind + Vercel. Use Bloco A · B · D · H do cadastro. Já com Pixel + GTM + GA4 instalados."*
+> *"Use a skill `paginas-lpsg-turbo`. Cria as 5 variações de página (`/v1` a `/v5`) + ficha de interesse 11 etapas. Stack: Next.js 14 + Tailwind + Vercel. Use Bloco A · B · D · H do cadastro. Já com Pixel + GTM + GA4 instalados."*
 
 ### O que Claude faz
 - Projeto Next.js completo
@@ -132,12 +132,12 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🎬 FASE 4 · criativos-lpsg
+# 🎬 FASE 4 · criativos-lpsg-turbo
 
 ### ⏱️ 5h · 🚨 humano-intensivo
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `criativos-lpsg`. Estrutura batelada de 15 criativos: 5 vídeos · 5 estáticos · 5 carrosseis. Hooks variados (5 tipos). Use Bloco H do cadastro (cor · estilo · referências)."*
+> *"Use a skill `criativos-lpsg-turbo`. Estrutura batelada de 15 criativos: 5 vídeos · 5 estáticos · 5 carrosseis. Hooks variados (5 tipos). Use Bloco H do cadastro (cor · estilo · referências)."*
 
 ### O que Claude faz
 - Roteiros de 5 vídeos (30s cada · Hook + Hold + Body)
@@ -162,12 +162,12 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 🎯 FASE 1 · estrutura-aulas-lpsg
+# 🎯 FASE 1 · estrutura-aulas-lpsg-turbo
 
 ### ⏱️ 1h Claude + dias de gravação · 🤖 + 🚨
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `estrutura-aulas-lpsg`. Estrutura as 6 aulas (5+1) baseado no Bloco C do cadastro. Pra cada uma: tema central · gancho de abertura · tarefa pro aluno · transição. 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · única sem replay) + pitch (dom). Formato (ao vivo OU gravado) é decisão interna do expert · NÃO se comunica formato pro público. Use também `gerador-slides-turbo` pros PPTX premium das aulas que forem pré-gravadas."*
+> *"Use a skill `estrutura-aulas-lpsg-turbo`. Estrutura as 6 aulas (5+1) baseado no Bloco C do cadastro. Pra cada uma: tema central · gancho de abertura · tarefa pro aluno · transição. 7 dias de evento · 5 técnicas (seg-sex) + tira-dúvidas (sáb · única sem replay) + pitch (dom). Formato (ao vivo OU gravado) é decisão interna do expert · NÃO se comunica formato pro público. Use também `gerador-slides-turbo` pros PPTX premium das aulas que forem pré-gravadas."*
 
 ### O que Claude faz
 - 6 aulas com função estratégica (escada de crenças) — 7 dias de evento · sábado tira-dúvidas é a única sem replay disponível · formato (ao vivo/gravado) de cada aula é decisão interna do expert · não comunicado pro público
@@ -183,14 +183,14 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg)
 
 ---
 
-# 💎 FASE 3 · oferta-lpsg
+# 💎 FASE 3 · oferta-lpsg-turbo
 
 ### ⚠️ PONTO DE APROVAÇÃO HUMANA OBRIGATÓRIA
 
 ### ⏱️ 1h · 🤖 + 🚨
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `oferta-lpsg`. Estrutura oferta completa: stack de valor · 3 ondas tsunami · garantia dupla · plano de recuperação. Use Bloco B do cadastro."*
+> *"Use a skill `oferta-lpsg-turbo`. Estrutura oferta completa: stack de valor · 3 ondas tsunami · garantia dupla · plano de recuperação. Use Bloco B do cadastro."*
 
 ### O que Claude faz
 - Stack de valor com 6+ itens · ≥ 1.5x o ticket
@@ -209,12 +209,12 @@ Oferta documentada e aprovada pelo expert
 
 ---
 
-# 📨 FASE 2 · mensageria-lpsg
+# 📨 FASE 2 · mensageria-lpsg-turbo
 
 ### ⏱️ 2h Claude + 1-3 dias aprovação Meta
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `mensageria-lpsg`. Respeita o cap 4+4 (máx 4 msgs na API oficial + 4 no grupo por dia, seg-dom). Escreve copy + gera os templates Utility no formato Meta API. Use Bloco I do cadastro (tom de voz)."*
+> *"Use a skill `mensageria-lpsg-turbo`. Respeita o cap 4+4 (máx 4 msgs na API oficial + 4 no grupo por dia, seg-dom). Escreve copy + gera os templates Utility no formato Meta API. Use Bloco I do cadastro (tom de voz)."*
 
 ### O que Claude faz
 - **Cap 4+4 inegociável** · máx 4 msgs API + 4 grupo por dia (seg-dom) · sem repescagem · sem reforço
@@ -241,14 +241,14 @@ Oferta documentada e aprovada pelo expert
 
 ---
 
-# 🚀 FASE 6 · trafego-lpsg
+# 🚀 FASE 6 · trafego-lpsg-turbo
 
 ### ⚠️ PONTO DE APROVAÇÃO HUMANA OBRIGATÓRIA
 
 ### ⏱️ 30 min Claude + 2h gestor
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `trafego-lpsg`. Estrutura campanha Advantage+ Shopping (ASC): 1 campanha · 1 conjunto · 15 criativos · público aberto · R$ 100/dia. Use Bloco E e H do cadastro."*
+> *"Use a skill `trafego-lpsg-turbo`. Estrutura campanha Advantage+ Shopping (ASC): 1 campanha · 1 conjunto · 15 criativos · público aberto · R$ 100/dia. Use Bloco E e H do cadastro."*
 
 ### O que Claude faz
 - Estrutura completa da campanha
@@ -274,14 +274,14 @@ Campanha rodando · primeiros eventos no Pixel
 
 ---
 
-# ⚙️ FASE 7 · automacoes-lpsg
+# ⚙️ FASE 7 · automacoes-lpsg-turbo
 
 ### ⚠️ PONTO DE APROVAÇÃO HUMANA OBRIGATÓRIA
 
 ### ⏱️ 2h Claude + 1h importação
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `automacoes-lpsg`. Cria os 14 workflows n8n: captação (4) · evento (3) · tsunami (2) · recuperação (3) · análise tráfego (4 · ver `trafego-lpsg/09`). Use Bloco E."*
+> *"Use a skill `automacoes-lpsg-turbo`. Cria os 14 workflows n8n: captação (4) · evento (3) · tsunami (2) · recuperação (3) · análise tráfego (4 · ver `trafego-lpsg-turbo/09`). Use Bloco E."*
 
 ### O que Claude faz
 - JSONs dos 14 workflows (importáveis)
@@ -305,12 +305,12 @@ Campanha rodando · primeiros eventos no Pixel
 
 ---
 
-# 📊 FASE 8 · dashboard-lpsg
+# 📊 FASE 8 · dashboard-lpsg-turbo
 
 ### ⏱️ 3h Claude + 30min Vercel
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `dashboard-lpsg`. Cria o dashboard com 11 módulos: visão geral · tráfego · páginas · aulas · mensageria · tsunami · recuperação · operação · estratégico · sugestões · ficha. Subdomínio `dashboard.{dominio}`."*
+> *"Use a skill `dashboard-lpsg-turbo`. Cria o dashboard com 11 módulos: visão geral · tráfego · páginas · aulas · mensageria · tsunami · recuperação · operação · estratégico · sugestões · ficha. Subdomínio `dashboard.{dominio}`."*
 
 ### O que Claude faz
 - Projeto Next.js separado
@@ -333,12 +333,12 @@ Dashboard no ar · 11 módulos exibindo dados reais
 
 ---
 
-# 👥 FASE 9 · operacao-lpsg
+# 👥 FASE 9 · operacao-lpsg-turbo
 
 ### ⏱️ 30min Claude + 1h time
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `operacao-lpsg`. Estrutura RACI do time (Bloco F) · cronograma da semana perpétua · 12 SOPs · 6 rituais."*
+> *"Use a skill `operacao-lpsg-turbo`. Estrutura RACI do time (Bloco F) · cronograma da semana perpétua · 12 SOPs · 6 rituais."*
 
 ### O que Claude faz
 - RACI completo (R/A/C/I)
@@ -357,14 +357,14 @@ Time alinhado · RACI assinado · ferramentas distribuídas
 
 ---
 
-# 🤝 FASE 10 · cs-lpsg
+# 🤝 FASE 10 · cs-lpsg-turbo
 
 ### ⚠️ SÓ EXECUTAR APÓS PRIMEIRAS VENDAS
 
 > CS só faz sentido após você ter ≥ 5 alunos do produto principal. Antes, atende manualmente.
 
 ### 🤖 Pedido pro Claude
-> *"Tenho {N} alunos ativos do {NOME_PRODUTO}. Use a skill `cs-lpsg` pra estruturar o programa de pós-venda completo: onboarding D0-D7 · cronograma 90 dias · 4 rituais · 8 templates · prova social · ascensão · indicação · churn."*
+> *"Tenho {N} alunos ativos do {NOME_PRODUTO}. Use a skill `cs-lpsg-turbo` pra estruturar o programa de pós-venda completo: onboarding D0-D7 · cronograma 90 dias · 4 rituais · 8 templates · prova social · ascensão · indicação · churn."*
 
 ### O que Claude faz
 - Estrutura aba `Alunos` no Sheets (18 colunas)
@@ -404,7 +404,7 @@ A partir desta segunda · LPSG vira **modelo perpétuo**.
 
 ### 🚨 AÇÃO HUMANA · dashboard ao vivo
 - [ ] Aba "Tsunami" durante carrinho aberto
-- [ ] Sugestões da skill `trafego-lpsg` no módulo 10
+- [ ] Sugestões da skill `trafego-lpsg-turbo` no módulo 10
 - [ ] Aplica (manual) as sugestões aprovadas
 
 ---
@@ -427,7 +427,7 @@ SIMULTANEAMENTE:
    - Engine de análise gerando sugestões diárias
 
 MENSALMENTE:
-   - Auditoria com checklist do `lpsg-master/05-checklists.md`
+   - Auditoria com checklist do `lpsg-master-turbo/05-checklists.md`
    - Renovação de criativos (1/3 do lote)
    - Calibração de targets se nicho ≠ marketing digital
 ```

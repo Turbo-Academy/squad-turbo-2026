@@ -49,7 +49,7 @@ D90:                      "Fechamento + NPS final + plano de continuidade"
 
 ---
 
-## 👥 Papéis no CS (ver também `operacao-lpsg`)
+## 👥 Papéis no CS (ver também `operacao-lpsg-turbo`)
 
 ```yaml
 HEAD_CS:                  "{HEAD_CS}"                       # 1 pessoa · responsável geral · 50-100 alunos/mês

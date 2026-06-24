@@ -1,6 +1,6 @@
 # 06 · KPIs e Dashboard CS
 
-> Como medir saúde do programa de acompanhamento. Liga direto com o **Módulo 12 — CS** do dashboard (a ser criado em `dashboard-lpsg`).
+> Como medir saúde do programa de acompanhamento. Liga direto com o **Módulo 12 — CS** do dashboard (a ser criado em `dashboard-lpsg-turbo`).
 
 ---
 
@@ -227,7 +227,7 @@ DASHBOARD_CS:
 
 | Estrutura | Como |
 |---|---|
-| `dashboard-lpsg` | Módulo 12 (CS) consome aba Alunos |
-| `automacoes-lpsg` | n8n alimenta aba Alunos · dispara alertas |
-| `mensageria-lpsg` | NPS dispara mensagens de tier (promotor/neutro/detrator) |
-| `operacao-lpsg` | Papéis CS no RACI |
+| `dashboard-lpsg-turbo` | Módulo 12 (CS) consome aba Alunos |
+| `automacoes-lpsg-turbo` | n8n alimenta aba Alunos · dispara alertas |
+| `mensageria-lpsg-turbo` | NPS dispara mensagens de tier (promotor/neutro/detrator) |
+| `operacao-lpsg-turbo` | Papéis CS no RACI |

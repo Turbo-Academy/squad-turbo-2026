@@ -553,8 +553,8 @@ Use os 3 em sequência · cada estágio merece formato próprio.
 
 - `05-roteiro-video.md` · vídeos curtos 30s (criativo de Meta Ads)
 - `06-prompts-ia-design.md` · prompts pra B-roll gerado por IA
-- `criador-reels` skill · roteiros orgânicos curtos
-- `criador-criativos` skill · roteiros pra ads pagos
+- `criador-reels-turbo` skill · roteiros orgânicos curtos
+- `criador-criativos-turbo` skill · roteiros pra ads pagos
 
 ---
 

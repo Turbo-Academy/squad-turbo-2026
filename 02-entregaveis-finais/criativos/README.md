@@ -1,6 +1,6 @@
 # Criativos — LPSG
 
-> Bateladas de criativos para Meta Ads. 5 estáticos + 5 carrosséis + 5 vídeos liberados juntos. Skill: **`criativos-lpsg`**.
+> Bateladas de criativos para Meta Ads. 5 estáticos + 5 carrosséis + 5 vídeos liberados juntos. Skill: **`criativos-lpsg-turbo`**.
 
 ---
 
@@ -37,7 +37,7 @@ criativos/
 
 ## 🔄 2 Modos de output
 
-A skill `criativos-lpsg` suporta os 2 modos:
+A skill `criativos-lpsg-turbo` suporta os 2 modos:
 
 | Modo | Quando usar | Output |
 |---|---|---|
@@ -92,7 +92,7 @@ DIA_DE_LIBERAR_BATELADA:
 
 ---
 
-## 📊 Métricas-alvo (do trafego-lpsg)
+## 📊 Métricas-alvo (do trafego-lpsg-turbo)
 
 ```yaml
 HOOK_RATE:    ≥ 20% (mín) · ≥ 30% (ideal)
@@ -106,11 +106,11 @@ CPM:          ≤ R$ 40
 
 ## 🧭 Skills relacionadas
 
-- `criativos-lpsg` — esta skill (gera bateladas)
-- `trafego-lpsg` — onde os criativos sobem (Meta ASC · 15 criativos)
-- `paginas-lpsg` — destino dos criativos (URL da página de ingresso)
-- `oferta-lpsg` — origem da copy do CTA (ticket · tsunami · garantia)
-- `dashboard-lpsg` — performance dos criativos em `/trafego` (Hook/Hold/Body Rate)
+- `criativos-lpsg-turbo` — esta skill (gera bateladas)
+- `trafego-lpsg-turbo` — onde os criativos sobem (Meta ASC · 15 criativos)
+- `paginas-lpsg-turbo` — destino dos criativos (URL da página de ingresso)
+- `oferta-lpsg-turbo` — origem da copy do CTA (ticket · tsunami · garantia)
+- `dashboard-lpsg-turbo` — performance dos criativos em `/trafego` (Hook/Hold/Body Rate)
 
 ---
 

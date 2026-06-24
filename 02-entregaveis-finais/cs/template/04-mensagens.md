@@ -278,4 +278,4 @@
 | `cs_nps_d30_v1` | NPS parcial |
 | `cs_nps_d90_v1` | NPS final |
 
-> Estrutura técnica dos templates Utility: `mensageria-lpsg/whatsapp-templates-meta.md`.
+> Estrutura técnica dos templates Utility: `mensageria-lpsg-turbo/whatsapp-templates-meta.md`.

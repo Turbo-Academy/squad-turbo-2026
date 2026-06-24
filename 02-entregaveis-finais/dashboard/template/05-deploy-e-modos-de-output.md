@@ -32,7 +32,7 @@
 #### 1. Clonar template
 
 ```bash
-gh repo clone turbo-academy/dashboard-lpsg-template my-dash
+gh repo clone turbo-academy/dashboard-lpsg-turbo-template my-dash
 cd my-dash
 pnpm install
 ```
@@ -121,12 +121,12 @@ Isso gera:
 
 ```
 dist/
-└── dashboard-lpsg.html        # ~250 KB · tudo inline
+└── dashboard-lpsg-turbo.html        # ~250 KB · tudo inline
 ```
 
 #### 2. Distribuir
 
-Mandar o `dashboard-lpsg.html` por email · Google Drive · Telegram.
+Mandar o `dashboard-lpsg-turbo.html` por email · Google Drive · Telegram.
 
 #### 3. Aluno usa
 
@@ -190,15 +190,15 @@ const html = `
 </html>
 `;
 
-writeFileSync('dist/dashboard-lpsg.html', html);
-console.log('✅ Standalone gerado: dist/dashboard-lpsg.html');
+writeFileSync('dist/dashboard-lpsg-turbo.html', html);
+console.log('✅ Standalone gerado: dist/dashboard-lpsg-turbo.html');
 ```
 
 ### Resultado
 
 | Arquivo | Tamanho |
 |---|---|
-| `dashboard-lpsg.html` | ~250 KB |
+| `dashboard-lpsg-turbo.html` | ~250 KB |
 | Tempo de carregamento | <500ms (offline) |
 | Compatibilidade | Chrome 100+ · Safari 15+ · Firefox 100+ · Edge 100+ |
 
@@ -267,7 +267,7 @@ NEXT_PUBLIC_DATA_MODE=mock pnpm dev
 
 Cada `git push` em branch ≠ main gera preview URL automática:
 ```
-https://dashboard-lpsg-git-feature-x.vercel.app
+https://dashboard-lpsg-turbo-git-feature-x.vercel.app
 ```
 
 > Compartilha link com o time pra revisão antes de merge.
@@ -276,7 +276,7 @@ https://dashboard-lpsg-git-feature-x.vercel.app
 
 ```bash
 pnpm build:standalone
-open dist/dashboard-lpsg.html
+open dist/dashboard-lpsg-turbo.html
 ```
 
 ---

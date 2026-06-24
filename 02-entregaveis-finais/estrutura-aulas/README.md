@@ -1,7 +1,7 @@
 # Estrutura de Aulas — LPSG
 
 > Estrutura programática das 6 aulas (5+1) do Lançamento Pago Semanal Gravado.
-> Skill: **`estrutura-aulas-lpsg`**.
+> Skill: **`estrutura-aulas-lpsg-turbo`**.
 
 ---
 
@@ -19,7 +19,7 @@
 ```
 estrutura-aulas/
 ├── README.md                              ← você está aqui
-├── estrutura-aulas-lpsg.docx              ← versão Word consolidada
+├── estrutura-aulas-lpsg-turbo.docx              ← versão Word consolidada
 │
 └── template/
     ├── README.md                          Como usar o template
@@ -76,11 +76,11 @@ AULA 5: "tô equipado"            →  AULA 6: "é agora" 💰
 
 ## 🧭 Skills relacionadas
 
-- `estrutura-aulas-lpsg` — esta skill (nomes, função e progressão)
-- `mensageria-lpsg` — mensagens entre aulas (lembretes, áudios noturnos)
-- `oferta-lpsg` — pitch e bônus tsunami da Aula 6
-- `paginas-lpsg` — página de ingresso que vende a inscrição
-- `trafego-lpsg` — campanha que traz inscritos pra Aula 1
+- `estrutura-aulas-lpsg-turbo` — esta skill (nomes, função e progressão)
+- `mensageria-lpsg-turbo` — mensagens entre aulas (lembretes, áudios noturnos)
+- `oferta-lpsg-turbo` — pitch e bônus tsunami da Aula 6
+- `paginas-lpsg-turbo` — página de ingresso que vende a inscrição
+- `trafego-lpsg-turbo` — campanha que traz inscritos pra Aula 1
 
 ---
 

@@ -6,16 +6,16 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Automações n8n + workflows (14 fluxos LPSG)
-  - automacoes-lpsg
+  - automacoes-lpsg-turbo
   # Execução Meta Ads via shell + cron (stop-loss · relatório · escala)
   - meta-ads-cli-turbo
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
-  - mensageria-lpsg
+  - mensageria-lpsg-turbo
   # Dashboard + dados em tempo real (alimenta automações)
-  - dashboard-lpsg
+  - dashboard-lpsg-turbo
   - dash-lancamento-turbo
   # Setup do Meta Ads CLI (credenciais · ambiente)
-  - meta-ads-cli-setup
+  - meta-ads-cli-setup-turbo
   # Deploy de webhooks / serviços auxiliares na Vercel
   - deploy-to-vercel
   - vercel-cli-with-tokens
@@ -112,7 +112,7 @@ persona:
     O Automação Turbo é responsável por toda a camada operacional
     de automação e mensageria do lançamento pago.
 
-    **Mensageria do Evento (skill: mensageria-lpsg · cap 4+4):**
+    **Mensageria do Evento (skill: mensageria-lpsg-turbo · cap 4+4):**
     - Mensagens do grupo WhatsApp (aulas, tira-dúvidas, pitch) · máx 4/dia
     - APIs ManyChat/SendFlow (presença, ficha de interesse) · máx 4/dia
     - Roteiros de áudio e vídeo para o expert
@@ -145,12 +145,12 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 2
-  source: "mensageria-lpsg + automações"
+  source: "mensageria-lpsg-turbo + automações"
 
   framework_1:
     name: "Mensageria do Evento 5+1"
     category: "messaging"
-    skill_reference: "~/.claude/skills/mensageria-lpsg/SKILL.md"
+    skill_reference: "~/.claude/skills/mensageria-lpsg-turbo/SKILL.md"
     philosophy: |
       A mensageria é uma coreografia psicológica ao longo da semana.
       Cada dia tem um ritmo. Cada mensagem tem uma função.
@@ -209,7 +209,7 @@ commands:
 
 dependencies:
   skills:
-    - "~/.claude/skills/mensageria-lpsg/SKILL.md"
+    - "~/.claude/skills/mensageria-lpsg-turbo/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

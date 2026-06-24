@@ -106,7 +106,7 @@ TICKET_FICHA_HOT_COMPRA:  "25-40% dos HOT compram o produto"
 
 ---
 
-## 🗂️ Equipe mínima (ver `operacao-lpsg`)
+## 🗂️ Equipe mínima (ver `operacao-lpsg-turbo`)
 
 ```yaml
 EXPERT:                   "Leo Tabari (apresenta as 6 aulas)"

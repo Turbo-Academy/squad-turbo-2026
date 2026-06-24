@@ -204,11 +204,11 @@ Botão:     Enviar
 
 | Estrutura | Conexão |
 |---|---|
-| `mensageria-lpsg` | FASE 3 dispara mensagens diferentes por tier após submit |
-| `automacoes-lpsg` | n8n recebe webhook · escreve em Sheets · adiciona tag no ManyChat · dispara CAPI custom event |
-| `oferta-lpsg` | R$ 25 mil bate com ticket do Acelerador · oferta valida ROI prometido |
-| `dashboard-lpsg` | Módulo "Ficha" mostra: total submetidas · distribuição por tier · taxa de conversão Q9 → compra |
-| `operacao-lpsg` | SDR/Closer recebem fila HOT priorizada |
+| `mensageria-lpsg-turbo` | FASE 3 dispara mensagens diferentes por tier após submit |
+| `automacoes-lpsg-turbo` | n8n recebe webhook · escreve em Sheets · adiciona tag no ManyChat · dispara CAPI custom event |
+| `oferta-lpsg-turbo` | R$ 25 mil bate com ticket do Acelerador · oferta valida ROI prometido |
+| `dashboard-lpsg-turbo` | Módulo "Ficha" mostra: total submetidas · distribuição por tier · taxa de conversão Q9 → compra |
+| `operacao-lpsg-turbo` | SDR/Closer recebem fila HOT priorizada |
 
 ---
 

@@ -1362,7 +1362,7 @@ export function Button({ href, children, size = "md", className }: Props) {
 
 ### `GuaranteeBadge.tsx`
 
-> **Nota:** este componente usa o **texto curto da garantia da página de ingresso** (R$ 62 · evento). Para a **página de venda do produto principal** (high-ticket), use a dupla garantia definida em [`oferta-lpsg/04-garantia-e-recuperacao.md`](../../oferta/template/04-garantia-e-recuperacao.md) — texto: *"🛡️ Garantia Incondicional de 7 dias + Condicional de 30 dias. Assista! Se não gostar devolvo seu dinheiro."*
+> **Nota:** este componente usa o **texto curto da garantia da página de ingresso** (R$ 62 · evento). Para a **página de venda do produto principal** (high-ticket), use a dupla garantia definida em [`oferta-lpsg-turbo/04-garantia-e-recuperacao.md`](../../oferta/template/04-garantia-e-recuperacao.md) — texto: *"🛡️ Garantia Incondicional de 7 dias + Condicional de 30 dias. Assista! Se não gostar devolvo seu dinheiro."*
 
 ```tsx
 // src/components/ui/GuaranteeBadge.tsx
@@ -2182,7 +2182,7 @@ export default function sitemap() {
 | **Trimestral** | Rever benchmarks · atualizar dependências (security patches) |
 # 06 · Modos de Output (Implementa Aqui · Brief para Claude Design)
 
-> A skill `paginas-lpsg` suporta **2 modos de saída**. Pergunte ao usuário qual usar antes de gerar.
+> A skill `paginas-lpsg-turbo` suporta **2 modos de saída**. Pergunte ao usuário qual usar antes de gerar.
 
 ---
 
@@ -2202,8 +2202,8 @@ export default function sitemap() {
 ### Fluxo
 
 ```
-1. paginas-lpsg coleta contexto (variáveis preenchidas)
-2. paginas-lpsg invoca designer-senior OU frontend-design OU lovable-style-turbo
+1. paginas-lpsg-turbo coleta contexto (variáveis preenchidas)
+2. paginas-lpsg-turbo invoca designer-senior-turbo OU frontend-design OU lovable-style-turbo
 3. Code do projeto Next.js + Tailwind é gerado nos 9 blocos
 4. Claude Preview (mcp__Claude_Preview__) roda dev server localmente
 5. preview_screenshot mostra resultado em tempo real
@@ -2215,7 +2215,7 @@ export default function sitemap() {
 
 | Necessidade | Skill |
 |---|---|
-| Identidade visual + design system | `designer-senior` |
+| Identidade visual + design system | `designer-senior-turbo` |
 | Frontend production-grade evitando estética genérica | `frontend-design` |
 | Stack Vite + React + Tailwind + shadcn (alternativa) | `lovable-style-turbo` |
 | Tokens de cor / tipografia / espaço | `design-tokens-turbo` |
@@ -2231,7 +2231,7 @@ export default function sitemap() {
 3. Ler 03-componentes-mobile-first.md
 4. Para CADA bloco (TopBar, Hero, Pain, NotYourFault, Authority,
    Promises, Lessons, Testimonials, FinalCTA):
-   - Invocar designer-senior OU frontend-design com:
+   - Invocar designer-senior-turbo OU frontend-design com:
      - Variáveis da variação atual (cor, headline, sub, dor, CTA)
      - Estrutura do bloco
      - Tokens (cores, fontes, breakpoints)
@@ -2268,12 +2268,12 @@ export default function sitemap() {
 ### Fluxo
 
 ```
-1. paginas-lpsg coleta contexto (variáveis preenchidas)
-2. paginas-lpsg gera UM brief estruturado pronto pra colar
+1. paginas-lpsg-turbo coleta contexto (variáveis preenchidas)
+2. paginas-lpsg-turbo gera UM brief estruturado pronto pra colar
 3. Usuário cola no Claude Design (claude.ai web)
 4. Claude Design produz o código React/HTML
 5. Usuário traz o código de volta pra Claude Code
-6. paginas-lpsg ajusta:
+6. paginas-lpsg-turbo ajusta:
    - Variáveis dinâmicas (data/checkout/UTMs)
    - Conexão com data/variations.ts
    - Tracking (Pixel/GTM/GA4)
@@ -2327,7 +2327,7 @@ Ver `07-brief-claude-design.md` — template completo.
                           │ Resultado:      │  │ Claude Design,      │
                           │ projeto pronto  │  │ traz código de volta│
                           │                 │  │                     │
-                          │                 │  │ paginas-lpsg ajusta │
+                          │                 │  │ paginas-lpsg-turbo ajusta │
                           │                 │  │ + faz deploy        │
                           └─────────────────┘  └─────────────────────┘
 ```
@@ -2340,7 +2340,7 @@ Ver `07-brief-claude-design.md` — template completo.
 
 > "Qual modo de output você quer pra essa página?
 >
-> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Vercel. Zero atrito.
+> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior-turbo`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Vercel. Zero atrito.
 >
 > 🟡 **B — Brief pra Claude Design:** eu gero um prompt estruturado pronto pra colar no Claude Design. Você gera o design lá, traz o código de volta, e eu finalizo aqui (variáveis dinâmicas, tracking, deploy).
 >
@@ -2355,7 +2355,7 @@ Ver `07-brief-claude-design.md` — template completo.
 ### Modo A — Implementa Aqui
 - [ ] Variáveis globais preenchidas
 - [ ] Pelo menos 1 imagem do expert no `public/images/`
-- [ ] Skills disponíveis: `designer-senior` ou `frontend-design`
+- [ ] Skills disponíveis: `designer-senior-turbo` ou `frontend-design`
 - [ ] Claude Preview habilitado (`mcp__Claude_Preview__`)
 - [ ] Tracking IDs prontos (Pixel + GTM)
 - [ ] Domínio + Vercel configurados (ou em config)
@@ -2666,10 +2666,10 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 ┌─────────────────────────────────────────────────────────────┐
 │ AQUI no Claude Code                                         │
 │                                                             │
-│ paginas-lpsg coleta variáveis                               │
+│ paginas-lpsg-turbo coleta variáveis                               │
 │           │                                                 │
 │           ▼                                                 │
-│ paginas-lpsg gera BRIEF estruturado (este arquivo)          │
+│ paginas-lpsg-turbo gera BRIEF estruturado (este arquivo)          │
 │           │                                                 │
 │           ▼                                                 │
 │ Você COPIA o brief                                          │
@@ -2695,7 +2695,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 ┌─────────────────────────────────────────────────────────────┐
 │ DE VOLTA no Claude Code                                     │
 │                                                             │
-│ paginas-lpsg recebe código                                  │
+│ paginas-lpsg-turbo recebe código                                  │
 │           │                                                 │
 │           ▼                                                 │
 │ Roda checklist de retorno (acima)                           │

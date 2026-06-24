@@ -287,6 +287,6 @@ v5_outlier_manifesto:
 ---
 
 **Última atualização:** 2026-04-28
-**Stack Picasso ativa:** `frontend-design` (Anthropic) · `impeccable` (Paul Bakaus) · `design-motion-principles` (Kyle Zantos) · auditor `picasso-auditor-lpsg`
+**Stack Picasso ativa:** `frontend-design` (Anthropic) · `impeccable` (Paul Bakaus) · `design-motion-principles` (Kyle Zantos) · auditor `picasso-auditor-turbo`
 
 **Próximo passo:** quando V1 (Editorial) ou qualquer das 5 variações estiver implementada em Next.js real · re-rodar `$impeccable document` para capturar tokens reais (`tailwind.config.ts`, CSS variables, `next/font` configs).

@@ -22,21 +22,21 @@ DST="$(cd "$(dirname "$0")" && pwd)"
 
 SKILLS=(
   # 10 fases LPSG
-  estrutura-aulas-lpsg mensageria-lpsg oferta-lpsg criativos-lpsg paginas-lpsg
-  trafego-lpsg automacoes-lpsg dashboard-lpsg operacao-lpsg cs-lpsg
+  estrutura-aulas-lpsg-turbo mensageria-lpsg-turbo oferta-lpsg-turbo criativos-lpsg-turbo paginas-lpsg-turbo
+  trafego-lpsg-turbo automacoes-lpsg-turbo dashboard-lpsg-turbo operacao-lpsg-turbo cs-lpsg-turbo
   # orquestração · gates · transversal
-  lpsg-master briefing-aprovacao-turbo protocolo-conversa-turbo manual-final-lpsg
+  lpsg-master-turbo briefing-aprovacao-turbo protocolo-conversa-turbo manual-final-lpsg-turbo
   # Meta Ads
-  meta-ads-cli-setup meta-ads-cli-turbo
+  meta-ads-cli-setup-turbo meta-ads-cli-turbo
   # motores de copy/conteúdo
-  criador-criativos criador-paginas-low-ticket criador-reels criador-vsl
+  criador-criativos-turbo criador-paginas-low-ticket-turbo criador-reels-turbo criador-vsl-turbo
   # visual / build próprios
-  designer-senior design-tokens-turbo lovable-style-turbo gerador-instagram
-  gerador-slides-turbo slides-uipm page-optimizer
+  designer-senior-turbo design-tokens-turbo lovable-style-turbo gerador-instagram-turbo
+  gerador-slides-turbo slides-uipm-turbo page-optimizer-turbo
   # dados / utilitários próprios
-  dash-lancamento-turbo instagram-analise-estrategica transcrever-youtube honor
+  dash-lancamento-turbo instagram-analise-estrategica-turbo transcrever-youtube-turbo honor-turbo
   # método (visão geral) + redirect
-  lancamento-pago-semanal estruturador-evento-turbo
+  lancamento-pago-semanal-turbo estruturador-evento-turbo
 )
 
 novos=0; regen=0; emdia=0

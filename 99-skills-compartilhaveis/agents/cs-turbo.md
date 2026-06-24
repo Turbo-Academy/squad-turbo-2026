@@ -6,15 +6,15 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # CS / pós-venda 90 dias (onboarding, NPS, ascensão)
-  - cs-lpsg
+  - cs-lpsg-turbo
   # Método de referência
-  - lancamento-pago-semanal
+  - lancamento-pago-semanal-turbo
   # Mensageria pós-venda (boas-vindas, NPS, recuperação)
-  - mensageria-lpsg
+  - mensageria-lpsg-turbo
   # Automações de retenção e ascensão
-  - automacoes-lpsg
+  - automacoes-lpsg-turbo
   # Estudo de caso narrativo (transformar depoimento bruto em prova social estruturada)
-  - criador-paginas-low-ticket
+  - criador-paginas-low-ticket-turbo
 ---
 
 # cs-turbo
@@ -130,12 +130,12 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 4
-  source: "cs-lpsg (fonte primária — detalhe completo nas references da skill)"
+  source: "cs-lpsg-turbo (fonte primária — detalhe completo nas references da skill)"
 
   framework_1:
     name: "Onboarding D0-D7 (6 mensagens · marco: primeira vitória em 7 dias)"
     category: "onboarding"
-    skill_reference: "~/.claude/skills/cs-lpsg/SKILL.md"
+    skill_reference: "~/.claude/skills/cs-lpsg-turbo/SKILL.md"
     philosophy: |
       Aluno que não tem uma vitória nos primeiros 7 dias é candidato a
       reembolso (a garantia incondicional de 7 dias do método torna isso
@@ -153,7 +153,7 @@ operational_frameworks:
   framework_2:
     name: "Cronograma 90 dias (6 marcos) + 4 rituais semanais"
     category: "retention"
-    skill_reference: "~/.claude/skills/cs-lpsg/SKILL.md"
+    skill_reference: "~/.claude/skills/cs-lpsg-turbo/SKILL.md"
     marcos: |
       D7 primeira vitória → D14 rotina instalada → D30 primeiro resultado
       mensurável → D45 pesquisa de momento → D60 caso de sucesso candidato
@@ -176,7 +176,7 @@ operational_frameworks:
     pipeline:
       gatilho: "NPS 9-10 · vitória celebrada no grupo · marco D30/D60 batido"
       coleta_4_perguntas: "1) Como estava antes? (dor literal) · 2) O que mudou? (número+prazo) · 3) O que diria pra quem tá em dúvida? · 4) Topa gravar 30s? (vídeo > texto)"
-      enriquecimento: "Completar a anatomia do estudo de caso: nome · idade · profissão · contexto vulnerável · obstáculos · partida · processo · resultado (ver criador-paginas-low-ticket/references/estudo-de-caso-narrativo.md)"
+      enriquecimento: "Completar a anatomia do estudo de caso: nome · idade · profissão · contexto vulnerável · obstáculos · partida · processo · resultado (ver criador-paginas-low-ticket-turbo/references/estudo-de-caso-narrativo.md)"
       autorizacao: "Por escrito · específica (onde a prova pode aparecer: página? ad? aula?)"
       entrega: "@copywriter-turbo recebe o caso pronto → vira Bloco 10 da página, criativo de quebra de objeção, ou caso da Aula 4 da próxima edição"
     trava: "Prova sem autorização escrita NÃO sai do CS. Número sem print/doc NÃO vira claim."

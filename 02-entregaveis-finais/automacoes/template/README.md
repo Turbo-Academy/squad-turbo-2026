@@ -65,18 +65,18 @@ Ativar o `99-health-check` antes de qualquer outro workflow.
 
 ## 🧭 Skills relacionadas
 
-- `automacoes-lpsg` — esta skill (constrói automações)
-- `mensageria-lpsg` — define os textos (templates Utility/Marketing)
-- `oferta-lpsg` — define horários do tsunami que viram crons
-- `dashboard-lpsg` — consome dados gravados pelas automações
-- `criativos-lpsg` — UTM dos criativos vai pro Sheets via CAPI
+- `automacoes-lpsg-turbo` — esta skill (constrói automações)
+- `mensageria-lpsg-turbo` — define os textos (templates Utility/Marketing)
+- `oferta-lpsg-turbo` — define horários do tsunami que viram crons
+- `dashboard-lpsg-turbo` — consome dados gravados pelas automações
+- `criativos-lpsg-turbo` — UTM dos criativos vai pro Sheets via CAPI
 
 ---
 
 ## 📦 Output esperado
 
 ```
-automacoes-lpsg/
+automacoes-lpsg-turbo/
 ├── n8n-workflows/                     13 workflows JSON
 ├── manychat-flows/                    Backups exportados
 ├── docs/                              7 .md (este template)

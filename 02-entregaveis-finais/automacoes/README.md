@@ -1,7 +1,7 @@
 # Automações — LPSG
 
 > Automação de todo o ciclo do lançamento pago semanal · n8n + ManyChat + integrações.
-> Skill: **`automacoes-lpsg`**.
+> Skill: **`automacoes-lpsg-turbo`**.
 
 ---
 
@@ -107,12 +107,12 @@ TEMPO_RECUPERACAO:        ≤ 30 min     # alerta até resolução
 
 ## 🧭 Skills relacionadas
 
-- `automacoes-lpsg` — esta skill
-- `mensageria-lpsg` — define textos das mensagens (Utility/Marketing)
-- `oferta-lpsg` — define horários do tsunami (viram crons)
-- `dashboard-lpsg` — consome dados gravados pelas automações
-- `criativos-lpsg` — UTM dos criativos passa via CAPI
-- `paginas-lpsg` — disparam Pixel + CAPI
+- `automacoes-lpsg-turbo` — esta skill
+- `mensageria-lpsg-turbo` — define textos das mensagens (Utility/Marketing)
+- `oferta-lpsg-turbo` — define horários do tsunami (viram crons)
+- `dashboard-lpsg-turbo` — consome dados gravados pelas automações
+- `criativos-lpsg-turbo` — UTM dos criativos passa via CAPI
+- `paginas-lpsg-turbo` — disparam Pixel + CAPI
 
 ---
 

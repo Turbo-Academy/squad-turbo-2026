@@ -211,8 +211,8 @@ Receita TOTAL com CS:                 R$ 3.55M  (+42% vs sem CS)
 
 | Estrutura | Como |
 |---|---|
-| `oferta-lpsg` | Estrutura da escada de produtos · ticket dos níveis |
-| `mensageria-lpsg` | Disparos de ascensão e indicação |
-| `automacoes-lpsg` | Tracking de link de indicação · Hotmart webhook · Sheets |
-| `paginas-lpsg` | Página específica `/proximo-nivel` pra ascensão |
-| `dashboard-lpsg` | KPIs de ascensão e indicação no Módulo 12 (CS) |
+| `oferta-lpsg-turbo` | Estrutura da escada de produtos · ticket dos níveis |
+| `mensageria-lpsg-turbo` | Disparos de ascensão e indicação |
+| `automacoes-lpsg-turbo` | Tracking de link de indicação · Hotmart webhook · Sheets |
+| `paginas-lpsg-turbo` | Página específica `/proximo-nivel` pra ascensão |
+| `dashboard-lpsg-turbo` | KPIs de ascensão e indicação no Módulo 12 (CS) |

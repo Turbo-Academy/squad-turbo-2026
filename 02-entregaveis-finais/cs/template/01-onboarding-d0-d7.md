@@ -118,7 +118,7 @@ Aluno que falha em **2+ itens até D7** entra em **fila vermelha** — CS Oficia
 
 | Estrutura | Como |
 |---|---|
-| `mensageria-lpsg` | Templates Utility da Meta usados nas mensagens 1, 2, 3, 6 |
-| `automacoes-lpsg` | Webhook Hotmart compra Acelerador → dispara onboarding |
-| `operacao-lpsg` | Papel "CS Oficial" definido no RACI |
-| `dashboard-lpsg` | Módulo CS (ver `06-kpis-e-dashboard.md`) |
+| `mensageria-lpsg-turbo` | Templates Utility da Meta usados nas mensagens 1, 2, 3, 6 |
+| `automacoes-lpsg-turbo` | Webhook Hotmart compra Acelerador → dispara onboarding |
+| `operacao-lpsg-turbo` | Papel "CS Oficial" definido no RACI |
+| `dashboard-lpsg-turbo` | Módulo CS (ver `06-kpis-e-dashboard.md`) |

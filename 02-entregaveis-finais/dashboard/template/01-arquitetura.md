@@ -52,7 +52,7 @@ Standalone:   Build script gera HTML único (~250 KB · sem dependências)
 ## 🏗️ Estrutura de pastas
 
 ```
-dashboard-lpsg/
+dashboard-lpsg-turbo/
 ├── public/
 │   ├── images/expert.webp
 │   └── og-image.jpg
@@ -162,7 +162,7 @@ Build script (pnpm build:standalone)
     ↓
 Inline tudo: HTML + CSS + JS + dados mock
     ↓
-Arquivo único: dashboard-lpsg.html (~250 KB)
+Arquivo único: dashboard-lpsg-turbo.html (~250 KB)
     ↓
 Aluno duplo-clica · funciona offline
     ↓
@@ -178,7 +178,7 @@ Importação manual de XLSX (sheetjs)
 
 **Setup:**
 1. `pnpm build:standalone` (no projeto SaaS)
-2. Distribui o `dashboard-lpsg.html`
+2. Distribui o `dashboard-lpsg-turbo.html`
 3. Aluno abre · importa planilha · pronto
 
 > **Compatibilidade com v1:** o HTML standalone aceita o **mesmo formato XLSX** da v1 (planilha "Dados dos Eventos"). Aluno que já tem planilha não precisa migrar.

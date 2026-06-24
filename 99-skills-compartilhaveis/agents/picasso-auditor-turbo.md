@@ -1,5 +1,5 @@
 ---
-name: picasso-auditor-lpsg
+name: picasso-auditor-turbo
 description: Auditor de design obsessivo que entra em ação AUTOMATICAMENTE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces visuais. Usa a stack "Claude Code Picasso" (3 skills) para identificar e eliminar marcas de design genérico de IA, garantindo que o resultado final tenha personalidade, intenção e coerência visual. Trigger words: página criada, componente novo, layout, UI, landing page, criativo, design, mockup, frontend, hero section, dashboard.
 model: sonnet
 tools: Read, Write, Edit, Glob, Grep, Bash
@@ -221,8 +221,8 @@ Audita motion design via 3 lentes:
 ## Integração com squad LPSG
 
 Esta skill se complementa com:
-- **`paginas-lpsg`** — gera as 5 variações com arquétipos premium · Picasso audita cada arquétipo
-- **`criativos-lpsg`** — gera bateladas de 15 criativos · Picasso valida que não viraram "ad polido"
+- **`paginas-lpsg-turbo`** — gera as 5 variações com arquétipos premium · Picasso audita cada arquétipo
+- **`criativos-lpsg-turbo`** — gera bateladas de 15 criativos · Picasso valida que não viraram "ad polido"
 - **`@diretor-criativo-turbo`** — autoridade visual humana · Picasso é a primeira camada técnica
 - **`@designer-turbo`** — executor · Picasso revisa antes do entregável final
 

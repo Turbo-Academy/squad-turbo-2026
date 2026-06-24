@@ -23,9 +23,9 @@
 | `vercel-react-best-practices` | Vercel | designer | Performance React/Next |
 | `vercel-react-view-transitions` | Vercel | designer | Transições de página |
 | `vercel-react-native-skills` | Vercel | — (sob demanda) | RN/Expo · NÃO carregada (LPSG é web) · disponível em `~/.claude/skills/` se surgir projeto mobile |
-| `instagram-analise-estrategica` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
-| `meta-ads-cli-setup` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
-| `operacao-lpsg` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
+| `instagram-analise-estrategica-turbo` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
+| `meta-ads-cli-setup-turbo` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
+| `operacao-lpsg-turbo` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
 
 ---
 
@@ -36,13 +36,13 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre · 1ª coisa a carregar |
-| `lpsg-master` | Primária | Quando o Léo digitar `@lpsg-master crie meu LPSG` com YAML · executor automático das 10 fases |
-| `lancamento-pago-semanal` | Primária | Método-base · referência conceitual constante |
+| `lpsg-master-turbo` | Primária | Quando o Léo digitar `@lpsg-master-turbo crie meu LPSG` com YAML · executor automático das 10 fases |
+| `lancamento-pago-semanal-turbo` | Primária | Método-base · referência conceitual constante |
 | `estruturador-evento-turbo` | Primária | Diagnóstico inicial · escolher entre 5+1 e Workshop |
 | `briefing-aprovacao-turbo` | Primária | Gate de aprovação antes de qualquer fase rodar |
-| `manual-final-lpsg` | Primária | No final do projeto · gera manual HTML personalizado |
-| `honor` | Complementar | Quando o projeto exige estratégia de marca antes do funil |
-| `criador-paginas-low-ticket` | Complementar | Pra orientar copywriter no caminho de página low-ticket |
+| `manual-final-lpsg-turbo` | Primária | No final do projeto · gera manual HTML personalizado |
+| `honor-turbo` | Complementar | Quando o projeto exige estratégia de marca antes do funil |
+| `criador-paginas-low-ticket-turbo` | Complementar | Pra orientar copywriter no caminho de página low-ticket |
 | `dash-lancamento-turbo` | Complementar | Quando precisar acompanhar lançamento ao vivo |
 | `find-skills` | Utilitário | Quando faltar capacidade no squad |
 
@@ -57,18 +57,18 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `lancamento-pago-semanal` | Primária | Referência de método |
+| `lancamento-pago-semanal-turbo` | Primária | Referência de método |
 | `estruturador-evento-turbo` | Primária | Quando montar escada de crenças do evento |
-| `estrutura-aulas-lpsg` | Primária | Roteirizar Aulas 1-6 do 5+1 |
+| `estrutura-aulas-lpsg-turbo` | Primária | Roteirizar Aulas 1-6 do 5+1 |
 | `briefing-aprovacao-turbo` | Primária | Antes de escrever qualquer copy · consome 00-fundacao + 02-mercado |
-| `paginas-lpsg` | Primária | Páginas premium (V1-V5) · usar `references/10-anatomia-14-blocos.md` pra operacional |
-| `criador-paginas-low-ticket` | Primária | Páginas low-ticket · `references/estudo-de-caso-narrativo.md` obrigatório pra prova social |
-| `oferta-lpsg` | Primária | Stack de valor · ancoragem · bônus tsunami · pitch |
-| `criativos-lpsg` | Primária | Briefing de criativos · usar `references/12-6-pilares-criativos.md` + `13-8-ctas-avulsas.md` |
-| `criador-criativos` | Primária | Anatomia hook+body+CTA · ângulos avançados |
-| `criador-vsl` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta · fluxo de entrega (gate @revisor-copy-turbo → .docx de trabalho + .docx teleprompter) |
-| `criador-reels` | Complementar | Quando o pedido for roteiro orgânico de Reel |
-| `mensageria-lpsg` | Primária | Toda copy de WhatsApp/grupo/email do evento |
+| `paginas-lpsg-turbo` | Primária | Páginas premium (V1-V5) · usar `references/10-anatomia-14-blocos.md` pra operacional |
+| `criador-paginas-low-ticket-turbo` | Primária | Páginas low-ticket · `references/estudo-de-caso-narrativo.md` obrigatório pra prova social |
+| `oferta-lpsg-turbo` | Primária | Stack de valor · ancoragem · bônus tsunami · pitch |
+| `criativos-lpsg-turbo` | Primária | Briefing de criativos · usar `references/12-6-pilares-criativos.md` + `13-8-ctas-avulsas.md` |
+| `criador-criativos-turbo` | Primária | Anatomia hook+body+CTA · ângulos avançados |
+| `criador-vsl-turbo` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta · fluxo de entrega (gate @revisor-copy-turbo → .docx de trabalho + .docx teleprompter) |
+| `criador-reels-turbo` | Complementar | Quando o pedido for roteiro orgânico de Reel |
+| `mensageria-lpsg-turbo` | Primária | Toda copy de WhatsApp/grupo/email do evento |
 
 **Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta = pré-pitch único 100% produto · sexta = conclusão técnica + lembrete da ficha, NÃO é repitch · domingo = pitch completo).
 
@@ -84,12 +84,12 @@
 | `brand` · `design` · `design-system` · `design-tokens-turbo` | Primária | Brandbook · identidade · tokens |
 | `ui-ux-pro-max` · `web-design-guidelines` | Primária | Heurísticas e princípios de UI |
 | `frontend-design` · `impeccable` · `design-motion-principles` | Primária | Stack Picasso anti-IA visual |
-| `paginas-lpsg` | Primária | Páginas premium V1-V5 · arquétipos visuais |
-| `designer-senior` · `lovable-style-turbo` · `ui-styling` | Primária | Stacks de execução pra briefar designer |
-| `page-optimizer` | Complementar | Após aprovação · Core Web Vitals |
-| `criativos-lpsg` | Primária | Direção de criativos · 6 pilares de mensagem |
-| `banner-design` · `gerador-instagram` | Primária | Quando precisa direção de banner ou story/carrossel |
-| `gerador-slides-turbo` · `slides-uipm` | Primária | Direção de slides de aula |
+| `paginas-lpsg-turbo` | Primária | Páginas premium V1-V5 · arquétipos visuais |
+| `designer-senior-turbo` · `lovable-style-turbo` · `ui-styling` | Primária | Stacks de execução pra briefar designer |
+| `page-optimizer-turbo` | Complementar | Após aprovação · Core Web Vitals |
+| `criativos-lpsg-turbo` | Primária | Direção de criativos · 6 pilares de mensagem |
+| `banner-design` · `gerador-instagram-turbo` | Primária | Quando precisa direção de banner ou story/carrossel |
+| `gerador-slides-turbo` · `slides-uipm-turbo` | Primária | Direção de slides de aula |
 
 **Princípio:** define paleta · tipografia · composição · referências visuais. NÃO toca em código.
 
@@ -102,11 +102,11 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `designer-senior` · `frontend-design` · `lovable-style-turbo` · `ui-styling` | Primária | Execução de páginas HTML/React |
+| `designer-senior-turbo` · `frontend-design` · `lovable-style-turbo` · `ui-styling` | Primária | Execução de páginas HTML/React |
 | `brand` · `design` · `design-system` · `design-tokens-turbo` | Primária | Aplicar tokens do diretor |
 | `ui-ux-pro-max` | Primária | Componentes prontos |
-| `banner-design` · `gerador-instagram` | Primária | Execução de criativos estáticos |
-| `gerador-slides-turbo` · `slides-uipm` · `pptx` | Primária | Execução de slides |
+| `banner-design` · `gerador-instagram-turbo` | Primária | Execução de criativos estáticos |
+| `gerador-slides-turbo` · `slides-uipm-turbo` · `pptx` | Primária | Execução de slides |
 
 **Princípio:** NÃO define direção · NÃO lê `00-fundacao/`. Recebe brief com paleta · tipografia · composição · copy e executa.
 
@@ -119,15 +119,15 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `trafego-lpsg` | Primária | Estrutura de campanha · ASC · análise |
-| `lancamento-pago-semanal` | Primária | Método-base |
-| `meta-ads-cli-setup` | Primária | Onboarding seguro da Ads CLI · zero → 1ª chamada funcional · pré-requisito da turbo |
+| `trafego-lpsg-turbo` | Primária | Estrutura de campanha · ASC · análise |
+| `lancamento-pago-semanal-turbo` | Primária | Método-base |
+| `meta-ads-cli-setup-turbo` | Primária | Onboarding seguro da Ads CLI · zero → 1ª chamada funcional · pré-requisito da turbo |
 | `meta-ads-cli-turbo` | Primária | Automação shell + cron · batelada · stop-loss · só após setup concluído |
-| `criativos-lpsg` | Primária | Entender o que sobe na ASC · usar 6 pilares |
-| `criador-criativos` | Primária | Diagnóstico de criativo (hook rate · body rate) |
-| `paginas-lpsg` | Primária | Destino dos ads · LCP < 1.5s |
-| `page-optimizer` | Primária | Quando página tá lenta |
-| `dashboard-lpsg` · `dash-lancamento-turbo` | Primária | Acompanhamento ao vivo |
+| `criativos-lpsg-turbo` | Primária | Entender o que sobe na ASC · usar 6 pilares |
+| `criador-criativos-turbo` | Primária | Diagnóstico de criativo (hook rate · body rate) |
+| `paginas-lpsg-turbo` | Primária | Destino dos ads · LCP < 1.5s |
+| `page-optimizer-turbo` | Primária | Quando página tá lenta |
+| `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Acompanhamento ao vivo |
 
 ---
 
@@ -138,12 +138,12 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `criador-reels` | Primária | Roteiros de Reels/TikTok/Shorts |
-| `criador-criativos` | Primária | Hooks orgânicos · ângulos |
-| `criativos-lpsg` | Complementar | Aplicar **6 pilares** ao orgânico (desejo · promessa · problema · descoberta · objeção · urgência adaptada pro orgânico) |
-| `gerador-instagram` | Primária | Posts estáticos · carrosséis · stories |
-| `transcrever-youtube` | Complementar | Pesquisar lives/podcasts dos concorrentes |
-| `mensageria-lpsg` | Complementar | DM ManyChat · WhatsApp orgânico |
+| `criador-reels-turbo` | Primária | Roteiros de Reels/TikTok/Shorts |
+| `criador-criativos-turbo` | Primária | Hooks orgânicos · ângulos |
+| `criativos-lpsg-turbo` | Complementar | Aplicar **6 pilares** ao orgânico (desejo · promessa · problema · descoberta · objeção · urgência adaptada pro orgânico) |
+| `gerador-instagram-turbo` | Primária | Posts estáticos · carrosséis · stories |
+| `transcrever-youtube-turbo` | Complementar | Pesquisar lives/podcasts dos concorrentes |
+| `mensageria-lpsg-turbo` | Complementar | DM ManyChat · WhatsApp orgânico |
 
 ---
 
@@ -154,11 +154,11 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `automacoes-lpsg` | Primária | 14 workflows n8n base · webhook Hotmart · CAPI server-side |
-| `meta-ads-cli-setup` | Primária | Onboarding seguro da Ads CLI · pré-req antes de qualquer script/cron de Meta Ads |
+| `automacoes-lpsg-turbo` | Primária | 14 workflows n8n base · webhook Hotmart · CAPI server-side |
+| `meta-ads-cli-setup-turbo` | Primária | Onboarding seguro da Ads CLI · pré-req antes de qualquer script/cron de Meta Ads |
 | `meta-ads-cli-turbo` | Primária | Automação Meta Ads via shell + cron · só após setup concluído |
-| `mensageria-lpsg` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
-| `dashboard-lpsg` · `dash-lancamento-turbo` | Primária | Dados em tempo real que alimentam automações |
+| `mensageria-lpsg-turbo` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
+| `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Dados em tempo real que alimentam automações |
 
 ---
 
@@ -169,11 +169,11 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `cs-lpsg` | Primária | Onboarding 90d · NPS · ascensão · retenção · churn |
-| `lancamento-pago-semanal` | Primária | Método-base |
-| `mensageria-lpsg` | Primária | Boas-vindas · NPS · recuperação · indicação |
-| `automacoes-lpsg` | Primária | Fluxos automatizados de retenção/ascensão |
-| `criador-paginas-low-ticket` | Complementar | **`references/estudo-de-caso-narrativo.md`** · transformar depoimento bruto em prova social estruturada |
+| `cs-lpsg-turbo` | Primária | Onboarding 90d · NPS · ascensão · retenção · churn |
+| `lancamento-pago-semanal-turbo` | Primária | Método-base |
+| `mensageria-lpsg-turbo` | Primária | Boas-vindas · NPS · recuperação · indicação |
+| `automacoes-lpsg-turbo` | Primária | Fluxos automatizados de retenção/ascensão |
+| `criador-paginas-low-ticket-turbo` | Complementar | **`references/estudo-de-caso-narrativo.md`** · transformar depoimento bruto em prova social estruturada |
 
 **Princípio:** captura depoimento bruto → transforma em estudo de caso narrativo → envia pro `@copywriter-turbo` usar em página/criativo/pitch.
 
@@ -186,8 +186,8 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `lancamento-pago-semanal` | Primária | Saber que 6 dossiês importam |
-| `transcrever-youtube` | Primária | Extrair material bruto de aulas/lives/podcasts do Léo |
+| `lancamento-pago-semanal-turbo` | Primária | Saber que 6 dossiês importam |
+| `transcrever-youtube-turbo` | Primária | Extrair material bruto de aulas/lives/podcasts do Léo |
 | `briefing-aprovacao-turbo` | Primária | Após consolidação · ajuda a gerar briefing |
 | `find-skills` | Utilitário | Quando faltar capacidade |
 
@@ -202,14 +202,14 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `criador-criativos` | Primária | Analisar criativos da concorrência (Meta Ad Library) |
-| `criativos-lpsg` | Primária | Saber **6 pilares** · catalogar criativo do concorrente por pilar |
-| `transcrever-youtube` | Primária | Lives, podcasts, YouTube dos concorrentes |
-| `paginas-lpsg` | Complementar | Saber **anatomia 14 blocos** · catalogar página do concorrente bloco a bloco |
-| `mensageria-lpsg` | Complementar | Mapear cadência da concorrência |
-| `estrutura-aulas-lpsg` | Complementar | Quando o concorrente roda evento · catalogar a estrutura dele |
-| `oferta-lpsg` | Complementar | Catalogar stack de valor da concorrência |
-| `trafego-lpsg` | Complementar | Estimar volume e abordagem de mídia da concorrência |
+| `criador-criativos-turbo` | Primária | Analisar criativos da concorrência (Meta Ad Library) |
+| `criativos-lpsg-turbo` | Primária | Saber **6 pilares** · catalogar criativo do concorrente por pilar |
+| `transcrever-youtube-turbo` | Primária | Lives, podcasts, YouTube dos concorrentes |
+| `paginas-lpsg-turbo` | Complementar | Saber **anatomia 14 blocos** · catalogar página do concorrente bloco a bloco |
+| `mensageria-lpsg-turbo` | Complementar | Mapear cadência da concorrência |
+| `estrutura-aulas-lpsg-turbo` | Complementar | Quando o concorrente roda evento · catalogar a estrutura dele |
+| `oferta-lpsg-turbo` | Complementar | Catalogar stack de valor da concorrência |
+| `trafego-lpsg-turbo` | Complementar | Estimar volume e abordagem de mídia da concorrência |
 | `briefing-aprovacao-turbo` | Primária | Consolidar pesquisa em briefing pra aprovação do expert |
 | `find-skills` | Utilitário | Quando faltar capacidade |
 
@@ -217,7 +217,7 @@
 
 ---
 
-## 🎭 @picasso-auditor-lpsg · Tier 0 · AUDITOR VISUAL ANTI-IA
+## 🎭 @picasso-auditor-turbo · Tier 0 · AUDITOR VISUAL ANTI-IA
 
 > Entra em ação AUTOMATICAMENTE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces.
 
@@ -238,8 +238,8 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL + núcleo | Rubrica de auditoria (checklist-anti-ia-universal + travas-universais + feedback-cirurgico) |
-| `mensageria-lpsg` | Primária | Checklist anti-IA de mensageria + formatação SendFlow + cap 4+4 |
-| `criador-paginas-low-ticket` | Primária | Regras de copy persuasiva (estudo de caso narrativo · promessa = número+prazo+mecanismo · expert depois do preço) |
+| `mensageria-lpsg-turbo` | Primária | Checklist anti-IA de mensageria + formatação SendFlow + cap 4+4 |
+| `criador-paginas-low-ticket-turbo` | Primária | Regras de copy persuasiva (estudo de caso narrativo · promessa = número+prazo+mecanismo · expert depois do preço) |
 
 **Saída padrão:** veredito (passa/não passa) + cirurgias numeradas + versão corrigida pronta pra colar.
 
@@ -254,10 +254,10 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `oferta-lpsg` | Primária | Recuperação D+1-D+7 · tsunami · dupla garantia (fonte primária) |
-| `mensageria-lpsg` | Primária | Saber o que o lead recebeu em massa (cap 4+4 · D1) |
-| `automacoes-lpsg` | Primária | SLA de checkout iniciado · alertas · fila automatizada |
-| `paginas-lpsg` | Complementar | Ficha de interesse · lead score · tier HOT/WARM/COLD |
+| `oferta-lpsg-turbo` | Primária | Recuperação D+1-D+7 · tsunami · dupla garantia (fonte primária) |
+| `mensageria-lpsg-turbo` | Primária | Saber o que o lead recebeu em massa (cap 4+4 · D1) |
+| `automacoes-lpsg-turbo` | Primária | SLA de checkout iniciado · alertas · fila automatizada |
+| `paginas-lpsg-turbo` | Complementar | Ficha de interesse · lead score · tier HOT/WARM/COLD |
 
 **Entregáveis:** fila priorizada (P1 checkout iniciado · SLA 30 min → P5) · scripts 1:1 por tier · sequência D+1-D+7 · matriz de objeções · relatório de fechamento.
 
@@ -286,7 +286,7 @@
        │     @designer-turbo (execução)
        │           │
        │           ▼
-       │     @picasso-auditor-lpsg (auditoria automática)
+       │     @picasso-auditor-turbo (auditoria automática)
        │
        ├──▶ @trafego-turbo (campanhas)
        │
@@ -336,8 +336,8 @@
 ### 4 · Criativos de tráfego
 ```
 1. @copywriter-turbo lidera (Big Idea · ângulo · hooks · body · CTA)
-2. Distribui 15 criativos nos 6 pilares (criativos-lpsg/references/12)
-3. Adiciona 8 CTAs avulsas (criativos-lpsg/references/13)
+2. Distribui 15 criativos nos 6 pilares (criativos-lpsg-turbo/references/12)
+3. Adiciona 8 CTAs avulsas (criativos-lpsg-turbo/references/13)
 4. @diretor-criativo-turbo briefa direção visual
 5. @designer-turbo executa
 6. @trafego-turbo sobe na ASC
@@ -349,7 +349,7 @@
 2. Aplica regra "depoimento → estudo de caso narrativo"
 3. @diretor-criativo-turbo briefa direção visual
 4. @designer-turbo executa
-5. @picasso-auditor-lpsg audita automaticamente
+5. @picasso-auditor-turbo audita automaticamente
 6. @trafego-turbo aponta criativos pra página
 ```
 

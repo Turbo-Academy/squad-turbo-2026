@@ -259,7 +259,7 @@ schedule.cron("50 23 * * *", async () => {
 
 ---
 
-## 💬 Mensageria por fase (mapeamento · de mensageria-lpsg)
+## 💬 Mensageria por fase (mapeamento · de mensageria-lpsg-turbo)
 
 ### Fase PASSADO (semana W-1)
 

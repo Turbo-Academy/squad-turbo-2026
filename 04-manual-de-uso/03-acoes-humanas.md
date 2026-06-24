@@ -60,14 +60,14 @@
 
 | # | Ação | Tempo | Quando | Skill que ajuda |
 |---|---|---|---|---|
-| 22 | Gravar 5 vídeos de criativo (30s cada) | 3-4h | Dia 1-2 (Fase 2) | `criativos-lpsg` |
-| 23 | Gravar áudio Msg 7 (boas-vindas · 30s) | 15 min | Dia 2-3 (Fase 5) | `mensageria-lpsg` |
+| 22 | Gravar 5 vídeos de criativo (30s cada) | 3-4h | Dia 1-2 (Fase 2) | `criativos-lpsg-turbo` |
+| 23 | Gravar áudio Msg 7 (boas-vindas · 30s) | 15 min | Dia 2-3 (Fase 5) | `mensageria-lpsg-turbo` |
 | 24 | Gravar áudio "Hoje é o dia" (Dom 10h · 45s) | 15 min | Dia 2-3 | — |
 | 25 | Gravar áudio convite tira-dúvidas (Sáb · 30s) | 15 min | Dia 2-3 | — |
 | 26 | Gravar áudio "bônus dos 10 min" (Seg 6h45 · 60s) | 15 min | Dia 2-3 | — |
 | 27 | Gravar slides premium em PPTX | aplicar skill | Dia 5 | `gerador-slides-turbo` |
-| 28 | Gravar 6 aulas do LPSG | 1 dia maratona (8h) | Dia 5 (Fase 3) | `estrutura-aulas-lpsg` |
-| 29 | Gravar vídeo de boas-vindas do CS (90s) | 30 min · só se abrir CS | Pós 1ª edição | `cs-lpsg` |
+| 28 | Gravar 6 aulas do LPSG | 1 dia maratona (8h) | Dia 5 (Fase 3) | `estrutura-aulas-lpsg-turbo` |
+| 29 | Gravar vídeo de boas-vindas do CS (90s) | 30 min · só se abrir CS | Pós 1ª edição | `cs-lpsg-turbo` |
 
 ---
 
@@ -95,7 +95,7 @@
 ### Pós-edição · sexta após carrinho fechar
 
 - [ ] Documentar números reais
-- [ ] Revisar sugestões da skill `trafego-lpsg` (engine análise)
+- [ ] Revisar sugestões da skill `trafego-lpsg-turbo` (engine análise)
 - [ ] Aplicar 1 ação semanal (subir/descer/renovar/duplicar)
 - [ ] Gravar/coletar depoimentos novos da edição
 
@@ -127,7 +127,7 @@
 
 - [ ] CS Oficial responde em ≤ 4h horário comercial
 - [ ] Marca call de 30 min com o aluno
-- [ ] Entende motivo · oferece soluções alternativas (ver `cs-lpsg/08-churn`)
+- [ ] Entende motivo · oferece soluções alternativas (ver `cs-lpsg-turbo/08-churn`)
 - [ ] Se mantém reembolso · processa com agilidade · sem fricção
 - [ ] Pesquisa pós-reembolso (1 pergunta) · alimenta dashboard
 
@@ -138,7 +138,7 @@
 - [ ] SDR/Closer recebe alerta no Notion/Trello
 - [ ] Liga ou manda WhatsApp em ≤ 24h
 - [ ] Agenda call de 45 min
-- [ ] Conduz call seguindo `cs-lpsg/07-ascensao` ou roteiro de venda direta
+- [ ] Conduz call seguindo `cs-lpsg-turbo/07-ascensao` ou roteiro de venda direta
 
 ### Quando criativo morre (fadiga)
 
@@ -178,7 +178,7 @@
 
 ### ManyChat
 - [ ] Conectar WABA
-- [ ] Importar tags (lista do `automacoes-lpsg/08-sistema-de-tags`)
+- [ ] Importar tags (lista do `automacoes-lpsg-turbo/08-sistema-de-tags`)
 - [ ] Aprovar templates Utility (após Meta aprovar)
 - [ ] Configurar fluxos automáticos por tag
 
@@ -228,7 +228,7 @@
 
 | Sinal | O que pode ser | Ação |
 |---|---|---|
-| ROAS < 0.5 por 5+ dias | Avatar errado · oferta cara · página fraca | Pausa campanha · diagnóstico (`lpsg-master/03`) |
+| ROAS < 0.5 por 5+ dias | Avatar errado · oferta cara · página fraca | Pausa campanha · diagnóstico (`lpsg-master-turbo/03`) |
 | 0 vendas premium em 1ª edição | Aulas não amarram com oferta · pitch fraco · ticket errado | Re-grava Aula 6 ou ajusta oferta |
 | 3+ reclamações públicas no grupo | Expectativa não alinhada na venda | Trata pessoalmente · ajusta página |
 | Reembolsos > 8% nos 7 primeiros dias | Página vendendo coisa diferente do que produto entrega | Auditoria de copy + retomada com calls |
@@ -244,7 +244,7 @@
 | **Diária (15 min)** | Verificar dashboard · ver alertas críticos |
 | **Semanal (1h · seg 8h)** | Revisar sugestões da engine · aplicar 1 ação · planejar semana |
 | **Quinzenal (2h)** | Revisar criativos · planejar batelada nova · NPS check |
-| **Mensal (3h)** | Auditoria completa (`lpsg-master/05` checklist) · calibrar targets · planejar próximas 4 edições |
+| **Mensal (3h)** | Auditoria completa (`lpsg-master-turbo/05` checklist) · calibrar targets · planejar próximas 4 edições |
 | **Trimestral (1 dia)** | Revisão estratégica · funil completo · escalada (duplicar campanha · contratar) |
 
 ---

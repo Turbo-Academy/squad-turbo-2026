@@ -45,7 +45,7 @@ src/
 - Validar pull quote com a Marina — frase precisa ser dela, não inventada
 - Trocar checkout fake `pay.hotmart.com/MPR-INGRESSO-FAKE` pelo real
 - OG image editorial (Instrument Serif sobre #0A0A0A · 1200x630)
-- Pixel Meta + GA4 quando integrar com `@trafego-lpsg`
+- Pixel Meta + GA4 quando integrar com `@trafego-lpsg-turbo`
 
 ## Decisões de design tomadas
 
@@ -57,4 +57,4 @@ src/
 
 ## Arquétipo de referência
 
-`/Users/leonardotabari/.claude/skills/paginas-lpsg/references/09-arquetipos-premium.md` — seção "V1 · ARQUÉTIPO EDITORIAL LONGFORM"
+`/Users/leonardotabari/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md` — seção "V1 · ARQUÉTIPO EDITORIAL LONGFORM"

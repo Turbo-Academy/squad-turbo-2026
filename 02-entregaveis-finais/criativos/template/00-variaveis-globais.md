@@ -107,7 +107,7 @@ BATELADA_NOMENCLATURA:    "{SIGLA}_{DDMMYY}_{TIPO}_{NUMERO}"
 
 ---
 
-## 🎯 Métricas-alvo (do trafego-lpsg)
+## 🎯 Métricas-alvo (do trafego-lpsg-turbo)
 
 ```yaml
 HOOK_RATE:                # Views 3s / Impressões (vídeo) · CTR engajamento (estático/carrossel)
@@ -129,7 +129,7 @@ CPM_MAX:                  40              # R$
 
 ---
 
-## 🧠 Avatar e dores (vem de paginas-lpsg + briefing)
+## 🧠 Avatar e dores (vem de paginas-lpsg-turbo + briefing)
 
 ```yaml
 AVATAR_PROFISSAO:         "{PROFISSAO_AVATAR}"

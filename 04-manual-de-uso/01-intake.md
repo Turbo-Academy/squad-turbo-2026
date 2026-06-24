@@ -9,7 +9,7 @@
 > Quando terminar, **manda inteiro pro Claude** com a mensagem:
 >
 > ```
-> @lpsg-master crie meu LPSG.
+> @lpsg-master-turbo crie meu LPSG.
 > Aqui está meu cadastro do projeto:
 > [YAML]
 > ```

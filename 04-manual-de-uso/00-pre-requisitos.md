@@ -117,7 +117,7 @@ Marque o que você já tem:
 **Como fazer:**
 1. Business Manager → Eventos → Criar Pixel
 2. Anota o **Pixel ID** (15-16 dígitos)
-3. Vai usar quando subir as páginas (`paginas-lpsg`)
+3. Vai usar quando subir as páginas (`paginas-lpsg-turbo`)
 
 🚨 **AÇÃO HUMANA · 5 min**
 

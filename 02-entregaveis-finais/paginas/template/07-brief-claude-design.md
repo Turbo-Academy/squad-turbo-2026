@@ -287,10 +287,10 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 ┌─────────────────────────────────────────────────────────────┐
 │ AQUI no Claude Code                                         │
 │                                                             │
-│ paginas-lpsg coleta variáveis                               │
+│ paginas-lpsg-turbo coleta variáveis                               │
 │           │                                                 │
 │           ▼                                                 │
-│ paginas-lpsg gera BRIEF estruturado (este arquivo)          │
+│ paginas-lpsg-turbo gera BRIEF estruturado (este arquivo)          │
 │           │                                                 │
 │           ▼                                                 │
 │ Você COPIA o brief                                          │
@@ -316,7 +316,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 ┌─────────────────────────────────────────────────────────────┐
 │ DE VOLTA no Claude Code                                     │
 │                                                             │
-│ paginas-lpsg recebe código                                  │
+│ paginas-lpsg-turbo recebe código                                  │
 │           │                                                 │
 │           ▼                                                 │
 │ Roda checklist de retorno (acima)                           │

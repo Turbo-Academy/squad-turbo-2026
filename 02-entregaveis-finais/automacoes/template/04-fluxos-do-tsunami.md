@@ -18,7 +18,7 @@
 
 ## 🌊 As 4 janelas (referência)
 
-> Definidas em `oferta-lpsg/02-bonus-tsunami.md`. Aqui só os triggers.
+> Definidas em `oferta-lpsg-turbo/02-bonus-tsunami.md`. Aqui só os triggers.
 
 ```yaml
 JANELA_FICHA_10MIN:       "06:50 → 07:00 · 50% off (R$ 12.500)"
@@ -383,7 +383,7 @@ schedule.cron("*/30 * 6-23 * * 1-5", async () => {
 });
 ```
 
-> Dashboard `/tsunami` (do `dashboard-lpsg`) faz polling no Sheets a cada 5s e mostra "vendas ao vivo".
+> Dashboard `/tsunami` (do `dashboard-lpsg-turbo`) faz polling no Sheets a cada 5s e mostra "vendas ao vivo".
 
 ---
 

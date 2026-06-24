@@ -28,13 +28,13 @@ Em 2026-05-05 o Léo decidiu sobrescrever o padrão aprovado pelos ajustes poste
 ## Onde está a fonte canônica agora
 
 ```
-~/.claude/skills/mensageria-lpsg/SKILL.md                              ← regra inegociável
-~/.claude/skills/mensageria-lpsg/references/utility-templates-meta.md  ← 19 templates Utility-ready Meta API
-~/.claude/skills/mensageria-lpsg/references/template-dia-de-aula.md    ← calendário operacional
-~/.claude/skills/mensageria-lpsg/references/regras-e-principios.md     ← header com regra 4+4
+~/.claude/skills/mensageria-lpsg-turbo/SKILL.md                              ← regra inegociável
+~/.claude/skills/mensageria-lpsg-turbo/references/utility-templates-meta.md  ← 19 templates Utility-ready Meta API
+~/.claude/skills/mensageria-lpsg-turbo/references/template-dia-de-aula.md    ← calendário operacional
+~/.claude/skills/mensageria-lpsg-turbo/references/regras-e-principios.md     ← header com regra 4+4
 ```
 
-Versão zipada para distribuição: `99-skills-compartilhaveis/mensageria-lpsg.zip`.
+Versão zipada para distribuição: `99-skills-compartilhaveis/mensageria-lpsg-turbo.zip`.
 
 ## Quando atualizar este `.docx`
 
@@ -42,4 +42,4 @@ Quando precisar gerar a versão `.docx` para cliente/expert, regenerar a partir 
 
 ---
 
-**Referência cruzada:** ver bloco `Nota sobre 03-revisoes/Mensageria-LPSG-APROVADO.docx` no topo de `~/.claude/skills/mensageria-lpsg/SKILL.md`.
+**Referência cruzada:** ver bloco `Nota sobre 03-revisoes/Mensageria-LPSG-APROVADO.docx` no topo de `~/.claude/skills/mensageria-lpsg-turbo/SKILL.md`.

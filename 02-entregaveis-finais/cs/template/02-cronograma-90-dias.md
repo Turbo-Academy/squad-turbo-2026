@@ -55,9 +55,9 @@ Sem 12 (D83-D90)─ M6/FINAL ──── Marco M6: NPS final + depoimento víde
 Aluno tem **1 lançamento pago semanal rodando** — pode ser teste, mas tem que estar **ao vivo**.
 
 ### Tarefas
-1. Aplicar template de página de ingresso (skill `paginas-lpsg`)
-2. Subir 1 campanha Meta Ads (skill `trafego-lpsg`)
-3. Configurar mensageria mínima (skill `mensageria-lpsg`)
+1. Aplicar template de página de ingresso (skill `paginas-lpsg-turbo`)
+2. Subir 1 campanha Meta Ads (skill `trafego-lpsg-turbo`)
+3. Configurar mensageria mínima (skill `mensageria-lpsg-turbo`)
 4. Rodar 1ª edição (mesmo que pequena · 100 ingressos é suficiente)
 
 ### Check-in do CS (D14 e D21)
@@ -95,7 +95,7 @@ ROAS ≥ 1.0 **estável por 3+ semanas**.
 
 ### Tarefas
 1. Aplicar engine de análise (`trafego/07-analise-automatica.md`)
-2. Renovar criativos (skill `criativos-lpsg`)
+2. Renovar criativos (skill `criativos-lpsg-turbo`)
 3. Otimizar página se necessário
 4. Estruturar mensageria de tier (FASE 4-B)
 
@@ -109,7 +109,7 @@ ROAS ≥ 1.0 **estável por 3+ semanas**.
 ## 🎯 Marco M5 · Escala (D61-D75)
 
 ### Objetivo
-**Duplicar a campanha** (regra do `trafego-lpsg`) OU **2x a receita** vs M3.
+**Duplicar a campanha** (regra do `trafego-lpsg-turbo`) OU **2x a receita** vs M3.
 
 ### Tarefas
 1. Validar critérios de duplicação (ROAS estável 5+ dias · verba ≥ R$ 300/dia)
@@ -176,10 +176,10 @@ CS Oficial gerencia **rotação contínua** (cada aluno está em um marco difere
 
 | Estrutura | Como liga |
 |---|---|
-| `paginas-lpsg` | M2 · usa template de página |
-| `trafego-lpsg` | M2/M4/M5 · campanhas + engine de análise |
-| `mensageria-lpsg` | M2 · setup mensageria do aluno |
-| `oferta-lpsg` | M3 · pitch do aluno + bônus tsunami |
-| `dashboard-lpsg` | M2-M6 · aluno usa dashboard pra acompanhar |
-| `automacoes-lpsg` | onboarding D0 · check-ins · NPS · webhook compra |
-| `operacao-lpsg` | papéis CS Oficial + Head CS no RACI |
+| `paginas-lpsg-turbo` | M2 · usa template de página |
+| `trafego-lpsg-turbo` | M2/M4/M5 · campanhas + engine de análise |
+| `mensageria-lpsg-turbo` | M2 · setup mensageria do aluno |
+| `oferta-lpsg-turbo` | M3 · pitch do aluno + bônus tsunami |
+| `dashboard-lpsg-turbo` | M2-M6 · aluno usa dashboard pra acompanhar |
+| `automacoes-lpsg-turbo` | onboarding D0 · check-ins · NPS · webhook compra |
+| `operacao-lpsg-turbo` | papéis CS Oficial + Head CS no RACI |

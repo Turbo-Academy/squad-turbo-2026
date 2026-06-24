@@ -216,7 +216,7 @@ RESPOND 200 OK
 
 ### Template Utility (Meta API)
 
-> Ver `mensageria-lpsg/template/whatsapp-templates-meta.md` pra estrutura completa.
+> Ver `mensageria-lpsg-turbo/template/whatsapp-templates-meta.md` pra estrutura completa.
 
 ```yaml
 TEMPLATE_NAME:            "boas_vindas_lpsg_v1"

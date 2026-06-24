@@ -57,7 +57,7 @@ LPS_120526_CAR_003    ← carrossel 3
 LPS_120526_VID_002    ← vídeo 2
 ```
 
-> A nomenclatura é a **ponte com o dashboard** (`/trafego`) e o `trafego-lpsg`. Não pula etapa.
+> A nomenclatura é a **ponte com o dashboard** (`/trafego`) e o `trafego-lpsg-turbo`. Não pula etapa.
 
 ---
 
@@ -179,7 +179,7 @@ FUNDO_GRADIENTE:          2 criativos    # cor primária da paleta
 7. AÇÃO 24-48h depois
    ↓
    Cortar · escalar · duplicar · testar
-   (regras em trafego-lpsg)
+   (regras em trafego-lpsg-turbo)
 ```
 
 ---

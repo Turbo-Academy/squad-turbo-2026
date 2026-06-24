@@ -6,17 +6,17 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Orquestração e método
-  - lpsg-master
-  - lancamento-pago-semanal
+  - lpsg-master-turbo
+  - lancamento-pago-semanal-turbo
   - briefing-aprovacao-turbo
-  - manual-final-lpsg
+  - manual-final-lpsg-turbo
   # Estratégia de marca e funil
-  - honor
+  - honor-turbo
   # Páginas / dashboards (entrega final orquestrada)
-  - criador-paginas-low-ticket
+  - criador-paginas-low-ticket-turbo
   - dash-lancamento-turbo
   # Operação e equipe do lançamento (RACI · time mínimo)
-  - operacao-lpsg
+  - operacao-lpsg-turbo
   # Meta · criar e evoluir skills/agentes do próprio squad
   - skill-creator
   - skill-development
@@ -161,7 +161,7 @@ triage:
       - "auditar texto"
       - "anti-IA texto"
       NOTE: "TODA copy produzida pelo squad passa por ele antes de ir pro expert/cliente"
-    picasso-auditor-lpsg (QA visual · APÓS qualquer página/criativo/UI):
+    picasso-auditor-turbo (QA visual · APÓS qualquer página/criativo/UI):
       - "auditar design"
       - "auditar página"
       - "anti-IA visual"
@@ -362,7 +362,7 @@ operational_frameworks:
     nota_de_desambiguacao: |
       ⚠️ Estes steps descrevem a LÓGICA conceitual do método (captar → converter),
       NÃO a ordem de execução. A SEQUÊNCIA EXECUTORA CANÔNICA são as 10 fases do
-      lpsg-master, nesta ordem: 1 estrutura-aulas · 2 mensageria · 3 oferta ·
+      lpsg-master-turbo, nesta ordem: 1 estrutura-aulas · 2 mensageria · 3 oferta ·
       4 criativos · 5 páginas · 6 tráfego · 7 automações · 8 dashboard ·
       9 operação · 10 cs (+ manual-final como entrega de fechamento).
       Sempre executar pela sequência das 10 fases, não por estes 9 steps conceituais.
@@ -375,24 +375,24 @@ operational_frameworks:
         name: "Diagnóstico"
         description: "Avatar, dor, consciência (Schwartz), sofisticação do mercado"
         output: "Diagnóstico completo"
-        skill: "lancamento-pago-semanal → fase0-diagnostico"
+        skill: "lancamento-pago-semanal-turbo → fase0-diagnostico"
       step_2:
         name: "Oferta do Ingresso"
         description: "Nome, promessa, preço, mecanismo proprietário"
         output: "Oferta formatada"
-        skill: "lancamento-pago-semanal → fase1-oferta-ingresso"
+        skill: "lancamento-pago-semanal-turbo → fase1-oferta-ingresso"
       step_3:
         name: "Página de Ingresso"
         description: "Página de vendas low-ticket para tráfego frio"
         output: "Copy da página"
         agent: "@copywriter-turbo"
-        skill: "criador-paginas-low-ticket"
+        skill: "criador-paginas-low-ticket-turbo"
       step_4:
         name: "Criativos"
         description: "Hooks + body + CTA para Meta/Google"
         output: "Lote de criativos"
         agent: "@diretor-criativo-turbo"
-        skill: "criador-criativos"
+        skill: "criador-criativos-turbo"
       step_5:
         name: "Tráfego"
         description: "Campanhas, públicos, orçamento"
@@ -403,24 +403,24 @@ operational_frameworks:
         description: "Estrutura de aulas, escada de crenças, seeding"
         output: "Roteiro do evento completo"
         agent: "@copywriter-turbo"
-        skill: "lancamento-pago-semanal → fase5-evento-5mais1"
+        skill: "lancamento-pago-semanal-turbo → fase5-evento-5mais1"
       step_7:
         name: "Pitch"
         description: "Pitch de 14 partes na Aula 6"
         output: "Script do pitch"
         agent: "@copywriter-turbo"
-        skill: "lancamento-pago-semanal → fase6-pitch-14partes"
+        skill: "lancamento-pago-semanal-turbo → fase6-pitch-14partes"
       step_8:
         name: "Mensageria"
         description: "Mensagens do grupo WhatsApp + API ManyChat"
         output: "Mensageria completa"
         agent: "@automacao-turbo"
-        skill: "mensageria-lpsg"
+        skill: "mensageria-lpsg-turbo"
       step_9:
         name: "Operação"
         description: "Tear operacional semanal"
         output: "Checklist de operação"
-        skill: "lancamento-pago-semanal → fase8-tear-operacional"
+        skill: "lancamento-pago-semanal-turbo → fase8-tear-operacional"
 
   framework_2:
     name: "Modelo de Seleção: Workshop vs 5+1"
@@ -552,7 +552,7 @@ command_loader:
 debrief_semanal:
   quando: "Sexta noite ou sábado · após carrinho fechar · ANTES da edição seguinte"
   inputs:
-    - "Dashboard (dashboard-lpsg): tráfego · página · retenção por aula · D1"
+    - "Dashboard (dashboard-lpsg-turbo): tráfego · página · retenção por aula · D1"
     - "Hotmart: vendas de ingresso + vendas do produto principal"
     - "Ficha de interesse: volume · distribuição HOT/WARM/COLD"
     - "Relatório do @closer-turbo: fechamentos 1:1 + objeções recorrentes"
@@ -594,7 +594,7 @@ dependencies:
   checklists:
     - "quality-gate-lancamento.md"
   skills:
-    - "~/.claude/skills/lancamento-pago-semanal/SKILL.md"
+    - "~/.claude/skills/lancamento-pago-semanal-turbo/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

@@ -33,13 +33,13 @@ Um método de lançamentos digitais perpétuos, em que:
 ```
 1. SETUP        Crie 16 contas e tokens (Meta · Hotmart · Vercel · etc)   ~6-12h
 2. CADASTRO     Preencha 1 formulário de 10 blocos                       ~30-60min
-3. EXECUÇÃO     Cole 1 comando no Claude · @lpsg-master faz o resto      6-7 dias
+3. EXECUÇÃO     Cole 1 comando no Claude · @lpsg-master-turbo faz o resto      6-7 dias
 ```
 
 Cole isso no Claude · ele orquestra tudo:
 
 ```
-@lpsg-master crie meu LPSG.
+@lpsg-master-turbo crie meu LPSG.
 
 Aqui está meu cadastro: [YAML gerado no manual]
 ```
@@ -97,9 +97,9 @@ lpsg-method/
 ├── DESIGN.md                      🎨 visual system · 5 paletas · tipografia · motion · anti-patterns
 │
 ├── 99-skills-compartilhaveis/     🔧 SKILLS + AGENTS (zips)
-│   ├── lpsg-master.zip            ← orquestrador LPSG (instala primeiro)
-│   ├── estrutura-aulas-lpsg.zip
-│   ├── oferta-lpsg.zip
+│   ├── lpsg-master-turbo.zip            ← orquestrador LPSG (instala primeiro)
+│   ├── estrutura-aulas-lpsg-turbo.zip
+│   ├── oferta-lpsg-turbo.zip
 │   ├── ...                        ← 11 skills LPSG no total
 │   ├── squad-turbo-completo.zip   ← 13 agentes Turbo (squad inteiro)
 │   └── agents/                    ← 13 agentes Squad Turbo
@@ -126,18 +126,18 @@ lpsg-method/
 
 | Skill | Função |
 |---|---|
-| **`lpsg-master`** | Orquestrador · diagnóstico multi-camada · benchmarks por nicho |
-| `estrutura-aulas-lpsg` | 6 aulas (5+1) com função estratégica |
-| `oferta-lpsg` | Stack de valor + tsunami + dupla garantia |
-| `paginas-lpsg` | Páginas Next.js + 5 arquétipos premium + ficha 11 etapas |
-| `trafego-lpsg` | Meta Ads ASC + engine de análise (3 cadências) |
-| `criativos-lpsg` | 15 criativos (5+5+5) · 5 paletas · cara de conteúdo · histórias e lições |
-| `mensageria-lpsg` | 8 fases · templates Utility Meta |
-| `automacoes-lpsg` | 14 workflows n8n + ManyChat |
-| `dashboard-lpsg` | 11 módulos · 8 fontes de dados |
-| `operacao-lpsg` | 9 papéis · RACI · 12 SOPs |
-| `cs-lpsg` | Pós-venda 90 dias · NPS · ascensão |
-| `manual-final-lpsg` | ⭐ Gerador de manual de execução HTML personalizado (entregável final) |
+| **`lpsg-master-turbo`** | Orquestrador · diagnóstico multi-camada · benchmarks por nicho |
+| `estrutura-aulas-lpsg-turbo` | 6 aulas (5+1) com função estratégica |
+| `oferta-lpsg-turbo` | Stack de valor + tsunami + dupla garantia |
+| `paginas-lpsg-turbo` | Páginas Next.js + 5 arquétipos premium + ficha 11 etapas |
+| `trafego-lpsg-turbo` | Meta Ads ASC + engine de análise (3 cadências) |
+| `criativos-lpsg-turbo` | 15 criativos (5+5+5) · 5 paletas · cara de conteúdo · histórias e lições |
+| `mensageria-lpsg-turbo` | 8 fases · templates Utility Meta |
+| `automacoes-lpsg-turbo` | 14 workflows n8n + ManyChat |
+| `dashboard-lpsg-turbo` | 11 módulos · 8 fontes de dados |
+| `operacao-lpsg-turbo` | 9 papéis · RACI · 12 SOPs |
+| `cs-lpsg-turbo` | Pós-venda 90 dias · NPS · ascensão |
+| `manual-final-lpsg-turbo` | ⭐ Gerador de manual de execução HTML personalizado (entregável final) |
 | **`meta-ads-cli-turbo`** | ⭐ **Camada de execução Meta Ads (CLI oficial 29/04/2026)** · 5 scripts shell pra batelada de criativos · 5 testes de página · stop-loss · relatórios · escalonamento |
 | **`briefing-aprovacao-turbo`** | ⭐ **Gate de aprovação narrativa** · gerado APÓS pesquisa de mercado e ANTES da Fase 1 · briefing .docx 9 seções (contexto · avatar · posicionamento · big idea · promessa · oferta · cronograma · riscos · próximos passos) · upload Google Drive · pausa execução até expert aprovar |
 
@@ -149,7 +149,7 @@ lpsg-method/
 # 1. Skills LPSG (14 ao todo)
 mkdir -p ~/.claude/skills
 for z in 99-skills-compartilhaveis/*-lpsg.zip \
-         99-skills-compartilhaveis/lpsg-master.zip \
+         99-skills-compartilhaveis/lpsg-master-turbo.zip \
          99-skills-compartilhaveis/meta-ads-cli-turbo.zip \
          99-skills-compartilhaveis/briefing-aprovacao-turbo.zip; do
   unzip -o "$z" -d ~/.claude/skills/
@@ -185,13 +185,13 @@ Além das 12 skills LPSG, o projeto inclui **13 agentes especialistas**:
 | **`@social-turbo`** | Conteúdo orgânico · Reels · stories · calendário |
 | **`@automacao-turbo`** | n8n · ManyChat · mensageria · chatbots DM |
 | **`@cs-turbo`** | Pós-venda · onboarding · NPS · depoimentos |
-| **`@picasso-auditor-lpsg`** | ⭐ Auditor de design obsessivo · stack Picasso (frontend-design + impeccable + design-motion-principles) · elimina "AI slop" de páginas/criativos |
+| **`@picasso-auditor-turbo`** | ⭐ Auditor de design obsessivo · stack Picasso (frontend-design + impeccable + design-motion-principles) · elimina "AI slop" de páginas/criativos |
 
 > Skills entregam estrutura · agentes entregam expertise. Detalhes em [`99-skills-compartilhaveis/agents/README.md`](99-skills-compartilhaveis/agents/README.md).
 
 ### 🎨 Stack Picasso · auditoria anti-IA (NOVO)
 
-Stack de 3 skills externas integrada ao agente `picasso-auditor-lpsg`:
+Stack de 3 skills externas integrada ao agente `picasso-auditor-turbo`:
 
 - **`frontend-design`** (Anthropic) — pensar como designer antes de codar
 - **`impeccable`** (Paul Bakaus) — 18 comandos `/audit`, `/polish`, `/typeset`, `/colorize`, `/bolder`, `/critique` etc + detector de anti-patterns + contexto persistente

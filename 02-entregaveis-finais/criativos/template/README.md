@@ -45,7 +45,7 @@ Pergunta-se:
 
 ### Etapa 4 — Gerar
 
-Chamar a skill `criativos-lpsg`:
+Chamar a skill `criativos-lpsg-turbo`:
 
 ```
 "Gera a batelada do dia 12/05/26 no MODO HÍBRIDO:
@@ -58,8 +58,8 @@ Chamar a skill `criativos-lpsg`:
 ### Etapa 5 — Subir
 
 1. Renomear os arquivos com nomenclatura `{SIGLA}_{DDMMYY}_{TIPO}_{NUMERO}`
-2. Subir na Meta Ads (campanha do `trafego-lpsg`)
-3. Acompanhar performance no `dashboard-lpsg` (`/trafego`)
+2. Subir na Meta Ads (campanha do `trafego-lpsg-turbo`)
+3. Acompanhar performance no `dashboard-lpsg-turbo` (`/trafego`)
 
 ---
 
@@ -80,7 +80,7 @@ Chamar a skill `criativos-lpsg`:
 
 ## 📊 Métricas que validam
 
-Os criativos sobem na campanha ASC do `trafego-lpsg` e são monitorados no `dashboard-lpsg`:
+Os criativos sobem na campanha ASC do `trafego-lpsg-turbo` e são monitorados no `dashboard-lpsg-turbo`:
 
 ```yaml
 HOOK_RATE:    ≥ 20% (mín) · ≥ 30% (ideal)
@@ -94,12 +94,12 @@ CPM:          ≤ R$ 40
 
 ## 🧭 Skills relacionadas
 
-- `criativos-lpsg` — esta skill (gera bateladas)
-- `trafego-lpsg` — onde os criativos sobem (Meta ASC · 15 criativos)
-- `paginas-lpsg` — destino dos criativos (URL_PAGINA_INGRESSO)
-- `oferta-lpsg` — origem da copy do CTA (ticket · tsunami · garantia)
-- `mensageria-lpsg` — variações de hook ecoam nas mensagens
-- `dashboard-lpsg` — onde performance é monitorada (`/trafego`)
+- `criativos-lpsg-turbo` — esta skill (gera bateladas)
+- `trafego-lpsg-turbo` — onde os criativos sobem (Meta ASC · 15 criativos)
+- `paginas-lpsg-turbo` — destino dos criativos (URL_PAGINA_INGRESSO)
+- `oferta-lpsg-turbo` — origem da copy do CTA (ticket · tsunami · garantia)
+- `mensageria-lpsg-turbo` — variações de hook ecoam nas mensagens
+- `dashboard-lpsg-turbo` — onde performance é monitorada (`/trafego`)
 
 ---
 

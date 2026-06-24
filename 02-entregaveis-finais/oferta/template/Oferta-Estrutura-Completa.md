@@ -771,7 +771,7 @@ Termina em: 04:23  ← contador regressivo real
 
 ---
 
-## 📨 Mensageria do tsunami (extrato — ver `mensageria-lpsg`)
+## 📨 Mensageria do tsunami (extrato — ver `mensageria-lpsg-turbo`)
 
 ### Domingo 22h (após pitch)
 

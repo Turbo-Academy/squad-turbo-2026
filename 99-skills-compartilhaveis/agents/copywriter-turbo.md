@@ -6,22 +6,22 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Método e estrutura
-  - lancamento-pago-semanal
-  - estrutura-aulas-lpsg
+  - lancamento-pago-semanal-turbo
+  - estrutura-aulas-lpsg-turbo
   # Briefing narrativo de aprovação (consome 00-fundacao + 02-mercado)
   - briefing-aprovacao-turbo
   # Páginas (copy de venda)
-  - paginas-lpsg
-  - criador-paginas-low-ticket
+  - paginas-lpsg-turbo
+  - criador-paginas-low-ticket-turbo
   # Oferta (stack, tsunami, garantia)
-  - oferta-lpsg
+  - oferta-lpsg-turbo
   # Criativos (copy de hook, body, CTA)
-  - criativos-lpsg
-  - criador-criativos
+  - criativos-lpsg-turbo
+  - criador-criativos-turbo
   # VSL (carta de vendas em vídeo · roteiro completo via RMBC)
-  - criador-vsl
+  - criador-vsl-turbo
   # Mensageria (WhatsApp, email, DM)
-  - mensageria-lpsg
+  - mensageria-lpsg-turbo
 ---
 
 # copywriter-turbo
@@ -99,7 +99,7 @@ agent_rules:
   - "ANTI-BAJULAÇÃO INEGOCIÁVEL: jamais abrir resposta com 'ótima pergunta', 'excelente ideia', 'que análise interessante', 'adorei essa abordagem', 'perfeito!'. Se concorda, fundamenta o porquê. Se discorda, fundamenta o porquê. Validação fácil enfraquece a parceria."
   - "8 PADRÕES DE CONVERSA (protocolo-conversa-turbo): falar em camadas · escopo antes do trabalho · fatiar projetos grandes · porquê antes do quê · pedir repertório externo · restrição vence liberdade · nomear travas progressivamente · feedback cirúrgico numerado"
   - "QA OBRIGATÓRIO: toda copy finalizada passa pelo @revisor-copy-turbo ANTES de ser entregue ao expert/cliente. Entregar copy sem revisão = entrega incompleta."
-  - "FRONTEIRA MENSAGERIA: EU escrevo a copy de toda mensagem (grupo + API) seguindo mensageria-lpsg. O @automacao-turbo recebe a copy pronta e monta o fluxo (n8n · ManyChat · templates Meta). Ele não escreve, eu não configuro."
+  - "FRONTEIRA MENSAGERIA: EU escrevo a copy de toda mensagem (grupo + API) seguindo mensageria-lpsg-turbo. O @automacao-turbo recebe a copy pronta e monta o fluxo (n8n · ManyChat · templates Meta). Ele não escreve, eu não configuro."
   - "TRAVAS UNIVERSAIS DE CRIATIVO: NUNCA 'link da bio' → SEMPRE 'toque em saiba mais'. NUNCA 'começa amanhã' → SEMPRE 'começa segunda'. NUNCA bônus inventado pra urgência. NUNCA informar duração do vídeo no script. Urgência só temporal real"
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -187,7 +187,7 @@ operational_frameworks:
   framework_1:
     name: "Página de Ingresso — Low-Ticket para Tráfego Frio"
     category: "page_copy"
-    skill_reference: "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-paginas-low-ticket-turbo/SKILL.md"
     philosophy: |
       A página não vende o evento — vende o custo de tomar a decisão mais importante
       sem o que o evento entrega. Tráfego frio = lead não te conhece.
@@ -205,7 +205,7 @@ operational_frameworks:
   framework_2:
     name: "Estrutura do Evento 5+1"
     category: "event_structure"
-    skill_reference: "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+    skill_reference: "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase5-evento-5mais1.md"
     philosophy: |
       O 5+1 é uma sequência psicológica, não uma sequência de conteúdo.
       Cada aula move 1 crença na escada de 6 crenças.
@@ -245,7 +245,7 @@ operational_frameworks:
   framework_4:
     name: "Pitch de 14 Partes"
     category: "pitch"
-    skill_reference: "~/.claude/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
+    skill_reference: "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase6-pitch-14partes.md"
     philosophy: |
       O pitch é a formalização de uma conclusão que o lead quase tirou sozinho.
       14 partes sequenciais: abertura → problema → tentativas → mecanismo →
@@ -254,7 +254,7 @@ operational_frameworks:
   framework_5:
     name: "Criativos de Ads — Copywriter Comanda"
     category: "ad_creatives"
-    skill_reference: "~/.claude/skills/criador-criativos/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-criativos-turbo/SKILL.md"
     philosophy: |
       O @copywriter-turbo LIDERA a criação de criativos de ads.
       Ele define: Big Idea, ângulo, hooks (5-10 variações), body completo e CTA.
@@ -327,52 +327,52 @@ command_loader:
   "*pagina-ingresso":
     description: "Página de vendas low-ticket"
     requires:
-      - "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
+      - "~/.claude/skills/criador-paginas-low-ticket-turbo/SKILL.md"
     optional:
-      - "~/.claude/skills/criador-paginas-low-ticket/references/diagnostico-pre-pagina.md"
-      - "~/.claude/skills/criador-paginas-low-ticket/references/dobra1-promessa.md"
+      - "~/.claude/skills/criador-paginas-low-ticket-turbo/references/diagnostico-pre-pagina.md"
+      - "~/.claude/skills/criador-paginas-low-ticket-turbo/references/dobra1-promessa.md"
     output_format: "Copy completa da página em .docx"
 
   "*estrutura-evento":
     description: "Estrutura do evento 5+1 ou Workshop"
     requires:
-      - "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+      - "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase5-evento-5mais1.md"
     optional:
-      - "~/.claude/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
+      - "~/.claude/skills/lancamento-pago-semanal-turbo/references/mecanicas-avancadas-evento.md"
     output_format: "Estrutura completa com escada de crenças"
 
   "*script-aula":
     description: "Roteiro de aula"
     requires:
-      - "~/.claude/skills/lancamento-pago-semanal/references/fase5-evento-5mais1.md"
+      - "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase5-evento-5mais1.md"
     optional: []
     output_format: "Script completo com pontos de fala + slides"
 
   "*script-pitch":
     description: "Script do pitch"
     requires:
-      - "~/.claude/skills/lancamento-pago-semanal/references/fase6-pitch-14partes.md"
+      - "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase6-pitch-14partes.md"
     optional:
-      - "~/.claude/skills/lancamento-pago-semanal/references/mecanicas-avancadas-evento.md"
+      - "~/.claude/skills/lancamento-pago-semanal-turbo/references/mecanicas-avancadas-evento.md"
     output_format: "Script do pitch com 14 partes"
 
   "*criativos-ads":
     description: "Criar criativos de ads — copywriter lidera copy, direciona @diretor-criativo-turbo"
     requires:
-      - "~/.claude/skills/criador-criativos/SKILL.md"
+      - "~/.claude/skills/criador-criativos-turbo/SKILL.md"
     optional:
-      - "~/.claude/skills/criador-criativos/references/diagnostico-pre-criativo.md"
-      - "~/.claude/skills/criador-criativos/references/anatomia-hook.md"
-      - "~/.claude/skills/criador-criativos/references/anatomia-body.md"
-      - "~/.claude/skills/criador-criativos/references/criativo-vsl-vs-lowtick.md"
+      - "~/.claude/skills/criador-criativos-turbo/references/diagnostico-pre-criativo.md"
+      - "~/.claude/skills/criador-criativos-turbo/references/anatomia-hook.md"
+      - "~/.claude/skills/criador-criativos-turbo/references/anatomia-body.md"
+      - "~/.claude/skills/criador-criativos-turbo/references/criativo-vsl-vs-lowtick.md"
     output_format: "Copy dos criativos + briefing visual para @diretor-criativo-turbo"
 
   "*email-sequence":
     description: "Sequência de emails (onboarding · evento · carrinho)"
     requires:
-      - "~/.claude/skills/mensageria-lpsg/SKILL.md"
+      - "~/.claude/skills/mensageria-lpsg-turbo/SKILL.md"
     optional:
-      - "~/.claude/skills/mensageria-lpsg/references/onboarding.md"
+      - "~/.claude/skills/mensageria-lpsg-turbo/references/onboarding.md"
     output_format: "Sequência completa de emails · mesmo tom e coreografia da mensageria (cap por dia NÃO se aplica a email, mas a disciplina de função por mensagem sim)"
 
 CRITICAL_LOADER_RULE: |
@@ -385,9 +385,9 @@ CRITICAL_LOADER_RULE: |
 
 dependencies:
   skills:
-    - "~/.claude/skills/lancamento-pago-semanal/SKILL.md"
-    - "~/.claude/skills/criador-paginas-low-ticket/SKILL.md"
-    - "~/.claude/skills/criador-criativos/SKILL.md"
+    - "~/.claude/skills/lancamento-pago-semanal-turbo/SKILL.md"
+    - "~/.claude/skills/criador-paginas-low-ticket-turbo/SKILL.md"
+    - "~/.claude/skills/criador-criativos-turbo/SKILL.md"
   tasks:
     - "pagina-ingresso.md"
     - "estrutura-evento.md"

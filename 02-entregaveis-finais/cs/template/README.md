@@ -40,7 +40,7 @@ template/
 1. **Preenche `00-variaveis-globais.md`** — fonte da verdade
 2. **Configura aba `Alunos` no Sheets** com 18 colunas (schema no 00)
 3. **Aprova templates Utility na Meta API** seguindo `04-mensagens.md` (8 templates iniciais)
-4. **Implementa onboarding D0-D7** com `01-onboarding-d0-d7.md` + automacoes-lpsg
+4. **Implementa onboarding D0-D7** com `01-onboarding-d0-d7.md` + automacoes-lpsg-turbo
 5. **Configura rituais semanais** com `03-rituais-e-comunidade.md`
 6. **Define escada de produtos** com `07-ascensao-e-indicacao.md`
 7. **Adiciona Módulo 12 (CS) ao dashboard** com `06-kpis-e-dashboard.md`
@@ -123,10 +123,10 @@ TURMA_50-200_ALUNOS:
 TURMA_200+_ALUNOS:
   HEAD_CS:           "1 pessoa + assistente"
   CS_OFICIAL:        "1 a cada 40 alunos"
-  Demais:            "estrutura completa · ver operacao-lpsg"
+  Demais:            "estrutura completa · ver operacao-lpsg-turbo"
 ```
 
-> Detalhes em `operacao-lpsg/template/02-time-minimo-2-pessoas.md`.
+> Detalhes em `operacao-lpsg-turbo/template/02-time-minimo-2-pessoas.md`.
 
 ---
 
@@ -134,15 +134,15 @@ TURMA_200+_ALUNOS:
 
 | Estrutura | Como |
 |---|---|
-| `paginas-lpsg` | Página de venda promete o que CS entrega · expectativa alinhada |
-| `oferta-lpsg` | Garantia da oferta = base da política de reembolso |
-| `mensageria-lpsg` | Templates Utility usados nas mensagens automáticas do CS |
-| `estrutura-aulas-lpsg` | Aluno vem da turma do LPSG → entra no CS no D0 |
-| `automacoes-lpsg` | Workflows de onboarding · NPS · alertas · ascensão |
-| `dashboard-lpsg` | Módulo 12 (CS) consome aba `Alunos` |
-| `operacao-lpsg` | Papéis CS no RACI · cronograma · rituais |
-| `criativos-lpsg` | Cases de sucesso viram criativos da próxima edição |
-| `trafego-lpsg` | Receita do CS reduz CAC dependência (indicações orgânicas) |
+| `paginas-lpsg-turbo` | Página de venda promete o que CS entrega · expectativa alinhada |
+| `oferta-lpsg-turbo` | Garantia da oferta = base da política de reembolso |
+| `mensageria-lpsg-turbo` | Templates Utility usados nas mensagens automáticas do CS |
+| `estrutura-aulas-lpsg-turbo` | Aluno vem da turma do LPSG → entra no CS no D0 |
+| `automacoes-lpsg-turbo` | Workflows de onboarding · NPS · alertas · ascensão |
+| `dashboard-lpsg-turbo` | Módulo 12 (CS) consome aba `Alunos` |
+| `operacao-lpsg-turbo` | Papéis CS no RACI · cronograma · rituais |
+| `criativos-lpsg-turbo` | Cases de sucesso viram criativos da próxima edição |
+| `trafego-lpsg-turbo` | Receita do CS reduz CAC dependência (indicações orgânicas) |
 
 ---
 

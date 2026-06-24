@@ -77,7 +77,7 @@ BLOCO C · Intenção (Et. 9-11)       → killer question (preço + ROI) → hi
 
 **Output:** lead score (HOT · WARM · COLD) + roteamento (closer · grupo VIP · nutrição).
 
-> Detalhes em `08-ficha-interesse.md`. Conecta com `mensageria-lpsg` (mensagens por tier) e `automacoes-lpsg` (webhook + tagging + CAPI).
+> Detalhes em `08-ficha-interesse.md`. Conecta com `mensageria-lpsg-turbo` (mensagens por tier) e `automacoes-lpsg-turbo` (webhook + tagging + CAPI).
 
 ---
 

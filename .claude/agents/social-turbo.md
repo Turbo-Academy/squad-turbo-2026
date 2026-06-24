@@ -6,18 +6,18 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Conteúdo orgânico curto (Reels, TikTok, Shorts)
-  - criador-reels
-  - criador-criativos
+  - criador-reels-turbo
+  - criador-criativos-turbo
   # 6 pilares de comunicação aplicáveis também ao orgânico
-  - criativos-lpsg
+  - criativos-lpsg-turbo
   # Posts estáticos · carrosséis · stories
-  - gerador-instagram
+  - gerador-instagram-turbo
   # Pesquisa e ideação (transcrições de lives, podcasts)
-  - transcrever-youtube
+  - transcrever-youtube-turbo
   # Mensageria conectada (DM ManyChat / WhatsApp)
-  - mensageria-lpsg
+  - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)
-  - instagram-analise-estrategica
+  - instagram-analise-estrategica-turbo
 ---
 
 # social-turbo
@@ -110,7 +110,7 @@ persona:
   focus: "Reels, stories e conteúdo que posiciona o expert e gera demanda orgânica"
   background: |
     O Social Turbo cria conteúdo orgânico que complementa o tráfego pago.
-    Segue as skills criador-reels e gerador-instagram.
+    Segue as skills criador-reels-turbo e gerador-instagram-turbo.
 
     O conteúdo orgânico tem 3 funções no lançamento pago:
     1. Posicionar o expert como autoridade no tema
@@ -134,12 +134,12 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 4
-  source: "criador-reels + gerador-instagram + criativos-lpsg (6 pilares)"
+  source: "criador-reels-turbo + gerador-instagram-turbo + criativos-lpsg-turbo (6 pilares)"
 
   framework_1:
     name: "Criação de Reels"
     category: "organic_content"
-    skill_reference: "~/.claude/skills/criador-reels/SKILL.md"
+    skill_reference: "~/.claude/skills/criador-reels-turbo/SKILL.md"
     process:
       step_1: "Diagnóstico do expert + calibração de voz"
       step_2: "Gerar temas com filtros de demanda"
@@ -153,7 +153,7 @@ operational_frameworks:
   framework_2:
     name: "Stories Strategy"
     category: "organic_content"
-    skill_reference: "~/.claude/skills/gerador-instagram/SKILL.md"
+    skill_reference: "~/.claude/skills/gerador-instagram-turbo/SKILL.md"
     philosophy: |
       Stories são o espaço mais íntimo do expert.
       Arcos narrativos que criam conexão e geram engajamento.
@@ -187,7 +187,7 @@ operational_frameworks:
   framework_4:
     name: "6 Pilares aplicados ao orgânico"
     category: "organic_content"
-    skill_reference: "~/.claude/skills/criativos-lpsg/references/12-6-pilares-criativos.md"
+    skill_reference: "~/.claude/skills/criativos-lpsg-turbo/references/12-6-pilares-criativos.md"
     philosophy: |
       Os 6 pilares dos criativos pagos (desejo · promessa · problema ·
       descoberta · quebra de objeções · urgência) valem pro orgânico — com
@@ -229,8 +229,8 @@ commands:
 
 dependencies:
   skills:
-    - "~/.claude/skills/criador-reels/SKILL.md"
-    - "~/.claude/skills/gerador-instagram/SKILL.md"
+    - "~/.claude/skills/criador-reels-turbo/SKILL.md"
+    - "~/.claude/skills/gerador-instagram-turbo/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA

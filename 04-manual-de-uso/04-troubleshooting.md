@@ -103,7 +103,7 @@ Se não achar · pede ajuda ao Claude com:
 | TBT > 300ms | JS pesado | Remove libs desnecessárias · code-splitting |
 | FCP > 1.5s | CSS bloqueante | Critical CSS inline no head |
 
-**Recurso:** skill `page-optimizer` faz auditoria completa.
+**Recurso:** skill `page-optimizer-turbo` faz auditoria completa.
 
 ---
 
@@ -135,7 +135,7 @@ Se não achar · pede ajuda ao Claude com:
 **Por quê:** Lógica do score quebrada · provavelmente índices das opções estão zerados.
 
 **Solução:**
-1. Verifica em `paginas-lpsg/08-ficha-interesse.md` o algoritmo
+1. Verifica em `paginas-lpsg-turbo/08-ficha-interesse.md` o algoritmo
 2. Cada opção tem um índice (ex: "Acima de R$ 50k/mês" → 4)
 3. No webhook (n8n), confere se o `indexFaixa()` está retornando valores corretos
 4. Testa com payload mock dos 3 cenários (HOT · WARM · COLD)
@@ -205,7 +205,7 @@ Se não achar · pede ajuda ao Claude com:
 2. Se SIM · renova 5 criativos (1/3 do lote)
 3. Se NÃO · espera 2-3 dias · pode ser flutuação
 
-> **Não desce verba na primeira reação.** Engine de análise (`trafego-lpsg/07`) tem regras que evitam reação impulsiva.
+> **Não desce verba na primeira reação.** Engine de análise (`trafego-lpsg-turbo/07`) tem regras que evitam reação impulsiva.
 
 ---
 
@@ -313,7 +313,7 @@ Se não achar · pede ajuda ao Claude com:
 # 🤝 CS / Pós-venda
 
 ### ❌ Aluno não fez login até D7
-**Cenário comum.** Skill `cs-lpsg/01-onboarding-d0-d7.md` cobre.
+**Cenário comum.** Skill `cs-lpsg-turbo/01-onboarding-d0-d7.md` cobre.
 
 **Resposta padrão:**
 1. CS Oficial faz call de check-in (15 min)
@@ -343,7 +343,7 @@ Se não achar · pede ajuda ao Claude com:
 - Pitch fraco ou aulas que não amarram
 
 **O que fazer:**
-- Revisa `lpsg-master/03-arvore-diagnostico.md`
+- Revisa `lpsg-master-turbo/03-arvore-diagnostico.md`
 - Considera **baixar ticket** ou **mudar nicho**
 
 ---

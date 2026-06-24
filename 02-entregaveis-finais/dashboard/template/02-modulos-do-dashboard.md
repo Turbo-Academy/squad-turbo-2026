@@ -628,7 +628,7 @@ Lista textarea-Q10 ordenada por tier HOT primeiro, com keywords destacadas.
 └────────────┴────────────┴────────────┴────────────┘
 ```
 
-> Linka pra `operacao-lpsg/papel-sdr.md` (SLA: ligar em ≤ 24h).
+> Linka pra `operacao-lpsg-turbo/papel-sdr.md` (SLA: ligar em ≤ 24h).
 
 #### e) Distribuição por outras dimensões (filtros)
 

@@ -45,7 +45,7 @@ src/
 - Validar números do comparativo (faturamento médio, horas, stress) com a Marina · auditoria precisa estar disponível
 - Substituir o ícone OG / hero placeholder se for usar imagem (atualmente é tipografia + stat panel)
 - Auditoria de copy pela Beatriz · principalmente FAQ
-- Pixel Meta + GA4 quando integrar com `@trafego-lpsg`
+- Pixel Meta + GA4 quando integrar com `@trafego-lpsg-turbo`
 - Validar contador real `23/50` com a estrutura · trocar pelo número honesto da edição quando entrar a captação
 - OG image técnica (Inter + JetBrains Mono · 1200x630 · graphite + ciano)
 - Caso vire produção · puxar contador via API (`/api/counter`) e remover o jitter mock
@@ -60,7 +60,7 @@ src/
 
 ## Arquétipo de referência
 
-`/Users/leonardotabari/.claude/skills/paginas-lpsg/references/09-arquetipos-premium.md`
+`/Users/leonardotabari/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md`
 — seção "V3 · ARQUÉTIPO INTERATIVO / CALCULADORA"
 
 ## Anti-patterns evitados

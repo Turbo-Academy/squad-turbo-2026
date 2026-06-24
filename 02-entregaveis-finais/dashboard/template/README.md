@@ -45,7 +45,7 @@ Em `04-alertas-e-diagnostico.md`, ajustar regras se seu projeto tem alvos difere
 
 ```bash
 # Clonar template
-gh repo clone turbo-academy/dashboard-lpsg-template my-dash
+gh repo clone turbo-academy/dashboard-lpsg-turbo-template my-dash
 cd my-dash
 pnpm install
 
@@ -75,12 +75,12 @@ pnpm build:standalone   # Modo B · gera HTML único
 
 ## 🧭 Skills relacionadas
 
-- `dashboard-lpsg` — esta skill (template do dashboard)
-- `paginas-lpsg` — usa mesma stack (Next.js + Tailwind + Vercel)
-- `trafego-lpsg` — fonte de dados de tráfego (alimenta /trafego)
-- `mensageria-lpsg` — fonte de dados de mensageria (alimenta /mensageria)
-- `oferta-lpsg` — fonte de dados do tsunami (alimenta /tsunami)
-- `estrutura-aulas-lpsg` — fonte de dados das aulas (alimenta /aulas)
+- `dashboard-lpsg-turbo` — esta skill (template do dashboard)
+- `paginas-lpsg-turbo` — usa mesma stack (Next.js + Tailwind + Vercel)
+- `trafego-lpsg-turbo` — fonte de dados de tráfego (alimenta /trafego)
+- `mensageria-lpsg-turbo` — fonte de dados de mensageria (alimenta /mensageria)
+- `oferta-lpsg-turbo` — fonte de dados do tsunami (alimenta /tsunami)
+- `estrutura-aulas-lpsg-turbo` — fonte de dados das aulas (alimenta /aulas)
 
 ---
 
@@ -89,7 +89,7 @@ pnpm build:standalone   # Modo B · gera HTML único
 Depois de seguir o template, você terá:
 
 1. **Dashboard Web** rodando em `https://dash.{seu-dominio}.com`
-2. **HTML standalone** distribuível (`dashboard-lpsg.html` · ~250 KB)
+2. **HTML standalone** distribuível (`dashboard-lpsg-turbo.html` · ~250 KB)
 3. **9 módulos** funcionais (visão geral · tráfego · páginas · aulas · mensageria · tsunami · recuperação · operação · estratégico)
 4. **Alertas automáticos** verde/amarelo/vermelho por métrica
 5. **Histórico** de lançamentos pra comparação

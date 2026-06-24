@@ -70,11 +70,11 @@ Tamanho do time atual · SLAs ajustados · ferramentas escolhidas · DRIs nomead
 
 ## 🧭 Skills relacionadas
 
-- `operacao-lpsg` — esta skill (estrutura de time)
-- `mensageria-lpsg` — define textos que Operação executa
-- `criativos-lpsg` — define o que Designer entrega
-- `dashboard-lpsg` — métricas que Operação acompanha
-- `automacoes-lpsg` — Operação coordena ativação · DevOps configura
+- `operacao-lpsg-turbo` — esta skill (estrutura de time)
+- `mensageria-lpsg-turbo` — define textos que Operação executa
+- `criativos-lpsg-turbo` — define o que Designer entrega
+- `dashboard-lpsg-turbo` — métricas que Operação acompanha
+- `automacoes-lpsg-turbo` — Operação coordena ativação · DevOps configura
 
 ---
 

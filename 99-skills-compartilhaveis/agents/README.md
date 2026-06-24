@@ -111,9 +111,9 @@ Nicho X · 3 concorrentes · gera 02-mercado/.
 | n8n · ManyChat · webhooks · chatbots | `@automacao-turbo` |
 | Onboarding aluno · NPS · depoimentos | `@cs-turbo` |
 
-### Combinado com `@lpsg-master`
+### Combinado com `@lpsg-master-turbo`
 
-O `@lpsg-master` (orquestrador executor) **invoca esses agentes automaticamente** durante as fases:
+O `@lpsg-master-turbo` (orquestrador executor) **invoca esses agentes automaticamente** durante as fases:
 
 | Fase | Agentes acionados |
 |---|---|
@@ -162,14 +162,14 @@ O `@lpsg-master` (orquestrador executor) **invoca esses agentes automaticamente*
 
 | Agente Turbo | Skill LPSG complementar |
 |---|---|
-| `@estrategista-turbo` | `lpsg-master` |
-| `@copywriter-turbo` | `criativos-lpsg` (hooks) · `mensageria-lpsg` |
-| `@diretor-criativo-turbo` | `paginas-lpsg` · `dashboard-lpsg` |
-| `@designer-turbo` | `criativos-lpsg` (visual) |
-| `@trafego-turbo` | `trafego-lpsg` |
-| `@social-turbo` | `criador-reels` (skill) |
-| `@automacao-turbo` | `automacoes-lpsg` |
-| `@cs-turbo` | `cs-lpsg` |
+| `@estrategista-turbo` | `lpsg-master-turbo` |
+| `@copywriter-turbo` | `criativos-lpsg-turbo` (hooks) · `mensageria-lpsg-turbo` |
+| `@diretor-criativo-turbo` | `paginas-lpsg-turbo` · `dashboard-lpsg-turbo` |
+| `@designer-turbo` | `criativos-lpsg-turbo` (visual) |
+| `@trafego-turbo` | `trafego-lpsg-turbo` |
+| `@social-turbo` | `criador-reels-turbo` (skill) |
+| `@automacao-turbo` | `automacoes-lpsg-turbo` |
+| `@cs-turbo` | `cs-lpsg-turbo` |
 
 > Skills entregam estrutura · agentes entregam expertise. Os 2 trabalham juntos.
 

@@ -1,5 +1,5 @@
 ---
-name: estrutura-aulas-lpsg
+name: estrutura-aulas-lpsg-turbo
 description: >
   Use esta skill sempre que o usuário quiser estruturar, montar, planejar,
   ajustar ou diagnosticar a estrutura programática das aulas de um lançamento
@@ -53,7 +53,7 @@ Estrutura ≠ conteúdo da aula. Estrutura é **a arquitetura** que faz qualquer
 
 **Única exceção operacional:** a aula tira-dúvidas de sábado **NÃO tem replay disponível pra revisão posterior** · todas as outras (5 técnicas + pitch) ficam acessíveis pra quem chegou atrasado ou quer rever. Esse detalhe é interno · não é argumento de venda · não vira benefício comunicado.
 
-**A aula tira-dúvidas de sábado NÃO faz parte do "5+1"** — não é uma das 6 aulas estruturadas em escada de crenças. É um momento de descompressão entre a Aula 5 e o pitch. Já tem **mensageria pré-programada** via template `lpsg_tiraduvidas_sabado` (em `mensageria-lpsg`). Função: resgatar quem caiu nas aulas anteriores, responder objeções abertas e esquentar pro pitch de domingo.
+**A aula tira-dúvidas de sábado NÃO faz parte do "5+1"** — não é uma das 6 aulas estruturadas em escada de crenças. É um momento de descompressão entre a Aula 5 e o pitch. Já tem **mensageria pré-programada** via template `lpsg_tiraduvidas_sabado` (em `mensageria-lpsg-turbo`). Função: resgatar quem caiu nas aulas anteriores, responder objeções abertas e esquentar pro pitch de domingo.
 
 ---
 
@@ -218,8 +218,8 @@ references/
 
 Esta skill **fornece a arquitetura**. Use em conjunto com:
 
-- **`mensageria-lpsg`** — pra montar a mensageria que orbita essas aulas
-- **`lancamento-pago-semanal`** — pra o playbook operacional do ciclo semanal
+- **`mensageria-lpsg-turbo`** — pra montar a mensageria que orbita essas aulas
+- **`lancamento-pago-semanal-turbo`** — pra o playbook operacional do ciclo semanal
 - **`estruturador-evento-turbo`** — pra o desenho do evento como um todo (escada de crenças)
 - **`gerador-slides-turbo`** — pra materializar cada aula em slides PPTX
 - **`copywriter-turbo`** (agente) — pra escrever o script final das aulas sobre a estrutura

@@ -6,21 +6,21 @@ skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
   # Tráfego pago (estrutura de campanha, ASC, análise)
-  - trafego-lpsg
-  - lancamento-pago-semanal
+  - trafego-lpsg-turbo
+  - lancamento-pago-semanal-turbo
   # Execução programática (Meta Ads CLI · lançada 29/04/2026)
   - meta-ads-cli-turbo
   # Criativos (entender o que sobe na ASC)
-  - criativos-lpsg
-  - criador-criativos
+  - criativos-lpsg-turbo
+  - criador-criativos-turbo
   # Páginas (destino dos ads · LCP < 1.5s)
-  - paginas-lpsg
-  - page-optimizer
+  - paginas-lpsg-turbo
+  - page-optimizer-turbo
   # Dashboards (acompanhamento)
-  - dashboard-lpsg
+  - dashboard-lpsg-turbo
   - dash-lancamento-turbo
   # Setup e execução Meta Ads CLI
-  - meta-ads-cli-setup
+  - meta-ads-cli-setup-turbo
   # Deploy + teste da página de destino dos ads
   - deploy-to-vercel
   - webapp-testing
@@ -155,12 +155,12 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 9
-  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg + práticas reais validadas em campo (funil perpétuo de nicho de obra + evento de emagrecimento, jun/2026)"
+  source: "Turbo Academy + lancamento-pago-semanal-turbo + trafego-lpsg-turbo + práticas reais validadas em campo (funil perpétuo de nicho de obra + evento de emagrecimento, jun/2026)"
 
   framework_1:
     name: "Estrutura de Campanhas para Lançamento Pago"
     category: "campaign_structure"
-    skill_reference: "~/.claude/skills/lancamento-pago-semanal/references/fase4-trafego.md"
+    skill_reference: "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase4-trafego.md"
     philosophy: |
       Campanhas Advantage+ com estrutura simplificada.
       Foco em ROAS 1 no ingresso. Escala horizontal via criativos.
@@ -310,7 +310,7 @@ operational_frameworks:
         PAUSED por padrão · write pede confirmação · delete dupla · --output json
         é flag GLOBAL (antes do subcomando) · app PRECISA estar Live · vídeo
         >100MB = upload resumável · carrossel = link_data.child_attachments.
-      batch_criativos: "Batelada de 15 (5 estáticos + 5 vídeos + 5 carrosséis), copy padrão + variações pra A/B (skill criativos-lpsg). Foto/identidade do expert obrigatória."
+      batch_criativos: "Batelada de 15 (5 estáticos + 5 vídeos + 5 carrosséis), copy padrão + variações pra A/B (skill criativos-lpsg-turbo). Foto/identidade do expert obrigatória."
       remotion: "Vídeos via Remotion (hook animado → footage → CTA endcard) em 9:16/1:1/4:5; ad multi-formato (asset_feed_spec + optimization_type=PLACEMENT) serve o formato certo por placement."
       teste_de_angulo: "Testar ÂNGULOS, não só formatos. Em um funil de nicho de obra, o ângulo 'custo' (quanto a obra vai custar) venceu em estático E vídeo — concentrar verba no ângulo vencedor."
       compliance: "Nicho sensível (saúde/emagrecimento/renda) → copy passa pelo @revisor-copy-turbo (compliance Meta) ANTES de subir. Protege a conta de reprovação/ban (lição de campo em nicho de saúde/emagrecimento)."
@@ -390,9 +390,9 @@ commands:
 
 dependencies:
   skills:
-    - "~/.claude/skills/lancamento-pago-semanal/references/fase4-trafego.md"
-    - "~/.claude/skills/lancamento-pago-semanal/references/otimizacoes-metricas.md"
-    - "~/.claude/skills/criador-criativos/references/trafego-campanhas.md"
+    - "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase4-trafego.md"
+    - "~/.claude/skills/lancamento-pago-semanal-turbo/references/otimizacoes-metricas.md"
+    - "~/.claude/skills/criador-criativos-turbo/references/trafego-campanhas.md"
   playbooks_reais:
     - "skill meta-ads-cli-turbo (refs 05/06)  # gotchas validados de API/CLI (atribuição incremental, cost cap, multi-formato, upload resumável, carrossel, app Live)"
     - "Funil perpétuo de quiz: LTV + CAPI + verificação de domínio + relatórios VK vs Meta"

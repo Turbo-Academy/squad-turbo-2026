@@ -8,26 +8,26 @@
 
 | Padrão | Tipo | Destino | Exemplo |
 |---|---|---|---|
-| `nome-lpsg.zip` | **Skill do Claude** | `~/.claude/skills/nome-lpsg/` | `trafego-lpsg.zip` |
+| `nome-lpsg.zip` | **Skill do Claude** | `~/.claude/skills/nome-lpsg/` | `trafego-lpsg-turbo.zip` |
 | `nome-turbo.zip` | **Skill do Claude** (não-LPSG) | `~/.claude/skills/nome-turbo/` | `meta-ads-cli-turbo.zip` |
 | `Nome-LPSG-Template.zip` | **Entregável completo** (template + exemplo) | Referência / consulta | `Trafego-LPSG-Template.zip` |
-| `lpsg-master.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master/` | — |
+| `lpsg-master-turbo.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master-turbo/` | — |
 | `squad-turbo-completo.zip` | **<!--F:n_agentes-->13<!--/F--> agentes** (Squad + Picasso + Revisor + Closer) | `~/.claude/agents/` | — |
 
 ## Contagem (atualizada 2026-06-23)
 
 - **33 skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
-  - 1 orquestrador (lpsg-master)
-  - 1 manual final (manual-final-lpsg)
+  - 1 orquestrador (lpsg-master-turbo)
+  - 1 manual final (manual-final-lpsg-turbo)
   - **2 execução Meta Ads:**
-    - `meta-ads-cli-setup` · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
+    - `meta-ads-cli-setup-turbo` · onboarding seguro zero → 1ª chamada · checkpointed · pré-req da turbo
     - `meta-ads-cli-turbo` · operação avançada (batelada · stop-loss · escalonamento) ⭐ atualizada 2026-06-11 com runbook end-to-end Graph API + pipeline Python (cobre o que a CLI não faz: ROAS floor, atribuição Incremental, `instagram_user_id`, carrosséis, vídeo resumável)
-  - 1 análise de Instagram (`instagram-analise-estrategica`) ⭐ NEW · relatório/auditoria de perfil IG
+  - 1 análise de Instagram (`instagram-analise-estrategica-turbo`) ⭐ NEW · relatório/auditoria de perfil IG
   - 1 briefing de aprovação (briefing-aprovacao-turbo)
   - 1 **protocolo de conversa transversal** (protocolo-conversa-turbo) · carregada por TODOS os agentes primeiro
-  - 1 páginas low-ticket (criador-paginas-low-ticket) · inclui `estudo-de-caso-narrativo.md`
-  - 1 motor de VSL (`criador-vsl`) ⭐ NEW · roteiro de Video Sales Letter via RMBC · mecanismo único · 11 blocos · compliance Meta
+  - 1 páginas low-ticket (criador-paginas-low-ticket-turbo) · inclui `estudo-de-caso-narrativo.md`
+  - 1 motor de VSL (`criador-vsl-turbo`) ⭐ NEW · roteiro de Video Sales Letter via RMBC · mecanismo único · 11 blocos · compliance Meta
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
@@ -49,10 +49,10 @@ Resumo:
 ```bash
 # 1. Skills LPSG (16 ao todo · incluindo protocolo-conversa-turbo transversal)
 mkdir -p ~/.claude/skills
-for z in *-lpsg.zip lpsg-master.zip \
-         meta-ads-cli-setup.zip meta-ads-cli-turbo.zip \
+for z in *-lpsg.zip lpsg-master-turbo.zip \
+         meta-ads-cli-setup-turbo.zip meta-ads-cli-turbo.zip \
          protocolo-conversa-turbo.zip briefing-aprovacao-turbo.zip \
-         criador-paginas-low-ticket.zip; do
+         criador-paginas-low-ticket-turbo.zip; do
   unzip -o "$z" -d ~/.claude/skills/
 done
 
@@ -83,29 +83,29 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 ### Squad Turbo (executores)
 | Skill | Usada por |
 |---|---|
-| `mensageria-lpsg` | automacao, copywriter, cs, social |
-| `criador-paginas-low-ticket` | copywriter, estrategista |
+| `mensageria-lpsg-turbo` | automacao, copywriter, cs, social |
+| `criador-paginas-low-ticket-turbo` | copywriter, estrategista |
 | `estruturador-evento-turbo` | copywriter, estrategista |
-| `criador-criativos` | copywriter, pesquisador-mercado, trafego, social |
-| `criador-reels` | copywriter, social |
+| `criador-criativos-turbo` | copywriter, pesquisador-mercado, trafego, social |
+| `criador-reels-turbo` | copywriter, social |
 | `dash-lancamento-turbo` | estrategista, trafego, automacao |
-| `designer-senior` | designer, diretor-criativo |
+| `designer-senior-turbo` | designer, diretor-criativo |
 | `gerador-slides-turbo` | designer, diretor-criativo |
 | `banner-design` | designer, diretor-criativo |
-| `gerador-instagram` | designer, diretor-criativo, social |
+| `gerador-instagram-turbo` | designer, diretor-criativo, social |
 | `ui-ux-pro-max` | designer, diretor-criativo, picasso |
 | `design` | designer, diretor-criativo |
 | `design-system` | designer, diretor-criativo |
 | `brand` | designer, diretor-criativo |
 | `ui-styling` | designer, diretor-criativo |
-| `slides-uipm` | designer, diretor-criativo |
+| `slides-uipm-turbo` | designer, diretor-criativo |
 | `design-tokens-turbo` | designer, diretor-criativo |
 | `lovable-style-turbo` | designer, diretor-criativo |
-| `page-optimizer` | diretor-criativo, trafego |
-| `transcrever-youtube` | pesquisador, pesquisador-mercado, social |
-| `lancamento-pago-semanal` | estrategista, pesquisador, copywriter, trafego, cs |
+| `page-optimizer-turbo` | diretor-criativo, trafego |
+| `transcrever-youtube-turbo` | pesquisador, pesquisador-mercado, social |
+| `lancamento-pago-semanal-turbo` | estrategista, pesquisador, copywriter, trafego, cs |
 | `find-skills` | estrategista, pesquisador, pesquisador-mercado |
-| `honor` | estrategista |
+| `honor-turbo` | estrategista |
 | `pptx` | designer |
 
 > Se um agente falhar ao tentar usar uma skill, verifique se ela está instalada em `~/.claude/skills/`. Mapeamento completo em [`agents/MATRIZ-SKILLS.md`](agents/MATRIZ-SKILLS.md).

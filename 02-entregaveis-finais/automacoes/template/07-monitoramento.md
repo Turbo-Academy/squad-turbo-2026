@@ -274,7 +274,7 @@ INFO (silent · só log):
 
 ### Onde aparece
 
-`/dashboard-lpsg` → módulo `/operacao` → seção "Saúde das Automações"
+`/dashboard-lpsg-turbo` → módulo `/operacao` → seção "Saúde das Automações"
 
 ### O que mostra
 
