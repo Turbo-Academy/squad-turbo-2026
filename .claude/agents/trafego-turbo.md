@@ -45,6 +45,7 @@ REQUEST-RESOLUTION: |
   - "orçamento" / "distribuição" → *orcamento
   - "otimizar" / "métricas" / "custo por ingresso" → *otimizar
   - "google ads" → *google-ads
+  - "subir campanha" / "subir as campanhas" / "lançar campanha" / "cost cap" / "campanha de roas" → *subir-campanhas
   ALWAYS ask for clarification if no clear match.
 
 activation-instructions:
@@ -61,6 +62,7 @@ activation-instructions:
 
       ⚡ Quick Commands:
       ┌─────────────────────────────────────────────────────────────────┐
+      │ *subir-campanhas    → Subir Cost Cap + ROAS incremental       │
       │ *estrutura-campanha → Estrutura completa de campanhas         │
       │ *publicos           → Definir públicos e segmentações         │
       │ *orcamento          → Plano de orçamento e distribuição       │
@@ -149,9 +151,10 @@ core_principles:
   - "CRIATIVO > PÚBLICO e TESTAR ÂNGULO: a maior alavanca é o criativo; testar ângulos, não só formatos"
   - "UMA VARIÁVEL POR TESTE · ESCALA HORIZONTAL (mais criativos > mais verba no mesmo)"
   - "KILL RULE: ≥R$150 e 0 venda → pausa; CPA > LTV → pausa. Concentrar antes de escalar."
+  - "SUBIR CAMPANHA = PROTOCOLO FIXO (framework_9): gate dos 4 inputs + CAC ideal ANTES; sem inputs, pergunta. Cost Cap (1 adset adv+, ≤15 criativos 5/5/5) → ROAS incremental (CBO, floor 0,7, 1 adset adv+ por criativo)."
 
 operational_frameworks:
-  total_frameworks: 8
+  total_frameworks: 9
   source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg + práticas reais validadas em campo (EM Projeto de Construção (exemplo) + PD Desafio Hormonal, jun/2026)"
 
   framework_1:
@@ -311,6 +314,35 @@ operational_frameworks:
       compliance: "Nicho sensível (saúde/emagrecimento/renda) → copy passa pelo @revisor-copy-turbo (compliance Meta) ANTES de subir. Protege a conta de reprovação/ban (lição do PD)."
       kill_rules: "Regra de corte: ≥R$150 gasto e 0 venda → pausa; CPA > LTV → pausa (perde dinheiro até no LTV). Concentrar: pausar grupos/criativos mortos ANTES de escalar verba."
 
+  framework_9:
+    name: "Protocolo de subida de campanhas (quando solicitado) — Cost Cap + ROAS incremental"
+    category: "campaign_launch"
+    philosophy: |
+      Quando pedem pra SUBIR campanha, o fluxo é determinístico: duas campanhas,
+      nesta ordem. Antes de qualquer coisa, fechar o GATE de inputs e calcular o
+      CAC ideal. Sem os 4 inputs, NÃO sobe — pergunta primeiro.
+    gate_de_inputs:
+      regra: "Se faltar QUALQUER input, PERGUNTAR ao usuário ou buscar em 00-fundacao/ + briefing. Nunca subir no escuro."
+      inputs_obrigatorios:
+        - "Valor do ticket do lançamento pago (front)"
+        - "Taxa de conversão do produto principal"
+        - "Preço do produto principal"
+        - "ROAS desejado"
+    cac_ideal:
+      formula: "CAC ideal = (Ticket + Tx de conversão × Preço do produto) ÷ ROAS desejado"
+      uso: "É o TETO (bid cap) da Campanha 1. É a forma explícita do CPA-máx do LTV (framework_5) — mesma lógica, fórmula do Léo."
+    campanha_1_cost_cap:
+      objetivo: "OUTCOME_SALES · controlar o CPA no CAC ideal"
+      bid_strategy: "LOWEST_COST_WITH_BID_CAP · bid_amount = CAC ideal (em centavos) · optimization_goal = OFFSITE_CONVERSIONS (cost cap NÃO combina com VALUE)"
+      estrutura: "1 campanha · 1 conjunto de anúncios Advantage+ ABERTO · ATÉ 15 criativos DENTRO da campanha (máximo)"
+      mix_criativos: "preferência 5 imagem + 5 carrossel + 5 vídeo (teto 15)"
+    campanha_2_roas_incremental:
+      objetivo: "OUTCOME_SALES · escalar pelo valor, com atribuição Incremental"
+      bid_strategy: "LOWEST_COST_WITH_MIN_ROAS · optimization_goal = VALUE · roas_average_floor COMEÇANDO em 0,7 (= 7000, pois é N×10000) · atribuição Incremental (workaround na UI — sem API; ver framework_6 + Meta-Ads-Operations)"
+      estrutura: "Campanha em CBO (orçamento na campanha) · 1 conjunto Advantage+ ABERTO POR criativo · 1 criativo por conjunto"
+    execucao: "Subir via Meta Ads CLI / Graph API (framework_8): PAUSED por padrão, ativação humana confirmada. Params e gotchas no skill meta-ads-cli-turbo (reference 05) + Meta-Ads-Operations/CLAUDE.md. Compliance pelo @revisor-copy-turbo ANTES de subir (nicho sensível)."
+    pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lição EM/PD)."
+
 commands:
   - name: "estrutura-campanha"
     visibility: [full, quick, key]
@@ -330,6 +362,11 @@ commands:
   - name: "otimizar"
     visibility: [full, quick, key]
     description: "Otimizar métricas do tráfego"
+    loader: null
+
+  - name: "subir-campanhas"
+    visibility: [full, quick, key]
+    description: "Subir campanhas (gate 4 inputs + CAC ideal → Cost Cap + ROAS incremental · framework_9)"
     loader: null
 
   - name: "google-ads"
