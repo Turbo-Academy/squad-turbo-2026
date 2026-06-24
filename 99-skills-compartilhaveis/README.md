@@ -31,7 +31,7 @@
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 30 zips**
+**Total: 44 zips** (33 skills + 1 squad-turbo-completo + 10 Templates legado)
 
 > **Cobertura total de skills (2026-05-28):** as 54 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
