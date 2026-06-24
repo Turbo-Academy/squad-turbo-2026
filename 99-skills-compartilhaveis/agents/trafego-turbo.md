@@ -155,7 +155,7 @@ core_principles:
 
 operational_frameworks:
   total_frameworks: 9
-  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg + práticas reais validadas em campo (EM Projeto de Construção (exemplo) + PD Desafio Hormonal, jun/2026)"
+  source: "Turbo Academy + lancamento-pago-semanal + trafego-lpsg + práticas reais validadas em campo (funil perpétuo de nicho de obra + evento de emagrecimento, jun/2026)"
 
   framework_1:
     name: "Estrutura de Campanhas para Lançamento Pago"
@@ -243,18 +243,18 @@ operational_frameworks:
       evento_lpsg: |
         Ingresso low-ticket (R$62) → evento ao vivo 7 dias → pitch do produto
         principal. Alvo: ROAS ~1 no ingresso; lucro no principal.
-        Ex.: PD — Desafio do Emagrecimento Hormonal.
+        Ex.: evento de emagrecimento (ingresso low-ticket → produto principal).
       funil_perpetuo_quiz_ltv: |
         Quiz (lead-magnet) → VSL → checkout do front (R$62) + BACKEND depois
         (ex.: curso ~R$2.280 que ~10% dos compradores do front pegam).
         NÃO se mede por "ROAS 1 no ingresso" — mede por LTV:
           LTV = preço_front + (conv_backend × ticket_backend)  →  62 + 0,10×2.280 ≈ R$290/comprador
           CPA-MÁX = LTV / piso_de_ROAS_no_LTV  →  290 / 2 = R$145
-        Ex.: EM — Projeto de Construção (exemplo) (10 quizzes).
+        Ex.: funil perpétuo de nicho de obra/reforma (quiz como lead-magnet).
     regra: "Descobrir o modelo PRIMEIRO. O CPA-alvo (R$62 no evento vs R$145 no LTV) decide tudo."
 
   framework_6:
-    name: "Playbook de bid strategy (validado em campo — EM + PD)"
+    name: "Playbook de bid strategy (validado em campo)"
     category: "bidding"
     philosophy: "Não existe 'a melhor' — existe a certa pro momento. Aprendizados reais:"
     estrategias:
@@ -264,14 +264,14 @@ operational_frameworks:
         e LOWEST_COST_WITH_BID_CAP (teto do LANCE). O protocolo de subida (framework_9)
         padroniza COST_CAP + bid_amount em centavos (adset) + optimization_goal=
         OFFSITE_CONVERSIONS (NÃO combina com VALUE). Controla CPA sem matar entrega.
-        No EM o CAP ENTREGOU ~3× mais e converteu melhor que a meta-de-ROAS.
+        Em campo (funil perpétuo c/ backend) o Cost Cap ENTREGOU ~3× mais e converteu melhor que a meta-de-ROAS.
         Teto = CAC ideal (= CPA-máx do LTV). Runbook: meta-ads-cli-turbo ref 06.
       roas_goal_incremental: |
         LOWEST_COST_WITH_MIN_ROAS + optimization_goal=VALUE +
         bid_constraints.roas_average_floor (N×10000; ROAS 0,5 = 5000).
-        Piso agressivo SUFOCA a entrega (visto no EM: grupos 'Roas' entregaram
+        Piso agressivo SUFOCA a entrega (visto em campo: grupos 'Roas' entregaram
         pouco e converteram pior que os 'CAP'). Atribuição "Incremental" NÃO tem
-        API — workaround por duplicação na UI (ver Meta-Ads-Operations). PD usa.
+        API — workaround por duplicação na UI (ver runbook ref 05).
     decisao: |
       Funil perpétuo c/ backend → CAP no CPA-máx do LTV.
       Evento → Advantage+/lowest cost; testar incremental com volume.
@@ -305,15 +305,15 @@ operational_frameworks:
     category: "execution"
     regras:
       ops_cli: |
-        Operar via Meta Ads CLI / Graph API. Regras e gotchas validados em
-        ~/Documents/Claude/Projects/Meta-Ads-Operations/CLAUDE.md:
+        Operar via Meta Ads CLI / Graph API. Regras e gotchas validados nos
+        runbooks do skill meta-ads-cli-turbo (refs 05/06):
         PAUSED por padrão · write pede confirmação · delete dupla · --output json
         é flag GLOBAL (antes do subcomando) · app PRECISA estar Live · vídeo
         >100MB = upload resumável · carrossel = link_data.child_attachments.
       batch_criativos: "Batelada de 15 (5 estáticos + 5 vídeos + 5 carrosséis), copy padrão + variações pra A/B (skill criativos-lpsg). Foto/identidade do expert obrigatória."
       remotion: "Vídeos via Remotion (hook animado → footage → CTA endcard) em 9:16/1:1/4:5; ad multi-formato (asset_feed_spec + optimization_type=PLACEMENT) serve o formato certo por placement."
-      teste_de_angulo: "Testar ÂNGULOS, não só formatos. No EM o ângulo 'custo' (quanto a obra vai custar) venceu em estático E vídeo — concentrar verba no ângulo vencedor."
-      compliance: "Nicho sensível (saúde/emagrecimento/renda) → copy passa pelo @revisor-copy-turbo (compliance Meta) ANTES de subir. Protege a conta de reprovação/ban (lição do PD)."
+      teste_de_angulo: "Testar ÂNGULOS, não só formatos. Em um funil de nicho de obra, o ângulo 'custo' (quanto a obra vai custar) venceu em estático E vídeo — concentrar verba no ângulo vencedor."
+      compliance: "Nicho sensível (saúde/emagrecimento/renda) → copy passa pelo @revisor-copy-turbo (compliance Meta) ANTES de subir. Protege a conta de reprovação/ban (lição de campo em nicho de saúde/emagrecimento)."
       kill_rules: "Regra de corte: ≥R$150 gasto e 0 venda → pausa; CPA > LTV → pausa (perde dinheiro até no LTV). Concentrar: pausar grupos/criativos mortos ANTES de escalar verba."
 
   framework_9:
@@ -341,11 +341,11 @@ operational_frameworks:
       mix_criativos: "preferência 5 imagem + 5 carrossel + 5 vídeo (teto 15)"
     campanha_2_roas_incremental:
       objetivo: "OUTCOME_SALES · escalar pelo valor, com atribuição Incremental"
-      bid_strategy: "LOWEST_COST_WITH_MIN_ROAS · optimization_goal = VALUE · roas_average_floor COMEÇANDO em 0,7 (= 7000, pois é N×10000) · atribuição Incremental (workaround na UI — sem API; ver framework_6 + Meta-Ads-Operations)"
+      bid_strategy: "LOWEST_COST_WITH_MIN_ROAS · optimization_goal = VALUE · roas_average_floor COMEÇANDO em 0,7 (= 7000, pois é N×10000) · atribuição Incremental (workaround na UI — sem API; ver framework_6 + runbook ref 05)"
       estrutura: "Campanha em CBO (orçamento na campanha) · 1 conjunto Advantage+ ABERTO POR criativo · 1 criativo por conjunto"
       runbook: "meta-ads-cli-turbo/references/05-runbook-campanha-roas-incremental-graphapi.md"
-    execucao: "Subir via Meta Ads CLI / Graph API (framework_8): PAUSED por padrão, ativação humana confirmada. Params e gotchas no skill meta-ads-cli-turbo (reference 05) + Meta-Ads-Operations/CLAUDE.md. Compliance pelo @revisor-copy-turbo ANTES de subir (nicho sensível)."
-    pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lição EM/PD)."
+    execucao: "Subir via Meta Ads CLI / Graph API (framework_8): PAUSED por padrão, ativação humana confirmada. Params e gotchas nos runbooks do skill meta-ads-cli-turbo (references 05 e 06). Compliance pelo @revisor-copy-turbo ANTES de subir (nicho sensível)."
+    pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lições de campo)."
 
 commands:
   - name: "estrutura-campanha"
@@ -394,9 +394,9 @@ dependencies:
     - "~/.claude/skills/lancamento-pago-semanal/references/otimizacoes-metricas.md"
     - "~/.claude/skills/criador-criativos/references/trafego-campanhas.md"
   playbooks_reais:
-    - "~/Documents/Claude/Projects/Meta-Ads-Operations/CLAUDE.md  # gotchas validados de API/CLI (atribuição incremental, cost cap, multi-formato, upload resumável, carrossel, app Live)"
-    - "EM — Projeto de Construção (exemplo): funil perpétuo de quiz + LTV + CAPI + verificação de domínio + relatórios VK vs Meta"
-    - "PD — Desafio Hormonal: evento LPSG + batch 15 criativos + Remotion multi-formato + compliance + ROAS incremental"
+    - "skill meta-ads-cli-turbo (refs 05/06)  # gotchas validados de API/CLI (atribuição incremental, cost cap, multi-formato, upload resumável, carrossel, app Live)"
+    - "Funil perpétuo de quiz: LTV + CAPI + verificação de domínio + relatórios VK vs Meta"
+    - "Evento LPSG de emagrecimento: batch 15 criativos + Remotion multi-formato + compliance + ROAS incremental"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA
