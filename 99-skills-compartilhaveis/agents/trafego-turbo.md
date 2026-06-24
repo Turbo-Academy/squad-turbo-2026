@@ -260,10 +260,12 @@ operational_frameworks:
     estrategias:
       advantage_plus_lowest_cost: "Base pra aprender e pra evento (volume de ingresso). Deixa o Meta entregar."
       cost_cap: |
-        LOWEST_COST_WITH_BID_CAP (campanha) + bid_amount em centavos (adset) +
-        optimization_goal=OFFSITE_CONVERSIONS (NÃO combina com VALUE).
-        Controla CPA sem matar entrega. No EM o CAP ENTREGOU ~3× mais e
-        converteu melhor que a meta-de-ROAS. Teto = CPA-máx do LTV.
+        Dois sabores de "cap": COST_CAP (teto do CUSTO MÉDIO por resultado ≈ CPA-alvo)
+        e LOWEST_COST_WITH_BID_CAP (teto do LANCE). O protocolo de subida (framework_9)
+        padroniza COST_CAP + bid_amount em centavos (adset) + optimization_goal=
+        OFFSITE_CONVERSIONS (NÃO combina com VALUE). Controla CPA sem matar entrega.
+        No EM o CAP ENTREGOU ~3× mais e converteu melhor que a meta-de-ROAS.
+        Teto = CAC ideal (= CPA-máx do LTV). Runbook: meta-ads-cli-turbo ref 06.
       roas_goal_incremental: |
         LOWEST_COST_WITH_MIN_ROAS + optimization_goal=VALUE +
         bid_constraints.roas_average_floor (N×10000; ROAS 0,5 = 5000).
@@ -333,13 +335,15 @@ operational_frameworks:
       uso: "É o TETO (bid cap) da Campanha 1. É a forma explícita do CPA-máx do LTV (framework_5) — mesma lógica, fórmula do Léo."
     campanha_1_cost_cap:
       objetivo: "OUTCOME_SALES · controlar o CPA no CAC ideal"
-      bid_strategy: "LOWEST_COST_WITH_BID_CAP · bid_amount = CAC ideal (em centavos) · optimization_goal = OFFSITE_CONVERSIONS (cost cap NÃO combina com VALUE)"
+      bid_strategy: "COST_CAP (Cost Cap de verdade · ≠ Bid Cap) · bid_amount = CAC ideal em CENTAVOS (R$145 = 14500) · optimization_goal = OFFSITE_CONVERSIONS (NÃO combina com VALUE)"
       estrutura: "1 campanha · 1 conjunto de anúncios Advantage+ ABERTO · ATÉ 15 criativos DENTRO da campanha (máximo)"
+      runbook: "meta-ads-cli-turbo/references/06-runbook-campanha-cost-cap-graphapi.md (passo a passo Graph API + gotchas)"
       mix_criativos: "preferência 5 imagem + 5 carrossel + 5 vídeo (teto 15)"
     campanha_2_roas_incremental:
       objetivo: "OUTCOME_SALES · escalar pelo valor, com atribuição Incremental"
       bid_strategy: "LOWEST_COST_WITH_MIN_ROAS · optimization_goal = VALUE · roas_average_floor COMEÇANDO em 0,7 (= 7000, pois é N×10000) · atribuição Incremental (workaround na UI — sem API; ver framework_6 + Meta-Ads-Operations)"
       estrutura: "Campanha em CBO (orçamento na campanha) · 1 conjunto Advantage+ ABERTO POR criativo · 1 criativo por conjunto"
+      runbook: "meta-ads-cli-turbo/references/05-runbook-campanha-roas-incremental-graphapi.md"
     execucao: "Subir via Meta Ads CLI / Graph API (framework_8): PAUSED por padrão, ativação humana confirmada. Params e gotchas no skill meta-ads-cli-turbo (reference 05) + Meta-Ads-Operations/CLAUDE.md. Compliance pelo @revisor-copy-turbo ANTES de subir (nicho sensível)."
     pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lição EM/PD)."
 
