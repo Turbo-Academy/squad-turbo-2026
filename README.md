@@ -1,4 +1,4 @@
-# LPSG 5.1 · Squad Turbo
+# LPSG 6.0 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
@@ -6,7 +6,7 @@
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
-[![Skills: 14](https://img.shields.io/badge/skills-14-orange.svg)](#skills)
+[![Skills: 35](https://img.shields.io/badge/skills-35-orange.svg)](#skills)
 [![Agents: 13](https://img.shields.io/badge/agents-13-purple.svg)](#agents)
 
 ---
@@ -100,7 +100,7 @@ lpsg-method/
 │   ├── lpsg-master-turbo.zip            ← orquestrador LPSG (instala primeiro)
 │   ├── estrutura-aulas-lpsg-turbo.zip
 │   ├── oferta-lpsg-turbo.zip
-│   ├── ...                        ← 11 skills LPSG no total
+│   ├── ...                        ← 35 skills (todas terminam em -turbo)
 │   ├── squad-turbo-completo.zip   ← 13 agentes Turbo (squad inteiro)
 │   └── agents/                    ← 13 agentes Squad Turbo
 │       ├── estrategista-turbo.md            (orquestrador estratégico)
@@ -146,25 +146,27 @@ lpsg-method/
 ```bash
 # macOS / Linux
 
-# 1. Skills LPSG (14 ao todo)
+# 1. Skills (35 proprietárias · todas terminam em -turbo)
 mkdir -p ~/.claude/skills
-for z in 99-skills-compartilhaveis/*-lpsg.zip \
-         99-skills-compartilhaveis/lpsg-master-turbo.zip \
-         99-skills-compartilhaveis/meta-ads-cli-turbo.zip \
-         99-skills-compartilhaveis/briefing-aprovacao-turbo.zip; do
+for z in 99-skills-compartilhaveis/*-turbo.zip; do
+  case "$z" in *squad-turbo-completo.zip|*squad-core-turbo.zip) continue;; esac
   unzip -o "$z" -d ~/.claude/skills/
 done
 
 # 2. Squad Turbo · 13 agentes (inclui Picasso + Revisor + Closer)
 mkdir -p ~/.claude/agents
-cp 99-skills-compartilhaveis/agents/*.md ~/.claude/agents/
+cp 99-skills-compartilhaveis/agents/*-turbo.md ~/.claude/agents/
 
-# 3. (Opcional) Stack Picasso · auditoria anti-IA de design
+# 3. Squad core (templates · checklists · frameworks · usado pelo @pesquisador-turbo)
+mkdir -p ~/.claude/squads
+unzip -o 99-skills-compartilhaveis/squad-core-turbo.zip -d ~/.claude/squads/
+
+# 4. (Opcional) Stack Picasso · auditoria anti-IA de design
 npx skills add https://github.com/anthropics/skills --skill frontend-design --yes
 npx skills add pbakaus/impeccable --yes
 npx skills add https://github.com/kylezantos/design-motion-principles --skill design-motion-principles --yes
 
-# 4. Reinicia o Claude Code
+# 5. Reinicia o Claude Code
 #    Skills aparecem em /skills
 #    Agentes invocáveis com @nome-do-agente
 ```

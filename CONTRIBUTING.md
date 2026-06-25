@@ -1,4 +1,4 @@
-# Contributing · LPSG 5.1
+# Contributing · LPSG 6.0
 
 > Obrigado por considerar contribuir. Este projeto é mantido pela equipe **Turbo Academy**, mas aceita PRs e issues da comunidade.
 
