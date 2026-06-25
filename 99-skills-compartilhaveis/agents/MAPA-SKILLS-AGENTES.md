@@ -38,7 +38,7 @@
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre · 1ª coisa a carregar |
 | `lpsg-master-turbo` | Primária | Quando o Léo digitar `@lpsg-master-turbo crie meu LPSG` com YAML · executor automático das 10 fases |
 | `lancamento-pago-semanal-turbo` | Primária | Método-base · referência conceitual constante |
-| `estruturador-evento-turbo` | Primária | Diagnóstico inicial · escolher entre 5+1 e Workshop |
+| `estrutura-aulas-lpsg-turbo` | Primária | Diagnóstico inicial · escolher entre 5+1 e Workshop (absorveu o antigo estruturador-evento) |
 | `briefing-aprovacao-turbo` | Primária | Gate de aprovação antes de qualquer fase rodar |
 | `manual-final-lpsg-turbo` | Primária | No final do projeto · gera manual HTML personalizado |
 | `honor-turbo` | Complementar | Quando o projeto exige estratégia de marca antes do funil |
@@ -58,8 +58,7 @@
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
 | `lancamento-pago-semanal-turbo` | Primária | Referência de método |
-| `estruturador-evento-turbo` | Primária | Quando montar escada de crenças do evento |
-| `estrutura-aulas-lpsg-turbo` | Primária | Roteirizar Aulas 1-6 do 5+1 |
+| `estrutura-aulas-lpsg-turbo` | Primária | Escada de crenças + roteirizar Aulas 1-6 do 5+1 (e Workshop · absorveu o antigo estruturador-evento) |
 | `briefing-aprovacao-turbo` | Primária | Antes de escrever qualquer copy · consome 00-fundacao + 02-mercado |
 | `paginas-lpsg-turbo` | Primária | Páginas premium (V1-V5) · usar `references/10-anatomia-14-blocos.md` pra operacional |
 | `criador-paginas-low-ticket-turbo` | Primária | Páginas low-ticket · `references/estudo-de-caso-narrativo.md` obrigatório pra prova social |
@@ -219,7 +218,7 @@
 
 ## 🎭 @picasso-auditor-turbo · Tier 0 · AUDITOR VISUAL ANTI-IA
 
-> Entra em ação AUTOMATICAMENTE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces.
+> Gate visual: invocado (pelo @estrategista-turbo ou usuário) após qualquer criação/alteração de páginas, componentes, criativos ou interfaces. NÃO auto-dispara — quem cria a peça encadeia a auditoria antes de entregar.
 
 | Skill | Categoria | Quando usar |
 |---|---|---|
@@ -286,7 +285,7 @@
        │     @designer-turbo (execução)
        │           │
        │           ▼
-       │     @picasso-auditor-turbo (auditoria automática)
+       │     @picasso-auditor-turbo (gate visual · invocado após criar)
        │
        ├──▶ @trafego-turbo (campanhas)
        │

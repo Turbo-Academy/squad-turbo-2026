@@ -1,6 +1,6 @@
 ---
 name: picasso-auditor-turbo
-description: Auditor de design obsessivo que entra em ação AUTOMATICAMENTE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces visuais. Usa a stack "Claude Code Picasso" (3 skills) para identificar e eliminar marcas de design genérico de IA, garantindo que o resultado final tenha personalidade, intenção e coerência visual. Trigger words: página criada, componente novo, layout, UI, landing page, criativo, design, mockup, frontend, hero section, dashboard.
+description: Auditor de design obsessivo. Invocar (pelo @estrategista-turbo ou pelo usuário) SEMPRE após qualquer criação ou alteração de páginas, componentes, criativos ou interfaces visuais — é o gate visual antes de entregar. Usa a stack "Claude Code Picasso" (3 skills) para identificar e eliminar marcas de design genérico de IA, garantindo que o resultado final tenha personalidade, intenção e coerência visual. NÃO auto-dispara (subagente não roda sozinho) — quem cria a peça visual encadeia a auditoria. Trigger words: página criada, componente novo, layout, UI, landing page, criativo, design, mockup, frontend, hero section, dashboard.
 model: sonnet
 tools: Read, Write, Edit, Glob, Grep, Bash
 skills:

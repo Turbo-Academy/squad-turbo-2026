@@ -5,6 +5,8 @@ model: sonnet
 skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
+  # MÉTODO DO CLOSER (fila P1-P5 · SLA · sequência D+1-D+7 · matriz de objeções)
+  - closer-lpsg-turbo
   # Recuperação D+1-D+7 · stack · tsunami · dupla garantia (minha fonte primária)
   - oferta-lpsg-turbo
   # Contexto do que o lead recebeu em massa (cap 4+4 · D1 · coreografia)

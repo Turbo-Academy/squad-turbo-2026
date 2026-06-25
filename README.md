@@ -2,7 +2,7 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · <!--F:n_skills-->14<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · <!--F:n_skills-->35<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
@@ -122,7 +122,7 @@ lpsg-method/
 
 ## 🤖 Skills do Claude
 
-12 skills especializadas. Instale em `~/.claude/skills/`:
+<!--F:n_skills-->35<!--/F--> skills proprietárias (principais abaixo · lista canônica em `99-skills-compartilhaveis/sync-skills.sh`). Instale em `~/.claude/skills/`:
 
 | Skill | Função |
 |---|---|
@@ -171,7 +171,7 @@ npx skills add https://github.com/kylezantos/design-motion-principles --skill de
 
 ### 🤝 Squad Turbo · 13 agentes (inclui Picasso Auditor + Revisor Copy + Closer)
 
-Além das 12 skills LPSG, o projeto inclui **13 agentes especialistas**:
+Além das skills, o projeto inclui **<!--F:n_agentes-->13<!--/F--> agentes especialistas**:
 
 | Agente | Função |
 |---|---|
@@ -215,7 +215,7 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ## 📊 Status do projeto
 
 ```
-✅ 14 skills LPSG instaladas e testadas (+ briefing-aprovacao-turbo · 30/04/2026)
+✅ <!--F:n_skills-->35<!--/F--> skills proprietárias instaladas e testadas
 ✅ 13 agents (Squad Turbo + Picasso + Revisor + Closer)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 10 revisões .docx pra aprovação

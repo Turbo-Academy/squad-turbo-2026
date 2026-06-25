@@ -18,6 +18,8 @@ skills:
   - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)
   - instagram-analise-estrategica-turbo
+  # Aula recorrente de nutrição/consciência (webinar perpétuo · aquece frio→morno)
+  - aula-consciencia-turbo
 ---
 
 # social-turbo

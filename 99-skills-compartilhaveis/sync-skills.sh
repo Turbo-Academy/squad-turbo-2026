@@ -30,11 +30,15 @@ SKILLS=(
   meta-ads-cli-setup-turbo meta-ads-cli-turbo
   # motores de copy/conteúdo
   criador-criativos-turbo criador-paginas-low-ticket-turbo criador-reels-turbo criador-vsl-turbo
+  # recuperação 1:1 (closer)
+  closer-lpsg-turbo
   # visual / build próprios
   designer-senior-turbo design-tokens-turbo lovable-style-turbo gerador-instagram-turbo
   gerador-slides-turbo slides-uipm-turbo page-optimizer-turbo
   # dados / utilitários próprios
   dash-lancamento-turbo instagram-analise-estrategica-turbo transcrever-youtube-turbo honor-turbo
+  # conteúdo recorrente (aquecimento perpétuo)
+  aula-consciencia-turbo
   # método (visão geral) + redirect
   lancamento-pago-semanal-turbo estruturador-evento-turbo
 )
