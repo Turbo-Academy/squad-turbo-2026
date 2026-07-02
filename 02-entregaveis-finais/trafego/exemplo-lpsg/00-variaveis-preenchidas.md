@@ -160,7 +160,7 @@ ROTINA_REUNIAO:           "Semanal (segunda) · 30 min · revisar métricas e de
 
 | Nicho | Conversão evento | ROAS ingresso | Comportamento |
 |---|---|---|---|
-| Expert A (exemplo) (escalado) | 6% | 1.0 | Faturando R$ 1.5M/mês com 5 criativos escalados (300 testados) |
+| Expert A (exemplo · escalado) | 6% | 1.0 | Faturando R$ 1.5M/mês com 5 criativos escalados (300 testados) |
 | Aluno do Matheus (em ajuste) | 2% | 0-1 | Travado — diagnóstico: arrumar evento, não escalar tráfego |
 | Casos com 9% (passado) | 9% | 1.25+ | Pico — agora reproduzindo |
 

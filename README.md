@@ -221,7 +221,7 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ✅ 13 agents (Squad Turbo + Picasso + Revisor + Closer)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 10 revisões .docx pra aprovação
-✅ 25 zips compartilháveis
+✅ 47 zips compartilháveis (35 skills + squad completo + squad-core + 10 templates)
 ✅ Manual interativo HTML · 5 seções interativas (setup, cadastro, execução, ações humanas, troubleshooting)
 ✅ Stack Picasso anti-IA integrada (frontend-design + impeccable + design-motion-principles)
 ✅ PRODUCT.md + DESIGN.md (fundação de marca + visual system)

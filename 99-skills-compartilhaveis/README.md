@@ -110,6 +110,7 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 | `find-skills` | estrategista, pesquisador, pesquisador-mercado |
 | `honor-turbo` | estrategista |
 | `pptx` | designer |
+| `pdf` · `docx` · `xlsx` | pesquisador (extração de material bruto) — plugin Anthropic; se ausentes, o agente lê os arquivos diretamente |
 
 > Se um agente falhar ao tentar usar uma skill, verifique se ela está instalada em `~/.claude/skills/`. Mapeamento completo em [`agents/MATRIZ-SKILLS.md`](agents/MATRIZ-SKILLS.md).
 

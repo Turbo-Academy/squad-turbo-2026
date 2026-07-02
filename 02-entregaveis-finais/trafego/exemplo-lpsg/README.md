@@ -33,7 +33,7 @@ exemplo-lpsg/
 
 > Dados extraídos da call de mentoria 24/04/2026 entre Leo Tabari e o mentorado (exemplo).
 
-### Caso A — Expert A (exemplo) (escalado, R$1.5M/mês)
+### Caso A — Expert A (exemplo · escalado, R$1.5M/mês)
 - Conversão de evento: **6%** (queria 7-9%, ficou em ajuste)
 - ROAS ingresso: **1.0**
 - ROAS produto: **1.8-2.0**
