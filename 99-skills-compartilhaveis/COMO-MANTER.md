@@ -66,8 +66,23 @@ cd ~/.claude/skills && zip -rq "<repo>/99-skills-compartilhaveis/<skill>.zip" <s
 Já coberto pelo `.gitignore`:
 - `.claude/settings.local.json` — permissões da máquina (por-máquina)
 - `.claude/launch.json` — config local
-- `_private/` — material bruto/sensível
+- `_private/` — material bruto/sensível: briefings, revisões `.docx`, entregáveis de cliente, dados de leads
 - `.DS_Store`
+
+---
+
+## Guard-rail de privacidade (`audit-privacy.sh`)
+
+O repo é distribuído — **nenhum nome de cliente, lead ou terceiro real pode entrar**. Buscar só nomes conhecidos já falhou 3 vezes; o `audit-privacy.sh` extrai TODOS os pares "Nome Sobrenome" dos arquivos trackeados (texto e DENTRO dos zips/docx) e compara contra `privacy-baseline.txt` (pares já revisados e aprovados).
+
+```bash
+./audit-privacy.sh                     # rodar ANTES de todo push · exit 1 se houver par novo
+./audit-privacy.sh --update-baseline   # aceita o estado atual (só após revisar os pares novos!)
+```
+
+Par novo detectado:
+- **Pessoa real** (cliente, lead, aluno) → genericizar ou mover pra `_private/` ANTES de commitar
+- **Fictício/referência pública** (persona de exemplo, figura pública citada em copy) → revisar e rodar `--update-baseline`
 
 ---
 
@@ -79,6 +94,7 @@ Já coberto pelo `.gitignore`:
 [ ] Regenerei o zip (se mexi em skill)?
 [ ] As 3 cópias de agente batem? (sync-squad.sh garante)
 [ ] Nenhum segredo / path pessoal entrou em arquivo versionado?
+[ ] Rodei ./audit-privacy.sh e passou?
 [ ] Commit com mensagem descritiva?
 ```
 

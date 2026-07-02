@@ -91,8 +91,6 @@ lpsg-method/
 │   ├── cs/                        ← pós-venda 90 dias
 │   └── manual-final/              ← gerador de manual personalizado HTML (final do projeto)
 │
-├── 03-revisoes/                   📄 .docx pra aprovação (10 estruturas)
-│
 ├── PRODUCT.md                     📐 estratégia de marca · register · personality · anti-references
 ├── DESIGN.md                      🎨 visual system · 5 paletas · tipografia · motion · anti-patterns
 │
@@ -114,7 +112,6 @@ lpsg-method/
 │       ├── automacao-turbo.md               (n8n · ManyChat)
 │       └── cs-turbo.md                      (pós-venda · NPS)
 │
-├── 00-briefing-e-dados/           📋 briefing estratégico (público)
 └── README.md                      ← você está aqui
 ```
 
@@ -220,7 +217,6 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ✅ <!--F:n_skills-->35<!--/F--> skills proprietárias instaladas e testadas
 ✅ 13 agents (Squad Turbo + Picasso + Revisor + Closer)
 ✅ 10 estruturas com template + exemplo preenchido
-✅ 10 revisões .docx pra aprovação
 ✅ 47 zips compartilháveis (35 skills + squad completo + squad-core + 10 templates)
 ✅ Manual interativo HTML · 5 seções interativas (setup, cadastro, execução, ações humanas, troubleshooting)
 ✅ Stack Picasso anti-IA integrada (frontend-design + impeccable + design-motion-principles)

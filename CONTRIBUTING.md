@@ -117,10 +117,13 @@ Template do PR:
 04-manual-de-uso/             ← MANUAL HTML · primeira coisa que o usuário vê
 02-entregaveis-finais/        ← Templates · 10 estruturas
 99-skills-compartilhaveis/    ← Zips das skills (gerados de ~/.claude/skills/)
-00-briefing-e-dados/          ← Briefing público
-03-revisoes/                  ← .docx pra cliente revisar (gerado de templates)
-_private/                     ← NUNCA versionar (gitignored)
+_private/                     ← NUNCA versionar (gitignored) · briefings, revisões .docx,
+                                 entregáveis de cliente e dados reais vivem AQUI
 ```
+
+### Antes de todo push
+
+Rode `99-skills-compartilhaveis/audit-privacy.sh` — o repo é distribuído e não pode conter nome de pessoa real (cliente, lead, aluno). O script compara todos os pares "Nome Sobrenome" (inclusive dentro de zips/docx) contra a baseline aprovada. Detalhes em `99-skills-compartilhaveis/COMO-MANTER.md`.
 
 ### Onde NÃO mexer sem coordenação
 
