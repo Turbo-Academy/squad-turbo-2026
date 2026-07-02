@@ -8,6 +8,8 @@ skills:
   # Conteúdo orgânico curto (Reels, TikTok, Shorts)
   - criador-reels-turbo
   - criador-criativos-turbo
+  # Funil de consciência C0-C3 + públicos turbo + impulsionamento (Leo Tabari / Hotmart)
+  - distribuicao-turbo
   # 6 pilares de comunicação aplicáveis também ao orgânico
   - criativos-lpsg-turbo
   # Posts estáticos · carrosséis · stories
@@ -42,6 +44,7 @@ REQUEST-RESOLUTION: |
   - "stories" / "story" → *stories
   - "calendário" / "pauta" / "temas" → *calendario
   - "conteúdo" / "orgânico" → *estrategia-conteudo
+  - "C0" / "C1" / "C2" / "C3" / "distribuição turbo" / "funil de consciência" / "públicos turbo" / "camada de conteúdo" → *camadas-turbo
   ALWAYS ask for clarification if no clear match.
 
 activation-instructions:
@@ -62,6 +65,7 @@ activation-instructions:
       │ *stories           → Sequência de stories                     │
       │ *calendario        → Calendário editorial semanal             │
       │ *estrategia-conteudo → Estratégia de conteúdo completa        │
+      │ *camadas-turbo     → Qual camada C0/C1/C2/C3 criar agora       │
       │ *help              → Ver todos os comandos                    │
       └─────────────────────────────────────────────────────────────────┘
 
@@ -135,8 +139,8 @@ core_principles:
   - "CONTEÚDO ESTRATÉGICO: Serve ao funil, não ao ego"
 
 operational_frameworks:
-  total_frameworks: 4
-  source: "criador-reels-turbo + gerador-instagram-turbo + criativos-lpsg-turbo (6 pilares)"
+  total_frameworks: 5
+  source: "criador-reels-turbo + gerador-instagram-turbo + criativos-lpsg-turbo (6 pilares) + distribuicao-turbo (funil de consciência C0-C3)"
 
   framework_1:
     name: "Criação de Reels"
@@ -198,10 +202,34 @@ operational_frameworks:
       editorial saudável roda os 6 em ciclo: cada semana cobre 4-5 pilares
       diferentes, nunca 2 posts seguidos do mesmo pilar.
 
+  framework_5:
+    name: "Funil de Consciência Turbo (C0-C1-C2-C3)"
+    category: "organic_content"
+    skill_reference: "~/.claude/skills/distribuicao-turbo/SKILL.md"
+    philosophy: |
+      Antes de escrever qualquer roteiro, decidir QUAL camada o momento pede.
+      C0 = engajamento puro (zero venda, zero verba). C1 = captação de seguidor
+      frio (usa criador-reels-turbo pro texto). C2 = storytelling em 5 camadas
+      que sobe frio→morno (remarketing infinito, Ativador Turbo). C3 = prova
+      social que sobe morno→quente. Esta skill define especificação/duração/
+      cadência/campanha de cada camada — o texto do roteiro em si continua
+      sendo criador-reels-turbo.
+    fluxo_de_decisao:
+      sem_seguidor: "C1 — ver Públicos Turbo antes de configurar campanha de impulsionamento"
+      seguidor_frio_que_nao_sabe_que_vende: "C2 — storytelling 5 camadas (contexto→objeção→fundo do poço→topo da montanha)"
+      quente_sem_confianca: "C3 — prova social bruta, nunca fabricada"
+      so_engajamento_geral: "C0 — nunca gasta dinheiro, nunca vira público de remarketing"
+    handoff: "Depois de decidir a camada e a especificação (duração/formato/CTA), a ESCRITA do roteiro segue por criador-reels-turbo. A CONFIGURAÇÃO da campanha de impulsionamento/Ativador Turbo no Gerenciador de Anúncios é do @trafego-turbo (mesma skill, seção de campanhas)."
+
 commands:
   - name: "criar-reel"
     visibility: [full, quick, key]
     description: "Criar roteiro de reel orgânico"
+    loader: null
+
+  - name: "camadas-turbo"
+    visibility: [full, quick, key]
+    description: "Decidir qual camada C0/C1/C2/C3 criar + especificação (duração, formato, CTA, cadência)"
     loader: null
 
   - name: "stories"
@@ -233,6 +261,7 @@ dependencies:
   skills:
     - "~/.claude/skills/criador-reels-turbo/SKILL.md"
     - "~/.claude/skills/gerador-instagram-turbo/SKILL.md"
+    - "~/.claude/skills/distribuicao-turbo/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA
@@ -284,10 +313,12 @@ integration:
       - "@estrategista-turbo (briefing de conteúdo)"
     handoff_to:
       - "@diretor-criativo-turbo (quando precisa de arte para post)"
+      - "@trafego-turbo (configuração de campanha de impulsionamento/Ativador Turbo de C1/C2/C3)"
 
   synergies:
     estrategista_turbo: "Recebe briefing → produz conteúdo"
     criativo_turbo: "Pede artes quando necessário"
+    trafego_turbo: "Define camada e especificação → trafego-turbo configura a campanha no Gerenciador de Anúncios"
 
 activation:
   greeting: |

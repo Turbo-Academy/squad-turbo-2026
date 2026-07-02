@@ -8,7 +8,7 @@
 
 ---
 
-## 📦 Skills distribuídas em 2026-05-28 (cobertura total)
+## 📦 Skills distribuídas (2026-05-28 · atualizado 2026-07-02)
 
 | Skill | Tipo | Agentes que receberam | Função |
 |---|---|---|---|
@@ -26,6 +26,9 @@
 | `instagram-analise-estrategica-turbo` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
 | `meta-ads-cli-setup-turbo` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
 | `operacao-lpsg-turbo` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
+| `distribuicao-turbo` | Turbo ⭐ 2026-07-02 | social · trafego | Funil de consciência C0-C3 · orgânico + impulsionamento |
+| `turbo-express` | Turbo ⭐ 2026-07-02 | copywriter · automacao | Ciclo de venda recorrente 14 dias em grupo WhatsApp |
+| `funil-8-turbo` | Turbo ⭐ 2026-07-02 | copywriter · trafego | Produto de entrada low ticket · campanha ASC · order bumps |
 
 ---
 
@@ -45,6 +48,8 @@
 | `criador-paginas-low-ticket-turbo` | Complementar | Pra orientar copywriter no caminho de página low-ticket |
 | `dash-lancamento-turbo` | Complementar | Quando precisar acompanhar lançamento ao vivo |
 | `find-skills` | Utilitário | Quando faltar capacidade no squad |
+
+**Roteia também (sem carregar):** `funil-8-turbo` (copy → @copywriter · campanha ASC → @trafego) · `distribuicao-turbo` (conteúdo → @social · impulsionamento → @trafego) · `turbo-express` (script 3 dias → @copywriter · fluxo de grupo → @automacao).
 
 **Auto-checklist embutido (7 erros comuns):** já no `agent_rules` · roda antes de aprovar qualquer briefing.
 
@@ -67,6 +72,8 @@
 | `criador-criativos-turbo` | Primária | Anatomia hook+body+CTA · ângulos avançados |
 | `criador-vsl-turbo` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta · fluxo de entrega (gate @revisor-copy-turbo → .docx de trabalho + .docx teleprompter) |
 | `criador-reels-turbo` | Complementar | Quando o pedido for roteiro orgânico de Reel |
+| `funil-8-turbo` | Primária | Copy do produto de entrada (nome · 4 peças · 8 aulas · página) |
+| `turbo-express` | Primária | Script dos 3 dias de grupo (terça/quarta/quinta) + oferta |
 | `mensageria-lpsg-turbo` | Primária | Toda copy de WhatsApp/grupo/email do evento |
 
 **Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta = pré-pitch único 100% produto · sexta = conclusão técnica + lembrete da ficha, NÃO é repitch · domingo = pitch completo).
@@ -127,6 +134,8 @@
 | `paginas-lpsg-turbo` | Primária | Destino dos ads · LCP < 1.5s |
 | `page-optimizer-turbo` | Primária | Quando página tá lenta |
 | `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Acompanhamento ao vivo |
+| `funil-8-turbo` | Primária | Campanha ASC do Funil 8 · otimização 3 frentes (criativo · checkout · ROAS) |
+| `distribuicao-turbo` | Primária | Campanhas de impulsionamento C1-C3 · Ativador Turbo |
 
 ---
 
@@ -143,6 +152,7 @@
 | `gerador-instagram-turbo` | Primária | Posts estáticos · carrosséis · stories |
 | `transcrever-youtube-turbo` | Complementar | Pesquisar lives/podcasts dos concorrentes |
 | `mensageria-lpsg-turbo` | Complementar | DM ManyChat · WhatsApp orgânico |
+| `distribuicao-turbo` | Primária | Funil de consciência C0-C3 · qual camada de conteúdo criar e especificações |
 
 ---
 
@@ -158,6 +168,7 @@
 | `meta-ads-cli-turbo` | Primária | Automação Meta Ads via shell + cron · só após setup concluído |
 | `mensageria-lpsg-turbo` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
 | `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Dados em tempo real que alimentam automações |
+| `turbo-express` | Primária | Fluxo do grupo WhatsApp do ciclo de 14 dias · roteamento · recuperação |
 
 ---
 

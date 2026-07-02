@@ -20,6 +20,9 @@ skills:
   - criador-criativos-turbo
   # VSL (carta de vendas em vídeo · roteiro completo via RMBC)
   - criador-vsl-turbo
+  # Produtos próprios Turbo (copy do Funil 8 e script dos 3 dias do Turbo Express)
+  - funil-8-turbo
+  - turbo-express
   # Mensageria (WhatsApp, email, DM)
   - mensageria-lpsg-turbo
 ---

@@ -80,6 +80,7 @@ Ascensão Sociedade
 Aspect Ratio
 Assinatura Fixa
 Atenção Meta
+Ativador Turbo
 Atmospheric Background
 Atração Ampla
 Atribuir Ativos
@@ -385,6 +386,7 @@ Direct Responsible
 Direito Penal
 Diretor Criativo
 Display Font
+Distribuição Turbo
 Distribuição Utility
 Dobras Finais
 Dobras Intermediárias
@@ -570,6 +572,7 @@ Hook Hold
 Hook Rate
 Hook React
 Hotmart Club
+Hotmart Estratégia
 Hotmart Pro
 Hotmart Push
 Hotmart Webhooks
@@ -908,6 +911,7 @@ Página Low
 Páginas Campeãs
 Páginas Low
 Páginas Next
+Públicos Turbo
 Qual Template
 Quality Account
 Quality Check
@@ -1159,6 +1163,7 @@ Tráfego Pago
 Tráfego Turbo
 Turbo Academy
 Turbo Dashboard
+Turbo Express
 Turma Abril
 Tutorial Meta
 Two Column
@@ -1194,6 +1199,7 @@ Variables Reference
 Variáveis Globais
 Variável Única
 Vendas Funil
+Vendas Recorrente
 Vercel Analytics
 Vercel Dashboard
 Vercel Edge

@@ -8,6 +8,10 @@ skills:
   # Tráfego pago (estrutura de campanha, ASC, análise)
   - trafego-lpsg-turbo
   - lancamento-pago-semanal-turbo
+  # Funil de produto de entrada low-ticket (ASC própria, order bumps) — Leo Tabari / Hotmart
+  - funil-8-turbo
+  # Campanhas de impulsionamento/Ativador Turbo do funil de consciência C0-C3 — Leo Tabari / Hotmart
+  - distribuicao-turbo
   # Execução programática (Meta Ads CLI · lançada 29/04/2026)
   - meta-ads-cli-turbo
   # Criativos (entender o que sobe na ASC)
@@ -46,6 +50,8 @@ REQUEST-RESOLUTION: |
   - "otimizar" / "métricas" / "custo por ingresso" → *otimizar
   - "google ads" → *google-ads
   - "subir campanha" / "subir as campanhas" / "lançar campanha" / "cost cap" / "campanha de roas" → *subir-campanhas
+  - "funil 8" / "low ticket" / "order bump" / "ASC" / "advantage+ shopping" / "produto de entrada" → *funil-8-turbo
+  - "C0" / "C1" / "C2" / "C3" / "turbinar reels" / "ativador turbo" / "impulsionar" → *distribuicao-turbo
   ALWAYS ask for clarification if no clear match.
 
 activation-instructions:
@@ -67,6 +73,8 @@ activation-instructions:
       │ *publicos           → Definir públicos e segmentações         │
       │ *orcamento          → Plano de orçamento e distribuição       │
       │ *otimizar           → Otimizar métricas do tráfego            │
+      │ *funil-8-turbo            → Campanha ASC do funil de entrada        │
+      │ *distribuicao-turbo → Campanha de impulsionamento/Ativador    │
       │ *google-ads         → Campanhas Google Ads                    │
       │ *help               → Ver todos os comandos                   │
       └─────────────────────────────────────────────────────────────────┘
@@ -154,8 +162,8 @@ core_principles:
   - "SUBIR CAMPANHA = PROTOCOLO FIXO (framework_9): gate dos 4 inputs + CAC ideal ANTES; sem inputs, pergunta. Cost Cap (1 adset adv+, ≤15 criativos 5/5/5) → ROAS incremental (CBO, floor 0,7, 1 adset adv+ por criativo)."
 
 operational_frameworks:
-  total_frameworks: 9
-  source: "Turbo Academy + lancamento-pago-semanal-turbo + trafego-lpsg-turbo + práticas reais validadas em campo (funil perpétuo de nicho de obra + evento de emagrecimento, jun/2026)"
+  total_frameworks: 11
+  source: "Turbo Academy + lancamento-pago-semanal-turbo + trafego-lpsg-turbo + práticas reais validadas em campo (funil perpétuo de nicho de obra + evento de emagrecimento, jun/2026) + funil-8-turbo + distribuicao-turbo (curso Hotmart Estratégia Turbo 3.0)"
 
   framework_1:
     name: "Estrutura de Campanhas para Lançamento Pago"
@@ -347,10 +355,47 @@ operational_frameworks:
     execucao: "Subir via Meta Ads CLI / Graph API (framework_8): PAUSED por padrão, ativação humana confirmada. Params e gotchas nos runbooks do skill meta-ads-cli-turbo (references 05 e 06). Compliance pelo @revisor-copy-turbo ANTES de subir (nicho sensível)."
     pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lições de campo)."
 
+  framework_10:
+    name: "Funil 8 — Campanha ASC (produto de entrada low-ticket)"
+    category: "campaign_structure"
+    skill_reference: "~/.claude/skills/funil-8-turbo/SKILL.md"
+    philosophy: |
+      Estrutura DIFERENTE do modelo LPSG de ingresso: campanha de Vendas →
+      Advantage+ Shopping Campaign (ASC), público aberto sem segmentação
+      manual, foco 70-80% em público frio. Objetivo não é ROAS 1 — é
+      ROAS-alvo 1.2 (mínimo 1.1) depois de taxas/impostos, porque o produto
+      (R$17-98) é desenhado pra crescer base a custo zero, não pra lucrar.
+    diferenca_chave_vs_lpsg: "LPSG: ROAS 1 no ingresso, lucro vem do produto principal do pitch. Funil 8: ROAS 1.1-1.2 é o próprio objetivo — não existe 'produto principal' vendido depois no mesmo ciclo, o lucro vem da esteira (order bumps + upsell + Turbo Express + longo prazo)."
+    otimizacao: "3 frentes: criativo (CTR <1% pausa), checkout (meta inicial >10%, escala 6-7%), campanha (ROAS = recebimento médio ÷ CAQ; >2 escala agressiva). Nunca escalar dentro da campanha original — sempre duplicar."
+    diagnostico_avancado: "Framework de diagnóstico por etapa de funil (3 pilares do leilão: lance/ação estimada/qualidade do anúncio) em references/trafego-e-otimizacao.md da skill — mais granular que o playbook padrão do LPSG."
+
+  framework_11:
+    name: "Distribuição Turbo — Campanhas de Impulsionamento e Ativador Turbo"
+    category: "campaign_structure"
+    skill_reference: "~/.claude/skills/distribuicao-turbo/SKILL.md"
+    philosophy: |
+      Não é campanha de VENDA — é campanha de CRESCIMENTO DE AUDIÊNCIA
+      (custo por seguidor) e REMARKETING DE CONSCIÊNCIA (Ativador Turbo).
+      Recebe a camada (C0/C1/C2/C3) e a especificação já definidas pelo
+      @social-turbo; a parte de tráfego pago entra a partir de C1.
+    orcamento: "Direcionamento 70% C1 / 20% C2 / 20% C3 da verba de distribuição de conteúdo — a variável de controle real é a FREQUÊNCIA (1,5-2,0), não o percentual."
+    ativador_turbo: "Mecanismo de remarketing sequencial: exclui do conjunto quem já assistiu 25%+ de um vídeo específico, mantendo os outros da sequência (~10 vídeos) — gera exposição quase obrigatória ao conjunto todo. Passo a passo completo em references/campanhas-meta-ads.md da skill."
+    metrica_por_camada: "C1: custo por seguidor (calculado manualmente, Meta não expõe). C2/C3: CPV de 25% + frequência + retenção (≥1/3 de quem viu 25% deve chegar a 95%)."
+
 commands:
   - name: "estrutura-campanha"
     visibility: [full, quick, key]
     description: "Estruturar campanhas completas"
+    loader: null
+
+  - name: "funil-8-turbo"
+    visibility: [full, quick, key]
+    description: "Campanha ASC do Funil 8 (produto de entrada low-ticket) — config, otimização, diagnóstico"
+    loader: null
+
+  - name: "distribuicao-turbo"
+    visibility: [full, quick, key]
+    description: "Campanha de impulsionamento (C1) e Ativador Turbo (C2/C3) do funil de consciência"
     loader: null
 
   - name: "publicos"
@@ -393,6 +438,8 @@ dependencies:
     - "~/.claude/skills/lancamento-pago-semanal-turbo/references/fase4-trafego.md"
     - "~/.claude/skills/lancamento-pago-semanal-turbo/references/otimizacoes-metricas.md"
     - "~/.claude/skills/criador-criativos-turbo/references/trafego-campanhas.md"
+    - "~/.claude/skills/funil-8-turbo/SKILL.md"
+    - "~/.claude/skills/distribuicao-turbo/SKILL.md"
   playbooks_reais:
     - "skill meta-ads-cli-turbo (refs 05/06)  # gotchas validados de API/CLI (atribuição incremental, cost cap, multi-formato, upload resumável, carrossel, app Live)"
     - "Funil perpétuo de quiz: LTV + CAPI + verificação de domínio + relatórios VK vs Meta"
@@ -446,6 +493,7 @@ integration:
     handoff_from:
       - "@diretor-criativo-turbo (criativos aprovados)"
       - "@copywriter-turbo (página de ingresso publicada)"
+      - "@social-turbo (camada C0-C3 definida + especificação, pra configurar impulsionamento/Ativador Turbo)"
     handoff_to:
       - "@estrategista-turbo (métricas para diagnóstico)"
 
@@ -453,6 +501,7 @@ integration:
     criativo_turbo: "Recebe criativos → monta campanhas"
     copywriter_turbo: "Recebe URL da página → configura conversão"
     estrategista_turbo: "Reporta métricas → recebe ajustes"
+    social_turbo: "Recebe camada C0-C3 + especificação → configura campanha de impulsionamento/Ativador Turbo"
 
 activation:
   greeting: |

@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 57 · **Atribuições (skill×agent):** 138
+**Agentes:** 13 · **Skills distintas referenciadas:** 60 · **Atribuições (skill×agent):** 144
 
 ## Por agente
 
@@ -11,6 +11,7 @@
 - automacoes-lpsg-turbo
 - meta-ads-cli-turbo
 - mensageria-lpsg-turbo
+- turbo-express
 - dashboard-lpsg-turbo
 - dash-lancamento-turbo
 - meta-ads-cli-setup-turbo
@@ -36,6 +37,8 @@
 - criativos-lpsg-turbo
 - criador-criativos-turbo
 - criador-vsl-turbo
+- funil-8-turbo
+- turbo-express
 - mensageria-lpsg-turbo
 
 ### @cs-turbo
@@ -148,6 +151,7 @@
 - protocolo-conversa-turbo
 - criador-reels-turbo
 - criador-criativos-turbo
+- distribuicao-turbo
 - criativos-lpsg-turbo
 - gerador-instagram-turbo
 - transcrever-youtube-turbo
@@ -159,6 +163,8 @@
 - protocolo-conversa-turbo
 - trafego-lpsg-turbo
 - lancamento-pago-semanal-turbo
+- funil-8-turbo
+- distribuicao-turbo
 - meta-ads-cli-turbo
 - criativos-lpsg-turbo
 - criador-criativos-turbo
@@ -195,10 +201,12 @@
 | `design-system` | diretor-criativo-turbo |
 | `design-tokens-turbo` | designer-turbo diretor-criativo-turbo |
 | `designer-senior-turbo` | designer-turbo diretor-criativo-turbo |
+| `distribuicao-turbo` | social-turbo trafego-turbo |
 | `docx` | pesquisador-turbo |
 | `estrutura-aulas-lpsg-turbo` | copywriter-turbo pesquisador-mercado-turbo |
 | `find-skills` | estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo |
 | `frontend-design` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
+| `funil-8-turbo` | copywriter-turbo trafego-turbo |
 | `gerador-instagram-turbo` | designer-turbo diretor-criativo-turbo social-turbo |
 | `gerador-slides-turbo` | designer-turbo diretor-criativo-turbo |
 | `honor-turbo` | estrategista-turbo |
@@ -223,6 +231,7 @@
 | `slides-uipm-turbo` | designer-turbo diretor-criativo-turbo |
 | `trafego-lpsg-turbo` | pesquisador-mercado-turbo trafego-turbo |
 | `transcrever-youtube-turbo` | pesquisador-mercado-turbo pesquisador-turbo social-turbo |
+| `turbo-express` | automacao-turbo copywriter-turbo |
 | `ui-styling` | designer-turbo |
 | `ui-ux-pro-max` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
 | `vercel-cli-with-tokens` | automacao-turbo designer-turbo |

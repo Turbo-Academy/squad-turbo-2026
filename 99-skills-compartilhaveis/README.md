@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-06-23)
 
-- **<!--F:n_skills-->35<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->38<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)
@@ -30,11 +30,15 @@
   - 1 motor de VSL (`criador-vsl-turbo`) · roteiro de Video Sales Letter via RMBC · mecanismo único · 11 blocos · compliance Meta
   - 1 motor do closer (`closer-lpsg-turbo`) ⭐ NEW · recuperação 1:1 (fila P1-P5 · SLA · D+1-D+7 · matriz de objeções)
   - 1 conteúdo recorrente (`aula-consciencia-turbo`) ⭐ NEW · aula/webinar perpétuo de aquecimento
+  - **3 motores de negócio próprios Turbo** ⭐ NEW (2026-07-02):
+    - `distribuicao-turbo` · funil de consciência C0-C3 (orgânico + impulsionamento de baixo custo)
+    - `turbo-express` · ciclo de venda recorrente de 14 dias em grupo fechado de WhatsApp
+    - `funil-8-turbo` · produto de entrada low ticket com campanha ASC + order bumps
 - **1 squad-core** (`squad-core-turbo.zip`): constitution · templates · checklists · frameworks (instalar em `~/.claude/squads/`)
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 47 zips** (35 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
+**Total: 50 zips** (38 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
 > **Cobertura total de skills (2026-05-28):** as 54 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 

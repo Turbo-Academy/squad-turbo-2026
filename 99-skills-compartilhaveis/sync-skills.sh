@@ -39,6 +39,8 @@ SKILLS=(
   dash-lancamento-turbo instagram-analise-estrategica-turbo transcrever-youtube-turbo honor-turbo
   # conteúdo recorrente (aquecimento perpétuo)
   aula-consciencia-turbo
+  # motores de negócio próprios Turbo (orgânico em camadas · ciclo 14 dias · low ticket ASC)
+  distribuicao-turbo turbo-express funil-8-turbo
   # método (visão geral) + redirect
   lancamento-pago-semanal-turbo estruturador-evento-turbo
 )

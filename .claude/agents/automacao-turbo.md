@@ -11,6 +11,8 @@ skills:
   - meta-ads-cli-turbo
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
   - mensageria-lpsg-turbo
+  # Ciclo de vendas recorrente em grupo de WhatsApp fechado (Leo Tabari / Hotmart)
+  - turbo-express
   # Dashboard + dados em tempo real (alimenta automações)
   - dashboard-lpsg-turbo
   - dash-lancamento-turbo
@@ -39,6 +41,7 @@ REQUEST-RESOLUTION: |
   - "automação" / "fluxo" / "n8n" → *automacao
   - "manychat" / "chatbot" / "DM" → *manychat
   - "onboarding" / "boas vindas" → *onboarding
+  - "turbo express" / "meteórico" / "ciclo de 14 dias" / "grupo de whatsapp de vendas" / "venda recorrente" → *turbo-express
   ALWAYS ask for clarification if no clear match.
 
 activation-instructions:
@@ -58,6 +61,7 @@ activation-instructions:
       │ *automacao    → Fluxos de automação (n8n, webhooks)           │
       │ *manychat     → Chatbots e automação de DM                    │
       │ *onboarding   → Fluxo de onboarding pós-compra               │
+      │ *turbo-express → Ciclo de vendas de 14 dias em grupo WhatsApp │
       │ *help         → Ver todos os comandos                         │
       └─────────────────────────────────────────────────────────────────┘
 
@@ -144,8 +148,8 @@ core_principles:
   - "CARRINHO SÓ NO D1: 5 horários (06:50/07:00/08:00/10:00/19:00). D2-D7 = ZERO mensagem"
 
 operational_frameworks:
-  total_frameworks: 2
-  source: "mensageria-lpsg-turbo + automações"
+  total_frameworks: 3
+  source: "mensageria-lpsg-turbo + automações + turbo-express (curso Hotmart Estratégia Turbo 3.0)"
 
   framework_1:
     name: "Mensageria do Evento 5+1"
@@ -176,10 +180,34 @@ operational_frameworks:
       - Ficha de interesse automatizada
       - Abertura de carrinho segmentada (VIP vs geral)
 
+  framework_3:
+    name: "Turbo Express — Ciclo de Vendas Recorrente em Grupo de WhatsApp"
+    category: "messaging"
+    skill_reference: "~/.claude/skills/turbo-express/SKILL.md"
+    philosophy: |
+      MECÂNICA DIFERENTE da mensageria do evento 5+1 — não usa o cap 4+4 nem
+      os horários canônicos do LPSG. É um ciclo de 14 dias: captação contínua
+      redireciona pra um grupo de WhatsApp fechado (teto ~250 pessoas, roteia
+      pra novo grupo ao bater o teto), depois 3 dias de grupo aberto
+      (terça/quarta/quinta) com horários e função fixos por dia.
+    pre_requisito: "Só roda com a Distribuição Turbo (C0-C3, @social-turbo) já gerando volume — sem público aquecido, o grupo não enche."
+    estrutura_3_dias:
+      terca_d1: "9h vídeo explicando produto (sem preço) · 9h30-10h grupo aberto ~2h, expert responde por áudio · meio-dia fecha · noite opcional reabre"
+      quarta_d2: "9h vídeo revelando oferta (ancoragem+bônus+vagas limitadas) · 9h30-10h grupo aberto pra quebrar objeções · noite opcional reabre"
+      quinta_d3: "9h abre carrinho · grupo aberto o dia inteiro com updates de vagas em % · 21h fecha, nunca passa disso"
+      pos_carrinho: "Recuperação 1:1 (não massa) via WhatsApp de quem não comprou, ~2 semanas. Grupo é descartado ao final do ciclo — nunca reaproveitar."
+    ferramentas: "Roteamento de múltiplos grupos: Sendflow (ou manual). Disparo: Z-API (R$99/mês, não oficial) ou API oficial WhatsApp via ManyChat (utility, mais barato)."
+    fronteira: "A COPY dos vídeos de cada dia (explicação/oferta/abertura de carrinho) vem PRONTA do @copywriter-turbo. Automação Turbo monta o fluxo: roteamento de grupo, updates de vaga automatizados, disparo de recuperação."
+
 commands:
   - name: "mensageria"
     visibility: [full, quick, key]
     description: "Mensageria completa do evento (grupo + API)"
+    loader: null
+
+  - name: "turbo-express"
+    visibility: [full, quick, key]
+    description: "Ciclo de vendas de 14 dias em grupo de WhatsApp fechado (captação → 3 dias → oferta/recuperação)"
     loader: null
 
   - name: "automacao"
@@ -210,6 +238,7 @@ commands:
 dependencies:
   skills:
     - "~/.claude/skills/mensageria-lpsg-turbo/SKILL.md"
+    - "~/.claude/skills/turbo-express/SKILL.md"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 3: VOICE DNA
@@ -259,14 +288,16 @@ integration:
   workflow_integration:
     position_in_flow: "Após estrutura do evento definida pelo @copywriter-turbo"
     handoff_from:
-      - "@copywriter-turbo (estrutura do evento + nomes das aulas)"
+      - "@copywriter-turbo (estrutura do evento + nomes das aulas · scripts dos 3 dias do Turbo Express)"
       - "@estrategista-turbo (briefing de automação)"
+      - "@social-turbo (base aquecida via C0-C3 — pré-requisito do Turbo Express)"
     handoff_to:
       - "@estrategista-turbo (mensageria pronta para revisão)"
 
   synergies:
     copywriter_turbo: "Recebe estrutura do evento → monta mensageria alinhada"
     estrategista_turbo: "Reporta engagement → recebe ajustes"
+    social_turbo: "Depende da base gerada por C0-C3 pra rodar o ciclo do Turbo Express"
 
 activation:
   greeting: |
