@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 60 · **Atribuições (skill×agent):** 144
+**Agentes:** 13 · **Skills distintas referenciadas:** 70 · **Atribuições (skill×agent):** 157
 
 ## Por agente
 
@@ -40,6 +40,7 @@
 - funil-8-turbo
 - turbo-express
 - mensageria-lpsg-turbo
+- avoid-ai-writing
 
 ### @cs-turbo
 - protocolo-conversa-turbo
@@ -60,6 +61,7 @@
 - ui-ux-pro-max
 - banner-design
 - gerador-instagram-turbo
+- imagen
 - gerador-slides-turbo
 - slides-uipm-turbo
 - pptx
@@ -69,6 +71,7 @@
 - vercel-cli-with-tokens
 - vercel-react-best-practices
 - page-optimizer-turbo
+- playwright-skill
 
 ### @diretor-criativo-turbo
 - protocolo-conversa-turbo
@@ -106,13 +109,19 @@
 - operacao-lpsg-turbo
 - skill-creator
 - skill-development
+- skill-personalizer
+- skill-miner
+- skill-generalizer
+- instalar-skill-no-squad
 - find-skills
+- file-organizer
 
 ### @pesquisador-mercado-turbo
 - protocolo-conversa-turbo
 - criador-criativos-turbo
 - criativos-lpsg-turbo
 - transcrever-youtube-turbo
+- youtube-full
 - paginas-lpsg-turbo
 - mensageria-lpsg-turbo
 - estrutura-aulas-lpsg-turbo
@@ -126,6 +135,7 @@
 - protocolo-conversa-turbo
 - lancamento-pago-semanal-turbo
 - transcrever-youtube-turbo
+- youtube-full
 - pdf
 - docx
 - pptx
@@ -146,6 +156,7 @@
 - protocolo-conversa-turbo
 - mensageria-lpsg-turbo
 - criador-paginas-low-ticket-turbo
+- avoid-ai-writing
 
 ### @social-turbo
 - protocolo-conversa-turbo
@@ -155,9 +166,11 @@
 - criativos-lpsg-turbo
 - gerador-instagram-turbo
 - transcrever-youtube-turbo
+- youtube-full
 - mensageria-lpsg-turbo
 - instagram-analise-estrategica-turbo
 - aula-consciencia-turbo
+- elevenlabs
 
 ### @trafego-turbo
 - protocolo-conversa-turbo
@@ -182,6 +195,7 @@
 |---|---|
 | `aula-consciencia-turbo` | social-turbo |
 | `automacoes-lpsg-turbo` | automacao-turbo closer-turbo cs-turbo |
+| `avoid-ai-writing` | copywriter-turbo revisor-copy-turbo |
 | `banner-design` | designer-turbo diretor-criativo-turbo |
 | `brand` | diretor-criativo-turbo |
 | `briefing-aprovacao-turbo` | copywriter-turbo estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo |
@@ -203,15 +217,19 @@
 | `designer-senior-turbo` | designer-turbo diretor-criativo-turbo |
 | `distribuicao-turbo` | social-turbo trafego-turbo |
 | `docx` | pesquisador-turbo |
+| `elevenlabs` | social-turbo |
 | `estrutura-aulas-lpsg-turbo` | copywriter-turbo pesquisador-mercado-turbo |
+| `file-organizer` | estrategista-turbo |
 | `find-skills` | estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo |
 | `frontend-design` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
 | `funil-8-turbo` | copywriter-turbo trafego-turbo |
 | `gerador-instagram-turbo` | designer-turbo diretor-criativo-turbo social-turbo |
 | `gerador-slides-turbo` | designer-turbo diretor-criativo-turbo |
 | `honor-turbo` | estrategista-turbo |
+| `imagen` | designer-turbo |
 | `impeccable` | diretor-criativo-turbo picasso-auditor-turbo |
 | `instagram-analise-estrategica-turbo` | pesquisador-mercado-turbo social-turbo |
+| `instalar-skill-no-squad` | estrategista-turbo |
 | `lancamento-pago-semanal-turbo` | copywriter-turbo cs-turbo estrategista-turbo pesquisador-turbo trafego-turbo |
 | `lovable-style-turbo` | designer-turbo diretor-criativo-turbo |
 | `lpsg-master-turbo` | estrategista-turbo |
@@ -224,10 +242,14 @@
 | `page-optimizer-turbo` | designer-turbo diretor-criativo-turbo trafego-turbo |
 | `paginas-lpsg-turbo` | closer-turbo copywriter-turbo diretor-criativo-turbo pesquisador-mercado-turbo trafego-turbo |
 | `pdf` | pesquisador-turbo |
+| `playwright-skill` | designer-turbo |
 | `pptx` | designer-turbo pesquisador-turbo |
 | `protocolo-conversa-turbo` | automacao-turbo closer-turbo copywriter-turbo cs-turbo designer-turbo diretor-criativo-turbo estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo picasso-auditor-turbo revisor-copy-turbo social-turbo trafego-turbo |
 | `skill-creator` | estrategista-turbo |
 | `skill-development` | estrategista-turbo |
+| `skill-generalizer` | estrategista-turbo |
+| `skill-miner` | estrategista-turbo |
+| `skill-personalizer` | estrategista-turbo |
 | `slides-uipm-turbo` | designer-turbo diretor-criativo-turbo |
 | `trafego-lpsg-turbo` | pesquisador-mercado-turbo trafego-turbo |
 | `transcrever-youtube-turbo` | pesquisador-mercado-turbo pesquisador-turbo social-turbo |
@@ -240,3 +262,4 @@
 | `web-design-guidelines` | diretor-criativo-turbo picasso-auditor-turbo |
 | `webapp-testing` | picasso-auditor-turbo trafego-turbo |
 | `xlsx` | pesquisador-turbo |
+| `youtube-full` | pesquisador-mercado-turbo pesquisador-turbo social-turbo |

@@ -26,12 +26,14 @@ extract() {
     | perl -CSD -ne 'while (/\b(\p{Lu}\p{Ll}{2,} \p{Lu}\p{Ll}{2,})\b/g) { print "$1\n" }' 2>/dev/null
 }
 
-# 1. arquivos de texto trackeados
-git ls-files '*.md' '*.html' '*.json' '*.txt' '*.sh' '*.yaml' '*.yml' \
+# --cached --others --exclude-standard: pega trackeados E novos ainda não commitados
+# (sem isso, um zip recém-gerado passa batido e só é flagrado DEPOIS do push — já aconteceu)
+# 1. arquivos de texto
+git ls-files --cached --others --exclude-standard '*.md' '*.html' '*.json' '*.txt' '*.sh' '*.yaml' '*.yml' \
   | while IFS= read -r f; do cat "$f"; done | extract >> "$TMP"
 
-# 2. conteúdo dos binários trackeados (zips de skills, docx)
-git ls-files '*.zip' '*.docx' \
+# 2. conteúdo dos binários (zips de skills, docx)
+git ls-files --cached --others --exclude-standard '*.zip' '*.docx' \
   | while IFS= read -r f; do unzip -p "$f" 2>/dev/null || true; done | extract >> "$TMP"
 
 sort -u "$TMP" > "$TMP.sorted"

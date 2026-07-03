@@ -4,7 +4,7 @@
 
 > **Convenção:** `@agente` é como o estrategista invoca · "primária" = pão-de-cada-dia · "complementar" = ferramenta auxiliar.
 
-> **Cobertura total (2026-05-28):** todas as **54 skills instaladas** no ambiente estão atribuídas a pelo menos um agente. Skills proprietárias (turbo/lpsg) são empacotadas em `99-skills-compartilhaveis/`. Skills externas (Anthropic · Vercel) são instaladas via plugin/npx e referenciadas na seção "Skills externas" deste mapa.
+> **Cobertura total (atualizada 2026-07-03):** todas as **74 skills instaladas** no ambiente estão atribuídas a pelo menos um agente. Skills proprietárias (turbo/lpsg) são empacotadas em `99-skills-compartilhaveis/`. Skills externas (Anthropic · Vercel) são instaladas via plugin/npx e referenciadas na seção "Skills externas" deste mapa.
 
 ---
 
@@ -14,7 +14,7 @@
 |---|---|---|---|
 | `canvas-design` | Anthropic | designer · diretor-criativo | Arte estática (poster · PDF · canvas) |
 | `web-artifacts-builder` | Anthropic | designer · diretor-criativo | Artifacts web claude.ai (React + Tailwind + shadcn) |
-| `webapp-testing` | Anthropic | designer · trafego · picasso | Teste de webapp ao vivo no browser |
+| `webapp-testing` | Anthropic | trafego · picasso | Teste de webapp ao vivo no browser (designer migrou pra `playwright-skill`) |
 | `skill-creator` | Anthropic | estrategista | Criar novas skills do squad |
 | `skill-development` | Anthropic | estrategista | Boas práticas de estrutura de skill |
 | `deploy-to-vercel` | Vercel | designer · diretor-criativo · trafego · automacao | Deploy de páginas/serviços |
@@ -26,6 +26,14 @@
 | `instagram-analise-estrategica-turbo` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |
 | `meta-ads-cli-setup-turbo` | Turbo | trafego · automacao | Setup inicial da Meta Ads CLI |
 | `operacao-lpsg-turbo` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
+| `avoid-ai-writing` | Externa ⭐ 2026-07-03 | copywriter · revisor-copy | Auditoria/reescrita anti-IA automatizada (21 categorias de AI-isms) |
+| `youtube-full` | Externa ⭐ 2026-07-03 | pesquisador · pesquisador-mercado · social | Busca/canais/playlists/transcrição YouTube via API |
+| `imagen` | Externa ⭐ 2026-07-03 | designer | Geração de imagem crua (Gemini) · assets formatados ficam nas skills Turbo |
+| `playwright-skill` | Externa ⭐ 2026-07-03 | designer | Teste E2E/funcional das páginas Next.js (ficha · checkout) |
+| `elevenlabs` | Externa ⭐ 2026-07-03 | social | Texto → áudio (narração pt-BR · reels · podcast) |
+| `skill-personalizer` · `skill-miner` · `skill-generalizer` | Externa ⭐ 2026-07-03 | estrategista | Suite skill-optimizer: adaptar · minerar · publicar skills |
+| `instalar-skill-no-squad` | Turbo ⭐ 2026-07-03 | estrategista | Instalar skill de terceiros e distribuir nos agentes |
+| `file-organizer` | Externa ⭐ 2026-07-03 | estrategista | Organizar/deduplicar arquivos e pastas reais do projeto |
 | `distribuicao-turbo` | Turbo ⭐ 2026-07-02 | social · trafego | Funil de consciência C0-C3 · orgânico + impulsionamento |
 | `turbo-express` | Turbo ⭐ 2026-07-02 | copywriter · automacao | Ciclo de venda recorrente 14 dias em grupo WhatsApp |
 | `funil-8-turbo` | Turbo ⭐ 2026-07-02 | copywriter · trafego | Produto de entrada low ticket · campanha ASC · order bumps |
@@ -47,7 +55,10 @@
 | `honor-turbo` | Complementar | Quando o projeto exige estratégia de marca antes do funil |
 | `criador-paginas-low-ticket-turbo` | Complementar | Pra orientar copywriter no caminho de página low-ticket |
 | `dash-lancamento-turbo` | Complementar | Quando precisar acompanhar lançamento ao vivo |
+| `skill-personalizer` · `skill-miner` · `skill-generalizer` | Meta | Adaptar skill instalada ao fluxo Turbo · minerar sessões por skills novas · publicar skill |
+| `instalar-skill-no-squad` | Meta | Instalar skill de terceiros (GitHub/awesome-list) e mapear pro agente dono |
 | `find-skills` | Utilitário | Quando faltar capacidade no squad |
+| `file-organizer` | Utilitário | Organizar/deduplicar arquivos e pastas do projeto |
 
 **Roteia também (sem carregar):** `funil-8-turbo` (copy → @copywriter · campanha ASC → @trafego) · `distribuicao-turbo` (conteúdo → @social · impulsionamento → @trafego) · `turbo-express` (script 3 dias → @copywriter · fluxo de grupo → @automacao).
 
@@ -75,6 +86,7 @@
 | `funil-8-turbo` | Primária | Copy do produto de entrada (nome · 4 peças · 8 aulas · página) |
 | `turbo-express` | Primária | Script dos 3 dias de grupo (terça/quarta/quinta) + oferta |
 | `mensageria-lpsg-turbo` | Primária | Toda copy de WhatsApp/grupo/email do evento |
+| `avoid-ai-writing` | Primária | Passar detect-mode na própria copy ANTES de mandar pro @revisor-copy-turbo |
 
 **Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta = pré-pitch único 100% produto · sexta = conclusão técnica + lembrete da ficha, NÃO é repitch · domingo = pitch completo).
 
@@ -113,6 +125,8 @@
 | `ui-ux-pro-max` | Primária | Componentes prontos |
 | `banner-design` · `gerador-instagram-turbo` | Primária | Execução de criativos estáticos |
 | `gerador-slides-turbo` · `slides-uipm-turbo` · `pptx` | Primária | Execução de slides |
+| `imagen` | Primária | Gerar imagem crua (Gemini) quando o brief pede asset novo · formatados ficam nas skills Turbo |
+| `playwright-skill` | Complementar | Teste E2E/visual das páginas entregues (substituiu webapp-testing no designer) |
 
 **Princípio:** NÃO define direção · NÃO lê `00-fundacao/`. Recebe brief com paleta · tipografia · composição · copy e executa.
 
@@ -153,6 +167,8 @@
 | `transcrever-youtube-turbo` | Complementar | Pesquisar lives/podcasts dos concorrentes |
 | `mensageria-lpsg-turbo` | Complementar | DM ManyChat · WhatsApp orgânico |
 | `distribuicao-turbo` | Primária | Funil de consciência C0-C3 · qual camada de conteúdo criar e especificações |
+| `youtube-full` | Complementar | Pesquisa de canais/vídeos · transcrição via API (complementa transcrever-youtube-turbo) |
+| `elevenlabs` | Complementar | Narração/locução pt-BR pra reels e conteúdo |
 
 ---
 
@@ -198,6 +214,7 @@
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
 | `lancamento-pago-semanal-turbo` | Primária | Saber que 6 dossiês importam |
 | `transcrever-youtube-turbo` | Primária | Extrair material bruto de aulas/lives/podcasts do Léo |
+| `youtube-full` | Complementar | Buscar/navegar canais e playlists do Léo · transcrição via API |
 | `briefing-aprovacao-turbo` | Primária | Após consolidação · ajuda a gerar briefing |
 | `find-skills` | Utilitário | Quando faltar capacidade |
 
@@ -215,6 +232,7 @@
 | `criador-criativos-turbo` | Primária | Analisar criativos da concorrência (Meta Ad Library) |
 | `criativos-lpsg-turbo` | Primária | Saber **6 pilares** · catalogar criativo do concorrente por pilar |
 | `transcrever-youtube-turbo` | Primária | Lives, podcasts, YouTube dos concorrentes |
+| `youtube-full` | Complementar | Buscar canais/playlists de concorrentes · transcrição via API |
 | `paginas-lpsg-turbo` | Complementar | Saber **anatomia 14 blocos** · catalogar página do concorrente bloco a bloco |
 | `mensageria-lpsg-turbo` | Complementar | Mapear cadência da concorrência |
 | `estrutura-aulas-lpsg-turbo` | Complementar | Quando o concorrente roda evento · catalogar a estrutura dele |
@@ -250,6 +268,7 @@
 | `protocolo-conversa-turbo` | TRANSVERSAL + núcleo | Rubrica de auditoria (checklist-anti-ia-universal + travas-universais + feedback-cirurgico) |
 | `mensageria-lpsg-turbo` | Primária | Checklist anti-IA de mensageria + formatação SendFlow + cap 4+4 |
 | `criador-paginas-low-ticket-turbo` | Primária | Regras de copy persuasiva (estudo de caso narrativo · promessa = número+prazo+mecanismo · expert depois do preço) |
+| `avoid-ai-writing` | Primária | Motor automatizado da auditoria anti-IA (detect + edit-in-place · 21 categorias) |
 
 **Saída padrão:** veredito (passa/não passa) + cirurgias numeradas + versão corrigida pronta pra colar.
 

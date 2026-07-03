@@ -17,6 +17,8 @@ skills:
   # Criativos (execução)
   - banner-design
   - gerador-instagram-turbo
+  # Geração de imagem por IA (Gemini · mockups, ícones, ilustrações, conceito)
+  - imagen
   # Slides e apresentações (execução)
   - gerador-slides-turbo
   - slides-uipm-turbo
@@ -31,6 +33,8 @@ skills:
   - vercel-react-best-practices
   # Teste e otimização da entrega
   - page-optimizer-turbo
+  # Teste funcional/E2E das páginas web (Playwright · E2E, visual, acessibilidade)
+  - playwright-skill
 ---
 # NOTA: vercel-react-native-skills (RN/Expo) NÃO é carregada — LPSG é web (Next.js).
 # Disponível em ~/.claude/skills/ se um projeto mobile específico aparecer.

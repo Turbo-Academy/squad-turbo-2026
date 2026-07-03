@@ -9,6 +9,8 @@ skills:
   - lancamento-pago-semanal-turbo
   # Extração de material bruto · vídeo/áudio
   - transcrever-youtube-turbo
+  # Localizar/pesquisar vídeos do expert no YouTube (busca, canais, playlists)
+  - youtube-full
   # Extração de material bruto · documentos do expert (aulas, slides, planilhas, docs)
   - pdf
   - docx

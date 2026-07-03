@@ -10,6 +10,8 @@ skills:
   - criativos-lpsg-turbo
   # Análise de conteúdos de concorrentes (lives, podcasts, YouTube)
   - transcrever-youtube-turbo
+  # Busca/descoberta no YouTube (canais, playlists, transcrição via API · pesquisa externa)
+  - youtube-full
   # Saber o que cada fase exige · orienta foco da pesquisa
   - paginas-lpsg-turbo
   - mensageria-lpsg-turbo

@@ -123,6 +123,7 @@ Bold Magazine
 Bold Pop
 Book Title
 Border Radius
+Botão Impulsionar
 Brain Rot
 Brand Adaptation
 Brand Personality
@@ -219,6 +220,7 @@ Como Aplicar
 Como Carlos
 Como Criar
 Como Decidir
+Como Escalar
 Como Escolher
 Como Escrever
 Como Extrair
@@ -286,6 +288,7 @@ Convite Kick
 Coordena Método
 Coordenador Visual
 Copy Revisada
+Copy Turbo
 Copywriter Comanda
 Copywriter Turbo
 Copywriting Formulas
@@ -426,6 +429,7 @@ Entrega Utility
 Entregas Esperadas
 Environment Variables
 Equilíbrio Hormonal
+Equipe Turbo
 Equivalente Lovable
 Erro Que
 Error Trigger
@@ -473,6 +477,7 @@ Exemplo Indulto
 Exemplo Plantão
 Exemplo Produto
 Exemplo Projeto
+Experiência Instantânea
 Expert Leo
 Expert Secrets
 Expert Voice
@@ -498,6 +503,7 @@ First Load
 Fix Obrigatório
 Flat Design
 Foco Advantage
+Focus Concursos
 Fonte Google
 Fontes Inter
 Footer Char
@@ -573,6 +579,7 @@ Hook Rate
 Hook React
 Hotmart Club
 Hotmart Estratégia
+Hotmart Pages
 Hotmart Pro
 Hotmart Push
 Hotmart Webhooks
@@ -586,6 +593,7 @@ Igreja Católica
 Imagem Open
 Imagens Instagram
 Imersão Funil
+Imersão Turbo
 Implementa Aqui
 Implementar Kanban
 Implementar Meta
@@ -595,6 +603,7 @@ Ingresso Pago
 Iniciar Claude
 Iniciate Checkout
 Inimigo Biológico
+Instagram Direct
 Instagram Graph
 Instagram Reels
 Instagram Stories
@@ -625,6 +634,7 @@ João Silva
 Juros Compostos
 Júlia Almeida
 Keep Your
+Ken Burns
 Key Features
 Kit Completo
 Kit Copy
@@ -633,6 +643,7 @@ Kyle Zantos
 Lacuna Principal
 Landing Page
 Landing Pages
+Lançamento Gratidão
 Lançamento Gratuito
 Lançamento Pago
 Lançamentos Pagos
@@ -653,7 +664,9 @@ Lead João
 Lead Menopausa
 Lead Score
 Lead Time
+Leandro Aguiar
 Leo Tabari
+Liberação Bancária
 Library Scraper
 Light Grid
 Light List
@@ -967,6 +980,7 @@ Regras Técnicas
 Rei Charles
 Reinicia Claude
 Reiniciar Claude
+Renan Botelho
 Renderiza Markdown
 Repo Git
 Repositório Git
@@ -986,6 +1000,7 @@ Robert Cialdini
 Roberto Carlos
 Rocket Loader
 Rodar Lighthouse
+Rodar Turbo
 Rode Wireless
 Room Crítico
 Roteiro Aula
@@ -1007,6 +1022,7 @@ Seeding Progressivo
 Segredo Histórico
 Segue Protocolo
 Seguir Bloco
+Seguir Instagram
 Selecionar System
 Sem Medo
 Sem Mistério
@@ -1161,9 +1177,13 @@ Troubleshooting Meta
 Tráfego Frio
 Tráfego Pago
 Tráfego Turbo
+Turbinar Reels
 Turbo Academy
+Turbo Avatar
 Turbo Dashboard
 Turbo Express
+Turbo Headlines
+Turbo Roteiro
 Turma Abril
 Tutorial Meta
 Two Column
@@ -1175,6 +1195,7 @@ Universal Instagram
 Universo Algorítmico
 Upload Drive
 Upload Google
+Usar Direcionamento
 Usar Modo
 Usar Title
 Use Bloco
@@ -1198,6 +1219,7 @@ Value Stack
 Variables Reference
 Variáveis Globais
 Variável Única
+Venda Recorrente
 Vendas Funil
 Vendas Recorrente
 Vercel Analytics
@@ -1207,6 +1229,7 @@ Vercel Speed
 Verificar Python
 Verify Business
 Versão Utility
+Via Meta
 Video Sales
 Violar Expectativas
 Visual Signature
@@ -1232,3 +1255,4 @@ Your Solution
 Zona Segura
 Áudio Msg
 Áudio Pré
+Érico Rocha

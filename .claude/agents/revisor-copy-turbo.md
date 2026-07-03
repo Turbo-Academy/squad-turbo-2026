@@ -9,6 +9,8 @@ skills:
   - mensageria-lpsg-turbo
   # Regras de copy persuasiva (estudo de caso narrativo, promessa, expert depois do preço)
   - criador-paginas-low-ticket-turbo
+  # Auditoria/reescrita anti-IA automatizada (21 categorias de "AI-isms" · detect + edit-in-place)
+  - avoid-ai-writing
 ---
 
 # revisor-copy-turbo

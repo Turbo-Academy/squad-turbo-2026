@@ -20,8 +20,15 @@ skills:
   # Meta · criar e evoluir skills/agentes do próprio squad
   - skill-creator
   - skill-development
+  # Meta · adaptar, minerar e publicar skills instaladas (suite skill-optimizer)
+  - skill-personalizer
+  - skill-miner
+  - skill-generalizer
+  # Meta · instalar skill de terceiros e distribuir nos agentes do squad
+  - instalar-skill-no-squad
   # Utilitários
   - find-skills
+  - file-organizer
 ---
 
 # estrategista-turbo

@@ -16,12 +16,16 @@ skills:
   - gerador-instagram-turbo
   # Pesquisa e ideação (transcrições de lives, podcasts)
   - transcrever-youtube-turbo
+  # Busca/pesquisa de vídeos no YouTube (engenharia reversa de reels · descoberta de temas)
+  - youtube-full
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)
   - instagram-analise-estrategica-turbo
   # Aula recorrente de nutrição/consciência (webinar perpétuo · aquece frio→morno)
   - aula-consciencia-turbo
+  # Narração / áudio por IA (TTS ElevenLabs · voz de reels, áudios, podcast)
+  - elevenlabs
 ---
 
 # social-turbo

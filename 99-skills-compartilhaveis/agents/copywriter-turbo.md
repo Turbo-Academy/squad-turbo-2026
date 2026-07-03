@@ -25,6 +25,8 @@ skills:
   - turbo-express
   # Mensageria (WhatsApp, email, DM)
   - mensageria-lpsg-turbo
+  # Auto-checagem anti-IA antes de passar pro @revisor-copy-turbo
+  - avoid-ai-writing
 ---
 
 # copywriter-turbo
