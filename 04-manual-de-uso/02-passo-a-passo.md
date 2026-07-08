@@ -30,7 +30,7 @@
 5. SÓ ENTÃO começa Fase 1 (estrutura-aulas-lpsg-turbo)
 ```
 
-> O briefing sai em **`.docx` (local em `03-revisoes/`) + Google Drive** (link no chat). Lê e aprova onde for mais confortável — os dois ficam sincronizados.
+> O briefing sai em **`.docx` (local em `_private/03-revisoes/`) + Google Drive** (link no chat). Lê e aprova onde for mais confortável — os dois ficam sincronizados.
 
 ---
 
@@ -400,12 +400,37 @@ A partir desta segunda · LPSG vira **modelo perpétuo**.
 | **Sáb 10h** | Tira-dúvidas ao vivo | Expert | Conduz live (1-1.5h) |
 | **Dom 20h** | Pitch ao vivo | Expert | Apresenta a oferta |
 | **Seg 6h50/7h** | <!--F:carrinho_abertura-->Seg · ficha entra 6h50 (bônus único) · carrinho geral 7h<!--/F--> | Mensageria | Acompanha tsunami |
+| **Seg-Sex (D+1 a D+7)** | Recuperação 1:1 do carrinho | Closer | Ver seção abaixo — é trabalho humano, não automação |
 | **Sex 23h59** | Carrinho fecha | Sistema | Documenta números |
 
 ### 🚨 AÇÃO HUMANA · dashboard ao vivo
 - [ ] Aba "Tsunami" durante carrinho aberto
 - [ ] Sugestões da skill `trafego-lpsg-turbo` no módulo 10
 - [ ] Aplica (manual) as sugestões aprovadas
+
+---
+
+## 🤝 D+1 a D+7 · recuperação de carrinho (skill `closer-lpsg-turbo`)
+
+> **Não é automação.** No cap 4+4, D2-D7 tem **ZERO mensagem em massa** — por isso toda recuperação do carrinho é 1:1 humana. É o trabalho mais importante da semana de carrinho aberto e o mais fácil de esquecer porque não aparece em nenhum workflow.
+
+### 🤖 Pedido pro Claude (uma vez, no início do carrinho)
+> *"Use a skill `closer-lpsg-turbo`. Monta a fila priorizada de leads pós-pitch (P1-P5) e a sequência de recuperação D+1 a D+7 pra esse carrinho."*
+
+### O que Claude faz
+- Fila priorizada P1 (checkout iniciado) → P5 (ficha fria) com SLA por tier
+- Scripts de abordagem 1:1 por tier (HOT/WARM/COLD) — abordagem de dúvida, não de pressão
+- Sequência D+1 a D+7 (D+5/D+6 = recuperação de **pagamento**, não venda nova, pra quem já disse sim)
+- Matriz de objeções com respostas prontas
+
+### 🚨 AÇÃO HUMANA · closer trabalha a fila (D+1 a D+7 · diário)
+- [ ] Checkout iniciado → contato em até o SLA definido (não deixa esfriar)
+- [ ] Fila priorizada revisada 2x/dia (manhã e fim de tarde)
+- [ ] Scripts 1:1 seguidos — sem desconto que não existe, sem urgência fabricada
+- [ ] D+5/D+6: foco em quem já disse sim mas não pagou (recuperação de pagamento)
+
+### ✅ Checkpoint
+Toda a fila P1-P3 contatada até D+2 · nenhum checkout iniciado sem follow-up em 24h
 
 ---
 
@@ -431,6 +456,17 @@ MENSALMENTE:
    - Renovação de criativos (1/3 do lote)
    - Calibração de targets se nicho ≠ marketing digital
 ```
+
+---
+
+## 📈 Escalar tráfego do produto principal (opcional · pós-edições)
+
+> A Fase 6 (`trafego-lpsg-turbo`) sobe a campanha ASC do **ingresso** (ticket baixo). Depois de algumas edições rodando, se você quiser subir tráfego pago diretamente pro **produto principal** (ticket alto), isso é uma frente separada.
+
+### 🤖 Pedido pro Claude
+> *"Use o `@trafego-turbo` pra subir campanhas do produto principal. Aqui estão meus 4 inputs: ticket, taxa de conversão, preço do produto principal, ROAS desejado."*
+
+O `@trafego-turbo` calcula o CAC ideal e sobe 2 campanhas: **Cost Cap** (teto de custo por resultado · 1 conjunto Advantage+ aberto · até 15 criativos) e **ROAS incremental** (CBO · ROAS floor 0,7 · 1 conjunto por criativo). Tudo nasce **pausado** — você ativa manualmente.
 
 ---
 

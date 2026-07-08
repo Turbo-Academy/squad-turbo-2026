@@ -120,9 +120,24 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 | Onde | Pra quê |
 |---|---|
 | `02-entregaveis-finais/` | Templates detalhados de cada estrutura |
-| `03-revisoes/` | `.docx` pra revisão antes de aprovar (cliente vê) |
+| `_private/03-revisoes/` | `.docx` pra revisão antes de aprovar (local · gitignored) |
 | `99-skills-compartilhaveis/` | Zips das skills · instalar em outras máquinas |
 | Skills LPSG instaladas | `~/.claude/skills/` (10 especializadas + master) |
+
+---
+
+## 🔀 Outros motores do squad (fora do LPSG)
+
+> Este manual cobre o **LPSG** (Lançamento Pago Semanal Gravado) — o motor principal, com pipeline de 10 fases. O Squad Turbo também opera 3 motores de negócio próprios, mais simples de rodar: não seguem um trilho de 7 dias, são invocados diretamente por skill quando você precisa deles.
+
+| Motor | Pra quê | Como aciona |
+|---|---|---|
+| `distribuicao-turbo` | Funil de consciência C0-C3 · conteúdo orgânico + impulsionamento de baixo custo | *"Use a skill `distribuicao-turbo`..."* pro `@social-turbo` ou `@trafego-turbo` |
+| `turbo-express` | Ciclo de venda recorrente de 14 dias em grupo fechado de WhatsApp (pré-requisito: Distribuição Turbo já rodando) | *"Use a skill `turbo-express`..."* pro `@copywriter-turbo` (script) ou `@automacao-turbo` (fluxo) |
+| `funil-8-turbo` | Produto de entrada low ticket (R$17-98) · campanha ASC · order bumps | *"Use a skill `funil-8-turbo`..."* pro `@copywriter-turbo` (copy) ou `@trafego-turbo` (campanha) |
+| `aula-consciencia-turbo` | Aula/webinar recorrente de aquecimento entre edições do LPSG | *"Use a skill `aula-consciencia-turbo`..."* pro `@social-turbo` |
+
+> Mapa completo de qual skill cada agente carrega: `99-skills-compartilhaveis/agents/MAPA-SKILLS-AGENTES.md`.
 
 ---
 

@@ -92,6 +92,15 @@
 - [ ] Apresentar pitch Domingo 20h
 - [ ] Acompanhar dashboard ao vivo (módulos Aulas + Tsunami + Sugestões)
 
+### Recuperação de carrinho · D+1 a D+7 (semana seguinte ao pitch)
+
+> Cap 4+4 = zero mensagem em massa de D2 a D7. Sem isso, ninguém recupera o carrinho.
+
+- [ ] Fila priorizada (P1-P5) gerada pela skill `closer-lpsg-turbo`
+- [ ] Closer revisa a fila 2x/dia · contata checkout iniciado dentro do SLA
+- [ ] D+5/D+6: foco em recuperação de **pagamento** (quem já disse sim, não pagou)
+- [ ] Nenhum lead da fila P1-P3 sem follow-up em 24h
+
 ### Pós-edição · sexta após carrinho fechar
 
 - [ ] Documentar números reais
@@ -138,7 +147,7 @@
 - [ ] SDR/Closer recebe alerta no Notion/Trello
 - [ ] Liga ou manda WhatsApp em ≤ 24h
 - [ ] Agenda call de 45 min
-- [ ] Conduz call seguindo `cs-lpsg-turbo/07-ascensao` ou roteiro de venda direta
+- [ ] Conduz call seguindo script 1:1 da skill `closer-lpsg-turbo` (abordagem de dúvida, não de pressão) ou `cs-lpsg-turbo/07-ascensao`
 
 ### Quando criativo morre (fadiga)
 
