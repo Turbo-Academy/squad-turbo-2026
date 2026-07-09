@@ -20,6 +20,8 @@ skills:
   - criador-criativos-turbo
   # VSL (carta de vendas em vídeo · roteiro completo via RMBC)
   - criador-vsl-turbo
+  # VSL — produção A/B (teleprompter, mapa de takes, roteiro de edição · consome roteiro pronto)
+  - vsl-ab-turbo
   # Produtos próprios Turbo (copy do Funil 8 e script dos 3 dias do Turbo Express)
   - funil-8-turbo
   - turbo-express

@@ -82,6 +82,7 @@
 | `criativos-lpsg-turbo` | Primária | Briefing de criativos · usar `references/12-6-pilares-criativos.md` + `13-8-ctas-avulsas.md` |
 | `criador-criativos-turbo` | Primária | Anatomia hook+body+CTA · ângulos avançados |
 | `criador-vsl-turbo` | Primária | Roteiro de VSL (carta de vendas em vídeo) · RMBC · mecanismo único · 11 blocos · compliance Meta · fluxo de entrega (gate @revisor-copy-turbo → .docx de trabalho + .docx teleprompter) |
+| `vsl-ab-turbo` | Primária | Produção A/B da VSL — consome o roteiro aprovado e gera plano A/B por consciência (dor ampla × método explícito) · mapa de takes pra gravação única · teleprompter .docx · roteiro de edição pro editor montar as duas versões |
 | `criador-reels-turbo` | Complementar | Quando o pedido for roteiro orgânico de Reel |
 | `funil-8-turbo` | Primária | Copy do produto de entrada (nome · 4 peças · 8 aulas · página) |
 | `turbo-express` | Primária | Script dos 3 dias de grupo (terça/quarta/quinta) + oferta |

@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 70 · **Atribuições (skill×agent):** 157
+**Agentes:** 13 · **Skills distintas referenciadas:** 71 · **Atribuições (skill×agent):** 158
 
 ## Por agente
 
@@ -37,6 +37,7 @@
 - criativos-lpsg-turbo
 - criador-criativos-turbo
 - criador-vsl-turbo
+- vsl-ab-turbo
 - funil-8-turbo
 - turbo-express
 - mensageria-lpsg-turbo
@@ -258,6 +259,7 @@
 | `ui-ux-pro-max` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
 | `vercel-cli-with-tokens` | automacao-turbo designer-turbo |
 | `vercel-react-best-practices` | designer-turbo |
+| `vsl-ab-turbo` | copywriter-turbo |
 | `web-artifacts-builder` | designer-turbo diretor-criativo-turbo |
 | `web-design-guidelines` | diretor-criativo-turbo picasso-auditor-turbo |
 | `webapp-testing` | picasso-auditor-turbo trafego-turbo |

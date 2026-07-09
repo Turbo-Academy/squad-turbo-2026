@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-06-23)
 
-- **<!--F:n_skills-->38<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->39<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)

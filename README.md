@@ -2,7 +2,7 @@
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · <!--F:n_skills-->38<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · <!--F:n_skills-->39<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
@@ -119,7 +119,7 @@ lpsg-method/
 
 ## 🤖 Skills do Claude
 
-<!--F:n_skills-->38<!--/F--> skills proprietárias (principais abaixo · lista canônica em `99-skills-compartilhaveis/sync-skills.sh`). Instale em `~/.claude/skills/`:
+<!--F:n_skills-->39<!--/F--> skills proprietárias (principais abaixo · lista canônica em `99-skills-compartilhaveis/sync-skills.sh`). Instale em `~/.claude/skills/`:
 
 | Skill | Função |
 |---|---|
@@ -214,7 +214,7 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ## 📊 Status do projeto
 
 ```
-✅ <!--F:n_skills-->38<!--/F--> skills proprietárias instaladas e testadas
+✅ <!--F:n_skills-->39<!--/F--> skills proprietárias instaladas e testadas
 ✅ 13 agents (Squad Turbo + Picasso + Revisor + Closer)
 ✅ 10 estruturas com template + exemplo preenchido
 ✅ 50 zips compartilháveis (38 skills + squad completo + squad-core + 10 templates)
