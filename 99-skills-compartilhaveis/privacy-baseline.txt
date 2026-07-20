@@ -338,6 +338,7 @@ Custo Separado
 Custo Utility
 Custom Code
 Customer Success
+Câmera Escondida
 Dado Absoluto
 Dados Demográficos
 Dados Psicográficos
@@ -397,6 +398,7 @@ Dobras Opcionais
 Docs Claude
 Documentação Personalizada
 Dois Blocos
+Dois Gêmeos
 Domaine Display
 Domina Events
 Domina Funil
@@ -604,6 +606,8 @@ Ingresso Pago
 Iniciar Claude
 Iniciate Checkout
 Inimigo Biológico
+Inimigo Oculto
+Inspeção Microscópica
 Instagram Direct
 Instagram Graph
 Instagram Reels
@@ -876,6 +880,7 @@ Por Nicho
 Por Que
 Power Words
 Pra Meta
+Praticidade Real
 Premissa Central
 Presentation Title
 Preset Tailwind
@@ -997,6 +1002,7 @@ Retenção Aula
 Retenção Aulas
 Revelação Progressiva
 Revisor Copy
+Risco Meta
 Robert Cialdini
 Roberto Carlos
 Rocket Loader
@@ -1077,6 +1083,7 @@ Stack Vite
 Stagger Children
 Static Maps
 Status Quo
+Stefan George
 Stefan Georgi
 Step Verification
 Steve Schoger
