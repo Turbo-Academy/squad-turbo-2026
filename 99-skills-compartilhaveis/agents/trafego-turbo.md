@@ -5,16 +5,16 @@ model: sonnet
 skills:
   # PROTOCOLO TRANSVERSAL DO SQUAD (carregar SEMPRE primeiro)
   - protocolo-conversa-turbo
-  # Tráfego pago (estrutura de campanha, ASC, análise)
+  # Tráfego pago (estrutura de campanha, Advantage+, análise)
   - trafego-lpsg-turbo
   - lancamento-pago-semanal-turbo
-  # Funil de produto de entrada low-ticket (ASC própria, order bumps) — Leo Tabari / Hotmart
+  # Funil de produto de entrada low-ticket (campanha com cost cap, order bumps) — Leo Tabari / Hotmart
   - funil-8-turbo
   # Campanhas de impulsionamento/Ativador Turbo do funil de consciência C0-C3 — Leo Tabari / Hotmart
   - distribuicao-turbo
   # Execução programática (Meta Ads CLI · lançada 29/04/2026)
   - meta-ads-cli-turbo
-  # Criativos (entender o que sobe na ASC)
+  # Criativos (entender o que sobe na campanha)
   - criativos-lpsg-turbo
   - criador-criativos-turbo
   # Páginas (destino dos ads · LCP < 1.5s)
@@ -50,7 +50,7 @@ REQUEST-RESOLUTION: |
   - "otimizar" / "métricas" / "custo por ingresso" → *otimizar
   - "google ads" → *google-ads
   - "subir campanha" / "subir as campanhas" / "lançar campanha" / "cost cap" / "campanha de roas" → *subir-campanhas
-  - "funil 8" / "low ticket" / "order bump" / "ASC" / "advantage+ shopping" / "produto de entrada" → *funil-8-turbo
+  - "funil 8" / "low ticket" / "order bump" / "cost cap" / "meta de custo" / "impulsionar" / "produto de entrada" → *funil-8-turbo
   - "C0" / "C1" / "C2" / "C3" / "turbinar reels" / "ativador turbo" / "impulsionar" → *distribuicao-turbo
   ALWAYS ask for clarification if no clear match.
 
@@ -73,7 +73,7 @@ activation-instructions:
       │ *publicos           → Definir públicos e segmentações         │
       │ *orcamento          → Plano de orçamento e distribuição       │
       │ *otimizar           → Otimizar métricas do tráfego            │
-      │ *funil-8-turbo            → Campanha ASC do funil de entrada        │
+      │ *funil-8-turbo            → Campanha cost cap do funil de entrada   │
       │ *distribuicao-turbo → Campanha de impulsionamento/Ativador    │
       │ *google-ads         → Campanhas Google Ads                    │
       │ *help               → Ver todos os comandos                   │
@@ -356,17 +356,26 @@ operational_frameworks:
     pos_subida: "No ar → otimizar pelas cadências do framework_2 + as 4 ações (subir/descer/renovar/duplicar) do template trafego/07-analise-automatica.md. Decisão de verba pelo VK (framework_7). Kill rule e concentração no ângulo vencedor (framework_8 · lições de campo)."
 
   framework_10:
-    name: "Funil 8 — Campanha ASC (produto de entrada low-ticket)"
+    name: "Funil 8 — Campanha com cost cap (produto de entrada low-ticket)"
     category: "campaign_structure"
     skill_reference: "~/.claude/skills/funil-8-turbo/SKILL.md"
     philosophy: |
-      Estrutura DIFERENTE do modelo LPSG de ingresso: campanha de Vendas →
-      Advantage+ Shopping Campaign (ASC), público aberto sem segmentação
-      manual, foco 70-80% em público frio. Objetivo não é ROAS 1 — é
-      ROAS-alvo 1.2 (mínimo 1.1) depois de taxas/impostos, porque o produto
-      (R$17-98) é desenhado pra crescer base a custo zero, não pra lucrar.
-    diferenca_chave_vs_lpsg: "LPSG: ROAS 1 no ingresso, lucro vem do produto principal do pitch. Funil 8: ROAS 1.1-1.2 é o próprio objetivo — não existe 'produto principal' vendido depois no mesmo ciclo, o lucro vem da esteira (order bumps + upsell + Turbo Express + longo prazo)."
-    otimizacao: "3 frentes: criativo (CTR <1% pausa), checkout (meta inicial >10%, escala 6-7%), campanha (ROAS = recebimento médio ÷ CAQ; >2 escala agressiva). Nunca escalar dentro da campanha original — sempre duplicar."
+      [ATUALIZADO — regravação 04/08/2026. NÃO é mais ASC.]
+      Estrutura DIFERENTE do modelo LPSG de ingresso: campanha de Vendas,
+      1 conjunto, 1 anúncio, estratégia de lance = META DE CUSTO POR
+      RESULTADO (cost cap) igual ao preço do produto. Público em branco
+      (Advantage), sem segmentação manual — idade/sexo a Meta já ignora.
+      Verba: R$50/dia (ticket R$35) ou R$100/dia (ticket R$62); piso real
+      = carrinho total. Destino do anúncio = CHECKOUT (página só depois
+      de validar, pra escalar). Preço de teste padrão R$35 — R$17 morreu
+      porque o CPM médio subiu pra ~R$30. Objetivo: zero a zero com escala
+      máxima, ou lucro com ROAS 2-3 (acima de 3 em infoproduto é raro).
+      Alvo estrutural: 50 vendas em 7 dias, o volume que gera inteligência.
+      Caminho alternativo equivalente pro expert sem gestor: botão
+      Impulsionar com objetivo "Fazer uma compra" — pelo navegador, não
+      pelo app iOS (25-27% mais caro).
+    diferenca_chave_vs_lpsg: "LPSG: ROAS 1 no ingresso, lucro vem do produto principal do pitch, e o incremental/ROAS-alvo faz sentido lá. Funil 8: zero a zero (ou ROAS 2-3) é o próprio objetivo, e a estratégia de lance é cost cap — ROAS-alvo e maximizar volume foram testados e NÃO funcionam pra low ticket. O lucro vem da esteira (order bumps + upsell + Turbo Express + longo prazo)."
+    otimizacao: "Criativo SEMPRE primeiro (Meta parou de gastar com métrica boa → troca criativo antes de mexer em verba). Mix 10 estáticos + 5 vídeos, gancho em 15s. Order bump precisa valer ≥20% do faturamento. Janela de decisão 7 dias: ROAS >1 estável → dobra a verba; ROAS 4 por 7 dias → quadruplica. Prejuízo persistente → pausa. Modo acelerar inteligência: ~R$300/dia até 50 vendas, depois baixa. Desmarcar aprimoramentos automáticos da Meta e reconferir a cada ~3 dias (ela remarca sozinha)."
     diagnostico_avancado: "Framework de diagnóstico por etapa de funil (3 pilares do leilão: lance/ação estimada/qualidade do anúncio) em references/trafego-e-otimizacao.md da skill — mais granular que o playbook padrão do LPSG."
 
   framework_11:
@@ -390,7 +399,7 @@ commands:
 
   - name: "funil-8-turbo"
     visibility: [full, quick, key]
-    description: "Campanha ASC do Funil 8 (produto de entrada low-ticket) — config, otimização, diagnóstico"
+    description: "Campanha do Funil 8 com cost cap (produto de entrada low-ticket) — config, otimização, diagnóstico"
     loader: null
 
   - name: "distribuicao-turbo"

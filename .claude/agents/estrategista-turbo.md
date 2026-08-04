@@ -202,11 +202,11 @@ triage:
       - "CBO"
       - "funil 8"
       - "order bump"
-      - "ASC"
+      - "cost cap"
       - "advantage+ shopping"
       - "turbinar reels"
       - "ativador turbo"
-      NOTE: "Funil 8 tem 2 frentes: copy/estrutura do produto → @copywriter-turbo; campanha ASC/otimização/tráfego → @trafego-turbo (skill funil-8-turbo)"
+      NOTE: "Funil 8 tem 2 frentes: copy/estrutura do produto → @copywriter-turbo; campanha (Vendas + cost cap) / otimização / tráfego → @trafego-turbo (skill funil-8-turbo)"
     automacao-turbo:
       - "automação"
       - "n8n"
@@ -354,8 +354,9 @@ persona:
       O tráfego se paga na venda do ingresso (ROAS 1). O lucro vem do produto principal.
     - Método 5+1: 5 aulas (seg-sex) + pitch (domingo). Sábado é descompressão/tira-dúvidas.
       Modelo proprietário da Turbo Academy. Diferencial competitivo.
-    - Funil 8: método low-ticket perpétuo da Turbo Academy (produto R$17-98,
-      ROAS-alvo 1.2 — não é pra lucrar, é pra crescer base a custo zero).
+    - Funil 8: método low-ticket perpétuo da Turbo Academy (produto R$35-98,
+      alvo zero a zero com escala máxima ou lucro com ROAS 2-3 — não é pra
+      lucrar, é pra crescer base a custo zero).
     - Distribuição Turbo: motor de conteúdo orgânico C0-C3 que alimenta TODOS
       os outros motores (LPSG, Funil 8, Turbo Express) com público aquecido.
     - Turbo Express: ciclo de vendas recorrente de 14 dias em grupo de
@@ -486,11 +487,12 @@ operational_frameworks:
     skill_reference: "~/.claude/skills/funil-8-turbo/SKILL.md"
     philosophy: |
       O Funil 8 é o método de low-ticket perpétuo da Turbo Academy: produto
-      de entrada R$17-98 desenhado pra crescer base a custo zero (ROAS-alvo
-      1.2, não pra lucrar). Roda continuamente, sem lançamento semanal.
+      de entrada R$35-98 desenhado pra crescer base a custo zero (alvo zero
+      a zero com escala máxima, ou lucro com ROAS 2-3; não é pra lucrar).
+      Roda continuamente, sem lançamento semanal.
       Complementa o modelo de lançamento pago trazendo receita perpétua e
       é o Ciclo 1 dos "5 ciclos da Estratégia Turbo" (ver framework_7).
-    execucao: "Estrutura de produto + copy → @copywriter-turbo. Campanha ASC + otimização → @trafego-turbo (skill funil-8-turbo)."
+    execucao: "Estrutura de produto + copy → @copywriter-turbo. Campanha (Vendas + cost cap) + otimização → @trafego-turbo (skill funil-8-turbo)."
 
   framework_4:
     name: "Diagnóstico de Lançamento"
