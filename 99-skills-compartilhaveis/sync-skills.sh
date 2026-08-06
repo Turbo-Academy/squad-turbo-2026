@@ -30,6 +30,8 @@ SKILLS=(
   meta-ads-cli-setup-turbo meta-ads-cli-turbo
   # motores de copy/conteúdo
   criador-criativos-turbo criador-paginas-low-ticket-turbo criador-reels-turbo criador-vsl-turbo
+  # criativos de tráfego "assistir VSL" (padrão Megafone Digital)
+  gerador-criativos-vsl
   # produção A/B de VSL (teleprompter · mapa de takes · roteiro de edição)
   vsl-ab-turbo
   # recuperação 1:1 (closer)
