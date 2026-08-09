@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+# ─────────────────────────────────────────────────────────────────────────────
+# pre-push · o portão antes de qualquer coisa sair pro GitHub.
+#
+# Roda 3 checagens que a auditoria de 2026-08-09 provou serem necessárias:
+#   1. PRIVACIDADE — nome de pessoa real que não estava na baseline aprovada
+#   2. ÓRFÃS      — skill empacotada que nenhum agente carrega (quem clona
+#                    recebe uma skill que nunca dispara)
+#   3. CONTAGENS  — docs divergindo do que existe no disco
+#
+# Instalar:  bash 99-skills-compartilhaveis/hooks/instalar-hooks.sh
+# Pular uma vez (use com parcimônia):  git push --no-verify
+# ─────────────────────────────────────────────────────────────────────────────
+set -uo pipefail
+
+ROOT="$(git rev-parse --show-toplevel)"
+DIR="$ROOT/99-skills-compartilhaveis"
+falhas=0
+
+echo "▶ pre-push · rodando checagens do squad"
+
+# ── 1 · privacidade ──────────────────────────────────────────────────────────
+if [[ -x "$DIR/audit-privacy.sh" ]]; then
+  if ! "$DIR/audit-privacy.sh" > /tmp/.pp-priv 2>&1; then
+    echo ""
+    echo "❌ PRIVACIDADE — par de nome novo, fora da baseline:"
+    sed 's/^/   /' /tmp/.pp-priv
+    echo "   → pessoa real? generalize ou mova pra _private/"
+    echo "   → legítimo? revise e rode: $DIR/audit-privacy.sh --update-baseline"
+    falhas=$((falhas+1))
+  else
+    echo "  ✓ privacidade"
+  fi
+fi
+
+# ── 2 · skills empacotadas sem agente dono ───────────────────────────────────
+orfas=""
+while read -r s; do
+  [[ -z "$s" ]] && continue
+  grep -ql "^  - $s\$" "$ROOT"/.claude/agents/*.md 2>/dev/null || orfas+="$s "
+done < <(perl -ne 'if(/^SKILLS=\(/../^\)/){s/#.*//; while(/([a-z0-9][a-z0-9-]+)/g){print "$1\n"}}' "$DIR/sync-skills.sh" | grep -v '^SKILLS$')
+
+# exceções conscientes: redirect deprecado mantido só pra instalações antigas
+orfas="${orfas//estruturador-evento-turbo /}"
+
+if [[ -n "${orfas// /}" ]]; then
+  echo ""
+  echo "❌ ÓRFÃS — empacotadas mas nenhum agente carrega: ${orfas}"
+  echo "   → adicione ao bloco skills: do agente dono em ~/.claude/agents/ e rode sync-squad.sh"
+  falhas=$((falhas+1))
+else
+  echo "  ✓ nenhuma skill órfã"
+fi
+
+# ── 3 · contagens dos docs vs disco ──────────────────────────────────────────
+n_real=$(perl -ne 'if(/^SKILLS=\(/../^\)/){s/#.*//; while(/([a-z0-9][a-z0-9-]+)/g){print "$1\n"}}' "$DIR/sync-skills.sh" | grep -v '^SKILLS$' | wc -l | tr -d ' ')
+n_doc=$(grep -oE '"n_skills": "[0-9]+"' "$ROOT/04-manual-de-uso/manual-dados.json" 2>/dev/null | grep -oE '[0-9]+')
+n_badge=$(grep -oE 'badge/skills-[0-9]+' "$ROOT/README.md" 2>/dev/null | grep -oE '[0-9]+')
+
+if [[ "$n_real" != "$n_doc" || "$n_real" != "$n_badge" ]]; then
+  echo ""
+  echo "❌ CONTAGENS — disco=$n_real · manual-dados.json=$n_doc · badge=$n_badge"
+  echo "   → rode: $DIR/sync-skills.sh && bash $ROOT/04-manual-de-uso/build-manual.sh"
+  falhas=$((falhas+1))
+else
+  echo "  ✓ contagens ($n_real skills)"
+fi
+
+if (( falhas > 0 )); then
+  echo ""
+  echo "⛔ push bloqueado · $falhas checagem(ns) falhou(aram)."
+  echo "   Consciente do que está fazendo? git push --no-verify"
+  exit 1
+fi
+
+echo "✅ pre-push ok"
+exit 0

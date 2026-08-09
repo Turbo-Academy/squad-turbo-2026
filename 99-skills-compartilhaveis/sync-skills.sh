@@ -69,3 +69,29 @@ done
 
 echo ""
 echo "✅ sync-skills: ${#SKILLS[@]} skills · $novos novos · $regen regenerados · $emdia em dia."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Grava as contagens REAIS na fonte única (manual-dados.json).
+# Sem isto, os números dos docs viram digitação manual e derivam — foi o que a
+# auditoria de 2026-08-09 encontrou (docs diziam 38/39 com 40 skills no disco).
+# Depois disto, rode build-manual.sh pra propagar pros .md/.html.
+# ─────────────────────────────────────────────────────────────────────────────
+DADOS="$DST/../04-manual-de-uso/manual-dados.json"
+N_TEMPLATES=$(ls "$DST"/templates-entregaveis-legado/*.zip 2>/dev/null | wc -l | tr -d ' ')
+N_INSTALADAS=$(ls -d "$SRC"/*/ 2>/dev/null | wc -l | tr -d ' ')
+# total de zips = skills + squad-turbo-completo + squad-core-turbo + templates legado
+N_ZIPS=$(( ${#SKILLS[@]} + 2 + N_TEMPLATES ))
+
+if [[ -f "$DADOS" ]]; then
+  python3 - "$DADOS" "${#SKILLS[@]}" "$N_ZIPS" "$N_INSTALADAS" <<'PY'
+import json, sys, pathlib
+p = pathlib.Path(sys.argv[1])
+d = json.loads(p.read_text(encoding="utf-8"))
+novos = {"n_skills": sys.argv[2], "n_zips_total": sys.argv[3], "n_skills_instaladas": sys.argv[4]}
+mudou = [k for k, v in novos.items() if d.get(k) != v]
+d.update(novos)
+p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+print(f"   contagens gravadas em manual-dados.json ({', '.join(mudou)+' atualizado(s)' if mudou else 'já em dia'})")
+print("   → rode 04-manual-de-uso/build-manual.sh pra propagar pros docs")
+PY
+fi

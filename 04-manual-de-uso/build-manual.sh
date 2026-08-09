@@ -59,5 +59,46 @@ if missing_keys:
     print(f"\n⚠️  marcadores sem chave no JSON: {', '.join(sorted(missing_keys))}", file=sys.stderr)
     sys.exit(1)
 
-print(f"\n✅ build-manual concluído. {len(facts)} fatos canônicos · arquivos sincronizados.")
+# ─────────────────────────────────────────────────────────────────────────────
+# DERIVADOS · lugares onde um marcador HTML não pode viver (dentro da URL de um
+# badge, no meio de uma frase de total). Aqui a substituição é por regex, mas o
+# VALOR continua vindo do mesmo manual-dados.json — fonte única preservada.
+# Motivo: a auditoria de 2026-08-09 achou 5 contagens divergentes justamente
+# nestes pontos, que ficavam de fora do sistema de marcadores.
+# ─────────────────────────────────────────────────────────────────────────────
+derivados = []
+if "n_skills" in facts:
+    derivados += [
+        (r"badge/skills-\d+-orange", f"badge/skills-{facts['n_skills']}-orange"),
+        (r"\[!\[Skills: \d+\]", f"[![Skills: {facts['n_skills']}]"),
+    ]
+if "n_agentes" in facts:
+    derivados += [
+        (r"badge/agents-\d+-purple", f"badge/agents-{facts['n_agentes']}-purple"),
+        (r"\[!\[Agents: \d+\]", f"[![Agents: {facts['n_agentes']}]"),
+    ]
+if "n_zips_total" in facts and "n_skills" in facts:
+    z, s = facts["n_zips_total"], facts["n_skills"]
+    derivados += [
+        (r"\*\*Total: \d+ zips\*\* \(\d+ skills", f"**Total: {z} zips** ({s} skills"),
+        (r"✅ \d+ zips compartilháveis \(\d+ skills", f"✅ {z} zips compartilháveis ({s} skills"),
+    ]
+if "n_skills_instaladas" in facts:
+    derivados.append((r"as \d+ skills instaladas", f"as {facts['n_skills_instaladas']} skills instaladas"))
+
+n_deriv = 0
+for fname in targets:
+    p = pathlib.Path(fname)
+    if not p.exists():
+        continue
+    txt = p.read_text(encoding="utf-8")
+    orig = txt
+    for pat, rep in derivados:
+        txt = re.sub(pat, rep, txt)
+    if txt != orig:
+        p.write_text(txt, encoding="utf-8")
+        print(f"  ✓ {fname} · contagem derivada atualizada")
+        n_deriv += 1
+
+print(f"\n✅ build-manual concluído. {len(facts)} fatos canônicos · {len(derivados)} derivados · arquivos sincronizados.")
 PY

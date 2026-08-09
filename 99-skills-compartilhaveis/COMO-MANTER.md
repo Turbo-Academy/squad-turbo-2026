@@ -86,15 +86,57 @@ Par novo detectado:
 
 ---
 
+## Portão automático (instale uma vez por clone)
+
+```bash
+bash 99-skills-compartilhaveis/hooks/instalar-hooks.sh
+```
+
+Instala o `pre-push`, que **bloqueia o push** se encontrar: nome de pessoa fora da baseline
+de privacidade, skill empacotada sem agente dono, ou contagem de docs divergindo do disco.
+São exatamente os três erros que a auditoria de 2026-08-09 achou já commitados. Emergência:
+`git push --no-verify`.
+
+---
+
+## Contagens: nunca digite um número à mão
+
+O fluxo é fechado, não confie em memória:
+
+1. `sync-skills.sh` conta as skills reais e **grava** `n_skills`, `n_zips_total` e
+   `n_skills_instaladas` no `manual-dados.json`
+2. `build-manual.sh` propaga: pelos marcadores `<!--F:chave-->` **e** pelos *derivados*
+   (badge do README, "Total: N zips", "as N skills instaladas" — lugares onde um comentário
+   HTML quebraria a sintaxe)
+
+Mudou o número de skills? Rode os dois, nessa ordem. Não edite badge nem total no braço.
+
+---
+
+## Ebook: o PDF não se atualiza sozinho
+
+O `ebook.html` recebe a versão pelo marcador, mas o **PDF distribuído** só muda se você rodar:
+
+```bash
+bash 04-manual-de-uso/build-manual.sh                          # 1. versão no HTML
+bash 02-entregaveis-finais/passo-a-passo-aluno/build-ebook.sh  # 2. HTML → PDF
+```
+
+O script confere se a versão aparece dentro do PDF gerado e avisa se não bater.
+
+---
+
 ## Checklist antes de commitar mudança no squad
 
 ```
 [ ] Editei na FONTE (~/.claude/agents ou ~/.claude/skills)?
 [ ] Rodei sync-squad.sh (se mexi em agente)?
-[ ] Regenerei o zip (se mexi em skill)?
+[ ] Rodei sync-skills.sh (se mexi em skill) + build-manual.sh (contagens)?
+[ ] Toda skill nova tem um agente dono no bloco skills:?
 [ ] As 3 cópias de agente batem? (sync-squad.sh garante)
 [ ] Nenhum segredo / path pessoal entrou em arquivo versionado?
-[ ] Rodei ./audit-privacy.sh e passou?
+[ ] Rodei ./audit-privacy.sh e passou? (o pre-push checa de novo)
+[ ] Mexi no ebook.html? Rodei build-ebook.sh?
 [ ] Commit com mensagem descritiva?
 ```
 
