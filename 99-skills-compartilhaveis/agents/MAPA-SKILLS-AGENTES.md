@@ -29,6 +29,8 @@
 | `avoid-ai-writing` | Externa ⭐ 2026-07-03 | copywriter · revisor-copy | Auditoria/reescrita anti-IA automatizada (21 categorias de AI-isms) |
 | `youtube-full` | Externa ⭐ 2026-07-03 | pesquisador · pesquisador-mercado · social | Busca/canais/playlists/transcrição YouTube via API |
 | `watch` | Externa ⭐ 2026-08-03 | pesquisador · pesquisador-mercado · social | ASSISTE o vídeo (frames + transcrição) — a única que enxerga a imagem |
+| `gerador-criativos-vsl` | Turbo ⭐ 2026-08-09 | copywriter · trafego | Criativos cujo único job é o clique pra VSL/aula (5 tipos · 20 narrativas) |
+| `lpsg-guiado` | Turbo ⭐ 2026-08-09 | automacao | Infra do lançamento recorrente por turmas (Postgres · n8n · WhatsApp · painel) |
 | `imagen` | Externa ⭐ 2026-07-03 | designer | Geração de imagem crua (Gemini) · assets formatados ficam nas skills Turbo |
 | `playwright-skill` | Externa ⭐ 2026-07-03 | designer | Teste E2E/funcional das páginas Next.js (ficha · checkout) |
 | `elevenlabs` | Externa ⭐ 2026-07-03 | social | Texto → áudio (narração pt-BR · reels · podcast) |
@@ -89,6 +91,7 @@
 | `turbo-express` | Primária | Script dos 3 dias de grupo (terça/quarta/quinta) + oferta |
 | `mensageria-lpsg-turbo` | Primária | Toda copy de WhatsApp/grupo/email do evento |
 | `avoid-ai-writing` | Primária | Passar detect-mode na própria copy ANTES de mandar pro @revisor-copy-turbo |
+| `gerador-criativos-vsl` | Primária | Criativo de topo pra funil de VSL — 5 tipos (ADM · TSC · NOV · REL · RED) + 20 narrativas |
 
 **Regras críticas:** anti-bajulação · promessa = número+prazo+mecanismo · depoimento → estudo de caso narrativo · coreografia pitch 5+1 (quinta = pré-pitch único 100% produto · sexta = conclusão técnica + lembrete da ficha, NÃO é repitch · domingo = pitch completo).
 
@@ -151,6 +154,7 @@
 | `page-optimizer-turbo` | Primária | Quando página tá lenta |
 | `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Acompanhamento ao vivo |
 | `funil-8-turbo` | Primária | Campanha ASC do Funil 8 · otimização 3 frentes (criativo · checkout · ROAS) |
+| `gerador-criativos-vsl` | Complementar | Pedir variações de criativo por narrativa quando o funil é de VSL/aula |
 | `distribuicao-turbo` | Primária | Campanhas de impulsionamento C1-C3 · Ativador Turbo |
 
 ---
@@ -188,6 +192,7 @@
 | `mensageria-lpsg-turbo` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
 | `dashboard-lpsg-turbo` · `dash-lancamento-turbo` | Primária | Dados em tempo real que alimentam automações |
 | `turbo-express` | Primária | Fluxo do grupo WhatsApp do ciclo de 14 dias · roteamento · recuperação |
+| `lpsg-guiado` | Primária | Infra do lançamento recorrente por turmas: Postgres · n8n · WhatsApp · painel (feita pela equipe) |
 
 ---
 

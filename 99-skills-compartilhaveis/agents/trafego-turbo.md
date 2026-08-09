@@ -17,6 +17,8 @@ skills:
   # Criativos (entender o que sobe na campanha)
   - criativos-lpsg-turbo
   - criador-criativos-turbo
+  # Criativos de topo pra funil de VSL (variações por narrativa)
+  - gerador-criativos-vsl
   # Páginas (destino dos ads · LCP < 1.5s)
   - paginas-lpsg-turbo
   - page-optimizer-turbo

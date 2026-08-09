@@ -18,6 +18,8 @@ skills:
   # Criativos (copy de hook, body, CTA)
   - criativos-lpsg-turbo
   - criador-criativos-turbo
+  # Criativos cujo único job é o clique pra VSL/aula (5 tipos · 20 narrativas)
+  - gerador-criativos-vsl
   # VSL (carta de vendas em vídeo · roteiro completo via RMBC)
   - criador-vsl-turbo
   # VSL — produção A/B (teleprompter, mapa de takes, roteiro de edição · consome roteiro pronto)
