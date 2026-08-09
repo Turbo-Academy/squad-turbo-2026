@@ -42,6 +42,10 @@
 
 > **Cobertura total de skills (atualizada 2026-08-03):** as 75 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
+## Conectar MCPs 🔌
+
+📍 [`GUIA-MCPS.md`](./GUIA-MCPS.md) · como conectar as ferramentas que o squad usa (Drive, Windsor.ai, Vercel, Playwright, NotebookLM, Sheets) e as da infra do `lpsg-guiado` (n8n, Postgres, DataCrazy, Sendflow). Nenhum MCP é obrigatório — sem eles as skills degradam pro modo "te ensino a fazer". Inclui os 3 jeitos de registrar, escopos, troubleshooting e a regra de segurança de token.
+
 ## Mapa de skills × agentes ⭐
 
 📍 **`agents/MAPA-SKILLS-AGENTES.md`** · documento canônico de orientação · diz qual skill cada agente carrega · em qual ordem · pra QUE momento da jornada.
@@ -120,6 +124,7 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 | `imagen` | designer — geração de imagem crua (Gemini) |
 | `playwright-skill` | designer — teste E2E das páginas Next.js |
 | `elevenlabs` | social — texto → áudio pt-BR |
+| `lpsg-guiado` | automacao — infra do lançamento recorrente por turmas (Postgres · n8n · WhatsApp · painel) · feita pela equipe Turbo · MCPs em [GUIA-MCPS.md](./GUIA-MCPS.md) |
 | `watch` | pesquisador, pesquisador-mercado, social — ASSISTE vídeo (frames + transcrição) · `npx skills add bradautomates/claude-video -g` · requer ffmpeg+yt-dlp |
 | `skill-personalizer` · `skill-miner` · `skill-generalizer` · `instalar-skill-no-squad` · `file-organizer` | estrategista — gestão de skills e arquivos |
 

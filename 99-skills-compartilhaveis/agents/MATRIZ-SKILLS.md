@@ -2,13 +2,14 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 72 · **Atribuições (skill×agent):** 161
+**Agentes:** 13 · **Skills distintas referenciadas:** 73 · **Atribuições (skill×agent):** 162
 
 ## Por agente
 
 ### @automacao-turbo
 - protocolo-conversa-turbo
 - automacoes-lpsg-turbo
+- lpsg-guiado
 - meta-ads-cli-turbo
 - mensageria-lpsg-turbo
 - turbo-express
@@ -236,6 +237,7 @@
 | `instalar-skill-no-squad` | estrategista-turbo |
 | `lancamento-pago-semanal-turbo` | copywriter-turbo cs-turbo estrategista-turbo pesquisador-turbo trafego-turbo |
 | `lovable-style-turbo` | designer-turbo diretor-criativo-turbo |
+| `lpsg-guiado` | automacao-turbo |
 | `lpsg-master-turbo` | estrategista-turbo |
 | `manual-final-lpsg-turbo` | estrategista-turbo |
 | `mensageria-lpsg-turbo` | automacao-turbo closer-turbo copywriter-turbo cs-turbo pesquisador-mercado-turbo revisor-copy-turbo social-turbo |

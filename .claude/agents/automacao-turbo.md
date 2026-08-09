@@ -7,6 +7,8 @@ skills:
   - protocolo-conversa-turbo
   # Automações n8n + workflows (14 fluxos LPSG)
   - automacoes-lpsg-turbo
+  # Infra do lançamento recorrente por turmas (Postgres · n8n · WhatsApp · painel) — feita pela equipe
+  - lpsg-guiado
   # Execução Meta Ads via shell + cron (stop-loss · relatório · escala)
   - meta-ads-cli-turbo
   # Mensageria conectada (WhatsApp Utility, ManyChat, email)
