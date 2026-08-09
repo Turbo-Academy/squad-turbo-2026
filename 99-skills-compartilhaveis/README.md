@@ -40,7 +40,7 @@
 
 **Total: 50 zips** (38 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
-> **Cobertura total de skills (atualizada 2026-07-03):** as 74 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
+> **Cobertura total de skills (atualizada 2026-08-03):** as 75 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Mapa de skills × agentes ⭐
 
@@ -120,6 +120,7 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 | `imagen` | designer — geração de imagem crua (Gemini) |
 | `playwright-skill` | designer — teste E2E das páginas Next.js |
 | `elevenlabs` | social — texto → áudio pt-BR |
+| `watch` | pesquisador, pesquisador-mercado, social — ASSISTE vídeo (frames + transcrição) · `npx skills add bradautomates/claude-video -g` · requer ffmpeg+yt-dlp |
 | `skill-personalizer` · `skill-miner` · `skill-generalizer` · `instalar-skill-no-squad` · `file-organizer` | estrategista — gestão de skills e arquivos |
 
 > Se um agente falhar ao tentar usar uma skill, verifique se ela está instalada em `~/.claude/skills/`. Mapeamento completo em [`agents/MATRIZ-SKILLS.md`](agents/MATRIZ-SKILLS.md).

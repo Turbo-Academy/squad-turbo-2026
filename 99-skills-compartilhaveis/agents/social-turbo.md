@@ -18,6 +18,8 @@ skills:
   - transcrever-youtube-turbo
   # Busca/pesquisa de vídeos no YouTube (engenharia reversa de reels · descoberta de temas)
   - youtube-full
+  # Assistir vídeo de verdade (frames + transcrição) · engenharia reversa de Reels/VSL alheia
+  - watch
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)

@@ -12,6 +12,8 @@ skills:
   - transcrever-youtube-turbo
   # Busca/descoberta no YouTube (canais, playlists, transcrição via API · pesquisa externa)
   - youtube-full
+  # Assistir vídeo de verdade (frames + transcrição) · analisar VSL/anúncio de concorrente
+  - watch
   # Saber o que cada fase exige · orienta foco da pesquisa
   - paginas-lpsg-turbo
   - mensageria-lpsg-turbo

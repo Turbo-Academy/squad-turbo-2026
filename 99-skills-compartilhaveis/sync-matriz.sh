@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 # sync-matriz.sh · Gera MATRIZ-SKILLS.md a partir dos frontmatters dos agentes.
-# Fonte da verdade = ~/.claude/agents/*-turbo.md (campo skills:).
+# Fonte da verdade do CONTEÚDO = ~/.claude/agents/*-turbo.md (campo skills:).
+# Fonte da verdade do ESCOPO   = agents/ deste repo (os agentes do squad que são
+#   distribuídos). Sem esse filtro, agentes standalone que moram em ~/.claude/agents
+#   mas NÃO fazem parte do squad (ex.: funil8-turbo, produto separado) vazariam pra
+#   matriz e documentariam um agente que quem clona o repo não recebe.
+#   → rodar SEMPRE depois do sync-squad.sh (que popula agents/).
 # Resolve a deriva: o doc deixa de ser mantido à mão.
 # Rodar após mexer em qualquer agente. Saída: agents/MATRIZ-SKILLS.md
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 SRC="$HOME/.claude/agents"
-OUT="$(cd "$(dirname "$0")" && pwd)/agents/MATRIZ-SKILLS.md"
+DIST="$(cd "$(dirname "$0")" && pwd)/agents"
+OUT="$DIST/MATRIZ-SKILLS.md"
 
-agents=$(ls "$SRC"/*-turbo.md 2>/dev/null | xargs -n1 basename | sed 's/\.md$//' | sort)
+# só os agentes que o repo distribui, lidos da fonte canônica
+# (cd + ls sem caminho: o path do repo tem espaços e quebraria no xargs/basename)
+agents=$(cd "$DIST" && ls *-turbo.md 2>/dev/null | sed 's/\.md$//' | sort)
 n_agents=$(echo "$agents" | grep -c . || true)
 
 # extrai skills (- nome) do bloco skills: de um agente, ignorando comentários

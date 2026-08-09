@@ -95,6 +95,7 @@ Auto Minify
 Automação Meta
 Automação Turbo
 Autoridade Externa
+Autoridade Reveladora
 Avatar Card
 Avatar Obsessivo
 Aviso Urgente
@@ -174,6 +175,7 @@ Carrossel Instagram
 Carry Weight
 Case Studies
 Case Study
+Caso Extremo
 Categoria Meta
 Categoria Utility
 Catálogo Hotmart
@@ -184,6 +186,7 @@ Checklist Completo
 Checklist Final
 Checklist Mental
 Checklist Rápido
+Chef Marcelo
 Christopher Nolan
 Ciclo Contínuo
 Clash Display
@@ -234,6 +237,7 @@ Como Montar
 Como Pensar
 Como Referência
 Como Usar
+Comparação Bizarra
 Comparecimento Aula
 Comparecimento Live
 Comparison Table
@@ -370,7 +374,9 @@ Deploy Vercel
 Depoimento Pré
 Depoimentos Imediatos
 Depois Real
+Desafio Direto
 Desafio Mãe
+Descoberta Chocante
 Descoberta Científica
 Desejos Ocultos
 Design Decisions
@@ -434,6 +440,7 @@ Environment Variables
 Equilíbrio Hormonal
 Equipe Turbo
 Equivalente Lovable
+Erro Fatal
 Erro Que
 Error Trigger
 Erros Operacionais
@@ -481,6 +488,7 @@ Exemplo Plantão
 Exemplo Produto
 Exemplo Projeto
 Experiência Instantânea
+Experiência Pessoal
 Expert Leo
 Expert Secrets
 Expert Voice
@@ -528,6 +536,7 @@ Fátima Bernardes
 Fórmula Prática
 Garantia Incondicional
 Gates Pendentes
+Gatilho Emocional
 Gemini Imagen
 General Sans
 Generate Key
@@ -685,6 +694,7 @@ List Bullet
 List Continue
 List Number
 List Paragraph
+Lista Proibida
 Live Coletiva
 Live Demo
 Live Streaming
@@ -707,6 +717,7 @@ Matching Strategy
 Material Design
 Matriz Skills
 Mecanismo Novo
+Mecanismo Oculto
 Mecanismo Proprietário
 Mecanismo Único
 Mecanismos Nomeados
@@ -715,6 +726,7 @@ Medium Grid
 Medium List
 Medium Shading
 Medo Central
+Megafone Digital
 Melhor Para
 Members Area
 Menopausa Química
@@ -790,6 +802,7 @@ Nota Fiscal
 Notifica Operação
 Notificação Hotmart
 Notificação Slack
+Nova Gravação
 Nova Ostentação
 Nova Perspectiva
 Novo Meta
@@ -799,6 +812,7 @@ Nunito Sans
 Não Checklist
 Não Entrar
 Não Retorno
+Número Específico
 Objection Handling
 Ocean Depth
 Offer Key
@@ -837,6 +851,7 @@ Passo Prático
 Passos Invariantes
 Passos Marca
 Pasta Drive
+Pattern Interrupt
 Paul Bakaus
 Pause Fase
 Payment Settings
@@ -900,6 +915,7 @@ Print Preview
 Privacy Tools
 Pro Max
 Problem Statement
+Problema Invisível
 Processo Estratégico
 Processo Passo
 Product Demo
@@ -921,6 +937,7 @@ Prompts Claude
 Proof Stack
 Protocolo Alimentar
 Protocolo Anti
+Prova Científica
 Prova Específica
 Prova Social
 Próprio Instagram
@@ -1002,7 +1019,9 @@ Resumo Slack
 Ret Zoom
 Retenção Aula
 Retenção Aulas
+Revelação Contraintuitiva
 Revelação Progressiva
+Revelação Temporal
 Revisor Copy
 Risco Meta
 Robert Cialdini
@@ -1029,6 +1048,7 @@ Security Center
 Seed Deck
 Seeding Progressivo
 Segredo Histórico
+Segredo Milenar
 Segue Protocolo
 Seguir Bloco
 Seguir Instagram
@@ -1205,6 +1225,7 @@ Universal Instagram
 Universo Algorítmico
 Upload Drive
 Upload Google
+Urgência Biológica
 Usar Direcionamento
 Usar Modo
 Usar Title

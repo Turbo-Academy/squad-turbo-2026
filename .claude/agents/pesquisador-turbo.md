@@ -11,6 +11,8 @@ skills:
   - transcrever-youtube-turbo
   # Localizar/pesquisar vídeos do expert no YouTube (busca, canais, playlists)
   - youtube-full
+  # Assistir vídeo de verdade (frames + transcrição) · extrai aula/live do expert COM os slides
+  - watch
   # Extração de material bruto · documentos do expert (aulas, slides, planilhas, docs)
   - pdf
   - docx

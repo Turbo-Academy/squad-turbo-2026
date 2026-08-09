@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 71 · **Atribuições (skill×agent):** 158
+**Agentes:** 13 · **Skills distintas referenciadas:** 72 · **Atribuições (skill×agent):** 161
 
 ## Por agente
 
@@ -123,6 +123,7 @@
 - criativos-lpsg-turbo
 - transcrever-youtube-turbo
 - youtube-full
+- watch
 - paginas-lpsg-turbo
 - mensageria-lpsg-turbo
 - estrutura-aulas-lpsg-turbo
@@ -137,6 +138,7 @@
 - lancamento-pago-semanal-turbo
 - transcrever-youtube-turbo
 - youtube-full
+- watch
 - pdf
 - docx
 - pptx
@@ -168,6 +170,7 @@
 - gerador-instagram-turbo
 - transcrever-youtube-turbo
 - youtube-full
+- watch
 - mensageria-lpsg-turbo
 - instagram-analise-estrategica-turbo
 - aula-consciencia-turbo
@@ -260,6 +263,7 @@
 | `vercel-cli-with-tokens` | automacao-turbo designer-turbo |
 | `vercel-react-best-practices` | designer-turbo |
 | `vsl-ab-turbo` | copywriter-turbo |
+| `watch` | pesquisador-mercado-turbo pesquisador-turbo social-turbo |
 | `web-artifacts-builder` | designer-turbo diretor-criativo-turbo |
 | `web-design-guidelines` | diretor-criativo-turbo picasso-auditor-turbo |
 | `webapp-testing` | picasso-auditor-turbo trafego-turbo |

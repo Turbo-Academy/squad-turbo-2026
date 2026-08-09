@@ -28,6 +28,7 @@
 | `operacao-lpsg-turbo` | LPSG | estrategista | Operação e equipe (RACI · time mínimo) |
 | `avoid-ai-writing` | Externa ⭐ 2026-07-03 | copywriter · revisor-copy | Auditoria/reescrita anti-IA automatizada (21 categorias de AI-isms) |
 | `youtube-full` | Externa ⭐ 2026-07-03 | pesquisador · pesquisador-mercado · social | Busca/canais/playlists/transcrição YouTube via API |
+| `watch` | Externa ⭐ 2026-08-03 | pesquisador · pesquisador-mercado · social | ASSISTE o vídeo (frames + transcrição) — a única que enxerga a imagem |
 | `imagen` | Externa ⭐ 2026-07-03 | designer | Geração de imagem crua (Gemini) · assets formatados ficam nas skills Turbo |
 | `playwright-skill` | Externa ⭐ 2026-07-03 | designer | Teste E2E/funcional das páginas Next.js (ficha · checkout) |
 | `elevenlabs` | Externa ⭐ 2026-07-03 | social | Texto → áudio (narração pt-BR · reels · podcast) |
@@ -169,6 +170,7 @@
 | `mensageria-lpsg-turbo` | Complementar | DM ManyChat · WhatsApp orgânico |
 | `distribuicao-turbo` | Primária | Funil de consciência C0-C3 · qual camada de conteúdo criar e especificações |
 | `youtube-full` | Complementar | Pesquisa de canais/vídeos · transcrição via API (complementa transcrever-youtube-turbo) |
+| `watch` | Complementar | Engenharia reversa de Reels/vídeo: gancho, corte, edição, o que aparece na tela |
 | `elevenlabs` | Complementar | Narração/locução pt-BR pra reels e conteúdo |
 
 ---
@@ -216,6 +218,7 @@
 | `lancamento-pago-semanal-turbo` | Primária | Saber que 6 dossiês importam |
 | `transcrever-youtube-turbo` | Primária | Extrair material bruto de aulas/lives/podcasts do Léo |
 | `youtube-full` | Complementar | Buscar/navegar canais e playlists do Léo · transcrição via API |
+| `watch` | Complementar | Extrair aula/live do Léo COM os slides (transcrição sozinha perde o visual) |
 | `briefing-aprovacao-turbo` | Primária | Após consolidação · ajuda a gerar briefing |
 | `find-skills` | Utilitário | Quando faltar capacidade |
 
@@ -234,6 +237,7 @@
 | `criativos-lpsg-turbo` | Primária | Saber **6 pilares** · catalogar criativo do concorrente por pilar |
 | `transcrever-youtube-turbo` | Primária | Lives, podcasts, YouTube dos concorrentes |
 | `youtube-full` | Complementar | Buscar canais/playlists de concorrentes · transcrição via API |
+| `watch` | Complementar | Assistir a VSL/anúncio do concorrente e ler o que está NA TELA |
 | `paginas-lpsg-turbo` | Complementar | Saber **anatomia 14 blocos** · catalogar página do concorrente bloco a bloco |
 | `mensageria-lpsg-turbo` | Complementar | Mapear cadência da concorrência |
 | `estrutura-aulas-lpsg-turbo` | Complementar | Quando o concorrente roda evento · catalogar a estrutura dele |
