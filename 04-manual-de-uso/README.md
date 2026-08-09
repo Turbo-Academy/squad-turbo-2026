@@ -1,4 +1,4 @@
-# Manual de Utilização · LPSG 6.1
+# Manual de Utilização · LPSG 7.0
 
 > Manual passo-a-passo pra rodar um projeto LPSG completo, do zero.
 > Qualquer pessoa consegue seguir — não precisa ser técnico.
@@ -134,7 +134,7 @@ PÓS-EDIÇÃO      ── Abre CS após primeiras vendas do produto             
 |---|---|---|
 | `distribuicao-turbo` | Funil de consciência C0-C3 · conteúdo orgânico + impulsionamento de baixo custo | *"Use a skill `distribuicao-turbo`..."* pro `@social-turbo` ou `@trafego-turbo` |
 | `turbo-express` | Ciclo de venda recorrente de 14 dias em grupo fechado de WhatsApp (pré-requisito: Distribuição Turbo já rodando) | *"Use a skill `turbo-express`..."* pro `@copywriter-turbo` (script) ou `@automacao-turbo` (fluxo) |
-| `funil-8-turbo` | Produto de entrada low ticket (R$17-98) · campanha ASC · order bumps | *"Use a skill `funil-8-turbo`..."* pro `@copywriter-turbo` (copy) ou `@trafego-turbo` (campanha) |
+| `funil-8-turbo` | Produto de entrada low ticket (R$35-98) · campanha de Vendas com cost cap · order bumps | *"Use a skill `funil-8-turbo`..."* pro `@copywriter-turbo` (copy) ou `@trafego-turbo` (campanha) |
 | `aula-consciencia-turbo` | Aula/webinar recorrente de aquecimento entre edições do LPSG | *"Use a skill `aula-consciencia-turbo`..."* pro `@social-turbo` |
 
 > Mapa completo de qual skill cada agente carrega: `99-skills-compartilhaveis/agents/MAPA-SKILLS-AGENTES.md`.
