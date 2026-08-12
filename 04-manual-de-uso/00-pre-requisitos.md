@@ -5,6 +5,8 @@
 
 ## ⚙️ Passo 0 · O squad está instalado?
 
+> **Nunca usou o Claude Code?** Comece pelo [`INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md) — ele cobre desde instalar o Claude até o squad respondendo, sem assumir nada.
+
 Antes de qualquer conta ou ferramenta: o Squad Turbo precisa estar na sua máquina. Um comando resolve, com auxílio etapa por etapa (skills · agentes · dependências de vídeo · transcrição local):
 
 ```bash

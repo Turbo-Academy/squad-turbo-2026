@@ -9,6 +9,8 @@
 [![Skills: 42](https://img.shields.io/badge/skills-42-orange.svg)](#skills)
 [![Agents: 13](https://img.shields.io/badge/agents-13-purple.svg)](#agents)
 
+> 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — do download no GitHub ao squad respondendo, em ~20 min, sem precisar saber nada de terminal.
+
 ---
 
 ## 🎯 O que é o LPSG
