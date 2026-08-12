@@ -29,7 +29,7 @@ Em **1 semana**, você sai de uma página em branco e termina com:
 
 | # | Arquivo | O que tem | Quando usar |
 |---|---|---|---|
-| 🚀 | [`../INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md) | **Nunca usou Claude Code?** Instalar o Claude + baixar o squad do GitHub, passo a passo | Antes de tudo · só na 1ª máquina |
+| 🚀 | [`../INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md) | **Nunca usou Claude Code?** Instalar tudo pelo app Claude Desktop — o Claude executa os comandos por você | Antes de tudo · só na 1ª máquina |
 | 🌐 | `manual.html` | **Versão consolidada** · navegação por sidebar · todos os 5 arquivos juntos | Leitura confortável · compartilhar com cliente |
 | 0 | `00-pre-requisitos.md` | Contas e acessos que você precisa criar **antes** | Dia 0 · antes de começar |
 | 1 | `01-intake.md` | **Formulário único** com TODAS as variáveis do projeto | Dia 1 · preenche 1 vez · serve pra tudo |

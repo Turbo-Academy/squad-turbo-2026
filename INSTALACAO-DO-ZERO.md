@@ -1,135 +1,91 @@
 # 🚀 Instalação do zero — do GitHub ao squad rodando no Claude
 
-> **Para quem nunca usou o Claude Code.** Nunca abriu um terminal? Este manual foi escrito pra você.
+> **Para quem nunca usou o Claude Code.** Tudo pelo **app Claude Desktop** — você não precisa abrir o Terminal: quem digita os comandos é o próprio Claude.
 >
-> Em **~20 minutos** você sai do zero com: Claude Code instalado · sua conta conectada · o Squad Turbo completo (42 skills + 13 agentes) dentro dele.
+> Em **~20 minutos** você sai do zero com: app instalado · sua conta conectada · o Squad Turbo completo (42 skills + 13 agentes) respondendo.
 >
-> Já tem o Claude Code funcionando? Pula direto pra **Etapa 4**.
+> Prefere fazer pelo Terminal (CLI)? O caminho equivalente está no [README](README.md#instalar-em-outra-máquina), seção "Instalar em outra máquina".
 
 ---
 
 ## ✅ O que você precisa antes de começar
 
-- [ ] Um computador **Mac** ou **Linux** (Windows funciona também — veja a caixa no fim)
+- [ ] Um computador **Mac** (Windows funciona também — veja a caixa no fim)
 - [ ] Uma **conta Claude paga** (plano Pro ou Max) — crie em [claude.ai](https://claude.ai)
 - [ ] **~1 GB de espaço livre** (+ ~4 GB opcionais, só se quiser a transcrição local de vídeo)
 - [ ] 20 minutos sem interrupção
 
 ---
 
-## Etapa 1 · Abrir o Terminal (2 min)
+## Etapa 1 · Instalar o app Claude Desktop (5 min)
 
-O Terminal é onde você vai colar os comandos deste manual. Não precisa entender ele — só colar e apertar Enter.
+1. Baixe o app em **[claude.ai/download](https://claude.ai/download)**
+2. Abra o arquivo baixado e **arraste o Claude pra pasta Aplicativos**
+3. Abra o Claude (Cmd + Espaço → digite `Claude` → Enter)
+4. **Entre na sua conta** claude.ai — a conta **paga** (Pro ou Max)
 
-**No Mac:**
-1. Aperte `Cmd + Espaço` (abre a busca Spotlight)
-2. Digite `Terminal` e aperte `Enter`
-3. Abre uma janela com texto e um cursor piscando — é aqui que tudo acontece
-
-> 💡 **Como usar:** copie o comando do manual, clique na janela do Terminal, cole (`Cmd + V`) e aperte `Enter`. Espere terminar (o cursor volta a piscar numa linha nova) antes do próximo.
-
-✅ **Checkpoint:** janela do Terminal aberta com o cursor piscando.
+✅ **Checkpoint:** o app abre e mostra o chat do Claude com seu nome/conta.
 
 ---
 
-## Etapa 2 · Instalar o Claude Code (5 min)
-
-Cole no Terminal e aperte Enter:
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-Quando terminar, **feche o Terminal e abra de novo** (Etapa 1). Aí confira:
-
-```bash
-claude --version
-```
-
-✅ **Checkpoint:** aparece um número de versão (tipo `2.1.x`). Se aparecer `command not found`, veja o "Deu errado?" no fim.
-
----
-
-## Etapa 3 · Conectar sua conta Claude (3 min)
-
-No Terminal, digite:
-
-```bash
-claude
-```
-
-Na primeira vez, o Claude Code:
-1. Pergunta o tema (claro/escuro) — escolha com as setas e `Enter`
-2. **Abre o navegador** pra você entrar na sua conta claude.ai
-3. Faça o login na conta **paga** (Pro ou Max) e autorize
-4. Volte pro Terminal — vai estar conectado
-
-Pra sair do Claude por enquanto, digite `/exit` e aperte `Enter` (ou `Ctrl + C` duas vezes).
-
-✅ **Checkpoint:** o Claude respondeu alguma coisa no Terminal antes de você sair.
-
----
-
-## Etapa 4 · Baixar o squad do GitHub (3 min)
-
-**Jeito A — sem instalar nada (recomendado pra primeira vez):**
+## Etapa 2 · Baixar o squad do GitHub (3 min)
 
 1. Abra no navegador: **[github.com/Turbo-Academy/squad-turbo-lpsg-7.0](https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0)**
 2. Clique no botão verde **`<> Code`** → **`Download ZIP`**
 3. O arquivo cai na pasta **Downloads**
-4. Dê **dois cliques** no ZIP — o Mac descompacta e cria a pasta `squad-turbo-lpsg-7.0-main`
+4. Dê **dois cliques** no ZIP — cria a pasta `squad-turbo-lpsg-7.0-main`
 
-**Jeito B — com git (se já usa):**
+> 💡 Se quiser, arraste a pasta pra um lugar definitivo (ex.: Documentos). O manual segue como se ela estivesse em Downloads.
 
-```bash
-git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0.git
-```
-
-✅ **Checkpoint:** existe uma pasta `squad-turbo-lpsg-7.0-main` (ou `squad-turbo-lpsg-7.0`) no seu computador.
+✅ **Checkpoint:** existe uma pasta `squad-turbo-lpsg-7.0-main` no seu computador.
 
 ---
 
-## Etapa 5 · Rodar o instalador guiado (5-10 min)
+## Etapa 3 · Abrir a pasta no Code do app (2 min)
 
-O squad tem um instalador que faz **tudo sozinho, etapa por etapa**: skills, agentes, dependências de vídeo, transcrição local. Ele mostra ✓ no que está ok, pergunta antes de instalar qualquer coisa opcional e diz exatamente o que fazer se algo faltar.
+O Claude Desktop tem uma área chamada **Code** — é o Claude com mãos: ele lê arquivos e executa comandos dentro de uma pasta que você escolher.
 
-Cole no Terminal (ajuste o caminho se descompactou em outro lugar):
+1. No app Claude, clique em **Code** (na barra lateral)
+2. Crie uma **nova sessão** e, quando ele pedir a pasta do projeto, **escolha a pasta `squad-turbo-lpsg-7.0-main`** que você baixou
+3. Abre um chat normal — a diferença é que esse chat enxerga a pasta do squad
 
-```bash
-cd ~/Downloads/squad-turbo-lpsg-7.0-main
-```
-
-```bash
-bash 99-skills-compartilhaveis/instalar-squad.sh
-```
-
-Durante a execução:
-
-- **`[S/n]`** = pergunta. `Enter` responde **sim**; digite `n` + `Enter` pra pular.
-- **Pedir senha** (na instalação do Homebrew/ffmpeg): é a senha do seu computador. **Ela não aparece enquanto digita** — é normal, digite e aperte `Enter`.
-- **Transcrição local de vídeo**: opcional. Responda sim se quiser que a skill de vídeo funcione sem chave de API (baixa ~220 MB agora + ~3,5 GB no primeiro uso real).
-
-Pode rodar o instalador de novo quantas vezes quiser — ele só completa o que faltou.
-
-✅ **Checkpoint:** a última linha diz `✅ Tudo instalado.` (ou lista as pendências com a instrução de cada uma).
+✅ **Checkpoint:** a sessão aberta mostra o nome da pasta `squad-turbo-lpsg-7.0-main`.
 
 ---
 
-## Etapa 6 · Conferir se funcionou (2 min)
+## Etapa 4 · Mandar o Claude instalar tudo (5-10 min)
 
-1. **Feche e abra o Terminal** (o Claude Code precisa reiniciar pra enxergar as skills)
-2. Entre na pasta do squad e abra o Claude:
+Agora é a mágica: **copie o bloco abaixo inteiro e cole no chat** da sessão que você abriu:
 
-```bash
-cd ~/Downloads/squad-turbo-lpsg-7.0-main
+```
+Instala o Squad Turbo nesta máquina:
+
+1. Rode: bash 99-skills-compartilhaveis/instalar-squad.sh
+2. O instalador pula as perguntas quando é você que roda — então complete
+   você mesmo as pendências que ele listar com ✗ (ffmpeg, yt-dlp, venv do
+   whisper-local), me avisando antes de qualquer download grande.
+3. A transcrição local de vídeo eu QUERO (mesmo sabendo dos ~220 MB agora
+   e ~3,5 GB no primeiro uso).
+4. No fim, rode o instalador de novo e me mostre que ficou tudo ✓.
 ```
 
-```bash
-claude
-```
+O que vai acontecer:
 
-3. Digite `/skills` e aperte `Enter` → a lista deve mostrar as skills do squad (`lpsg-master-turbo`, `oferta-lpsg-turbo`, `watch`…)
-4. Teste um agente — digite:
+- **O app pede permissão** antes de cada comando (botão *Permitir/Allow*). É o comportamento normal — leia e autorize.
+- O Claude executa o instalador, vê o que faltou e **resolve as pendências sozinho**, te contando o que está fazendo.
+- **Único caso em que o Terminal pode aparecer na história:** se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a **sua senha** — e senha é uma coisa que o Claude não pode digitar por você. Nesse caso ele te entrega o comando exato pra você colar no Terminal, e depois continua de onde parou.
+
+✅ **Checkpoint:** o Claude te mostra a saída final do instalador com tudo ✓ (ou explica exatamente o que ficou pendente e por quê).
+
+---
+
+## Etapa 5 · Conferir se funcionou (2 min)
+
+As skills carregam quando uma sessão nova abre. Então:
+
+1. **Feche a sessão e abra uma nova** na mesma pasta (Code → nova sessão → `squad-turbo-lpsg-7.0-main`)
+2. Digite `/skills` → a lista deve mostrar as skills do squad (`lpsg-master-turbo`, `oferta-lpsg-turbo`, `watch`…)
+3. Teste um agente — digite:
 
 ```
 @estrategista-turbo se apresenta em 2 linhas
@@ -143,24 +99,18 @@ claude
 
 | Sintoma | Causa provável | Solução |
 |---|---|---|
-| `claude: command not found` | Terminal aberto antes da instalação | Feche e abra o Terminal de novo |
-| `curl: command not found` | Muito raro no Mac | Instale o Claude pelo app: [claude.ai/download](https://claude.ai/download) |
-| Instalador diz `Claude Code não encontrado` | Etapa 2 pulada | Volte pra Etapa 2, depois rode o instalador de novo |
-| Senha "não digita" no Terminal | Comportamento normal | A senha fica invisível — digite e aperte Enter |
-| `/skills` não mostra as skills do squad | Claude aberto durante a instalação | Feche o Terminal, abra de novo, `claude` de novo |
-| Skill de vídeo reclama de ffmpeg | Etapa 5 do instalador foi pulada | Rode o instalador de novo e responda sim |
-
-Travou em outra coisa? Abra o Claude na pasta do squad e cole: `acabei de instalar o squad seguindo o INSTALACAO-DO-ZERO.md e travei nesta etapa: [descreva]`. Ele mesmo te destrava.
+| Não acho o Code no app | Versão antiga do app | Atualize o Claude Desktop ([claude.ai/download](https://claude.ai/download)) |
+| O Claude diz que não pode rodar comandos | Sessão aberta no chat comum, não no Code | Refaça a Etapa 3 — tem que ser uma sessão do **Code**, com pasta escolhida |
+| Pediu permissão e eu neguei sem querer | — | Peça: `tenta de novo o último comando` e autorize |
+| `/skills` não mostra as skills do squad | Sessão aberta antes do fim da instalação | Feche e abra uma sessão nova (Etapa 5) |
+| Instalador falou de Homebrew/senha | Mac sem Homebrew | Siga o comando que o Claude te der pro Terminal — é o único passo fora do app |
+| Travou em qualquer outra coisa | — | Cole no chat: `estou seguindo o INSTALACAO-DO-ZERO.md e travei nesta etapa: [descreva]` — ele mesmo te destrava |
 
 ---
 
 ## 🪟 E no Windows?
 
-O instalador guiado é feito pra Mac/Linux. No Windows, o caminho é o **WSL** (um Linux dentro do Windows, oficial da Microsoft):
-
-1. Abra o **PowerShell como administrador** e rode: `wsl --install`
-2. Reinicie o computador e abra o app **Ubuntu**
-3. A partir daí, siga este manual da Etapa 2 em diante — dentro do Ubuntu, tudo funciona igual ao Linux
+O app Claude Desktop também existe pra Windows — Etapas 1 a 3 são iguais. No Windows, o Claude Code pode pedir o **Git for Windows** na primeira execução (ele avisa e aponta o download; instale com as opções padrão). Se algo do instalador reclamar de `bash`, cole no chat: `estou no Windows — adapte a instalação pro meu sistema` e deixe o Claude resolver com os equivalentes.
 
 ---
 
