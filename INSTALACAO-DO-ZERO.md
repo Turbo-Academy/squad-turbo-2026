@@ -53,7 +53,8 @@ Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que 
 > 💡 **Se o Claude pedir mais direção** (ou você quiser controle fino), cole este complemento:
 >
 > ```
-> Baixe o repositório pra esta pasta, rode
+> Baixe o repositório pra esta pasta (sem git no sistema, use o ZIP do
+> branch main via curl — NÃO instale o Xcode), rode
 > bash 99-skills-compartilhaveis/instalar-squad.sh
 > e complete as pendências que ele marcar com ✗.
 > Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso).
@@ -62,6 +63,7 @@ Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que 
 
 O que esperar durante a execução:
 
+- **Não precisa ter git instalado.** Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download). As instruções pra isso estão dentro do próprio repositório.
 - **O app pede permissão** antes de cada comando (botão *Permitir/Allow*). É o comportamento normal — leia e autorize.
 - **Único caso que sai do app:** se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a **sua senha** — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.
 

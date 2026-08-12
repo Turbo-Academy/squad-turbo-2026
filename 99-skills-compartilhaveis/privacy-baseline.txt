@@ -699,6 +699,7 @@ Light List
 Light Shading
 Lighthouse Mobile
 Expert B
+Line Tools
 Liquid Death
 List Bullet
 List Continue
@@ -1300,6 +1301,7 @@ Work Sans
 Workflow Hotmart
 Workflow Picasso
 Workshop Lançamento
+Xcode Command
 Your Solution
 Zona Segura
 Áudio Msg
