@@ -49,6 +49,10 @@ SKILLS=(
   distribuicao-turbo turbo-express funil-8-turbo
   # método (visão geral) + redirect
   lancamento-pago-semanal-turbo estruturador-evento-turbo
+  # externa ADOTADA (claude-video, MIT) — assiste vídeo (frames + transcrição);
+  # ganhou o fallback whisper-local nosso. O venv (218 MB) fica FORA do zip —
+  # quem instala roda whisper-local/instalar.sh uma vez.
+  watch
 )
 
 novos=0; regen=0; emdia=0
@@ -57,12 +61,13 @@ for s in "${SKILLS[@]}"; do
     echo "  ✗ FALTA na fonte: $s" >&2; exit 1
   fi
   zipf="$DST/$s.zip"
+  # venv e __pycache__ nunca entram no zip (nem contam como "fonte mais nova")
   if [[ ! -f "$zipf" ]]; then
-    ( cd "$SRC" && zip -rq "$zipf" "$s/" -x "*.DS_Store" )
+    ( cd "$SRC" && zip -rq "$zipf" "$s/" -x "*.DS_Store" -x "*/venv/*" -x "*__pycache__*" )
     echo "  + $s (novo)"; novos=$((novos+1))
-  elif [[ -n "$(find "$SRC/$s" -newer "$zipf" -type f 2>/dev/null | head -1)" ]]; then
+  elif [[ -n "$(find "$SRC/$s" -type f -not -path "*/venv/*" -not -path "*__pycache__*" -newer "$zipf" 2>/dev/null | head -1)" ]]; then
     rm -f "$zipf"
-    ( cd "$SRC" && zip -rq "$zipf" "$s/" -x "*.DS_Store" )
+    ( cd "$SRC" && zip -rq "$zipf" "$s/" -x "*.DS_Store" -x "*/venv/*" -x "*__pycache__*" )
     echo "  ↻ $s (regenerado)"; regen=$((regen+1))
   else
     emdia=$((emdia+1))

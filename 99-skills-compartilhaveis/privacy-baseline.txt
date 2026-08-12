@@ -127,6 +127,7 @@ Bold Magazine
 Bold Pop
 Book Title
 Border Radius
+Both Groq
 Botão Impulsionar
 Brain Rot
 Brand Adaptation
@@ -200,6 +201,7 @@ Claude Desktop
 Claude Hopkins
 Claude Plugins
 Claude Preview
+Claude Read
 Cliente João
 Cliente Maria
 Closer Humano
@@ -291,6 +293,7 @@ Conv Pag
 Conventional Commits
 Conversa Turbo
 Conversão Histórica
+Convert Whisper
 Convite Kick
 Coordena Método
 Coordenador Visual
@@ -398,6 +401,7 @@ Dilema Binário
 Direct Responsible
 Direito Penal
 Diretor Criativo
+Disable Whisper
 Display Font
 Distribuição Turbo
 Distribuição Utility
@@ -758,6 +762,7 @@ Meus Produtos
 Microsoft Clarity
 Microsoft Himalaya
 Microsoft Macintosh
+Microsoft Store
 Microsoft Uighur
 Midnight Emerald
 Migra Extra
@@ -905,6 +910,7 @@ Por Que
 Power Words
 Pra Meta
 Praticidade Real
+Prefers Groq
 Premissa Central
 Presentation Title
 Preset Tailwind
@@ -1184,6 +1190,7 @@ The Ask
 The Atlantic
 The Economist
 The One
+The Read
 The Stack
 Their Problem
 Thumb Stop

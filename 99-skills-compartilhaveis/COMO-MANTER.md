@@ -150,6 +150,7 @@ O script confere se a versão aparece dentro do PDF gerado e avisa se não bater
 | `nome-turbo.zip` | skill Turbo proprietária | `~/.claude/skills/` |
 | `Nome-LPSG-Template.zip` | entregável completo (legado/consulta) | referência |
 | `squad-turbo-completo.zip` | 13 agentes | `~/.claude/agents/` |
+| `watch.zip` | skill externa ADOTADA (claude-video, MIT) — exceção consciente ao sufixo `-turbo` (nome original preservado, é como os agentes a chamam) | `~/.claude/skills/` + rodar `whisper-local/instalar.sh` |
 
 Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` → seção "Skills externas".
 
