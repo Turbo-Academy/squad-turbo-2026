@@ -1072,6 +1072,7 @@ Sem Medo
 Sem Mistério
 Sem Redux
 Sem Sacrifício
+Sem Terminal
 Semanal Gravado
 Sequência Obrigatória
 Serif Display
