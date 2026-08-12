@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 74 · **Atribuições (skill×agent):** 164
+**Agentes:** 13 · **Skills distintas referenciadas:** 76 · **Atribuições (skill×agent):** 167
 
 ## Por agente
 
@@ -26,6 +26,7 @@
 - mensageria-lpsg-turbo
 - automacoes-lpsg-turbo
 - paginas-lpsg-turbo
+- crm-lpsg-turbo
 
 ### @copywriter-turbo
 - protocolo-conversa-turbo
@@ -52,6 +53,7 @@
 - mensageria-lpsg-turbo
 - automacoes-lpsg-turbo
 - criador-paginas-low-ticket-turbo
+- crm-lpsg-turbo
 
 ### @designer-turbo
 - protocolo-conversa-turbo
@@ -173,6 +175,7 @@
 - transcrever-youtube-turbo
 - youtube-full
 - watch
+- cortes-tiktok-turbo
 - mensageria-lpsg-turbo
 - instagram-analise-estrategica-turbo
 - aula-consciencia-turbo
@@ -208,11 +211,13 @@
 | `briefing-aprovacao-turbo` | copywriter-turbo estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo |
 | `canvas-design` | designer-turbo diretor-criativo-turbo |
 | `closer-lpsg-turbo` | closer-turbo |
+| `cortes-tiktok-turbo` | social-turbo |
 | `criador-criativos-turbo` | copywriter-turbo pesquisador-mercado-turbo social-turbo trafego-turbo |
 | `criador-paginas-low-ticket-turbo` | copywriter-turbo cs-turbo estrategista-turbo revisor-copy-turbo |
 | `criador-reels-turbo` | social-turbo |
 | `criador-vsl-turbo` | copywriter-turbo |
 | `criativos-lpsg-turbo` | copywriter-turbo diretor-criativo-turbo pesquisador-mercado-turbo social-turbo trafego-turbo |
+| `crm-lpsg-turbo` | closer-turbo cs-turbo |
 | `cs-lpsg-turbo` | cs-turbo |
 | `dash-lancamento-turbo` | automacao-turbo estrategista-turbo trafego-turbo |
 | `dashboard-lpsg-turbo` | automacao-turbo trafego-turbo |

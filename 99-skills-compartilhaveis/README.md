@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-06-23)
 
-- **<!--F:n_skills-->40<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->41<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)
@@ -29,6 +29,7 @@
   - 1 páginas low-ticket (criador-paginas-low-ticket-turbo) · inclui `estudo-de-caso-narrativo.md`
   - 1 motor de VSL (`criador-vsl-turbo`) · roteiro de Video Sales Letter via RMBC · mecanismo único · 11 blocos · compliance Meta
   - 1 motor do closer (`closer-lpsg-turbo`) ⭐ NEW · recuperação 1:1 (fila P1-P5 · SLA · D+1-D+7 · matriz de objeções)
+  - 1 construtor de CRM (`crm-lpsg-turbo`) ⭐ NEW (2026-08-12) · o sistema que substitui as planilhas do closer e do CS · Next.js + Supabase · schema como contrato
   - 1 conteúdo recorrente (`aula-consciencia-turbo`) ⭐ NEW · aula/webinar perpétuo de aquecimento
   - **3 motores de negócio próprios Turbo** ⭐ NEW (2026-07-02):
     - `distribuicao-turbo` · funil de consciência C0-C3 (orgânico + impulsionamento de baixo custo)
@@ -38,9 +39,9 @@
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 52 zips** (40 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
+**Total: 53 zips** (41 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
-> **Cobertura total de skills (atualizada 2026-08-03):** as 79 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
+> **Cobertura total de skills (atualizada 2026-08-03):** as 81 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Conectar MCPs 🔌
 

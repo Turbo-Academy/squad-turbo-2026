@@ -31,6 +31,7 @@
 | `watch` | Externa ⭐ 2026-08-03 | pesquisador · pesquisador-mercado · social | ASSISTE o vídeo (frames + transcrição) — a única que enxerga a imagem |
 | `gerador-criativos-vsl` | Turbo ⭐ 2026-08-09 | copywriter · trafego | Criativos cujo único job é o clique pra VSL/aula (5 tipos · 20 narrativas) |
 | `lpsg-guiado` | Turbo ⭐ 2026-08-09 | automacao | Infra do lançamento recorrente por turmas (Postgres · n8n · WhatsApp · painel) |
+| `crm-lpsg-turbo` | Turbo ⭐ 2026-08-12 | closer · cs | Construtor do CRM próprio (Next.js + Supabase) — fila derivada, cap no banco, RLS desde a 1ª migration |
 | `imagen` | Externa ⭐ 2026-07-03 | designer | Geração de imagem crua (Gemini) · assets formatados ficam nas skills Turbo |
 | `playwright-skill` | Externa ⭐ 2026-07-03 | designer | Teste E2E/funcional das páginas Next.js (ficha · checkout) |
 | `elevenlabs` | Externa ⭐ 2026-07-03 | social | Texto → áudio (narração pt-BR · reels · podcast) |
@@ -208,6 +209,7 @@
 | `mensageria-lpsg-turbo` | Primária | Boas-vindas · NPS · recuperação · indicação |
 | `automacoes-lpsg-turbo` | Primária | Fluxos automatizados de retenção/ascensão |
 | `criador-paginas-low-ticket-turbo` | Complementar | **`references/estudo-de-caso-narrativo.md`** · transformar depoimento bruto em prova social estruturada |
+| `crm-lpsg-turbo` | Primária | CONSTRUIR a carteira + fila de risco (4 janelas) + pipeline de depoimento com trava de autorização |
 
 **Princípio:** captura depoimento bruto → transforma em estudo de caso narrativo → envia pro `@copywriter-turbo` usar em página/criativo/pitch.
 
@@ -297,6 +299,7 @@
 | `mensageria-lpsg-turbo` | Primária | Saber o que o lead recebeu em massa (cap 4+4 · D1) |
 | `automacoes-lpsg-turbo` | Primária | SLA de checkout iniciado · alertas · fila automatizada |
 | `paginas-lpsg-turbo` | Complementar | Ficha de interesse · lead score · tier HOT/WARM/COLD |
+| `crm-lpsg-turbo` | Primária | CONSTRUIR o CRM da fila (view P1-P5 · cap automático · relatório de objeções) — substitui a planilha |
 
 **Entregáveis:** fila priorizada (P1 checkout iniciado · SLA 30 min → P5) · scripts 1:1 por tier · sequência D+1-D+7 · matriz de objeções · relatório de fechamento.
 

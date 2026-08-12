@@ -16,6 +16,7 @@ Acessar System
 Adam Wathan
 Adapter Sheets
 Add Assets
+Add Domain
 Add Key
 Add Lesson
 Add People
@@ -514,12 +515,14 @@ First Byte
 First Load
 Fix Obrigatório
 Flat Design
+Fluxo Obrigatório
 Foco Advantage
 Focus Concursos
 Fonte Google
 Fontes Inter
 Footer Char
 Footnote Text
+Fora Sem
 Formato Podcast
 Framer Motion
 Framework Marca
@@ -592,6 +595,8 @@ Hold Rate
 Hook Hold
 Hook Rate
 Hook React
+Hot Clicou
+Hot Pitch
 Hotmart Club
 Hotmart Estratégia
 Hotmart Pages
@@ -870,6 +875,7 @@ Pergunta Retórica
 Perguntas Constantes
 Perguntas Paradoxais
 Permite Advantage
+Personal Access
 Personalized Hook
 Pesquisador Turbo
 Peças Necessárias
@@ -1034,6 +1040,8 @@ Rode Wireless
 Room Crítico
 Roteiro Aula
 Roteiro Falado
+Route Handler
+Route Handlers
 Runway Gen
 Russell Brunson
 Sage Healing
@@ -1124,6 +1132,7 @@ Subtitle Char
 Subtle Emphasis
 Subtle Grid
 Subtle Reference
+Supabase Auth
 Super Bonus
 Super Bônus
 Suporte Hotmart

@@ -15,6 +15,9 @@ skills:
   - automacoes-lpsg-turbo
   # Estudo de caso narrativo (transformar depoimento bruto em prova social estruturada)
   - criador-paginas-low-ticket-turbo
+  # CRM PRÓPRIO — carteira de alunos, fila de risco calculada e pipeline de
+  # prova social com autorização obrigatória. Resolve o antigo placeholder {CRM}.
+  - crm-lpsg-turbo
 ---
 
 # cs-turbo

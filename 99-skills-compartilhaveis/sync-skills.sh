@@ -36,6 +36,8 @@ SKILLS=(
   vsl-ab-turbo
   # recuperação 1:1 (closer)
   closer-lpsg-turbo
+  # construtor do CRM próprio (substitui as planilhas do closer e do CS)
+  crm-lpsg-turbo
   # visual / build próprios
   designer-senior-turbo design-tokens-turbo lovable-style-turbo gerador-instagram-turbo
   gerador-slides-turbo slides-uipm-turbo page-optimizer-turbo

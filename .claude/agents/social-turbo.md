@@ -20,6 +20,8 @@ skills:
   - youtube-full
   # Assistir vídeo de verdade (frames + transcrição) · engenharia reversa de Reels/VSL alheia
   - watch
+  # Gravação longa (aula, call, live) vira corte vertical: gancho remontado, grade, fundo, legenda, bipe e publicação no TikTok
+  - cortes-tiktok-turbo
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)

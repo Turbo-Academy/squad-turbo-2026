@@ -15,6 +15,10 @@ skills:
   - automacoes-lpsg-turbo
   # Ficha de interesse · lead score · tier HOT/WARM/COLD
   - paginas-lpsg-turbo
+  # CRM PRÓPRIO — implementa o método acima em software (fila calculada,
+  # contador de follow-up, relatório de objeções). Usar quando o pedido for
+  # CONSTRUIR ou operar o sistema; o método continua sendo closer-lpsg-turbo.
+  - crm-lpsg-turbo
 ---
 
 # Closer Turbo — Vendas 1:1 & Recuperação de Carrinho (D+1 a D+7)
