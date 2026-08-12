@@ -3,6 +3,18 @@
 > **Tudo que você precisa ter criado ANTES de iniciar o LPSG.**
 > Sem isso, a execução trava no meio do caminho.
 
+## ⚙️ Passo 0 · O squad está instalado?
+
+Antes de qualquer conta ou ferramenta: o Squad Turbo precisa estar na sua máquina. Um comando resolve, com auxílio etapa por etapa (skills · agentes · dependências de vídeo · transcrição local):
+
+```bash
+bash 99-skills-compartilhaveis/instalar-squad.sh
+```
+
+Depois reinicie o Claude Code e siga daqui. Já instalou antes? Pode rodar de novo sem medo — ele só completa o que faltar.
+
+---
+
 ---
 
 ## ⏱️ Tempo total · 4-8h (dependendo do que já tem)

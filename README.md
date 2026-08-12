@@ -140,12 +140,21 @@ lpsg-method/
 
 ### Instalar em outra máquina
 
-```bash
-# macOS / Linux
+**Um comando, instalação guiada** — verifica e instala tudo que o squad precisa (skills, agentes, squad-core, ffmpeg/yt-dlp, transcrição local) etapa por etapa, perguntando antes do que é opcional:
 
-# 1. Skills (35 proprietárias · todas terminam em -turbo)
+```bash
+bash 99-skills-compartilhaveis/instalar-squad.sh
+```
+
+Idempotente: rode de novo quando quiser — só faz o que estiver faltando. No fim, **reinicie o Claude Code** (skills aparecem em `/skills`, agentes com `@nome-do-agente`).
+
+<details>
+<summary>Prefere instalar à mão? (passos equivalentes)</summary>
+
+```bash
+# 1. Skills proprietárias (TODOS os zips — a lista canônica vive no sync-skills.sh)
 mkdir -p ~/.claude/skills
-for z in 99-skills-compartilhaveis/*-turbo.zip; do
+for z in 99-skills-compartilhaveis/*.zip; do
   case "$z" in *squad-turbo-completo.zip|*squad-core-turbo.zip) continue;; esac
   unzip -o "$z" -d ~/.claude/skills/
 done
@@ -158,15 +167,18 @@ cp 99-skills-compartilhaveis/agents/*-turbo.md ~/.claude/agents/
 mkdir -p ~/.claude/squads
 unzip -o 99-skills-compartilhaveis/squad-core-turbo.zip -d ~/.claude/squads/
 
-# 4. (Opcional) Stack Picasso · auditoria anti-IA de design
+# 4. Dependências de vídeo (skill watch) + transcrição local sem chave
+brew install ffmpeg yt-dlp
+bash ~/.claude/skills/watch/whisper-local/instalar.sh
+
+# 5. (Opcional) Stack Picasso · auditoria anti-IA de design
 npx skills add https://github.com/anthropics/skills --skill frontend-design --yes
 npx skills add pbakaus/impeccable --yes
 npx skills add https://github.com/kylezantos/design-motion-principles --skill design-motion-principles --yes
 
-# 5. Reinicia o Claude Code
-#    Skills aparecem em /skills
-#    Agentes invocáveis com @nome-do-agente
+# 6. Reinicia o Claude Code
 ```
+</details>
 
 ### 🤝 Squad Turbo · 13 agentes (inclui Picasso Auditor + Revisor Copy + Closer)
 

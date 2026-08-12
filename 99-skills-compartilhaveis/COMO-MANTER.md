@@ -154,6 +154,8 @@ O script confere se a versão aparece dentro do PDF gerado e avisa se não bater
 
 Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` → seção "Skills externas".
 
+**Instalação em máquina nova:** `instalar-squad.sh` (guiado, idempotente). Ele instala TODOS os zips da pasta sem lista própria — skill nova empacotada entra sozinha no instalador, nada a manter.
+
 ---
 
 ## Protocolo transversal nos agentes

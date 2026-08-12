@@ -58,27 +58,15 @@ Resumo:
 
 ## Como instalar
 
+**Use o instalador guiado** — um comando verifica e instala tudo (skills, agentes, squad-core, ffmpeg/yt-dlp, transcrição local do whisper) etapa por etapa, perguntando antes do que é opcional:
+
 ```bash
-# 1. Skills LPSG (16 ao todo · incluindo protocolo-conversa-turbo transversal)
-mkdir -p ~/.claude/skills
-for z in *-lpsg.zip lpsg-master-turbo.zip \
-         meta-ads-cli-setup-turbo.zip meta-ads-cli-turbo.zip \
-         protocolo-conversa-turbo.zip briefing-aprovacao-turbo.zip \
-         criador-paginas-low-ticket-turbo.zip; do
-  unzip -o "$z" -d ~/.claude/skills/
-done
-
-# 2. Squad Turbo (13 agentes · inclui Picasso + Revisor + Closer)
-mkdir -p ~/.claude/agents
-cp agents/*.md ~/.claude/agents/
-
-# 3. (Opcional) Stack Picasso · auditoria visual anti-IA
-npx skills add https://github.com/anthropics/skills --skill frontend-design --yes
-npx skills add pbakaus/impeccable --yes
-npx skills add https://github.com/kylezantos/design-motion-principles --skill design-motion-principles --yes
-
-# 4. Reiniciar Claude Code
+bash instalar-squad.sh
 ```
+
+Idempotente — rode de novo quando quiser, só faz o que faltar. No fim, **reinicie o Claude Code**.
+
+Instalação manual (passos equivalentes): seção "Instalar em outra máquina" do [README raiz](../README.md).
 
 ## Skills externas referenciadas pelos agentes
 
