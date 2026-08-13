@@ -58,6 +58,7 @@ Análise Instagram
 Análise Semanal
 Apify Meta
 Aplica Etapas
+App Claude
 App Live
 App Meta
 App Router

@@ -40,7 +40,7 @@ a:hover{text-decoration:underline}
 .hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:99px;margin-bottom:22px}
 .hero h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,5.5vw,52px);line-height:1.12;letter-spacing:-0.015em;margin-bottom:18px}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero .lead{font-size:17.5px;color:var(--text-soft);max-width:620px;margin:0 auto}
+.hero .lead{font-size:17.5px;color:var(--text-soft);max-width:640px;margin:0 auto;text-wrap:pretty}
 .hero .lead strong{color:var(--text)}
 .stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
 .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 22px;box-shadow:var(--shadow-sm)}
@@ -72,6 +72,17 @@ section{margin-top:56px}
 .steps{list-style:none;counter-reset:s;display:grid;gap:11px;margin:6px 0 4px}
 .steps li{counter-increment:s;display:flex;gap:13px;color:var(--text-soft);font-size:15.5px}
 .steps li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.steps li>span{flex:1;min-width:0}
+/* itens de grid não encolhem abaixo do min-content por padrão: sem isto o
+   texto longo estoura o card (que tem overflow:hidden) e some no celular */
+.steps li,.check-list li,.expect li{min-width:0}
+.steps li>span,.check-list li>span:last-child,.expect li>span:last-child{overflow-wrap:break-word}
+
+/* ── ilustrações de referência ── */
+.shot{margin:20px 0 6px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg-alt);box-shadow:var(--shadow-sm)}
+.shot svg{display:block;width:100%;height:auto}
+.shot figcaption{font-size:12.5px;color:var(--text-muted);padding:10px 15px;border-top:1px solid var(--border);background:var(--bg-card)}
+.shot figcaption b{color:var(--text-soft)}
 .dica{display:flex;gap:10px;background:var(--bg-alt);border-radius:var(--radius);padding:13px 16px;font-size:14px;color:var(--text-soft);margin-top:14px}
 .dica .i{flex-shrink:0}
 
@@ -178,11 +189,39 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
     <div class="etapa-head"><div class="etapa-num">1</div><h2>Instalar o app Claude Desktop</h2><span class="tempo">~5 min</span></div>
     <div class="etapa-body">
       <ol class="steps">
-        <li>Baixe o app em <strong><a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a></strong></li>
-        <li>Abra o arquivo baixado e <strong>arraste o Claude pra pasta Aplicativos</strong></li>
-        <li>Abra o Claude (<strong>Cmd + Espaço</strong> → digite <strong>Claude</strong> → Enter)</li>
-        <li><strong>Entre na sua conta</strong> claude.ai — a conta <strong>paga</strong> (Pro ou Max)</li>
+        <li><span>Baixe o app em <strong><a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a></strong></span></li>
+        <li><span>Abra o arquivo baixado e <strong>arraste o Claude pra pasta Aplicativos</strong></span></li>
+        <li><span>Abra o Claude (<strong>Cmd + Espaço</strong> → digite <strong>Claude</strong> → Enter)</span></li>
+        <li><span><strong>Entre na sua conta</strong> claude.ai — a conta <strong>paga</strong> (Pro ou Max)</span></li>
       </ol>
+
+      <figure class="shot">
+      <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Janela de instalação do Mac: arrastar o ícone do Claude para a pasta Aplicativos">
+        <rect width="720" height="290" fill="#F4F2EC"/>
+        <rect x="70" y="34" width="580" height="222" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <path d="M70 48a14 14 0 0 1 14-14h552a14 14 0 0 1 14 14v20H70z" fill="#F7F5F0"/>
+        <line x1="70" y1="68" x2="650" y2="68" stroke="#E8E5DE"/>
+        <circle cx="92" cy="51" r="5" fill="#FF5F57"/><circle cx="110" cy="51" r="5" fill="#FEBC2E"/><circle cx="128" cy="51" r="5" fill="#28C840"/>
+        <text x="360" y="55" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#8A8A8A">Claude</text>
+
+        <rect x="192" y="108" width="92" height="92" rx="21" fill="#D97757"/>
+        <g stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
+          <line x1="218" y1="154" x2="258" y2="154"/><line x1="238" y1="134" x2="238" y2="174"/>
+          <line x1="224" y1="140" x2="252" y2="168"/><line x1="252" y1="140" x2="224" y2="168"/>
+        </g>
+        <text x="238" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#3A3A3A">Claude</text>
+
+        <line x1="312" y1="154" x2="418" y2="154" stroke="#FF5C00" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+        <path d="M416 145l16 9-16 9z" fill="#FF5C00"/>
+
+        <path d="M448 118h34l10 12h60a8 8 0 0 1 8 8v54a8 8 0 0 1-8 8h-104a8 8 0 0 1-8-8v-66a8 8 0 0 1 8-8z" fill="#6E9BEA"/>
+        <path d="M448 136h112a8 8 0 0 1 8 8v48a8 8 0 0 1-8 8H448a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8z" fill="#8FB4F2"/>
+        <text x="504" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">A</text>
+        <text x="504" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#3A3A3A">Aplicativos</text>
+      </svg>
+      <figcaption><b>Etapa 1 · o que você vai ver:</b> arraste o ícone do Claude pra cima da pasta Aplicativos e solte. Ilustração — sua tela pode variar um pouco.</figcaption>
+      </figure>
+
       <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o app abre e mostra o chat do Claude com seu nome/conta.</span></div>
     </div>
   </div>
@@ -194,10 +233,46 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
     <div class="etapa-body">
       <p>O <strong>Code</strong> é a área do app em que o Claude tem mãos: lê arquivos e executa comandos numa pasta que você escolher.</p>
       <ol class="steps">
-        <li>No app Claude, clique em <strong>Code</strong> (na barra lateral)</li>
-        <li>Crie uma <strong>nova sessão</strong> e, quando ele pedir a pasta, escolha onde o squad vai morar — <strong>Documentos</strong> serve perfeitamente</li>
-        <li>Abre um chat normal — a diferença é que esse chat trabalha dentro da pasta escolhida</li>
+        <li><span>No app Claude, clique em <strong>Code</strong> (na barra lateral)</span></li>
+        <li><span>Crie uma <strong>nova sessão</strong> e, quando ele pedir a pasta, escolha onde o squad vai morar — <strong>Documentos</strong> serve perfeitamente</span></li>
+        <li><span>Abre um chat normal — a diferença é que esse chat trabalha dentro da pasta escolhida</span></li>
       </ol>
+
+      <figure class="shot">
+      <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="App Claude com a barra lateral: clicar em Code e escolher a pasta Documentos">
+        <rect width="720" height="330" fill="#F4F2EC"/>
+        <rect x="40" y="26" width="640" height="278" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
+        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
+        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
+
+        <rect x="40" y="60" width="176" height="244" fill="#FAF8F4"/>
+        <line x1="216" y1="60" x2="216" y2="304" stroke="#E8E5DE"/>
+        <rect x="56" y="80" width="86" height="11" rx="5.5" fill="#DEDAD1"/>
+        <rect x="56" y="112" width="144" height="34" rx="9" fill="#FFFFFF" stroke="#E8E5DE"/>
+        <text x="72" y="134" font-family="Inter,sans-serif" font-size="13.5" fill="#6B6B6B">Chat</text>
+        <rect x="56" y="154" width="144" height="34" rx="9" fill="#FFEDE0" stroke="#FF5C00" stroke-width="2"/>
+        <text x="72" y="176" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#C2410C">Code</text>
+        <circle cx="204" cy="158" r="11" fill="#FF5C00"/>
+        <text x="204" y="163" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+        <rect x="56" y="198" width="144" height="34" rx="9" fill="#FFFFFF" stroke="#E8E5DE"/>
+        <text x="72" y="220" font-family="Inter,sans-serif" font-size="13.5" fill="#6B6B6B">Histórico</text>
+
+        <rect x="258" y="92" width="380" height="180" rx="12" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <text x="282" y="122" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#0A0A0A">Escolher a pasta do projeto</text>
+        <rect x="282" y="138" width="332" height="34" rx="8" fill="#FFEDE0" stroke="#FF5C00" stroke-width="2"/>
+        <path d="M296 148h11l3 4h16a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3h-30a3 3 0 0 1-3-3v-15a3 3 0 0 1 3-3z" fill="#FF5C00"/>
+        <text x="344" y="160" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#C2410C">Documentos</text>
+        <circle cx="628" cy="155" r="11" fill="#FF5C00"/>
+        <text x="628" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+        <rect x="282" y="180" width="332" height="30" rx="8" fill="#FAF8F4"/>
+        <text x="300" y="200" font-family="Inter,sans-serif" font-size="13" fill="#8A8A8A">Downloads</text>
+        <rect x="282" y="216" width="332" height="30" rx="8" fill="#FAF8F4"/>
+        <text x="300" y="236" font-family="Inter,sans-serif" font-size="13" fill="#8A8A8A">Área de trabalho</text>
+      </svg>
+      <figcaption><b>Etapa 2 · o que você vai ver:</b> <b>1</b> clique em Code na barra lateral · <b>2</b> escolha a pasta onde o squad vai morar. Ilustração — sua tela pode variar um pouco.</figcaption>
+      </figure>
+
       <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> sessão aberta mostrando o nome da pasta (ex.: <strong>Documentos</strong>).</span></div>
     </div>
   </div>
@@ -222,6 +297,41 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
           <li><span class="dot"></span><span><strong>Único caso que sai do app:</strong> se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a <strong>sua senha</strong> — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.</span></li>
         </ul>
       </div>
+
+      <figure class="shot">
+      <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chat do Code com o comando colado e o pedido de permissão para executar">
+        <rect width="720" height="340" fill="#F4F2EC"/>
+        <rect x="40" y="26" width="640" height="288" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
+        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
+        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
+        <text x="360" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#8A8A8A">Code · squad-turbo-lpsg-7.0</text>
+
+        <rect x="150" y="80" width="506" height="38" rx="11" fill="#0A0A0B"/>
+        <text x="403" y="104" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE" textLength="470" lengthAdjust="spacingAndGlyphs">instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0</text>
+
+        <circle cx="78" cy="140" r="12" fill="#D97757"/>
+        <g stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round">
+          <line x1="71" y1="140" x2="85" y2="140"/><line x1="78" y1="133" x2="78" y2="147"/>
+          <line x1="73" y1="135" x2="83" y2="145"/><line x1="83" y1="135" x2="73" y2="145"/>
+        </g>
+        <text x="100" y="137" font-family="Inter,sans-serif" font-size="13" fill="#3A3A3A">Beleza — vou baixar o repositório e rodar o instalador.</text>
+        <rect x="100" y="148" width="228" height="9" rx="4.5" fill="#E8E5DE"/>
+
+        <rect x="100" y="176" width="500" height="112" rx="12" fill="#FFFBF7" stroke="#FF5C00" stroke-width="2"/>
+        <text x="122" y="202" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0A0A0A">Permitir executar este comando?</text>
+        <rect x="122" y="212" width="456" height="28" rx="7" fill="#0A0A0B"/>
+        <text x="136" y="230" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE">bash 99-skills-compartilhaveis/instalar-squad.sh</text>
+        <rect x="122" y="252" width="104" height="30" rx="8" fill="#FF5C00"/>
+        <text x="174" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Permitir</text>
+        <rect x="236" y="252" width="104" height="30" rx="8" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <text x="288" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#6B6B6B">Agora não</text>
+        <circle cx="368" cy="267" r="12" fill="#FF5C00"/>
+        <text x="368" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">✓</text>
+        <text x="388" y="272" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#C2410C">clique aqui — é o normal</text>
+      </svg>
+      <figcaption><b>Etapa 3 · o que você vai ver:</b> o comando colado e, a cada passo, o pedido de permissão. Autorizar é o esperado. Ilustração — sua tela pode variar um pouco.</figcaption>
+      </figure>
 
       <details>
         <summary>O Claude pediu mais direção? (ou você quer controle fino)</summary>
@@ -250,14 +360,57 @@ No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
     <div class="etapa-body">
       <p>As skills carregam quando uma sessão nova abre. Então:</p>
       <ol class="steps">
-        <li><strong>Feche a sessão e abra uma nova</strong> — desta vez escolhendo a pasta do squad que o Claude criou (<strong>squad-turbo-lpsg-7.0</strong>, dentro de Documentos)</li>
-        <li>Digite <strong>/skills</strong> → a lista deve mostrar as skills do squad (<em>lpsg-master-turbo, oferta-lpsg-turbo, watch…</em>)</li>
-        <li>Teste um agente — cole:</li>
+        <li><span><strong>Feche a sessão e abra uma nova</strong> — desta vez escolhendo a pasta do squad que o Claude criou (<strong>squad-turbo-lpsg-7.0</strong>, dentro de Documentos)</span></li>
+        <li><span>Digite <strong>/skills</strong> → a lista deve mostrar as skills do squad (<em>lpsg-master-turbo, oferta-lpsg-turbo, watch…</em>)</span></li>
+        <li><span>Teste um agente — cole:</span></li>
       </ol>
       <div class="code-block">
         <pre id="cmd-test">@estrategista-turbo se apresenta em 2 linhas</pre>
         <button class="copy-btn" data-copy="cmd-test">Copiar</button>
       </div>
+
+      <figure class="shot">
+      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lista de skills do squad aparecendo ao digitar barra skills, e o agente estrategista respondendo">
+        <rect width="720" height="320" fill="#F4F2EC"/>
+        <rect x="40" y="26" width="640" height="268" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
+        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
+        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
+        <text x="360" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#8A8A8A">sessão NOVA · squad-turbo-lpsg-7.0</text>
+
+        <rect x="68" y="80" width="300" height="34" rx="9" fill="#FFFFFF" stroke="#FF5C00" stroke-width="2"/>
+        <text x="86" y="102" font-family="JetBrains Mono,monospace" font-size="13.5" font-weight="600" fill="#C2410C">/skills</text>
+        <rect x="68" y="122" width="300" height="150" rx="10" fill="#FFFFFF" stroke="#E3E0D8"/>
+        <g font-family="JetBrains Mono,monospace" font-size="12" fill="#3A3A3A">
+          <text x="106" y="148">lpsg-master-turbo</text>
+          <text x="106" y="176">oferta-lpsg-turbo</text>
+          <text x="106" y="204">criador-vsl-turbo</text>
+          <text x="106" y="232">watch</text>
+        </g>
+        <g fill="#10B981" font-family="Inter,sans-serif" font-size="12" font-weight="700">
+          <text x="86" y="148">✓</text><text x="86" y="176">✓</text><text x="86" y="204">✓</text><text x="86" y="232">✓</text>
+        </g>
+        <text x="106" y="258" font-family="Inter,sans-serif" font-size="11.5" fill="#A0A0A0">…e mais 38 skills</text>
+
+        <rect x="400" y="80" width="248" height="34" rx="9" fill="#0A0A0B"/>
+        <text x="416" y="102" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE">@estrategista-turbo</text>
+        <circle cx="414" cy="140" r="12" fill="#D97757"/>
+        <g stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round">
+          <line x1="407" y1="140" x2="421" y2="140"/><line x1="414" y1="133" x2="414" y2="147"/>
+          <line x1="409" y1="135" x2="419" y2="145"/><line x1="419" y1="135" x2="409" y2="145"/>
+        </g>
+        <text x="436" y="137" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0A0A0A">estrategista-turbo</text>
+        <g fill="#E8E5DE">
+          <rect x="400" y="160" width="248" height="9" rx="4.5"/>
+          <rect x="400" y="178" width="230" height="9" rx="4.5"/>
+          <rect x="400" y="196" width="196" height="9" rx="4.5"/>
+        </g>
+        <rect x="400" y="224" width="180" height="34" rx="9" fill="#E7F8F1" stroke="#C9EEDF"/>
+        <text x="418" y="246" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0B5138">✓ squad respondendo</text>
+      </svg>
+      <figcaption><b>Etapa 4 · o que você vai ver:</b> a lista de skills preenchida e o agente respondendo. Se os dois aparecem, acabou. Ilustração — sua tela pode variar um pouco.</figcaption>
+      </figure>
+
       <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint final:</b> o estrategista respondeu. <b>O squad está instalado e funcionando.</b> 🎉</span></div>
     </div>
   </div>
