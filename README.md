@@ -9,7 +9,7 @@
 [![Skills: 42](https://img.shields.io/badge/skills-42-orange.svg)](#skills)
 [![Agents: 13](https://img.shields.io/badge/agents-13-purple.svg)](#agents)
 
-> 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — tudo pelo **app Claude Desktop**: você cola `instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0` no Code e o próprio Claude baixa e instala tudo em ~15 min. Sem Terminal, sem ZIP, sem git.
+> 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — tudo pelo **app Claude Desktop**: você cola `instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0` no Code e o próprio Claude baixa e instala tudo em ~15 min. Sem Terminal, sem ZIP, sem git. Versão HTML (offline, com botão de copiar em cada comando): [`instalacao-do-zero.html`](instalacao-do-zero.html).
 
 ---
 

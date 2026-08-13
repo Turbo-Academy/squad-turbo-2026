@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instalação do Zero · Squad Turbo LPSG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFAF7; --bg-alt:#F4F2EC; --bg-card:#FFFFFF; --bg-dark:#0A0A0B;
+  --text:#0A0A0A; --text-soft:#3A3A3A; --text-muted:#6B6B6B; --text-faded:#A0A0A0;
+  --accent:#FF5C00; --accent-2:#FFB800; --accent-soft:#FFEDE0; --accent-glow:rgba(255,92,0,0.18);
+  --success:#10B981; --success-soft:#E7F8F1;
+  --border:#ECEAE3; --border-soft:#F4F2EC;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.04); --shadow-md:0 8px 24px rgba(0,0,0,0.06); --shadow-lg:0 24px 48px rgba(0,0,0,0.08);
+  --radius-sm:8px; --radius:12px; --radius-lg:20px;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+*::selection{background:var(--accent-soft);color:var(--accent)}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.65;color:var(--text);background:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── topbar ── */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(251,250,247,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.topbar-in{max-width:880px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:14px}
+.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px var(--accent-glow);flex-shrink:0}
+.brand-t{font-weight:700;font-size:14px;letter-spacing:-0.01em}
+.brand-s{font-size:11px;color:var(--text-muted)}
+.topnav{margin-left:auto;display:flex;gap:4px}
+.topnav a{font-size:12.5px;font-weight:600;color:var(--text-muted);padding:6px 11px;border-radius:99px}
+.topnav a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
+@media(max-width:640px){.topnav{display:none}}
+
+/* ── hero ── */
+.hero{max-width:880px;margin:0 auto;padding:64px 24px 40px;text-align:center}
+.hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.hero h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,5.5vw,52px);line-height:1.12;letter-spacing:-0.015em;margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lead{font-size:17.5px;color:var(--text-soft);max-width:620px;margin:0 auto}
+.hero .lead strong{color:var(--text)}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 22px;box-shadow:var(--shadow-sm)}
+.stat b{display:block;font-size:21px;letter-spacing:-0.02em}
+.stat span{font-size:12px;color:var(--text-muted)}
+.cli-note{margin:34px auto 0;max-width:620px;font-size:13.5px;color:var(--text-muted);background:var(--bg-alt);border-radius:var(--radius);padding:12px 18px}
+
+/* ── layout ── */
+.wrap{max-width:880px;margin:0 auto;padding:0 24px 90px}
+section{margin-top:56px}
+
+/* ── checklist ── */
+.check-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 30px;box-shadow:var(--shadow-md)}
+.check-card h2{font-size:15px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.check-list{list-style:none;display:grid;gap:10px}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text-soft)}
+.check-list .box{width:20px;height:20px;border:2px solid var(--accent);border-radius:6px;flex-shrink:0;margin-top:2px}
+.check-list b{color:var(--text)}
+
+/* ── etapa ── */
+.etapa{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden}
+.etapa-head{display:flex;align-items:center;gap:16px;padding:24px 30px 0}
+.etapa-num{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px var(--accent-glow);flex-shrink:0}
+.etapa-head h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-0.01em}
+.etapa-head .tempo{margin-left:auto;font-size:12px;font-weight:600;color:var(--text-muted);background:var(--bg-alt);padding:5px 12px;border-radius:99px;white-space:nowrap}
+.etapa-body{padding:18px 30px 28px}
+.etapa-body>p{color:var(--text-soft);margin-bottom:14px}
+.etapa-body>p strong,.steps strong{color:var(--text)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:11px;margin:6px 0 4px}
+.steps li{counter-increment:s;display:flex;gap:13px;color:var(--text-soft);font-size:15.5px}
+.steps li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.dica{display:flex;gap:10px;background:var(--bg-alt);border-radius:var(--radius);padding:13px 16px;font-size:14px;color:var(--text-soft);margin-top:14px}
+.dica .i{flex-shrink:0}
+
+/* ── checkpoint ── */
+.checkpoint{display:flex;gap:11px;align-items:flex-start;background:var(--success-soft);border:1px solid #C9EEDF;border-radius:var(--radius);padding:14px 17px;margin-top:18px;font-size:14.5px;color:#0B5138}
+.checkpoint .ic{width:21px;height:21px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
+.checkpoint b{color:#063D2A}
+
+/* ── code ── */
+.code-block{position:relative;margin:16px 0 6px}
+.code-block pre{background:var(--bg-dark);color:#F5F3EE;border-radius:var(--radius);padding:18px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.7;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.code-block.hero-cmd pre{font-size:16px;padding:24px;border:1px solid rgba(255,92,0,0.35);box-shadow:0 12px 32px var(--accent-glow)}
+.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#D9D6CE;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:8px;cursor:pointer;transition:all .2s}
+.copy-btn:hover{background:rgba(255,92,0,0.25);border-color:var(--accent);color:#fff}
+.copy-btn.ok{background:var(--success);border-color:var(--success);color:#fff}
+.expect{margin-top:18px}
+.expect h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+.expect ul{list-style:none;display:grid;gap:9px}
+.expect li{display:flex;gap:10px;font-size:14.5px;color:var(--text-soft)}
+.expect .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+
+/* ── details ── */
+details{margin-top:14px;background:var(--bg-alt);border-radius:var(--radius);padding:0}
+details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--text-soft);padding:13px 17px;list-style:none;display:flex;align-items:center;gap:8px}
+details summary::before{content:"▸";color:var(--accent);transition:transform .2s}
+details[open] summary::before{transform:rotate(90deg)}
+details .inner{padding:0 17px 15px}
+details .inner p{font-size:14px;color:var(--text-soft);margin-bottom:10px}
+
+/* ── troubleshooting ── */
+.trouble h2,.section-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-0.01em;margin-bottom:6px}
+.section-sub{color:var(--text-muted);font-size:15px;margin-bottom:22px}
+.t-grid{display:grid;gap:12px}
+.t-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-sm)}
+.t-item .sint{font-weight:600;font-size:14.5px;margin-bottom:5px}
+.t-item .sol{font-size:14px;color:var(--text-soft)}
+.t-item .sol code{font-family:var(--mono);font-size:12.5px;background:var(--bg-alt);padding:2px 7px;border-radius:6px}
+
+/* ── windows ── */
+.win-card{background:linear-gradient(135deg,#0A0A0B,#1A1A1E);color:#E8E6E1;border-radius:var(--radius-lg);padding:28px 30px;box-shadow:var(--shadow-lg)}
+.win-card h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;margin-bottom:10px;color:#fff}
+.win-card p{font-size:15px;color:#C9C6BF;margin-bottom:10px}
+.win-card code{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,0.09);padding:2px 8px;border-radius:6px;color:#FFD9A8}
+
+/* ── next ── */
+.next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.next-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);transition:all .2s;display:block;color:var(--text)}
+.next-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);text-decoration:none}
+.next-card .n{font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase}
+.next-card h3{font-size:15.5px;font-weight:700;margin:6px 0 5px}
+.next-card p{font-size:13.5px;color:var(--text-muted)}
+
+footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text-align:center;font-size:13px;color:var(--text-faded)}
+@media(max-width:640px){
+  .etapa-head{padding:20px 20px 0;flex-wrap:wrap}
+  .etapa-body{padding:16px 20px 22px}
+  .etapa-head .tempo{margin-left:0}
+  .check-card,.win-card{padding:22px 20px}
+}
+@media print{.topbar,.copy-btn{display:none}.etapa,.check-card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="logo">T</div>
+    <div><div class="brand-t">Squad Turbo · LPSG 7.0</div><div class="brand-s">Instalação do zero</div></div>
+    <nav class="topnav">
+      <a href="#etapa1">1 · App</a><a href="#etapa2">2 · Code</a><a href="#etapa3">3 · Comando</a><a href="#etapa4">4 · Conferir</a><a href="#trouble">Socorro</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="kicker">Para quem nunca usou o Claude Code</div>
+  <h1>Um comando no Claude<br>e o squad <em>instalado</em></h1>
+  <p class="lead">Tudo pelo <strong>app Claude Desktop</strong>: você cola um comando com o link do GitHub e o próprio Claude baixa o squad e instala tudo. <strong>Sem Terminal, sem ZIP, sem git.</strong></p>
+  <div class="stats">
+    <div class="stat"><b>~15 min</b><span>do zero ao squad</span></div>
+    <div class="stat"><b>42</b><span>skills instaladas</span></div>
+    <div class="stat"><b>13</b><span>agentes especialistas</span></div>
+    <div class="stat"><b>1</b><span>comando colado</span></div>
+  </div>
+  <div class="cli-note">Prefere fazer pelo Terminal (CLI)? O caminho equivalente está no README do repositório, seção "Instalar em outra máquina".</div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <div class="check-card">
+    <h2>✅ O que você precisa antes de começar</h2>
+    <ul class="check-list">
+      <li><span class="box"></span><span>Um computador <b>Mac</b> (Windows também funciona — veja a caixa preta no fim)</span></li>
+      <li><span class="box"></span><span>Uma <b>conta Claude paga</b> (plano Pro ou Max) — crie em <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></span></li>
+      <li><span class="box"></span><span><b>~1 GB de espaço livre</b> (+ ~4 GB opcionais, só se quiser a transcrição local de vídeo)</span></li>
+      <li><span class="box"></span><span><b>15 minutos</b> sem interrupção</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="etapa1">
+  <div class="etapa">
+    <div class="etapa-head"><div class="etapa-num">1</div><h2>Instalar o app Claude Desktop</h2><span class="tempo">~5 min</span></div>
+    <div class="etapa-body">
+      <ol class="steps">
+        <li>Baixe o app em <strong><a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a></strong></li>
+        <li>Abra o arquivo baixado e <strong>arraste o Claude pra pasta Aplicativos</strong></li>
+        <li>Abra o Claude (<strong>Cmd + Espaço</strong> → digite <strong>Claude</strong> → Enter)</li>
+        <li><strong>Entre na sua conta</strong> claude.ai — a conta <strong>paga</strong> (Pro ou Max)</li>
+      </ol>
+      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o app abre e mostra o chat do Claude com seu nome/conta.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="etapa2">
+  <div class="etapa">
+    <div class="etapa-head"><div class="etapa-num">2</div><h2>Abrir uma sessão no Code</h2><span class="tempo">~2 min</span></div>
+    <div class="etapa-body">
+      <p>O <strong>Code</strong> é a área do app em que o Claude tem mãos: lê arquivos e executa comandos numa pasta que você escolher.</p>
+      <ol class="steps">
+        <li>No app Claude, clique em <strong>Code</strong> (na barra lateral)</li>
+        <li>Crie uma <strong>nova sessão</strong> e, quando ele pedir a pasta, escolha onde o squad vai morar — <strong>Documentos</strong> serve perfeitamente</li>
+        <li>Abre um chat normal — a diferença é que esse chat trabalha dentro da pasta escolhida</li>
+      </ol>
+      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> sessão aberta mostrando o nome da pasta (ex.: <strong>Documentos</strong>).</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="etapa3">
+  <div class="etapa">
+    <div class="etapa-head"><div class="etapa-num">3</div><h2>Colar o comando de instalação</h2><span class="tempo">~5-10 min</span></div>
+    <div class="etapa-body">
+      <p>Cole isto no chat e aperte Enter:</p>
+      <div class="code-block hero-cmd">
+        <pre id="cmd-hero">instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0</pre>
+        <button class="copy-btn" data-copy="cmd-hero">Copiar</button>
+      </div>
+      <p style="margin-top:14px"><strong>Só isso.</strong> O Claude baixa o repositório pra pasta, lê as instruções que estão nele e roda o instalador guiado, que instala as 42 skills, os 13 agentes e as dependências, mostrando ✓ etapa por etapa.</p>
+
+      <div class="expect">
+        <h3>O que esperar durante a execução</h3>
+        <ul>
+          <li><span class="dot"></span><span><strong>Não precisa ter git instalado.</strong> Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download).</span></li>
+          <li><span class="dot"></span><span><strong>O app pede permissão</strong> antes de cada comando (botão <em>Permitir/Allow</em>). É o comportamento normal — leia e autorize.</span></li>
+          <li><span class="dot"></span><span><strong>Único caso que sai do app:</strong> se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a <strong>sua senha</strong> — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.</span></li>
+        </ul>
+      </div>
+
+      <details>
+        <summary>O Claude pediu mais direção? (ou você quer controle fino)</summary>
+        <div class="inner">
+          <p>Cole este complemento:</p>
+          <div class="code-block">
+<pre id="cmd-full">Baixe o repositório pra esta pasta (sem git no sistema, use o ZIP do
+branch main via curl — NÃO instale o Xcode), rode
+bash 99-skills-compartilhaveis/instalar-squad.sh
+e complete as pendências que ele marcar com ✗.
+Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso).
+No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
+            <button class="copy-btn" data-copy="cmd-full">Copiar</button>
+          </div>
+        </div>
+      </details>
+
+      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o Claude mostra a saída final do instalador com tudo ✓ (ou explica o que ficou pendente e por quê).</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="etapa4">
+  <div class="etapa">
+    <div class="etapa-head"><div class="etapa-num">4</div><h2>Conferir se funcionou</h2><span class="tempo">~2 min</span></div>
+    <div class="etapa-body">
+      <p>As skills carregam quando uma sessão nova abre. Então:</p>
+      <ol class="steps">
+        <li><strong>Feche a sessão e abra uma nova</strong> — desta vez escolhendo a pasta do squad que o Claude criou (<strong>squad-turbo-lpsg-7.0</strong>, dentro de Documentos)</li>
+        <li>Digite <strong>/skills</strong> → a lista deve mostrar as skills do squad (<em>lpsg-master-turbo, oferta-lpsg-turbo, watch…</em>)</li>
+        <li>Teste um agente — cole:</li>
+      </ol>
+      <div class="code-block">
+        <pre id="cmd-test">@estrategista-turbo se apresenta em 2 linhas</pre>
+        <button class="copy-btn" data-copy="cmd-test">Copiar</button>
+      </div>
+      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint final:</b> o estrategista respondeu. <b>O squad está instalado e funcionando.</b> 🎉</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="trouble" class="trouble">
+  <h2 class="section-h">😵 Deu errado?</h2>
+  <p class="section-sub">Os tropeços clássicos — e a saída de cada um.</p>
+  <div class="t-grid">
+    <div class="t-item"><div class="sint">Não acho o Code no app</div><div class="sol">Versão antiga do app. Atualize o Claude Desktop em <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>.</div></div>
+    <div class="t-item"><div class="sint">O Claude diz que não pode rodar comandos</div><div class="sol">A sessão foi aberta no chat comum, não no Code. Refaça a Etapa 2 — tem que ser uma sessão do <strong>Code</strong>, com pasta escolhida.</div></div>
+    <div class="t-item"><div class="sint">O Claude não conseguiu baixar o repositório</div><div class="sol">Cole: <code>baixe o ZIP do branch main desse repositório com curl e descompacte</code></div></div>
+    <div class="t-item"><div class="sint">Pediu permissão e eu neguei sem querer</div><div class="sol">Peça: <code>tenta de novo o último comando</code> e autorize.</div></div>
+    <div class="t-item"><div class="sint">/skills não mostra as skills do squad</div><div class="sol">A sessão foi aberta antes do fim da instalação. Feche e abra uma sessão nova (Etapa 4).</div></div>
+    <div class="t-item"><div class="sint">Instalador falou de Homebrew/senha</div><div class="sol">Mac sem Homebrew. Siga o comando que o Claude te der pro Terminal — é o único passo fora do app.</div></div>
+    <div class="t-item"><div class="sint">Travou em qualquer outra coisa</div><div class="sol">Cole no chat: <code>estou seguindo o manual de instalação e travei nesta etapa: [descreva]</code> — ele mesmo te destrava.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="win-card">
+    <h2>🪟 E no Windows?</h2>
+    <p>O app Claude Desktop também existe pra Windows — Etapas 1 e 2 são iguais. No Windows, o Claude Code pode pedir o <strong>Git for Windows</strong> na primeira execução (ele avisa e aponta o download; instale com as opções padrão).</p>
+    <p>Depois cole o mesmo comando da Etapa 3 acrescentando: <code>estou no Windows — adapte a instalação pro meu sistema</code></p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-h">👉 Próximos passos</h2>
+  <p class="section-sub">O squad está instalado — agora é colocar um lançamento no ar.</p>
+  <div class="next-grid">
+    <a class="next-card" href="04-manual-de-uso/00-pre-requisitos.md"><div class="n">Passo 1</div><h3>Pré-requisitos</h3><p>As contas que o LPSG precisa: Meta, Hotmart, domínio…</p></a>
+    <a class="next-card" href="04-manual-de-uso/manual.html"><div class="n">Passo 2</div><h3>Manual de execução</h3><p>O manual completo e interativo — abra no navegador.</p></a>
+    <a class="next-card" href="99-skills-compartilhaveis/GUIA-MCPS.md"><div class="n">Opcional</div><h3>Conectar ferramentas</h3><p>Drive, NotebookLM, n8n… nenhuma é obrigatória.</p></a>
+  </div>
+</section>
+
+</div>
+
+<footer>Squad Turbo · LPSG 7.0 — este manual também existe em texto puro: <strong>INSTALACAO-DO-ZERO.md</strong></footer>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.dataset.copy);
+    var texto=el.textContent;
+    function feito(){
+      btn.textContent='Copiado ✓';btn.classList.add('ok');
+      setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('ok')},1800);
+    }
+    // fallback pra file:// e contextos sem clipboard API: textarea + execCommand
+    function planoB(){
+      var ta=document.createElement('textarea');
+      ta.value=texto;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');feito();}
+      catch(e){window.getSelection().selectAllChildren(el);btn.textContent='Selecione e copie';}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(texto).then(feito,planoB);
+    }else{planoB();}
+  });
+});
+</script>
+</body>
+</html>

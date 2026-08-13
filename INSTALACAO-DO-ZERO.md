@@ -1,5 +1,7 @@
 # 🚀 Instalação do zero — um comando no Claude e o squad instalado
 
+> 🌐 **Versão bonita deste manual:** abra [`instalacao-do-zero.html`](instalacao-do-zero.html) no navegador (funciona offline, com botões de copiar em cada comando). O conteúdo é o mesmo.
+
 > **Para quem nunca usou o Claude Code.** Tudo pelo **app Claude Desktop**: você cola **um comando com o link do GitHub** e o próprio Claude baixa o squad e instala tudo. Sem Terminal, sem ZIP, sem git.
 >
 > Em **~15 minutos**: app instalado · conta conectada · Squad Turbo completo (42 skills + 13 agentes) respondendo.
