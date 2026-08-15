@@ -29,7 +29,12 @@ targets = ["00-pre-requisitos.md", "01-intake.md", "02-passo-a-passo.md",
            "../README.md", "../99-skills-compartilhaveis/README.md",
            # docs de instalação e CLAUDE.md: sem marcador (código/YAML quebra
            # comentário HTML) — as contagens entram só pelos padrões derivados
-           "../CLAUDE.md", "../INSTALACAO-DO-ZERO.md", "../instalacao-do-zero.html"]
+           "../CLAUDE.md", "../INSTALACAO-DO-ZERO.md", "../instalacao-do-zero.html",
+           # docs que carregam a VERSÃO no título/rodapé (derivada de 'versao')
+           "../index.html", "../PRODUCT.md", "../DESIGN.md", "../CONTRIBUTING.md",
+           "../99-skills-compartilhaveis/agents/MAPA-SKILLS-AGENTES.md",
+           "../02-entregaveis-finais/cs/README.md",
+           "../02-entregaveis-finais/passo-a-passo-aluno/ebook.html"]
 
 total_changes = 0
 missing_keys = set()
@@ -88,6 +93,15 @@ if "n_zips_total" in facts and "n_skills" in facts:
     ]
 if "n_skills_instaladas" in facts:
     derivados.append((r"as \d+ skills instaladas", f"as {facts['n_skills_instaladas']} skills instaladas"))
+if "versao" in facts:
+    v = facts["versao"]
+    derivados += [
+        # títulos e rodapés ("LPSG 7.0 · Squad Turbo", "Squad Turbo · LPSG 7.0")
+        # — o nome do repo é minúsculo (squad-turbo-lpsg-7.0) e NÃO casa aqui
+        (r"LPSG \d+\.\d+", f"LPSG {v}"),
+        # selo do ebook ("Método LPSG · v7.0")
+        (r"Método LPSG · v\d+\.\d+", f"Método LPSG · v{v}"),
+    ]
 if "n_skills" in facts and "n_agentes" in facts:
     s, a = facts["n_skills"], facts["n_agentes"]
     derivados += [
