@@ -70,6 +70,38 @@ else
   echo "  ✓ contagens ($n_real skills)"
 fi
 
+# ── 4 · links relativos quebrados nos docs de navegação ──────────────────────
+# Escopo CURADO de propósito: agentes/skills citam caminhos do projeto do
+# usuário em runtime (00-fundacao/, 02-mercado/…) que não existem neste repo —
+# checar tudo viraria ruído. Aqui entram só os docs que um leitor navega.
+DOCS_NAV=("$ROOT/README.md" "$ROOT/QUICKSTART.md" "$ROOT/CONTRIBUTING.md"
+          "$ROOT/CLAUDE.md" "$ROOT/INSTALACAO-DO-ZERO.md"
+          "$ROOT"/04-manual-de-uso/*.md
+          "$ROOT/99-skills-compartilhaveis/README.md"
+          "$ROOT/99-skills-compartilhaveis/COMO-MANTER.md"
+          "$ROOT/99-skills-compartilhaveis/GUIA-MCPS.md")
+links_ruins=""
+for f in "${DOCS_NAV[@]}"; do
+  [[ -f "$f" ]] || continue
+  d=$(dirname "$f")
+  while IFS= read -r l; do
+    case "$l" in http*|mailto:*|"#"*) continue ;; esac
+    p="${l%%#*}"; p="${p//%20/ }"          # tira fragmento · decodifica espaço
+    [[ -z "$p" ]] && continue
+    [[ -e "$d/$p" ]] || links_ruins+="   ${f#$ROOT/} → $l"$'\n'
+  done < <(grep -oE '\]\([^)]+\)' "$f" 2>/dev/null | sed 's/^](//; s/)$//')
+done
+
+if [[ -n "$links_ruins" ]]; then
+  echo ""
+  echo "❌ LINKS — apontam pra arquivo que não existe:"
+  printf '%s' "$links_ruins"
+  echo "   → corrija o caminho ou crie o arquivo antes do push"
+  falhas=$((falhas+1))
+else
+  echo "  ✓ links dos docs de navegação"
+fi
+
 if (( falhas > 0 )); then
   echo ""
   echo "⛔ push bloqueado · $falhas checagem(ns) falhou(aram)."
