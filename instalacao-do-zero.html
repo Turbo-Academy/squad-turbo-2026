@@ -360,7 +360,7 @@ No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
   <div class="etapa">
     <div class="etapa-head"><div class="etapa-num">4</div><h2>Conferir se funcionou</h2><span class="tempo">~2 min</span></div>
     <div class="etapa-body">
-      <p>As skills carregam quando uma sessão nova abre. Então:</p>
+      <p><strong>Tudo que acabou de ser instalado — skills, agentes e conexões (MCPs) — só carrega quando uma sessão nova abre.</strong> A sessão da instalação não enxerga o que ela mesma instalou. Então:</p>
       <ol class="steps">
         <li><span><strong>Feche a sessão e abra uma nova</strong> — desta vez escolhendo a pasta do squad que o Claude criou (<strong>squad-turbo-lpsg-7.0</strong>, dentro de Documentos)</span></li>
         <li><span>Digite <strong>/skills</strong> → a lista deve mostrar as skills do squad (<em>lpsg-master-turbo, oferta-lpsg-turbo, watch…</em>)</span></li>
@@ -426,7 +426,7 @@ No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
     <div class="t-item"><div class="sint">O Claude diz que não pode rodar comandos</div><div class="sol">A sessão foi aberta no chat comum, não no Code. Refaça a Etapa 2 — tem que ser uma sessão do <strong>Code</strong>, com pasta escolhida.</div></div>
     <div class="t-item"><div class="sint">O Claude não conseguiu baixar o repositório</div><div class="sol">Cole: <code>baixe o ZIP do branch main desse repositório com curl e descompacte</code></div></div>
     <div class="t-item"><div class="sint">Pediu permissão e eu neguei sem querer</div><div class="sol">Peça: <code>tenta de novo o último comando</code> e autorize.</div></div>
-    <div class="t-item"><div class="sint">/skills não mostra as skills do squad</div><div class="sol">A sessão foi aberta antes do fim da instalação. Feche e abra uma sessão nova (Etapa 4).</div></div>
+    <div class="t-item"><div class="sint">/skills não mostra as skills · agente não responde ao @nome · Scrapling não lê páginas</div><div class="sol">A sessão foi aberta antes do fim da instalação — nada recém-instalado carrega nela. Feche e abra uma sessão nova (Etapa 4).</div></div>
     <div class="t-item"><div class="sint">Instalador falou de Homebrew/senha</div><div class="sol">Mac sem Homebrew. Siga o comando que o Claude te der pro Terminal — é o único passo fora do app.</div></div>
     <div class="t-item"><div class="sint">Travou em qualquer outra coisa</div><div class="sol">Cole no chat: <code>estou seguindo o manual de instalação e travei nesta etapa: [descreva]</code> — ele mesmo te destrava.</div></div>
   </div>

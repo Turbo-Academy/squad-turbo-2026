@@ -77,7 +77,7 @@ O que esperar durante a execução:
 
 ## Etapa 4 · Conferir se funcionou (2 min)
 
-As skills carregam quando uma sessão nova abre. Então:
+**Tudo que acabou de ser instalado — skills, agentes e conexões (MCPs) — só carrega quando uma sessão nova abre.** A sessão da instalação não enxerga o que ela mesma instalou. Então:
 
 1. **Feche a sessão e abra uma nova** — desta vez escolhendo a pasta do squad que o Claude criou (`squad-turbo-lpsg-7.0`, dentro de Documentos)
 2. Digite `/skills` → a lista deve mostrar as skills do squad (`lpsg-master-turbo`, `oferta-lpsg-turbo`, `watch`…)
@@ -99,7 +99,7 @@ As skills carregam quando uma sessão nova abre. Então:
 | O Claude diz que não pode rodar comandos | Sessão aberta no chat comum, não no Code | Refaça a Etapa 2 — tem que ser uma sessão do **Code**, com pasta escolhida |
 | O Claude não conseguiu baixar o repositório | Sem git ou rede bloqueou | Cole: `baixe o ZIP do branch main desse repositório com curl e descompacte` |
 | Pediu permissão e eu neguei sem querer | — | Peça: `tenta de novo o último comando` e autorize |
-| `/skills` não mostra as skills do squad | Sessão aberta antes do fim da instalação | Feche e abra uma sessão nova (Etapa 4) |
+| `/skills` não mostra as skills · agente não responde ao `@nome` · Scrapling não lê páginas | Sessão aberta antes do fim da instalação — nada recém-instalado carrega nela | Feche e abra uma sessão nova (Etapa 4) |
 | Instalador falou de Homebrew/senha | Mac sem Homebrew | Siga o comando que o Claude te der pro Terminal — é o único passo fora do app |
 | Travou em qualquer outra coisa | — | Cole no chat: `estou seguindo o INSTALACAO-DO-ZERO.md e travei nesta etapa: [descreva]` — ele mesmo te destrava |
 

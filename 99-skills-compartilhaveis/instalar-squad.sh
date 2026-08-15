@@ -166,5 +166,7 @@ if (( avisos > 0 )); then
 else
   echo "✅ Tudo instalado."
 fi
-echo "   Último passo: REINICIE o Claude Code."
-echo "   Skills aparecem em /skills · agentes com @nome (ex.: @estrategista-turbo)."
+echo "   Último passo: REINICIE o Claude Code (feche a sessão e abra outra)."
+echo "   Skills, agentes e MCPs só carregam em sessão NOVA — a sessão desta"
+echo "   instalação não enxerga o que ela mesma instalou."
+echo "   Confira: /skills lista as skills · @estrategista-turbo responde."
