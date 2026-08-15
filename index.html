@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Squad Turbo · LPSG 7.0 — manuais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBFAF7; --bg-alt:#F4F2EC; --bg-card:#FFFFFF;
+  --text:#0A0A0A; --text-soft:#3A3A3A; --text-muted:#6B6B6B; --text-faded:#A0A0A0;
+  --accent:#FF5C00; --accent-2:#FFB800; --accent-soft:#FFEDE0; --accent-glow:rgba(255,92,0,0.18);
+  --border:#ECEAE3;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.04); --shadow-md:0 8px 24px rgba(0,0,0,0.06);
+  --radius:12px; --radius-lg:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+*::selection{background:var(--accent-soft);color:var(--accent)}
+body{font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.65;color:var(--text);background:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:760px;margin:0 auto;padding:70px 24px 80px}
+.logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px var(--accent-glow);margin-bottom:22px}
+h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.14;letter-spacing:-0.015em;margin-bottom:14px}
+h1 em{font-style:italic;color:var(--accent)}
+.lead{font-size:17px;color:var(--text-soft);max-width:560px;text-wrap:pretty}
+.cards{display:grid;gap:14px;margin-top:38px}
+.card{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 26px;box-shadow:var(--shadow-sm);color:var(--text);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);text-decoration:none}
+.card .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 11px;border-radius:99px;margin-bottom:11px}
+.card h2{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px}
+.card p{font-size:14.5px;color:var(--text-muted)}
+.repo{margin-top:30px;background:var(--bg-alt);border-radius:var(--radius);padding:16px 20px;font-size:14.5px;color:var(--text-soft)}
+footer{margin-top:44px;font-size:13px;color:var(--text-faded)}
+@media(max-width:640px){.wrap{padding:48px 20px 60px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">T</div>
+  <h1>Squad Turbo · LPSG 7.0<br><em>manuais</em></h1>
+  <p class="lead">Método de Lançamento Pago Semanal Gravado da Turbo Academy: 43 skills e 13 agentes pro Claude Code.</p>
+
+  <div class="cards">
+    <a class="card" href="instalacao-do-zero.html">
+      <span class="tag">Comece aqui</span>
+      <h2>Instalação do zero</h2>
+      <p>Nunca usou o Claude Code? Do app ao squad respondendo em ~15 min — você cola um comando e o próprio Claude instala tudo.</p>
+    </a>
+    <a class="card" href="04-manual-de-uso/manual.html">
+      <span class="tag">Depois de instalar</span>
+      <h2>Manual de execução</h2>
+      <p>Pré-requisitos, cadastro do projeto, as 10 fases em 1 semana, ações humanas e troubleshooting.</p>
+    </a>
+  </div>
+
+  <p class="repo">Código, skills e agentes: <a href="https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0">github.com/Turbo-Academy/squad-turbo-lpsg-7.0</a></p>
+
+  <footer>Turbo Academy · licença dupla MIT + CC-BY-NC-SA</footer>
+</div>
+</body>
+</html>
