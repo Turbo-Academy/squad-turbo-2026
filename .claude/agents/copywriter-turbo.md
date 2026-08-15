@@ -13,6 +13,8 @@ skills:
   # Páginas (copy de venda)
   - paginas-lpsg-turbo
   - criador-paginas-low-ticket-turbo
+  # Ler a página do concorrente pra engenharia reversa das dobras (antes de escrever)
+  - leitura-web-turbo
   # Oferta (stack, tsunami, garantia)
   - oferta-lpsg-turbo
   # Criativos (copy de hook, body, CTA)

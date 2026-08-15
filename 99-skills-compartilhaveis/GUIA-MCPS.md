@@ -78,7 +78,9 @@ Nenhum é obrigatório. A coluna "sem ele" diz o que acontece se você não cone
 > ou avulso: `bash 99-skills-compartilhaveis/instalar-scrapling.sh`. Ele já registra o MCP no escopo
 > `user`. Ferramentas: `get` · `fetch` · `stealthy_fetch` (+ versões `bulk_*`) · `screenshot` ·
 > `open_session`/`close_session`/`list_sessions`. Manual em [`scrapling-COMO-USAR.md`](./scrapling-COMO-USAR.md).
-> Dica de custo: passe um seletor CSS (ex.: `article h2`) pra trazer só o pedaço que interessa.
+> **A doutrina de uso está na skill `leitura-web-turbo`** — a escada (WebFetch → `get` → `fetch` →
+> `stealthy_fetch`), o seletor CSS pra não queimar contexto, as receitas do squad e os limites.
+> Os 3 agentes donos já a carregam; você não precisa fazer nada além de instalar.
 > **Use com juízo:** robots.txt, termos do site e LGPD — nada de dado pessoal de terceiros.
 
 ### Meta Ads NÃO é MCP (leia isto antes de procurar)

@@ -22,6 +22,8 @@ skills:
   # Páginas (destino dos ads · LCP < 1.5s)
   - paginas-lpsg-turbo
   - page-optimizer-turbo
+  # Ler página no ar (a nossa e a do concorrente) — conferir copy/CTA/pixel depois do deploy
+  - leitura-web-turbo
   # Dashboards (acompanhamento)
   - dashboard-lpsg-turbo
   - dash-lancamento-turbo

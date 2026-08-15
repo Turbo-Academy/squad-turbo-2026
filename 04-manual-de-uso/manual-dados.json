@@ -1,7 +1,7 @@
 {
   "_doc": "Fonte única dos FATOS canônicos do manual. Editar AQUI · rodar build-manual.sh pra propagar pros .md e manual.html. Cada chave tem um par de marcadores <!--F:chave--> ... <!--/F--> nos arquivos. Pra adicionar um fato novo: 1) crie a chave aqui, 2) envolva o trecho no arquivo com os marcadores, 3) rode o script.",
   "versao": "7.0",
-  "n_skills": "42",
+  "n_skills": "43",
   "n_agentes": "13",
   "fase2_desc_curta": "cap 4+4 · ~19 templates Utility · consome temas",
   "fase2_desc_longa": "<strong>cap 4+4</strong> (máx 4 msgs API + 4 grupo/dia · seg-dom) · onboarding 4 msgs · 4 horários canônicos seg-sex (06:50/07:00/12:00/19:00) · ~19 templates Utility · entra logo após estrutura porque consome temas das aulas",
@@ -9,6 +9,6 @@
   "coreografia_pitch": "quinta (Aula 4) = pré-pitch único 100% produto (apresenta produto + ficha · sem preço/bônus) · sexta (Aula 5) = conclusão técnica + lembrete curto da ficha (NÃO é pré-pitch nem repitch) · domingo (Aula 6) = pitch completo (preço + bônus + condições)",
   "carrinho_abertura": "Seg · ficha entra 6h50 (bônus único) · carrinho geral 7h",
   "cronograma_dias": "DIA 1 (Seg): Fases 1-2 (estrutura aulas + mensageria) · DIA 2 (Ter): Fases 3-4 (oferta + criativos) · DIA 3 (Qua): Fases 5-6 (páginas + tráfego) · DIA 4 (Qui): Fases 7-8 (automações + dashboard) · DIA 5 (Sex): Fase 9 (operação) + gravação",
-  "n_zips_total": "54",
-  "n_skills_instaladas": "81"
+  "n_zips_total": "55",
+  "n_skills_instaladas": "82"
 }

@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 76 · **Atribuições (skill×agent):** 167
+**Agentes:** 13 · **Skills distintas referenciadas:** 77 · **Atribuições (skill×agent):** 170
 
 ## Por agente
 
@@ -35,6 +35,7 @@
 - briefing-aprovacao-turbo
 - paginas-lpsg-turbo
 - criador-paginas-low-ticket-turbo
+- leitura-web-turbo
 - oferta-lpsg-turbo
 - criativos-lpsg-turbo
 - criador-criativos-turbo
@@ -128,6 +129,7 @@
 - transcrever-youtube-turbo
 - youtube-full
 - watch
+- leitura-web-turbo
 - paginas-lpsg-turbo
 - mensageria-lpsg-turbo
 - estrutura-aulas-lpsg-turbo
@@ -193,6 +195,7 @@
 - gerador-criativos-vsl
 - paginas-lpsg-turbo
 - page-optimizer-turbo
+- leitura-web-turbo
 - dashboard-lpsg-turbo
 - dash-lancamento-turbo
 - meta-ads-cli-setup-turbo
@@ -244,6 +247,7 @@
 | `instagram-analise-estrategica-turbo` | pesquisador-mercado-turbo social-turbo |
 | `instalar-skill-no-squad` | estrategista-turbo |
 | `lancamento-pago-semanal-turbo` | copywriter-turbo cs-turbo estrategista-turbo pesquisador-turbo trafego-turbo |
+| `leitura-web-turbo` | copywriter-turbo pesquisador-mercado-turbo trafego-turbo |
 | `lovable-style-turbo` | designer-turbo diretor-criativo-turbo |
 | `lpsg-guiado` | automacao-turbo |
 | `lpsg-master-turbo` | estrategista-turbo |

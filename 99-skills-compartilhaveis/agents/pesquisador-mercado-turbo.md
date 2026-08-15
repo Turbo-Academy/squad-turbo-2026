@@ -14,6 +14,8 @@ skills:
   - youtube-full
   # Assistir vídeo de verdade (frames + transcrição) · analisar VSL/anúncio de concorrente
   - watch
+  # LER página de concorrente/landing (escada WebFetch → get → fetch → stealthy) · seletor CSS pra não queimar contexto
+  - leitura-web-turbo
   # Saber o que cada fase exige · orienta foco da pesquisa
   - paginas-lpsg-turbo
   - mensageria-lpsg-turbo

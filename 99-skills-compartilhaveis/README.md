@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-06-23)
 
-- **<!--F:n_skills-->42<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->43<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)
@@ -39,9 +39,9 @@
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 54 zips** (42 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
+**Total: 55 zips** (43 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
-> **Cobertura total de skills (atualizada 2026-08-03):** as 81 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
+> **Cobertura total de skills (atualizada 2026-08-03):** as 82 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Conectar MCPs 🔌
 
@@ -103,6 +103,7 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 | `lovable-style-turbo` | designer, diretor-criativo |
 | `page-optimizer-turbo` | diretor-criativo, trafego |
 | `transcrever-youtube-turbo` | pesquisador, pesquisador-mercado, social |
+| `leitura-web-turbo` | pesquisador-mercado, copywriter, trafego — doutrina de LER página (escada WebFetch → get → fetch → stealthy sobre o MCP do Scrapling) |
 | `lancamento-pago-semanal-turbo` | estrategista, pesquisador, copywriter, trafego, cs |
 | `find-skills` | estrategista, pesquisador, pesquisador-mercado |
 | `honor-turbo` | estrategista |

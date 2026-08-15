@@ -43,6 +43,8 @@ SKILLS=(
   gerador-slides-turbo slides-uipm-turbo page-optimizer-turbo
   # dados / utilitários próprios
   dash-lancamento-turbo instagram-analise-estrategica-turbo transcrever-youtube-turbo honor-turbo
+  # doutrina de leitura da web (escada WebFetch→get→fetch→stealthy sobre o MCP do Scrapling)
+  leitura-web-turbo
   # conteúdo recorrente (aquecimento perpétuo)
   aula-consciencia-turbo
   # motores de negócio próprios Turbo (orgânico em camadas · ciclo 14 dias · low ticket ASC)
