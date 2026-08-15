@@ -111,6 +111,57 @@ O app Claude Desktop também existe pra Windows — Etapas 1 e 2 são iguais. No
 
 ---
 
+## 💪 O que o squad é capaz de fazer
+
+Tudo se pede **em português, no chat**. O que você acabou de instalar:
+
+### O lançamento inteiro, com um comando
+
+O `@lpsg-master-turbo` roda as 10 fases do método LPSG de ponta a ponta: pesquisa e briefing **pra você aprovar** → estrutura das 6 aulas (5+1) → oferta (stack de valor, bônus tsunami, dupla garantia) → páginas de venda com ficha de qualificação → 15 criativos → campanha de Meta Ads → mensageria do evento → 14 automações (n8n + ManyChat) → dashboard → operação e pós-venda. Ele executa; você aprova nos pontos críticos.
+
+### 13 especialistas de plantão (chame por `@nome`)
+
+| Quem | Faz o quê |
+|---|---|
+| `@estrategista-turbo` | Orquestra o squad, diagnostica campanha e lançamento |
+| `@pesquisador-turbo` | Fundação do projeto: voz, avatar, oferta, briefing |
+| `@pesquisador-mercado-turbo` | Concorrência, benchmarks, objeções de mercado |
+| `@copywriter-turbo` | Toda copy: páginas, aulas, pitch, emails, mensageria |
+| `@diretor-criativo-turbo` + `@designer-turbo` | Direção visual e execução: landing pages, criativos, slides |
+| `@trafego-turbo` | Meta Ads e Google Ads: estruturar, otimizar, diagnosticar |
+| `@social-turbo` | Reels, stories e calendário de conteúdo orgânico |
+| `@automacao-turbo` | Fluxos n8n, ManyChat e mensageria do evento |
+| `@closer-turbo` | Vendas 1:1: scripts por tier, recuperação de carrinho D+1-D+7 |
+| `@cs-turbo` | Pós-venda: onboarding, NPS, depoimentos, retenção |
+| `@picasso-auditor-turbo` | Gate visual: elimina cara de design feito por IA |
+| `@revisor-copy-turbo` | Gate textual: caça clichê de IA e protege a conta de ads |
+
+### Outros motores de negócio prontos
+
+**Funil 8** (produto de entrada de R$ 35-98 com order bumps e campanha de cost cap) · **Turbo Express** (ciclo de venda de 14 dias em grupo fechado de WhatsApp) · **Distribuição Turbo** (funil de consciência C0-C3 no orgânico) · **aula de aquecimento perpétua** entre edições · e um **CRM próprio** (Next.js + Supabase) que aposenta as planilhas do closer e do CS.
+
+### Ferramentas do dia a dia
+
+- **Assistir vídeo de verdade** — frames + transcrição: engenharia reversa de VSL, Reels e anúncio de concorrente (e transcrição local, sem chave de API)
+- **Ler qualquer página da web** — landing de concorrente, mesmo com JavaScript ou bloqueio, direto no chat
+- **VSL completa** via RMBC, com versão pronta pra teleprompter em `.docx`
+- **Slides premium de aula**, carrosséis e stories de Instagram, ebooks e manuais em HTML
+- **Análise estratégica de Instagram** (seu perfil ou concorrente) e **Meta Ads pela CLI oficial** (batelada, stop-loss, escala)
+
+### Experimente agora (cola no chat)
+
+```
+@pesquisador-mercado-turbo analisa a página deste concorrente: [URL]
+```
+
+```
+@copywriter-turbo escreve 5 headlines pra página de ingresso de um evento sobre [seu tema]
+```
+
+E quando estiver pronto pro lançamento completo: `@lpsg-master-turbo crie meu LPSG`.
+
+---
+
 ## 👉 Próximos passos
 
 O squad está instalado — agora é colocar um lançamento no ar:

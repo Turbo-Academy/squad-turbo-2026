@@ -127,6 +127,20 @@ details .inner p{font-size:14px;color:var(--text-soft);margin-bottom:10px}
 .win-card p{font-size:15px;color:#C9C6BF;margin-bottom:10px}
 .win-card code{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,0.09);padding:2px 8px;border-radius:6px;color:#FFD9A8}
 
+/* ── capacidades ── */
+.cap-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;box-shadow:var(--shadow-sm);margin-top:16px}
+.cap-block h3{font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+.cap-block h3 .ico{width:26px;height:26px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.cap-block p{font-size:14.5px;color:var(--text-soft)}
+.cap-block ul{list-style:none;display:grid;gap:8px;margin-top:4px}
+.cap-block li{display:flex;gap:10px;font-size:14.5px;color:var(--text-soft)}
+.cap-block li .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+.cap-block li{min-width:0}
+.agents-tb{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+.agents-tb td{padding:7px 10px;border-top:1px solid var(--border-soft);color:var(--text-soft);vertical-align:top}
+.agents-tb td:first-child{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
+.agents-scroll{overflow-x:auto}
+
 /* ── next ── */
 .next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
 .next-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);transition:all .2s;display:block;color:var(--text)}
@@ -152,7 +166,7 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
     <div class="logo">T</div>
     <div><div class="brand-t">Squad Turbo · LPSG 7.1</div><div class="brand-s">Instalação do zero</div></div>
     <nav class="topnav">
-      <a href="#etapa1">1 · App</a><a href="#etapa2">2 · Code</a><a href="#etapa3">3 · Comando</a><a href="#etapa4">4 · Conferir</a><a href="#trouble">Socorro</a>
+      <a href="#etapa1">1 · App</a><a href="#etapa2">2 · Code</a><a href="#etapa3">3 · Comando</a><a href="#etapa4">4 · Conferir</a><a href="#capacidades">O que faz</a><a href="#trouble">Socorro</a>
     </nav>
   </div>
 </div>
@@ -437,6 +451,63 @@ No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
     <h2>🪟 E no Windows?</h2>
     <p>O app Claude Desktop também existe pra Windows — Etapas 1 e 2 são iguais. No Windows, o Claude Code pode pedir o <strong>Git for Windows</strong> na primeira execução (ele avisa e aponta o download; instale com as opções padrão).</p>
     <p>Depois cole o mesmo comando da Etapa 3 acrescentando: <code>estou no Windows — adapte a instalação pro meu sistema</code></p>
+  </div>
+</section>
+
+<section id="capacidades">
+  <h2 class="section-h">💪 O que o squad é capaz de fazer</h2>
+  <p class="section-sub">Tudo se pede em português, no chat. O que você acabou de instalar:</p>
+
+  <div class="cap-block">
+    <h3><span class="ico">🚀</span>O lançamento inteiro, com um comando</h3>
+    <p>O <strong>@lpsg-master-turbo</strong> roda as 10 fases do método LPSG de ponta a ponta: pesquisa e briefing <strong>pra você aprovar</strong> → estrutura das 6 aulas (5+1) → oferta (stack de valor, bônus tsunami, dupla garantia) → páginas de venda com ficha de qualificação → 15 criativos → campanha de Meta Ads → mensageria do evento → 14 automações (n8n + ManyChat) → dashboard → operação e pós-venda. Ele executa; você aprova nos pontos críticos.</p>
+  </div>
+
+  <div class="cap-block">
+    <h3><span class="ico">🤖</span>13 especialistas de plantão (chame por @nome)</h3>
+    <div class="agents-scroll"><table class="agents-tb">
+      <tr><td>@estrategista-turbo</td><td>orquestra o squad, diagnostica campanha e lançamento</td></tr>
+      <tr><td>@pesquisador-turbo</td><td>fundação do projeto: voz, avatar, oferta, briefing</td></tr>
+      <tr><td>@pesquisador-mercado-turbo</td><td>concorrência, benchmarks, objeções de mercado</td></tr>
+      <tr><td>@copywriter-turbo</td><td>toda copy: páginas, aulas, pitch, emails, mensageria</td></tr>
+      <tr><td>@diretor-criativo-turbo + @designer-turbo</td><td>direção visual e execução: landing pages, criativos, slides</td></tr>
+      <tr><td>@trafego-turbo</td><td>Meta Ads e Google Ads: estruturar, otimizar, diagnosticar</td></tr>
+      <tr><td>@social-turbo</td><td>Reels, stories e calendário de conteúdo orgânico</td></tr>
+      <tr><td>@automacao-turbo</td><td>fluxos n8n, ManyChat e mensageria do evento</td></tr>
+      <tr><td>@closer-turbo</td><td>vendas 1:1: scripts por tier, recuperação de carrinho D+1-D+7</td></tr>
+      <tr><td>@cs-turbo</td><td>pós-venda: onboarding, NPS, depoimentos, retenção</td></tr>
+      <tr><td>@picasso-auditor-turbo</td><td>gate visual: elimina cara de design feito por IA</td></tr>
+      <tr><td>@revisor-copy-turbo</td><td>gate textual: caça clichê de IA e protege a conta de ads</td></tr>
+    </table></div>
+  </div>
+
+  <div class="cap-block">
+    <h3><span class="ico">⚙️</span>Outros motores de negócio prontos</h3>
+    <p><strong>Funil 8</strong> (produto de entrada de R$ 35-98 com order bumps e campanha de cost cap) · <strong>Turbo Express</strong> (ciclo de venda de 14 dias em grupo fechado de WhatsApp) · <strong>Distribuição Turbo</strong> (funil de consciência C0-C3 no orgânico) · <strong>aula de aquecimento perpétua</strong> entre edições · e um <strong>CRM próprio</strong> (Next.js + Supabase) que aposenta as planilhas do closer e do CS.</p>
+  </div>
+
+  <div class="cap-block">
+    <h3><span class="ico">🧰</span>Ferramentas do dia a dia</h3>
+    <ul>
+      <li><span class="dot"></span><span><strong>Assistir vídeo de verdade</strong> — frames + transcrição: engenharia reversa de VSL, Reels e anúncio de concorrente (e transcrição local, sem chave de API)</span></li>
+      <li><span class="dot"></span><span><strong>Ler qualquer página da web</strong> — landing de concorrente, mesmo com JavaScript ou bloqueio, direto no chat</span></li>
+      <li><span class="dot"></span><span><strong>VSL completa</strong> via RMBC, com versão pronta pra teleprompter em .docx</span></li>
+      <li><span class="dot"></span><span><strong>Slides premium de aula</strong>, carrosséis e stories de Instagram, ebooks e manuais em HTML</span></li>
+      <li><span class="dot"></span><span><strong>Análise estratégica de Instagram</strong> (seu perfil ou concorrente) e <strong>Meta Ads pela CLI oficial</strong> (batelada, stop-loss, escala)</span></li>
+    </ul>
+  </div>
+
+  <div class="cap-block">
+    <h3><span class="ico">✨</span>Experimente agora (cola no chat)</h3>
+    <div class="code-block">
+      <pre id="cmd-ex1" style="padding-right:96px">@pesquisador-mercado-turbo analisa a página deste concorrente: [URL]</pre>
+      <button class="copy-btn" data-copy="cmd-ex1">Copiar</button>
+    </div>
+    <div class="code-block">
+      <pre id="cmd-ex2" style="padding-right:96px">@copywriter-turbo escreve 5 headlines pra página de ingresso de um evento sobre [seu tema]</pre>
+      <button class="copy-btn" data-copy="cmd-ex2">Copiar</button>
+    </div>
+    <p style="margin-top:12px">E quando estiver pronto pro lançamento completo: <strong>@lpsg-master-turbo crie meu LPSG</strong>.</p>
   </div>
 </section>
 
