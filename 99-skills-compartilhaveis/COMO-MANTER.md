@@ -156,6 +156,8 @@ Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` 
 
 **Instalação em máquina nova:** `instalar-squad.sh` (guiado, idempotente). Ele instala TODOS os zips da pasta sem lista própria — skill nova empacotada entra sozinha no instalador, nada a manter.
 
+**Ferramentas de terceiros (não são skills, não entram em zip):** vivem em `~/.claude/tools/` e têm script próprio chamado pelo instalador — hoje só o `instalar-scrapling.sh` (Scrapling, BSD-3, leitura de páginas web + MCP). Padrão pra adicionar outra: script `instalar-<nome>.sh` idempotente + manual `<nome>-COMO-USAR.md` copiado pro destino + um passo opt-in no `instalar-squad.sh` + linha no `GUIA-MCPS.md` se expuser MCP. Nunca commitar o venv nem binário de terceiro.
+
 ---
 
 ## Protocolo transversal nos agentes

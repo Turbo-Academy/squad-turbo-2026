@@ -18,7 +18,10 @@ Com git presente, `git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7
 bash 99-skills-compartilhaveis/instalar-squad.sh
 ```
 
-- Quando é você (Claude) que roda, não há terminal interativo: o script **pula as perguntas opcionais** e marca com ✗ o que ficou pendente. Complete essas pendências você mesmo (ffmpeg e yt-dlp via brew; venv da transcrição local via `bash ~/.claude/skills/watch/whisper-local/instalar.sh`), avisando o usuário antes de downloads grandes (~220 MB do venv; o modelo baixa ~3,5 GB no primeiro uso real).
+- Quando é você (Claude) que roda, não há terminal interativo: o script **pula as perguntas opcionais** e marca com ✗ o que ficou pendente. Complete essas pendências você mesmo, avisando o usuário antes de downloads grandes:
+  - ffmpeg e yt-dlp via brew;
+  - transcrição local: `bash ~/.claude/skills/watch/whisper-local/instalar.sh` (~220 MB; o modelo baixa ~3,5 GB no primeiro uso real);
+  - leitura de páginas web: `bash 99-skills-compartilhaveis/instalar-scrapling.sh` (~400 MB de venv + ~1,1 GB de navegadores; registra o MCP `scrapling` no escopo user). **Pergunte antes** — é o passo mais pesado e nem todo mundo precisa.
 - Se faltar o Homebrew, a instalação dele pede a senha do usuário — você não pode digitá-la: entregue o comando pronto pra pessoa colar no Terminal e continue depois.
 - No fim, rode o instalador de novo e mostre ao usuário a saída com tudo ✓. Lembre que as skills só carregam em **sessão nova** do Claude Code.
 

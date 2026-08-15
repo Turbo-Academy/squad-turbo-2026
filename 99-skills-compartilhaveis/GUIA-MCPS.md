@@ -72,6 +72,14 @@ Nenhum é obrigatório. A coluna "sem ele" diz o que acontece se você não cone
 | **Playwright** | Teste E2E das páginas (ficha, checkout) | `playwright-skill`, `webapp-testing` | Você testa no navegador na mão |
 | **NotebookLM** | Pergunta a notebooks de pesquisa com citação, gera Audio Overview | pesquisa | Pesquisa direto no site |
 | **Google Sheets** | Backup de respostas de pesquisa/ficha e espelho de métricas | dashboards, automações | Planilha na mão ou via n8n |
+| **Scrapling** ⭐ | Lê página de concorrente, landing e anúncio (HTTP, navegador ou stealth) e devolve markdown/texto; tira print | `pesquisador-mercado-turbo`, `criador-paginas-low-ticket-turbo` (engenharia reversa de página) | O Claude lê só o que o WebFetch alcança; página com JS ou bloqueio fica de fora |
+
+> **Scrapling instala junto com o squad** — é o passo 7 do `instalar-squad.sh` (opcional, ~1,5 GB),
+> ou avulso: `bash 99-skills-compartilhaveis/instalar-scrapling.sh`. Ele já registra o MCP no escopo
+> `user`. Ferramentas: `get` · `fetch` · `stealthy_fetch` (+ versões `bulk_*`) · `screenshot` ·
+> `open_session`/`close_session`/`list_sessions`. Manual em [`scrapling-COMO-USAR.md`](./scrapling-COMO-USAR.md).
+> Dica de custo: passe um seletor CSS (ex.: `article h2`) pra trazer só o pedaço que interessa.
+> **Use com juízo:** robots.txt, termos do site e LGPD — nada de dado pessoal de terceiros.
 
 ### Meta Ads NÃO é MCP (leia isto antes de procurar)
 

@@ -173,6 +173,9 @@ unzip -o 99-skills-compartilhaveis/squad-core-turbo.zip -d ~/.claude/squads/
 brew install ffmpeg yt-dlp
 bash ~/.claude/skills/watch/whisper-local/instalar.sh
 
+# 4b. (Opcional) Scrapling — o Claude passa a LER páginas da web (~1,5 GB)
+bash 99-skills-compartilhaveis/instalar-scrapling.sh
+
 # 5. (Opcional) Stack Picasso · auditoria anti-IA de design
 npx skills add https://github.com/anthropics/skills --skill frontend-design --yes
 npx skills add pbakaus/impeccable --yes
