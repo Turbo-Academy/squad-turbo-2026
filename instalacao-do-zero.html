@@ -178,7 +178,7 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
     <ul class="check-list">
       <li><span class="box"></span><span>Um computador <b>Mac</b> (Windows também funciona — veja a caixa preta no fim)</span></li>
       <li><span class="box"></span><span>Uma <b>conta Claude paga</b> (plano Pro ou Max) — crie em <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></span></li>
-      <li><span class="box"></span><span><b>~1 GB de espaço livre</b> (+ ~4 GB opcionais, só se quiser a transcrição local de vídeo)</span></li>
+      <li><span class="box"></span><span><b>~1 GB de espaço livre</b> (+ opcionais: ~4 GB da transcrição local de vídeo · ~1,5 GB do Scrapling, que deixa o Claude ler páginas da web)</span></li>
       <li><span class="box"></span><span><b>15 minutos</b> sem interrupção</span></li>
     </ul>
   </div>
@@ -293,6 +293,7 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
         <h3>O que esperar durante a execução</h3>
         <ul>
           <li><span class="dot"></span><span><strong>Não precisa ter git instalado.</strong> Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download).</span></li>
+          <li><span class="dot"></span><span><strong>Dois opcionais vão ser oferecidos:</strong> a <strong>transcrição local de vídeo</strong> (~4 GB) e o <strong>Scrapling</strong> (~1,5 GB — o Claude passa a ler páginas da web, útil pra pesquisa de concorrência). Responda sim ou não; qualquer um dá pra instalar depois.</span></li>
           <li><span class="dot"></span><span><strong>O app pede permissão</strong> antes de cada comando (botão <em>Permitir/Allow</em>). É o comportamento normal — leia e autorize.</span></li>
           <li><span class="dot"></span><span><strong>Único caso que sai do app:</strong> se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a <strong>sua senha</strong> — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.</span></li>
         </ul>
@@ -342,7 +343,8 @@ footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text
 branch main via curl — NÃO instale o Xcode), rode
 bash 99-skills-compartilhaveis/instalar-squad.sh
 e complete as pendências que ele marcar com ✗.
-Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso).
+Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso)
+e quero o Scrapling (leitura de páginas web, sei dos ~1,5 GB).
 No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
             <button class="copy-btn" data-copy="cmd-full">Copiar</button>
           </div>

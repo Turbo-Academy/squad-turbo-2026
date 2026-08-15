@@ -14,7 +14,7 @@
 
 - [ ] Um computador **Mac** (Windows funciona também — veja a caixa no fim)
 - [ ] Uma **conta Claude paga** (plano Pro ou Max) — crie em [claude.ai](https://claude.ai)
-- [ ] **~1 GB de espaço livre** (+ ~4 GB opcionais, só se quiser a transcrição local de vídeo)
+- [ ] **~1 GB de espaço livre** (+ opcionais: ~4 GB da transcrição local de vídeo · ~1,5 GB do Scrapling, que deixa o Claude ler páginas da web)
 - [ ] 15 minutos sem interrupção
 
 ---
@@ -59,13 +59,15 @@ Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que 
 > branch main via curl — NÃO instale o Xcode), rode
 > bash 99-skills-compartilhaveis/instalar-squad.sh
 > e complete as pendências que ele marcar com ✗.
-> Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso).
+> Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso)
+> e quero o Scrapling (leitura de páginas web, sei dos ~1,5 GB).
 > No fim, rode o instalador de novo e me mostre tudo ✓.
 > ```
 
 O que esperar durante a execução:
 
 - **Não precisa ter git instalado.** Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download). As instruções pra isso estão dentro do próprio repositório.
+- **Dois opcionais vão ser oferecidos** durante a instalação: a **transcrição local de vídeo** (~4 GB) e o **Scrapling** (~1,5 GB — o Claude passa a ler páginas da web, útil pra pesquisa de concorrência). Responda sim ou não; qualquer um dá pra instalar depois.
 - **O app pede permissão** antes de cada comando (botão *Permitir/Allow*). É o comportamento normal — leia e autorize.
 - **Único caso que sai do app:** se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a **sua senha** — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.
 
