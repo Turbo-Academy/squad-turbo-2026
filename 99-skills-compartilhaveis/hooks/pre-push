@@ -56,10 +56,14 @@ fi
 n_real=$(perl -ne 'if(/^SKILLS=\(/../^\)/){s/#.*//; while(/([a-z0-9][a-z0-9-]+)/g){print "$1\n"}}' "$DIR/sync-skills.sh" | grep -v '^SKILLS$' | wc -l | tr -d ' ')
 n_doc=$(grep -oE '"n_skills": "[0-9]+"' "$ROOT/04-manual-de-uso/manual-dados.json" 2>/dev/null | grep -oE '[0-9]+')
 n_badge=$(grep -oE 'badge/skills-[0-9]+' "$ROOT/README.md" 2>/dev/null | grep -oE '[0-9]+')
+# docs de instalação não têm marcador (código/YAML) — o build-manual os atualiza
+# por padrão derivado; aqui só conferimos que não derivaram
+n_inst=$(grep -oE '<b>[0-9]+</b><span>skills instaladas' "$ROOT/instalacao-do-zero.html" 2>/dev/null | grep -oE '^<b>[0-9]+' | grep -oE '[0-9]+')
+n_claude=$(grep -oE '[0-9]+ skills \+ [0-9]+ agentes' "$ROOT/CLAUDE.md" 2>/dev/null | head -1 | grep -oE '^[0-9]+')
 
-if [[ "$n_real" != "$n_doc" || "$n_real" != "$n_badge" ]]; then
+if [[ "$n_real" != "$n_doc" || "$n_real" != "$n_badge" || "$n_real" != "${n_inst:-$n_real}" || "$n_real" != "${n_claude:-$n_real}" ]]; then
   echo ""
-  echo "❌ CONTAGENS — disco=$n_real · manual-dados.json=$n_doc · badge=$n_badge"
+  echo "❌ CONTAGENS — disco=$n_real · manual-dados.json=$n_doc · badge=$n_badge · instalacao.html=${n_inst:-?} · CLAUDE.md=${n_claude:-?}"
   echo "   → rode: $DIR/sync-skills.sh && bash $ROOT/04-manual-de-uso/build-manual.sh"
   falhas=$((falhas+1))
 else

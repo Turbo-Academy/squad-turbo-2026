@@ -32,8 +32,8 @@ Tipos que **NÃO** aceitamos sem alinhamento prévio:
 ### 1. Fork e clone
 
 ```bash
-gh repo fork SEU_USUARIO/lpsg-method --clone
-cd lpsg-method
+gh repo fork Turbo-Academy/squad-turbo-lpsg-7.0 --clone
+cd squad-turbo-lpsg-7.0
 ```
 
 ### 2. Cria branch

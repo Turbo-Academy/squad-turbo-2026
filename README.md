@@ -53,8 +53,8 @@ Aqui está meu cadastro: [YAML gerado no manual]
 ### Opção A · Manual interativo (recomendado)
 
 ```bash
-git clone https://github.com/SEU_USUARIO/lpsg-method.git
-cd lpsg-method
+git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0.git
+cd squad-turbo-lpsg-7.0
 open 04-manual-de-uso/manual.html
 ```
 
@@ -69,7 +69,7 @@ Lê `04-manual-de-uso/README.md` e segue os 5 arquivos numerados (00-04).
 ## 📦 O que tem aqui
 
 ```
-lpsg-method/
+squad-turbo-lpsg-7.0/
 │
 ├── 04-manual-de-uso/              📘 MANUAL INTERATIVO (comece aqui)
 │   ├── README.md                  ← entrada · sumário
@@ -100,7 +100,7 @@ lpsg-method/
 │   ├── lpsg-master-turbo.zip            ← orquestrador LPSG (instala primeiro)
 │   ├── estrutura-aulas-lpsg-turbo.zip
 │   ├── oferta-lpsg-turbo.zip
-│   ├── ...                        ← 35 skills (todas terminam em -turbo)
+│   ├── ...                        ← 43 skills (lista canônica no sync-skills.sh)
 │   ├── squad-turbo-completo.zip   ← 13 agentes Turbo (squad inteiro)
 │   └── agents/                    ← 13 agentes Squad Turbo
 │       ├── estrategista-turbo.md            (orquestrador estratégico)
@@ -112,7 +112,10 @@ lpsg-method/
 │       ├── trafego-turbo.md                 (Meta · Google Ads)
 │       ├── social-turbo.md                  (orgânico · Reels)
 │       ├── automacao-turbo.md               (n8n · ManyChat)
-│       └── cs-turbo.md                      (pós-venda · NPS)
+│       ├── cs-turbo.md                      (pós-venda · NPS)
+│       ├── closer-turbo.md                  (vendas 1:1 · recuperação D+1-D+7)
+│       ├── picasso-auditor-turbo.md         (gate visual anti-IA)
+│       └── revisor-copy-turbo.md            (gate textual anti-IA)
 │
 └── README.md                      ← você está aqui
 ```

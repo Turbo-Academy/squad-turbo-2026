@@ -14,7 +14,7 @@
 | `lpsg-master-turbo.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master-turbo/` | — |
 | `squad-turbo-completo.zip` | **<!--F:n_agentes-->13<!--/F--> agentes** (Squad + Picasso + Revisor + Closer) | `~/.claude/agents/` | — |
 
-## Contagem (atualizada 2026-06-23)
+## Contagem (atualizada 2026-08-15)
 
 - **<!--F:n_skills-->43<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)

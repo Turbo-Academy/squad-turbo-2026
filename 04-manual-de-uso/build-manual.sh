@@ -26,7 +26,10 @@ facts = {k: v for k, v in data.items() if not k.startswith("_")}
 
 targets = ["00-pre-requisitos.md", "01-intake.md", "02-passo-a-passo.md",
            "03-acoes-humanas.md", "04-troubleshooting.md", "README.md", "manual.html",
-           "../README.md", "../99-skills-compartilhaveis/README.md"]
+           "../README.md", "../99-skills-compartilhaveis/README.md",
+           # docs de instalação e CLAUDE.md: sem marcador (código/YAML quebra
+           # comentário HTML) — as contagens entram só pelos padrões derivados
+           "../CLAUDE.md", "../INSTALACAO-DO-ZERO.md", "../instalacao-do-zero.html"]
 
 total_changes = 0
 missing_keys = set()
@@ -85,6 +88,19 @@ if "n_zips_total" in facts and "n_skills" in facts:
     ]
 if "n_skills_instaladas" in facts:
     derivados.append((r"as \d+ skills instaladas", f"as {facts['n_skills_instaladas']} skills instaladas"))
+if "n_skills" in facts and "n_agentes" in facts:
+    s, a = facts["n_skills"], facts["n_agentes"]
+    derivados += [
+        # CLAUDE.md ("42 skills + 13 agentes pro Claude Code")
+        (r"\d+ skills \+ \d+ agentes", f"{s} skills + {a} agentes"),
+        # INSTALACAO-DO-ZERO .md e .html ("instala as 42 skills, os 13 agentes")
+        (r"instala as \d+ skills, os \d+ agentes", f"instala as {s} skills, os {a} agentes"),
+        # cards de estatística do instalacao-do-zero.html
+        (r"<b>\d+</b><span>skills instaladas", f"<b>{s}</b><span>skills instaladas"),
+        (r"<b>\d+</b><span>agentes especialistas", f"<b>{a}</b><span>agentes especialistas"),
+        # árvore do README raiz ("← 43 skills (lista canônica...")
+        (r"← \d+ skills \(lista canônica", f"← {s} skills (lista canônica"),
+    ]
 
 n_deriv = 0
 for fname in targets:

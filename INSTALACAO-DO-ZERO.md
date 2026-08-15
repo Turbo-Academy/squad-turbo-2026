@@ -4,7 +4,7 @@
 
 > **Para quem nunca usou o Claude Code.** Tudo pelo **app Claude Desktop**: você cola **um comando com o link do GitHub** e o próprio Claude baixa o squad e instala tudo. Sem Terminal, sem ZIP, sem git.
 >
-> Em **~15 minutos**: app instalado · conta conectada · Squad Turbo completo (42 skills + 13 agentes) respondendo.
+> Em **~15 minutos**: app instalado · conta conectada · Squad Turbo completo (43 skills + 13 agentes) respondendo.
 >
 > Prefere fazer pelo Terminal (CLI)? O caminho equivalente está no [README](README.md#instalar-em-outra-máquina), seção "Instalar em outra máquina".
 
@@ -50,7 +50,7 @@ Cole isto no chat e aperte Enter:
 instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0
 ```
 
-Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que estão nele e rodar o **instalador guiado** (`instalar-squad.sh`), que instala as 42 skills, os 13 agentes e as dependências, mostrando ✓ etapa por etapa.
+Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que estão nele e rodar o **instalador guiado** (`instalar-squad.sh`), que instala as 43 skills, os 13 agentes e as dependências, mostrando ✓ etapa por etapa.
 
 > 💡 **Se o Claude pedir mais direção** (ou você quiser controle fino), cole este complemento:
 >

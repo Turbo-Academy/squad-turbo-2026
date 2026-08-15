@@ -29,5 +29,5 @@ O manual humano dessa instalação é o [INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZE
 
 ## Sobre este repositório
 
-- Método **LPSG** (Lançamento Pago Semanal Gravado) da Turbo Academy: 42 skills + 13 agentes pro Claude Code. Comece pelo [README](README.md).
+- Método **LPSG** (Lançamento Pago Semanal Gravado) da Turbo Academy: 43 skills + 13 agentes pro Claude Code. Comece pelo [README](README.md).
 - **Mantenedores**: antes de editar skills/agentes, leia [99-skills-compartilhaveis/COMO-MANTER.md](99-skills-compartilhaveis/COMO-MANTER.md) — a fonte canônica é `~/.claude/`, as cópias do repo são geradas por scripts de sync. O repo é público: nunca commitar dados de clientes/leads (o hook de pre-push audita).
