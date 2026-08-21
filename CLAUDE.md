@@ -22,6 +22,7 @@ bash 99-skills-compartilhaveis/instalar-squad.sh
   - ffmpeg e yt-dlp via brew;
   - transcrição local: `bash ~/.claude/skills/watch/whisper-local/instalar.sh` (~220 MB; o modelo baixa ~3,5 GB no primeiro uso real);
   - leitura de páginas web: `bash 99-skills-compartilhaveis/instalar-scrapling.sh` (~400 MB de venv + ~1,1 GB de navegadores; registra o MCP `scrapling` no escopo user). **Pergunte antes** — é o passo mais pesado e nem todo mundo precisa.
+  - WhatsApp no chat (OpenWA): só pra quem TEM servidor OpenWA próprio (VPS + Docker + número pareado). Você não consegue completar este passo sozinho — a chave `x-api-key` **não deve passar pelo chat**: oriente o usuário a rodar `bash 99-skills-compartilhaveis/instalar-openwa.sh` no Terminal (o script pergunta URL e chave sem ecoar). Sem servidor, apenas mencione que existe e siga.
 - Se faltar o Homebrew, a instalação dele pede a senha do usuário — você não pode digitá-la: entregue o comando pronto pra pessoa colar no Terminal e continue depois.
 - No fim, rode o instalador de novo e mostre ao usuário a saída com tudo ✓. Lembre que as skills só carregam em **sessão nova** do Claude Code.
 

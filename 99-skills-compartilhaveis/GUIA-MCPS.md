@@ -73,6 +73,15 @@ Nenhum é obrigatório. A coluna "sem ele" diz o que acontece se você não cone
 | **NotebookLM** | Pergunta a notebooks de pesquisa com citação, gera Audio Overview | pesquisa | Pesquisa direto no site |
 | **Google Sheets** | Backup de respostas de pesquisa/ficha e espelho de métricas | dashboards, automações | Planilha na mão ou via n8n |
 | **Scrapling** ⭐ | Lê página de concorrente, landing e anúncio (HTTP, navegador ou stealth) e devolve markdown/texto; tira print | `pesquisador-mercado-turbo`, `criador-paginas-low-ticket-turbo` (engenharia reversa de página) | O Claude lê só o que o WebFetch alcança; página com JS ou bloqueio fica de fora |
+| **OpenWA** ⭐ | WhatsApp no chat: ler e enviar mensagem 1:1, grupos, etiquetas — no SEU servidor self-hosted | closer (recuperação 1:1), CS, automação | Closer e CS operam pelo wa.me + celular, como sempre |
+
+> **OpenWA instala junto com o squad** — é o passo 8 do `instalar-squad.sh` (opcional), ou avulso:
+> `bash 99-skills-compartilhaveis/instalar-openwa.sh`. **Requer servidor próprio**: o OpenWA
+> (github.com/rmyndharis/OpenWA) roda na SUA infraestrutura (VPS + Docker + número pareado) —
+> o script não instala o servidor, ele registra a conexão (MCP http, escopo user) com a URL e a
+> `x-api-key` que VOCÊ informa. Rode o script no Terminal: ele pergunta a chave **sem ecoar** —
+> chave não passa por chat, repo nem print. **Juízo no uso:** o WhatsApp bane número que dispara
+> em massa; o método é 1:1 (closer, CS, operação) — lista de transmissão não passa por aqui.
 
 > **Scrapling instala junto com o squad** — é o passo 7 do `instalar-squad.sh` (opcional, ~1,5 GB),
 > ou avulso: `bash 99-skills-compartilhaveis/instalar-scrapling.sh`. Ele já registra o MCP no escopo

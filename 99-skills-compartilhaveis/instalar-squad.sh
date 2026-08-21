@@ -10,7 +10,8 @@
 #   5. Dependências de vídeo (Homebrew · ffmpeg · yt-dlp)
 #   6. Transcrição local sem chave (venv do faster-whisper da skill watch)
 #   7. Scrapling — o Claude lê páginas da web (opcional, pesado)
-#   8. Opcionais (stack Picasso anti-IA · MCPs)
+#   8. OpenWA — WhatsApp no chat (opcional, requer servidor próprio)
+#   9. Opcionais (stack Picasso anti-IA · MCPs)
 #
 # Rode de dentro do repo clonado:
 #   bash 99-skills-compartilhaveis/instalar-squad.sh
@@ -44,7 +45,7 @@ echo "▶ Instalação guiada do Squad Turbo LPSG"
 echo "  Fonte: $DIR"
 
 # ── 1/7 · Claude Code ────────────────────────────────────────────────────────
-titulo "1/8 · Claude Code"
+titulo "1/9 · Claude Code"
 if command -v claude >/dev/null 2>&1; then
   ok "Claude Code instalado ($(claude --version 2>/dev/null | head -1))"
 else
@@ -55,7 +56,7 @@ else
 fi
 
 # ── 2/7 · Skills ─────────────────────────────────────────────────────────────
-titulo "2/8 · Skills proprietárias → $SKILLS_DST"
+titulo "2/9 · Skills proprietárias → $SKILLS_DST"
 mkdir -p "$SKILLS_DST"
 n_skills=0
 for z in "$DIR"/*.zip; do
@@ -67,7 +68,7 @@ done
 ok "$n_skills skills instaladas/atualizadas (todos os zips da pasta — lista canônica no sync-skills.sh)"
 
 # ── 3/7 · Agentes ────────────────────────────────────────────────────────────
-titulo "3/8 · Agentes → $AGENTS_DST"
+titulo "3/9 · Agentes → $AGENTS_DST"
 mkdir -p "$AGENTS_DST"
 n_ag=0
 for a in "$DIR"/agents/*-turbo.md; do
@@ -76,7 +77,7 @@ done
 ok "$n_ag agentes copiados (invocáveis com @nome-do-agente)"
 
 # ── 4/7 · Squad-core ─────────────────────────────────────────────────────────
-titulo "4/8 · Squad-core → $SQUADS_DST"
+titulo "4/9 · Squad-core → $SQUADS_DST"
 mkdir -p "$SQUADS_DST"
 if [[ -f "$DIR/squad-core-turbo.zip" ]]; then
   unzip -oq "$DIR/squad-core-turbo.zip" -d "$SQUADS_DST"
@@ -86,7 +87,7 @@ else
 fi
 
 # ── 5/7 · Dependências de vídeo (skill watch) ────────────────────────────────
-titulo "5/8 · Dependências de vídeo — ffmpeg + yt-dlp (skill watch)"
+titulo "5/9 · Dependências de vídeo — ffmpeg + yt-dlp (skill watch)"
 BREW_OK=false
 if command -v brew >/dev/null 2>&1; then BREW_OK=true; fi
 
@@ -108,7 +109,7 @@ for dep in ffmpeg yt-dlp; do
 done
 
 # ── 6/7 · Transcrição local sem chave (whisper-local) ────────────────────────
-titulo "6/8 · Transcrição local sem chave de API (faster-whisper)"
+titulo "6/9 · Transcrição local sem chave de API (faster-whisper)"
 WL="$SKILLS_DST/watch/whisper-local"
 if [[ -x "$WL/venv/bin/python" ]] && "$WL/venv/bin/python" -c "import faster_whisper" 2>/dev/null; then
   ok "venv do whisper-local já pronto"
@@ -125,7 +126,7 @@ else
 fi
 
 # ── 7/8 · Scrapling — o Claude lê páginas da web ─────────────────────────────
-titulo "7/8 · Scrapling — o Claude lê páginas da web (opcional)"
+titulo "7/9 · Scrapling — o Claude lê páginas da web (opcional)"
 SCR="$HOME/.claude/tools/scrapling"
 if [[ -x "$SCR/venv/bin/scrapling" ]] && "$SCR/venv/bin/python" -c "import mcp" 2>/dev/null; then
   ok "$("$SCR/venv/bin/scrapling" --version 2>/dev/null | tail -1) — já instalado"
@@ -140,8 +141,21 @@ else
   fi
 fi
 
-# ── 8/8 · Opcionais ──────────────────────────────────────────────────────────
-titulo "8/8 · Opcionais"
+# ── 8/9 · OpenWA — WhatsApp no chat ──────────────────────────────────────────
+titulo "8/9 · WhatsApp no chat — OpenWA (opcional · requer servidor próprio)"
+if claude mcp get openwa >/dev/null 2>&1; then
+  ok "MCP 'openwa' já registrado"
+else
+  echo "  Com um servidor OpenWA seu (github.com/rmyndharis/OpenWA · VPS + Docker"
+  echo "  + número pareado), o Claude lê e envia WhatsApp direto do chat — a"
+  echo "  ferramenta do closer (1:1) e do CS."
+  echo "  Tem um? Rode no Terminal: bash $DIR/instalar-openwa.sh"
+  echo "  (pergunta URL e chave sem ecoar — a chave não deve passar pelo chat)"
+  echo "  · pulado — opcional, não conta como pendência"
+fi
+
+# ── 9/9 · Opcionais ──────────────────────────────────────────────────────────
+titulo "9/9 · Opcionais"
 if [[ -d "$SKILLS_DST/frontend-design" && -d "$SKILLS_DST/impeccable" ]]; then
   ok "stack Picasso (auditoria visual anti-IA) já instalada"
 elif command -v npx >/dev/null 2>&1; then

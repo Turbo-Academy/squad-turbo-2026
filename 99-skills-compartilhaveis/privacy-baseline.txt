@@ -203,6 +203,8 @@ Claude Hopkins
 Claude Plugins
 Claude Preview
 Claude Read
+Claude Sonnet
+Clear Field
 Cliente João
 Cliente Maria
 Closer Humano
@@ -957,6 +959,7 @@ Prova Específica
 Prova Social
 Próprio Instagram
 Próximo Daily
+Próximo Passo
 Pular Gestor
 Pular Tier
 Pull Meta
@@ -1024,6 +1027,7 @@ Renan Botelho
 Renderiza Markdown
 Repo Git
 Repositório Git
+Requisição Externa
 Ressuscitar Projetos
 Resultado Inicial
 Resultado Prático
@@ -1103,6 +1107,7 @@ Social Media
 Social Proof
 Social Turbo
 Sociedade Turbo
+Solicitação Externa
 Solution Overview
 Soluções Anteriores
 Source Sans
@@ -1209,6 +1214,7 @@ Title Case
 Title Char
 Title Slide
 Toda Aula
+Toda Coleta
 Todd Brown
 Todo Output
 Todo Roteiro

@@ -81,3 +81,6 @@ tmp/
 # Logs de execução de Claude/agentes
 .claude/.tmp/
 .claude/logs/
+
+# Conexões MCP locais (URL + chave do OpenWA etc.) — NUNCA no repo público
+.mcp.json
