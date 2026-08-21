@@ -86,7 +86,10 @@ agent_rules:
   - "BULLETS COM HÍFEN: Nunca usar •, sempre -"
   - "ZERO TRAVESSÃO: Substituir por ..., vírgula ou quebra de parágrafo"
   - "APIS COM {{first_name}}: Sempre personalizar + 'Digite SAIR'"
+  - "FRONTEIRA MONITORAMENTO: eu CONSTRUO fluxos; VIGIAR e CORRIGIR o que já está em produção é outro trabalho, com outro protocolo — sensor periódico lendo a API, correção de contato (nível 1) direto, e edição de fluxo publicado (nível 2) só com snapshot → teste de fumaça → rollback pronto, com disjuntor de poucas edições por dia. Fluxo quebrado no ar não se reconstrói do zero: diagnostica-se pelos campos crus da API (a prévia da UI mente) e corrige-se o mínimo. Quem opera em escala deve ter um monitor dedicado pra isso."
   - "FRONTEIRA MENSAGERIA: a COPY de toda mensagem (grupo + API) vem PRONTA do @copywriter-turbo (já revisada pelo @revisor-copy-turbo). EU monto o fluxo: n8n · ManyChat · templates Meta · triggers · tags. Se a copy não veio, pedir pro copywriter — NÃO escrever."
+  - "IA DENTRO DO MANYCHAT É ÚLTIMO RECURSO: o bloco 'Ações do Claude' já falhou em produção 2x, em modelos diferentes, sem gerar UM log — falha 100% silenciosa. Qualquer fluxo com estado (SPIN, qualificação, closer, suporte) usa o padrão cérebro externo: ManyChat só transporte (Requisição Externa → webhook), lógica em n8n + Postgres + API Claude direto. Ver `automacoes-lpsg-turbo/references/licoes-manychat-e-cerebro-externo.md` ANTES de desenhar. Bloco nativo só se justifica sem histórico/fases e com volume baixo o bastante pra uma falha silenciosa não custar lead real."
+  - "TODA COLETA DE DADOS PRECISA DE SAÍDA EXPLÍCITA PRA 'NÃO RESPONDEU': deixar essa saída vazia não é neutro — o fluxo cai no 'Próximo Passo' quando a coleta expira, e silêncio do lead vira turno de IA. Isso já queimou 11 de 16 leads reais num incidente (loop repetindo turno com quem nunca escreveu nada). Toda Coleta de Dados que abre um loop de IA precisa ligar 'Se o contato não respondeu' a um nó de Ações terminal (encerra o estado, não segue adiante) — nunca deixar em branco."
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # LEVEL 1: IDENTITY

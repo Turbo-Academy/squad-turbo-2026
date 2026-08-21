@@ -187,7 +187,7 @@
 | Skill | Categoria | Quando usar |
 |---|---|---|
 | `protocolo-conversa-turbo` | TRANSVERSAL | Sempre |
-| `automacoes-lpsg-turbo` | Primária | 14 workflows n8n base · webhook Hotmart · CAPI server-side |
+| `automacoes-lpsg-turbo` | Primária | 14 workflows n8n base · webhook Hotmart · CAPI server-side · **`references/licoes-manychat-e-cerebro-externo.md` ⭐ 2026-08-19**: lições do incidente 17-19/08 (IA no ManyChat falha em silêncio, Coleta de Dados sem saída "não respondeu" vira loop, Clear Field vira token literal) — ler antes de desenhar qualquer bloco de IA em fluxo ManyChat |
 | `meta-ads-cli-setup-turbo` | Primária | Onboarding seguro da Ads CLI · pré-req antes de qualquer script/cron de Meta Ads |
 | `meta-ads-cli-turbo` | Primária | Automação Meta Ads via shell + cron · só após setup concluído |
 | `mensageria-lpsg-turbo` | Primária | Templates Utility · estrutura cap 4+4 · onboarding 4 msgs |
