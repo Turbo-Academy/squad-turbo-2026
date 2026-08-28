@@ -67,7 +67,7 @@ Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que 
 O que esperar durante a execução:
 
 - **Não precisa ter git instalado.** Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download). As instruções pra isso estão dentro do próprio repositório.
-- **Três opcionais vão aparecer** durante a instalação: a **transcrição local de vídeo** (~4 GB), o **Scrapling** (~1,5 GB — o Claude passa a ler páginas da web) e o **OpenWA** (WhatsApp no chat — só interessa se você tiver seu próprio servidor de WhatsApp; a maioria pula). Responda sim ou não; qualquer um dá pra instalar depois.
+- **Quatro opcionais vão aparecer** durante a instalação: a **transcrição local de vídeo** (~4 GB), o **Scrapling** (~1,5 GB — o Claude passa a ler páginas da web), o **OpenWA** (WhatsApp no chat) e o **Mautic** (e-mail marketing próprio). Os dois últimos rodam num servidor (VPS), não no seu Mac — se você não tiver um, o instalador te indica um. Responda sim ou não; qualquer um dá pra instalar depois.
 - **O app pede permissão** antes de cada comando (botão *Permitir/Allow*). É o comportamento normal — leia e autorize.
 - **Único caso que sai do app:** se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a **sua senha** — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.
 
@@ -148,6 +148,7 @@ O `@lpsg-master-turbo` roda as 10 fases do método LPSG de ponta a ponta: pesqui
 - **Slides premium de aula**, carrosséis e stories de Instagram, ebooks e manuais em HTML
 - **Análise estratégica de Instagram** (seu perfil ou concorrente) e **Meta Ads pela CLI oficial** (batelada, stop-loss, escala)
 - **WhatsApp no chat** (opcional, com seu servidor OpenWA): ler e responder mensagens 1:1, grupos e etiquetas — a recuperação do closer sem sair do Claude
+- **E-mail marketing próprio** (opcional, Mautic no seu VPS): nutrição por e-mail, landing pages, formulários e rastreamento — **sem custo por lead**, você paga só o servidor
 
 ### Experimente agora (cola no chat)
 

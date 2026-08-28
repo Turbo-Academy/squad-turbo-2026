@@ -68,6 +68,19 @@ Idempotente — rode de novo quando quiser, só faz o que faltar. No fim, **rein
 
 Instalação manual (passos equivalentes): seção "Instalar em outra máquina" do [README raiz](../README.md).
 
+### Ferramentas que o instalador oferece (opcionais)
+
+| Ferramenta | O que dá | Onde roda | Script |
+|---|---|---|---|
+| **Scrapling** | o Claude lê página com JS/bloqueio | seu Mac (~1,5 GB) | `instalar-scrapling.sh` |
+| **OpenWA** | WhatsApp no chat (1:1 do closer e do CS) | seu VPS | `instalar-openwa.sh` |
+| **Mautic** | e-mail marketing próprio, sem custo por lead | seu VPS | `instalar-mautic.sh` · [manual](./mautic-COMO-USAR.md) |
+
+> Sem VPS pro OpenWA ou pro Mautic? A indicação é a **Hostinger KVM 8** —
+> [hostinger.com/br](https://www.hostinger.com/br?REFERRALCODE=K6QJULIANH77) *(link de indicação)*.
+> O Mautic sobe 4 containers e o MySQL sozinho já pede 1-2 GB; nos planos menores
+> ele instala, mas engasga no primeiro envio grande.
+
 ## Skills externas referenciadas pelos agentes
 
 Os agentes referenciam skills que **não estão empacotadas aqui** e precisam ser instaladas separadamente. Estas skills residem em `~/.claude/skills/` (Claude Plugins, npx skills add, ou squad-turbo standalone):
