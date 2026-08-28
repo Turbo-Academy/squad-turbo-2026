@@ -156,7 +156,7 @@ Skills externas referenciadas pelos agentes (não empacotadas): ver `README.md` 
 
 **Instalação em máquina nova:** `instalar-squad.sh` (guiado, idempotente). Ele instala TODOS os zips da pasta sem lista própria — skill nova empacotada entra sozinha no instalador, nada a manter.
 
-**Ferramentas de terceiros (não são skills, não entram em zip):** vivem em `~/.claude/tools/` e têm script próprio chamado pelo instalador — hoje `instalar-scrapling.sh` (leitura de páginas web + MCP), `instalar-openwa.sh` (WhatsApp, conecta ao servidor do usuário) e `instalar-mautic.sh` (e-mail marketing, instala no VPS do usuário por SSH). Padrão pra adicionar outra: script `instalar-<nome>.sh` idempotente + manual `<nome>-COMO-USAR.md` copiado pro destino + um passo opt-in no `instalar-squad.sh` + linha no `GUIA-MCPS.md` se expuser MCP. Nunca commitar o venv nem binário de terceiro.
+**Ferramentas de terceiros (não são skills, não entram em zip):** vivem em `~/.claude/tools/` e têm script próprio chamado pelo instalador — hoje `instalar-scrapling.sh` (leitura de páginas web + MCP), `instalar-openwa.sh` (WhatsApp, conecta ao servidor do usuário) `instalar-mautic.sh` (e-mail marketing) e `instalar-n8n.sh` (automação) — estes dois instalam no VPS do usuário por SSH e convivem no mesmo servidor. Padrão pra adicionar outra: script `instalar-<nome>.sh` idempotente + manual `<nome>-COMO-USAR.md` copiado pro destino + um passo opt-in no `instalar-squad.sh` + linha no `GUIA-MCPS.md` se expuser MCP. Nunca commitar o venv nem binário de terceiro.
 
 ---
 

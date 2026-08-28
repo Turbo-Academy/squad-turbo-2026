@@ -1,6 +1,6 @@
 # Design
 
-> Seed pre-implementation. Captura a direção visual da stack Squad Turbo LPSG 7.2 antes de existir um projeto Next.js compilado. Re-rodar `$impeccable document` quando uma das 5 variações estiver implementada · pra capturar tokens reais.
+> Seed pre-implementation. Captura a direção visual da stack Squad Turbo LPSG 7.3 antes de existir um projeto Next.js compilado. Re-rodar `$impeccable document` quando uma das 5 variações estiver implementada · pra capturar tokens reais.
 
 ## Visual Theme
 

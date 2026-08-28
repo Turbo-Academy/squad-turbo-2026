@@ -75,11 +75,16 @@ Instalação manual (passos equivalentes): seção "Instalar em outra máquina" 
 | **Scrapling** | o Claude lê página com JS/bloqueio | seu Mac (~1,5 GB) | `instalar-scrapling.sh` |
 | **OpenWA** | WhatsApp no chat (1:1 do closer e do CS) | seu VPS | `instalar-openwa.sh` |
 | **Mautic** | e-mail marketing próprio, sem custo por lead | seu VPS | `instalar-mautic.sh` · [manual](./mautic-COMO-USAR.md) |
+| **n8n** | onde os 14 workflows do LPSG rodam | seu VPS | `instalar-n8n.sh` · [manual](./n8n-COMO-USAR.md) |
 
-> Sem VPS pro OpenWA ou pro Mautic? A indicação é a **Hostinger KVM 8** —
+> **Os três de servidor cabem no MESMO VPS** — Mautic, n8n e OpenWA, cada um no seu
+> subdomínio, todos atrás do mesmo proxy Caddy, sem conflito de porta. É assim que a
+> operação da Turbo roda hoje.
+>
+> Não tem servidor? A indicação é a **Hostinger KVM 8** —
 > [hostinger.com/br](https://www.hostinger.com/br?REFERRALCODE=K6QJULIANH77) *(link de indicação)*.
-> O Mautic sobe 4 containers e o MySQL sozinho já pede 1-2 GB; nos planos menores
-> ele instala, mas engasga no primeiro envio grande.
+> O KVM 8 aguenta os três juntos: só o Mautic sobe 4 containers e o MySQL já pede
+> 1-2 GB; nos planos menores instala, mas engasga no primeiro envio grande.
 
 ## Skills externas referenciadas pelos agentes
 
