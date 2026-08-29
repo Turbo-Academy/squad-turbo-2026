@@ -97,7 +97,7 @@ if "versao" in facts:
     v = facts["versao"]
     derivados += [
         # títulos e rodapés ("LPSG 7.0 · Squad Turbo", "Squad Turbo · LPSG 7.0")
-        # — o nome do repo é minúsculo (squad-turbo-lpsg-7.0) e NÃO casa aqui
+        # — o nome do repo (squad-turbo-2026) não carrega versão, então não casa aqui
         (r"LPSG \d+\.\d+", f"LPSG {v}"),
         # selo do ebook ("Método LPSG · v7.0")
         (r"Método LPSG · v\d+\.\d+", f"Método LPSG · v{v}"),

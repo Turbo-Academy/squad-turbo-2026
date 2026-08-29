@@ -7,8 +7,8 @@
 ## 📥 1. Clone o repo
 
 ```bash
-git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0.git
-cd squad-turbo-lpsg-7.0
+git clone https://github.com/Turbo-Academy/squad-turbo-2026.git
+cd squad-turbo-2026
 ```
 
 ## 📘 2. Abre o manual interativo

@@ -5,12 +5,12 @@
 **Baixar o repositório (se ainda não estiver baixado):** git NÃO é pré-requisito. Se `command -v git` falhar, **não dispare a instalação do Xcode Command Line Tools** (popup de ~2 GB que trava o fluxo) — baixe o ZIP com o curl nativo do macOS:
 
 ```bash
-curl -L https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0/archive/refs/heads/main.zip -o squad.zip
+curl -L https://github.com/Turbo-Academy/squad-turbo-2026/archive/refs/heads/main.zip -o squad.zip
 unzip -q squad.zip && rm squad.zip
-# cria a pasta squad-turbo-lpsg-7.0-main — trabalhe dentro dela
+# cria a pasta squad-turbo-2026-main — trabalhe dentro dela
 ```
 
-Com git presente, `git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0.git` é equivalente.
+Com git presente, `git clone https://github.com/Turbo-Academy/squad-turbo-2026.git` é equivalente.
 
 **Instalar:** rode o instalador guiado (idempotente — pode rodar quantas vezes precisar):
 

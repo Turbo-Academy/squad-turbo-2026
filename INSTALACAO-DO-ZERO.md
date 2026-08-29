@@ -47,7 +47,7 @@ O **Code** é a área do app em que o Claude tem mãos: lê arquivos e executa c
 Cole isto no chat e aperte Enter:
 
 ```
-instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0
+instale o squad github.com/Turbo-Academy/squad-turbo-2026
 ```
 
 Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que estão nele e rodar o **instalador guiado** (`instalar-squad.sh`), que instala as 43 skills, os 13 agentes e as dependências, mostrando ✓ etapa por etapa.
@@ -79,7 +79,7 @@ O que esperar durante a execução:
 
 **Tudo que acabou de ser instalado — skills, agentes e conexões (MCPs) — só carrega quando uma sessão nova abre.** A sessão da instalação não enxerga o que ela mesma instalou. Então:
 
-1. **Feche a sessão e abra uma nova** — desta vez escolhendo a pasta do squad que o Claude criou (`squad-turbo-lpsg-7.0`, dentro de Documentos)
+1. **Feche a sessão e abra uma nova** — desta vez escolhendo a pasta do squad que o Claude criou (`squad-turbo-2026`, dentro de Documentos)
 2. Digite `/skills` → a lista deve mostrar as skills do squad (`lpsg-master-turbo`, `oferta-lpsg-turbo`, `watch`…)
 3. Teste um agente — digite:
 

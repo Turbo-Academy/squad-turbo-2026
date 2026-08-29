@@ -32,8 +32,8 @@ Tipos que **NÃO** aceitamos sem alinhamento prévio:
 ### 1. Fork e clone
 
 ```bash
-gh repo fork Turbo-Academy/squad-turbo-lpsg-7.0 --clone
-cd squad-turbo-lpsg-7.0
+gh repo fork Turbo-Academy/squad-turbo-2026 --clone
+cd squad-turbo-2026
 ```
 
 ### 2. Cria branch

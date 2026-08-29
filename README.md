@@ -9,7 +9,7 @@
 [![Skills: 43](https://img.shields.io/badge/skills-43-orange.svg)](#skills)
 [![Agents: 13](https://img.shields.io/badge/agents-13-purple.svg)](#agents)
 
-> 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — tudo pelo **app Claude Desktop**: você cola `instale o squad github.com/Turbo-Academy/squad-turbo-lpsg-7.0` no Code e o próprio Claude baixa e instala tudo em ~15 min. Sem Terminal, sem ZIP, sem git. Versão bonita no navegador: **[ta.turboacademy.com.br/squadturbo](https://ta.turboacademy.com.br/squadturbo/)**.
+> 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — tudo pelo **app Claude Desktop**: você cola `instale o squad github.com/Turbo-Academy/squad-turbo-2026` no Code e o próprio Claude baixa e instala tudo em ~15 min. Sem Terminal, sem ZIP, sem git. Versão bonita no navegador: **[ta.turboacademy.com.br/squadturbo](https://ta.turboacademy.com.br/squadturbo/)**.
 
 ---
 
@@ -53,8 +53,8 @@ Aqui está meu cadastro: [YAML gerado no manual]
 ### Opção A · Manual interativo (recomendado)
 
 ```bash
-git clone https://github.com/Turbo-Academy/squad-turbo-lpsg-7.0.git
-cd squad-turbo-lpsg-7.0
+git clone https://github.com/Turbo-Academy/squad-turbo-2026.git
+cd squad-turbo-2026
 open 04-manual-de-uso/manual.html
 ```
 
@@ -69,7 +69,7 @@ Lê `04-manual-de-uso/README.md` e segue os 5 arquivos numerados (00-04).
 ## 📦 O que tem aqui
 
 ```
-squad-turbo-lpsg-7.0/
+squad-turbo-2026/
 │
 ├── 04-manual-de-uso/              📘 MANUAL INTERATIVO (comece aqui)
 │   ├── README.md                  ← entrada · sumário
