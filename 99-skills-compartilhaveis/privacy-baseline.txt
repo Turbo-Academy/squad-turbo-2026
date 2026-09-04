@@ -1283,6 +1283,7 @@ Vercel Analytics
 Vercel Dashboard
 Vercel Edge
 Vercel Speed
+Vercel Web
 Verificar Python
 Verify Business
 Versão Utility
