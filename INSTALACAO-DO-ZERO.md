@@ -1,12 +1,12 @@
-# 🚀 Instalação do zero — um comando no Claude e o squad instalado
+# 🚀 Instalação do zero — do Mac recém-tirado da caixa ao squad respondendo
 
 > 🌐 **Versão bonita deste manual:** [ta.turboacademy.com.br/squadturbo](https://ta.turboacademy.com.br/squadturbo/) — com botão de copiar em cada comando. (Offline: abra [`instalacao-do-zero.html`](instalacao-do-zero.html) do repo.)
 
-> **Para quem nunca usou o Claude Code.** Tudo pelo **app Claude Desktop**: você cola **um comando com o link do GitHub** e o próprio Claude baixa o squad e instala tudo. Sem Terminal, sem ZIP, sem git.
+> **Para quem nunca usou o Claude Code.** São **duas partes**: primeiro você prepara o Mac no Terminal (uma vez na vida, ~12 min), depois cola **um comando** no app do Claude e ele instala o squad inteiro.
 >
-> Em **~15 minutos**: app instalado · conta conectada · Squad Turbo completo (43 skills + 13 agentes) respondendo.
+> Total: **~25 minutos**. No fim: Mac preparado · app instalado · Squad Turbo completo respondendo.
 >
-> Prefere fazer pelo Terminal (CLI)? O caminho equivalente está no [README](README.md#instalar-em-outra-máquina), seção "Instalar em outra máquina".
+> Prefere fazer tudo pelo Terminal (CLI)? O caminho equivalente está no [README](README.md#instalar-em-outra-máquina), seção "Instalar em outra máquina".
 
 ---
 
@@ -14,23 +14,125 @@
 
 - [ ] Um computador **Mac** (Windows funciona também — veja a caixa no fim)
 - [ ] Uma **conta Claude paga** (plano Pro ou Max) — crie em [claude.ai](https://claude.ai)
-- [ ] **~1 GB de espaço livre** (+ opcionais: ~4 GB da transcrição local de vídeo · ~1,5 GB do Scrapling, que deixa o Claude ler páginas da web)
-- [ ] 15 minutos sem interrupção
+- [ ] **A senha do seu Mac** — vai ser pedida uma vez, na Etapa 2
+- [ ] **~2 GB de espaço livre** para o básico (os opcionais pesados vêm depois, e são escolha sua)
+- [ ] 25 minutos sem interrupção
 
 ---
 
-## Etapa 1 · Instalar o app Claude Desktop (5 min)
+## 🧭 O mapa: tudo que existe, em que ordem, e o que é obrigatório
+
+Leia esta tabela antes de começar. É o manual inteiro em 12 linhas — o resto do documento é o passo a passo de cada uma.
+
+| # | O quê | Onde | Obrigatório? | Tempo |
+|---|---|---|---|---|
+| 1 | **Ferramentas de linha de comando da Apple** (Xcode CLT) | Terminal | ✅ base | 3-5 min |
+| 2 | **Homebrew** — o instalador de programas do Mac | Terminal | ✅ base | 3-5 min |
+| 3 | **git · node · python · ffmpeg · yt-dlp** | Terminal (`brew`) | ✅ base | 4 min |
+| 4 | **App Claude Desktop** + login | Site + app | ✅ base | 5 min |
+| 5 | **Squad Turbo** — skills, agentes e templates | Chat do Claude | ✅ base | 5-10 min |
+| 6 | **Transcrição local de vídeo** (faster-whisper, sem chave de API) | Instalador pergunta | ⬜ opcional · ~4 GB | 10 min |
+| 7 | **Scrapling** — o Claude lê qualquer página da web | Instalador pergunta | ⬜ opcional · ~1,5 GB | 10 min |
+| 8 | **OpenWA** — WhatsApp dentro do chat | Instalador pergunta | ⬜ opcional · **precisa de VPS** | — |
+| 9 | **Mautic** — e-mail marketing próprio | Instalador pergunta | ⬜ opcional · **precisa de VPS** | — |
+| 10 | **n8n** — automação dos 14 workflows | Instalador pergunta | ⬜ opcional · **precisa de VPS** | — |
+| 11 | **MCPs** (Drive, NotebookLM, Meta Ads…) | Depois, quando quiser | ⬜ opcional | — |
+
+**Os 5 primeiros são o básico e não têm decisão a tomar** — instale todos. Do 6 em diante o instalador **pergunta um a um**, e "não" nunca é a resposta errada: dá pra instalar qualquer um depois, rodando o instalador de novo. Os itens 8, 9 e 10 rodam num servidor (VPS), não no seu Mac — **e cabem os três no mesmo servidor**; se você não tiver um, o instalador te indica.
+
+---
+
+# Parte 1 · Preparar o Mac (Terminal, ~12 min)
+
+> **Por que isto vem primeiro, e por que é no Terminal.** O Homebrew pede **a senha do seu Mac** — e senha é a única coisa que o Claude não digita por você, nunca. Se você pular esta parte, a instalação do squad anda até a metade e trava exatamente aqui. Fazendo agora, o resto corre sem interrupção.
+>
+> **É uma vez na vida.** Máquina já preparada? Pule pra Parte 2 — mas rode antes o comando de conferência do fim da Etapa 3.
+
+**Abra o Terminal:** `Cmd + Espaço` → digite `Terminal` → Enter. Abre uma janela com texto e um cursor piscando. É aí que vão os comandos abaixo — um de cada vez, Enter depois de cada um, esperando o anterior terminar.
+
+---
+
+## Etapa 1 · Ferramentas de linha de comando da Apple (3-5 min)
+
+```
+xcode-select --install
+```
+
+Abre uma janelinha do sistema pedindo confirmação → clique em **Instalar** e aceite os termos.
+
+> Se responder `command line tools are already installed`, ótimo: já estava lá, siga em frente.
+> Isso **não** é o Xcode inteiro (aqueles 12 GB) — são só as ferramentas de compilação, algumas centenas de MB. O Homebrew não vive sem elas.
+
+✅ **Checkpoint:** `xcode-select -p` responde com um caminho, tipo `/Library/Developer/CommandLineTools`.
+
+---
+
+## Etapa 2 · Homebrew — o instalador de programas do Mac (3-5 min)
+
+O Homebrew é o que deixa você instalar programas com um comando só. Praticamente tudo que vem depois passa por ele.
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Vai pedir a senha do seu Mac.** Digite e dê Enter — **o Terminal não mostra nada enquanto você digita**, nem asterisco, nem bolinha. É assim mesmo; não está travado.
+
+Quando terminar, o próprio Homebrew imprime um bloco chamado **"Next steps"** com dois ou três comandos. **Rode todos** — são eles que ensinam o Mac a achar o Homebrew. Em Mac com chip Apple (M1/M2/M3/M4) são estes:
+
+```
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+> **Mac Intel** (mais antigo): o caminho é `/usr/local/bin/brew`, não `/opt/homebrew/bin/brew`. Use o que o **seu** "Next steps" mostrou — ele já sabe qual é o seu caso. Na dúvida, copie de lá, não daqui.
+
+✅ **Checkpoint:** `brew --version` responde `Homebrew 4.x`. Se responder `command not found`, os comandos do "Next steps" não foram rodados — volte e rode.
+
+---
+
+## Etapa 3 · O básico: git, node, python, ffmpeg e yt-dlp (4 min)
+
+Um comando instala os cinco:
+
+```
+brew install git node python ffmpeg yt-dlp
+```
+
+O que cada um faz, pra você saber o que está pondo na máquina:
+
+| Programa | Pra quê o squad usa |
+|---|---|
+| **git** | baixar e atualizar o squad (e qualquer repositório) |
+| **node** | rodar o Claude Code e as ferramentas conectadas (MCPs) |
+| **python** | os scripts do squad — geradores de slide, carrossel, análise |
+| **ffmpeg** | cortar, converter e extrair quadros de vídeo |
+| **yt-dlp** | baixar vídeo do YouTube pro squad assistir de verdade |
+
+✅ **Checkpoint — cole tudo de uma vez e confira que os seis respondem com uma versão:**
+
+```
+brew --version && git --version && node --version && python3 --version && ffmpeg -version | head -1 && yt-dlp --version
+```
+
+Se **algum** responder `command not found`, rode `brew install <o que faltou>` e confira de novo. Não siga em frente com pendência aqui — é exatamente isso que trava a Parte 2.
+
+---
+
+# Parte 2 · Instalar o squad (app do Claude, ~15 min)
+
+## Etapa 4 · Instalar o app Claude Desktop (5 min)
 
 1. Baixe o app em **[claude.ai/download](https://claude.ai/download)**
 2. Abra o arquivo baixado e **arraste o Claude pra pasta Aplicativos**
-3. Abra o Claude (Cmd + Espaço → digite `Claude` → Enter)
+3. Abra o Claude (`Cmd + Espaço` → digite `Claude` → Enter)
 4. **Entre na sua conta** claude.ai — a conta **paga** (Pro ou Max)
 
 ✅ **Checkpoint:** o app abre e mostra o chat do Claude com seu nome/conta.
 
 ---
 
-## Etapa 2 · Abrir uma sessão no Code (2 min)
+## Etapa 5 · Abrir uma sessão no Code (2 min)
 
 O **Code** é a área do app em que o Claude tem mãos: lê arquivos e executa comandos numa pasta que você escolher.
 
@@ -42,7 +144,7 @@ O **Code** é a área do app em que o Claude tem mãos: lê arquivos e executa c
 
 ---
 
-## Etapa 3 · Colar o comando de instalação (5-10 min)
+## Etapa 6 · Colar o comando de instalação (5-10 min)
 
 Cole isto no chat e aperte Enter:
 
@@ -50,32 +152,54 @@ Cole isto no chat e aperte Enter:
 instale o squad github.com/Turbo-Academy/squad-turbo-2026
 ```
 
-Só isso. O Claude vai baixar o repositório pra pasta, ler as instruções que estão nele e rodar o **instalador guiado** (`instalar-squad.sh`), que instala as 43 skills, os 13 agentes e as dependências, mostrando ✓ etapa por etapa.
+Só isso. O Claude baixa o repositório pra pasta, lê as instruções que estão nele e roda o **instalador guiado** (`instalar-squad.sh`), que instala as skills, os agentes e os templates mostrando ✓ etapa por etapa.
 
 > 💡 **Se o Claude pedir mais direção** (ou você quiser controle fino), cole este complemento:
 >
 > ```
-> Baixe o repositório pra esta pasta (sem git no sistema, use o ZIP do
-> branch main via curl — NÃO instale o Xcode), rode
+> Baixe o repositório pra esta pasta e rode
 > bash 99-skills-compartilhaveis/instalar-squad.sh
 > e complete as pendências que ele marcar com ✗.
-> Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso)
-> e quero o Scrapling (leitura de páginas web, sei dos ~1,5 GB).
+> Já preparei o Mac: Homebrew, git, node, python, ffmpeg e yt-dlp estão instalados.
 > No fim, rode o instalador de novo e me mostre tudo ✓.
 > ```
 
 O que esperar durante a execução:
 
-- **Não precisa ter git instalado.** Mac novo não vem com git — e tudo bem: o Claude baixa o repositório direto (o repo é público e o Mac já vem com as ferramentas de download). As instruções pra isso estão dentro do próprio repositório.
-- **Cinco opcionais vão aparecer** durante a instalação: a **transcrição local de vídeo** (~4 GB), o **Scrapling** (~1,5 GB — o Claude passa a ler páginas da web), o **OpenWA** (WhatsApp no chat), o **Mautic** (e-mail marketing próprio) e o **n8n** (automação dos workflows). Os três últimos rodam num servidor (VPS), não no seu Mac — **e cabem todos no mesmo servidor**; se você não tiver um, o instalador te indica. Responda sim ou não; qualquer um dá pra instalar depois.
 - **O app pede permissão** antes de cada comando (botão *Permitir/Allow*). É o comportamento normal — leia e autorize.
-- **Único caso que sai do app:** se o seu Mac não tiver o Homebrew (o "instalador de programas" do Mac), a instalação dele pede a **sua senha** — e senha é algo que o Claude não pode digitar por você. Ele te entrega o comando exato pra colar no Terminal e continua de onde parou.
+- **Nada vai travar pedindo senha**, porque você já fez a Parte 1. Era esse o ponto dela.
+- **Os opcionais vão aparecer um a um** — é a Etapa 7, logo abaixo. Leia antes de responder.
 
-✅ **Checkpoint:** o Claude mostra a saída final do instalador com tudo ✓ (ou explica o que ficou pendente e por quê).
+✅ **Checkpoint:** o Claude mostra a saída final do instalador com o básico todo ✓.
 
 ---
 
-## Etapa 4 · Conferir se funcionou (2 min)
+## Etapa 7 · Os opcionais — o instalador pergunta, você decide
+
+Aqui o instalador para e pergunta, um de cada vez. Nenhum é obrigatório e **nenhum é definitivo**: para instalar depois, rode `bash 99-skills-compartilhaveis/instalar-squad.sh` de novo — ele é idempotente e só faz o que estiver faltando.
+
+| Opcional | O que você ganha | O que custa | Dá pra instalar depois? |
+|---|---|---|---|
+| **Transcrição local de vídeo** | transcrever aula, VSL e Reels **na sua máquina**, sem chave de API e sem o áudio sair do Mac | ~220 MB agora + ~3,5 GB no primeiro uso | sim |
+| **Scrapling** | o Claude lê qualquer página da web — inclusive landing de concorrente com JavaScript ou bloqueio | ~1,5 GB | sim |
+| **OpenWA** | WhatsApp dentro do chat: ler e responder 1:1, grupos e etiquetas | precisa de **VPS** com Docker | sim |
+| **Mautic** | e-mail marketing próprio: nutrição, landing, formulário e rastreamento **sem custo por lead** | precisa de **VPS** | sim |
+| **n8n** | os 14 workflows rodando sozinhos: webhook da Hotmart, lembrete de aula, tsunami, recuperação D+1-D+7 | precisa de **VPS** | sim |
+
+**Recomendação honesta pra primeira instalação:** **sim** para a transcrição local e o Scrapling — são os dois que mudam o dia a dia. **Não** para os três de servidor: volte neles quando tiver um VPS e um lançamento de verdade no ar, e aí instale os três no mesmo servidor.
+
+> 📦 **Skills de terceiro.** No fim, o instalador cita uma lista de skills úteis escritas por
+> **outras pessoas** — reescrita anti-IA, posts de LinkedIn, thumbnail, pesquisa de nicho. O squad
+> **não redistribui** essas: sem licença do autor, republicar não é nosso direito. A lista, com
+> autor, licença e origem de cada uma, está em
+> [`99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md`](99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md).
+> Instalar é opcional e vem da fonte do autor, com a licença do autor.
+
+✅ **Checkpoint:** o instalador terminou e listou o que ficou ✓ e o que você escolheu pular.
+
+---
+
+## Etapa 8 · Conferir se funcionou (2 min)
 
 **Tudo que acabou de ser instalado — skills, agentes e conexões (MCPs) — só carrega quando uma sessão nova abre.** A sessão da instalação não enxerga o que ela mesma instalou. Então:
 
@@ -95,19 +219,29 @@ O que esperar durante a execução:
 
 | Sintoma | Causa provável | Solução |
 |---|---|---|
+| `brew: command not found` depois de instalar o Homebrew | Os comandos do "Next steps" não foram rodados | Volte à Etapa 2 e rode todos — sem eles o Mac não acha o Homebrew |
+| Digitei a senha e não apareceu nada na tela | Comportamento normal do Terminal | Continue digitando e dê Enter — senha nunca aparece, nem como asterisco |
+| `brew install` falha com erro de compilação | Xcode CLT faltando | Refaça a Etapa 1 (`xcode-select --install`) e tente de novo |
 | Não acho o Code no app | Versão antiga do app | Atualize o Claude Desktop ([claude.ai/download](https://claude.ai/download)) |
-| O Claude diz que não pode rodar comandos | Sessão aberta no chat comum, não no Code | Refaça a Etapa 2 — tem que ser uma sessão do **Code**, com pasta escolhida |
-| O Claude não conseguiu baixar o repositório | Sem git ou rede bloqueou | Cole: `baixe o ZIP do branch main desse repositório com curl e descompacte` |
+| O Claude diz que não pode rodar comandos | Sessão aberta no chat comum, não no Code | Refaça a Etapa 5 — tem que ser uma sessão do **Code**, com pasta escolhida |
+| O Claude não conseguiu baixar o repositório | Rede bloqueou o git | Cole: `baixe o ZIP do branch main desse repositório com curl e descompacte` |
 | Pediu permissão e eu neguei sem querer | — | Peça: `tenta de novo o último comando` e autorize |
-| `/skills` não mostra as skills · agente não responde ao `@nome` · Scrapling não lê páginas | Sessão aberta antes do fim da instalação — nada recém-instalado carrega nela | Feche e abra uma sessão nova (Etapa 4) |
-| Instalador falou de Homebrew/senha | Mac sem Homebrew | Siga o comando que o Claude te der pro Terminal — é o único passo fora do app |
+| `/skills` não mostra as skills · agente não responde ao `@nome` · Scrapling não lê páginas | Sessão aberta antes do fim da instalação — nada recém-instalado carrega nela | Feche e abra uma sessão nova (Etapa 8) |
+| A instalação parou pedindo senha | Parte 1 pulada | Faça a Parte 1 no Terminal e peça no chat: `continue de onde parou` |
+| Mudei de ideia num opcional | — | Rode `bash 99-skills-compartilhaveis/instalar-squad.sh` de novo — ele só faz o que falta |
 | Travou em qualquer outra coisa | — | Cole no chat: `estou seguindo o INSTALACAO-DO-ZERO.md e travei nesta etapa: [descreva]` — ele mesmo te destrava |
 
 ---
 
 ## 🪟 E no Windows?
 
-O app Claude Desktop também existe pra Windows — Etapas 1 e 2 são iguais. No Windows, o Claude Code pode pedir o **Git for Windows** na primeira execução (ele avisa e aponta o download; instale com as opções padrão). Depois cole o mesmo comando da Etapa 3 acrescentando: `estou no Windows — adapte a instalação pro meu sistema`.
+O app Claude Desktop também existe pra Windows — as Etapas 4 a 8 são iguais. **A Parte 1 muda:** no lugar do Homebrew, o equivalente é o **winget**, que já vem no Windows 11. Abra o **PowerShell** e rode:
+
+```
+winget install Git.Git OpenJS.NodeJS Python.Python.3.12 Gyan.FFmpeg yt-dlp.yt-dlp
+```
+
+Depois **feche e reabra o PowerShell** (é o equivalente ao "Next steps" do Homebrew: sem reabrir, o Windows ainda não achou os programas novos) e confira com `git --version` e `node --version`. Em seguida cole o comando da Etapa 6 acrescentando: `estou no Windows — adapte a instalação pro meu sistema`.
 
 ---
 

@@ -7,7 +7,11 @@
 
 > **Nunca usou o Claude Code?** Comece pelo [`INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md) — ele cobre desde instalar o Claude até o squad respondendo, sem assumir nada.
 
-Antes de qualquer conta ou ferramenta: o Squad Turbo precisa estar na sua máquina. Um comando resolve, com auxílio etapa por etapa (skills · agentes · dependências de vídeo · transcrição local):
+Antes de qualquer conta ou ferramenta: o Squad Turbo precisa estar na sua máquina. Um comando resolve, com auxílio etapa por etapa (skills · agentes · dependências de vídeo · transcrição local).
+
+**No Mac, faça a Parte 1 do manual antes** (Xcode CLT → Homebrew → `brew install git node python ffmpeg yt-dlp`). O Homebrew pede a senha do seu Mac, e senha é a única coisa que o Claude não digita por você — sem ela a instalação anda até a metade e para. Levam ~12 min e valem para sempre; o passo a passo está em [`INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md), Parte 1.
+
+Com o Mac preparado:
 
 ```bash
 bash 99-skills-compartilhaveis/instalar-squad.sh

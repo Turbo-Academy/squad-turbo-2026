@@ -1,4 +1,4 @@
-# LPSG 7.3 · Squad Turbo
+# LPSG 8.0 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
@@ -225,8 +225,11 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 | Arquivo | Pra quê |
 |---|---|
 | [QUICKSTART.md](QUICKSTART.md) | 5 minutos · começar agora |
+| [INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md) | Do Mac na caixa ao squad respondendo · Homebrew primeiro |
+| [OPERACAO.md](OPERACAO.md) | Como saber que o agente fez o que disse · contrato de verificação, falhas silenciosas, lease, cota |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Como contribuir com o projeto |
 | [SECURITY.md](SECURITY.md) | Tokens · LGPD · boas práticas |
+| [99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md](99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md) | Skills de outros autores: opcionais, instaladas da fonte, nunca redistribuídas aqui |
 | [LICENSE](LICENSE) | MIT (código) + CC-BY-NC-SA (conteúdo) |
 
 ---

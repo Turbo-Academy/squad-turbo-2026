@@ -28,10 +28,15 @@ SKILLS_DST="$HOME/.claude/skills"
 AGENTS_DST="$HOME/.claude/agents"
 SQUADS_DST="$HOME/.claude/squads"
 avisos=0
+pulados=0
 
 titulo()   { printf '\n━━ %s\n' "$1"; }
 ok()       { printf '  ✓ %s\n' "$1"; }
 pendente() { printf '  ✗ %s\n' "$1"; avisos=$((avisos+1)); }
+# Opcional que o usuario RECUSOU nao e falha. Antes isso chamava pendente() e a
+# instalacao boa terminava com "⚠️ concluida com N pendencia(s)" — quem instalava
+# pela primeira vez achava que tinha quebrado. Falha continua em pendente().
+pulado()   { printf '  · %s\n' "$1"; pulados=$((pulados+1)); }
 
 perguntar() {  # perguntar "Instalar X?" → 0 = sim · Enter = sim
   local resp
@@ -121,7 +126,7 @@ elif [[ -f "$WL/instalar.sh" ]]; then
   if perguntar "Montar o venv agora?"; then
     bash "$WL/instalar.sh" && ok "whisper-local pronto" || pendente "whisper-local — falhou (rode: bash $WL/instalar.sh)"
   else
-    pendente "whisper-local — montar depois: bash $WL/instalar.sh"
+    pulado "whisper-local — quando quiser: bash $WL/instalar.sh"
   fi
 else
   pendente "watch/whisper-local não encontrado (a etapa 2 rodou?)"
@@ -139,7 +144,7 @@ else
   if perguntar "Instalar o Scrapling agora?"; then
     bash "$DIR/instalar-scrapling.sh" || pendente "Scrapling — falhou (rode: bash $DIR/instalar-scrapling.sh)"
   else
-    pendente "Scrapling — instalar depois: bash $DIR/instalar-scrapling.sh"
+    pulado "Scrapling — quando quiser: bash $DIR/instalar-scrapling.sh"
   fi
 fi
 
@@ -204,13 +209,31 @@ elif command -v npx >/dev/null 2>&1; then
 else
   echo "  · stack Picasso precisa de Node/npx — comandos no README"
 fi
+echo ""
+echo "  📦 Skills de TERCEIRO (opcionais, não vêm no pacote)"
+echo "     Existem skills úteis escritas por outras pessoas — reescrita anti-IA,"
+echo "     posts de LinkedIn, thumbnail de YouTube, pesquisa de nicho. O squad NÃO"
+echo "     as redistribui: sem licença do autor, republicar não é nosso direito."
+echo "     A lista, com autor, licença e origem de cada uma, está em:"
+echo "     99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md"
+echo "     São 19: 17 do pacote social-media-skills (Charlie Hills, MIT) mais a"
+echo "     humanizer (Siqi Chen, MIT) e a remotion. Instala-se da fonte, não daqui:"
+echo "       npx skills add charlie947/social-media-skills --skill <nome> --yes"
+echo "     Aviso: skill de terceiro vem com a licença do autor, não com a do squad,"
+echo "     e várias chegaram até nós SEM licença nenhuma — nesse caso o padrão legal"
+echo "     é todos os direitos reservados: use na sua máquina, não redistribua."
+echo ""
 echo "  · MCPs (Drive · Windsor · NotebookLM · n8n…): nenhum é obrigatório."
 echo "    Quando precisar, o passo a passo de conexão está em GUIA-MCPS.md"
 
 # ── resumo ───────────────────────────────────────────────────────────────────
 echo ""
 if (( avisos > 0 )); then
-  echo "⚠️  Instalação concluída com $avisos pendência(s) — veja os ✗ acima."
+  echo "⚠️  Instalação concluída com $avisos PROBLEMA(s) — veja os ✗ acima."
+elif (( pulados > 0 )); then
+  echo "✅ Tudo que é obrigatório está instalado."
+  echo "   $pulados opcional(is) você escolheu pular (·) — dá pra instalar depois,"
+  echo "   é só rodar este instalador de novo. Não é erro."
 else
   echo "✅ Tudo instalado."
 fi

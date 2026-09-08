@@ -130,6 +130,7 @@ Book Title
 Border Radius
 Both Groq
 Botão Impulsionar
+Bradley Bonanno
 Brain Rot
 Brand Adaptation
 Brand Personality
@@ -183,6 +184,7 @@ Caso Extremo
 Categoria Meta
 Categoria Utility
 Catálogo Hotmart
+Charlie Hills
 Charts Evento
 Checklist Antes
 Checklist Anti
@@ -717,6 +719,7 @@ Low Ticket
 Luma Dream
 Léo Tabari
 Lógica Inescapável
+Mac Intel
 Macro Text
 Mae Produtiva
 Magazine Cover
@@ -1092,6 +1095,7 @@ Sheets Recomendações
 Shopify Polaris
 Shopping Campaign
 Single Page
+Siqi Chen
 Sistema Completo
 Skills Turbo
 Slide Deck

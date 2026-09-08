@@ -1,4 +1,4 @@
-# Manual de Utilização · LPSG 7.3
+# Manual de Utilização · LPSG 8.0
 
 > Manual passo-a-passo pra rodar um projeto LPSG completo, do zero.
 > Qualquer pessoa consegue seguir — não precisa ser técnico.
