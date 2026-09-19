@@ -111,6 +111,7 @@ Base Structure
 Baseline Lighthouse
 Basic Auth
 Bebas Neue
+Belo Horizonte
 Bento Grid
 Bid Cap
 Big Domino
@@ -1057,6 +1058,7 @@ Roteiro Aula
 Roteiro Falado
 Route Handler
 Route Handlers
+Rua São
 Runway Gen
 Russell Brunson
 Sage Healing
