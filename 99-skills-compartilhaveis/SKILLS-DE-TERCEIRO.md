@@ -63,6 +63,7 @@ npx skills add charlie947/social-media-skills --skill <nome-da-skill> --yes
 | Skill | Para quê | Autor | Licença | Origem |
 |---|---|---|---|---|
 | `humanizer` | Reescreve texto para soar humano, tirando marcas de IA | Siqi Chen (`blader`) | MIT | `github.com/blader/humanizer` |
+| `avoid-ai-writing` | Audita e reescreve texto tirando os vícios de IA — é a que o `@copywriter-turbo` e o `@revisor-copy-turbo` chamam | Conor Bronsdon | MIT | `github.com/conorbronsdon/avoid-ai-writing` — `npx skills add conorbronsdon/avoid-ai-writing` |
 | `remotion` | Boas práticas de vídeo programático em React | time do Remotion (remotion.dev) | não declarada na cópia | **origem não confirmada** — o mesmo conteúdo está replicado em vários repositórios e a cópia não trouxe `LICENSE`, `_SOURCE.txt` nem `.git` para desempatar. Procure em remotion.dev antes de instalar de um espelho qualquer |
 
 ---
@@ -131,7 +132,7 @@ ambientes redigem `access_token`". O `SKILL.md` dela era inofensivo.
 
 Boa parte do que essas skills fazem já existe aqui com material próprio e integrado ao método:
 `criador-reels-turbo` (roteiro de Reels), `gerador-instagram-turbo` (carrossel, story, criativo),
-`avoid-ai-writing` (tirar cara de IA), `pesquisador-mercado-turbo` (pesquisa de nicho e concorrência),
+`protocolo-conversa-turbo` + `@revisor-copy-turbo` (tirar cara de IA — o motor de auditoria deles é a `avoid-ai-writing`, de terceiro, listada acima), `pesquisador-mercado-turbo` (pesquisa de nicho e concorrência),
 `distribuicao-turbo` (calendário C0-C3). Instale as de fora se quiser comparar — não porque falte
 cobertura.
 

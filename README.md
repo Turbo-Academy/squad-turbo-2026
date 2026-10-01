@@ -1,12 +1,12 @@
-# LPSG 8.0 · Squad Turbo
+# LPSG 8.1 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
-> Método completo · <!--F:n_skills-->43<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
+> Método completo · <!--F:n_skills-->47<!--/F--> skills do Claude · <!--F:n_agentes-->13<!--/F--> agents (Squad Turbo + Picasso + Revisor + Closer) · stack Picasso anti-IA · Meta Ads CLI integrada · gate de aprovação narrativa via briefing .docx + Drive · manual interativo HTML com 5 seções passo-a-passo.
 
 [![License: Dual](https://img.shields.io/badge/license-MIT_+_CC--BY--NC--SA-blue.svg)](LICENSE)
 [![Status: Production](https://img.shields.io/badge/status-production_ready-success.svg)]()
-[![Skills: 43](https://img.shields.io/badge/skills-43-orange.svg)](#skills)
+[![Skills: 47](https://img.shields.io/badge/skills-47-orange.svg)](#skills)
 [![Agents: 13](https://img.shields.io/badge/agents-13-purple.svg)](#agents)
 
 > 🚀 **Primeira vez com o Claude Code?** Comece pelo **[INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md)** — tudo pelo **app Claude Desktop**: você cola `instale o squad github.com/Turbo-Academy/squad-turbo-2026` no Code e o próprio Claude baixa e instala tudo em ~15 min. Sem Terminal, sem ZIP, sem git. Versão bonita no navegador: **[ta.turboacademy.com.br/squadturbo](https://ta.turboacademy.com.br/squadturbo/)**.
@@ -100,7 +100,7 @@ squad-turbo-2026/
 │   ├── lpsg-master-turbo.zip            ← orquestrador LPSG (instala primeiro)
 │   ├── estrutura-aulas-lpsg-turbo.zip
 │   ├── oferta-lpsg-turbo.zip
-│   ├── ...                        ← 43 skills (lista canônica no sync-skills.sh)
+│   ├── ...                        ← 47 skills (lista canônica no sync-skills.sh)
 │   ├── squad-turbo-completo.zip   ← 13 agentes Turbo (squad inteiro)
 │   └── agents/                    ← 13 agentes Squad Turbo
 │       ├── estrategista-turbo.md            (orquestrador estratégico)
@@ -124,7 +124,7 @@ squad-turbo-2026/
 
 ## 🤖 Skills do Claude
 
-<!--F:n_skills-->43<!--/F--> skills proprietárias (principais abaixo · lista canônica em `99-skills-compartilhaveis/sync-skills.sh`). Instale em `~/.claude/skills/`:
+<!--F:n_skills-->47<!--/F--> skills proprietárias (principais abaixo · lista canônica em `99-skills-compartilhaveis/sync-skills.sh`). Instale em `~/.claude/skills/`:
 
 | Skill | Função |
 |---|---|
@@ -227,6 +227,8 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 | [QUICKSTART.md](QUICKSTART.md) | 5 minutos · começar agora |
 | [INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md) | Do Mac na caixa ao squad respondendo · Homebrew primeiro |
 | [OPERACAO.md](OPERACAO.md) | Como saber que o agente fez o que disse · contrato de verificação, falhas silenciosas, lease, cota |
+| [licoes-operacao/](licoes-operacao/README.md) | 152 lições de operação, cada uma com o teste que prova que foi aplicada |
+| [CHANGELOG.md](CHANGELOG.md) | O que mudou em cada versão |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Como contribuir com o projeto |
 | [SECURITY.md](SECURITY.md) | Tokens · LGPD · boas práticas |
 | [99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md](99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md) | Skills de outros autores: opcionais, instaladas da fonte, nunca redistribuídas aqui |
@@ -237,10 +239,10 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 ## 📊 Status do projeto
 
 ```
-✅ <!--F:n_skills-->43<!--/F--> skills proprietárias instaladas e testadas
+✅ <!--F:n_skills-->47<!--/F--> skills proprietárias instaladas e testadas
 ✅ 13 agents (Squad Turbo + Picasso + Revisor + Closer)
 ✅ 10 estruturas com template + exemplo preenchido
-✅ 55 zips compartilháveis (43 skills + squad completo + squad-core + 10 templates)
+✅ 59 zips compartilháveis (47 skills + squad completo + squad-core + 10 templates)
 ✅ Manual interativo HTML · 5 seções interativas (setup, cadastro, execução, ações humanas, troubleshooting)
 ✅ Stack Picasso anti-IA integrada (frontend-design + impeccable + design-motion-principles)
 ✅ PRODUCT.md + DESIGN.md (fundação de marca + visual system)

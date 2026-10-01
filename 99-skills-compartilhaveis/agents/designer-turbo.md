@@ -10,6 +10,8 @@ skills:
   - frontend-design
   - lovable-style-turbo
   - ui-styling
+  # Direção de arte + diagramação de LP em HTML único (anti-cara-de-IA; deriva paleta/tipo do nicho)
+  - pagina-design-premium
   # Tokens, design system, identidade
   - design
   - design-tokens-turbo

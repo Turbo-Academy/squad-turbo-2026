@@ -285,7 +285,7 @@ function matches(value: number, condicao: Condicao): boolean {
 
 ```typescript
 // .env.local (opcional)
-NEXT_PUBLIC_ALERT_EMAIL=voce@seudominio.com.br
+NEXT_PUBLIC_ALERT_EMAIL=alertas@seudominio.com.br
 NEXT_PUBLIC_ALERT_WHATSAPP=+5511999999999
 NEXT_PUBLIC_ALERT_LEVEL=vermelho                # vermelho | amarelo | todos
 ```

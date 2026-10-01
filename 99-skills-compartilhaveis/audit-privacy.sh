@@ -29,7 +29,9 @@ extract() {
 # --cached --others --exclude-standard: pega trackeados E novos ainda não commitados
 # (sem isso, um zip recém-gerado passa batido e só é flagrado DEPOIS do push — já aconteceu)
 # 1. arquivos de texto
+# a própria baseline fica de fora: varrida, ela se re-aprovava e mantinha publicado nome que já saiu do conteúdo
 git ls-files --cached --others --exclude-standard '*.md' '*.html' '*.json' '*.txt' '*.sh' '*.yaml' '*.yml' \
+    ':!99-skills-compartilhaveis/privacy-baseline.txt' \
   | while IFS= read -r f; do cat "$f"; done | extract >> "$TMP"
 
 # 2. conteúdo dos binários (zips de skills, docx)

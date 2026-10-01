@@ -18,6 +18,8 @@ skills:
   - design-motion-principles
   # Páginas e front-end (direção)
   - paginas-lpsg-turbo
+  # Direção de arte de LP em HTML único — trava paleta/tipografia/motivo antes do brief pro @designer-turbo
+  - pagina-design-premium
   - designer-senior-turbo
   - lovable-style-turbo
   - page-optimizer-turbo

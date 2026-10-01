@@ -24,7 +24,7 @@ DIA_RITUAL_AO_VIVO:        "sábado"
 RITUAL_AO_VIVO:            "tira-dúvidas"
 
 # Tracking
-PIXEL_VENDAS:              "AbCdEfGh1234567890Xy"           # VK Digital (cluster Hotmart)
+PIXEL_VENDAS:              "AbCdEfGh1234567890Xy"           # VK Digital (cluster Hotmart) · id fictício
 GTM_ID:                    "GTM-P6273C6P"
 WEBHOOK_FICHA:             "https://n8n.turboacademy.com.br/webhook/ficha-interesse"
 URL_OBRIGADO:              "/ficha-de-interesse/obrigado"

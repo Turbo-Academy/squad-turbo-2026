@@ -210,7 +210,7 @@ FUNIS_DO_NICHO:           # checkbox multi · sempre incluir "Não rodo nenhum"
   - "Não rodo nenhum funil ainda"
 
 # === Tracking ficha ===
-PIXEL_VENDAS:              "{PIXEL_VENDAS_ID}"               # Ex: AbCdEfGh1234567890Xy (VK Digital)
+PIXEL_VENDAS:              "{PIXEL_VENDAS_ID}"               # Ex: AbCdEfGh1234567890Xy (VK Digital · id fictício)
 WEBHOOK_FICHA:             "{WEBHOOK_FICHA_ENVIADA}"         # n8n endpoint POST /ficha-interesse
 EVENTO_CAPI_QUALIFIED:     "LeadQualified"                   # custom event quando tier = HOT
 URL_OBRIGADO:              "/ficha-de-interesse/obrigado"

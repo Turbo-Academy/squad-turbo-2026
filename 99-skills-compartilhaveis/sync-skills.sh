@@ -55,6 +55,12 @@ SKILLS=(
   # ganhou o fallback whisper-local nosso. O venv (218 MB) fica FORA do zip —
   # quem instala roda whisper-local/instalar.sh uma vez.
   watch
+  # 8.1 · cortes verticais de gravação longa (gancho remontado, grade, legenda, bipe de nome)
+  cortes-tiktok-turbo
+  # 8.1 · direção de arte + diagramação de LP em HTML único, sem cara de IA
+  pagina-design-premium
+  # 8.1 · instalar skill de terceiro e amarrar no agente dono · diário da sessão
+  instalar-skill-no-squad fechar-sessao
 )
 
 novos=0; regen=0; emdia=0

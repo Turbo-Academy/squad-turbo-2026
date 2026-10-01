@@ -14,9 +14,9 @@
 | `lpsg-master-turbo.zip` | **Orquestrador** | `~/.claude/skills/lpsg-master-turbo/` | — |
 | `squad-turbo-completo.zip` | **<!--F:n_agentes-->13<!--/F--> agentes** (Squad + Picasso + Revisor + Closer) | `~/.claude/agents/` | — |
 
-## Contagem (atualizada 2026-08-15)
+## Contagem (atualizada 2026-10-01)
 
-- **<!--F:n_skills-->43<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->47<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)
@@ -35,13 +35,18 @@
     - `distribuicao-turbo` · funil de consciência C0-C3 (orgânico + impulsionamento de baixo custo)
     - `turbo-express` · ciclo de venda recorrente de 14 dias em grupo fechado de WhatsApp
     - `funil-8-turbo` · produto de entrada low ticket com campanha ASC + order bumps
+  - **4 novas na 8.1** ⭐ (2026-10-01):
+    - `cortes-tiktok-turbo` · gravação longa vira corte vertical (gancho remontado, grade por trecho, legenda, bipe de nome)
+    - `pagina-design-premium` · direção de arte + landing em HTML único, sem cara de IA
+    - `instalar-skill-no-squad` · instala skill de terceiro e amarra no agente dono
+    - `fechar-sessao` · diário da sessão em `_private/sessoes/` com índice consultável
 - **1 squad-core** (`squad-core-turbo.zip`): constitution · templates · checklists · frameworks (instalar em `~/.claude/squads/`)
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 55 zips** (43 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
+**Total: 59 zips** (47 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
-> **Cobertura total de skills (atualizada 2026-08-03):** as 125 skills instaladas no ambiente estão TODAS atribuídas a pelo menos um agente. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
+> **Cobertura das skills do squad (atualizada 2026-10-01):** toda skill empacotada aqui tem agente dono — o `pre-push` reprova skill órfã. No ambiente do mantenedor há as 177 skills instaladas (squad + externas + pessoais); só as do squad vêm neste pacote. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Conectar MCPs 🔌
 
@@ -127,14 +132,17 @@ Os agentes referenciam skills que **não estão empacotadas aqui** e precisam se
 | `honor-turbo` | estrategista |
 | `pptx` | designer |
 | `pdf` · `docx` · `xlsx` | pesquisador (extração de material bruto) — plugin Anthropic; se ausentes, o agente lê os arquivos diretamente |
-| `avoid-ai-writing` | copywriter, revisor-copy — auditoria/reescrita anti-IA automatizada |
+| `avoid-ai-writing` | copywriter, revisor-copy — auditoria/reescrita anti-IA automatizada · terceiro (Conor Bronsdon, MIT) — instalar da fonte, ver [SKILLS-DE-TERCEIRO.md](./SKILLS-DE-TERCEIRO.md) |
 | `youtube-full` | pesquisador, pesquisador-mercado, social — busca/transcrição YouTube via API |
 | `imagen` | designer — geração de imagem crua (Gemini) |
 | `playwright-skill` | designer — teste E2E das páginas Next.js |
 | `elevenlabs` | social — texto → áudio pt-BR |
 | `lpsg-guiado` | automacao — infra do lançamento recorrente por turmas (Postgres · n8n · WhatsApp · painel) · feita pela equipe Turbo · MCPs em [GUIA-MCPS.md](./GUIA-MCPS.md) |
 | `watch` | pesquisador, pesquisador-mercado, social — ASSISTE vídeo (frames + transcrição) · **empacotada aqui** (`watch.zip` — origem: claude-video, MIT) · requer ffmpeg+yt-dlp · transcrição local sem chave: rodar `whisper-local/instalar.sh` uma vez após instalar |
-| `skill-personalizer` · `skill-miner` · `skill-generalizer` · `instalar-skill-no-squad` · `file-organizer` | estrategista — gestão de skills e arquivos |
+| `skill-personalizer` · `skill-miner` · `skill-generalizer` · `file-organizer` | estrategista — gestão de skills e arquivos |
+| `instalar-skill-no-squad` · `fechar-sessao` | estrategista — instalar skill de terceiro e amarrar no agente dono · diário da sessão em `_private/sessoes/` · **empacotadas aqui desde a 8.1** |
+| `cortes-tiktok-turbo` | social — gravação longa vira corte vertical (gancho remontado, grade, legenda, bipe de nome, publicação) · **empacotada aqui desde a 8.1** · requer ffmpeg e python3 (o `scripts/preparar-pasta.sh` monta o venv) |
+| `pagina-design-premium` | designer, diretor-criativo — direção de arte + LP em HTML único sem cara de IA · **empacotada aqui desde a 8.1** |
 
 > Se um agente falhar ao tentar usar uma skill, verifique se ela está instalada em `~/.claude/skills/`. Mapeamento completo em [`agents/MATRIZ-SKILLS.md`](agents/MATRIZ-SKILLS.md).
 

@@ -26,6 +26,8 @@ skills:
   - skill-generalizer
   # Meta · instalar skill de terceiros e distribuir nos agentes do squad
   - instalar-skill-no-squad
+  # Diário da sessão (resumo salvo em _private/sessoes/ + índice consultável)
+  - fechar-sessao
   # Utilitários
   - find-skills
   - file-organizer

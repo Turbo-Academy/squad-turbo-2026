@@ -31,9 +31,11 @@ Ads Manager
 Ads Reais
 After Effects
 Agent Authority
+Agent Skill
 Agente Exclusivo
 Agente Faz
 Agente Turbo
+Albert Sans
 Alex Hormozi
 Algoritmo Meta
 All Tools
@@ -72,6 +74,7 @@ Aprovações Meta
 Após Aula
 Após Fase
 Aquecimento Invisível
+Archivo Narrow
 Arco Narrativo
 Arquitetura Advantage
 Arquivo Base
@@ -135,6 +138,7 @@ Bradley Bonanno
 Brain Rot
 Brand Adaptation
 Brand Personality
+Branded Content
 Bricolage Grotesque
 Brief Batelada
 Briefing Completo
@@ -168,6 +172,7 @@ Cambria Math
 Camila Souza
 Campanha Cost
 Campanha Meta
+Campanha Remarketing
 Campanha Rápida
 Campanhas Advantage
 Campanhas Google
@@ -234,7 +239,6 @@ Como Aplicar
 Como Carlos
 Como Criar
 Como Decidir
-Como Escalar
 Como Escolher
 Como Escrever
 Como Extrair
@@ -278,6 +282,7 @@ Configurar Webhook
 Configuração Meta
 Configuração Vercel
 Connect Data
+Conor Bronsdon
 Consciência Turbo
 Construindo Marca
 Construir Dobra
@@ -391,6 +396,7 @@ Descoberta Chocante
 Descoberta Científica
 Desejos Ocultos
 Design Decisions
+Design Premium
 Design Principles
 Design System
 Design Tokens
@@ -432,10 +438,12 @@ Early Hints
 Edit Bash
 Editorial Longform
 Editorial Premium
+Efeito Estético
+Efeito Goal
 Efeito Jequiti
+Efeito Von
 Electric Indigo
 Elementos Avançados
-Expert A
 Emagrecimento Hormonal
 Embarque Imediato
 Emil Kowalski
@@ -450,7 +458,6 @@ Entrega Utility
 Entregas Esperadas
 Environment Variables
 Equilíbrio Hormonal
-Equipe Turbo
 Equivalente Lovable
 Erro Fatal
 Erro Que
@@ -499,7 +506,6 @@ Exemplo Indulto
 Exemplo Plantão
 Exemplo Produto
 Exemplo Projeto
-Experiência Instantânea
 Experiência Pessoal
 Expert Leo
 Expert Secrets
@@ -518,7 +524,6 @@ Faturamento Bruto
 Faturamento Líquido
 Feature Grid
 Fechamento Emocional
-Expert C
 Final Block
 Fira Code
 First Byte
@@ -529,6 +534,7 @@ Fluxo Obrigatório
 Foco Advantage
 Focus Concursos
 Fonte Google
+Fonte Montserrat
 Fontes Inter
 Footer Char
 Footnote Text
@@ -569,6 +575,7 @@ Google Console
 Google Doc
 Google Docs
 Google Drive
+Google Empresas
 Google Fonts
 Google Maps
 Google Meet
@@ -588,7 +595,6 @@ Header Char
 Headline Imperativa
 Headline Patterns
 Heartbeat Control
-Helpers Python
 Helvetica Neue
 Hero Calculadora
 Hero Centralizado
@@ -623,7 +629,6 @@ Igreja Católica
 Imagem Open
 Imagens Instagram
 Imersão Funil
-Imersão Turbo
 Implementa Aqui
 Implementar Kanban
 Implementar Meta
@@ -635,7 +640,6 @@ Iniciate Checkout
 Inimigo Biológico
 Inimigo Oculto
 Inspeção Microscópica
-Instagram Direct
 Instagram Graph
 Instagram Reels
 Instagram Stories
@@ -651,6 +655,7 @@ Inter Fallback
 Inter Light
 Inter Medium
 Inter Regular
+Inter Tight
 Invalid Configuration
 Invalidação Redundante
 Inventário Aspiracional
@@ -704,7 +709,6 @@ Light Grid
 Light List
 Light Shading
 Lighthouse Mobile
-Expert B
 Line Tools
 Liquid Death
 List Bullet
@@ -777,7 +781,7 @@ Migra Extra
 Migra Italic
 Mockups Individuais
 Modelo Caixinha
-Modelo Dra
+Modelo Expert
 Modelo Mental
 Modelo Noite
 Modelo Workshop
@@ -789,8 +793,10 @@ Motion Gap
 Motion One
 Movimentos Psicológicos
 Mulheres Apagadas
+Music Usage
 Mãe Produtiva
 Método Funil
+Método Raiz
 Método Turbo
 Métricas Operacionais
 Métricas Usadas
@@ -915,6 +921,7 @@ Pop Quiz
 Por Mensagem
 Por Nicho
 Por Que
+Posição Serial
 Power Words
 Pra Meta
 Praticidade Real
@@ -1026,7 +1033,6 @@ Regras Priorizadas
 Regras Técnicas
 Rei Charles
 Reinicia Claude
-Reiniciar Claude
 Renan Botelho
 Renderiza Markdown
 Repo Git
@@ -1046,6 +1052,7 @@ Revelação Contraintuitiva
 Revelação Progressiva
 Revelação Temporal
 Revisor Copy
+Rich Results
 Risco Meta
 Robert Cialdini
 Roberto Carlos
@@ -1068,7 +1075,9 @@ Sales Pitch
 Sangria Invisível
 Schwartz Awareness
 Screen Fix
+Script Info
 Search Commands
+Search Console
 Section Divider
 Security Center
 Seed Deck
@@ -1081,6 +1090,7 @@ Seguir Instagram
 Selecionar System
 Sem Medo
 Sem Mistério
+Sem Pixel
 Sem Redux
 Sem Sacrifício
 Sem Terminal
@@ -1258,7 +1268,6 @@ Universo Algorítmico
 Upload Drive
 Upload Google
 Urgência Biológica
-Usar Direcionamento
 Usar Modo
 Usar Title
 Use Bloco

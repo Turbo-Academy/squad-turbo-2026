@@ -216,6 +216,11 @@ entre eles vira fila de arquivos. O que evita mensagem perdida:
 
 ---
 
+## O catálogo completo
+
+Este documento é o resumo de bolso. As **152 lições** inteiras — cada uma com quando acontece, o que fazer
+e como conferir — estão em [licoes-operacao/](licoes-operacao/README.md).
+
 ## Como acrescentar a este documento
 
 Um item entra aqui quando **custou tempo de verdade** e a causa não era óbvia pelo sintoma. Escreva
