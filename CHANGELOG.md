@@ -1,5 +1,13 @@
 # Changelog · Squad Turbo LPSG
 
+## 8.1.1 — 01/10/2026
+
+- Privacidade: os exemplos de automação deixam de apontar para um servidor n8n da casa e passam a usar o marcador
+  explícito `https://SEU-N8N.exemplo.com/webhook/...` (o caminho final continua igual, pra o template seguir didático).
+- O histórico do repositório foi reescrito para tirar de todas as versões antigas os nomes reais, ids, e-mails e
+  endereços que já tinham saído do conteúdo na 8.1. **Quem tem um clone antigo: apague e clone de novo** (um `git pull`
+  num clone antigo não funciona depois da reescrita). As tags v6.0 a v7.3 foram reescritas junto.
+
 ## 8.1 — 01/10/2026
 
 **Skills novas (43 → 47)**
