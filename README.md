@@ -1,4 +1,4 @@
-# LPSG 8.1.1 · Squad Turbo
+# LPSG 8.1.2 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >

@@ -1,5 +1,12 @@
 # Changelog · Squad Turbo LPSG
 
+## 8.1.2 — 02/10/2026
+
+- `cortes-tiktok-turbo`: o `SKILL.md` agora manda rodar tudo com `./.venv/bin/python` (o `python` do sistema não tem
+  `faster-whisper`, `cv2` nem `mediapipe`), dá o `cd` na pasta de trabalho antes dos scripts, mostra como gerar o
+  `audio.wav` (`ffmpeg -i <video> -vn -ac 1 -ar 16000 audio.wav`) e avisa que a primeira transcrição baixa cerca de
+  1,4 GB e leva alguns minutos. Só texto; nenhum script mudou. Achado no teste de ponta a ponta da 8.1.1.
+
 ## 8.1.1 — 01/10/2026
 
 - Privacidade: os exemplos de automação deixam de apontar para um servidor n8n da casa e passam a usar o marcador
