@@ -24,9 +24,9 @@ O manual vai abrir num browser. **Não precisa de servidor**, funciona offline.
 ## 🤖 3. Instala as skills + Squad Turbo
 
 ```bash
-# skills + agentes + squad-core (guarda antes o que você tiver editado)
+# skills + agentes + squad-core (guarda antes o que estiver diferente do pacote)
 bash 99-skills-compartilhaveis/instalar-squad.sh
-bash 99-skills-compartilhaveis/instalar-squad.sh --conferir   # tem que dizer SQUAD OK
+bash 99-skills-compartilhaveis/instalar-squad.sh --conferir   # tem que dizer SQUAD OK (com "~ difere do pacote": revise antes de dar como válido)
 
 # Reinicia Claude Code
 ```

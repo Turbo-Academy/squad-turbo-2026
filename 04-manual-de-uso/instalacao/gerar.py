@@ -50,16 +50,16 @@ Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simp
    c) stack Picasso, auditoria visual anti-IA (3 skills de terceiros, precisa de Node): os 3 comandos `npx skills add` do bloco "11/11 · Opcionais" do instalar-squad.sh.
    WhatsApp (OpenWA), e-mail marketing (Mautic) e automação (n8n) rodam num servidor (VPS), não neste computador: não instale agora, só me diga que existem e que o passo a passo está no README do repositório.
 
-6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em "SQUAD OK". Me mostre a saída inteira.
+6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em "SQUAD OK" (se aparecer "SQUAD OK (com N diferença(s) do pacote)", me mostre as linhas "~": é presença conferida, não prova de que nada mudou). Me mostre a saída inteira.
 
 7. Fechar e abrir. Me diga pra fechar o Claude e abrir de novo: skills e agentes só carregam numa sessão nova. Na sessão nova eu vou mandar "@estrategista-turbo, o que você faz e por onde eu começo?".'''
 
 ATUALIZAR = r'''Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem apagar nada meu. Me explique cada passo antes de rodar.
 
-1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Linhas com "~ personalizado" são arquivos que eu editei: me diga quais são. A atualização troca esses arquivos pela versão do pacote, mas o instalador guarda os meus antes, numa pasta nova em ~/.claude/squad-turbo-backups/.
+1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Linhas com "~ difere do pacote" são arquivos que não são iguais ao do pacote: pode ser edição minha, outra versão ou arquivo corrompido, então me diga quais são e não presuma a causa. A atualização troca esses arquivos pela versão do pacote, mas o instalador guarda antes o que estava instalado, numa pasta nova em ~/.claude/squad-turbo-backups/.
 2. Rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se falhar, renomeie a pasta pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo: git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
-3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo. Se ele disser que guardou arquivos meus, me diga a pasta. Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre.
-4. Rode o `--conferir` de novo. Tem que dizer "SQUAD OK".
+3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo. Se ele disser que guardou arquivos que diferiam do pacote, me diga a pasta e quais são. Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre.
+4. Rode o `--conferir` de novo. Tem que dizer "SQUAD OK" (se sobrar linha "~ difere do pacote", vai aparecer "SQUAD OK (com N diferença(s) do pacote)": me mostre as linhas).
 5. Me mostre o que mudou (o topo do ~/squad-turbo-2026/CHANGELOG.md, em português simples) e me diga pra fechar e abrir o Claude.'''
 
 REMOVER = r'''Oi, Claude. Quero tirar o Squad Turbo deste computador. Não apague nada ainda.
@@ -173,7 +173,7 @@ MAC = ('<div class="abertura"><p class="ola">Oi! No Mac são 3 passos.</p><p>Tud
        + passo("mac-2", "2", "App do Claude", "Colar a mensagem de instalação",
                "<p>Copie a mensagem abaixo pelo botão e cole na caixa de mensagem do Claude. Ele faz o resto e vai te explicando.</p>"
                + cmd("Cole na caixa de mensagem do Claude", INSTALAR, rotulo="Mensagem pro Claude", mensagem=True)
-               + prova("No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: %s skills · %s agentes · squad-core</strong>." % (NS, NA))
+               + prova("No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: %s skills · %s agentes · squad-core</strong> (ou <strong>SQUAD OK (com N diferença(s) do pacote)</strong>, se algum arquivo diferir do pacote)." % (NS, NA))
                + momentos(
                    ("O Claude pede pra aprovar um comando", "Antes de rodar algo, o Claude mostra o comando e pergunta se pode.", "Leia a explicação dele e aprove. Se não entendeu o que o comando faz, pergunte antes: ele explica.", "Acontece várias vezes. O Claude fica parado até você responder."),
                    ("As ferramentas de linha de comando do Mac", "Uma janela do macOS dizendo que o comando precisa das ferramentas de desenvolvedor de linha de comando, com os botões Instalar, Agora Não e Obter o Xcode.", "Clique em <strong>Instalar</strong> e aceite a licença. Não precisa do Xcode inteiro. Quando terminar, escreva no chat que terminou.", "Alguns minutos. A barra às vezes fica parada um tempo: espere."),
@@ -213,7 +213,7 @@ WIN = ('<div class="abertura"><p class="ola">Oi! No Windows são 5 passos.</p><p
                + cmd("Cole na janela do Ubuntu", "cd ~ && claude")
                + "<p>E cole a mensagem abaixo, inteira, na caixa do Claude Code. Os comandos com <code>sudo</code> que o Claude mostrar você roda numa segunda janela do Ubuntu (menu Iniciar, Ubuntu).</p>"
                + cmd("Cole no Claude Code, na janela do Ubuntu", INSTALAR, rotulo="Mensagem pro Claude", mensagem=True)
-               + prova("No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: %s skills · %s agentes · squad-core</strong>." % (NS, NA))
+               + prova("No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: %s skills · %s agentes · squad-core</strong> (ou <strong>SQUAD OK (com N diferença(s) do pacote)</strong>, se algum arquivo diferir do pacote)." % (NS, NA))
                + momentos(("O Claude Code pergunta antes de rodar um comando", "Na janela do Ubuntu, antes de um comando, ele pergunta <em>Do you want to proceed?</em> com as opções 1. Yes, 2. Yes, and don't ask again e 3. No.", "Escolha <strong>1. Yes</strong> e aperte <kbd>Enter</kbd>, ou a 2 pra ele não perguntar de novo aquele tipo de comando naquela pasta. Use as setas pra mudar a opção.", "Fica parado até você escolher.")))
        + passo("win-5", "5", "Ubuntu · Claude Code", "Fechar, abrir e testar",
                "<p>Com o <strong>SQUAD OK</strong> na tela, digite <code>/exit</code>, rode <code>claude</code> de novo na mesma janela e mande:</p>"
@@ -237,11 +237,11 @@ B = cap("b", "B", "Instalar", "Escolha o seu computador e siga na ordem. No Mac,
             ("Scrapling", "O Claude lê página de concorrente, landing e anúncio direto, sem você escrever script.", "~1,5 GB"),
             ("Stack Picasso", "Auditoria visual anti-IA (3 skills de terceiros, pelo npx).", "pequeno"),
             ("OpenWA, Mautic, n8n", "WhatsApp, e-mail marketing e automação. Rodam num servidor (VPS), cada um com instalador próprio no repositório.", "no servidor"),
-        ]) + "<p>Quer instalar um depois? Peça ao Claude: \"instala o opcional X do Squad Turbo\". O instalador pode rodar de novo quantas vezes quiser: o que você editou ele guarda numa cópia antes de trocar.</p>")
+        ]) + "<p>Quer instalar um depois? Peça ao Claude: \"instala o opcional X do Squad Turbo\". O instalador pode rodar de novo quantas vezes quiser: o que estiver diferente do pacote ele guarda numa cópia antes de trocar.</p>")
     + sec("b3", "B3", "Conferir que ficou tudo certo", "Um comando diz se está tudo no lugar.",
         cmd("Peça ao Claude pra rodar, ou rode no Terminal / Ubuntu", "bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir")
         + prova("<strong>SQUAD OK: %s skills · %s agentes · squad-core</strong>. Se aparecer <code>SQUAD INCOMPLETO</code>, as linhas com ✗ dizem o que falta: peça ao Claude pra rodar o instalador de novo." % (NS, NA))
-        + "<p>O <code>--conferir</code> compara cada arquivo instalado, byte a byte, com o do pacote. <strong>✗ incompleto</strong> é arquivo que falta ou ficou vazio: quebra a skill. <strong>~ personalizado</strong> é arquivo que você editou: não é erro, e ele nunca escreve nada.</p>"
+        + "<p>O <code>--conferir</code> compara cada arquivo instalado, byte a byte, com o do pacote. <strong>✗ incompleto</strong> é arquivo que falta ou ficou vazio: quebra a skill. <strong>~ difere do pacote</strong> é arquivo que existe mas não é igual ao do pacote: pode ser personalização sua, outra versão ou arquivo corrompido. Não reprova, e ele nunca escreve nada. Se houver ~, a última linha vira <strong>SQUAD OK (com N diferença(s) do pacote)</strong>: é presença conferida com diferenças, não garantia de integridade integral. Revise as linhas ~ antes de considerar válido.</p>"
         + "<p>Linhas com · (ponto) não são erro: avisam um programa que falta pra algumas skills de vídeo. Não sabe ler uma linha? Cole a saída pro Claude e pergunte.</p>"),
     ancora=None)
 
@@ -288,9 +288,9 @@ EE = cap("e", "E", "Quando trava", "O sintoma, o que fazer e o que nunca fazer."
             ("Depois de instalar, <code>@estrategista-turbo</code> não responde como agente", "A sessão é a mesma da instalação. Feche o Claude e abra de novo, numa sessão nova."),
             ("<code>git pull</code> falhou com erro de histórico", "A pasta é de antes de 01/10/2026. Peça ao Claude pra renomear a pasta antiga e clonar de novo (a mensagem de instalação já faz isso)."),
             ("<code>SQUAD INCOMPLETO</code> no --conferir", "Peça ao Claude pra rodar o instalador de novo. Se o mesmo item continuar faltando, mande a saída pra Turbo."),
-            ("<code>~ personalizado</code> no --conferir", "Você (ou o Claude) editou aquele arquivo. Não é erro. Se rodar o instalador, ele guarda o seu em <code>~/.claude/squad-turbo-backups/&lt;data-hora&gt;/</code> e põe a versão do pacote; pra voltar o seu, copie de lá pro mesmo caminho dentro de <code>~/.claude/</code>."),
+            ("<code>~ difere do pacote</code> no --conferir", "Aquele arquivo não é igual ao do pacote. Pode ser personalização sua, outra versão do pacote ou arquivo corrompido: o comando só prova a diferença, não a causa. Não reprova, mas revise antes de considerar válido (a última linha fica <code>SQUAD OK (com N diferença(s) do pacote)</code>). Se rodar o instalador, ele guarda o que estava instalado em <code>~/.claude/squad-turbo-backups/&lt;data-hora&gt;/</code> e põe a versão do pacote; pra voltar o antigo, copie de lá pro mesmo caminho dentro de <code>~/.claude/</code>."),
             ("<code>INSTALAÇÃO INCOMPLETA</code> ou <code>FALHOU — etapa</code> no instalador", "A linha diz a etapa e o arquivo. Costuma ser pasta sem permissão de escrita ou download corrompido: peça ao Claude pra baixar de novo (pull ou clone) e rodar o instalador. Nada é dado como instalado enquanto essa linha aparecer."),
-            ("<code>não consegui criar a pasta de cópia</code>", "O instalador não conseguiu guardar os seus arquivos editados e parou antes de mexer em qualquer coisa. Peça ao Claude pra ver a permissão de <code>~/.claude/squad-turbo-backups</code>."),
+            ("<code>não consegui criar a pasta de cópia</code>", "O instalador não conseguiu guardar os arquivos que diferiam do pacote e parou antes de mexer em qualquer coisa. Peça ao Claude pra ver a permissão de <code>~/.claude/squad-turbo-backups</code>."),
             ("<code>command not found: brew</code> depois de instalar a Homebrew", "Faltou rodar as linhas do \"Next steps\" que a Homebrew imprimiu no fim. Cole o bloco pro Claude."),
             ("No Ubuntu, <code>claude: command not found</code>", "A linha 3 do passo 3 não terminou. Rode de novo e confira a versão."),
             ("O Claude pediu a sua senha no chat", "Não mande. Diga pra ele mostrar a linha, rode você mesmo no Terminal (Mac) ou numa segunda janela do Ubuntu (Windows)."),
@@ -466,12 +466,12 @@ def markdown():
               "5. Com o `SQUAD OK`, `/exit`, `claude` de novo e mande `@estrategista-turbo, o que você faz e por onde eu começo?`.", "",
               "## A mensagem pro Claude (Mac e Windows)", "", "É uma mensagem só. Copie tudo e cole de uma vez.", "", "```text", INSTALAR, "```", "",
               "## Conferir", "", "```bash", "bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir", "```", "",
-              f"Tem que terminar em `SQUAD OK: {NS} skills · {NA} agentes · squad-core`.", "",
+              f"Tem que terminar em `SQUAD OK: {NS} skills · {NA} agentes · squad-core` (ou `SQUAD OK (com N diferença(s) do pacote)` se algum arquivo diferir: presença conferida, sem garantia de integridade integral).", "",
               "## Atualizar pra versão nova", "", "```text", ATUALIZAR, "```", "",
               "## Quando trava", "", "- Agente não responde depois de instalar: feche o Claude e abra numa sessão nova.",
               "- `git pull` falhou com erro de histórico: a pasta é de antes de 01/10/2026; o Claude renomeia e clona de novo.",
-              "- `SQUAD INCOMPLETO`: rode o instalador de novo. O `--conferir` compara cada arquivo byte a byte: `✗ incompleto` = falta ou vazio; `~ personalizado` = você editou (não é erro).",
-              "- Arquivo seu editado: o instalador guarda uma cópia em `~/.claude/squad-turbo-backups/<data-hora>/` antes de trocar; pra voltar, copie de lá.",
+              "- `SQUAD INCOMPLETO`: rode o instalador de novo. O `--conferir` compara cada arquivo byte a byte: `✗ incompleto` = falta ou vazio; `~ difere do pacote` = existe mas não é igual (personalização sua, outra versão ou arquivo corrompido: revise; não reprova, e a última linha vira `SQUAD OK (com N diferença(s) do pacote)`).",
+              "- Arquivo que difere do pacote: o instalador guarda uma cópia em `~/.claude/squad-turbo-backups/<data-hora>/` antes de trocar; pra voltar, copie de lá.",
               "- `INSTALAÇÃO INCOMPLETA` / `FALHOU — etapa N`: a linha diz o que falhou; baixe de novo e rode o instalador. Ele termina com erro (código diferente de zero) enquanto houver falha.",
               "- Mac Intel sem Homebrew: a linha oficial não instala mais; use `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/f4aa1b1ca5/install.sh)\"` no Terminal.",
               "- Nunca mande senha, token ou código pelo chat do Claude.", "",

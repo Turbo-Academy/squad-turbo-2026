@@ -1,4 +1,4 @@
-# Mapa de Skills · Squad Turbo LPSG 9.0.1
+# Mapa de Skills · Squad Turbo LPSG 9.0.2
 
 > **Como ler:** cada agente carrega `protocolo-conversa-turbo` primeiro (transversal · 8 padrões + anti-bajulação + travas universais), depois as skills do domínio dele. A coluna "QUANDO USAR" diz em que momento da jornada o agente aciona cada skill.
 

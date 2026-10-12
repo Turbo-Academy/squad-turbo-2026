@@ -1,4 +1,4 @@
-# LPSG 9.0.1 · Squad Turbo
+# LPSG 9.0.2 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
@@ -151,12 +151,12 @@ squad-turbo-2026/
 bash 99-skills-compartilhaveis/instalar-squad.sh
 ```
 
-Pode rodar de novo quando quiser: arquivo que você editou é copiado antes para `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/` (pasta nova a cada execução), e se a cópia falhar ele para sem mexer em nada. Falha numa etapa obrigatória termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code** (skills aparecem em `/skills`, agentes com `@nome-do-agente`).
+Pode rodar de novo quando quiser: arquivo que difere do pacote (pode ser edição sua, outra versão ou arquivo corrompido) é copiado antes para `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/` (pasta nova a cada execução), e se a cópia falhar ele para sem mexer em nada. Falha numa etapa obrigatória termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code** (skills aparecem em `/skills`, agentes com `@nome-do-agente`).
 
 <details>
 <summary>Prefere instalar à mão? (passos equivalentes)</summary>
 
-> ⚠️ À mão não há cópia de segurança: `unzip -o` e `cp` trocam, sem aviso, skill, agente ou modelo que você editou. Se já tem o squad instalado e mexeu em algo, use o instalador acima.
+> ⚠️ À mão não há cópia de segurança: `unzip -o` e `cp` trocam, sem aviso, skill, agente ou modelo que estiver diferente do pacote, inclusive o que você tenha editado. Se já tem o squad instalado e mexeu em algo, use o instalador acima.
 
 ```bash
 # 1. Skills proprietárias (TODOS os zips — a lista canônica vive no sync-skills.sh)

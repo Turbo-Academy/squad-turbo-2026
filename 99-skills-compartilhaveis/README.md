@@ -69,7 +69,7 @@ Resumo:
 bash instalar-squad.sh
 ```
 
-Pode rodar de novo quando quiser. Arquivo que você editou (skill, agente ou squad-core diferente do pacote) é copiado antes, para uma pasta nova em `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/`; se a cópia falhar, ele para sem mexer em nada. Etapa obrigatória que falha termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code**.
+Pode rodar de novo quando quiser. Arquivo que difere do pacote (skill, agente ou squad-core; pode ser edição sua, outra versão ou arquivo corrompido) é copiado antes, para uma pasta nova em `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/`; se a cópia falhar, ele para sem mexer em nada. Etapa obrigatória que falha termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code**.
 
 Instalação manual (passos equivalentes): seção "Instalar em outra máquina" do [README raiz](../README.md).
 

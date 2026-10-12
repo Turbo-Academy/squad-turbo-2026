@@ -1,5 +1,17 @@
 # Changelog · Squad Turbo LPSG
 
+## 9.0.2 — 12/10/2026
+
+**Texto: o instalador não atribui causa que não provou**
+
+- O `--conferir` só prova que o arquivo **difere do pacote**. Pode ser personalização sua, outra versão do pacote, truncamento não
+  vazio ou corrupção, e o código não distingue. O rótulo `~ personalizado` virou `~ difere do pacote (pode ser personalização
+  sua, outra versão ou arquivo corrompido — revise)`, e as mensagens "arquivo(s) seus guardados" viraram "arquivo(s) que
+  diferiam do pacote guardados".
+- Havendo diferença, a linha final passa de `SQUAD OK: …` para `SQUAD OK (com N diferença(s) do pacote): …` e o instalador diz que é
+  presença conferida com diferenças, sem prometer integridade integral. Sem diferença a linha continua `SQUAD OK: 49 skills · 13 agentes · squad-core`.
+- Mesmo ajuste no manual de instalação, no README, no QUICKSTART e no CLAUDE.md. Lógica do instalador e códigos de saída iguais aos da 9.0.1.
+
 ## 9.0.1 — 12/10/2026
 
 **Instalador: o que você personalizou não se perde mais**

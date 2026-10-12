@@ -22,8 +22,9 @@
 # Idempotente: pode rodar de novo à vontade.
 # Sem terminal interativo, as etapas opcionais são puladas com aviso.
 #
-# Personalização nunca se perde: antes de trocar qualquer arquivo de skill,
-# agente ou squad-core que esteja DIFERENTE do pacote (você editou), o
+# Nada que difere do pacote se perde: antes de trocar qualquer arquivo de skill,
+# agente ou squad-core que esteja DIFERENTE do pacote (pode ser edição sua,
+# outra versão do pacote ou arquivo corrompido: o instalador não sabe qual), o
 # instalador guarda uma cópia numa pasta nova e única em
 #   ~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/
 # Se não conseguir guardar, para ANTES de tocar em qualquer coisa (rc 3).
@@ -81,10 +82,11 @@ if [[ "${1:-}" == "--conferir" ]]; then
   # Confere INTEGRIDADE, não só presença: cada arquivo de cada zip é comparado
   # byte a byte com o instalado. Dois resultados diferentes:
   #   ✗ incompleto   — arquivo do pacote ausente ou vazio (quebra a skill) → rc 1
-  #   ~ personalizado — arquivo existe mas difere do pacote (você editou, ou
-  #                     está numa versão de pacote diferente). Não é erro e o
-  #                     --conferir nunca escreve nada; o instalador, se rodar,
-  #                     guarda cópia antes de trocar.
+  #   ~ difere do pacote — arquivo existe mas não é igual ao do pacote. O código
+  #                     só prova a divergência, não a causa: pode ser edição
+  #                     sua, outra versão do pacote ou arquivo corrompido. Não
+  #                     reprova (rc 0) e o --conferir nunca escreve nada; o
+  #                     instalador, se rodar, guarda cópia antes de trocar.
   falta=0; pers=0; n=0; na=0
   confere() {  # confere <rótulo> <zip> <destino>
     local r st f
@@ -94,7 +96,7 @@ if [[ "${1:-}" == "--conferir" ]]; then
       case "$st" in
         falta)     echo "  ✗ incompleto: $1 — falta $f"; falta=$((falta+1)) ;;
         vazio)     echo "  ✗ incompleto: $1 — vazio $f"; falta=$((falta+1)) ;;
-        diferente) echo "  ~ personalizado: $1 — $f difere do pacote"; pers=$((pers+1)) ;;
+        diferente) echo "  ~ difere do pacote (pode ser personalização sua, outra versão ou arquivo corrompido — revise): $1 — $f"; pers=$((pers+1)) ;;
       esac
     done <<< "$r"
   }
@@ -107,16 +109,21 @@ if [[ "${1:-}" == "--conferir" ]]; then
   for a in "$DIR"/agents/*-turbo.md; do
     na=$((na+1)); b="$(basename "$a")"
     if [[ ! -s "$AGENTS_DST/$b" ]]; then echo "  ✗ incompleto: agente ${b%.md} ausente ou vazio"; falta=$((falta+1))
-    elif ! cmp -s "$a" "$AGENTS_DST/$b"; then echo "  ~ personalizado: agente ${b%.md} difere do pacote"; pers=$((pers+1)); fi
+    elif ! cmp -s "$a" "$AGENTS_DST/$b"; then echo "  ~ difere do pacote (pode ser personalização sua, outra versão ou arquivo corrompido — revise): agente ${b%.md}"; pers=$((pers+1)); fi
   done
   confere "squad-core" "$DIR/squad-core-turbo.zip" "$SQUADS_DST"
   for b in git python3 node ffmpeg yt-dlp; do
     command -v "$b" >/dev/null 2>&1 || echo "  · sem $b (não bloqueia skills e agentes; algumas skills de vídeo e scripts precisam)"
   done
-  echo "  (conferência byte a byte de cada arquivo do pacote: ✗ = incompleto, ~ = personalizado)"
+  echo "  (conferência byte a byte de cada arquivo do pacote: ✗ = incompleto, ~ = difere do pacote)"
   if (( falta == 0 )); then
-    echo "SQUAD OK: $n skills · $na agentes · squad-core"
-    (( pers > 0 )) && echo "  $pers arquivo(s) personalizado(s) (~): seus. O instalador guarda cópia em $BKP_RAIZ antes de trocar."
+    if (( pers > 0 )); then
+      echo "SQUAD OK (com $pers diferença(s) do pacote): $n skills · $na agentes · squad-core"
+      echo "  Presença conferida, mas $pers arquivo(s) (~) diferem do pacote: isso não prova integridade integral. Revise as linhas ~ acima antes de considerar válido."
+      echo "  Se rodar o instalador, ele guarda cópia deles em $BKP_RAIZ antes de trocar."
+    else
+      echo "SQUAD OK: $n skills · $na agentes · squad-core"
+    fi
     exit 0
   fi
   echo "SQUAD INCOMPLETO: $falta arquivo(s) faltando ou vazio(s). Rode o instalador de novo."; exit 1
@@ -125,12 +132,12 @@ fi
 echo "▶ Instalação guiada do Squad Turbo LPSG"
 echo "  Fonte: $DIR"
 
-# ── 0 · Cópia de segurança do que você personalizou ─────────────────────────
+# ── 0 · Cópia de segurança do que difere do pacote ─────────────────────────
 # Antes de escrever qualquer coisa: lista os arquivos que as etapas 2-4 vão
 # TROCAR e que hoje estão diferentes do pacote, e copia cada um, com o caminho,
 # para uma pasta NOVA (mktemp: nome único, nunca reaproveita a de uma execução
 # anterior). Se a cópia falhar ou não bater byte a byte, para aqui (rc 3).
-titulo "0/11 · Cópia de segurança do que você personalizou"
+titulo "0/11 · Cópia de segurança do que difere do pacote"
 ZIPS_RUINS=" "   # zips que nem abrem: a etapa 2 não extrai e conta como falha
 salvar=()        # "origem<TAB>caminho-no-backup"
 for z in "$DIR"/*.zip; do
@@ -146,7 +153,7 @@ for a in "$DIR"/agents/*-turbo.md; do
   [[ -e "$AGENTS_DST/$b" ]] && ! cmp -s "$a" "$AGENTS_DST/$b" && salvar+=("$AGENTS_DST/$b"$'\t'"agents/$b")
 done
 if (( ${#salvar[@]} == 0 )); then
-  ok "nada personalizado a guardar (nenhum arquivo do pacote difere do instalado)"
+  ok "nada a guardar (nenhum arquivo do pacote difere do instalado)"
 else
   BKP=""
   mkdir -p "$BKP_RAIZ" 2>/dev/null && BKP="$(mktemp -d "$BKP_RAIZ/$(date +%Y%m%d-%H%M%S)-XXXXXX" 2>/dev/null)"
@@ -164,8 +171,8 @@ else
     fi
   done
   printf 'Cópia feita pelo instalar-squad.sh em %s, antes de trocar estes arquivos pela versão do pacote.\nPra voltar um arquivo: copie daqui pro mesmo caminho dentro de ~/.claude/ (skills/, agents/, squads/).\n' "$(date '+%d/%m/%Y %H:%M')" > "$BKP/LEIA-ME.txt" || { echo "  ✗ FALHOU — não consegui escrever em $BKP"; exit 3; }
-  ok "${#salvar[@]} arquivo(s) seus guardados em $BKP"
-  echo "     (o pacote vai trocar esses arquivos; os seus ficam lá, intactos)"
+  ok "${#salvar[@]} arquivo(s) que diferiam do pacote guardados em $BKP"
+  echo "     (o pacote vai trocar esses arquivos; as versões que estavam instaladas ficam lá, intactas — revise se alguma era sua)"
 fi
 
 # ── 1/7 · Claude Code ────────────────────────────────────────────────────────
