@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 77 · **Atribuições (skill×agent):** 170
+**Agentes:** 13 · **Skills distintas referenciadas:** 81 · **Atribuições (skill×agent):** 178
 
 ## Por agente
 
@@ -62,6 +62,7 @@
 - frontend-design
 - lovable-style-turbo
 - ui-styling
+- pagina-design-premium
 - design
 - design-tokens-turbo
 - ui-ux-pro-max
@@ -71,6 +72,8 @@
 - gerador-slides-turbo
 - slides-uipm-turbo
 - pptx
+- visual-cortes-turbo
+- motion-opcoes-turbo
 - canvas-design
 - web-artifacts-builder
 - deploy-to-vercel
@@ -91,6 +94,7 @@
 - impeccable
 - design-motion-principles
 - paginas-lpsg-turbo
+- pagina-design-premium
 - designer-senior-turbo
 - lovable-style-turbo
 - page-optimizer-turbo
@@ -99,6 +103,8 @@
 - gerador-instagram-turbo
 - gerador-slides-turbo
 - slides-uipm-turbo
+- motion-opcoes-turbo
+- visual-cortes-turbo
 - canvas-design
 - web-artifacts-builder
 - deploy-to-vercel
@@ -119,6 +125,7 @@
 - skill-miner
 - skill-generalizer
 - instalar-skill-no-squad
+- fechar-sessao
 - find-skills
 - file-organizer
 
@@ -178,6 +185,7 @@
 - youtube-full
 - watch
 - cortes-tiktok-turbo
+- visual-cortes-turbo
 - mensageria-lpsg-turbo
 - instagram-analise-estrategica-turbo
 - aula-consciencia-turbo
@@ -234,6 +242,7 @@
 | `docx` | pesquisador-turbo |
 | `elevenlabs` | social-turbo |
 | `estrutura-aulas-lpsg-turbo` | copywriter-turbo pesquisador-mercado-turbo |
+| `fechar-sessao` | estrategista-turbo |
 | `file-organizer` | estrategista-turbo |
 | `find-skills` | estrategista-turbo pesquisador-mercado-turbo pesquisador-turbo |
 | `frontend-design` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
@@ -255,9 +264,11 @@
 | `mensageria-lpsg-turbo` | automacao-turbo closer-turbo copywriter-turbo cs-turbo pesquisador-mercado-turbo revisor-copy-turbo social-turbo |
 | `meta-ads-cli-setup-turbo` | automacao-turbo trafego-turbo |
 | `meta-ads-cli-turbo` | automacao-turbo trafego-turbo |
+| `motion-opcoes-turbo` | designer-turbo diretor-criativo-turbo |
 | `oferta-lpsg-turbo` | closer-turbo copywriter-turbo pesquisador-mercado-turbo |
 | `operacao-lpsg-turbo` | estrategista-turbo |
 | `page-optimizer-turbo` | designer-turbo diretor-criativo-turbo trafego-turbo |
+| `pagina-design-premium` | designer-turbo diretor-criativo-turbo |
 | `paginas-lpsg-turbo` | closer-turbo copywriter-turbo diretor-criativo-turbo pesquisador-mercado-turbo trafego-turbo |
 | `pdf` | pesquisador-turbo |
 | `playwright-skill` | designer-turbo |
@@ -276,6 +287,7 @@
 | `ui-ux-pro-max` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
 | `vercel-cli-with-tokens` | automacao-turbo designer-turbo |
 | `vercel-react-best-practices` | designer-turbo |
+| `visual-cortes-turbo` | designer-turbo diretor-criativo-turbo social-turbo |
 | `vsl-ab-turbo` | copywriter-turbo |
 | `watch` | pesquisador-mercado-turbo pesquisador-turbo social-turbo |
 | `web-artifacts-builder` | designer-turbo diretor-criativo-turbo |

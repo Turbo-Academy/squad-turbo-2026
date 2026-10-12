@@ -60,7 +60,7 @@ src/
 
 ## Arquétipo de referência
 
-`/Users/leonardotabari/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md`
+`~/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md`
 — seção "V3 · ARQUÉTIPO INTERATIVO / CALCULADORA"
 
 ## Anti-patterns evitados

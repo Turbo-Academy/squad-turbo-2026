@@ -35,6 +35,7 @@ Agent Skill
 Agente Exclusivo
 Agente Faz
 Agente Turbo
+Agora Não
 Albert Sans
 Alex Hormozi
 Algoritmo Meta
@@ -60,7 +61,6 @@ Análise Instagram
 Análise Semanal
 Apify Meta
 Aplica Etapas
-App Claude
 App Live
 App Meta
 App Router
@@ -76,6 +76,7 @@ Após Fase
 Aquecimento Invisível
 Archivo Narrow
 Arco Narrativo
+Arial Narrow
 Arquitetura Advantage
 Arquivo Base
 Arquétipos Premium
@@ -87,6 +88,7 @@ Aspect Ratio
 Assinatura Fixa
 Atenção Meta
 Ativador Turbo
+Atkinson Hyperlegible
 Atmospheric Background
 Atração Ampla
 Atribuir Ativos
@@ -591,6 +593,7 @@ Grid Gallery
 Guardião Anti
 Gustavo Lima
 Guy Kawasaki
+Head Turbo
 Header Char
 Headline Imperativa
 Headline Patterns
@@ -754,6 +757,7 @@ Members Area
 Menopausa Química
 Mensageria Completa
 Mensageria Diário
+Menu Iniciar
 Mercado Turbo
 Mesmo Corpo
 Message Templates
@@ -1093,7 +1097,6 @@ Sem Mistério
 Sem Pixel
 Sem Redux
 Sem Sacrifício
-Sem Terminal
 Semanal Gravado
 Sequência Obrigatória
 Serif Display

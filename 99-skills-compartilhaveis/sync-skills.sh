@@ -61,6 +61,8 @@ SKILLS=(
   pagina-design-premium
   # 8.1 · instalar skill de terceiro e amarrar no agente dono · diário da sessão
   instalar-skill-no-squad fechar-sessao
+  # 9.0 · direção de arte do corte vertical + cartão final "Me segue" · 5 direções de motion no HyperFrames
+  visual-cortes-turbo motion-opcoes-turbo
 )
 
 novos=0; regen=0; emdia=0

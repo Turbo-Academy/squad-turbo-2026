@@ -1,5 +1,37 @@
 # Changelog · Squad Turbo LPSG
 
+## 9.0 — 12/10/2026
+
+**Instalação nova: você cola uma mensagem, o Claude instala**
+
+- Manual de instalação reescrito no padrão do kit Head Turbo ([instalacao-do-zero.html](instalacao-do-zero.html), também em
+  ta.turboacademy.com.br/squadturbo): no Mac são 3 passos, todos no app do Claude (abrir a aba Code, colar a mensagem, reabrir);
+  no Windows o squad passa a rodar no Ubuntu do WSL, com o Claude Code dentro dele. O Claude faz o resto e a pessoa só aprova.
+  Seções numeradas (Entender, Instalar, Usar, Tirar, Quando trava, Ajuda), abas Mac/Windows, botão de copiar e tema claro/escuro.
+  O HTML e o `INSTALACAO-DO-ZERO.md` saem do mesmo gerador (`04-manual-de-uso/instalacao/gerar.py`), chamado pelo `build-manual.sh`.
+- `instalar-squad.sh --conferir`: só confere, sem instalar. Termina em `SQUAD OK: 49 skills · 13 agentes · squad-core` ou lista o
+  que falta (e avisa agente editado à mão, "diferente do pacote"). No Ubuntu sem Homebrew, a dica de ffmpeg/yt-dlp passa a ser `apt`/`pipx`.
+- Mensagens prontas no manual pra **atualizar** (guarda antes os agentes que você editou) e pra **remover** (lista antes, apaga só com o seu sim).
+
+**Skills novas (47 → 49)**
+
+- `visual-cortes-turbo` — direção de arte do corte vertical 1080x1920: split-screen, legenda e karaokê, card do topo, caixa do
+  gancho, punch-in, áreas seguras medidas (interface do Instagram e anúncio da Meta), gancho no 1º segundo com meta de skip rate,
+  chamada para seguir e o **cartão final "Me segue"**: `scripts/cartao-seguir.py` emenda 5 s de motion com som gerado no próprio
+  script (sem amostra de terceiro, sem voz), 1 LU abaixo da fala medida do corte. Donos: `@social-turbo`, `@designer-turbo`,
+  `@diretor-criativo-turbo`.
+- `motion-opcoes-turbo` — motion graphic curto no HyperFrames: 5 direções lado a lado, recomenda uma e para até a escolha; depois
+  check com quadros, aprovação e render (MP4 pro Reels, WebM/MOV com transparência pra overlay). Telemetria do HyperFrames desligada
+  e CLI fixada. Donos: `@designer-turbo`, `@diretor-criativo-turbo`.
+
+**Correções**
+
+- `build-manual.sh`: a troca de versão casava só "X.Y" e deixava o resto ("8.1.2" virava "9.0.2"); agora casa a versão inteira.
+- `MATRIZ-SKILLS.md` regenerada: estava sem `pagina-design-premium` e `fechar-sessao` desde a 8.1.
+- Ebook (PDF) regenerado com a versão 9.0.
+- Privacidade: saíram três caminhos absolutos de uma máquina (`scrapling-COMO-USAR.md` e dois README de exemplo de
+  página) e a referência a uma pasta interna no `funil-8-turbo`.
+
 ## 8.1.2 — 02/10/2026
 
 - `cortes-tiktok-turbo`: o `SKILL.md` agora manda rodar tudo com `./.venv/bin/python` (o `python` do sistema não tem

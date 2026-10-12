@@ -16,7 +16,7 @@
 
 ## Contagem (atualizada 2026-10-01)
 
-- **<!--F:n_skills-->47<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
+- **<!--F:n_skills-->49<!--/F--> skills proprietárias empacotadas** (lista canônica em `sync-skills.sh`): instalar em `~/.claude/skills/`
   - 10 skills LPSG core (estrutura-aulas, oferta, paginas, trafego, criativos, mensageria, automacoes, dashboard, operacao, cs)
   - 1 orquestrador (lpsg-master-turbo)
   - 1 manual final (manual-final-lpsg-turbo)
@@ -44,9 +44,9 @@
 - **10 Templates** (PascalCase): empacotamento dos entregáveis de `02-entregaveis-finais/`
 - **1 squad completo**: <!--F:n_agentes-->13<!--/F--> agentes (Squad Turbo + Picasso Auditor + Revisor Copy + Closer)
 
-**Total: 59 zips** (47 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
+**Total: 61 zips** (49 skills + 1 squad-turbo-completo + 1 squad-core + 10 Templates legado)
 
-> **Cobertura das skills do squad (atualizada 2026-10-01):** toda skill empacotada aqui tem agente dono — o `pre-push` reprova skill órfã. No ambiente do mantenedor há as 177 skills instaladas (squad + externas + pessoais); só as do squad vêm neste pacote. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
+> **Cobertura das skills do squad (atualizada 2026-10-01):** toda skill empacotada aqui tem agente dono — o `pre-push` reprova skill órfã. No ambiente do mantenedor há as 194 skills instaladas (squad + externas + pessoais); só as do squad vêm neste pacote. As skills externas (Anthropic: `canvas-design`, `skill-creator`, `skill-development`, `web-artifacts-builder`, `webapp-testing` · Vercel: `deploy-to-vercel`, `vercel-*`) NÃO são empacotadas aqui (são de terceiros) · instalar via plugin/npx. Mapeamento completo em `agents/MAPA-SKILLS-AGENTES.md`.
 
 ## Conectar MCPs 🔌
 

@@ -57,7 +57,7 @@ O Claude fala com o Scrapling direto, sem escrever script. 10 ferramentas:
 Entrada em `~/.claude.json` → `mcpServers.scrapling`:
 
 ```json
-{"type":"stdio","command":"/Users/leonardotabari/.claude/tools/scrapling/venv/bin/scrapling","args":["mcp"],"env":{}}
+{"type":"stdio","command":"/Users/SEU-USUARIO/.claude/tools/scrapling/venv/bin/scrapling","args":["mcp"],"env":{}}
 ```
 
 - **Precisa do extra `[ai]`** (pacote `mcp`) — só `[fetchers]` faz o `scrapling mcp --help`

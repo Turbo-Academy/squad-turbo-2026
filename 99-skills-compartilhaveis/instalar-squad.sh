@@ -17,6 +17,7 @@
 #
 # Rode de dentro do repo clonado:
 #   bash 99-skills-compartilhaveis/instalar-squad.sh
+#   bash 99-skills-compartilhaveis/instalar-squad.sh --conferir   (só confere, não instala)
 #
 # Idempotente: pode rodar de novo à vontade — só faz o que estiver faltando.
 # Sem terminal interativo, as etapas opcionais são puladas com aviso.
@@ -47,6 +48,27 @@ perguntar() {  # perguntar "Instalar X?" → 0 = sim · Enter = sim
   read -r -p "  $1 [S/n] " resp
   [[ -z "$resp" || "$resp" =~ ^[SsYy] ]]
 }
+
+# --conferir: não instala nada. Sai 0 com "SQUAD OK" ou 1 listando o que falta.
+if [[ "${1:-}" == "--conferir" ]]; then
+  falta=0; n=0; na=0
+  for z in "$DIR"/*.zip; do
+    s="$(basename "$z" .zip)"
+    case "$s" in squad-turbo-completo|squad-core-turbo) continue ;; esac
+    n=$((n+1))
+    [[ -f "$SKILLS_DST/$s/SKILL.md" ]] || { echo "  ✗ skill $s"; falta=$((falta+1)); }
+  done
+  for a in "$DIR"/agents/*-turbo.md; do
+    na=$((na+1))
+    cmp -s "$a" "$AGENTS_DST/$(basename "$a")" || { echo "  ✗ agente $(basename "$a" .md) ausente ou diferente do pacote"; falta=$((falta+1)); }
+  done
+  [[ -d "$SQUADS_DST/squad-turbo/core" ]] || { echo "  ✗ squad-core"; falta=$((falta+1)); }
+  for b in git python3 node ffmpeg yt-dlp; do
+    command -v "$b" >/dev/null 2>&1 || echo "  · sem $b (não bloqueia skills e agentes; algumas skills de vídeo e scripts precisam)"
+  done
+  if (( falta == 0 )); then echo "SQUAD OK: $n skills · $na agentes · squad-core"; exit 0; fi
+  echo "SQUAD INCOMPLETO: $falta item(ns) faltando. Rode o instalador de novo."; exit 1
+fi
 
 echo "▶ Instalação guiada do Squad Turbo LPSG"
 echo "  Fonte: $DIR"
@@ -107,6 +129,10 @@ for dep in ffmpeg yt-dlp; do
     else
       pendente "$dep — instalar depois: brew install $dep"
     fi
+  elif [[ "$(uname -s)" == Linux ]]; then
+    pendente "$dep ausente"
+    echo "     → Ubuntu/WSL (pede a sua senha do Ubuntu):  sudo apt-get install -y ffmpeg pipx"
+    echo "       e depois, sem sudo:  pipx install yt-dlp && pipx ensurepath"
   else
     pendente "$dep ausente e sem Homebrew"
     echo "     → instale o Homebrew primeiro (precisa da sua senha, é rápido):"
@@ -240,4 +266,5 @@ fi
 echo "   Último passo: REINICIE o Claude Code (feche a sessão e abra outra)."
 echo "   Skills, agentes e MCPs só carregam em sessão NOVA — a sessão desta"
 echo "   instalação não enxerga o que ela mesma instalou."
-echo "   Confira: /skills lista as skills · @estrategista-turbo responde."
+echo "   Confira: bash $DIR/instalar-squad.sh --conferir  (tem que dizer SQUAD OK)"
+echo "            /skills lista as skills · @estrategista-turbo responde."

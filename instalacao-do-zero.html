@@ -1,684 +1,795 @@
 <!DOCTYPE html>
+<!-- Manual de instalação do Squad Turbo 9.0. GERADO por 04-manual-de-uso/instalacao/gerar.py: não edite à mão. -->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instalação do Zero · Squad Turbo LPSG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalar o Squad Turbo 9.0 · Turbo Academy</title>
+<meta name="description" content="Instale o Squad Turbo 9.0 no Claude Code colando uma mensagem só: 49 skills e 13 agentes de IA de marketing digital. O Claude instala, você aprova. Mac e Windows.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,600..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("ht-tema");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 <style>
+/* Casca visual do manual: CSS do Manual do Head Turbo (instalar.turboacademy.com.br), copiado sem mudança. */
 :root{
-  --bg:#FBFAF7; --bg-alt:#F4F2EC; --bg-card:#FFFFFF; --bg-dark:#0A0A0B;
-  --text:#0A0A0A; --text-soft:#3A3A3A; --text-muted:#6B6B6B; --text-faded:#A0A0A0;
-  --accent:#FF5C00; --accent-2:#FFB800; --accent-soft:#FFEDE0; --accent-glow:rgba(255,92,0,0.18);
-  --success:#10B981; --success-soft:#E7F8F1;
-  --border:#ECEAE3; --border-soft:#F4F2EC;
-  --shadow-sm:0 2px 8px rgba(0,0,0,0.04); --shadow-md:0 8px 24px rgba(0,0,0,0.06); --shadow-lg:0 24px 48px rgba(0,0,0,0.08);
-  --radius-sm:8px; --radius:12px; --radius-lg:20px;
-  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --papel:#F1ECE8; --papel-2:#E8E1DB; --papel-3:#DDD4CD;
+  --tinta:#14110F; --tinta-2:#48413C; --tinta-3:#6A625C;
+  --azul:#1B54FF; --verde:#00DF97; --ciano:#00D3FF; --roxo:#893DD6;
+  --term:#14110F; --term-2:#221E1B; --term-tinta:#F1ECE8; --term-dim:#A89F97;
+  --linha:#CFC6BF;
+  --f-titulo:"Archivo","Arial Narrow",sans-serif;
+  --f-corpo:"Atkinson Hyperlegible","Verdana",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --r-1:4px; --r-2:8px; --r-3:12px;
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:72px;
+  --easing:cubic-bezier(.16,1,.3,1);
+  --sobre-roxo:#FFFFFF; --roxo-forte:#6B2BB0;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-*::selection{background:var(--accent-soft);color:var(--accent)}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.65;color:var(--text);background:var(--bg)}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* ── topbar ── */
-.topbar{position:sticky;top:0;z-index:50;background:rgba(251,250,247,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.topbar-in{max-width:880px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:14px}
-.logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px var(--accent-glow);flex-shrink:0}
-.brand-t{font-weight:700;font-size:14px;letter-spacing:-0.01em}
-.brand-s{font-size:11px;color:var(--text-muted)}
-.topnav{margin-left:auto;display:flex;gap:4px}
-.topnav a{font-size:12.5px;font-weight:600;color:var(--text-muted);padding:6px 11px;border-radius:99px}
-.topnav a:hover{background:var(--accent-soft);color:var(--accent);text-decoration:none}
-@media(max-width:640px){.topnav{display:none}}
-
-/* ── hero ── */
-.hero{max-width:880px;margin:0 auto;padding:64px 24px 40px;text-align:center}
-.hero .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:99px;margin-bottom:22px}
-.hero h1{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(34px,5.5vw,52px);line-height:1.12;letter-spacing:-0.015em;margin-bottom:18px}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero .lead{font-size:17.5px;color:var(--text-soft);max-width:640px;margin:0 auto;text-wrap:pretty}
-.hero .lead strong{color:var(--text)}
-.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
-.stat{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 22px;box-shadow:var(--shadow-sm)}
-.stat b{display:block;font-size:21px;letter-spacing:-0.02em}
-.stat span{font-size:12px;color:var(--text-muted)}
-.cli-note{margin:34px auto 0;max-width:620px;font-size:13.5px;color:var(--text-muted);background:var(--bg-alt);border-radius:var(--radius);padding:12px 18px}
-
-/* ── layout ── */
-.wrap{max-width:880px;margin:0 auto;padding:0 24px 90px}
-section{margin-top:56px}
-
-/* ── checklist ── */
-.check-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 30px;box-shadow:var(--shadow-md)}
-.check-card h2{font-size:15px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.check-list{list-style:none;display:grid;gap:10px}
-.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--text-soft)}
-.check-list .box{width:20px;height:20px;border:2px solid var(--accent);border-radius:6px;flex-shrink:0;margin-top:2px}
-.check-list b{color:var(--text)}
-
-/* ── etapa ── */
-.etapa{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);overflow:hidden}
-.etapa-head{display:flex;align-items:center;gap:16px;padding:24px 30px 0}
-.etapa-num{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px var(--accent-glow);flex-shrink:0}
-.etapa-head h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;letter-spacing:-0.01em}
-.etapa-head .tempo{margin-left:auto;font-size:12px;font-weight:600;color:var(--text-muted);background:var(--bg-alt);padding:5px 12px;border-radius:99px;white-space:nowrap}
-.etapa-body{padding:18px 30px 28px}
-.etapa-body>p{color:var(--text-soft);margin-bottom:14px}
-.etapa-body>p strong,.steps strong{color:var(--text)}
-.steps{list-style:none;counter-reset:s;display:grid;gap:11px;margin:6px 0 4px}
-.steps li{counter-increment:s;display:flex;gap:13px;color:var(--text-soft);font-size:15.5px}
-.steps li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.steps li>span{flex:1;min-width:0}
-/* itens de grid não encolhem abaixo do min-content por padrão: sem isto o
-   texto longo estoura o card (que tem overflow:hidden) e some no celular */
-.steps li,.check-list li,.expect li{min-width:0}
-.steps li>span,.check-list li>span:last-child,.expect li>span:last-child{overflow-wrap:break-word}
-
-/* ── ilustrações de referência ── */
-.shot{margin:20px 0 6px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg-alt);box-shadow:var(--shadow-sm)}
-.shot svg{display:block;width:100%;height:auto}
-.shot figcaption{font-size:12.5px;color:var(--text-muted);padding:10px 15px;border-top:1px solid var(--border);background:var(--bg-card)}
-.shot figcaption b{color:var(--text-soft)}
-.dica{display:flex;gap:10px;background:var(--bg-alt);border-radius:var(--radius);padding:13px 16px;font-size:14px;color:var(--text-soft);margin-top:14px}
-.dica .i{flex-shrink:0}
-
-/* ── checkpoint ── */
-.checkpoint{display:flex;gap:11px;align-items:flex-start;background:var(--success-soft);border:1px solid #C9EEDF;border-radius:var(--radius);padding:14px 17px;margin-top:18px;font-size:14.5px;color:#0B5138}
-.checkpoint .ic{width:21px;height:21px;border-radius:50%;background:var(--success);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px}
-.checkpoint b{color:#063D2A}
-
-/* ── code ── */
-.code-block{position:relative;margin:16px 0 6px}
-.code-block pre{background:var(--bg-dark);color:#F5F3EE;border-radius:var(--radius);padding:18px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.7;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
-.code-block.hero-cmd pre{font-size:16px;padding:24px;border:1px solid rgba(255,92,0,0.35);box-shadow:0 12px 32px var(--accent-glow)}
-.copy-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#D9D6CE;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:8px;cursor:pointer;transition:all .2s}
-.copy-btn:hover{background:rgba(255,92,0,0.25);border-color:var(--accent);color:#fff}
-.copy-btn.ok{background:var(--success);border-color:var(--success);color:#fff}
-.expect{margin-top:18px}
-.expect h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
-.expect ul{list-style:none;display:grid;gap:9px}
-.expect li{display:flex;gap:10px;font-size:14.5px;color:var(--text-soft)}
-.expect .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
-
-/* ── details ── */
-details{margin-top:14px;background:var(--bg-alt);border-radius:var(--radius);padding:0}
-details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--text-soft);padding:13px 17px;list-style:none;display:flex;align-items:center;gap:8px}
-details summary::before{content:"▸";color:var(--accent);transition:transform .2s}
-details[open] summary::before{transform:rotate(90deg)}
-details .inner{padding:0 17px 15px}
-details .inner p{font-size:14px;color:var(--text-soft);margin-bottom:10px}
-
-/* ── troubleshooting ── */
-.trouble h2,.section-h{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:30px;letter-spacing:-0.01em;margin-bottom:6px}
-.section-sub{color:var(--text-muted);font-size:15px;margin-bottom:22px}
-.t-grid{display:grid;gap:12px}
-.t-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow-sm)}
-.t-item .sint{font-weight:600;font-size:14.5px;margin-bottom:5px}
-.t-item .sol{font-size:14px;color:var(--text-soft)}
-.t-item .sol code{font-family:var(--mono);font-size:12.5px;background:var(--bg-alt);padding:2px 7px;border-radius:6px}
-
-/* ── windows ── */
-.win-card{background:linear-gradient(135deg,#0A0A0B,#1A1A1E);color:#E8E6E1;border-radius:var(--radius-lg);padding:28px 30px;box-shadow:var(--shadow-lg)}
-.win-card h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;margin-bottom:10px;color:#fff}
-.win-card p{font-size:15px;color:#C9C6BF;margin-bottom:10px}
-.win-card code{font-family:var(--mono);font-size:13px;background:rgba(255,255,255,0.09);padding:2px 8px;border-radius:6px;color:#FFD9A8}
-
-/* ── capacidades ── */
-.cap-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px;box-shadow:var(--shadow-sm);margin-top:16px}
-.cap-block h3{font-size:16.5px;font-weight:700;letter-spacing:-0.01em;margin-bottom:10px;display:flex;align-items:center;gap:9px}
-.cap-block h3 .ico{width:26px;height:26px;border-radius:8px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.cap-block p{font-size:14.5px;color:var(--text-soft)}
-.cap-block ul{list-style:none;display:grid;gap:8px;margin-top:4px}
-.cap-block li{display:flex;gap:10px;font-size:14.5px;color:var(--text-soft)}
-.cap-block li .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
-.cap-block li{min-width:0}
-.agents-tb{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
-.agents-tb td{padding:7px 10px;border-top:1px solid var(--border-soft);color:var(--text-soft);vertical-align:top}
-.agents-tb td:first-child{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
-.agents-scroll{overflow-x:auto}
-
-/* ── next ── */
-.next-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-.next-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);transition:all .2s;display:block;color:var(--text)}
-.next-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);text-decoration:none}
-.next-card .n{font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--accent);text-transform:uppercase}
-.next-card h3{font-size:15.5px;font-weight:700;margin:6px 0 5px}
-.next-card p{font-size:13.5px;color:var(--text-muted)}
-
-footer{border-top:1px solid var(--border);margin-top:70px;padding:26px 24px;text-align:center;font-size:13px;color:var(--text-faded)}
-@media(max-width:640px){
-  .etapa-head{padding:20px 20px 0;flex-wrap:wrap}
-  .etapa-body{padding:16px 20px 22px}
-  .etapa-head .tempo{margin-left:0}
-  .check-card,.win-card{padding:22px 20px}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --papel:#14110F; --papel-2:#1D1917; --papel-3:#2A2522; --tinta:#F1ECE8; --tinta-2:#C9C0B8; --tinta-3:#A89F97;
+         --azul:#7C9BFF; --roxo:#B98AF0; --linha:#3A3430; --term:#0B0908; --term-2:#1A1715; --sobre-roxo:#14110F; }
 }
-@media print{.topbar,.copy-btn{display:none}.etapa,.check-card{box-shadow:none;break-inside:avoid}}
-footer .legal{margin:14px auto 0;max-width:760px;line-height:1.7}footer .legal a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{background:var(--papel);color:var(--tinta);font-family:var(--f-corpo);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--azul);text-underline-offset:3px}
+strong{font-weight:700}
+kbd{font-family:var(--f-mono);font-size:.82em;padding:1px 6px;border:1px solid var(--linha);border-bottom-width:2px;border-radius:var(--r-1);background:var(--papel-2);white-space:nowrap}
+p code,li code{font-family:var(--f-mono);font-size:.88em;background:var(--papel-2);padding:1px 5px;border-radius:var(--r-1)}
+:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.miolo{max-width:1040px;margin:0 auto;padding:0 16px}
+
+/* ---------- topo */
+.capa{position:relative;overflow:hidden;border-bottom:1px solid var(--linha)}
+.capa::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+   radial-gradient(60% 90% at 92% 0%, color-mix(in srgb,var(--ciano) 22%,transparent), transparent 70%),
+   radial-gradient(40% 70% at 70% 110%, color-mix(in srgb,var(--roxo) 14%,transparent), transparent 70%);}
+.capa::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(var(--linha) 1px,transparent 1px);background-size:100% 32px;
+  mask-image:linear-gradient(90deg,transparent 40%,#000);-webkit-mask-image:linear-gradient(90deg,transparent 40%,#000)}
+.capa .miolo{position:relative;z-index:1;padding-top:var(--s-7);padding-bottom:var(--s-7);display:grid;gap:var(--s-6)}
+.kicker{font-family:var(--f-mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-2)}
+.kicker b{color:var(--azul);font-weight:600}
+h1{font-family:var(--f-titulo);font-weight:900;font-stretch:78%;font-size:clamp(2.6rem,9vw,5.2rem);line-height:.92;letter-spacing:-.02em;margin-top:var(--s-3)}
+h1 em{font-style:normal;color:var(--azul)}
+.capa-sub{max-width:34ch;font-size:1.1rem;color:var(--tinta-2);margin-top:var(--s-4)}
+
+.ficha{background:var(--papel);border:1.5px solid var(--tinta);border-radius:var(--r-3);padding:var(--s-5);box-shadow:6px 6px 0 var(--tinta);max-width:520px}
+.ficha h2{font-family:var(--f-titulo);font-weight:800;font-stretch:85%;font-size:1.35rem;line-height:1.1}
+.ficha > p{color:var(--tinta-2);font-size:.95rem;margin-top:var(--s-2)}
+.campo{display:grid;gap:6px;margin-top:var(--s-4)}
+.campo label{font-weight:700;font-size:.95rem}
+.campo input{font:inherit;font-size:17px;padding:12px 14px;min-height:48px;border:1.5px solid var(--tinta-3);border-radius:var(--r-2);background:var(--papel);color:var(--tinta)}
+.campo input:focus{outline:none;border-color:var(--azul);box-shadow:0 0 0 3px color-mix(in srgb,var(--azul) 25%,transparent)}
+.campo input[aria-invalid="true"]{border-color:var(--roxo)}
+#codigo{font-family:var(--f-mono);letter-spacing:.14em;text-transform:uppercase}
+.ajuda{font-size:.85rem;color:var(--tinta-3)}
+.erro-campo{font-size:.88rem;color:var(--roxo);font-weight:700}
+.ficha-estado{margin-top:var(--s-4);font-size:.92rem;padding:10px 12px;border-radius:var(--r-2);background:var(--papel-2);color:var(--tinta-2)}
+.ficha-estado.pronto{background:color-mix(in srgb,var(--verde) 22%,var(--papel));color:var(--tinta)}
+.pre-preenchido{margin-top:var(--s-3);font-size:.9rem;color:var(--tinta-2)}
+
+@media (min-width:880px){
+  .capa .miolo{grid-template-columns:1.15fr .85fr;align-items:end;padding-top:var(--s-8);padding-bottom:var(--s-8)}
+}
+
+/* ---------- abas */
+.abas{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+.abas .miolo{display:flex;gap:var(--s-2);align-items:center;padding-top:10px;padding-bottom:10px}
+.abas-t{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3);margin-right:auto}
+.aba{font-family:var(--f-titulo);font-weight:800;font-stretch:85%;font-size:1.05rem;min-height:48px;padding:0 22px;border-radius:999px;border:1.5px solid var(--tinta);background:transparent;color:var(--tinta);cursor:pointer;transition:background .2s var(--easing),color .2s var(--easing)}
+.aba[aria-selected="true"]{background:var(--tinta);color:var(--papel)}
+.aba:hover:not([aria-selected="true"]){background:var(--papel-2)}
+
+/* ---------- passos */
+.painel{padding:var(--s-7) 0 var(--s-8)}
+.painel[hidden]{display:none}
+.abertura{max-width:70ch;display:grid;gap:var(--s-3);padding-bottom:var(--s-6);margin-bottom:var(--s-6);border-bottom:1px dashed var(--linha)}
+.ola{font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.15}
+.dicas,.janelas{display:grid;gap:var(--s-3);margin-top:var(--s-2)}
+.dica,.janela{border:1px solid var(--linha);border-radius:var(--r-2);padding:var(--s-4);background:var(--papel-2)}
+.dica-t,.janela-t{display:block;font-weight:700;margin-bottom:4px}
+.janela-q{display:inline-block;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--azul);margin-bottom:6px}
+.dica p,.janela p{font-size:.95rem;color:var(--tinta-2)}
+.senha{padding:var(--s-4);border:1.5px dashed var(--roxo);border-radius:var(--r-2)}
+@media (min-width:720px){ .dicas{grid-template-columns:1fr 1fr} .janelas{grid-template-columns:repeat(3,1fr)} }
+
+.passo,.interludio{position:relative;display:grid;grid-template-columns:1fr;gap:var(--s-3);padding:var(--s-6) 0;border-top:1px solid var(--linha)}
+.passo-num{font-family:var(--f-titulo);font-weight:900;font-stretch:75%;font-size:clamp(3.4rem,11vw,5.6rem);line-height:.8;color:var(--azul);letter-spacing:-.03em}
+.passo-corpo{display:grid;gap:var(--s-4);min-width:0}
+.passo-onde{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-3)}
+.passo h3,.interludio h3{font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.05;letter-spacing:-.01em;margin-top:-6px}
+.passo-corpo > p{max-width:68ch}
+.sub{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.12rem;display:flex;gap:10px;align-items:baseline;margin-top:var(--s-2)}
+.sub-n{font-family:var(--f-mono);font-weight:600;font-size:.85rem;color:var(--azul)}
+.lista{padding-left:1.4em;display:grid;gap:6px;max-width:68ch}
+.lista li::marker{font-family:var(--f-mono);color:var(--azul);font-weight:600}
+.nota{color:var(--tinta-2);font-size:.96rem;max-width:68ch}
+.prova{max-width:72ch}
+.prova-selo{display:inline-block;margin-right:10px;vertical-align:1px;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-1);background:#14110F;color:#00DF97;border:1px solid #00DF97}
+@media (min-width:760px){
+  .passo{grid-template-columns:7.5rem 1fr;gap:var(--s-6)}
+  .passo-num{text-align:right;position:sticky;top:96px;align-self:start}
+  .interludio{grid-template-columns:7.5rem 1fr;gap:var(--s-6)}
+  .interludio .passo-corpo{grid-column:2}
+}
+.interludio{background:
+  repeating-linear-gradient(-45deg,transparent 0 10px,color-mix(in srgb,var(--linha) 35%,transparent) 10px 11px)}
+.interludio .passo-corpo{background:var(--papel);padding:var(--s-5);border:1.5px solid var(--tinta);border-radius:var(--r-3)}
+.duas{display:grid;gap:var(--s-5)}
+.duas > div{display:grid;gap:var(--s-3);align-content:start;min-width:0}
+@media (min-width:900px){ .duas{grid-template-columns:1fr 1fr} }
+.selo{display:inline-block;font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border-radius:var(--r-1);background:var(--roxo);color:var(--sobre-roxo);margin-right:10px;vertical-align:1px}
+.selo-claro{background:transparent;color:var(--roxo);border:1.5px solid var(--roxo)}
+.nao-testado{font-size:.95rem;color:var(--tinta-2)}
+
+/* ---------- bloco de comando */
+.cmd{background:var(--term);color:var(--term-tinta);border-radius:var(--r-3);overflow:hidden;min-width:0;box-shadow:0 1px 0 var(--linha)}
+.cmd-topo{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 10px 10px 16px;background:var(--term-2);border-bottom:1px solid #2F2A26}
+.cmd-rotulo{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ciano)}
+.onde{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;color:var(--term-dim);margin-right:auto}
+.onde-ponto{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 3px color-mix(in srgb,var(--verde) 25%,transparent)}
+.copiar{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:var(--r-2);border:0;background:var(--verde);color:#08231A;font:700 1rem/1 var(--f-corpo);cursor:pointer;transition:transform .15s var(--easing),background .2s}
+.copiar:hover{background:#3CF0B4}
+.copiar:active{transform:scale(.97)}
+.copiar .ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.copiar .lbl-ok{display:none}
+.copiar.ok{background:var(--ciano);color:#062530}
+.copiar.ok .lbl-copiar{display:none}
+.copiar.ok .lbl-ok{display:inline-flex;align-items:center;gap:8px}
+.copiar .lbl-copiar{display:inline-flex;align-items:center;gap:8px}
+.cmd-texto{margin:0;padding:14px 16px 16px;font-family:var(--f-mono);font-size:14.5px;line-height:1.6;white-space:pre-wrap;word-break:break-all;-webkit-user-select:all;user-select:all;tab-size:4}
+.cmd-texto code{font:inherit}
+.cmd-texto::before{content:"›";color:var(--verde);margin-right:10px;-webkit-user-select:none;user-select:none}
+.cmd-longo .cmd-texto{max-height:9.8em;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(#000 60%,transparent);mask-image:linear-gradient(#000 60%,transparent)}
+.cmd-longo.aberto .cmd-texto{max-height:none;-webkit-mask-image:none;mask-image:none}
+.um-so{padding:10px 16px 0;font-size:.88rem;color:var(--term-dim)}
+.ver-tudo{display:block;margin:0 16px 14px;min-height:40px;padding:0 14px;border-radius:var(--r-2);border:1px solid #3A3430;background:transparent;color:var(--term-tinta);font:600 .9rem var(--f-corpo);cursor:pointer}
+.ver-tudo:hover{border-color:var(--term-dim)}
+.cmd-mensagem .cmd-texto{font-family:var(--f-mono);font-size:13.5px;max-height:22em;overflow:auto;-webkit-user-select:text;user-select:text}
+.cmd-mensagem .cmd-texto::before{content:none}
+.cmd-mensagem .um-so{padding-bottom:0}
+.cmd-convite{outline:2px solid var(--roxo);outline-offset:3px}
+.uma-vez{padding:12px 16px;background:color-mix(in srgb,var(--roxo) 30%,var(--term));color:#fff;font-size:.95rem}
+.uma-vez .selo{background:#fff;color:var(--roxo-forte)}
+.falta-campo{padding:12px 16px;background:#fff;color:#4A1C7A;font-weight:700;font-size:.95rem}
+.falta-campo[hidden]{display:none}
+.cmd-texto mark{background:transparent;color:var(--ciano);border-bottom:2px dashed var(--ciano)}
+.cmd-texto .valor{color:var(--verde);font-weight:600}
+
+/* ---------- espaço de print */
+.print{border:1.5px solid var(--tinta);border-radius:var(--r-3);overflow:hidden;background:var(--papel);max-width:760px}
+.print-barra{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--papel-3);border-bottom:1.5px solid var(--tinta)}
+.print-barra i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--tinta-3)}
+.print-barra span{margin-left:8px;font-family:var(--f-mono);font-size:12px;color:var(--tinta-2)}
+.print-ps .print-barra{background:#0F2A5E;border-color:var(--tinta)} .print-ps .print-barra span{color:#E6ECFF} .print-ps .print-barra i{border-color:#8FA6DD}
+.print-ubuntu .print-barra{background:#2B1830} .print-ubuntu .print-barra span{color:#F1E6F4} .print-ubuntu .print-barra i{border-color:#B79CC0}
+.print-corpo{aspect-ratio:16/9;display:grid;background:
+  linear-gradient(var(--papel) 0 0) padding-box,
+  repeating-linear-gradient(0deg,transparent 0 23px,color-mix(in srgb,var(--linha) 55%,transparent) 23px 24px)}
+.print-corpo img{width:100%;height:100%;object-fit:contain;background:var(--tinta);display:block}
+.print-vazio{place-self:stretch;display:grid;place-content:center;justify-items:center;gap:8px;margin:14px;border:1.5px dashed var(--tinta-3);border-radius:var(--r-2);
+  background:repeating-linear-gradient(0deg,transparent 0 23px,color-mix(in srgb,var(--linha) 55%,transparent) 23px 24px)}
+.print-selo{font-family:var(--f-titulo);font-weight:800;font-stretch:85%;font-size:1.05rem;letter-spacing:.02em;color:var(--tinta-2)}
+.print-id{font-family:var(--f-mono);font-size:12px;color:var(--tinta-3)}
+.print figcaption{padding:10px 14px 12px;font-size:.9rem;color:var(--tinta-2);border-top:1px solid var(--linha)}
+.print-tela{font-weight:700;color:var(--tinta)}
+.print-tela::after{content:"."}
+/* ilustração no lugar do print: a imagem já traz a janela e o selo "ilustração"; sem barra falsa e sem proporção fixa */
+.print-img .print-corpo{aspect-ratio:auto;display:block;background:var(--papel-2)}
+.print-img .print-corpo img{width:100%;height:auto;max-width:100%;object-fit:initial;background:none}
+
+/* ---------- aviso: o Claude vai pedir aprovação (msg 3354) */
+.aviso{border:1.5px solid var(--roxo);border-left-width:1.5px;border-radius:var(--r-3);padding:var(--s-4) var(--s-5);background:color-mix(in srgb,var(--roxo) 9%,var(--papel));max-width:72ch}
+.aviso-t{display:block;font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.12rem;margin-bottom:6px}
+.aviso p+p{margin-top:6px}
+
+/* ---------- o que vai aparecer e o que fazer */
+.momentos{display:grid;gap:var(--s-4);margin-top:var(--s-3)}
+.momentos-t{font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:1.3rem}
+.momento{border:1px solid var(--linha);border-radius:var(--r-3);padding:var(--s-4);background:var(--papel-2);display:grid;gap:var(--s-3);min-width:0}
+.momento-t{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.08rem}
+.momento-dl{display:grid;gap:8px;max-width:72ch}
+.momento-dl dt{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta-2)}
+.momento-dl dd{margin:0 0 4px}
+.momento .print{background:var(--papel)}
+.bot-passo{display:grid;gap:var(--s-3);padding-top:var(--s-4);border-top:1px dashed var(--linha);min-width:0}
+.bot-passo:first-of-type{border-top:0;padding-top:0}
+.cuidado{border:1.5px dashed var(--roxo);border-radius:var(--r-2);padding:var(--s-4);max-width:72ch}
+/* ---------- r5: pré-requisitos no Ubuntu, linha do kit sem botão, etapa 11 da VPS */
+.quadro{border:1.5px solid var(--tinta);border-radius:var(--r-3);padding:var(--s-4) var(--s-5);background:var(--papel);box-shadow:4px 4px 0 var(--tinta);display:grid;gap:var(--s-3);min-width:0}
+.quadro-t{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.2rem}
+.linha-texto{display:grid;gap:6px;min-width:0}
+.linha-texto-t{font-family:var(--f-mono);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}
+.linha-texto pre{font-family:var(--f-mono);font-size:15px;background:var(--papel-2);border:1px dashed var(--tinta-3);border-radius:var(--r-2);padding:10px 14px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:72ch}
+.etapa-vps{display:grid;gap:var(--s-4);margin-top:var(--s-5);min-width:0}
+
+/* ---------- plano B */
+.plano-b{border-top:1px solid var(--linha);padding:var(--s-5) 0}
+.plano-b summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;min-height:44px;font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:1.25rem}
+.plano-b summary::-webkit-details-marker{display:none}
+.plano-b summary::before{content:"+";font-family:var(--f-mono);color:var(--azul);width:1ch}
+.plano-b[open] summary::before{content:"−"}
+.plano-b-t{color:var(--azul)}
+.plano-b-q{flex-basis:100%;font-family:var(--f-corpo);font-weight:400;font-size:.95rem;color:var(--tinta-3);padding-left:calc(1ch + 12px)}
+.passo-opcional .passo-num{color:var(--tinta-3)}
+
+/* ---------- rodapé e aviso de cópia */
+.rodape{border-top:1.5px solid var(--tinta);padding:var(--s-6) 0 var(--s-7);font-size:.95rem;color:var(--tinta-2)}
+.rodape strong{color:var(--tinta)}
+.fonte-versao{margin-top:var(--s-3);font-family:var(--f-mono);font-size:11px;color:var(--tinta-3);overflow-wrap:anywhere}
+#avisos{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);z-index:50;background:var(--tinta);color:var(--papel);padding:12px 18px;border-radius:999px;font-weight:700;font-size:.95rem;transition:transform .3s var(--easing),opacity .3s,visibility .3s;max-width:calc(100% - 32px);text-align:center;opacity:0;visibility:hidden}
+#avisos.ver{transform:translate(-50%,0);opacity:1;visibility:visible}
+.entra{animation:entra .6s var(--easing) both}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} html{scroll-behavior:auto} }
+
+:root[data-theme="dark"]{ --papel:#14110F; --papel-2:#1D1917; --papel-3:#2A2522; --tinta:#F1ECE8; --tinta-2:#C9C0B8; --tinta-3:#A89F97;
+         --azul:#7C9BFF; --roxo:#B98AF0; --linha:#3A3430; --term:#0B0908; --term-2:#1A1715; --sobre-roxo:#14110F; }
+/* ---------- capítulos novos (A, C, D, E, F e Mac e VPS) */
+body{overflow-x:hidden}
+.topo-barra{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;padding:12px 0}
+.topo-barra .kicker{margin:0}
+.lingua{display:flex;gap:6px;margin-left:auto}
+.lingua-bt{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 10px;border-radius:999px;border:1.5px solid var(--linha);background:var(--papel);color:var(--tinta);font:600 .82rem var(--f-mono);letter-spacing:.06em;cursor:pointer}
+.lingua-bt[aria-pressed="true"]{border-color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+.lingua-bt:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.bandeira{width:24px;height:17px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18);flex:none}
+.tema-bt{font:600 .9rem var(--f-corpo);min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--tinta);background:var(--papel);color:var(--tinta);cursor:pointer}
+.capa-manual .miolo{display:block;padding-top:var(--s-6);padding-bottom:var(--s-6)}
+.capa-manual .capa-sub{max-width:52ch}
+.sumario{margin-top:var(--s-6);display:grid;gap:var(--s-4)}
+.sumario-t{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-3)}
+.sumario ol{list-style:none;display:grid;gap:var(--s-3)}
+.sumario > ol{grid-template-columns:1fr}
+@media (min-width:720px){.sumario > ol{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.sumario > ol{grid-template-columns:1fr 1fr 1fr}}
+.sumario > ol > li{border:1.5px solid var(--tinta);border-radius:var(--r-3);padding:var(--s-4);background:var(--papel)}
+.sumario .parte{font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:1.2rem;text-decoration:none;color:var(--tinta)}
+.sumario .parte b{color:var(--azul);margin-right:6px}
+.sumario ol ol{margin-top:8px;gap:2px}
+.sumario ol ol a{display:block;padding:4px 0;font-size:.95rem;text-decoration:none;color:var(--tinta-2)}
+.sumario ol ol a:hover{color:var(--azul);text-decoration:underline}
+.sumario ol ol a span{font-family:var(--f-mono);font-size:.82rem;color:var(--azul);margin-right:6px}
+
+.cap{border-top:1.5px solid var(--tinta);padding:var(--s-7) 0 var(--s-5)}
+.cap-cab{display:grid;gap:var(--s-2);margin-bottom:var(--s-5)}
+.cap-letra{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul)}
+.cap h2{font-family:var(--f-titulo);font-weight:900;font-stretch:80%;font-size:clamp(2rem,6vw,3.4rem);line-height:.95;letter-spacing:-.02em}
+.cap-cab p{max-width:62ch;color:var(--tinta-2);font-size:1.05rem}
+.sec{padding:var(--s-5) 0;border-top:1px solid var(--linha);display:grid;gap:var(--s-3);min-width:0}
+.sec h3{font-family:var(--f-titulo);font-weight:800;font-stretch:88%;font-size:clamp(1.35rem,3.6vw,1.8rem);line-height:1.1;display:flex;gap:10px;align-items:baseline}
+.sec h3 .n{font-family:var(--f-mono);font-weight:600;font-size:.9rem;color:var(--azul);flex:none}
+.sec h4{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.12rem;margin-top:var(--s-2)}
+.sec > p,.sec li{max-width:70ch}
+.sec .ganho{font-size:1.05rem;color:var(--tinta);border-left:3px solid var(--azul);padding-left:12px}
+.sec ul,.sec ol.num{padding-left:1.3em;display:grid;gap:6px}
+.sec ul li::marker{color:var(--azul)}
+.tabela{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--linha);border-radius:var(--r-2)}
+.tabela table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+.tabela th,.tabela td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--linha)}
+.tabela th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);background:var(--papel-2)}
+.tabela tr:last-child td{border-bottom:0}
+.tabela td code,.sec p code,.sec li code,.quadro-n code,dd code{font-family:var(--f-mono);font-size:.86em;background:var(--papel-2);padding:1px 5px;border-radius:var(--r-1);overflow-wrap:anywhere}
+.linha-cmd{font-family:var(--f-mono);font-size:14px;background:var(--term);color:var(--term-tinta);border-radius:var(--r-2);padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:78ch}
+.linha-cmd::before{content:"› ";color:var(--verde)}
+.se-perdeu{display:grid;gap:12px;padding-left:1.1em;max-width:72ch}
+.tela-pre{margin:0;font-family:var(--f-mono);font-size:13px;line-height:1.5;background:var(--term);color:var(--term-tinta);border-radius:var(--r-2);padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:78ch;min-width:0}
+.onde-roda{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-3)}
+.quadro-n{border:1.5px solid var(--tinta);border-radius:var(--r-3);padding:var(--s-4) var(--s-5);background:var(--papel);display:grid;gap:var(--s-2);max-width:78ch}
+.quadro-n-t{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.1rem}
+.cartoes{display:grid;gap:var(--s-3)}
+@media (min-width:760px){.cartoes{grid-template-columns:1fr 1fr}}
+.cartao{border:1px solid var(--linha);border-radius:var(--r-3);padding:var(--s-4);background:var(--papel-2);display:grid;gap:6px;align-content:start;min-width:0}
+.cartao-t{font-family:var(--f-titulo);font-weight:800;font-stretch:90%;font-size:1.08rem}
+.cartao dl{display:grid;gap:4px}
+.cartao dt{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-3);margin-top:4px}
+.cartao dd{margin:0;font-size:.95rem}
+.etq{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:var(--r-1);vertical-align:1px}
+.etq-sim{background:color-mix(in srgb,var(--verde) 28%,var(--papel));color:var(--tinta)}
+.etq-guia{background:color-mix(in srgb,var(--ciano) 22%,var(--papel));color:var(--tinta)}
+.etq-nao{background:var(--papel-3);color:var(--tinta-2)}
+.desenho{min-width:0;border:1.5px solid var(--tinta);border-radius:var(--r-3);background:var(--papel);padding:var(--s-3);max-width:860px}
+.desenho svg{display:block;width:100%;height:auto}
+.desenho-rolar{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.desenho-dica{display:none;font-family:var(--f-mono);font-size:11.5px;color:var(--tinta-3);padding:0 var(--s-2) var(--s-2)}
+@media (max-width:640px){.desenho-rolar svg{min-width:620px}.desenho-dica{display:block}}
+.desenho figcaption{font-size:.92rem;color:var(--tinta-2);padding:var(--s-3) var(--s-2) var(--s-1)}
+svg .cx{fill:var(--papel-2);stroke:var(--tinta);stroke-width:1.5}
+svg .cx-a{fill:color-mix(in srgb,var(--azul) 12%,var(--papel));stroke:var(--azul);stroke-width:1.5}
+svg .cx-t{fill:color-mix(in srgb,var(--roxo) 12%,var(--papel));stroke:var(--roxo);stroke-width:1.5}
+svg .t1{font:800 15px var(--f-titulo);fill:var(--tinta)}
+svg .t2{font:13px var(--f-corpo);fill:var(--tinta-2)}
+svg .t3{font:600 11.5px var(--f-mono);fill:var(--tinta-2)}
+svg .seta{stroke:var(--tinta-2);stroke-width:1.6;fill:none}
+svg .seta-a{stroke:var(--azul);stroke-width:2;fill:none}
+svg .seta-t{stroke:var(--roxo);stroke-width:2;fill:none;stroke-dasharray:6 4}
+svg .ponta{fill:var(--tinta-2)} svg .ponta-a{fill:var(--azul)} svg .ponta-t{fill:var(--roxo)}
+svg .eixo{stroke:var(--tinta-3);stroke-width:1}
+svg .faixa-a{fill:color-mix(in srgb,var(--azul) 55%,transparent)}
+svg .faixa-v{fill:color-mix(in srgb,var(--verde) 70%,transparent)}
+svg .faixa-r{fill:color-mix(in srgb,var(--roxo) 40%,transparent)}
+svg .faixa-c{fill:color-mix(in srgb,var(--ciano) 60%,transparent)}
+.tela-txt{font-size:.9rem;color:var(--tinta-2);border-left:3px solid var(--linha);padding:2px 0 2px 10px;max-width:72ch}
+.tela-rot{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-3);margin-right:6px}
+.glossario{display:grid;gap:0;border:1px solid var(--linha);border-radius:var(--r-2);overflow:hidden}
+.glossario div{display:grid;gap:2px;padding:10px 14px;border-bottom:1px solid var(--linha)}
+.glossario div:last-child{border-bottom:0}
+.glossario dt{font-weight:700}
+.glossario dd{margin:0;color:var(--tinta-2);font-size:.95rem}
+@media (min-width:760px){.glossario div{grid-template-columns:13rem 1fr;gap:16px}}
+.b-intro{padding:var(--s-5) 0 0}
+/* ---------- menu de caminhos */
+html{scroll-padding-top:76px}
+.menu-barra{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--papel) 94%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1.5px solid var(--tinta)}
+.menu-barra .miolo{display:flex;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px;position:relative}
+.menu-lin{display:none;flex-wrap:wrap;gap:8px}
+.bt-cam{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--tinta);background:var(--papel);color:var(--tinta);font:800 1rem var(--f-titulo);font-stretch:88%;text-decoration:none;white-space:nowrap}
+.bt-cam:hover{background:var(--tinta);color:var(--papel)}
+.bt-cam.forte{background:var(--azul);border-color:var(--azul);color:#fff}
+.menu-cel{flex:1;min-width:0}
+.menu-cel summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--tinta);color:var(--papel);font:800 1.05rem var(--f-titulo);font-stretch:88%}
+.menu-cel summary::-webkit-details-marker{display:none}
+.menu-cel[open] summary{background:var(--azul);color:#fff}
+.menu-cel nav{position:absolute;left:0;right:0;top:100%;padding:12px 16px 16px;background:var(--papel);border-bottom:1.5px solid var(--tinta);box-shadow:0 12px 24px rgba(0,0,0,.18);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.menu-cel nav .bt-cam{justify-content:center;min-height:52px;white-space:normal;text-align:center}
+.menu-cel nav .bt-cam.largo{grid-column:1 / -1}
+.menu-dica{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-3);grid-column:1 / -1}
+@media (min-width:900px){.menu-lin{display:flex}.menu-cel{display:none}}
+.volta{margin-left:auto;font:600 .8rem var(--f-mono);text-decoration:none;color:var(--tinta-3);white-space:nowrap;align-self:center}
+.volta:hover{color:var(--azul)}
+.ancora{display:block;height:0;overflow:hidden}
+.b-abas-wrap .abas{position:static}
+.voltar-sumario{position:fixed;right:14px;bottom:14px;z-index:40;font:700 .9rem var(--f-corpo);text-decoration:none;background:var(--tinta);color:var(--papel);padding:10px 14px;border-radius:999px;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+@media print{.voltar-sumario,.lingua,.tema-bt,.abas,.copiar,.ver-tudo{display:none!important}.painel[hidden]{display:block!important}}
+.rodape .legal{margin-top:14px;font-size:.85rem;line-height:1.7}.rodape .legal a{color:inherit}
 </style>
-<!-- Medição (19/09/2026): GTM-WJ853JRV (GA4 G-5H5GFWYKWQ, consent mode v2) + Plausible via tp.turboacademy.com.br — mesmo padrão dos outros sites da casa e do /funil8/. -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJ853JRV');</script>
 <script defer data-domain="turboacademy.com.br" src="https://tp.turboacademy.com.br/tp/tp.js" data-api="https://tp.turboacademy.com.br/tp/ev"></script>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ853JRV" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
 
-<div class="topbar">
-  <div class="topbar-in">
-    <div class="logo">T</div>
-    <div><div class="brand-t">Squad Turbo · LPSG 8.1.2</div><div class="brand-s">Instalação do zero</div></div>
-    <nav class="topnav">
-      <a href="#mapa">O mapa</a><a href="#parte1">1-3 · Mac</a><a href="#etapa4">4 · App</a><a href="#etapa5">5 · Code</a><a href="#etapa6">6 · Comando</a><a href="#etapa7">7 · Opcionais</a><a href="#etapa8">8 · Conferir</a><a href="#capacidades">O que faz</a><a href="#trouble">Socorro</a>
+<header class="capa capa-manual" id="topo">
+  <div class="miolo">
+    <div class="topo-barra">
+      <p class="kicker"><b>Turbo Academy</b> · Squad Turbo 9.0 · manual de instalação</p>
+      <button type="button" class="tema-bt" id="tema-bt" aria-label="Trocar tema claro ou escuro">Tema: automático</button>
+    </div>
+    <h1>Squad Turbo,<br><em>instalado pelo próprio Claude.</em></h1>
+    <p class="capa-sub">49 skills e 13 agentes de marketing digital no seu Claude Code. Você cola uma mensagem, o Claude instala e você só aprova. Cada seção tem um número: se travar, pergunte ao Claude citando o número (por exemplo, "o que é a seção E2?").</p>
+    <nav class="sumario" aria-label="Sumário"><span class="sumario-t">Sumário</span><ol><li><a class="parte" href="#parte-a"><b>A</b>Entender</a><ol><li><a href="#a1"><span>A1</span>O que é o Squad Turbo</a></li><li><a href="#a2"><span>A2</span>O que se instala</a></li><li><a href="#a3"><span>A3</span>O que você precisa ter</a></li><li><a href="#a4"><span>A4</span>O que sai da sua máquina</a></li></ol></li><li><a class="parte" href="#parte-b"><b>B</b>Instalar</a><ol><li><a href="#b0"><span>B0</span>Antes de começar</a></li><li><a href="#b1"><span>B1</span>Os passos (Mac ou Windows)</a></li><li><a href="#b2"><span>B2</span>Os opcionais</a></li><li><a href="#b3"><span>B3</span>Conferir que ficou tudo certo</a></li></ol></li><li><a class="parte" href="#parte-c"><b>C</b>Usar no dia a dia</a><ol><li><a href="#c1"><span>C1</span>O primeiro pedido</a></li><li><a href="#c2"><span>C2</span>Os 13 agentes</a></li><li><a href="#c3"><span>C3</span>Atualizar pra versão nova</a></li><li><a href="#c4"><span>C4</span>Os manuais de uso</a></li></ol></li><li><a class="parte" href="#parte-d"><b>D</b>Tirar o squad</a><ol><li><a href="#d1"><span>D1</span>Remover do computador</a></li></ol></li><li><a class="parte" href="#parte-e"><b>E</b>Quando trava</a><ol><li><a href="#e1"><span>E1</span>Sintoma → o que fazer</a></li><li><a href="#e2"><span>E2</span>Mac Intel e a Homebrew</a></li><li><a href="#e3"><span>E3</span>O que nunca fazer</a></li></ol></li><li><a class="parte" href="#parte-f"><b>F</b>Ajuda</a><ol><li><a href="#f1"><span>F1</span>Onde pedir ajuda</a></li><li><a href="#f2"><span>F2</span>Glossário</a></li><li><a href="#f3"><span>F3</span>Procedência e versão</a></li></ol></li></ol></nav>
+  </div>
+</header>
+
+<div class="menu-barra" id="menu">
+  <div class="miolo">
+    <details class="menu-cel">
+      <summary>Menu · qual é o seu caminho?</summary>
+      <nav aria-label="Caminhos (celular)">
+        <span class="menu-dica">Instalar</span>
+        <a class="bt-cam forte" href="#mac">Mac</a>
+        <a class="bt-cam forte" href="#windows">Windows</a>
+        <span class="menu-dica">Depois de instalado</span>
+        <a class="bt-cam" href="#dia-a-dia">Dia a dia</a>
+        <a class="bt-cam" href="#c3">Atualizar</a>
+        <a class="bt-cam" href="#travou">Travou?</a>
+        <a class="bt-cam" href="#glossario">Glossário</a>
+        <a class="bt-cam" href="#entender">Entender</a>
+        <a class="bt-cam" href="#desligar">Remover</a>
+        <a class="bt-cam largo" href="#topo">Sumário completo</a>
+      </nav>
+    </details>
+    <nav class="menu-lin" aria-label="Caminhos">
+      <a class="bt-cam forte" href="#mac">Mac</a>
+      <a class="bt-cam forte" href="#windows">Windows</a>
+      <a class="bt-cam" href="#dia-a-dia">Dia a dia</a>
+      <a class="bt-cam" href="#c3">Atualizar</a>
+      <a class="bt-cam" href="#travou">Travou?</a>
+      <a class="bt-cam" href="#glossario">Glossário</a>
+      <a class="bt-cam" href="#topo">Sumário</a>
     </nav>
   </div>
 </div>
 
-<div class="hero">
-  <div class="kicker">Para quem nunca usou o Claude Code</div>
-  <h1>Do Mac na caixa<br>ao squad <em>respondendo</em></h1>
-  <p class="lead">Duas partes: primeiro você prepara o Mac no Terminal (<strong>uma vez na vida</strong>, ~12 min), depois cola <strong>um comando</strong> no app do Claude e ele instala o squad inteiro.</p>
-  <div class="stats">
-    <div class="stat"><b>~25 min</b><span>do zero ao squad</span></div>
-    <div class="stat"><b>47</b><span>skills instaladas</span></div>
-    <div class="stat"><b>13</b><span>agentes especialistas</span></div>
-    <div class="stat"><b>1</b><span>vez que pede senha</span></div>
-  </div>
-  <div class="cli-note">Prefere fazer pelo Terminal (CLI)? O caminho equivalente está no README do repositório, seção "Instalar em outra máquina".</div>
+<main>
+<div class="miolo">
+<span class="ancora" id="entender"></span>
+<section class="cap" id="parte-a" aria-labelledby="parte-a-t">
+<div class="cap-cab"><span class="cap-letra">Parte A</span><h2 id="parte-a-t">Entender</h2><p>Antes de colar qualquer coisa: o que você está instalando, onde fica e o que sai da sua máquina.</p></div>
+<div class="sec" id="a1">
+<h3><span class="n">A1</span>O que é o Squad Turbo<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Um time de agentes de marketing dentro do seu Claude, que trabalha nos seus arquivos.</p>
+<p>O Squad Turbo é um pacote para o <strong>Claude Code</strong> (a aba Code do app do Claude). Ele não é um aplicativo novo: ensina o Claude da sua conta a trabalhar como uma equipe de marketing digital. Você conversa com o <code>@estrategista-turbo</code>, ele entende o pedido e passa o trabalho para especialistas (copy, design, tráfego, conteúdo, vendas, CS), que usam receitas prontas, as <strong>skills</strong>.</p><p>Foi feito para o método de Lançamento Pago Semanal (LPSG), e as skills servem para qualquer negócio digital: página de vendas, VSL, criativos, carrossel, cortes verticais, campanhas de Meta Ads, mensageria, dashboards.</p><div class="cartoes"><div class="cartao"><span class="cartao-t">Ele faz sozinho</span><p>Ler e escrever arquivos na pasta do projeto, pesquisar, montar páginas, copy e criativos, e conferir o próprio trabalho antes de entregar.</p></div><div class="cartao"><span class="cartao-t">Sempre volta pra você</span><p>Gastar dinheiro, publicar, mandar mensagem ou e-mail pra fora, conectar uma conta sua e aprovar qualquer peça que vai pro ar.</p></div></div>
+</div>
+<div class="sec" id="a2">
+<h3><span class="n">A2</span>O que se instala<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">A lista do que o instalador põe no seu computador.</p>
+<div class="tabela"><table><thead><tr><th>Peça</th><th>O que é, na prática</th></tr></thead><tbody><tr><td>Skills (49)</td><td>Receitas prontas em <code>~/.claude/skills</code>: as 10 fases do LPSG, copy, VSL, páginas, criativos, carrossel, cortes verticais e o visual deles, motion, Meta Ads, dashboards, CRM.</td></tr><tr><td>Agentes (13)</td><td>Especialistas em <code>~/.claude/agents</code>, chamados com <code>@nome</code>. A lista está em <a href="#c2">C2</a>.</td></tr><tr><td>Squad-core</td><td>Modelos, checklists e frameworks em <code>~/.claude/squads/squad-turbo</code>, usados pelo pesquisador.</td></tr><tr><td>Programas de vídeo</td><td>ffmpeg e yt-dlp, para as skills que assistem, cortam e montam vídeo.</td></tr><tr><td>Opcionais</td><td>Transcrição local sem chave de API, Scrapling (ler páginas da web), auditoria visual anti-IA. O Claude pergunta um por um (<a href="#b2">B2</a>).</td></tr><tr><td>Fica de fora</td><td>WhatsApp, e-mail marketing e automação rodam num servidor (VPS), não no computador. Têm instalador próprio no repositório.</td></tr></tbody></table></div>
+</div>
+<div class="sec" id="a3">
+<h3><span class="n">A3</span>O que você precisa ter<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">A lista de compras e o tempo de cada parte.</p>
+<ul class="lista"><li>Uma assinatura do Claude que inclua o Claude Code (Pro ou Max).</li><li>Um <strong>Mac</strong>, ou um <strong>Windows 10 ou 11</strong> com o Ubuntu por dentro (WSL2). No Windows o squad roda dentro do Ubuntu; o passo a passo está em <a href="#windows">B1, aba Windows</a>.</li><li>Uns 2 GB livres para o básico. Os opcionais pesados (até ~5 GB) são escolha sua.</li></ul><div class="tabela"><table><thead><tr><th>Parte</th><th>Quanto leva</th></tr></thead><tbody><tr><td>Mac</td><td>uns 15 minutos; você só abre o Claude, cola a mensagem e aprova</td></tr><tr><td>Windows</td><td>uns 30 minutos, com um reinício no começo (o Ubuntu e o Claude Code entram antes da mensagem)</td></tr><tr><td>Opcionais</td><td>de 5 a 20 minutos cada, conforme a internet</td></tr></tbody></table></div>
+</div>
+<div class="sec" id="a4">
+<h3><span class="n">A4</span>O que sai da sua máquina<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Nada do seu trabalho vai pra Turbo.</p>
+<p>O squad é baixado de um repositório <strong>público</strong> no GitHub. Ele não cria conta, não manda sinal de vida e não lê nada fora das pastas em que você trabalha. O que você produz fica no seu computador e na sua conta do Claude.</p><p>Os opcionais de terceiros (stack Picasso, skills de outros autores) vêm direto da fonte de cada autor, com a licença dele. A lista, com autor e licença, está em <a href="https://github.com/Turbo-Academy/squad-turbo-2026/blob/main/99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md">SKILLS-DE-TERCEIRO.md</a>.</p>
+</div>
+</section>
+<section class="cap" id="parte-b" aria-labelledby="parte-b-t">
+<div class="cap-cab"><span class="cap-letra">Parte B</span><h2 id="parte-b-t">Instalar</h2><p>Escolha o seu computador e siga na ordem. No Mac, você só abre o Claude e cola uma mensagem; no Windows, antes, o Ubuntu e o Claude Code entram por dentro do Windows.</p></div>
+<div class="sec" id="b0">
+<h3><span class="n">B0</span>Antes de começar<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Uma regra só: o Claude faz, você aprova.</p>
+<p>A mensagem de instalação diz ao Claude o que fazer, em ordem, e o que ele nunca pode fazer: pedir senha pelo chat, apagar o que já existe, comprar ou conectar serviço pago. Ele explica cada passo antes de rodar e para quando precisa de você.</p><div class="aviso" role="note"><span class="aviso-t">Já tinha uma versão antiga?</span><p>Cole a mesma mensagem: ela atualiza a pasta que já existe. Se a pasta for de antes de 01/10/2026 (versão 8.1 ou anterior), o histórico do repositório mudou e o Claude renomeia a pasta antiga e baixa de novo, sem apagar nada. Pra só atualizar, use a mensagem de <a href="#c3">C3</a>.</p></div>
+</div>
+</section>
 </div>
 
-<div class="wrap">
-
-<section>
-  <div class="check-card">
-    <h2>✅ O que você precisa antes de começar</h2>
-    <ul class="check-list">
-      <li><span class="box"></span><span>Um computador <b>Mac</b> (Windows também funciona — veja a caixa preta no fim)</span></li>
-      <li><span class="box"></span><span>Uma <b>conta Claude paga</b> (plano Pro ou Max) — crie em <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a></span></li>
-      <li><span class="box"></span><span><b>A senha do seu Mac</b> — vai ser pedida uma vez, na Etapa 2</span></li>
-      <li><span class="box"></span><span><b>~2 GB de espaço livre</b> para o básico (os opcionais pesados vêm depois, e são escolha sua)</span></li>
-      <li><span class="box"></span><span><b>25 minutos</b> sem interrupção</span></li>
-    </ul>
+<div class="b-abas-wrap" id="b1">
+<nav class="abas" aria-label="Sistema do computador">
+  <div class="miolo" role="tablist" aria-label="Escolha o seu computador">
+    <span class="abas-t" aria-hidden="true">Seu computador</span>
+    <button class="aba" role="tab" id="aba-mac" aria-controls="painel-mac" aria-selected="true" tabindex="0">Mac</button>
+    <button class="aba" role="tab" id="aba-win" aria-controls="painel-win" aria-selected="false" tabindex="-1">Windows</button>
   </div>
-</section>
+</nav>
+<span class="ancora" id="mac"></span><div class="painel" id="painel-mac" role="tabpanel" aria-labelledby="aba-mac"><div class="miolo">
+<div class="abertura"><p class="ola">Oi! No Mac são 3 passos.</p><p>Tudo acontece no <strong>app do Claude</strong>. Você não precisa abrir o Terminal, a não ser que o Claude peça pra você rodar uma linha que pede a senha do Mac.</p><div class="aviso" role="note"><span class="aviso-t">Vai ter comando pra aprovar. É normal.</span><p>Durante a instalação o Claude mostra cada comando antes de rodar e pede a sua aprovação. Aprove e siga: faz parte da instalação, não é erro e não é pra fechar nada.</p><p>Se ele pedir pra você rodar uma linha no Terminal (só acontece com o que pede a senha do Mac, como a Homebrew), abra o Terminal com <kbd>Cmd</kbd> + <kbd>Espaço</kbd>, digite Terminal, aperte <kbd>Enter</kbd>, cole a linha com <kbd>Cmd</kbd> + <kbd>V</kbd> e aperte <kbd>Enter</kbd>. Depois escreva no chat que rodou. Nunca mande senha pro Claude.</p></div></div>
+<section class="passo" id="mac-1" aria-labelledby="mac-1-t"><div class="passo-num" aria-hidden="true">1</div><div class="passo-corpo"><p class="passo-onde">App do Claude</p><h3 id="mac-1-t"><span class="sr">Passo 1: </span>Abrir o Claude na aba Code</h3><ol class="lista"><li>Não tem o app? Baixe em <a href="https://claude.ai/download">claude.ai/download</a>, arraste o Claude pra pasta Aplicativos e abra.</li><li>Entre na sua conta do Claude.</li><li>Clique em <strong>Code</strong> e comece uma sessão nova.</li><li>Quando ele pedir a pasta de trabalho, escolha a sua <strong>pasta pessoal</strong> (a da casinha, com o seu nome).</li></ol><p class="prova"><span class="prova-selo">Prova</span>A sessão do Code aberta, com o nome da sua pasta pessoal em cima da caixa de mensagem.</p></div></section>
+<section class="passo" id="mac-2" aria-labelledby="mac-2-t"><div class="passo-num" aria-hidden="true">2</div><div class="passo-corpo"><p class="passo-onde">App do Claude</p><h3 id="mac-2-t"><span class="sr">Passo 2: </span>Colar a mensagem de instalação</h3><p>Copie a mensagem abaixo pelo botão e cole na caixa de mensagem do Claude. Ele faz o resto e vai te explicando.</p><div class="cmd cmd-mensagem" id="msg-01" data-inteiro="1"><div class="cmd-topo"><span class="cmd-rotulo">Mensagem pro Claude</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na caixa de mensagem do Claude</span><button type="button" class="copiar copiar-tudo" data-alvo="msg-01"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar tudo</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><p class="um-so">É uma mensagem só. Copie tudo pelo botão e cole de uma vez, sem dividir.</p><template class="cmd-fonte">Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote público e gratuito de agentes e skills de marketing digital pro Claude Code, da Turbo Academy: https://github.com/Turbo-Academy/squad-turbo-2026
 
-<section id="mapa">
-  <h2 class="section-h">🧭 O mapa: tudo que existe, e o que é obrigatório</h2>
-  <p class="section-sub">Esta tabela é o manual inteiro em 11 linhas. O resto da página é o passo a passo de cada uma.</p>
-  <div class="agents-scroll"><table class="agents-tb">
-      <tr><td>1</td><td><b>Ferramentas de linha de comando da Apple</b> (Xcode CLT) — Terminal</td><td>✅ base</td><td>3-5 min</td></tr>
-      <tr><td>2</td><td><b>Homebrew</b> — o instalador de programas do Mac — Terminal</td><td>✅ base</td><td>3-5 min</td></tr>
-      <tr><td>3</td><td><b>git · node · python · ffmpeg · yt-dlp</b> — Terminal (<code>brew</code>)</td><td>✅ base</td><td>4 min</td></tr>
-      <tr><td>4</td><td><b>App Claude Desktop</b> + login — site e app</td><td>✅ base</td><td>5 min</td></tr>
-      <tr><td>5</td><td><b>Squad Turbo</b> — skills, agentes e templates — chat do Claude</td><td>✅ base</td><td>5-10 min</td></tr>
-      <tr><td>6</td><td><b>Transcrição local de vídeo</b> — sem chave de API, o áudio não sai do Mac</td><td>⬜ opcional · ~4 GB</td><td>10 min</td></tr>
-      <tr><td>7</td><td><b>Scrapling</b> — o Claude lê qualquer página da web</td><td>⬜ opcional · ~1,5 GB</td><td>10 min</td></tr>
-      <tr><td>8</td><td><b>OpenWA</b> — WhatsApp dentro do chat</td><td>⬜ opcional · precisa de VPS</td><td>—</td></tr>
-      <tr><td>9</td><td><b>Mautic</b> — e-mail marketing próprio</td><td>⬜ opcional · precisa de VPS</td><td>—</td></tr>
-      <tr><td>10</td><td><b>n8n</b> — automação dos 14 workflows</td><td>⬜ opcional · precisa de VPS</td><td>—</td></tr>
-      <tr><td>11</td><td><b>MCPs</b> (Drive, NotebookLM, Meta Ads…) — depois, quando quiser</td><td>⬜ opcional</td><td>—</td></tr>
-  </table></div>
-  <div class="dica"><span>💡</span><span><b>Os 5 primeiros são o básico e não têm decisão a tomar</b> — instale todos. Do 6 em diante o instalador <b>pergunta um a um</b>, e "não" nunca é a resposta errada: dá pra instalar qualquer um depois, rodando o instalador de novo. Os itens 8, 9 e 10 rodam num servidor (VPS), não no seu Mac — <b>e cabem os três no mesmo servidor</b>.</span></div>
-</section>
+Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simples antes de rodar, e eu só aprovo. Regras:
+- Nunca me peça senha, token ou código pelo chat. Se um comando precisar da senha do computador (sudo, ou o instalador da Homebrew no Mac), não rode: me mostre a linha, eu rodo no Terminal (no Mac) ou numa segunda janela do Ubuntu (no Windows) e te aviso.
+- Não apague nada que já exista. Se uma pasta já existir e precisar sair do caminho, renomeie com a data no fim e me diga.
+- Não compre nada, não crie conta e não conecte serviço pago sem me perguntar.
 
-<section id="parte1">
-  <h2 class="section-h">Parte 1 · Preparar o Mac <span style="font-family:Inter,sans-serif;font-size:14px;color:var(--text-muted)">· Terminal · ~12 min</span></h2>
-  <p class="section-sub">Uma vez na vida. Depois disso, nenhuma instalação sua trava de novo aqui.</p>
-  <div class="dica"><span>🔑</span><span><b>Por que isto vem primeiro, e por que é no Terminal.</b> O Homebrew pede <b>a senha do seu Mac</b> — e senha é a única coisa que o Claude não digita por você, nunca. Se você pular esta parte, a instalação do squad anda até a metade e trava exatamente aqui. Fazendo agora, o resto corre sem interrupção.<br><br><b>Máquina já preparada?</b> Pule pra Parte 2 — mas rode antes o comando de conferência do fim da Etapa 3.</span></div>
-  <div class="dica"><span>🖥️</span><span><b>Abra o Terminal:</b> <b>Cmd + Espaço</b> → digite <b>Terminal</b> → Enter. Abre uma janela com texto e um cursor piscando. É aí que vão os comandos — um de cada vez, Enter depois de cada um, esperando o anterior terminar.</span></div>
-</section>
+1. Conferir o computador. Rode `uname -sm` e `git --version` e me diga o que achou. No Mac, se o git não existir, aparece uma janela pedindo as &quot;ferramentas de linha de comando&quot;: eu clico em Instalar e te aviso quando terminar. No Ubuntu, se faltar git, unzip ou python3, me mostre a linha do apt pra eu rodar.
 
-<section id="etapa1">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">1</div><h2>Ferramentas de linha de comando da Apple</h2><span class="tempo">~3-5 min</span></div>
-    <div class="etapa-body">
-      <p>O Homebrew não vive sem elas. Cole no Terminal:</p>
-      <div class="code-block">
-        <pre id="cmd-xcode">xcode-select --install</pre>
-        <button class="copy-btn" data-copy="cmd-xcode">Copiar</button>
-      </div>
-      <p style="margin-top:14px">Abre uma janelinha do sistema pedindo confirmação → clique em <strong>Instalar</strong> e aceite os termos.</p>
-      <div class="dica"><span>ℹ️</span><span>Se responder <code>command line tools are already installed</code>, ótimo: já estava lá, siga em frente. E isto <b>não</b> é o Xcode inteiro (aqueles 12 GB) — são só as ferramentas de compilação, algumas centenas de MB.</span></div>
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> <code>xcode-select -p</code> responde com um caminho, tipo <code>/Library/Developer/CommandLineTools</code>.</span></div>
-    </div>
-  </div>
-</section>
+2. Baixar o squad. Se a pasta ~/squad-turbo-2026 não existir, rode:
+   git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+   Se ela já existir, rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se o pull falhar, renomeie a pasta antiga pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo.
 
-<section id="etapa2">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">2</div><h2>Homebrew — o instalador de programas do Mac</h2><span class="tempo">~3-5 min</span></div>
-    <div class="etapa-body">
-      <p>É o que deixa você instalar programas com um comando só. Praticamente tudo que vem depois passa por ele.</p>
-      <div class="code-block">
-        <pre id="cmd-brew">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pre>
-        <button class="copy-btn" data-copy="cmd-brew">Copiar</button>
-      </div>
-      <div class="dica"><span>🔑</span><span><b>Vai pedir a senha do seu Mac.</b> Digite e dê Enter — <b>o Terminal não mostra nada enquanto você digita</b>, nem asterisco, nem bolinha. É assim mesmo; não está travado.</span></div>
-      <p style="margin-top:14px">Quando terminar, o próprio Homebrew imprime um bloco chamado <strong>"Next steps"</strong> com dois ou três comandos. <strong>Rode todos</strong> — são eles que ensinam o Mac a achar o Homebrew. Em Mac com chip Apple (M1/M2/M3/M4) são estes:</p>
-      <div class="code-block">
-<pre id="cmd-brewpath">echo >> ~/.zprofile
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"</pre>
-        <button class="copy-btn" data-copy="cmd-brewpath">Copiar</button>
-      </div>
-      <div class="dica"><span>💻</span><span><b>Mac Intel</b> (mais antigo): o caminho é <code>/usr/local/bin/brew</code>, não <code>/opt/homebrew/bin/brew</code>. Use o que o <b>seu</b> "Next steps" mostrou — ele já sabe qual é o seu caso. Na dúvida, copie de lá, não daqui.</span></div>
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> <code>brew --version</code> responde <code>Homebrew 4.x</code>. Se responder <code>command not found</code>, os comandos do "Next steps" não foram rodados — volte e rode.</span></div>
-    </div>
-  </div>
-</section>
+3. Instalar o básico (skills, agentes e modelos). Rode:
+   bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null
+   Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
 
-<section id="etapa3">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">3</div><h2>O básico: git, node, python, ffmpeg e yt-dlp</h2><span class="tempo">~4 min</span></div>
-    <div class="etapa-body">
-      <p>Um comando instala os cinco:</p>
-      <div class="code-block">
-        <pre id="cmd-basics">brew install git node python ffmpeg yt-dlp</pre>
-        <button class="copy-btn" data-copy="cmd-basics">Copiar</button>
-      </div>
-      <div class="expect">
-        <h3>O que cada um faz</h3>
-        <ul>
-          <li><span class="dot"></span><span><strong>git</strong> — baixar e atualizar o squad (e qualquer repositório)</span></li>
-          <li><span class="dot"></span><span><strong>node</strong> — rodar o Claude Code e as ferramentas conectadas (MCPs)</span></li>
-          <li><span class="dot"></span><span><strong>python</strong> — os scripts do squad: geradores de slide, carrossel, análise</span></li>
-          <li><span class="dot"></span><span><strong>ffmpeg</strong> — cortar, converter e extrair quadros de vídeo</span></li>
-          <li><span class="dot"></span><span><strong>yt-dlp</strong> — baixar vídeo do YouTube pro squad assistir de verdade</span></li>
-        </ul>
-      </div>
-      <p style="margin-top:18px"><strong>Confira os seis de uma vez</strong> — todos têm que responder com uma versão:</p>
-      <div class="code-block">
-        <pre id="cmd-check">brew --version &amp;&amp; git --version &amp;&amp; node --version &amp;&amp; python3 --version &amp;&amp; ffmpeg -version | head -1 &amp;&amp; yt-dlp --version</pre>
-        <button class="copy-btn" data-copy="cmd-check">Copiar</button>
-      </div>
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> os seis responderam. Se <b>algum</b> disser <code>command not found</code>, rode <code>brew install &lt;o que faltou&gt;</code> e confira de novo — não siga com pendência aqui, é exatamente isso que trava a Parte 2.</span></div>
-    </div>
-  </div>
-</section>
+4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
+   - Mac com `brew`: `brew install ffmpeg yt-dlp`.
+   - Mac sem `brew`: me mostre a linha oficial da Homebrew pra eu rodar no Terminal (ela pede a senha do Mac): /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;. Se o `uname -sm` disse x86_64 (Mac Intel), me mande a linha da seção E2 do manual de instalação no lugar dessa. Depois rode as linhas do &quot;Next steps&quot; que ela imprimir e o `brew install ffmpeg yt-dlp`.
+   - Ubuntu (Windows): se faltar o ffmpeg, me mostre `sudo apt-get install -y ffmpeg pipx` pra eu rodar; o yt-dlp você instala sem sudo com `pipx install yt-dlp &amp;&amp; pipx ensurepath`.
 
-<section id="parte2">
-  <h2 class="section-h">Parte 2 · Instalar o squad <span style="font-family:Inter,sans-serif;font-size:14px;color:var(--text-muted)">· app do Claude · ~15 min</span></h2>
-  <p class="section-sub">Daqui pra frente é tudo no app, e nada mais pede senha.</p>
-</section>
+5. Opcionais. Me pergunte um por vez, dizendo pra que serve e quanto ocupa, e só instale com o meu sim:
+   a) transcrição de vídeo local, sem chave de API (~220 MB agora + ~3,5 GB do modelo no primeiro uso): bash ~/.claude/skills/watch/whisper-local/instalar.sh
+   b) Scrapling, pro Claude ler qualquer página da web (~1,5 GB): bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-scrapling.sh
+   c) stack Picasso, auditoria visual anti-IA (3 skills de terceiros, precisa de Node): os 3 comandos `npx skills add` do bloco &quot;11/11 · Opcionais&quot; do instalar-squad.sh.
+   WhatsApp (OpenWA), e-mail marketing (Mautic) e automação (n8n) rodam num servidor (VPS), não neste computador: não instale agora, só me diga que existem e que o passo a passo está no README do repositório.
 
-<section id="etapa4">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">4</div><h2>Instalar o app Claude Desktop</h2><span class="tempo">~5 min</span></div>
-    <div class="etapa-body">
-      <ol class="steps">
-        <li><span>Baixe o app em <strong><a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a></strong></span></li>
-        <li><span>Abra o arquivo baixado e <strong>arraste o Claude pra pasta Aplicativos</strong></span></li>
-        <li><span>Abra o Claude (<strong>Cmd + Espaço</strong> → digite <strong>Claude</strong> → Enter)</span></li>
-        <li><span><strong>Entre na sua conta</strong> claude.ai — a conta <strong>paga</strong> (Pro ou Max)</span></li>
-      </ol>
+6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em &quot;SQUAD OK&quot;. Me mostre a saída inteira.
 
-      <figure class="shot">
-      <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Janela de instalação do Mac: arrastar o ícone do Claude para a pasta Aplicativos">
-        <rect width="720" height="290" fill="#F4F2EC"/>
-        <rect x="70" y="34" width="580" height="222" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <path d="M70 48a14 14 0 0 1 14-14h552a14 14 0 0 1 14 14v20H70z" fill="#F7F5F0"/>
-        <line x1="70" y1="68" x2="650" y2="68" stroke="#E8E5DE"/>
-        <circle cx="92" cy="51" r="5" fill="#FF5F57"/><circle cx="110" cy="51" r="5" fill="#FEBC2E"/><circle cx="128" cy="51" r="5" fill="#28C840"/>
-        <text x="360" y="55" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#8A8A8A">Claude</text>
+7. Fechar e abrir. Me diga pra fechar o Claude e abrir de novo: skills e agentes só carregam numa sessão nova. Na sessão nova eu vou mandar &quot;@estrategista-turbo, o que você faz e por onde eu começo?&quot;.</template><pre class="cmd-texto msg-texto" tabindex="0"><code>Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote público e gratuito de agentes e skills de marketing digital pro Claude Code, da Turbo Academy: https://github.com/Turbo-Academy/squad-turbo-2026
 
-        <rect x="192" y="108" width="92" height="92" rx="21" fill="#D97757"/>
-        <g stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
-          <line x1="218" y1="154" x2="258" y2="154"/><line x1="238" y1="134" x2="238" y2="174"/>
-          <line x1="224" y1="140" x2="252" y2="168"/><line x1="252" y1="140" x2="224" y2="168"/>
-        </g>
-        <text x="238" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#3A3A3A">Claude</text>
+Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simples antes de rodar, e eu só aprovo. Regras:
+- Nunca me peça senha, token ou código pelo chat. Se um comando precisar da senha do computador (sudo, ou o instalador da Homebrew no Mac), não rode: me mostre a linha, eu rodo no Terminal (no Mac) ou numa segunda janela do Ubuntu (no Windows) e te aviso.
+- Não apague nada que já exista. Se uma pasta já existir e precisar sair do caminho, renomeie com a data no fim e me diga.
+- Não compre nada, não crie conta e não conecte serviço pago sem me perguntar.
 
-        <line x1="312" y1="154" x2="418" y2="154" stroke="#FF5C00" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
-        <path d="M416 145l16 9-16 9z" fill="#FF5C00"/>
+1. Conferir o computador. Rode `uname -sm` e `git --version` e me diga o que achou. No Mac, se o git não existir, aparece uma janela pedindo as &quot;ferramentas de linha de comando&quot;: eu clico em Instalar e te aviso quando terminar. No Ubuntu, se faltar git, unzip ou python3, me mostre a linha do apt pra eu rodar.
 
-        <path d="M448 118h34l10 12h60a8 8 0 0 1 8 8v54a8 8 0 0 1-8 8h-104a8 8 0 0 1-8-8v-66a8 8 0 0 1 8-8z" fill="#6E9BEA"/>
-        <path d="M448 136h112a8 8 0 0 1 8 8v48a8 8 0 0 1-8 8H448a8 8 0 0 1-8-8v-48a8 8 0 0 1 8-8z" fill="#8FB4F2"/>
-        <text x="504" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">A</text>
-        <text x="504" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#3A3A3A">Aplicativos</text>
-      </svg>
-      <figcaption><b>Etapa 4 · o que você vai ver:</b> arraste o ícone do Claude pra cima da pasta Aplicativos e solte. Ilustração — sua tela pode variar um pouco.</figcaption>
-      </figure>
+2. Baixar o squad. Se a pasta ~/squad-turbo-2026 não existir, rode:
+   git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+   Se ela já existir, rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se o pull falhar, renomeie a pasta antiga pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo.
 
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o app abre e mostra o chat do Claude com seu nome/conta.</span></div>
-    </div>
-  </div>
-</section>
+3. Instalar o básico (skills, agentes e modelos). Rode:
+   bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null
+   Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
 
-<section id="etapa5">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">5</div><h2>Abrir uma sessão no Code</h2><span class="tempo">~2 min</span></div>
-    <div class="etapa-body">
-      <p>O <strong>Code</strong> é a área do app em que o Claude tem mãos: lê arquivos e executa comandos numa pasta que você escolher.</p>
-      <ol class="steps">
-        <li><span>No app Claude, clique em <strong>Code</strong> (na barra lateral)</span></li>
-        <li><span>Crie uma <strong>nova sessão</strong> e, quando ele pedir a pasta, escolha onde o squad vai morar — <strong>Documentos</strong> serve perfeitamente</span></li>
-        <li><span>Abre um chat normal — a diferença é que esse chat trabalha dentro da pasta escolhida</span></li>
-      </ol>
+4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
+   - Mac com `brew`: `brew install ffmpeg yt-dlp`.
+   - Mac sem `brew`: me mostre a linha oficial da Homebrew pra eu rodar no Terminal (ela pede a senha do Mac): /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;. Se o `uname -sm` disse x86_64 (Mac Intel), me mande a linha da seção E2 do manual de instalação no lugar dessa. Depois rode as linhas do &quot;Next steps&quot; que ela imprimir e o `brew install ffmpeg yt-dlp`.
+   - Ubuntu (Windows): se faltar o ffmpeg, me mostre `sudo apt-get install -y ffmpeg pipx` pra eu rodar; o yt-dlp você instala sem sudo com `pipx install yt-dlp &amp;&amp; pipx ensurepath`.
 
-      <figure class="shot">
-      <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="App Claude com a barra lateral: clicar em Code e escolher a pasta Documentos">
-        <rect width="720" height="330" fill="#F4F2EC"/>
-        <rect x="40" y="26" width="640" height="278" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
-        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
-        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
+5. Opcionais. Me pergunte um por vez, dizendo pra que serve e quanto ocupa, e só instale com o meu sim:
+   a) transcrição de vídeo local, sem chave de API (~220 MB agora + ~3,5 GB do modelo no primeiro uso): bash ~/.claude/skills/watch/whisper-local/instalar.sh
+   b) Scrapling, pro Claude ler qualquer página da web (~1,5 GB): bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-scrapling.sh
+   c) stack Picasso, auditoria visual anti-IA (3 skills de terceiros, precisa de Node): os 3 comandos `npx skills add` do bloco &quot;11/11 · Opcionais&quot; do instalar-squad.sh.
+   WhatsApp (OpenWA), e-mail marketing (Mautic) e automação (n8n) rodam num servidor (VPS), não neste computador: não instale agora, só me diga que existem e que o passo a passo está no README do repositório.
 
-        <rect x="40" y="60" width="176" height="244" fill="#FAF8F4"/>
-        <line x1="216" y1="60" x2="216" y2="304" stroke="#E8E5DE"/>
-        <rect x="56" y="80" width="86" height="11" rx="5.5" fill="#DEDAD1"/>
-        <rect x="56" y="112" width="144" height="34" rx="9" fill="#FFFFFF" stroke="#E8E5DE"/>
-        <text x="72" y="134" font-family="Inter,sans-serif" font-size="13.5" fill="#6B6B6B">Chat</text>
-        <rect x="56" y="154" width="144" height="34" rx="9" fill="#FFEDE0" stroke="#FF5C00" stroke-width="2"/>
-        <text x="72" y="176" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#C2410C">Code</text>
-        <circle cx="204" cy="158" r="11" fill="#FF5C00"/>
-        <text x="204" y="163" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
-        <rect x="56" y="198" width="144" height="34" rx="9" fill="#FFFFFF" stroke="#E8E5DE"/>
-        <text x="72" y="220" font-family="Inter,sans-serif" font-size="13.5" fill="#6B6B6B">Histórico</text>
+6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em &quot;SQUAD OK&quot;. Me mostre a saída inteira.
 
-        <rect x="258" y="92" width="380" height="180" rx="12" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <text x="282" y="122" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#0A0A0A">Escolher a pasta do projeto</text>
-        <rect x="282" y="138" width="332" height="34" rx="8" fill="#FFEDE0" stroke="#FF5C00" stroke-width="2"/>
-        <path d="M296 148h11l3 4h16a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3h-30a3 3 0 0 1-3-3v-15a3 3 0 0 1 3-3z" fill="#FF5C00"/>
-        <text x="344" y="160" font-family="Inter,sans-serif" font-size="13.5" font-weight="700" fill="#C2410C">Documentos</text>
-        <circle cx="628" cy="155" r="11" fill="#FF5C00"/>
-        <text x="628" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
-        <rect x="282" y="180" width="332" height="30" rx="8" fill="#FAF8F4"/>
-        <text x="300" y="200" font-family="Inter,sans-serif" font-size="13" fill="#8A8A8A">Downloads</text>
-        <rect x="282" y="216" width="332" height="30" rx="8" fill="#FAF8F4"/>
-        <text x="300" y="236" font-family="Inter,sans-serif" font-size="13" fill="#8A8A8A">Área de trabalho</text>
-      </svg>
-      <figcaption><b>Etapa 5 · o que você vai ver:</b> <b>1</b> clique em Code na barra lateral · <b>2</b> escolha a pasta onde o squad vai morar. Ilustração — sua tela pode variar um pouco.</figcaption>
-      </figure>
+7. Fechar e abrir. Me diga pra fechar o Claude e abrir de novo: skills e agentes só carregam numa sessão nova. Na sessão nova eu vou mandar &quot;@estrategista-turbo, o que você faz e por onde eu começo?&quot;.</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: 49 skills · 13 agentes · squad-core</strong>.</p><div class="momentos"><h4 class="momentos-t">O que vai aparecer e o que fazer</h4><div class="momento"><h5 class="momento-t">O Claude pede pra aprovar um comando</h5><dl class="momento-dl"><dt>O que aparece</dt><dd>Antes de rodar algo, o Claude mostra o comando e pergunta se pode.</dd><dt>O que fazer</dt><dd>Leia a explicação dele e aprove. Se não entendeu o que o comando faz, pergunte antes: ele explica.</dd><dt>Tempo e o que é normal</dt><dd>Acontece várias vezes. O Claude fica parado até você responder.</dd></dl></div><div class="momento"><h5 class="momento-t">As ferramentas de linha de comando do Mac</h5><dl class="momento-dl"><dt>O que aparece</dt><dd>Uma janela do macOS dizendo que o comando precisa das ferramentas de desenvolvedor de linha de comando, com os botões Instalar, Agora Não e Obter o Xcode.</dd><dt>O que fazer</dt><dd>Clique em <strong>Instalar</strong> e aceite a licença. Não precisa do Xcode inteiro. Quando terminar, escreva no chat que terminou.</dd><dt>Tempo e o que é normal</dt><dd>Alguns minutos. A barra às vezes fica parada um tempo: espere.</dd></dl></div><div class="momento"><h5 class="momento-t">A Homebrew pede a senha do Mac</h5><dl class="momento-dl"><dt>O que aparece</dt><dd>O Claude mostra uma linha começando com <code>/bin/bash -c</code> e pede pra você rodar no Terminal. Depois de colar, o Terminal escreve <code>Password:</code>.</dd><dt>O que fazer</dt><dd>Digite a senha do seu Mac e aperte <kbd>Enter</kbd>. Enquanto você digita, nada aparece, nem bolinha: é normal. No fim ela imprime um bloco <strong>Next steps</strong>: copie esse bloco pro Claude, que ele roda as linhas.</dd><dt>Tempo e o que é normal</dt><dd>De 3 a 10 minutos. Mac Intel? Veja <a href="#e2">E2</a> antes.</dd></dl></div></div></div></section>
+<section class="passo" id="mac-3" aria-labelledby="mac-3-t"><div class="passo-num" aria-hidden="true">3</div><div class="passo-corpo"><p class="passo-onde">App do Claude</p><h3 id="mac-3-t"><span class="sr">Passo 3: </span>Fechar, abrir e testar</h3><p>Com o <strong>SQUAD OK</strong> na tela, feche o app do Claude (<kbd>Cmd</kbd> + <kbd>Q</kbd>) e abra de novo. Skills e agentes só carregam numa sessão nova. Abra uma sessão nova no Code, na mesma pasta, e mande:</p><div class="cmd" id="cmd-02"><div class="cmd-topo"><span class="cmd-rotulo">Teste</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na caixa de mensagem do Claude</span><button type="button" class="copiar" data-alvo="cmd-02"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">@estrategista-turbo, o que você faz e por onde eu começo?</template><pre class="cmd-texto" tabindex="0"><code>@estrategista-turbo, o que você faz e por onde eu começo?</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>O @estrategista-turbo se apresenta e pergunta sobre o seu negócio ou o seu projeto.</p></div></section>
+</div></div>
+<span class="ancora" id="windows"></span><div class="painel" id="painel-win" role="tabpanel" aria-labelledby="aba-win" hidden><div class="miolo">
+<div class="abertura"><p class="ola">Oi! No Windows são 5 passos.</p><p>O squad não roda direto no Windows. Ele roda num Ubuntu (um Linux) que o próprio Windows instala por dentro, o WSL. Os passos 1 a 4 preparam esse Ubuntu e abrem o Claude Code dentro dele; a partir do passo 4 é o Claude que faz o resto. O app Claude do Windows não serve pro squad: ele não enxerga o Ubuntu.</p><div class="dicas"><div class="dica"><span class="dica-t">Colar na janela do Ubuntu</span><p>Clique com o botão direito dentro dela (ou <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd>) e aperte <kbd>Enter</kbd>.</p></div><div class="dica"><span class="dica-t">Copiar da janela do Ubuntu</span><p>Selecione com o mouse e aperte <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>. O <kbd>Ctrl</kbd> + <kbd>C</kbd> sozinho interrompe o comando que está rodando.</p></div></div><div class="aviso" role="note"><span class="aviso-t">A sua senha é só sua.</span><p>Algumas linhas pedem a senha do Ubuntu (as que começam com <code>sudo</code>). Quem digita é você, na janela do Ubuntu. Enquanto você digita, nada aparece: é normal. Ninguém da Turbo nem o Claude vai pedir essa senha.</p></div></div>
+<section class="passo" id="win-1" aria-labelledby="win-1-t"><div class="passo-num" aria-hidden="true">1</div><div class="passo-corpo"><p class="passo-onde">PowerShell como administrador</p><h3 id="win-1-t"><span class="sr">Passo 1: </span>Instalar o Ubuntu</h3><p>Menu Iniciar, digite PowerShell, clique com o botão direito e escolha <strong>Executar como administrador</strong>. Clique em <strong>Sim</strong> quando o Windows perguntar.</p><div class="cmd" id="cmd-03"><div class="cmd-topo"><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole no PowerShell (administrador)</span><button type="button" class="copiar" data-alvo="cmd-03"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">wsl --install -d Ubuntu</template><pre class="cmd-texto" tabindex="0"><code>wsl --install -d Ubuntu</code></pre></div><p>Quando terminar, reinicie o Windows se ele pedir. Depois, de volta no PowerShell:</p><div class="cmd" id="cmd-04"><div class="cmd-topo"><span class="cmd-rotulo">Prova</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole no PowerShell (administrador)</span><button type="button" class="copiar" data-alvo="cmd-04"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">wsl -l -v</template><pre class="cmd-texto" tabindex="0"><code>wsl -l -v</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>Tem que aparecer <strong>Ubuntu</strong> com o número 2 na coluna VERSION.</p></div></section>
+<section class="passo" id="win-2" aria-labelledby="win-2-t"><div class="passo-num" aria-hidden="true">2</div><div class="passo-corpo"><p class="passo-onde">Ubuntu</p><h3 id="win-2-t"><span class="sr">Passo 2: </span>Criar o seu usuário do Ubuntu</h3><p>Abra o Ubuntu pelo menu Iniciar. Na primeira vez ele pede um nome de usuário (só letras minúsculas, sem espaço e sem acento) e uma senha. Guarde a senha: é a do <code>sudo</code> daqui pra frente.</p><div class="cmd" id="cmd-05"><div class="cmd-topo"><span class="cmd-rotulo">Prova</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-05"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">echo $HOME</template><pre class="cmd-texto" tabindex="0"><code>echo $HOME</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>Tem que aparecer <code>/home/</code> seguido do nome que você escolheu.</p></div></section>
+<section class="passo" id="win-3" aria-labelledby="win-3-t"><div class="passo-num" aria-hidden="true">3</div><div class="passo-corpo"><p class="passo-onde">Ubuntu · pede a senha · 3 a 5 minutos</p><h3 id="win-3-t"><span class="sr">Passo 3: </span>Programas e o Claude Code</h3><p>Cole uma linha de cada vez e espere cada uma terminar.</p><div class="cmd" id="cmd-06"><div class="cmd-topo"><span class="cmd-rotulo">Linha 1</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-06"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">sudo apt-get update &amp;&amp; sudo apt-get install -y git curl unzip xz-utils python3 python3-venv pipx ffmpeg</template><pre class="cmd-texto" tabindex="0"><code>sudo apt-get update &amp;&amp; sudo apt-get install -y git curl unzip xz-utils python3 python3-venv pipx ffmpeg</code></pre></div><div class="cmd cmd-longo" id="cmd-07"><div class="cmd-topo"><span class="cmd-rotulo">Linha 2</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-07"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">A=&quot;$(uname -m)&quot;; case &quot;$A&quot; in x86_64) A=x64;; aarch64) A=arm64;; esac; cd /tmp &amp;&amp; curl -fsSLO https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt &amp;&amp; F=&quot;$(grep -o &quot;node-v22\.[0-9.]*-linux-$A\.tar\.xz&quot; SHASUMS256.txt | head -1)&quot; &amp;&amp; curl -fsSLO &quot;https://nodejs.org/dist/latest-v22.x/$F&quot; &amp;&amp; grep &quot; $F\$&quot; SHASUMS256.txt | sha256sum -c - &amp;&amp; sudo tar -xJf &quot;$F&quot; -C /usr/local --strip-components=1 --no-same-owner &amp;&amp; cd ~ &amp;&amp; node -v</template><pre class="cmd-texto" tabindex="0"><code>A=&quot;$(uname -m)&quot;; case &quot;$A&quot; in x86_64) A=x64;; aarch64) A=arm64;; esac; cd /tmp &amp;&amp; curl -fsSLO https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt &amp;&amp; F=&quot;$(grep -o &quot;node-v22\.[0-9.]*-linux-$A\.tar\.xz&quot; SHASUMS256.txt | head -1)&quot; &amp;&amp; curl -fsSLO &quot;https://nodejs.org/dist/latest-v22.x/$F&quot; &amp;&amp; grep &quot; $F\$&quot; SHASUMS256.txt | sha256sum -c - &amp;&amp; sudo tar -xJf &quot;$F&quot; -C /usr/local --strip-components=1 --no-same-owner &amp;&amp; cd ~ &amp;&amp; node -v</code></pre><p class="um-so">Um comando só, mesmo que apareça quebrado em várias linhas. O botão copia ele inteiro.</p><button type="button" class="ver-tudo" aria-expanded="false">Ver inteiro</button></div><div class="cmd" id="cmd-08"><div class="cmd-topo"><span class="cmd-rotulo">Linha 3</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-08"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">sudo npm install -g @anthropic-ai/claude-code &amp;&amp; claude --version</template><pre class="cmd-texto" tabindex="0"><code>sudo npm install -g @anthropic-ai/claude-code &amp;&amp; claude --version</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>A linha 2 termina com uma versão que começa com <strong>v22</strong>. A linha 3 termina com a versão do Claude Code.</p></div></section>
+<section class="passo" id="win-4" aria-labelledby="win-4-t"><div class="passo-num" aria-hidden="true">4</div><div class="passo-corpo"><p class="passo-onde">Ubuntu · Claude Code</p><h3 id="win-4-t"><span class="sr">Passo 4: </span>Entrar na conta e colar a mensagem</h3><div class="cmd" id="cmd-09"><div class="cmd-topo"><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-09"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">claude</template><pre class="cmd-texto" tabindex="0"><code>claude</code></pre></div><p>Dentro dele, digite <code>/login</code> e aperte <kbd>Enter</kbd>. Ele mostra um link: se o navegador não abrir sozinho, copie o link e abra no navegador do Windows. Entre na sua conta, clique em Autorizar e, se ele pedir, cole o código de volta na janela do Ubuntu. Depois digite <code>/exit</code>.</p><div class="cmd" id="cmd-10"><div class="cmd-topo"><span class="cmd-rotulo">Prova</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-10"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">claude -p &quot;responda só OK&quot;</template><pre class="cmd-texto" tabindex="0"><code>claude -p &quot;responda só OK&quot;</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>Tem que responder <strong>OK</strong>. Então abra o Claude na sua pasta:</p><div class="cmd" id="cmd-11"><div class="cmd-topo"><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-11"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">cd ~ &amp;&amp; claude</template><pre class="cmd-texto" tabindex="0"><code>cd ~ &amp;&amp; claude</code></pre></div><p>E cole a mensagem abaixo, inteira, na caixa do Claude Code. Os comandos com <code>sudo</code> que o Claude mostrar você roda numa segunda janela do Ubuntu (menu Iniciar, Ubuntu).</p><div class="cmd cmd-mensagem" id="msg-12" data-inteiro="1"><div class="cmd-topo"><span class="cmd-rotulo">Mensagem pro Claude</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole no Claude Code, na janela do Ubuntu</span><button type="button" class="copiar copiar-tudo" data-alvo="msg-12"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar tudo</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><p class="um-so">É uma mensagem só. Copie tudo pelo botão e cole de uma vez, sem dividir.</p><template class="cmd-fonte">Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote público e gratuito de agentes e skills de marketing digital pro Claude Code, da Turbo Academy: https://github.com/Turbo-Academy/squad-turbo-2026
 
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> sessão aberta mostrando o nome da pasta (ex.: <strong>Documentos</strong>).</span></div>
-    </div>
-  </div>
-</section>
+Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simples antes de rodar, e eu só aprovo. Regras:
+- Nunca me peça senha, token ou código pelo chat. Se um comando precisar da senha do computador (sudo, ou o instalador da Homebrew no Mac), não rode: me mostre a linha, eu rodo no Terminal (no Mac) ou numa segunda janela do Ubuntu (no Windows) e te aviso.
+- Não apague nada que já exista. Se uma pasta já existir e precisar sair do caminho, renomeie com a data no fim e me diga.
+- Não compre nada, não crie conta e não conecte serviço pago sem me perguntar.
 
-<section id="etapa6">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">6</div><h2>Colar o comando de instalação</h2><span class="tempo">~5-10 min</span></div>
-    <div class="etapa-body">
-      <p>Cole isto no chat e aperte Enter:</p>
-      <div class="code-block hero-cmd">
-        <pre id="cmd-hero">instale o squad github.com/Turbo-Academy/squad-turbo-2026</pre>
-        <button class="copy-btn" data-copy="cmd-hero">Copiar</button>
-      </div>
-      <p style="margin-top:14px"><strong>Só isso.</strong> O Claude baixa o repositório pra pasta, lê as instruções que estão nele e roda o instalador guiado, que instala as skills, os agentes e os templates, mostrando ✓ etapa por etapa.</p>
+1. Conferir o computador. Rode `uname -sm` e `git --version` e me diga o que achou. No Mac, se o git não existir, aparece uma janela pedindo as &quot;ferramentas de linha de comando&quot;: eu clico em Instalar e te aviso quando terminar. No Ubuntu, se faltar git, unzip ou python3, me mostre a linha do apt pra eu rodar.
 
-      <div class="expect">
-        <h3>O que esperar durante a execução</h3>
-        <ul>
-          <li><span class="dot"></span><span><strong>Nada vai travar pedindo senha</strong>, porque você já fez a Parte 1. Era esse o ponto dela.</span></li>
-          <li><span class="dot"></span><span><strong>Os cinco opcionais vão aparecer um a um</strong> — é a Etapa 7, logo abaixo. Leia antes de responder.</span></li>
-          <li><span class="dot"></span><span><strong>O app pede permissão</strong> antes de cada comando (botão <em>Permitir/Allow</em>). É o comportamento normal — leia e autorize.</span></li>
-                  </ul>
-      </div>
+2. Baixar o squad. Se a pasta ~/squad-turbo-2026 não existir, rode:
+   git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+   Se ela já existir, rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se o pull falhar, renomeie a pasta antiga pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo.
 
-      <figure class="shot">
-      <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chat do Code com o comando colado e o pedido de permissão para executar">
-        <rect width="720" height="340" fill="#F4F2EC"/>
-        <rect x="40" y="26" width="640" height="288" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
-        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
-        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
-        <text x="360" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#8A8A8A">Code · squad-turbo-2026</text>
+3. Instalar o básico (skills, agentes e modelos). Rode:
+   bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null
+   Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
 
-        <rect x="150" y="80" width="506" height="38" rx="11" fill="#0A0A0B"/>
-        <text x="403" y="104" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE" textLength="439" lengthAdjust="spacingAndGlyphs">instale o squad github.com/Turbo-Academy/squad-turbo-2026</text>
+4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
+   - Mac com `brew`: `brew install ffmpeg yt-dlp`.
+   - Mac sem `brew`: me mostre a linha oficial da Homebrew pra eu rodar no Terminal (ela pede a senha do Mac): /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;. Se o `uname -sm` disse x86_64 (Mac Intel), me mande a linha da seção E2 do manual de instalação no lugar dessa. Depois rode as linhas do &quot;Next steps&quot; que ela imprimir e o `brew install ffmpeg yt-dlp`.
+   - Ubuntu (Windows): se faltar o ffmpeg, me mostre `sudo apt-get install -y ffmpeg pipx` pra eu rodar; o yt-dlp você instala sem sudo com `pipx install yt-dlp &amp;&amp; pipx ensurepath`.
 
-        <circle cx="78" cy="140" r="12" fill="#D97757"/>
-        <g stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round">
-          <line x1="71" y1="140" x2="85" y2="140"/><line x1="78" y1="133" x2="78" y2="147"/>
-          <line x1="73" y1="135" x2="83" y2="145"/><line x1="83" y1="135" x2="73" y2="145"/>
-        </g>
-        <text x="100" y="137" font-family="Inter,sans-serif" font-size="13" fill="#3A3A3A">Beleza — vou baixar o repositório e rodar o instalador.</text>
-        <rect x="100" y="148" width="228" height="9" rx="4.5" fill="#E8E5DE"/>
+5. Opcionais. Me pergunte um por vez, dizendo pra que serve e quanto ocupa, e só instale com o meu sim:
+   a) transcrição de vídeo local, sem chave de API (~220 MB agora + ~3,5 GB do modelo no primeiro uso): bash ~/.claude/skills/watch/whisper-local/instalar.sh
+   b) Scrapling, pro Claude ler qualquer página da web (~1,5 GB): bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-scrapling.sh
+   c) stack Picasso, auditoria visual anti-IA (3 skills de terceiros, precisa de Node): os 3 comandos `npx skills add` do bloco &quot;11/11 · Opcionais&quot; do instalar-squad.sh.
+   WhatsApp (OpenWA), e-mail marketing (Mautic) e automação (n8n) rodam num servidor (VPS), não neste computador: não instale agora, só me diga que existem e que o passo a passo está no README do repositório.
 
-        <rect x="100" y="176" width="500" height="112" rx="12" fill="#FFFBF7" stroke="#FF5C00" stroke-width="2"/>
-        <text x="122" y="202" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#0A0A0A">Permitir executar este comando?</text>
-        <rect x="122" y="212" width="456" height="28" rx="7" fill="#0A0A0B"/>
-        <text x="136" y="230" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE">bash 99-skills-compartilhaveis/instalar-squad.sh</text>
-        <rect x="122" y="252" width="104" height="30" rx="8" fill="#FF5C00"/>
-        <text x="174" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Permitir</text>
-        <rect x="236" y="252" width="104" height="30" rx="8" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <text x="288" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#6B6B6B">Agora não</text>
-        <circle cx="368" cy="267" r="12" fill="#FF5C00"/>
-        <text x="368" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF">✓</text>
-        <text x="388" y="272" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#C2410C">clique aqui — é o normal</text>
-      </svg>
-      <figcaption><b>Etapa 6 · o que você vai ver:</b> o comando colado e, a cada passo, o pedido de permissão. Autorizar é o esperado. Ilustração — sua tela pode variar um pouco.</figcaption>
-      </figure>
+6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em &quot;SQUAD OK&quot;. Me mostre a saída inteira.
 
-      <details>
-        <summary>O Claude pediu mais direção? (ou você quer controle fino)</summary>
-        <div class="inner">
-          <p>Cole este complemento:</p>
-          <div class="code-block">
-<pre id="cmd-full">Baixe o repositório pra esta pasta e rode
-bash 99-skills-compartilhaveis/instalar-squad.sh
-e complete as pendências que ele marcar com ✗.
-Já preparei o Mac: Homebrew, git, node, python, ffmpeg e yt-dlp estão instalados.
-Quero a transcrição local de vídeo (sei dos ~220 MB agora + ~3,5 GB no 1º uso)
-e quero o Scrapling (leitura de páginas web, sei dos ~1,5 GB).
-No fim, rode o instalador de novo e me mostre tudo ✓.</pre>
-            <button class="copy-btn" data-copy="cmd-full">Copiar</button>
-          </div>
-        </div>
-      </details>
+7. Fechar e abrir. Me diga pra fechar o Claude e abrir de novo: skills e agentes só carregam numa sessão nova. Na sessão nova eu vou mandar &quot;@estrategista-turbo, o que você faz e por onde eu começo?&quot;.</template><pre class="cmd-texto msg-texto" tabindex="0"><code>Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote público e gratuito de agentes e skills de marketing digital pro Claude Code, da Turbo Academy: https://github.com/Turbo-Academy/squad-turbo-2026
 
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o Claude mostra a saída final do instalador com o básico todo ✓.</span></div>
-    </div>
-  </div>
-</section>
+Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simples antes de rodar, e eu só aprovo. Regras:
+- Nunca me peça senha, token ou código pelo chat. Se um comando precisar da senha do computador (sudo, ou o instalador da Homebrew no Mac), não rode: me mostre a linha, eu rodo no Terminal (no Mac) ou numa segunda janela do Ubuntu (no Windows) e te aviso.
+- Não apague nada que já exista. Se uma pasta já existir e precisar sair do caminho, renomeie com a data no fim e me diga.
+- Não compre nada, não crie conta e não conecte serviço pago sem me perguntar.
 
-<section id="etapa7">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">7</div><h2>Os opcionais — o instalador pergunta, você decide</h2><span class="tempo">varia</span></div>
-    <div class="etapa-body">
-      <p>Aqui o instalador para e pergunta, um de cada vez. Nenhum é obrigatório e <strong>nenhum é definitivo</strong>: para instalar depois, rode <code>bash 99-skills-compartilhaveis/instalar-squad.sh</code> de novo — ele é idempotente e só faz o que estiver faltando.</p>
-      <div class="agents-scroll"><table class="agents-tb">
-        <tr><td>Transcrição local</td><td>Transcrever aula, VSL e Reels <b>na sua máquina</b>, sem chave de API e sem o áudio sair do Mac</td><td>~220 MB agora + ~3,5 GB no 1º uso</td></tr>
-        <tr><td>Scrapling</td><td>O Claude lê qualquer página da web — inclusive landing de concorrente com JavaScript ou bloqueio</td><td>~1,5 GB</td></tr>
-        <tr><td>OpenWA</td><td>WhatsApp dentro do chat: ler e responder 1:1, grupos e etiquetas</td><td>precisa de VPS com Docker</td></tr>
-        <tr><td>Mautic</td><td>E-mail marketing próprio: nutrição, landing, formulário e rastreamento <b>sem custo por lead</b></td><td>precisa de VPS</td></tr>
-        <tr><td>n8n</td><td>Os 14 workflows sozinhos: webhook da Hotmart, lembrete de aula, tsunami, recuperação D+1-D+7</td><td>precisa de VPS</td></tr>
-      </table></div>
-      <div class="dica"><span>🎯</span><span><b>Recomendação honesta pra primeira instalação:</b> <b>sim</b> para a transcrição local e o Scrapling — são os dois que mudam o dia a dia. <b>Não</b> para os três de servidor: volte neles quando tiver um VPS e um lançamento de verdade no ar, e aí instale os três no mesmo servidor.</span></div>
-      <div class="dica"><span>📦</span><span><b>Skills de terceiro.</b> No fim, o instalador cita uma lista de skills úteis escritas por <b>outras pessoas</b> — reescrita anti-IA, posts de LinkedIn, thumbnail, pesquisa de nicho. O squad <b>não redistribui</b> essas: sem licença do autor, republicar não é nosso direito. A lista, com autor, licença e origem de cada uma, está em <code>99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md</code>. Instalar é opcional e vem da fonte do autor, com a licença do autor.</span></div>
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint:</b> o instalador terminou e listou o que ficou ✓ e o que você escolheu pular.</span></div>
-    </div>
-  </div>
-</section>
+1. Conferir o computador. Rode `uname -sm` e `git --version` e me diga o que achou. No Mac, se o git não existir, aparece uma janela pedindo as &quot;ferramentas de linha de comando&quot;: eu clico em Instalar e te aviso quando terminar. No Ubuntu, se faltar git, unzip ou python3, me mostre a linha do apt pra eu rodar.
 
-<section id="etapa8">
-  <div class="etapa">
-    <div class="etapa-head"><div class="etapa-num">8</div><h2>Conferir se funcionou</h2><span class="tempo">~2 min</span></div>
-    <div class="etapa-body">
-      <p><strong>Tudo que acabou de ser instalado — skills, agentes e conexões (MCPs) — só carrega quando uma sessão nova abre.</strong> A sessão da instalação não enxerga o que ela mesma instalou. Então:</p>
-      <ol class="steps">
-        <li><span><strong>Feche a sessão e abra uma nova</strong> — desta vez escolhendo a pasta do squad que o Claude criou (<strong>squad-turbo-2026</strong>, dentro de Documentos)</span></li>
-        <li><span>Digite <strong>/skills</strong> → a lista deve mostrar as skills do squad (<em>lpsg-master-turbo, oferta-lpsg-turbo, watch…</em>)</span></li>
-        <li><span>Teste um agente — cole:</span></li>
-      </ol>
-      <div class="code-block">
-        <pre id="cmd-test">@estrategista-turbo se apresenta em 2 linhas</pre>
-        <button class="copy-btn" data-copy="cmd-test">Copiar</button>
-      </div>
+2. Baixar o squad. Se a pasta ~/squad-turbo-2026 não existir, rode:
+   git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+   Se ela já existir, rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se o pull falhar, renomeie a pasta antiga pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo.
 
-      <figure class="shot">
-      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lista de skills do squad aparecendo ao digitar barra skills, e o agente estrategista respondendo">
-        <rect width="720" height="320" fill="#F4F2EC"/>
-        <rect x="40" y="26" width="640" height="268" rx="14" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <path d="M40 40a14 14 0 0 1 14-14h612a14 14 0 0 1 14 14v20H40z" fill="#F7F5F0"/>
-        <line x1="40" y1="60" x2="680" y2="60" stroke="#E8E5DE"/>
-        <circle cx="62" cy="43" r="5" fill="#FF5F57"/><circle cx="80" cy="43" r="5" fill="#FEBC2E"/><circle cx="98" cy="43" r="5" fill="#28C840"/>
-        <text x="360" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" font-weight="600" fill="#8A8A8A">sessão NOVA · squad-turbo-2026</text>
+3. Instalar o básico (skills, agentes e modelos). Rode:
+   bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null
+   Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
 
-        <rect x="68" y="80" width="300" height="34" rx="9" fill="#FFFFFF" stroke="#FF5C00" stroke-width="2"/>
-        <text x="86" y="102" font-family="JetBrains Mono,monospace" font-size="13.5" font-weight="600" fill="#C2410C">/skills</text>
-        <rect x="68" y="122" width="300" height="150" rx="10" fill="#FFFFFF" stroke="#E3E0D8"/>
-        <g font-family="JetBrains Mono,monospace" font-size="12" fill="#3A3A3A">
-          <text x="106" y="148">lpsg-master-turbo</text>
-          <text x="106" y="176">oferta-lpsg-turbo</text>
-          <text x="106" y="204">criador-vsl-turbo</text>
-          <text x="106" y="232">watch</text>
-        </g>
-        <g fill="#10B981" font-family="Inter,sans-serif" font-size="12" font-weight="700">
-          <text x="86" y="148">✓</text><text x="86" y="176">✓</text><text x="86" y="204">✓</text><text x="86" y="232">✓</text>
-        </g>
-        <text x="106" y="258" font-family="Inter,sans-serif" font-size="11.5" fill="#A0A0A0">…e mais 38 skills</text>
+4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
+   - Mac com `brew`: `brew install ffmpeg yt-dlp`.
+   - Mac sem `brew`: me mostre a linha oficial da Homebrew pra eu rodar no Terminal (ela pede a senha do Mac): /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;. Se o `uname -sm` disse x86_64 (Mac Intel), me mande a linha da seção E2 do manual de instalação no lugar dessa. Depois rode as linhas do &quot;Next steps&quot; que ela imprimir e o `brew install ffmpeg yt-dlp`.
+   - Ubuntu (Windows): se faltar o ffmpeg, me mostre `sudo apt-get install -y ffmpeg pipx` pra eu rodar; o yt-dlp você instala sem sudo com `pipx install yt-dlp &amp;&amp; pipx ensurepath`.
 
-        <rect x="400" y="80" width="248" height="34" rx="9" fill="#0A0A0B"/>
-        <text x="416" y="102" font-family="JetBrains Mono,monospace" font-size="11.5" fill="#F5F3EE">@estrategista-turbo</text>
-        <circle cx="414" cy="140" r="12" fill="#D97757"/>
-        <g stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round">
-          <line x1="407" y1="140" x2="421" y2="140"/><line x1="414" y1="133" x2="414" y2="147"/>
-          <line x1="409" y1="135" x2="419" y2="145"/><line x1="419" y1="135" x2="409" y2="145"/>
-        </g>
-        <text x="436" y="137" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0A0A0A">estrategista-turbo</text>
-        <g fill="#E8E5DE">
-          <rect x="400" y="160" width="248" height="9" rx="4.5"/>
-          <rect x="400" y="178" width="230" height="9" rx="4.5"/>
-          <rect x="400" y="196" width="196" height="9" rx="4.5"/>
-        </g>
-        <rect x="400" y="224" width="180" height="34" rx="9" fill="#E7F8F1" stroke="#C9EEDF"/>
-        <text x="418" y="246" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" fill="#0B5138">✓ squad respondendo</text>
-      </svg>
-      <figcaption><b>Etapa 8 · o que você vai ver:</b> a lista de skills preenchida e o agente respondendo. Se os dois aparecem, acabou. Ilustração — sua tela pode variar um pouco.</figcaption>
-      </figure>
+5. Opcionais. Me pergunte um por vez, dizendo pra que serve e quanto ocupa, e só instale com o meu sim:
+   a) transcrição de vídeo local, sem chave de API (~220 MB agora + ~3,5 GB do modelo no primeiro uso): bash ~/.claude/skills/watch/whisper-local/instalar.sh
+   b) Scrapling, pro Claude ler qualquer página da web (~1,5 GB): bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-scrapling.sh
+   c) stack Picasso, auditoria visual anti-IA (3 skills de terceiros, precisa de Node): os 3 comandos `npx skills add` do bloco &quot;11/11 · Opcionais&quot; do instalar-squad.sh.
+   WhatsApp (OpenWA), e-mail marketing (Mautic) e automação (n8n) rodam num servidor (VPS), não neste computador: não instale agora, só me diga que existem e que o passo a passo está no README do repositório.
 
-      <div class="checkpoint"><span class="ic">✓</span><span><b>Checkpoint final:</b> o estrategista respondeu. <b>O squad está instalado e funcionando.</b> 🎉</span></div>
-    </div>
-  </div>
-</section>
+6. Conferir. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Tem que terminar em &quot;SQUAD OK&quot;. Me mostre a saída inteira.
 
-<section id="trouble" class="trouble">
-  <h2 class="section-h">😵 Deu errado?</h2>
-  <p class="section-sub">Os tropeços clássicos — e a saída de cada um.</p>
-  <div class="t-grid">
-    <div class="t-item"><div class="sint">brew: command not found depois de instalar o Homebrew</div><div class="sol">Os comandos do "Next steps" não foram rodados. Volte à Etapa 2 e rode todos — sem eles o Mac não acha o Homebrew.</div></div>
-    <div class="t-item"><div class="sint">Digitei a senha e não apareceu nada na tela</div><div class="sol">Comportamento normal do Terminal. Continue digitando e dê Enter — senha nunca aparece, nem como asterisco.</div></div>
-    <div class="t-item"><div class="sint">brew install falha com erro de compilação</div><div class="sol">Xcode CLT faltando. Refaça a Etapa 1 (<code>xcode-select --install</code>) e tente de novo.</div></div>
-    <div class="t-item"><div class="sint">A instalação parou pedindo senha</div><div class="sol">Parte 1 pulada. Faça a Parte 1 no Terminal e peça no chat: <code>continue de onde parou</code>.</div></div>
-    <div class="t-item"><div class="sint">Mudei de ideia num opcional</div><div class="sol">Rode <code>bash 99-skills-compartilhaveis/instalar-squad.sh</code> de novo — ele só faz o que falta.</div></div>
-    <div class="t-item"><div class="sint">Não acho o Code no app</div><div class="sol">Versão antiga do app. Atualize o Claude Desktop em <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a>.</div></div>
-    <div class="t-item"><div class="sint">O Claude diz que não pode rodar comandos</div><div class="sol">A sessão foi aberta no chat comum, não no Code. Refaça a Etapa 5 — tem que ser uma sessão do <strong>Code</strong>, com pasta escolhida.</div></div>
-    <div class="t-item"><div class="sint">O Claude não conseguiu baixar o repositório</div><div class="sol">Cole: <code>baixe o ZIP do branch main desse repositório com curl e descompacte</code></div></div>
-    <div class="t-item"><div class="sint">Pediu permissão e eu neguei sem querer</div><div class="sol">Peça: <code>tenta de novo o último comando</code> e autorize.</div></div>
-    <div class="t-item"><div class="sint">/skills não mostra as skills · agente não responde ao @nome · Scrapling não lê páginas</div><div class="sol">A sessão foi aberta antes do fim da instalação — nada recém-instalado carrega nela. Feche e abra uma sessão nova (Etapa 8).</div></div>
-    <div class="t-item"><div class="sint">Travou em qualquer outra coisa</div><div class="sol">Cole no chat: <code>estou seguindo o manual de instalação e travei nesta etapa: [descreva]</code> — ele mesmo te destrava.</div></div>
-  </div>
-</section>
-
-<section>
-  <div class="win-card">
-    <h2>🪟 E no Windows?</h2>
-    <p>O app Claude Desktop também existe pra Windows — as Etapas 4 a 8 são iguais. <strong>A Parte 1 muda:</strong> no lugar do Homebrew, o equivalente é o <strong>winget</strong>, que já vem no Windows 11. Abra o <strong>PowerShell</strong> e rode:</p>
-    <div class="code-block"><pre id="cmd-win">winget install Git.Git OpenJS.NodeJS Python.Python.3.12 Gyan.FFmpeg yt-dlp.yt-dlp</pre><button class="copy-btn" data-copy="cmd-win">Copiar</button></div>
-    <p>Depois <strong>feche e reabra o PowerShell</strong> (é o equivalente ao "Next steps" do Homebrew: sem reabrir, o Windows ainda não achou os programas novos) e confira com <code>git --version</code>. Em seguida cole o comando da Etapa 6 acrescentando: <code>estou no Windows — adapte a instalação pro meu sistema</code></p>
-  </div>
-</section>
-
-<section id="capacidades">
-  <h2 class="section-h">💪 O que o squad é capaz de fazer</h2>
-  <p class="section-sub">Tudo se pede em português, no chat. O que você acabou de instalar:</p>
-
-  <div class="cap-block">
-    <h3><span class="ico">🚀</span>O lançamento inteiro, com um comando</h3>
-    <p>O <strong>@lpsg-master-turbo</strong> roda as 10 fases do método LPSG de ponta a ponta: pesquisa e briefing <strong>pra você aprovar</strong> → estrutura das 6 aulas (5+1) → oferta (stack de valor, bônus tsunami, dupla garantia) → páginas de venda com ficha de qualificação → 15 criativos → campanha de Meta Ads → mensageria do evento → 14 automações (n8n + ManyChat) → dashboard → operação e pós-venda. Ele executa; você aprova nos pontos críticos.</p>
-  </div>
-
-  <div class="cap-block">
-    <h3><span class="ico">🤖</span>13 especialistas de plantão (chame por @nome)</h3>
-    <div class="agents-scroll"><table class="agents-tb">
-      <tr><td>@estrategista-turbo</td><td>orquestra o squad, diagnostica campanha e lançamento</td></tr>
-      <tr><td>@pesquisador-turbo</td><td>fundação do projeto: voz, avatar, oferta, briefing</td></tr>
-      <tr><td>@pesquisador-mercado-turbo</td><td>concorrência, benchmarks, objeções de mercado</td></tr>
-      <tr><td>@copywriter-turbo</td><td>toda copy: páginas, aulas, pitch, emails, mensageria</td></tr>
-      <tr><td>@diretor-criativo-turbo + @designer-turbo</td><td>direção visual e execução: landing pages, criativos, slides</td></tr>
-      <tr><td>@trafego-turbo</td><td>Meta Ads e Google Ads: estruturar, otimizar, diagnosticar</td></tr>
-      <tr><td>@social-turbo</td><td>Reels, stories e calendário de conteúdo orgânico</td></tr>
-      <tr><td>@automacao-turbo</td><td>fluxos n8n, ManyChat e mensageria do evento</td></tr>
-      <tr><td>@closer-turbo</td><td>vendas 1:1: scripts por tier, recuperação de carrinho D+1-D+7</td></tr>
-      <tr><td>@cs-turbo</td><td>pós-venda: onboarding, NPS, depoimentos, retenção</td></tr>
-      <tr><td>@picasso-auditor-turbo</td><td>gate visual: elimina cara de design feito por IA</td></tr>
-      <tr><td>@revisor-copy-turbo</td><td>gate textual: caça clichê de IA e protege a conta de ads</td></tr>
-    </table></div>
-  </div>
-
-  <div class="cap-block">
-    <h3><span class="ico">⚙️</span>Outros motores de negócio prontos</h3>
-    <p><strong>Funil 8</strong> (produto de entrada de R$ 35-98 com order bumps e campanha de cost cap) · <strong>Turbo Express</strong> (ciclo de venda de 14 dias em grupo fechado de WhatsApp) · <strong>Distribuição Turbo</strong> (funil de consciência C0-C3 no orgânico) · <strong>aula de aquecimento perpétua</strong> entre edições · e um <strong>CRM próprio</strong> (Next.js + Supabase) que aposenta as planilhas do closer e do CS.</p>
-  </div>
-
-  <div class="cap-block">
-    <h3><span class="ico">🧰</span>Ferramentas do dia a dia</h3>
-    <ul>
-      <li><span class="dot"></span><span><strong>Assistir vídeo de verdade</strong> — frames + transcrição: engenharia reversa de VSL, Reels e anúncio de concorrente (e transcrição local, sem chave de API)</span></li>
-      <li><span class="dot"></span><span><strong>Ler qualquer página da web</strong> — landing de concorrente, mesmo com JavaScript ou bloqueio, direto no chat</span></li>
-      <li><span class="dot"></span><span><strong>VSL completa</strong> via RMBC, com versão pronta pra teleprompter em .docx</span></li>
-      <li><span class="dot"></span><span><strong>Slides premium de aula</strong>, carrosséis e stories de Instagram, ebooks e manuais em HTML</span></li>
-      <li><span class="dot"></span><span><strong>Análise estratégica de Instagram</strong> (seu perfil ou concorrente) e <strong>Meta Ads pela CLI oficial</strong> (batelada, stop-loss, escala)</span></li>
-      <li><span class="dot"></span><span><strong>WhatsApp no chat</strong> (opcional, com seu servidor OpenWA): ler e responder mensagens 1:1, grupos e etiquetas — a recuperação do closer sem sair do Claude</span></li>
-      <li><span class="dot"></span><span><strong>E-mail marketing próprio</strong> (opcional, Mautic no seu VPS): nutrição por e-mail, landing pages, formulários e rastreamento — <strong>sem custo por lead</strong>, você paga só o servidor</span></li>
-      <li><span class="dot"></span><span><strong>Automação dos 14 workflows</strong> (opcional, n8n no seu VPS): webhook da Hotmart, ficha de interesse, lembretes das aulas, tsunami e recuperação D+1-D+7 rodando sozinhos</span></li>
-    </ul>
-  </div>
-
-  <div class="cap-block">
-    <h3><span class="ico">✨</span>Experimente agora (cola no chat)</h3>
-    <div class="code-block">
-      <pre id="cmd-ex1" style="padding-right:96px">@pesquisador-mercado-turbo analisa a página deste concorrente: [URL]</pre>
-      <button class="copy-btn" data-copy="cmd-ex1">Copiar</button>
-    </div>
-    <div class="code-block">
-      <pre id="cmd-ex2" style="padding-right:96px">@copywriter-turbo escreve 5 headlines pra página de ingresso de um evento sobre [seu tema]</pre>
-      <button class="copy-btn" data-copy="cmd-ex2">Copiar</button>
-    </div>
-    <p style="margin-top:12px">E quando estiver pronto pro lançamento completo: <strong>@lpsg-master-turbo crie meu LPSG</strong>.</p>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-h">👉 Próximos passos</h2>
-  <p class="section-sub">O squad está instalado — agora é colocar um lançamento no ar.</p>
-  <div class="next-grid">
-    <a class="next-card" href="04-manual-de-uso/00-pre-requisitos.md"><div class="n">Passo 1</div><h3>Pré-requisitos</h3><p>As contas que o LPSG precisa: Meta, Hotmart, domínio…</p></a>
-    <a class="next-card" href="04-manual-de-uso/manual.html"><div class="n">Passo 2</div><h3>Manual de execução</h3><p>O manual completo e interativo — abra no navegador.</p></a>
-    <a class="next-card" href="99-skills-compartilhaveis/GUIA-MCPS.md"><div class="n">Opcional</div><h3>Conectar ferramentas</h3><p>Drive, NotebookLM, n8n… nenhuma é obrigatória.</p></a>
-  </div>
-</section>
-
+7. Fechar e abrir. Me diga pra fechar o Claude e abrir de novo: skills e agentes só carregam numa sessão nova. Na sessão nova eu vou mandar &quot;@estrategista-turbo, o que você faz e por onde eu começo?&quot;.</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>No fim, o Claude mostra a saída do <code>--conferir</code> terminando em <strong>SQUAD OK: 49 skills · 13 agentes · squad-core</strong>.</p><div class="momentos"><h4 class="momentos-t">O que vai aparecer e o que fazer</h4><div class="momento"><h5 class="momento-t">O Claude Code pergunta antes de rodar um comando</h5><dl class="momento-dl"><dt>O que aparece</dt><dd>Na janela do Ubuntu, antes de um comando, ele pergunta <em>Do you want to proceed?</em> com as opções 1. Yes, 2. Yes, and don't ask again e 3. No.</dd><dt>O que fazer</dt><dd>Escolha <strong>1. Yes</strong> e aperte <kbd>Enter</kbd>, ou a 2 pra ele não perguntar de novo aquele tipo de comando naquela pasta. Use as setas pra mudar a opção.</dd><dt>Tempo e o que é normal</dt><dd>Fica parado até você escolher.</dd></dl></div></div></div></section>
+<section class="passo" id="win-5" aria-labelledby="win-5-t"><div class="passo-num" aria-hidden="true">5</div><div class="passo-corpo"><p class="passo-onde">Ubuntu · Claude Code</p><h3 id="win-5-t"><span class="sr">Passo 5: </span>Fechar, abrir e testar</h3><p>Com o <strong>SQUAD OK</strong> na tela, digite <code>/exit</code>, rode <code>claude</code> de novo na mesma janela e mande:</p><div class="cmd" id="cmd-13"><div class="cmd-topo"><span class="cmd-rotulo">Teste</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole no Claude Code, na janela do Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-13"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">@estrategista-turbo, o que você faz e por onde eu começo?</template><pre class="cmd-texto" tabindex="0"><code>@estrategista-turbo, o que você faz e por onde eu começo?</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>O @estrategista-turbo se apresenta e pergunta sobre o seu negócio ou o seu projeto.</p></div></section>
+</div></div>
 </div>
 
-<footer>Squad Turbo · LPSG 8.1.2 — este manual também existe em texto puro: <strong>INSTALACAO-DO-ZERO.md</strong><p class="legal">Turbo Academy Ltda · CNPJ 50.151.944/0001-38 · Rua São Paulo, 2590 · 4º andar · Lourdes · Belo Horizonte/MG · CEP 30.170-137<br><a href="mailto:contato@turboacademy.com.br">contato@turboacademy.com.br</a> · <a href="https://wa.me/5531995131723">WhatsApp +55 31 99513-1723</a> · <a href="https://estrategiaturbo.com.br/politica-de-privacidade/">Política de Privacidade</a> · <a href="https://ta.turboacademy.com.br/termos-de-uso/">Termos de Uso</a><br>© 2026 Turbo Academy Ltda. Todos os direitos reservados.</p></footer>
+<div class="miolo">
+<section class="cap" aria-label="Parte B, continuação" style="border-top:0;padding-top:0">
+<div class="sec" id="b2">
+<h3><span class="n">B2</span>Os opcionais<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">O Claude pergunta um por um; "não" nunca é a resposta errada.</p>
+<div class="tabela"><table><thead><tr><th>Opcional</th><th>Pra quê</th><th>Tamanho</th></tr></thead><tbody><tr><td>Transcrição local</td><td>A skill <code>watch</code> transcreve vídeo sem chave de API; o áudio não sai da sua máquina.</td><td>~220 MB + ~3,5 GB no 1º uso</td></tr><tr><td>Scrapling</td><td>O Claude lê página de concorrente, landing e anúncio direto, sem você escrever script.</td><td>~1,5 GB</td></tr><tr><td>Stack Picasso</td><td>Auditoria visual anti-IA (3 skills de terceiros, pelo npx).</td><td>pequeno</td></tr><tr><td>OpenWA, Mautic, n8n</td><td>WhatsApp, e-mail marketing e automação. Rodam num servidor (VPS), cada um com instalador próprio no repositório.</td><td>no servidor</td></tr></tbody></table></div><p>Quer instalar um depois? Peça ao Claude: "instala o opcional X do Squad Turbo". O instalador pode rodar de novo quantas vezes quiser: ele só faz o que falta.</p>
+</div>
+<div class="sec" id="b3">
+<h3><span class="n">B3</span>Conferir que ficou tudo certo<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Um comando diz se está tudo no lugar.</p>
+<div class="cmd" id="cmd-14"><div class="cmd-topo"><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Peça ao Claude pra rodar, ou rode no Terminal / Ubuntu</span><button type="button" class="copiar" data-alvo="cmd-14"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir</template><pre class="cmd-texto" tabindex="0"><code>bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir</code></pre></div><p class="prova"><span class="prova-selo">Prova</span><strong>SQUAD OK: 49 skills · 13 agentes · squad-core</strong>. Se aparecer <code>SQUAD INCOMPLETO</code>, as linhas com ✗ dizem o que falta: peça ao Claude pra rodar o instalador de novo.</p><p>Linhas com · (ponto) não são erro: avisam um programa que falta pra algumas skills de vídeo. Não sabe ler uma linha? Cole a saída pro Claude e pergunte.</p>
+</div>
+</section>
+<span class="ancora" id="dia-a-dia"></span>
+<section class="cap" id="parte-c" aria-labelledby="parte-c-t">
+<div class="cap-cab"><span class="cap-letra">Parte C</span><h2 id="parte-c-t">Usar no dia a dia</h2><p>O primeiro pedido, quem é quem, como atualizar e onde está o manual de uso.</p></div>
+<div class="sec" id="c1">
+<h3><span class="n">C1</span>O primeiro pedido<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Comece pelo estrategista, numa pasta só do projeto.</p>
+<p>Crie uma pasta pro seu projeto (por exemplo, <code>Documentos/meu-lancamento</code>), abra uma sessão do Claude nela e fale com o <code>@estrategista-turbo</code> como falaria com um sócio: o que você vende, pra quem, e o que quer fazer agora. Ele pergunta o que falta e chama os outros.</p><p>Pedidos que funcionam bem: "quero estruturar meu primeiro lançamento pago", "faz a página de vendas do meu produto de R$ 97", "transforma esta aula em 5 cortes verticais", "analisa minha campanha de Meta Ads".</p>
+</div>
+<div class="sec" id="c2">
+<h3><span class="n">C2</span>Os 13 agentes<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Quem é quem. Chame qualquer um com @nome.</p>
+<div class="tabela"><table><thead><tr><th>Agente</th><th>O que faz</th></tr></thead><tbody><tr><td><code>@estrategista-turbo</code></td><td>Ponto de entrada: entende o pedido, diagnostica e passa pro especialista certo.</td></tr><tr><td><code>@pesquisador-turbo</code></td><td>Monta a fundação do projeto (voz, avatar, oferta) a partir do seu material.</td></tr><tr><td><code>@pesquisador-mercado-turbo</code></td><td>Pesquisa de fora: nicho, concorrência, anúncios, objeções e tendências.</td></tr><tr><td><code>@copywriter-turbo</code></td><td>Toda peça de copy: página, VSL, aula, pitch, e-mail, mensageria.</td></tr><tr><td><code>@revisor-copy-turbo</code></td><td>Revisa a copy antes de sair: tira a cara de IA e confere promessa e compliance.</td></tr><tr><td><code>@diretor-criativo-turbo</code></td><td>Direção visual: identidade, páginas, criativos, slides, motion.</td></tr><tr><td><code>@designer-turbo</code></td><td>Executa as peças visuais: criativos, slides, carrossel, cortes e motion.</td></tr><tr><td><code>@picasso-auditor-turbo</code></td><td>Audita o visual antes de entregar e elimina o que tem cara de genérico.</td></tr><tr><td><code>@social-turbo</code></td><td>Conteúdo orgânico: Reels, stories, calendário e cortes verticais.</td></tr><tr><td><code>@trafego-turbo</code></td><td>Meta Ads e Google Ads: estrutura, otimização e diagnóstico de campanha.</td></tr><tr><td><code>@automacao-turbo</code></td><td>Automações: n8n, ManyChat e as mensagens do evento.</td></tr><tr><td><code>@closer-turbo</code></td><td>Vendas 1:1 e recuperação do carrinho, com script por temperatura do lead.</td></tr><tr><td><code>@cs-turbo</code></td><td>Pós-venda: onboarding, retenção, NPS e depoimentos.</td></tr></tbody></table></div>
+</div>
+<div class="sec" id="c3">
+<h3><span class="n">C3</span>Atualizar pra versão nova<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Uma mensagem, e o Claude atualiza sem apagar o que é seu.</p>
+<div class="cmd cmd-mensagem" id="msg-15" data-inteiro="1"><div class="cmd-topo"><span class="cmd-rotulo">Mensagem pro Claude</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na caixa de mensagem do Claude</span><button type="button" class="copiar copiar-tudo" data-alvo="msg-15"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar tudo</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><p class="um-so">É uma mensagem só. Copie tudo pelo botão e cole de uma vez, sem dividir.</p><template class="cmd-fonte">Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem apagar nada meu. Me explique cada passo antes de rodar.
 
+1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Se aparecer algum agente &quot;diferente do pacote&quot;, é porque eu editei: antes de seguir, copie os meus pra ~/squad-agentes-meus-AAAAMMDD/ e me diga quais eram (a atualização troca os agentes pela versão do pacote).
+2. Rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se falhar, renomeie a pasta pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo: git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null` e me mostre o resumo.
+4. Rode o `--conferir` de novo. Tem que dizer &quot;SQUAD OK&quot;.
+5. Me mostre o que mudou (o topo do ~/squad-turbo-2026/CHANGELOG.md, em português simples) e me diga pra fechar e abrir o Claude.</template><pre class="cmd-texto msg-texto" tabindex="0"><code>Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem apagar nada meu. Me explique cada passo antes de rodar.
+
+1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Se aparecer algum agente &quot;diferente do pacote&quot;, é porque eu editei: antes de seguir, copie os meus pra ~/squad-agentes-meus-AAAAMMDD/ e me diga quais eram (a atualização troca os agentes pela versão do pacote).
+2. Rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se falhar, renomeie a pasta pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo: git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
+3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh &lt; /dev/null` e me mostre o resumo.
+4. Rode o `--conferir` de novo. Tem que dizer &quot;SQUAD OK&quot;.
+5. Me mostre o que mudou (o topo do ~/squad-turbo-2026/CHANGELOG.md, em português simples) e me diga pra fechar e abrir o Claude.</code></pre></div><p>O que mudou em cada versão está no <a href="https://github.com/Turbo-Academy/squad-turbo-2026/blob/main/CHANGELOG.md">CHANGELOG</a>.</p>
+</div>
+<div class="sec" id="c4">
+<h3><span class="n">C4</span>Os manuais de uso<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Depois de instalado, o passo a passo do método.</p>
+<ul class="lista"><li><a href="https://turbo-academy.github.io/squad-turbo-2026/04-manual-de-uso/manual.html">Manual de execução do LPSG</a>: as 10 fases, na ordem, com o que cada agente entrega.</li><li><a href="https://github.com/Turbo-Academy/squad-turbo-2026#readme">README do repositório</a>: a lista completa de skills e agentes.</li><li><a href="https://github.com/Turbo-Academy/squad-turbo-2026/blob/main/OPERACAO.md">OPERACAO.md</a>: como trabalhar com o squad sem se perder (verificação, falhas silenciosas, cota).</li></ul>
+</div>
+</section>
+<span class="ancora" id="desligar"></span>
+<section class="cap" id="parte-d" aria-labelledby="parte-d-t">
+<div class="cap-cab"><span class="cap-letra">Parte D</span><h2 id="parte-d-t">Tirar o squad</h2><p>Se quiser remover, o Claude lista antes e só apaga com o seu sim.</p></div>
+<div class="sec" id="d1">
+<h3><span class="n">D1</span>Remover do computador<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Nada sai sem você ver a lista.</p>
+<div class="cmd cmd-mensagem" id="msg-16" data-inteiro="1"><div class="cmd-topo"><span class="cmd-rotulo">Mensagem pro Claude</span><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole na caixa de mensagem do Claude</span><button type="button" class="copiar copiar-tudo" data-alvo="msg-16"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar tudo</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><p class="um-so">É uma mensagem só. Copie tudo pelo botão e cole de uma vez, sem dividir.</p><template class="cmd-fonte">Oi, Claude. Quero tirar o Squad Turbo deste computador. Não apague nada ainda.
+
+1. Monte a lista do que o pacote instalou: as skills com o mesmo nome dos .zip de ~/squad-turbo-2026/99-skills-compartilhaveis (fora squad-turbo-completo e squad-core-turbo) dentro de ~/.claude/skills, os agentes de ~/squad-turbo-2026/99-skills-compartilhaveis/agents/*-turbo.md dentro de ~/.claude/agents, a pasta ~/.claude/squads/squad-turbo e a própria ~/squad-turbo-2026.
+2. Me mostre a lista e o tamanho de cada item. Só apague depois que eu disser &quot;pode apagar&quot;, e apague só o que está na lista.
+3. No fim, rode `ls ~/.claude/skills ~/.claude/agents` e me mostre o que sobrou.</template><pre class="cmd-texto msg-texto" tabindex="0"><code>Oi, Claude. Quero tirar o Squad Turbo deste computador. Não apague nada ainda.
+
+1. Monte a lista do que o pacote instalou: as skills com o mesmo nome dos .zip de ~/squad-turbo-2026/99-skills-compartilhaveis (fora squad-turbo-completo e squad-core-turbo) dentro de ~/.claude/skills, os agentes de ~/squad-turbo-2026/99-skills-compartilhaveis/agents/*-turbo.md dentro de ~/.claude/agents, a pasta ~/.claude/squads/squad-turbo e a própria ~/squad-turbo-2026.
+2. Me mostre a lista e o tamanho de cada item. Só apague depois que eu disser &quot;pode apagar&quot;, e apague só o que está na lista.
+3. No fim, rode `ls ~/.claude/skills ~/.claude/agents` e me mostre o que sobrou.</code></pre></div>
+</div>
+</section>
+<span class="ancora" id="travou"></span>
+<section class="cap" id="parte-e" aria-labelledby="parte-e-t">
+<div class="cap-cab"><span class="cap-letra">Parte E</span><h2 id="parte-e-t">Quando trava</h2><p>O sintoma, o que fazer e o que nunca fazer.</p></div>
+<div class="sec" id="e1">
+<h3><span class="n">E1</span>Sintoma → o que fazer<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Os tropeços mais comuns.</p>
+<div class="tabela"><table><thead><tr><th>Sintoma</th><th>O que fazer</th></tr></thead><tbody><tr><td>Depois de instalar, <code>@estrategista-turbo</code> não responde como agente</td><td>A sessão é a mesma da instalação. Feche o Claude e abra de novo, numa sessão nova.</td></tr><tr><td><code>git pull</code> falhou com erro de histórico</td><td>A pasta é de antes de 01/10/2026. Peça ao Claude pra renomear a pasta antiga e clonar de novo (a mensagem de instalação já faz isso).</td></tr><tr><td><code>SQUAD INCOMPLETO</code> no --conferir</td><td>Peça ao Claude pra rodar o instalador de novo; ele só faz o que falta. Se o mesmo item continuar faltando, mande a saída pra Turbo.</td></tr><tr><td>Agente "diferente do pacote" no --conferir</td><td>Você (ou o Claude) editou aquele agente. Se quer a versão do pacote, rode o instalador; se quer manter a sua, guarde uma cópia antes de atualizar.</td></tr><tr><td><code>command not found: brew</code> depois de instalar a Homebrew</td><td>Faltou rodar as linhas do "Next steps" que a Homebrew imprimiu no fim. Cole o bloco pro Claude.</td></tr><tr><td>No Ubuntu, <code>claude: command not found</code></td><td>A linha 3 do passo 3 não terminou. Rode de novo e confira a versão.</td></tr><tr><td>O Claude pediu a sua senha no chat</td><td>Não mande. Diga pra ele mostrar a linha, rode você mesmo no Terminal (Mac) ou numa segunda janela do Ubuntu (Windows).</td></tr></tbody></table></div>
+</div>
+<div class="sec" id="e2">
+<h3><span class="n">E2</span>Mac Intel e a Homebrew<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">A linha oficial não instala mais do zero em Mac Intel.</p>
+<p>Como saber: maçã no canto da tela → <strong>Sobre este Mac</strong>. Se aparecer <strong>Processador</strong> com <strong>Intel</strong>, é Intel; se aparecer <strong>Chip</strong> (Apple M1, M2…), não é. Ou rode <code>uname -m</code>: <code>x86_64</code> é Intel.</p><p>Já tem a Homebrew (<code>brew --version</code> responde)? Nada a fazer. Não tem? Desde 13/09/2026 a linha oficial para com <code>Homebrew on macOS is only supported on Apple Silicon processors!</code>. Use a versão anterior do instalador, de antes dessa mudança, no Terminal:</p><div class="cmd" id="cmd-17"><div class="cmd-topo"><span class="onde"><span class="onde-ponto" aria-hidden="true"></span>Cole no Terminal do Mac</span><button type="button" class="copiar" data-alvo="cmd-17"><span class="lbl-copiar"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>Copiar</span><span class="lbl-ok"><svg viewBox="0 0 24 24" aria-hidden="true" class="ic ic-ok"><path d="M4 12.5l5 5L20 6.5"/></svg>Copiado</span></button></div><template class="cmd-fonte">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/f4aa1b1ca5/install.sh)&quot;</template><pre class="cmd-texto" tabindex="0"><code>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/f4aa1b1ca5/install.sh)&quot;</code></pre></div><p class="prova"><span class="prova-selo">Prova</span>No fim aparece <strong>Installation successful!</strong> e o bloco <strong>Next steps</strong>; cole esse bloco pro Claude.</p>
+</div>
+<div class="sec" id="e3">
+<h3><span class="n">E3</span>O que nunca fazer<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Três regras que evitam quase todo problema.</p>
+<ul class="lista"><li>Mandar senha, token ou código pelo chat do Claude.</li><li>Apagar pastas em <code>~/.claude</code> na mão pra "começar do zero": peça a <a href="#d1">D1</a>, que lista antes.</li><li>Instalar skill de terceiro sem ler a licença e o que ela faz: veja <a href="https://github.com/Turbo-Academy/squad-turbo-2026/blob/main/99-skills-compartilhaveis/SKILLS-DE-TERCEIRO.md">SKILLS-DE-TERCEIRO.md</a>.</li></ul>
+</div>
+</section>
+<section class="cap" id="parte-f" aria-labelledby="parte-f-t">
+<div class="cap-cab"><span class="cap-letra">Parte F</span><h2 id="parte-f-t">Ajuda</h2><p>Onde pedir ajuda, as palavras do manual e de onde ele vem.</p></div>
+<div class="sec" id="f1">
+<h3><span class="n">F1</span>Onde pedir ajuda<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">Primeiro o próprio Claude, depois a Turbo.</p>
+<p>Cole a saída ou o print pro Claude e pergunte "o que isso quer dizer?", citando a seção (por exemplo, "travei no passo 3 do Windows"). Se não resolver, mande o print pra Turbo pelo canal de suporte da sua turma, com o número da seção.</p><p>Achou um erro no squad? Abra uma issue em <a href="https://github.com/Turbo-Academy/squad-turbo-2026/issues">github.com/Turbo-Academy/squad-turbo-2026/issues</a>.</p>
+</div>
+<span class="ancora" id="glossario"></span><div class="sec" id="f2">
+<h3><span class="n">F2</span>Glossário<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">As palavras que aparecem no caminho.</p>
+<div class="tabela"><table><thead><tr><th>Palavra</th><th>O que é</th></tr></thead><tbody><tr><td>Claude Code</td><td>O Claude que trabalha nos seus arquivos e roda comandos. No Mac é a aba Code do app; no Windows, o <code>claude</code> dentro do Ubuntu.</td></tr><tr><td>Skill</td><td>Uma receita pronta que o Claude carrega quando o assunto aparece.</td></tr><tr><td>Agente</td><td>Um especialista com papel definido, chamado com <code>@nome</code>.</td></tr><tr><td>Terminal</td><td>A janela de texto do Mac onde se roda comando. Você só usa se o Claude pedir uma linha com senha.</td></tr><tr><td>Homebrew</td><td>O instalador de programas do Mac.</td></tr><tr><td>WSL / Ubuntu</td><td>O Linux que o Windows instala por dentro. O squad roda nele.</td></tr><tr><td>sudo</td><td>Comando que pede a senha do computador. Quem roda é sempre você.</td></tr><tr><td>VPS</td><td>Um servidor alugado, ligado 24 h. Só os opcionais de WhatsApp, e-mail e automação usam.</td></tr></tbody></table></div>
+</div>
+<div class="sec" id="f3">
+<h3><span class="n">F3</span>Procedência e versão<a class="volta" href="#menu">↑ menu</a></h3>
+<p class="ganho">De onde vem o que está escrito aqui.</p>
+<p>Squad Turbo <strong>9.0</strong> · 49 skills · 13 agentes. Gerado por <code>04-manual-de-uso/instalacao/gerar.py</code> a partir do <code>manual-dados.json</code> do repositório; o visual e o comportamento (copiar, abas, tema) são os do Manual do Head Turbo. Os comandos do Windows (WSL, Node 22, Claude Code) são os mesmos do manual do Head Turbo, letra por letra.</p>
+</div>
+</section>
+</div>
+</main>
+
+<footer class="rodape">
+  <div class="miolo">
+    <p><strong>A tela mostrou algo diferente do que o manual diz?</strong> Pare ali e cole o print pro Claude, citando o número da seção. Se não resolver, mande pra Turbo.</p>
+    <p class="fonte-versao">Squad Turbo 9.0 · 49 skills · 13 agentes · versão em texto: <a href="https://github.com/Turbo-Academy/squad-turbo-2026/blob/main/INSTALACAO-DO-ZERO.md">INSTALACAO-DO-ZERO.md</a></p>
+    <p class="legal">Turbo Academy Ltda · CNPJ 50.151.944/0001-38 · Rua São Paulo, 2590 · 4º andar · Lourdes · Belo Horizonte/MG · CEP 30.170-137<br><a href="mailto:contato@turboacademy.com.br">contato@turboacademy.com.br</a> · <a href="https://wa.me/5531995131723">WhatsApp +55 31 99513-1723</a> · <a href="https://estrategiaturbo.com.br/politica-de-privacidade/">Política de Privacidade</a> · <a href="https://ta.turboacademy.com.br/termos-de-uso/">Termos de Uso</a><br>© 2026 Turbo Academy Ltda. Todos os direitos reservados.</p>
+  </div>
+</footer>
+<a class="voltar-sumario" href="#menu">Menu</a>
+<div id="avisos" role="status" aria-live="polite"></div>
+<noscript><style>.copiar{display:none}.cmd-longo .cmd-texto{max-height:none;-webkit-mask-image:none;mask-image:none}.ver-tudo{display:none}.painel[hidden]{display:block}</style></noscript>
 <script>
-document.querySelectorAll('.copy-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var el=document.getElementById(btn.dataset.copy);
-    var texto=el.textContent;
-    function feito(){
-      btn.textContent='Copiado ✓';btn.classList.add('ok');
-      setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('ok')},1800);
+/* Comportamento do manual: o mesmo do Manual do Head Turbo (copiar, ver o comando inteiro, abas Mac/Windows,
+   menu do celular, tema claro/escuro), sem a ficha do convite, que o Squad Turbo não tem. */
+(function(){
+  "use strict";
+  var $ = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+
+  /* ---------- copiar */
+  var avisoT;
+  function avisar(msg){ var a = $("#avisos"); a.textContent = msg; a.classList.add("ver"); clearTimeout(avisoT); avisoT = setTimeout(function(){ a.classList.remove("ver"); }, 2600); }
+  function copiaVelha(texto){
+    var ta = document.createElement("textarea");
+    ta.value = texto; ta.setAttribute("readonly",""); ta.setAttribute("aria-hidden","true");
+    ta.style.cssText = "position:fixed;top:0;left:-9999px;opacity:0;font-size:16px";
+    document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, texto.length);
+    var ok = false; try { ok = document.execCommand("copy"); } catch(e) { ok = false; }
+    document.body.removeChild(ta); return ok;
+  }
+  function copiar(texto){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(texto).then(function(){ return true; }, function(){ return copiaVelha(texto); });
     }
-    // fallback pra file:// e contextos sem clipboard API: textarea + execCommand
-    function planoB(){
-      var ta=document.createElement('textarea');
-      ta.value=texto;ta.style.position='fixed';ta.style.opacity='0';
-      document.body.appendChild(ta);ta.select();
-      try{document.execCommand('copy');feito();}
-      catch(e){window.getSelection().selectAllChildren(el);btn.textContent='Selecione e copie';}
-      document.body.removeChild(ta);
-    }
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(texto).then(feito,planoB);
-    }else{planoB();}
+    return Promise.resolve(copiaVelha(texto));
+  }
+  function selecionar(el){ try { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); } catch(e){} }
+  function textoFonte(bloco){ return $("template.cmd-fonte", bloco).content.textContent; }
+
+  $$(".copiar").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var bloco = document.getElementById(btn.getAttribute("data-alvo"));
+      copiar(textoFonte(bloco)).then(function(ok){
+        if (ok) {
+          btn.classList.add("ok");
+          avisar(bloco.hasAttribute("data-inteiro") ? "Mensagem copiada inteira. Cole no Claude." : "Comando copiado. Cole e aperte Enter.");
+          setTimeout(function(){ btn.classList.remove("ok"); }, 2200);
+        } else {
+          selecionar($(".cmd-texto code", bloco)); avisar("Não consegui copiar sozinho. O texto ficou selecionado: copie pelo teclado.");
+        }
+      });
+    });
   });
-});
+
+  $$(".ver-tudo").forEach(function(b){
+    b.addEventListener("click", function(){
+      var bloco = b.closest(".cmd"), aberto = bloco.classList.toggle("aberto");
+      b.setAttribute("aria-expanded", aberto ? "true" : "false");
+      b.textContent = aberto ? "Recolher" : "Ver inteiro";
+    });
+  });
+
+  /* ---------- abas (Mac / Windows), com #mac e #windows no endereço */
+  var abas = { mac: [$("#aba-mac"), $("#painel-mac")], windows: [$("#aba-win"), $("#painel-win")] };
+  function abrir(qual, foco, marcar){
+    Object.keys(abas).forEach(function(k){
+      var on = k === qual; abas[k][0].setAttribute("aria-selected", on ? "true" : "false");
+      abas[k][0].tabIndex = on ? 0 : -1; abas[k][1].hidden = !on;
+    });
+    if (foco) abas[qual][0].focus();
+    if (marcar) { try { history.replaceState(null, "", "#" + qual); } catch(e) {} }
+  }
+  abas.mac[0].addEventListener("click", function(){ abrir("mac", false, true); });
+  abas.windows[0].addEventListener("click", function(){ abrir("windows", false, true); });
+  [abas.mac[0], abas.windows[0]].forEach(function(b){
+    b.addEventListener("keydown", function(ev){
+      if (ev.key === "ArrowRight" || ev.key === "ArrowLeft") { ev.preventDefault(); abrir(b.id === "aba-mac" ? "windows" : "mac", true, true); }
+    });
+  });
+  var h = (location.hash || "").replace("#","").toLowerCase();
+  var ehWin = /win/i.test((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent);
+  abrir(h === "windows" || h === "win" ? "windows" : h === "mac" ? "mac" : (ehWin ? "windows" : "mac"), false, false);
+  window.htAbrir = abrir;
+})();
+(function(){
+  var cel=document.querySelector(".menu-cel");
+  document.querySelectorAll(".menu-cel a").forEach(function(a){ a.addEventListener("click",function(){ cel.open=false; }); });
+  function ir(){
+    var h=(location.hash||"").slice(1);
+    if(h==="menu" && cel && getComputedStyle(cel).display!=="none"){ cel.open=true; return; }
+    if(!h || !window.htAbrir) return;
+    var alvo=document.getElementById(h), qual=null;
+    if(h==="mac") qual="mac"; else if(h==="windows"||h==="win") qual="windows";
+    else if(alvo && alvo.closest){ var p=alvo.closest(".painel"); if(p) qual=(p.id==="painel-win")?"windows":"mac"; }
+    if(qual){ window.htAbrir(qual,false,false); var ab=document.getElementById("b1"); if(h==="mac"||h==="windows"||h==="win") alvo=ab; }
+    if(alvo) setTimeout(function(){ alvo.scrollIntoView(); },0);
+  }
+  window.addEventListener("hashchange",ir); ir();
+})();
+(function(){
+  var b=document.getElementById("tema-bt"), r=document.documentElement;
+  var nomes={"":"automático",light:"claro",dark:"escuro"};
+  function mostra(){ b.textContent="Tema: "+nomes[r.getAttribute("data-theme")||""]; }
+  b.addEventListener("click",function(){
+    var a=r.getAttribute("data-theme")||"", n=a===""?"light":a==="light"?"dark":"";
+    if(n) r.setAttribute("data-theme",n); else r.removeAttribute("data-theme");
+    try{ if(n) localStorage.setItem("ht-tema",n); else localStorage.removeItem("ht-tema"); }catch(e){}
+    mostra();
+  });
+  mostra();
+})();
 </script>
 </body>
 </html>

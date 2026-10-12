@@ -25,6 +25,9 @@ skills:
   - gerador-slides-turbo
   - slides-uipm-turbo
   - pptx
+  # Vídeo vertical e motion (execução): visual do corte + cartão final · 5 direções de motion no HyperFrames
+  - visual-cortes-turbo
+  - motion-opcoes-turbo
   # Arte estática (poster · PDF · canvas)
   - canvas-design
   # Artifacts web claude.ai (React + Tailwind + shadcn)

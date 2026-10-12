@@ -9,9 +9,9 @@
 
 Antes de qualquer conta ou ferramenta: o Squad Turbo precisa estar na sua máquina. Um comando resolve, com auxílio etapa por etapa (skills · agentes · dependências de vídeo · transcrição local).
 
-**No Mac, faça a Parte 1 do manual antes** (Xcode CLT → Homebrew → `brew install git node python ffmpeg yt-dlp`). O Homebrew pede a senha do seu Mac, e senha é a única coisa que o Claude não digita por você — sem ela a instalação anda até a metade e para. Levam ~12 min e valem para sempre; o passo a passo está em [`INSTALACAO-DO-ZERO.md`](../INSTALACAO-DO-ZERO.md), Parte 1.
+**O jeito recomendado é pelo próprio Claude:** abra o [manual de instalação](https://ta.turboacademy.com.br/squadturbo/), copie a mensagem de instalação e cole no Claude. Ele baixa, instala, oferece os opcionais e termina com `instalar-squad.sh --conferir` dizendo `SQUAD OK`. Se a Homebrew precisar da senha do Mac, ele mostra a linha e você roda no Terminal.
 
-Com o Mac preparado:
+Prefere rodar você mesmo, de dentro do repositório clonado:
 
 ```bash
 bash 99-skills-compartilhaveis/instalar-squad.sh

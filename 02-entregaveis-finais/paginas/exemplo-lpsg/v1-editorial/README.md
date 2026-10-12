@@ -57,4 +57,4 @@ src/
 
 ## Arquétipo de referência
 
-`/Users/leonardotabari/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md` — seção "V1 · ARQUÉTIPO EDITORIAL LONGFORM"
+`~/.claude/skills/paginas-lpsg-turbo/references/09-arquetipos-premium.md` — seção "V1 · ARQUÉTIPO EDITORIAL LONGFORM"

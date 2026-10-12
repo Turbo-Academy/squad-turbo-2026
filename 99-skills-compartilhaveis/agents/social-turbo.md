@@ -22,6 +22,8 @@ skills:
   - watch
   # Gravação longa (aula, call, live) vira corte vertical: gancho remontado, grade, fundo, legenda, bipe e publicação no TikTok
   - cortes-tiktok-turbo
+  # Direção de arte do corte vertical: split-screen, legenda, áreas seguras, gancho no 1º segundo e cartão final "Me segue"
+  - visual-cortes-turbo
   # Mensageria conectada (DM ManyChat / WhatsApp)
   - mensageria-lpsg-turbo
   # Análise estratégica de Instagram (perfil · conteúdo · concorrência)

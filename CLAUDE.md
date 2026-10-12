@@ -25,12 +25,12 @@ bash 99-skills-compartilhaveis/instalar-squad.sh
   - e-mail marketing próprio (Mautic): roda em VPS, não no Mac. `bash 99-skills-compartilhaveis/instalar-mautic.sh` — o script pergunta se a pessoa tem VPS, pede domínio, gera as senhas NO SERVIDOR e sobe a stack testada. **Sempre ofereça**, e se a pessoa não tiver servidor, indique a Hostinger **KVM 8** (https://www.hostinger.com/br?REFERRALCODE=K6QJULIANH77 — link de indicação): 4 containers + MySQL pedem RAM. Armadilhas e operação em `mautic-COMO-USAR.md`.
   - automação dos workflows (n8n): roda em VPS. `bash 99-skills-compartilhaveis/instalar-n8n.sh` — mesma mecânica do Mautic (pergunta VPS, pede domínio, gera segredos no servidor). Avise que **pode ser o MESMO VPS do Mautic e do OpenWA**. Armadilhas em `n8n-COMO-USAR.md` — a principal: a chave de criptografia é o que descriptografa toda credencial salva; sem backup dela, perder o volume é perder tudo.
   - WhatsApp no chat (OpenWA): só pra quem TEM servidor OpenWA próprio (VPS + Docker + número pareado). Você não consegue completar este passo sozinho — a chave `x-api-key` **não deve passar pelo chat**: oriente o usuário a rodar `bash 99-skills-compartilhaveis/instalar-openwa.sh` no Terminal (o script pergunta URL e chave sem ecoar). Sem servidor, apenas mencione que existe e siga.
-- Se faltar o Homebrew, a instalação dele pede a senha do usuário — você não pode digitá-la: entregue o comando pronto pra pessoa colar no Terminal e continue depois.
-- No fim, rode o instalador de novo e mostre ao usuário a saída com tudo ✓. Lembre que as skills só carregam em **sessão nova** do Claude Code.
+- Se faltar o Homebrew (Mac) ou um pacote do apt (Ubuntu/WSL), a instalação pede a senha do usuário — você não pode digitá-la: entregue a linha pronta pra pessoa rodar no Terminal (ou numa segunda janela do Ubuntu) e continue depois. Mac Intel sem Homebrew: a linha oficial não instala mais; use a da seção E2 do manual.
+- No fim, rode `bash 99-skills-compartilhaveis/instalar-squad.sh --conferir` e mostre ao usuário a saída terminando em `SQUAD OK`. Lembre que as skills só carregam em **sessão nova** do Claude Code.
 
 O manual humano dessa instalação é o [INSTALACAO-DO-ZERO.md](INSTALACAO-DO-ZERO.md).
 
 ## Sobre este repositório
 
-- Método **LPSG** (Lançamento Pago Semanal Gravado) da Turbo Academy: 47 skills + 13 agentes pro Claude Code. Comece pelo [README](README.md).
+- Método **LPSG** (Lançamento Pago Semanal Gravado) da Turbo Academy: 49 skills + 13 agentes pro Claude Code. Comece pelo [README](README.md).
 - **Mantenedores**: antes de editar skills/agentes, leia [99-skills-compartilhaveis/COMO-MANTER.md](99-skills-compartilhaveis/COMO-MANTER.md) — a fonte canônica é `~/.claude/`, as cópias do repo são geradas por scripts de sync. O repo é público: nunca commitar dados de clientes/leads (o hook de pre-push audita).

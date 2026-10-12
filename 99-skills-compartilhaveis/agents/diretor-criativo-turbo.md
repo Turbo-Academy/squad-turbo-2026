@@ -30,6 +30,9 @@ skills:
   # Slides e apresentações (direção)
   - gerador-slides-turbo
   - slides-uipm-turbo
+  # Motion graphic e corte vertical (direção)
+  - motion-opcoes-turbo
+  - visual-cortes-turbo
   # Arte estática (direção de poster · PDF · canvas)
   - canvas-design
   # Artifacts web claude.ai (direção de protótipo React/shadcn)

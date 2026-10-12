@@ -98,9 +98,9 @@ if "versao" in facts:
     derivados += [
         # títulos e rodapés ("LPSG 7.0 · Squad Turbo", "Squad Turbo · LPSG 7.0")
         # — o nome do repo (squad-turbo-2026) não carrega versão, então não casa aqui
-        (r"LPSG \d+\.\d+", f"LPSG {v}"),
+        (r"LPSG \d+\.\d+(?:\.\d+)?", f"LPSG {v}"),
         # selo do ebook ("Método LPSG · v7.0")
-        (r"Método LPSG · v\d+\.\d+", f"Método LPSG · v{v}"),
+        (r"Método LPSG · v\d+\.\d+(?:\.\d+)?", f"Método LPSG · v{v}"),
     ]
 if "n_skills" in facts and "n_agentes" in facts:
     s, a = facts["n_skills"], facts["n_agentes"]
@@ -132,3 +132,6 @@ for fname in targets:
 
 print(f"\n✅ build-manual concluído. {len(facts)} fatos canônicos · {len(derivados)} derivados · arquivos sincronizados.")
 PY
+
+# Manual de instalação (HTML + MD) no padrão do Head Turbo: gerado dos mesmos fatos, sempre por último.
+python3 instalacao/gerar.py   # o cd da linha 19 já pôs a gente na pasta do script
