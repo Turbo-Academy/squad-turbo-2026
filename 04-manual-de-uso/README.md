@@ -1,4 +1,4 @@
-# Manual de Utilização · LPSG 9.0
+# Manual de Utilização · LPSG 9.0.1
 
 > Manual passo-a-passo pra rodar um projeto LPSG completo, do zero.
 > Qualquer pessoa consegue seguir — não precisa ser técnico.
@@ -47,7 +47,7 @@ Em **1 semana**, você sai de uma página em branco e termina com:
 |---|---|---|
 | 👤 **VOCÊ (humano)** | Cria contas · libera acessos · aprova decisões · grava vídeos · rede o evento | 🚨 marcador vermelho · `AÇÃO HUMANA` |
 | 🤖 **Claude (LLM)** | Estrutura código · escreve copy · monta dashboard · gera workflows | Sem marcador especial · default |
-| ⚙️ **Ferramentas** | Meta · Hotmart · Vercel · n8n · ManyChat · Sheets executam | Marcador `⚙️` |
+| ⚙️ **Ferramentas** | Meta · Hotmart · Cloudflare Pages · n8n · ManyChat · Sheets executam | Marcador `⚙️` |
 
 ---
 
@@ -61,7 +61,7 @@ GATE INICIAL    ── Pesquisa (interna + mercado) → briefing pra aprovar  �
 DIA 1 (seg)     ── Fases 1-2: estrutura de aulas + mensageria           🤖 Claude
 DIA 2 (ter)     ── Fases 3-4: oferta + criativos (gravações dos vídeos) 🚨 VOCÊ + 🤖 Claude
 DIA 3 (qua)     ── Fases 5-6: páginas + tráfego (campanha Meta)         🤖 Claude · ⚙️ Meta
-DIA 4 (qui)     ── Fases 7-8: automações n8n + dashboard                🤖 Claude · ⚙️ Vercel
+DIA 4 (qui)     ── Fases 7-8: automações n8n + dashboard                🤖 Claude · ⚙️ Cloudflare Pages
 DIA 5 (sex)     ── Fase 9 (operação) + gravação das aulas + revisão     🚨 VOCÊ
 DIA 6-7 (fim)   ── Aprovação Meta (templates) · pré-edição              ⚙️ aprovações automáticas
 

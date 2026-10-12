@@ -32,9 +32,7 @@ skills:
   - canvas-design
   # Artifacts web claude.ai (React + Tailwind + shadcn)
   - web-artifacts-builder
-  # Stack Vercel / React (execução de páginas)
-  - deploy-to-vercel
-  - vercel-cli-with-tokens
+  # React (boas práticas de código; a publicação é no Cloudflare Pages: `npx wrangler pages deploy` (passo a passo na skill paginas-lpsg-turbo))
   - vercel-react-best-practices
   # Teste e otimização da entrega
   - page-optimizer-turbo

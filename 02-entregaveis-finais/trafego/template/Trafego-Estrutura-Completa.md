@@ -880,7 +880,7 @@ Imagem única, formato **1:1 (Feed)** + **9:16 (Stories)** + **1.91:1 (Open Grap
 
 > **Esta seção foi consolidada na estrutura `paginas-lpsg-turbo`.**
 >
-> A página de ingresso é responsabilidade da skill **`paginas-lpsg-turbo`** — lá está a estrutura completa de 9 blocos, 5 variações, stack Next.js + Tailwind + Vercel, performance LCP < 1.5s, e os dois modos de output (implementa aqui ou brief para Claude Design).
+> A página de ingresso é responsabilidade da skill **`paginas-lpsg-turbo`** — lá está a estrutura completa de 9 blocos, 5 variações, stack Next.js + Tailwind + Cloudflare Pages, performance LCP < 1.5s, e os dois modos de output (implementa aqui ou brief para Claude Design).
 
 ---
 
@@ -895,7 +895,7 @@ Imagem única, formato **1:1 (Feed)** + **9:16 (Stories)** + **1.91:1 (Open Grap
     ├── 02-arquitetura-projeto.md
     ├── 03-componentes-mobile-first.md
     ├── 04-matriz-variacoes.md
-    ├── 05-performance-vercel.md
+    ├── 05-performance-e-deploy.md
     ├── 06-modos-de-output.md
     └── 07-brief-claude-design.md
 ```

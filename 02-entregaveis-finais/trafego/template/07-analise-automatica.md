@@ -280,7 +280,7 @@ Adicionar em `00-variaveis-globais.md`:
 
 ```yaml
 # === Engine de análise ===
-ENGINE_ANALISE:               "n8n"                                # n8n | vercel-cron | github-actions
+ENGINE_ANALISE:               "n8n"                                # n8n | github-actions
 SHEETS_ID_RECOMENDACOES:      "{SHEETS_ID}"                        # ID da planilha
 SHEETS_ABA_RECOMENDACOES:     "Recomendações"                      # nome da aba
 WEBHOOK_RECOMENDACOES:        "{N8N_WEBHOOK_RECOMENDACOES}"        # disparo manual

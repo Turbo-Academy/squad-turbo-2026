@@ -1,14 +1,14 @@
 # Páginas — LPSG
 
 > Estrutura completa de páginas de venda de ingresso.
-> Stack fixo: **Next.js 14 + Tailwind + Vercel**. Mobile-first. Mínimo 5 variações.
+> Stack fixo: **Next.js 14 + Tailwind + Cloudflare Pages**. Mobile-first. Mínimo 5 variações.
 
 ---
 
 ## 🎯 O método em 3 frases
 
 1. **5 variações sempre** — `/v1` a `/v5`. Mesmo esqueleto, eixos diferentes (headline · dor · cor · CTA).
-2. **Stack fixo:** Next.js 14 + Tailwind + Vercel. Sem inventar moda. Performance > flexibilidade.
+2. **Stack fixo:** Next.js 14 + Tailwind + Cloudflare Pages. Sem inventar moda. Performance > flexibilidade.
 3. **Mobile-first** — fonte mín 16px, botão 56px+, LCP < 1.5s. 70% do tráfego é mobile.
 
 ---
@@ -22,11 +22,11 @@ paginas/
 ├── template/                       ← TEMPLATE GENÉRICO (lacunas { })
 │   ├── README.md
 │   ├── 00-variaveis-globais.md     ← preencha primeiro
-│   ├── 01-stack-e-deploy.md        ← Next.js + Tailwind + Vercel
+│   ├── 01-stack-e-deploy.md        ← Next.js + Tailwind + Cloudflare Pages
 │   ├── 02-arquitetura-projeto.md   ← estrutura de pastas + rotas /v1-/v5
 │   ├── 03-componentes-mobile-first.md ← 9 blocos como componentes React (com código)
 │   ├── 04-matriz-variacoes.md      ← os 4 eixos das 5 variações
-│   └── 05-performance-vercel.md    ← LCP/INP/CLS + checklist deploy
+│   └── 05-performance-e-deploy.md  ← LCP/INP/CLS + checklist deploy
 │
 └── exemplo-lpsg/                   ← VERSÃO EXEMPLO (preenchida)
     ├── README.md
@@ -72,7 +72,7 @@ paginas/
 3. Estrutura o projeto com `02-arquitetura-projeto.md`
 4. Implementa os 9 blocos com `03-componentes-mobile-first.md`
 5. Configura as 5 variações com `04-matriz-variacoes.md`
-6. Audita e faz deploy com `05-performance-vercel.md`
+6. Audita e faz deploy com `05-performance-e-deploy.md`
 7. Sobe 5 campanhas de teste no Meta Ads, 1 pra cada `/v{N}`
 
 ### Cenário 2 — Você quer entender o método LPSG real

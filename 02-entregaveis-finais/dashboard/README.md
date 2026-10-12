@@ -9,7 +9,7 @@
 
 1. **9 módulos · cada um responde uma pergunta operacional** — visão geral · tráfego · páginas · aulas · mensageria · tsunami · recuperação · operação · estratégico.
 2. **6 fontes de dados com adapters** — XLSX · Sheets · Meta API · Hotmart · GA4 · YouTube. Schema único interno.
-3. **2 modos de output** — Web app (Vercel · sync ao vivo) ou HTML standalone (offline · 250 KB · funciona em qualquer máquina).
+3. **2 modos de output** — Web app (Cloudflare Pages · sync ao vivo) ou HTML standalone (offline · 250 KB · funciona em qualquer máquina).
 
 ---
 
@@ -59,7 +59,7 @@ dashboard/
 ## 🧭 Skills relacionadas
 
 - `dashboard-lpsg-turbo` — esta skill (template do dashboard)
-- `paginas-lpsg-turbo` — mesma stack (Next.js + Tailwind + Vercel)
+- `paginas-lpsg-turbo` — mesma stack (Next.js + Tailwind + Cloudflare Pages)
 - `trafego-lpsg-turbo` — alimenta `/trafego` (Hook/Hold/Body Rate · 4 ações)
 - `mensageria-lpsg-turbo` — alimenta `/mensageria` (Utility vs Marketing · entrega)
 - `oferta-lpsg-turbo` — alimenta `/tsunami` (4 janelas · 6h50/7h00/10h/23h59)

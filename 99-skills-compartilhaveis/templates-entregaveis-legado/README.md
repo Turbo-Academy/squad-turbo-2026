@@ -14,3 +14,5 @@ Estes 10 `*-LPSG-Template.zip` **não são skills do Claude**. São pacotes de c
 ## Status
 
 **Legado.** A fonte viva de cada entregável é a skill correspondente em `~/.claude/skills/` + os arquivos em `02-entregaveis-finais/`. Estes zips são mantidos só como histórico/consulta. Se precisar do entregável atualizado, gere a partir da skill, não daqui.
+
+> **9.0.1:** a hospedagem do squad passou a ser o Cloudflare Pages. Estes zips antigos ainda citam a Vercel; a versão atual de cada entregável está na skill e em `02-entregaveis-finais/`.

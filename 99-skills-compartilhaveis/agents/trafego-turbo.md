@@ -29,8 +29,7 @@ skills:
   - dash-lancamento-turbo
   # Setup e execução Meta Ads CLI
   - meta-ads-cli-setup-turbo
-  # Deploy + teste da página de destino dos ads
-  - deploy-to-vercel
+  # Teste da página de destino dos ads (publicação: Cloudflare Pages: `npx wrangler pages deploy` (passo a passo na skill paginas-lpsg-turbo))
   - webapp-testing
 ---
 

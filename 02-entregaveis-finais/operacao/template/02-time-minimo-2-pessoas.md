@@ -85,7 +85,7 @@ DESIGNER:                 "Claude Designer + Nano Banana (sem designer humano)"
 EDICAO:                   "CapCut Pro (R$ 50/mês)"
 DASHBOARD:                "Modo standalone HTML · sem servidor"
 SUPORTE:                  "ManyChat live chat"
-PAGINAS:                  "Template Next.js · deploy Vercel"
+PAGINAS:                  "Template Next.js · deploy Cloudflare Pages"
 
 TOTAL_FERRAMENTAS:        "~R$ 400/mês"
 ```

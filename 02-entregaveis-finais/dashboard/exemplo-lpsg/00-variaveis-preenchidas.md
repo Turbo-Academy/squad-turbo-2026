@@ -64,7 +64,7 @@ MODOS_ATIVOS:
 
 ```yaml
 FRAMEWORK:                "Next.js 14 (App Router)"
-HOSPEDAGEM:               "Vercel · dash.turbo.academy"
+HOSPEDAGEM:               "Cloudflare Pages · dash.turbo.academy"
 DOMINIO:                  "dash.turbo.academy"
 HTML_STANDALONE:          true            # gerado pra distribuição aos alunos
 ```

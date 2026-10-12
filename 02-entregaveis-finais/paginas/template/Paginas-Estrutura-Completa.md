@@ -1,7 +1,7 @@
 # Template — Páginas do LPSG
 
 > Template genérico de páginas de venda de ingresso do **Lançamento Pago Semanal Gravado**.
-> Stack fixo: **Next.js 14 + Tailwind + Vercel**. Mobile-first, otimizado, prontas pra publicar.
+> Stack fixo: **Next.js 14 + Tailwind + Cloudflare Pages**. Mobile-first, otimizado, prontas pra publicar.
 
 ---
 
@@ -11,7 +11,7 @@
 - ✅ **9 blocos** componentizados em React (TopBar, Hero, Pain, NotYourFault, Authority, Promises, Lessons, Testimonials, FinalCTA)
 - ✅ **Mobile-first** com fonte mín 16px, botões 56px+, imagens AVIF/WebP
 - ✅ **LCP < 1.5s** out-of-the-box (mais rigoroso que padrão da web)
-- ✅ **Deploy 1-click no Vercel** com domínio customizado e HTTPS automático
+- ✅ **Deploy em 1 comando no Cloudflare Pages** (`wrangler pages deploy`) com domínio customizado e HTTPS automático
 - ✅ **Tracking integrado** (Meta Pixel + CAPI + GTM + GA4)
 - ✅ **Headline + dor + cor + CTA** variados por padrão científico
 
@@ -23,11 +23,11 @@
 template/
 ├── README.md                       ← você está aqui
 ├── 00-variaveis-globais.md         ← preencha primeiro
-├── 01-stack-e-deploy.md            ← Next.js + Tailwind + Vercel
+├── 01-stack-e-deploy.md            ← Next.js + Tailwind + Cloudflare Pages
 ├── 02-arquitetura-projeto.md       ← estrutura de pastas + rotas /v1-/v5
 ├── 03-componentes-mobile-first.md  ← 9 blocos como componentes React (com código)
 ├── 04-matriz-variacoes.md          ← os 4 eixos das 5 variações
-└── 05-performance-vercel.md        ← LCP/INP/CLS + checklist de deploy
+└── 05-performance-e-deploy.md      ← LCP/INP/CLS + checklist de deploy
 ```
 
 ---
@@ -39,7 +39,7 @@ template/
 3. **Estruture o projeto** com `02-arquitetura-projeto.md`
 4. **Implemente os 9 blocos** com `03-componentes-mobile-first.md`
 5. **Configure as 5 variações** com `04-matriz-variacoes.md`
-6. **Audite e deploy** com `05-performance-vercel.md`
+6. **Audite e deploy** com `05-performance-e-deploy.md`
 7. **Sobe 5 campanhas de teste** (1 pra cada variação) — ver `trafego/template/`
 
 ---
@@ -50,7 +50,7 @@ template/
 |---|---|---|
 | 1 | **Mínimo 5 variações** | Sem comparação não há aprendizado |
 | 2 | **Mobile-first** | 70%+ do tráfego pago é mobile |
-| 3 | **Stack fixo (Next.js + Tailwind + Vercel)** | Performance + manutenção previsível |
+| 3 | **Stack fixo (Next.js + Tailwind + Cloudflare Pages)** | Performance + manutenção previsível |
 | 4 | **9 blocos em ordem fixa** | Padrão validado em 3 LPs em produção |
 | 5 | **Data do evento na 1ª dobra** | Sinaliza tempo concreto |
 | 6 | **Garantia abaixo do botão** | Texto exato: "Garantia Incondicional: Assista! Se não gostar devolvo seu dinheiro ao final do evento." |
@@ -100,8 +100,8 @@ CSS:          Tailwind CSS 4
 Componentes:  shadcn/ui (opcional)
 Ícones:       lucide-react
 Fontes:       Inter + Manrope (next/font)
-Deploy:       Vercel (1-click)
-Domínio:      Cloudflare DNS → Vercel
+Deploy:       Cloudflare Pages (`wrangler pages deploy out`)
+Domínio:      Cloudflare DNS → Cloudflare Pages
 ```
 
 ---
@@ -200,7 +200,7 @@ FRAMEWORK:                "Next.js 14 (App Router)"       # FIXO
 LINGUAGEM:                "TypeScript"                    # FIXO
 CSS:                      "Tailwind CSS 4"                # FIXO
 FONTES:                   "Inter (Google Fonts) + Manrope" # Padrão LPSG
-HOSPEDAGEM:               "Vercel"                        # FIXO
+HOSPEDAGEM:               "Cloudflare Pages"              # FIXO
 NODE_VERSION:             "20.x"
 PACKAGE_MANAGER:          "pnpm"                          # ou npm/yarn
 ```
@@ -300,23 +300,23 @@ HOMEPAGE_REDIRECT:        "redireciona / → /v{ATUAL}"     # Variação princip
 ```
 # 01 · Stack e Deploy
 
-> Stack fixo do LPSG: **Next.js 14 + TypeScript + Tailwind CSS + Vercel**. Sem inventar moda.
+> Stack fixo do LPSG: **Next.js 14 + TypeScript + Tailwind CSS + Cloudflare Pages** (export estático). Sem inventar moda.
 
 ---
 
 ## 🎯 Por que esse stack?
 
-| Critério | Por que Next.js + Tailwind + Vercel |
+| Critério | Por que Next.js + Tailwind + Cloudflare Pages |
 |---|---|
-| **Performance** | LCP < 1.5s out-of-the-box · Image optimization automática · Edge runtime |
+| **Performance** | LCP < 1.5s out-of-the-box · página estática (HTML pronto) servida da rede da Cloudflare |
 | **Mobile-first** | Tailwind facilita responsivo · Next.js otimiza bundle por rota |
-| **Deploy 1-click** | `git push` → produção. Sem servidor, sem dor |
-| **A/B testing nativo** | Vercel Edge Config + Middleware suportam variações sem rebuild |
+| **Deploy em 1 comando** | `npx wrangler pages deploy out` → produção. Sem servidor, sem dor |
+| **A/B testing por rota** | 5 rotas `/v1`…`/v5`, cada anúncio aponta pra uma · sem rebuild pra trocar |
 | **SEO + Open Graph** | Metadata API do Next 14 + sharing automatic |
-| **Analytics integrado** | Vercel Analytics + Speed Insights · grátis no plano Pro |
+| **Analytics integrado** | Cloudflare Web Analytics · sem cookie · mede LCP, INP e CLS |
 | **HTTPS automático** | Cert grátis com auto-renew |
-| **CDN global** | Edge network em 40+ regiões |
-| **Preview por branch** | Cada PR vira URL única — fácil pra validar antes de subir |
+| **CDN global** | Rede da Cloudflare (CDN global, HTTPS automático) |
+| **Preview por branch** | Cada branch vira URL única (`<branch>.<projeto>.pages.dev`) — fácil pra validar antes de subir |
 
 ---
 
@@ -330,10 +330,10 @@ Componentes UI:   shadcn/ui (opcional, pra acelerar)
 Ícones:           lucide-react
 Animações:        Framer Motion (mínimo · só se necessário)
 Fontes:           Inter (Google Fonts) + Manrope (variable, peso único)
-Hospedagem:       Vercel
-Domínio:          Cloudflare DNS → Vercel
+Hospedagem:       Cloudflare Pages (export estático · pasta out/)
+Domínio:          Cloudflare DNS → Cloudflare Pages
 Tracking:         Meta Pixel + CAPI · Google Tag Manager · GA4
-Analytics:        Vercel Analytics + Speed Insights
+Analytics:        Cloudflare Web Analytics
 ```
 
 ---
@@ -367,22 +367,21 @@ pnpm add -D @types/node prettier prettier-plugin-tailwindcss
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",      // `npx next build` gera a pasta out/ (é ela que sobe no Cloudflare Pages)
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 dias
-  },
-  async redirects() {
-    return [
-      // Homepage redireciona pra variação principal
-      { source: "/", destination: "/v1", permanent: false },
-    ];
+    unoptimized: true,   // export estático não tem otimizador de imagem: suba WebP/AVIF já otimizados
   },
 };
 
 export default nextConfig;
+```
+
+> Em export estático o Next **não** roda `redirects()` nem `headers()` do `next.config`. O redirect da home vai num arquivo `public/_redirects` (o build copia pra `out/`):
+
+```
+/  /v1  302
 ```
 
 ### 4. Configurar Tailwind tokens
@@ -442,19 +441,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 ---
 
-## 🚢 Deploy no Vercel
+## 🚢 Deploy no Cloudflare Pages
 
 ### Primeira vez
 
-1. Cria conta: [vercel.com](https://vercel.com) (login com GitHub)
-2. Importa o repo do projeto
-3. Vercel detecta Next.js automaticamente
-4. **Não muda nada** no setup inicial — clica em "Deploy"
-5. Em ~30s a URL `https://{projeto}.vercel.app` está no ar
+1. Cria conta: [dash.cloudflare.com](https://dash.cloudflare.com) (o plano grátis resolve)
+2. Na raiz do projeto, cria o projeto Pages (uma vez só):
+
+```bash
+npx wrangler pages project create {projeto} --production-branch main
+```
+
+3. Gera o build e publica:
+
+```bash
+npx next build
+npx wrangler pages deploy out --project-name {projeto} --branch main
+```
+
+4. A URL `https://{projeto}.pages.dev` está no ar
+
+> **Opcional · deploy automático no `git push`:** Cloudflare → Workers & Pages → Create → Pages → conectar o repositório Git. Build command `npx next build`, build directory `out`.
 
 ### Variáveis de ambiente
 
-Configurar em `Settings → Environment Variables`:
+Configurar em `Workers & Pages → projeto → Settings → Variables and Secrets`:
 
 ```
 NEXT_PUBLIC_META_PIXEL_ID         = {SEU_PIXEL_ID}
@@ -464,68 +475,56 @@ META_CAPI_TOKEN                   = {SEU_CAPI_TOKEN}        # secret · não NEX
 NEXT_PUBLIC_CHECKOUT_URL          = https://pay.hotmart.com/...
 ```
 
+> As `NEXT_PUBLIC_*` entram no build (são públicas, vão no HTML). Segredo (token Meta/Hotmart) **nunca** é `NEXT_PUBLIC_`: vai como segredo do projeto e só é lido por Pages Functions (`functions/api/<nome>.js`, ver `08-ficha-interesse.md`):
+
+```bash
+npx wrangler pages secret put META_CAPI_TOKEN --project-name {projeto}
+```
+
 ### Domínio customizado
 
-1. `Settings → Domains → Add`
-2. Aponta o DNS no Cloudflare:
-   - `CNAME lp → cname.vercel-dns.com.`
-3. Vercel emite SSL em ~1 minuto
+1. **Primeiro** associa o domínio no projeto: `Workers & Pages → projeto → Custom domains → Set up a domain`
+2. **Depois** aponta o DNS: `CNAME lp → {projeto}.pages.dev` (zona já na Cloudflare: o próprio painel cria o registro)
+3. HTTPS automático
+
+> CNAME criado **antes** de associar o domínio no projeto = domínio não resolve (erro 522).
 
 ### Branches e preview
 
 | Branch | URL | Função |
 |---|---|---|
 | `main` | `lp.{dominio}.com.br` | Produção |
-| `dev` | `dev-lp.{dominio}.com.br` ou auto | Staging |
-| `feature/*` | URL automática Vercel | Preview de PR |
-
-> Cada PR vira uma URL preview — manda pro time validar antes do merge.
-
----
-
-## 🔧 Vercel Edge Config (opcional · pra A/B testing)
-
-Pra alternar variação principal sem rebuild:
-
-1. `Storage → Create Edge Config`
-2. Adiciona chave `current-variation` com valor `"v1"`
-3. Lê em runtime via `@vercel/edge-config`
-4. Mudança propaga em segundos · zero downtime
-
----
-
-## 📊 Vercel Analytics
-
-Ativa grátis em `Analytics`:
+| `dev` | `https://dev.{projeto}.pages.dev` | Staging |
+| `feature-x` | `https://feature-x.{projeto}.pages.dev` | Preview |
 
 ```bash
-pnpm add @vercel/analytics @vercel/speed-insights
+npx wrangler pages deploy out --project-name {projeto} --branch feature-x
 ```
 
-`src/app/layout.tsx`:
+> Cada branch vira uma URL preview (minúsculas, caractere fora de letra/número vira hífen) — manda pro time validar antes de subir pra `main`.
 
-```tsx
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+---
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="pt-BR">
-      <body>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
-  );
-}
-```
+## 🔧 A/B testing (por rota)
 
-Métricas que vão aparecer no dashboard Vercel:
+O A/B do LPSG é por **rota**, não por configuração em runtime:
+
+1. As 5 variações já existem como rotas `/v1`…`/v5`
+2. Cada anúncio aponta pra uma rota
+3. Trocar a variação principal = trocar a linha do `public/_redirects` e publicar de novo
+4. Precisa dividir tráfego na borda (mesma URL, variações diferentes)? Pages Functions: arquivo `functions/_middleware.js` exportando `onRequest`
+
+---
+
+## 📊 Cloudflare Web Analytics
+
+Ativa grátis em `Workers & Pages → projeto → Metrics → Enable (Web Analytics)`. Não precisa instalar pacote nem mexer no `layout.tsx`. Sem cookie e sem localStorage (sem banner de consentimento).
+
+Métricas que vão aparecer no painel da Cloudflare:
 - Page views por rota (`/v1`, `/v2`...)
 - Top pages
 - Top referrers
-- LCP/INP/CLS por rota (Speed Insights)
+- LCP/INP/CLS (Core Web Vitals)
 
 ---
 
@@ -537,7 +536,7 @@ Métricas que vão aparecer no dashboard Vercel:
 | **Bootstrap** | Bundle gigante · CSS antigo · Tailwind mais flexível |
 | **Material UI / Chakra** | 200KB+ de runtime · não vale pra LP |
 | **GSAP** | Pesado · use Framer Motion ou animação CSS pura |
-| **Imagens não otimizadas** | Sempre WebP/AVIF via `next/image` |
+| **Imagens não otimizadas** | Sempre WebP/AVIF (converter antes de subir) via `next/image` |
 | **Vídeo no hero** | Adia LCP · LPSG não usa VSL no topo |
 | **Pop-ups de carregamento** | Meta Ads pode bloquear |
 
@@ -547,15 +546,15 @@ Métricas que vão aparecer no dashboard Vercel:
 
 - [ ] Repo Git criado (GitHub/GitLab/Bitbucket)
 - [ ] `pnpm create next-app` rodado
-- [ ] `next.config.ts` configurado com `redirects` e `images`
+- [ ] `next.config.ts` com `output: "export"` e `images.unoptimized` · `public/_redirects` com `/ → /v1`
 - [ ] Tailwind tokens definidos (cores, fontes)
 - [ ] Fontes Inter + Manrope via `next/font/google`
 - [ ] `.env.local` com todas as variáveis (não commitar)
-- [ ] Deploy inicial no Vercel concluído
+- [ ] Projeto Pages criado e deploy inicial (`wrangler pages deploy out`) concluído
 - [ ] Domínio customizado apontado
-- [ ] Vercel Analytics + Speed Insights ativos
+- [ ] Cloudflare Web Analytics ativo
 - [ ] Pixel + GTM + GA4 instalados e validados
-- [ ] Preview por branch testado (PR vira URL)
+- [ ] Preview por branch testado (`--branch` vira URL)
 # 02 · Arquitetura do Projeto
 
 > Como organizar arquivos, rotas e dados pra rodar 5 variações sem duplicar código.
@@ -892,7 +891,7 @@ Componentes usam `bg-accent` / `text-accent` — cor muda por variação sem tro
 1. Cria `src/app/(variations)/v6/page.tsx` (copia da v1, troca `getVariation("v1")` por `"v6"`)
 2. Adiciona entrada em `data/variations.ts`
 3. Atualiza tipo `VariationId`
-4. Deploy automático no `git push`
+4. Publica de novo: `npx next build` + `npx wrangler pages deploy out --project-name <projeto> --branch main` (ou automático no `git push`, se o repositório estiver conectado no Cloudflare Pages)
 
 > **Manutenção é trivial** porque o esqueleto da página é igual entre variações.
 
@@ -1654,7 +1653,7 @@ BORA TRANSFORMAR ISSO
 
 ### Setup
 
-1. **Sobe as 5 rotas no Vercel** (já existem desde o setup inicial)
+1. **Sobe as 5 rotas no Cloudflare Pages** (já existem desde o setup inicial)
 2. **Cria 5 campanhas de teste no Meta Ads**, uma pra cada variação:
    ```
    {SIGLA}_{DDMMYY}_TES-PAG_001  →  /v1
@@ -1723,7 +1722,7 @@ Variação vencedora = maior CONVERSÃO em 7 dias com ROAS ≥ alvo
 | Trocar cor sem testar | Cor afeta CR · não pula o teste |
 | Manter perdedora "porque eu gostei" | Bias pessoal mata performance |
 | Trocar variação principal toda semana | Sem maturidade nos dados |
-# 05 · Performance & Deploy no Vercel
+# 05 · Performance & Deploy no Cloudflare Pages
 
 > Página rápida vende mais. **LCP < 1.5s** é a regra do LPSG — não os 2s padrão da web. Mobile é tudo.
 
@@ -1935,7 +1934,7 @@ import Script from "next/script";
 
 ---
 
-## 🌐 Vercel — configurações de produção
+## 🌐 Cloudflare Pages — configurações de produção
 
 ### `next.config.ts`
 
@@ -1943,73 +1942,68 @@ import Script from "next/script";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",      // `npx next build` gera a pasta out/
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true,
 
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 dias
-    deviceSizes: [375, 640, 768, 1024, 1280],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    unoptimized: true,   // export estático: imagens já sobem em WebP/AVIF otimizado
   },
 
   experimental: {
     optimizePackageImports: ["lucide-react"],  // tree-shaking automático
-  },
-
-  async redirects() {
-    return [
-      { source: "/", destination: "/v1", permanent: false },
-    ];
-  },
-
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "DENY" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
-      {
-        source: "/images/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-    ];
   },
 };
 
 export default nextConfig;
 ```
 
-### Vercel Edge Network
+> Em export estático o Next **não** roda `redirects()` nem `headers()`. Os dois viram arquivos em `public/` (o build copia pra `out/`):
 
-- **Edge automático:** Vercel coloca seu site em 40+ regiões globais
-- **CDN cache:** assets estáticos cached por 1 ano
-- **Brotli compression:** ativada por default (40% menor que gzip)
-- **HTTP/3:** ativado por default
+`public/_redirects`:
 
-### Vercel Speed Insights
+```
+/  /v1  302
+```
+
+`public/_headers`:
+
+```
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+```
+
+### Publicar
 
 ```bash
-pnpm add @vercel/speed-insights
+npx next build
+npx wrangler pages deploy out --project-name {projeto} --branch main
 ```
 
-```tsx
-// app/layout.tsx
-import { SpeedInsights } from "@vercel/speed-insights/next";
+Preview de uma variação antes de subir pra produção:
 
-<SpeedInsights />
+```bash
+npx wrangler pages deploy out --project-name {projeto} --branch feature-x
+# → https://feature-x.{projeto}.pages.dev
 ```
 
-Métricas reais (de usuários reais) aparecem em `Project → Speed Insights`:
-- LCP, INP, CLS por rota
-- Compara com benchmark do nicho
+### Rede da Cloudflare
+
+- **CDN global:** a pasta `out/` é servida pela rede da Cloudflare
+- **HTTPS automático** no `{projeto}.pages.dev` e no domínio customizado
+
+### Cloudflare Web Analytics (Core Web Vitals)
+
+Liga em `Workers & Pages → projeto → Metrics → Enable (Web Analytics)`. Sem pacote, sem import, sem cookie.
+
+Métricas reais (de usuários reais) aparecem no painel do Web Analytics:
+- LCP, INP, CLS (Core Web Vitals)
+- Page views por rota
 - Mostra trend ao longo do tempo
 
 ---
@@ -2050,7 +2044,7 @@ Ideal: **≥ 95 em mobile** (campo verde). Se < 90, **não suba tráfego ainda**
 
 ## 🔒 Segurança e SEO básicos
 
-### Headers de segurança (já no `next.config`)
+### Headers de segurança (já no `public/_headers`)
 
 - `X-Content-Type-Options: nosniff`
 - `X-Frame-Options: DENY`
@@ -2143,14 +2137,13 @@ export default function sitemap() {
 - [ ] CAPI configurado
 - [ ] GTM ID correto
 - [ ] GA4 ID correto
-- [ ] Variáveis de ambiente do Vercel populadas
+- [ ] Variáveis do projeto Pages populadas (`Settings → Variables and Secrets`)
 
 ### Pós-deploy
 - [ ] URL de produção respondendo
 - [ ] Domínio customizado HTTPS funcionando
-- [ ] Vercel Analytics ativo
-- [ ] Speed Insights coletando dados
-- [ ] Preview branch testado
+- [ ] Cloudflare Web Analytics ativo e coletando LCP/INP/CLS
+- [ ] Preview branch testado (`https://<branch>.{projeto}.pages.dev`)
 
 ---
 
@@ -2175,9 +2168,9 @@ export default function sitemap() {
 
 | Frequência | Ação |
 |---|---|
-| **Diário** | Conferir Vercel Analytics — dropdown de erros |
+| **Diário** | Conferir Cloudflare Web Analytics — visitas e Core Web Vitals por rota |
 | **Semanal** | Lighthouse nas 5 variações · comparar com semana anterior |
-| **A cada deploy** | Lighthouse + Speed Insights · não subir se piorou >5 pontos |
+| **A cada deploy** | Lighthouse + Web Analytics (Core Web Vitals) · não subir se piorou >5 pontos |
 | **Mensal** | Auditoria de bundle size · remover dependências não usadas |
 | **Trimestral** | Rever benchmarks · atualizar dependências (security patches) |
 # 06 · Modos de Output (Implementa Aqui · Brief para Claude Design)
@@ -2190,7 +2183,7 @@ export default function sitemap() {
 
 | Modo | Quando usar |
 |---|---|
-| **🟢 Modo A — Implementa Aqui** | Você quer o projeto React pronto, com Claude Preview rodando + Vercel deploy direto. Zero atrito. |
+| **🟢 Modo A — Implementa Aqui** | Você quer o projeto React pronto, com Claude Preview rodando + deploy direto no Cloudflare Pages. Zero atrito. |
 | **🟡 Modo B — Brief para Claude Design** | Você prefere usar o Claude Design (claude.ai web) pro código visual. Quer copiar/colar e voltar. |
 
 > Se o usuário não especificar, **pergunte** antes de gerar.
@@ -2208,7 +2201,7 @@ export default function sitemap() {
 4. Claude Preview (mcp__Claude_Preview__) roda dev server localmente
 5. preview_screenshot mostra resultado em tempo real
 6. Iterar até aprovação
-7. Vercel deploy via deploy-to-vercel ou vercel-cli-with-tokens
+7. Deploy no Cloudflare Pages: npx next build + npx wrangler pages deploy out --project-name <projeto> --branch main
 ```
 
 ### Skills auxiliares acionadas
@@ -2221,7 +2214,7 @@ export default function sitemap() {
 | Tokens de cor / tipografia / espaço | `design-tokens-turbo` |
 | Diretrizes de UI Web | `web-design-guidelines` |
 | Preview local + screenshots | `mcp__Claude_Preview__*` |
-| Deploy Vercel | `deploy-to-vercel` ou `vercel-cli-with-tokens` |
+| Deploy Cloudflare Pages | `npx wrangler pages deploy out --project-name <projeto> --branch main` (ver `01-stack-e-deploy.md`) |
 
 ### Comando interno (passo a passo)
 
@@ -2253,7 +2246,7 @@ export default function sitemap() {
 - ✅ Iteração rápida (Claude Preview screenshot em segundos)
 - ✅ Variáveis e dados sincronizados automaticamente
 - ✅ Mantém histórico de decisões na sessão
-- ✅ Deploy 1-click no fim
+- ✅ Deploy em 1 comando no fim (`wrangler pages deploy`)
 
 ### Quando NÃO usar
 
@@ -2278,7 +2271,7 @@ export default function sitemap() {
    - Conexão com data/variations.ts
    - Tracking (Pixel/GTM/GA4)
    - SEO + Open Graph
-7. Deploy Vercel
+7. Deploy Cloudflare Pages
 ```
 
 ### O que entra no brief
@@ -2322,7 +2315,7 @@ Ver `07-brief-claude-design.md` — template completo.
                           │ - designer-sr   │  │ - Brief estruturado │
                           │ - frontend-dsg  │  │ - Variações listadas│
                           │ - claude-prev   │  │ - Tokens visuais    │
-                          │ - vercel-deploy │  │                     │
+                          │ - wrangler pages│  │                     │
                           │                 │  │ Usuário cola em     │
                           │ Resultado:      │  │ Claude Design,      │
                           │ projeto pronto  │  │ traz código de volta│
@@ -2340,7 +2333,7 @@ Ver `07-brief-claude-design.md` — template completo.
 
 > "Qual modo de output você quer pra essa página?
 >
-> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior-turbo`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Vercel. Zero atrito.
+> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior-turbo`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Cloudflare Pages. Zero atrito.
 >
 > 🟡 **B — Brief pra Claude Design:** eu gero um prompt estruturado pronto pra colar no Claude Design. Você gera o design lá, traz o código de volta, e eu finalizo aqui (variáveis dinâmicas, tracking, deploy).
 >
@@ -2358,7 +2351,7 @@ Ver `07-brief-claude-design.md` — template completo.
 - [ ] Skills disponíveis: `designer-senior-turbo` ou `frontend-design`
 - [ ] Claude Preview habilitado (`mcp__Claude_Preview__`)
 - [ ] Tracking IDs prontos (Pixel + GTM)
-- [ ] Domínio + Vercel configurados (ou em config)
+- [ ] Domínio + projeto Cloudflare Pages configurados (ou em config)
 
 ### Modo B — Brief pra Claude Design
 - [ ] Variáveis globais preenchidas
@@ -2394,7 +2387,7 @@ Ver `07-brief-claude-design.md` — template completo.
    - Conectar `data/variations.ts`
    - Religar tracking (Pixel + GTM + GA4)
    - Configurar SEO + Open Graph
-   - Deploy Vercel
+   - Deploy Cloudflare Pages
 
 ---
 
@@ -2601,7 +2594,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 - [ ] Instalar GTM (`src/components/tracking/GTM.tsx`)
 - [ ] Instalar GA4
 - [ ] Configurar `next/script` com `strategy="afterInteractive"`
-- [ ] Adicionar Vercel Analytics + Speed Insights
+- [ ] Ligar Cloudflare Web Analytics (projeto → Metrics → Enable) e publicar de novo
 
 ### 4. SEO + sharing
 - [ ] Metadata API por variação (`title`, `description`, `openGraph`)
@@ -2626,7 +2619,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
   - v5 Roxo `oklch(60% 0.20 290)`
 
 ### 7. Deploy
-- [ ] Variáveis de ambiente no Vercel
+- [ ] Variáveis do projeto no Cloudflare Pages (Settings → Variables and Secrets)
 - [ ] Domínio customizado apontado
 - [ ] Preview branch testado
 - [ ] Lighthouse rodado nas 5 variações antes do tráfego
@@ -2654,7 +2647,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 | Tracking (Pixel/GTM/GA4) | sim |
 | Open Graph image | sim |
 | Sitemap.xml | sim |
-| Configuração de Vercel | sim |
+| Configuração do Cloudflare Pages | sim |
 | Otimização final de LCP | sim |
 | Switch automático de variação | sim |
 
@@ -2707,6 +2700,6 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 │ Claude Preview pra revisar                                  │
 │           │                                                 │
 │           ▼                                                 │
-│ Vercel deploy → produção                                    │
+│ Cloudflare Pages deploy → produção                          │
 └─────────────────────────────────────────────────────────────┘
 ```

@@ -45,11 +45,13 @@ desktop.ini
 .claude/launch.json
 
 # ═══════════════════════════════════════════════════════════════
-# Node / Vercel / Next.js (caso adicione projeto frontend)
+# Node / Next.js / Cloudflare Pages (caso adicione projeto frontend)
 # ═══════════════════════════════════════════════════════════════
 node_modules/
 .next/
 .vercel/
+.wrangler/
+out/
 dist/
 build/
 .turbo/

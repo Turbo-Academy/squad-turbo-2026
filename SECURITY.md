@@ -27,8 +27,8 @@ GOOGLE_SERVICE_ACCOUNT_JSON=$(cat sa.json | base64)
 N8N_API_KEY=...
 MANYCHAT_API_KEY=...
 
-# Em produção (Vercel · Railway · etc):
-# Settings → Environment Variables → adicionar uma a uma
+# Em produção (Cloudflare Pages):
+# projeto → Settings → Variables and Secrets, ou: npx wrangler pages secret put NOME --project-name <projeto>
 ```
 
 ### Se um token vazou
@@ -80,7 +80,7 @@ Recomendado: contrato com [Privacy Tools BR](https://privacytools.com.br/) ou ad
 ### ✅ FAÇA
 
 - Use **gerenciador de senhas** (1Password · Bitwarden · pessoal: Apple Passwords)
-- **2FA habilitado** em todas as contas (Meta · Hotmart · Google · GitHub · Vercel)
+- **2FA habilitado** em todas as contas (Meta · Hotmart · Google · GitHub · Cloudflare)
 - **System User Token** (long-lived) ao invés de user access token
 - **Service Account** com permissões mínimas (Editor, não Owner)
 - Roda código com **menor privilégio** possível

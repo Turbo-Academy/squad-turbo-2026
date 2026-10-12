@@ -43,7 +43,7 @@ Com SOP:  novato faz na 1ª · sênior pula etapas que já internalizou · proce
 
 ✅ Criativos
 [ ] 3 bateladas de criativos rodando (D-14 · D-7 · D-3)
-[ ] Página de ingresso publicada (Vercel · LCP < 1.5s)
+[ ] Página de ingresso publicada (Cloudflare Pages · LCP < 1.5s)
 [ ] Pixel + CAPI testados (test event no Meta)
 
 ✅ Mensageria

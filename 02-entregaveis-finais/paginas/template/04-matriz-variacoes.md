@@ -221,7 +221,7 @@ BORA TRANSFORMAR ISSO
 
 ### Setup
 
-1. **Sobe as 5 rotas no Vercel** (já existem desde o setup inicial)
+1. **Sobe as 5 rotas no Cloudflare Pages** (já existem desde o setup inicial)
 2. **Cria 5 campanhas de teste no Meta Ads**, uma pra cada variação:
    ```
    {SIGLA}_{DDMMYY}_TES-PAG_001  →  /v1

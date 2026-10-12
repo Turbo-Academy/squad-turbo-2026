@@ -6,9 +6,9 @@
 
 ## 🎯 Princípios
 
-1. **Mesma stack das outras estruturas LPSG** — Next.js 14 + Tailwind + Vercel · consistência
+1. **Mesma stack das outras estruturas LPSG** — Next.js 14 + Tailwind + Cloudflare Pages (export estático) · consistência
 2. **Mobile-first** — gestor abre no celular pra ver ROAS · pico · vendas em tempo real
-3. **2 modos de execução** — SaaS (Vercel) **OU** HTML standalone (sem servidor)
+3. **2 modos de execução** — SaaS (Cloudflare Pages) **OU** HTML standalone (sem servidor)
 4. **Componentizado** — módulos isolados, fácil de adicionar/remover
 5. **Compatível com a planilha v1** — mesma estrutura de XLSX importa sem retrabalho
 
@@ -43,7 +43,9 @@ GA4:         BigQuery export (avançado)
 YouTube:      YouTube Live Streaming API
 
 # Deploy
-Hospedagem:   Vercel (preview por PR + Edge global)
+Hospedagem:   Cloudflare Pages (preview por branch + rede da Cloudflare, CDN global, HTTPS automático)
+Build:        next.config com output: "export" → npx next build gera out/
+Server-only:  Pages Functions em functions/api/ (Meta · Hotmart · GA4)
 Standalone:   Build script gera HTML único (~250 KB · sem dependências)
 ```
 
@@ -118,6 +120,11 @@ dashboard-lpsg-turbo/
 │       ├── useAlerts.ts
 │       └── useLiveSync.ts              ← polling SWR
 │
+├── functions/
+│   └── api/                            ← Pages Functions (modo A) · chamadas server-only
+│       ├── meta-ads.js                 ← responde em /api/meta-ads
+│       └── hotmart.js                  ← responde em /api/hotmart
+│
 ├── scripts/
 │   └── build-standalone.mjs            ← gera HTML único (modo B)
 │
@@ -132,14 +139,14 @@ dashboard-lpsg-turbo/
 
 ## 🔄 2 Modos de execução
 
-### Modo A — Web app (Vercel)
+### Modo A — Web app (Cloudflare Pages)
 
 ```
 URL pública (lp.dominio.com.br/dash)
     ↓
-Next.js no Edge (Vercel)
+Next.js em export estático (pasta out/) no Cloudflare Pages
     ↓
-APIs: Sheets / Meta / Hotmart / GA4 / YouTube
+Pages Functions (functions/api/) → Meta / Hotmart / GA4 · Sheets / YouTube direto
     ↓
 Atualização automática (SWR · 30s)
 ```
@@ -153,7 +160,7 @@ Atualização automática (SWR · 30s)
 **Setup:**
 1. `git clone` do template
 2. Configurar `.env.local` com tokens
-3. `pnpm install && pnpm dev` (local) ou push pra Vercel
+3. `pnpm install && pnpm dev` (local) ou `npx next build` + `npx wrangler pages deploy out --project-name <projeto> --branch main`
 
 ### Modo B — HTML standalone
 
@@ -251,8 +258,8 @@ Importação manual de XLSX (sheetjs)
 
 ## 🔐 Segurança
 
-- **Tokens em `.env.local`** (server-side only · nunca expor no cliente)
-- **API routes do Next.js** intermediam chamadas pra Meta/Hotmart (token nunca vai pro browser)
+- **Tokens em `.env.local`** só no dev local (server-side only · nunca expor no cliente). Em produção: `npx wrangler pages secret put META_ADS_TOKEN --project-name <projeto>`
+- **Pages Functions** (`functions/api/<nome>.js`, exportando `onRequest`) intermediam chamadas pra Meta/Hotmart (token nunca vai pro browser)
 - **CORS restrito** ao domínio configurado
 - **HTML standalone** funciona em modo "read-only" sem tokens (só XLSX manual)
 

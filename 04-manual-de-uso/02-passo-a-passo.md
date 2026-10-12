@@ -107,7 +107,7 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg-turbo)
 ### ⏱️ 4h · 🚨 + 🤖 + ⚙️
 
 ### 🤖 Pedido pro Claude
-> *"Use a skill `paginas-lpsg-turbo`. Cria as 5 variações de página (`/v1` a `/v5`) + ficha de interesse 11 etapas. Stack: Next.js 14 + Tailwind + Vercel. Use Bloco A · B · D · H do cadastro. Já com Pixel + GTM + GA4 instalados."*
+> *"Use a skill `paginas-lpsg-turbo`. Cria as 5 variações de página (`/v1` a `/v5`) + ficha de interesse 11 etapas. Stack: Next.js 14 + Tailwind + Cloudflare Pages (export estático). Use Bloco A · B · D · H do cadastro. Já com Pixel + GTM + GA4 instalados."*
 
 ### O que Claude faz
 - Projeto Next.js completo
@@ -122,10 +122,10 @@ PÓS PRIMEIRAS VENDAS           ── Fase 10 (cs-lpsg-turbo)
 - [ ] 6 depoimentos (texto + foto)
 - [ ] Logo do projeto (SVG)
 
-### ⚙️ Configuração Vercel
-- [ ] Conectar `lp.{dominio}` ao projeto
-- [ ] Variáveis de ambiente (Pixel · GTM · CAPI Token)
-- [ ] Auto-deploy ativado
+### ⚙️ Configuração Cloudflare Pages
+- [ ] Associar `lp.{dominio}` ao projeto (Custom domains · antes do CNAME)
+- [ ] Variáveis e segredos (Settings → Variables and Secrets · Pixel · GTM · CAPI Token)
+- [ ] Deploy automático no `git push` (opcional · Workers & Pages → Create → Pages → conectar o repositório Git)
 
 ### ✅ Checkpoint
 5 URLs no ar · Lighthouse mobile ≥ 95 · ficha funcionando
@@ -307,7 +307,7 @@ Campanha rodando · primeiros eventos no Pixel
 
 # 📊 FASE 8 · dashboard-lpsg-turbo
 
-### ⏱️ 3h Claude + 30min Vercel
+### ⏱️ 3h Claude + 30min Cloudflare Pages
 
 ### 🤖 Pedido pro Claude
 > *"Use a skill `dashboard-lpsg-turbo`. Cria o dashboard com 11 módulos: visão geral · tráfego · páginas · aulas · mensageria · tsunami · recuperação · operação · estratégico · sugestões · ficha. Subdomínio `dashboard.{dominio}`."*
@@ -318,9 +318,9 @@ Campanha rodando · primeiros eventos no Pixel
 - 8 adapters (XLSX · Sheets · Meta · Hotmart · GA4 · YouTube · Recomendações · Fichas)
 - Auth básico
 
-### ⚙️ Configuração Vercel
-- [ ] Conecta `dashboard.{dominio}`
-- [ ] Variáveis de ambiente
+### ⚙️ Configuração Cloudflare Pages
+- [ ] Associa `dashboard.{dominio}` (Custom domains · antes do CNAME)
+- [ ] Variáveis e segredos (Settings → Variables and Secrets)
 - [ ] Auth configurado
 
 ### 🚨 AÇÃO HUMANA · validar

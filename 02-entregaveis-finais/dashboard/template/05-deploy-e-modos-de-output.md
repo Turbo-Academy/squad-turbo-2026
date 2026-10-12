@@ -6,25 +6,25 @@
 
 ## 🎯 Os 2 modos
 
-| | Modo A · Web app (Vercel) | Modo B · HTML standalone |
+| | Modo A · Web app (Cloudflare Pages) | Modo B · HTML standalone |
 |---|---|---|
 | **Quando usar** | Time todo · sync ao vivo · APIs | Aluno · offline · backup |
-| **Setup** | git clone + Vercel deploy | duplo-click no .html |
+| **Setup** | git clone + `wrangler pages deploy` | duplo-click no .html |
 | **Atualização** | Auto (SWR 30s) | Manual (importa XLSX) |
 | **Integrações** | Meta · Hotmart · GA4 · Sheets | XLSX manual ou Sheets público |
 | **Tamanho** | 150 KB inicial · lazy-loaded | ~250 KB (tudo inline) |
-| **Tempo de build** | <30s (Vercel) | ~10s (build:standalone) |
+| **Tempo de build** | <30s (`npx next build`) | ~10s (build:standalone) |
 
 > **Mesma codebase.** O script `build-standalone.mjs` empacota o app em HTML único.
 
 ---
 
-## 🚀 Modo A — Web app (Vercel)
+## 🚀 Modo A — Web app (Cloudflare Pages)
 
 ### Pré-requisitos
 
 - Node 20.x · pnpm
-- Conta Vercel (free tier resolve)
+- Conta Cloudflare (o plano grátis resolve)
 - Repositório Git (GitHub · GitLab · Bitbucket)
 
 ### Setup
@@ -59,7 +59,7 @@ NEXT_PUBLIC_DATA_MODE=xlsx
 NEXT_PUBLIC_SHEETS_ID=
 NEXT_PUBLIC_SHEETS_TAB="Dados dos Eventos"
 
-# Modo 3 — Meta Ads (opcional · server-only)
+# Modo 3 — Meta Ads (opcional · server-only · em produção vai por wrangler pages secret put)
 META_ADS_TOKEN=
 META_AD_ACCOUNT_ID=
 
@@ -83,20 +83,43 @@ YOUTUBE_LIVE_VIDEO_IDS=
 pnpm dev          # http://localhost:3000
 ```
 
-#### 4. Deploy Vercel
+#### 4. Export estático + Pages Functions
+
+O app sobe como site estático. `next.config.ts` com `output: "export"`; `npx next build` gera a pasta `out/`.
+
+As chamadas server-only (Meta · Hotmart · GA4) não ficam no Next.js: viram Pages Functions em `functions/api/<nome>.js` na RAIZ do projeto (fora de `out/`), exportando `onRequest`. Cada função responde em `/api/<nome>` (ex.: `functions/api/meta-ads.js` → `/api/meta-ads`).
+
+Segredos em produção (nunca com prefixo `NEXT_PUBLIC_`):
 
 ```bash
-# Opção A: CLI
-pnpm dlx vercel
-
-# Opção B: GitHub push (auto-deploy)
-git push origin main
+npx wrangler pages secret put META_ADS_TOKEN --project-name <projeto>
+npx wrangler pages secret put HOTMART_CLIENT_SECRET --project-name <projeto>
+npx wrangler pages secret put GCP_SERVICE_ACCOUNT_JSON --project-name <projeto>
 ```
 
-#### 5. Configurar domínio
+> Ou pelo painel: projeto → Settings → Variables and Secrets. As `NEXT_PUBLIC_*` entram no build (são públicas).
 
-Vercel → Project → Settings → Domains
+#### 5. Deploy Cloudflare Pages
+
+```bash
+# Uma vez: criar o projeto
+npx wrangler pages project create <projeto> --production-branch main
+
+# A cada publicação (da raiz do projeto)
+npx next build
+npx wrangler pages deploy out --project-name <projeto> --branch main
+```
+
+Sai em `https://<projeto>.pages.dev`.
+
+> Opcional: deploy automático no `git push`. Cloudflare → Workers & Pages → Create → Pages → conectar o repositório Git; build command `npx next build`, build directory `out`.
+
+#### 6. Configurar domínio
+
+Workers & Pages → projeto → Custom domains → Set up a domain
 - `dash.turbo.academy` (ou subdomínio do projeto)
+
+> PRIMEIRO associa o domínio no projeto, DEPOIS o CNAME `dash → <projeto>.pages.dev`. CNAME antes da associação = domínio não resolve (erro 522). Se a zona já está na Cloudflare, o próprio painel cria o registro. HTTPS automático.
 
 ---
 
@@ -210,9 +233,9 @@ console.log('✅ Standalone gerado: dist/dashboard-lpsg-turbo.html');
 
 | Variável | Lado | Como expor |
 |---|---|---|
-| `META_ADS_TOKEN` | Server-only | API Route do Next.js intermediação |
-| `HOTMART_CLIENT_SECRET` | Server-only | API Route |
-| `GCP_SERVICE_ACCOUNT_JSON` | Server-only | API Route |
+| `META_ADS_TOKEN` | Server-only | Pages Function (`functions/api/`) intermediação · `wrangler pages secret put` |
+| `HOTMART_CLIENT_SECRET` | Server-only | Pages Function · `wrangler pages secret put` |
+| `GCP_SERVICE_ACCOUNT_JSON` | Server-only | Pages Function · `wrangler pages secret put` |
 | `NEXT_PUBLIC_SHEETS_ID` | Cliente OK | Sheets é público |
 | `YOUTUBE_API_KEY` | Cliente OK | Restringir ao domínio na Cloud Console |
 
@@ -263,12 +286,15 @@ NEXT_PUBLIC_DATA_MODE=mock pnpm dev
 
 > Útil pra desenvolver sem precisar de planilha real.
 
-### Preview branch (Vercel)
+### Preview branch (Cloudflare Pages)
 
-Cada `git push` em branch ≠ main gera preview URL automática:
+Deploy com `--branch` diferente de main gera preview URL própria:
+```bash
+npx wrangler pages deploy out --project-name <projeto> --branch feature-x
+# → https://feature-x.<projeto>.pages.dev
 ```
-https://dashboard-lpsg-turbo-git-feature-x.vercel.app
-```
+
+> O alias da branch fica em minúsculas e todo caractere não alfanumérico vira hífen.
 
 > Compartilha link com o time pra revisão antes de merge.
 
@@ -283,10 +309,10 @@ open dist/dashboard-lpsg-turbo.html
 
 ## 📊 Performance · monitoring
 
-### Modo A (Vercel)
+### Modo A (Cloudflare Pages)
 
-- **Vercel Analytics** (free) — Web Vitals em tempo real
-- **Vercel Speed Insights** — LCP · INP · CLS por página
+- **Cloudflare Web Analytics** — projeto → Metrics → Enable (Web Analytics). Sem cookie e sem localStorage (sem banner)
+- **Core Web Vitals** no mesmo painel — LCP · INP · CLS
 - **Sentry** (opcional) — erros runtime
 
 ### Modo B (Standalone)
@@ -297,19 +323,19 @@ open dist/dashboard-lpsg-turbo.html
 
 ## 🎯 Checklist de deploy (Modo A)
 
-Antes de subir pra Vercel:
+Antes de subir pro Cloudflare Pages:
 
 ```
-[ ] .env.local configurado
-[ ] pnpm build sem erros
+[ ] .env.local configurado (dev) · segredos via wrangler pages secret put (produção)
+[ ] next.config com output: "export" · npx next build gerou out/ sem erros
 [ ] pnpm test passando
 [ ] Lighthouse Mobile ≥ 95 (todas as rotas)
 [ ] LCP < 1.5s
 [ ] Responsivo (mobile · tablet · desktop)
 [ ] Modo dark + light testado
 [ ] Domínio configurado
-[ ] Vercel Analytics habilitado
-[ ] Time tem acesso ao projeto Vercel
+[ ] Cloudflare Web Analytics habilitado
+[ ] Time tem acesso ao projeto no Cloudflare Pages
 ```
 
 ### Checklist de distribuição (Modo B)
@@ -333,5 +359,5 @@ Antes de subir pra Vercel:
 | Sheets não atualiza | CORS · gviz endpoint | Tornar planilha pública (anyone with link) |
 | Meta API retorna 401 | Token expirou | Gerar novo long-lived token (60 dias) |
 | Hotmart sem vendas | client_id sem permissão | Painel → API → habilitar `payments` |
-| Lighthouse mobile < 95 | Imagens não otimizadas | next/image + AVIF/WebP |
+| Lighthouse mobile < 95 | Imagens não otimizadas | AVIF/WebP no tamanho certo (com `output: "export"` o next/image exige `images: { unoptimized: true }` no next.config) |
 | Build standalone > 350KB | Recharts não tree-shaken | Importar componentes individuais |

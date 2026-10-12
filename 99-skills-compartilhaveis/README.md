@@ -50,7 +50,7 @@
 
 ## Conectar MCPs 🔌
 
-📍 [`GUIA-MCPS.md`](./GUIA-MCPS.md) · como conectar as ferramentas que o squad usa (Drive, Windsor.ai, Vercel, Playwright, NotebookLM, Sheets) e as da infra do `lpsg-guiado` (n8n, Postgres, DataCrazy, Sendflow). Nenhum MCP é obrigatório — sem eles as skills degradam pro modo "te ensino a fazer". Inclui os 3 jeitos de registrar, escopos, troubleshooting e a regra de segurança de token.
+📍 [`GUIA-MCPS.md`](./GUIA-MCPS.md) · como conectar as ferramentas que o squad usa (Drive, Windsor.ai, Cloudflare Pages, Playwright, NotebookLM, Sheets) e as da infra do `lpsg-guiado` (n8n, Postgres, DataCrazy, Sendflow). Nenhum MCP é obrigatório — sem eles as skills degradam pro modo "te ensino a fazer". Inclui os 3 jeitos de registrar, escopos, troubleshooting e a regra de segurança de token.
 
 ## Mapa de skills × agentes ⭐
 
@@ -69,7 +69,7 @@ Resumo:
 bash instalar-squad.sh
 ```
 
-Idempotente — rode de novo quando quiser, só faz o que faltar. No fim, **reinicie o Claude Code**.
+Pode rodar de novo quando quiser. Arquivo que você editou (skill, agente ou squad-core diferente do pacote) é copiado antes, para uma pasta nova em `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/`; se a cópia falhar, ele para sem mexer em nada. Etapa obrigatória que falha termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code**.
 
 Instalação manual (passos equivalentes): seção "Instalar em outra máquina" do [README raiz](../README.md).
 

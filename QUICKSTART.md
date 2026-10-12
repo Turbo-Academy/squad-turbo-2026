@@ -24,15 +24,9 @@ O manual vai abrir num browser. **Não precisa de servidor**, funciona offline.
 ## 🤖 3. Instala as skills + Squad Turbo
 
 ```bash
-# 11 skills LPSG
-mkdir -p ~/.claude/skills
-for z in 99-skills-compartilhaveis/*-lpsg.zip 99-skills-compartilhaveis/lpsg-master-turbo.zip; do
-  unzip -o "$z" -d ~/.claude/skills/
-done
-
-# Squad Turbo · 10 agentes especialistas
-mkdir -p ~/.claude/agents
-cp 99-skills-compartilhaveis/agents/*.md ~/.claude/agents/
+# skills + agentes + squad-core (guarda antes o que você tiver editado)
+bash 99-skills-compartilhaveis/instalar-squad.sh
+bash 99-skills-compartilhaveis/instalar-squad.sh --conferir   # tem que dizer SQUAD OK
 
 # Reinicia Claude Code
 ```

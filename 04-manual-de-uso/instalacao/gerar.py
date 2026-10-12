@@ -36,6 +36,8 @@ Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simp
 3. Instalar o básico (skills, agentes e modelos). Rode:
    bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null
    Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
+   Se eu já tinha o squad e editei algum arquivo dele, o instalador guarda o meu numa pasta nova em ~/.claude/squad-turbo-backups/ antes de trocar (linha "guardados em"): me diga quais e onde.
+   Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre a linha: não siga como se tivesse dado certo.
 
 4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
    - Mac com `brew`: `brew install ffmpeg yt-dlp`.
@@ -54,9 +56,9 @@ Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simp
 
 ATUALIZAR = r'''Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem apagar nada meu. Me explique cada passo antes de rodar.
 
-1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Se aparecer algum agente "diferente do pacote", é porque eu editei: antes de seguir, copie os meus pra ~/squad-agentes-meus-AAAAMMDD/ e me diga quais eram (a atualização troca os agentes pela versão do pacote).
+1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Linhas com "~ personalizado" são arquivos que eu editei: me diga quais são. A atualização troca esses arquivos pela versão do pacote, mas o instalador guarda os meus antes, numa pasta nova em ~/.claude/squad-turbo-backups/.
 2. Rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se falhar, renomeie a pasta pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo: git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
-3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo.
+3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo. Se ele disser que guardou arquivos meus, me diga a pasta. Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre.
 4. Rode o `--conferir` de novo. Tem que dizer "SQUAD OK".
 5. Me mostre o que mudou (o topo do ~/squad-turbo-2026/CHANGELOG.md, em português simples) e me diga pra fechar e abrir o Claude.'''
 
@@ -235,10 +237,11 @@ B = cap("b", "B", "Instalar", "Escolha o seu computador e siga na ordem. No Mac,
             ("Scrapling", "O Claude lê página de concorrente, landing e anúncio direto, sem você escrever script.", "~1,5 GB"),
             ("Stack Picasso", "Auditoria visual anti-IA (3 skills de terceiros, pelo npx).", "pequeno"),
             ("OpenWA, Mautic, n8n", "WhatsApp, e-mail marketing e automação. Rodam num servidor (VPS), cada um com instalador próprio no repositório.", "no servidor"),
-        ]) + "<p>Quer instalar um depois? Peça ao Claude: \"instala o opcional X do Squad Turbo\". O instalador pode rodar de novo quantas vezes quiser: ele só faz o que falta.</p>")
+        ]) + "<p>Quer instalar um depois? Peça ao Claude: \"instala o opcional X do Squad Turbo\". O instalador pode rodar de novo quantas vezes quiser: o que você editou ele guarda numa cópia antes de trocar.</p>")
     + sec("b3", "B3", "Conferir que ficou tudo certo", "Um comando diz se está tudo no lugar.",
         cmd("Peça ao Claude pra rodar, ou rode no Terminal / Ubuntu", "bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir")
         + prova("<strong>SQUAD OK: %s skills · %s agentes · squad-core</strong>. Se aparecer <code>SQUAD INCOMPLETO</code>, as linhas com ✗ dizem o que falta: peça ao Claude pra rodar o instalador de novo." % (NS, NA))
+        + "<p>O <code>--conferir</code> compara cada arquivo instalado, byte a byte, com o do pacote. <strong>✗ incompleto</strong> é arquivo que falta ou ficou vazio: quebra a skill. <strong>~ personalizado</strong> é arquivo que você editou: não é erro, e ele nunca escreve nada.</p>"
         + "<p>Linhas com · (ponto) não são erro: avisam um programa que falta pra algumas skills de vídeo. Não sabe ler uma linha? Cole a saída pro Claude e pergunte.</p>"),
     ancora=None)
 
@@ -284,8 +287,10 @@ EE = cap("e", "E", "Quando trava", "O sintoma, o que fazer e o que nunca fazer."
         tabela(("Sintoma", "O que fazer"), [
             ("Depois de instalar, <code>@estrategista-turbo</code> não responde como agente", "A sessão é a mesma da instalação. Feche o Claude e abra de novo, numa sessão nova."),
             ("<code>git pull</code> falhou com erro de histórico", "A pasta é de antes de 01/10/2026. Peça ao Claude pra renomear a pasta antiga e clonar de novo (a mensagem de instalação já faz isso)."),
-            ("<code>SQUAD INCOMPLETO</code> no --conferir", "Peça ao Claude pra rodar o instalador de novo; ele só faz o que falta. Se o mesmo item continuar faltando, mande a saída pra Turbo."),
-            ("Agente \"diferente do pacote\" no --conferir", "Você (ou o Claude) editou aquele agente. Se quer a versão do pacote, rode o instalador; se quer manter a sua, guarde uma cópia antes de atualizar."),
+            ("<code>SQUAD INCOMPLETO</code> no --conferir", "Peça ao Claude pra rodar o instalador de novo. Se o mesmo item continuar faltando, mande a saída pra Turbo."),
+            ("<code>~ personalizado</code> no --conferir", "Você (ou o Claude) editou aquele arquivo. Não é erro. Se rodar o instalador, ele guarda o seu em <code>~/.claude/squad-turbo-backups/&lt;data-hora&gt;/</code> e põe a versão do pacote; pra voltar o seu, copie de lá pro mesmo caminho dentro de <code>~/.claude/</code>."),
+            ("<code>INSTALAÇÃO INCOMPLETA</code> ou <code>FALHOU — etapa</code> no instalador", "A linha diz a etapa e o arquivo. Costuma ser pasta sem permissão de escrita ou download corrompido: peça ao Claude pra baixar de novo (pull ou clone) e rodar o instalador. Nada é dado como instalado enquanto essa linha aparecer."),
+            ("<code>não consegui criar a pasta de cópia</code>", "O instalador não conseguiu guardar os seus arquivos editados e parou antes de mexer em qualquer coisa. Peça ao Claude pra ver a permissão de <code>~/.claude/squad-turbo-backups</code>."),
             ("<code>command not found: brew</code> depois de instalar a Homebrew", "Faltou rodar as linhas do \"Next steps\" que a Homebrew imprimiu no fim. Cole o bloco pro Claude."),
             ("No Ubuntu, <code>claude: command not found</code>", "A linha 3 do passo 3 não terminou. Rode de novo e confira a versão."),
             ("O Claude pediu a sua senha no chat", "Não mande. Diga pra ele mostrar a linha, rode você mesmo no Terminal (Mac) ou numa segunda janela do Ubuntu (Windows)."),
@@ -465,7 +470,9 @@ def markdown():
               "## Atualizar pra versão nova", "", "```text", ATUALIZAR, "```", "",
               "## Quando trava", "", "- Agente não responde depois de instalar: feche o Claude e abra numa sessão nova.",
               "- `git pull` falhou com erro de histórico: a pasta é de antes de 01/10/2026; o Claude renomeia e clona de novo.",
-              "- `SQUAD INCOMPLETO`: rode o instalador de novo; ele só faz o que falta.",
+              "- `SQUAD INCOMPLETO`: rode o instalador de novo. O `--conferir` compara cada arquivo byte a byte: `✗ incompleto` = falta ou vazio; `~ personalizado` = você editou (não é erro).",
+              "- Arquivo seu editado: o instalador guarda uma cópia em `~/.claude/squad-turbo-backups/<data-hora>/` antes de trocar; pra voltar, copie de lá.",
+              "- `INSTALAÇÃO INCOMPLETA` / `FALHOU — etapa N`: a linha diz o que falhou; baixe de novo e rode o instalador. Ele termina com erro (código diferente de zero) enquanto houver falha.",
               "- Mac Intel sem Homebrew: a linha oficial não instala mais; use `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/f4aa1b1ca5/install.sh)\"` no Terminal.",
               "- Nunca mande senha, token ou código pelo chat do Claude.", "",
               "## Remover", "", "```text", REMOVER, "```", ""]

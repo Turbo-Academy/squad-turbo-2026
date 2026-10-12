@@ -1,5 +1,31 @@
 # Changelog · Squad Turbo LPSG
 
+## 9.0.1 — 12/10/2026
+
+**Instalador: o que você personalizou não se perde mais**
+
+- `instalar-squad.sh` guarda, antes de trocar, todo arquivo de skill, agente ou squad-core que esteja diferente do pacote
+  (você editou). A cópia vai pra uma pasta nova e única, `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/`, com o mesmo
+  caminho de dentro do `~/.claude`; rodar de novo cria outra pasta e nunca sobrescreve a anterior. Se a cópia não puder ser
+  feita (ou não bater byte a byte), o instalador para **antes** de mexer em qualquer coisa (código de saída 3).
+- Falha nas etapas obrigatórias (2 skills, 3 agentes, 4 squad-core) agora aparece como `✗ FALHOU — etapa N (...)`, com o
+  arquivo, nunca com "ok"; o resumo diz `INSTALAÇÃO INCOMPLETA` e o código de saída é 2. Zip corrompido é detectado antes
+  de extrair.
+- `--conferir` passa a comparar cada arquivo do pacote, byte a byte, com o instalado (o próprio zip é o manifesto). Separa
+  `✗ incompleto` (arquivo que falta ou ficou vazio: rc 1) de `~ personalizado` (arquivo que você editou: não é erro). Nunca
+  escreve nada.
+- Mensagens de instalar e atualizar do manual dizem ao Claude onde ficam as cópias e que deve parar se aparecer `FALHOU`.
+
+**Hospedagem: Cloudflare Pages no lugar da Vercel**
+
+- Skills, agentes, modelos e manual passam a publicar páginas e dashboard no **Cloudflare Pages**: Next.js em export estático
+  (`output: "export"` → `out/`), `npx wrangler pages project create` uma vez e `npx wrangler pages deploy out --project-name
+  <projeto>` a cada publicação; preview por `--branch`; domínio pelo Custom domains do projeto (associar antes do CNAME);
+  Cloudflare Web Analytics no lugar do Vercel Analytics. No dashboard, as chamadas server-only (Meta, Hotmart) viram Pages
+  Functions em `functions/api/`, com segredo via `wrangler pages secret put`.
+- `05-performance-vercel.md` virou `05-performance-e-deploy.md`. Os agentes deixam de carregar `deploy-to-vercel` e
+  `vercel-cli-with-tokens`. A Vercel continua citada só como referência de estilo visual e nas versões antigas deste changelog.
+
 ## 9.0 — 12/10/2026
 
 **Instalação nova: você cola uma mensagem, o Claude instala**

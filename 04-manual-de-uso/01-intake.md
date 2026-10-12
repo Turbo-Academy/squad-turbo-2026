@@ -219,9 +219,8 @@ google:
   sheets_id_master:       "{...}"                         # planilha mestre · CRM
   drive_folder_id:        "{...}"                         # opcional
 
-vercel:
-  project_name:           "{slug-do-projeto}"
-  team_id:                "{...}"                         # opcional
+cloudflare_pages:
+  project_name:           "{slug-do-projeto}"             # nome do projeto no Cloudflare Pages
 
 n8n:
   base_url:               "https://n8n.{...}"
@@ -379,7 +378,7 @@ Confere se você preencheu **TODOS os campos OBRIGATÓRIOS**:
 - [ ] Bloco B · evento · primeira edição (datas) · produto · garantia · 3 ondas tsunami
 - [ ] Bloco C · 6 títulos de aula
 - [ ] Bloco D · 4 domínios · 2 URLs de checkout
-- [ ] Bloco E · todas as integrações (Meta · Hotmart · Google · Vercel · n8n · ManyChat)
+- [ ] Bloco E · todas as integrações (Meta · Hotmart · Google · Cloudflare Pages · n8n · ManyChat)
 - [ ] Bloco F · 6 papéis do time (mín · expert + gestor + copy + designer + sdr + cs)
 - [ ] Bloco G · CS configurado (mesmo que `ativo: false` por enquanto)
 - [ ] Bloco H · orçamento · cores · estilo

@@ -44,7 +44,7 @@ Marque o que você já tem:
 - [ ] Conta na Hotmart com produto cadastrado
 - [ ] Conta no Google (Workspace ou Gmail)
 - [ ] Domínio próprio comprado (ex: nome.com.br)
-- [ ] Conta no Vercel
+- [ ] Conta na Cloudflare (o plano grátis resolve)
 - [ ] Conta no n8n (cloud ou self-hosted)
 - [ ] Conta no ManyChat
 - [ ] Plataforma de aulas (Hotmart Club ou similar)
@@ -64,7 +64,7 @@ Marque o que você já tem:
 **Como fazer:**
 1. Vai em `registro.br` (BR) ou `cloudflare.com/registrar` (internacional)
 2. Compra `seunome.com.br` (R$ 40/ano)
-3. Configura DNS na **Cloudflare** (gratuito · necessário pra Vercel)
+3. Configura DNS na **Cloudflare** (gratuito · é na mesma conta que as páginas vão ser publicadas)
 
 🚨 **AÇÃO HUMANA · 30 min**
 
@@ -239,14 +239,14 @@ Marque o que você já tem:
 
 ## 🟡 Bloco 4 · Stack técnico (2h)
 
-### 4.1 · Vercel
+### 4.1 · Cloudflare Pages
 
 **Por que precisa:** hospedar páginas e dashboard.
 
 **Como fazer:**
-1. Cria conta em `vercel.com` (login com GitHub recomendado)
-2. Plano gratuito serve pra começar
-3. Conecta seu domínio Cloudflare (segue o wizard)
+1. Usa a mesma conta Cloudflare do item 1.3 (o plano grátis resolve)
+2. Cria o projeto uma vez (o Claude pode rodar pra você): `npx wrangler pages project create {projeto} --production-branch main`
+3. Conecta seu domínio: Workers & Pages → projeto → Custom domains → Set up a domain. Primeiro associa o domínio no projeto, depois o DNS (com a zona na Cloudflare, o próprio painel cria o registro)
 
 🚨 **AÇÃO HUMANA · 20 min**
 
@@ -384,8 +384,7 @@ GOOGLE:
   service_account_json:   "(arquivo guardado em ____)"
   drive_folder_id:        "_______________________"  # opcional
 
-VERCEL:
-  team_id:                "_______________________"  # opcional
+CLOUDFLARE_PAGES:
   project_name:           "_______________________"
 
 N8N:
@@ -436,7 +435,7 @@ Marque cada item:
 - [ ] Meta Business + Ad Account + Pixel + CAPI Token
 - [ ] WABA ativa · número novo dedicado
 - [ ] Hotmart Pro · 2 produtos cadastrados (ingresso + premium)
-- [ ] Vercel conectado ao domínio
+- [ ] Projeto no Cloudflare Pages com o domínio associado
 - [ ] n8n rodando (cloud ou self-hosted)
 - [ ] ManyChat conectado à WABA · tags básicas criadas
 - [ ] Service Account Google JSON em local seguro

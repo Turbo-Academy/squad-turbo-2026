@@ -126,7 +126,7 @@ children.push(table(
   [
     [[t("VOCÊ ", { bold: true }), t("(aluno)")], "Cria contas, libera acessos, aprova decisões, grava as aulas, apresenta o evento", [t("AÇÃO SUA", { bold: true, color: "B23A00" })]],
     [[t("Claude", { bold: true })], "Estrutura aulas, escreve copy, monta páginas, gera automações e dashboard", [t("Caixa escura ", {}), t("“Cole isto no Claude”", { italics: true })]],
-    [[t("Ferramentas", { bold: true })], "Meta, Hotmart, Vercel, n8n, ManyChat executam o que foi configurado", [t("CONFIG", { bold: true, color: BLUE })]],
+    [[t("Ferramentas", { bold: true })], "Meta, Hotmart, Cloudflare (Pages), n8n, ManyChat executam o que foi configurado", [t("CONFIG", { bold: true, color: BLUE })]],
   ],
   [1900, 4760, 2700],
 ));
@@ -148,7 +148,7 @@ children.push(table(
     ["Meta Business + Ad Account + Pixel + CAPI Token", "Rodar anúncios e rastrear conversões", "2-3 h"],
     ["WABA (WhatsApp Business API)", "Mensageria automatizada do evento", "1-2 h"],
     ["Hotmart Pro (2 produtos: ingresso + premium)", "Processar vendas, pixel e webhooks", "1 h"],
-    ["Vercel", "Hospedar páginas e dashboard", "20 min"],
+    ["Cloudflare (Pages)", "Hospedar páginas e dashboard", "20 min"],
     ["n8n (cloud ou self-hosted)", "Rodar os 14 workflows de automação", "5-60 min"],
     ["ManyChat Pro", "Disparar mensagens via WhatsApp e gerenciar tags", "30 min"],
     ["Plataforma de aulas (Hotmart Club)", "Entregar o programa principal pós-compra", "30 min"],

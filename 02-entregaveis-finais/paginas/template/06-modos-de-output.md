@@ -8,7 +8,7 @@
 
 | Modo | Quando usar |
 |---|---|
-| **🟢 Modo A — Implementa Aqui** | Você quer o projeto React pronto, com Claude Preview rodando + Vercel deploy direto. Zero atrito. |
+| **🟢 Modo A — Implementa Aqui** | Você quer o projeto React pronto, com Claude Preview rodando + deploy direto no Cloudflare Pages. Zero atrito. |
 | **🟡 Modo B — Brief para Claude Design** | Você prefere usar o Claude Design (claude.ai web) pro código visual. Quer copiar/colar e voltar. |
 
 > Se o usuário não especificar, **pergunte** antes de gerar.
@@ -26,7 +26,7 @@
 4. Claude Preview (mcp__Claude_Preview__) roda dev server localmente
 5. preview_screenshot mostra resultado em tempo real
 6. Iterar até aprovação
-7. Vercel deploy via deploy-to-vercel ou vercel-cli-with-tokens
+7. Deploy no Cloudflare Pages: npx next build + npx wrangler pages deploy out --project-name <projeto> --branch main
 ```
 
 ### Skills auxiliares acionadas
@@ -39,7 +39,7 @@
 | Tokens de cor / tipografia / espaço | `design-tokens-turbo` |
 | Diretrizes de UI Web | `web-design-guidelines` |
 | Preview local + screenshots | `mcp__Claude_Preview__*` |
-| Deploy Vercel | `deploy-to-vercel` ou `vercel-cli-with-tokens` |
+| Deploy Cloudflare Pages | `npx wrangler pages deploy out --project-name <projeto> --branch main` (ver `01-stack-e-deploy.md`) |
 
 ### Comando interno (passo a passo)
 
@@ -71,7 +71,7 @@
 - ✅ Iteração rápida (Claude Preview screenshot em segundos)
 - ✅ Variáveis e dados sincronizados automaticamente
 - ✅ Mantém histórico de decisões na sessão
-- ✅ Deploy 1-click no fim
+- ✅ Deploy em 1 comando no fim (`wrangler pages deploy`)
 
 ### Quando NÃO usar
 
@@ -96,7 +96,7 @@
    - Conexão com data/variations.ts
    - Tracking (Pixel/GTM/GA4)
    - SEO + Open Graph
-7. Deploy Vercel
+7. Deploy Cloudflare Pages
 ```
 
 ### O que entra no brief
@@ -140,7 +140,7 @@ Ver `07-brief-claude-design.md` — template completo.
                           │ - designer-sr   │  │ - Brief estruturado │
                           │ - frontend-dsg  │  │ - Variações listadas│
                           │ - claude-prev   │  │ - Tokens visuais    │
-                          │ - vercel-deploy │  │                     │
+                          │ - wrangler pages│  │                     │
                           │                 │  │ Usuário cola em     │
                           │ Resultado:      │  │ Claude Design,      │
                           │ projeto pronto  │  │ traz código de volta│
@@ -158,7 +158,7 @@ Ver `07-brief-claude-design.md` — template completo.
 
 > "Qual modo de output você quer pra essa página?
 >
-> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior-turbo`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Vercel. Zero atrito.
+> 🟢 **A — Implementa aqui:** eu chamo as skills de design (`designer-senior-turbo`/`frontend-design`/`lovable-style-turbo`), gero o projeto Next.js completo, rodo o Claude Preview pra você ver, e fazemos deploy no Cloudflare Pages. Zero atrito.
 >
 > 🟡 **B — Brief pra Claude Design:** eu gero um prompt estruturado pronto pra colar no Claude Design. Você gera o design lá, traz o código de volta, e eu finalizo aqui (variáveis dinâmicas, tracking, deploy).
 >
@@ -176,7 +176,7 @@ Ver `07-brief-claude-design.md` — template completo.
 - [ ] Skills disponíveis: `designer-senior-turbo` ou `frontend-design`
 - [ ] Claude Preview habilitado (`mcp__Claude_Preview__`)
 - [ ] Tracking IDs prontos (Pixel + GTM)
-- [ ] Domínio + Vercel configurados (ou em config)
+- [ ] Domínio + projeto Cloudflare Pages configurados (ou em config)
 
 ### Modo B — Brief pra Claude Design
 - [ ] Variáveis globais preenchidas

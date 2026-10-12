@@ -64,7 +64,7 @@ RESPONSABILIDADES:
   - "Automações (no Tier 1) — workflows n8n · health check"
   - "Design (no Tier 1) — briefa criativos + executa via Claude Designer/Nano Banana"
   - "Closer humano (SLA ≤5min · 90% das conversas até Tier 2)"
-  - "Páginas (preenche template Next.js · deploy Vercel)"
+  - "Páginas (preenche template Next.js · deploy Cloudflare Pages)"
   - "Suporte do grupo + CS"
   - "Daily stand-up · tirar bloqueios · interface com Expert"
   - "Atualizar Kanban · status de cada peça"

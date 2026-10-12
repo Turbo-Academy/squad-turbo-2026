@@ -1,4 +1,4 @@
-# Instalar o Squad Turbo 9.0
+# Instalar o Squad Turbo 9.0.1
 
 > Versão em texto do manual de instalação. A versão com botões de copiar e abas Mac/Windows está em [ta.turboacademy.com.br/squadturbo](https://ta.turboacademy.com.br/squadturbo/) e em [turbo-academy.github.io/squad-turbo-2026/instalacao-do-zero.html](https://turbo-academy.github.io/squad-turbo-2026/instalacao-do-zero.html).
 
@@ -51,6 +51,8 @@ Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simp
 3. Instalar o básico (skills, agentes e modelos). Rode:
    bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null
    Sem terminal interativo ele instala o básico e pula os opcionais com aviso: é o esperado. Me mostre o resumo do fim.
+   Se eu já tinha o squad e editei algum arquivo dele, o instalador guarda o meu numa pasta nova em ~/.claude/squad-turbo-backups/ antes de trocar (linha "guardados em"): me diga quais e onde.
+   Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre a linha: não siga como se tivesse dado certo.
 
 4. Programas de vídeo (ffmpeg e yt-dlp), que as skills de vídeo e de cortes usam. Confira com `command -v ffmpeg yt-dlp brew`.
    - Mac com `brew`: `brew install ffmpeg yt-dlp`.
@@ -81,9 +83,9 @@ Tem que terminar em `SQUAD OK: 49 skills · 13 agentes · squad-core`.
 ```text
 Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem apagar nada meu. Me explique cada passo antes de rodar.
 
-1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Se aparecer algum agente "diferente do pacote", é porque eu editei: antes de seguir, copie os meus pra ~/squad-agentes-meus-AAAAMMDD/ e me diga quais eram (a atualização troca os agentes pela versão do pacote).
+1. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh --conferir`. Linhas com "~ personalizado" são arquivos que eu editei: me diga quais são. A atualização troca esses arquivos pela versão do pacote, mas o instalador guarda os meus antes, numa pasta nova em ~/.claude/squad-turbo-backups/.
 2. Rode `git -C ~/squad-turbo-2026 pull --ff-only`. Se falhar, renomeie a pasta pra ~/squad-turbo-2026.antigo-AAAAMMDD e clone de novo: git clone --depth 1 https://github.com/Turbo-Academy/squad-turbo-2026.git ~/squad-turbo-2026
-3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo.
+3. Rode `bash ~/squad-turbo-2026/99-skills-compartilhaveis/instalar-squad.sh < /dev/null` e me mostre o resumo. Se ele disser que guardou arquivos meus, me diga a pasta. Se aparecer "INSTALAÇÃO INCOMPLETA" ou "FALHOU", pare e me mostre.
 4. Rode o `--conferir` de novo. Tem que dizer "SQUAD OK".
 5. Me mostre o que mudou (o topo do ~/squad-turbo-2026/CHANGELOG.md, em português simples) e me diga pra fechar e abrir o Claude.
 ```
@@ -92,7 +94,9 @@ Oi, Claude. Atualize o Squad Turbo deste computador pra versão mais nova, sem a
 
 - Agente não responde depois de instalar: feche o Claude e abra numa sessão nova.
 - `git pull` falhou com erro de histórico: a pasta é de antes de 01/10/2026; o Claude renomeia e clona de novo.
-- `SQUAD INCOMPLETO`: rode o instalador de novo; ele só faz o que falta.
+- `SQUAD INCOMPLETO`: rode o instalador de novo. O `--conferir` compara cada arquivo byte a byte: `✗ incompleto` = falta ou vazio; `~ personalizado` = você editou (não é erro).
+- Arquivo seu editado: o instalador guarda uma cópia em `~/.claude/squad-turbo-backups/<data-hora>/` antes de trocar; pra voltar, copie de lá.
+- `INSTALAÇÃO INCOMPLETA` / `FALHOU — etapa N`: a linha diz o que falhou; baixe de novo e rode o instalador. Ele termina com erro (código diferente de zero) enquanto houver falha.
 - Mac Intel sem Homebrew: a linha oficial não instala mais; use `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/f4aa1b1ca5/install.sh)"` no Terminal.
 - Nunca mande senha, token ou código pelo chat do Claude.
 

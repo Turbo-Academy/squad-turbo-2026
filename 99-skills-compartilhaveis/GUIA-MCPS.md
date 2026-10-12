@@ -68,7 +68,7 @@ Nenhum é obrigatório. A coluna "sem ele" diz o que acontece se você não cone
 |---|---|---|---|
 | **Google Drive** | Sobe o briefing de aprovação em `.docx`/Doc pro cliente revisar | `briefing-aprovacao-turbo` | O `.docx` é gerado local e você sobe à mão |
 | **Windsor.ai** | Puxa métricas de Instagram pra análise de perfil | `instagram-analise-estrategica-turbo` | Você cola os números manualmente no prompt |
-| **Vercel** | Deploy das páginas e do dashboard, logs de build e runtime | `deploy-to-vercel`, designer, tráfego | Deploy pelo `vercel` CLI ou pelo painel |
+| **Cloudflare** (sem MCP) | Publicar páginas e dashboard no Cloudflare Pages | designer, tráfego, `paginas-lpsg-turbo` | Não precisa de MCP: `npx wrangler pages deploy out --project-name <projeto>` no terminal, ou o painel (Workers & Pages) |
 | **Playwright** | Teste E2E das páginas (ficha, checkout) | `playwright-skill`, `webapp-testing` | Você testa no navegador na mão |
 | **NotebookLM** | Pergunta a notebooks de pesquisa com citação, gera Audio Overview | pesquisa | Pesquisa direto no site |
 | **Google Sheets** | Backup de respostas de pesquisa/ficha e espelho de métricas | dashboards, automações | Planilha na mão ou via n8n |

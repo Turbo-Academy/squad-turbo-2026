@@ -1,4 +1,4 @@
-# Mapa de Skills · Squad Turbo LPSG 9.0
+# Mapa de Skills · Squad Turbo LPSG 9.0.1
 
 > **Como ler:** cada agente carrega `protocolo-conversa-turbo` primeiro (transversal · 8 padrões + anti-bajulação + travas universais), depois as skills do domínio dele. A coluna "QUANDO USAR" diz em que momento da jornada o agente aciona cada skill.
 
@@ -17,10 +17,9 @@
 | `webapp-testing` | Anthropic | trafego · picasso | Teste de webapp ao vivo no browser (designer migrou pra `playwright-skill`) |
 | `skill-creator` | Anthropic | estrategista | Criar novas skills do squad |
 | `skill-development` | Anthropic | estrategista | Boas práticas de estrutura de skill |
-| `deploy-to-vercel` | Vercel | designer · diretor-criativo · trafego · automacao | Deploy de páginas/serviços |
-| `vercel-cli-with-tokens` | Vercel | designer · automacao | Deploy via token (CI) |
+| publicação (sem skill externa) | Cloudflare | designer · diretor-criativo · trafego · automacao | Páginas e dashboard sobem no Cloudflare Pages: `npx wrangler pages deploy` (passo a passo em `paginas-lpsg-turbo`). As skills `deploy-to-vercel` e `vercel-cli-with-tokens` saíram na 9.0.1 |
 | `vercel-composition-patterns` | Vercel | designer | Padrões de composição React |
-| `vercel-react-best-practices` | Vercel | designer | Performance React/Next |
+| `vercel-react-best-practices` | Vercel (autor) | designer | Performance React/Next (boas práticas de código, não hospedagem) |
 | `vercel-react-view-transitions` | Vercel | designer | Transições de página |
 | `vercel-react-native-skills` | Vercel | — (sob demanda) | RN/Expo · NÃO carregada (LPSG é web) · disponível em `~/.claude/skills/` se surgir projeto mobile |
 | `instagram-analise-estrategica-turbo` | Turbo | social · pesquisador-mercado | Análise/relatório de perfil IG |

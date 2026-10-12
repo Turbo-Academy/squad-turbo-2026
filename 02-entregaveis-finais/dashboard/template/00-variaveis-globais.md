@@ -198,7 +198,7 @@ GRAFICOS:         "Recharts (defaults dark)"
 TABELAS:          "TanStack Table v8"
 ICONES:           "lucide-react"
 DATA_FETCH:       "SWR (cache + revalidação)"
-HOSPEDAGEM:       "Vercel"
+HOSPEDAGEM:       "Cloudflare Pages"
 NODE_VERSION:     "20.x"
 PACKAGE_MANAGER:  "pnpm"
 

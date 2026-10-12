@@ -2,7 +2,7 @@
 
 > **GERADO POR SCRIPT** (`sync-matriz.sh`) a partir do campo `skills:` dos frontmatters em `~/.claude/agents/`. NÃO editar à mão — rode o script após mexer em agente.
 
-**Agentes:** 13 · **Skills distintas referenciadas:** 81 · **Atribuições (skill×agent):** 178
+**Agentes:** 13 · **Skills distintas referenciadas:** 79 · **Atribuições (skill×agent):** 172
 
 ## Por agente
 
@@ -16,8 +16,6 @@
 - dashboard-lpsg-turbo
 - dash-lancamento-turbo
 - meta-ads-cli-setup-turbo
-- deploy-to-vercel
-- vercel-cli-with-tokens
 
 ### @closer-turbo
 - protocolo-conversa-turbo
@@ -76,8 +74,6 @@
 - motion-opcoes-turbo
 - canvas-design
 - web-artifacts-builder
-- deploy-to-vercel
-- vercel-cli-with-tokens
 - vercel-react-best-practices
 - page-optimizer-turbo
 - playwright-skill
@@ -107,7 +103,6 @@
 - visual-cortes-turbo
 - canvas-design
 - web-artifacts-builder
-- deploy-to-vercel
 
 ### @estrategista-turbo
 - protocolo-conversa-turbo
@@ -207,7 +202,6 @@
 - dashboard-lpsg-turbo
 - dash-lancamento-turbo
 - meta-ads-cli-setup-turbo
-- deploy-to-vercel
 - webapp-testing
 
 ## Índice reverso (skill → agentes)
@@ -232,7 +226,6 @@
 | `cs-lpsg-turbo` | cs-turbo |
 | `dash-lancamento-turbo` | automacao-turbo estrategista-turbo trafego-turbo |
 | `dashboard-lpsg-turbo` | automacao-turbo trafego-turbo |
-| `deploy-to-vercel` | automacao-turbo designer-turbo diretor-criativo-turbo trafego-turbo |
 | `design` | designer-turbo diretor-criativo-turbo |
 | `design-motion-principles` | diretor-criativo-turbo picasso-auditor-turbo |
 | `design-system` | diretor-criativo-turbo |
@@ -285,7 +278,6 @@
 | `turbo-express` | automacao-turbo copywriter-turbo |
 | `ui-styling` | designer-turbo |
 | `ui-ux-pro-max` | designer-turbo diretor-criativo-turbo picasso-auditor-turbo |
-| `vercel-cli-with-tokens` | automacao-turbo designer-turbo |
 | `vercel-react-best-practices` | designer-turbo |
 | `visual-cortes-turbo` | designer-turbo diretor-criativo-turbo social-turbo |
 | `vsl-ab-turbo` | copywriter-turbo |

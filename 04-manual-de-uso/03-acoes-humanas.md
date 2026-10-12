@@ -30,7 +30,7 @@
 | 7 | Configurar WABA · número dedicado | `00-pre-requisitos.md` | 1-2h |
 | 8 | Criar conta Hotmart · subir pra Pro | `00-pre-requisitos.md` | 30 min + aprovação |
 | 9 | Cadastrar 2 produtos Hotmart (ingresso + premium) | `00-pre-requisitos.md` | 40 min |
-| 10 | Criar Vercel · conectar domínio | `00-pre-requisitos.md` | 20 min |
+| 10 | Criar projeto Cloudflare Pages · conectar domínio | `00-pre-requisitos.md` | 20 min |
 | 11 | Subir n8n (cloud ou self-hosted) | `00-pre-requisitos.md` | 5-60 min |
 | 12 | Criar ManyChat · conectar WABA · criar tags | `00-pre-requisitos.md` | 30 min |
 | 13 | Criar Service Account Google · baixar JSON | `00-pre-requisitos.md` | 20 min |
@@ -163,10 +163,10 @@
 
 > Estas ficam quando o Claude estrutura algo · você precisa **clicar** numa interface pra ativar.
 
-### Vercel
-- [ ] Conectar projeto Git ao Vercel
-- [ ] Configurar variáveis de ambiente (todas as APIs)
-- [ ] Conectar domínio customizado
+### Cloudflare Pages
+- [ ] Conectar o repositório Git ao projeto (opcional · Workers & Pages → Create → Pages)
+- [ ] Configurar variáveis e segredos (todas as APIs · Settings → Variables and Secrets)
+- [ ] Associar domínio customizado (Custom domains · antes do CNAME)
 - [ ] Adicionar SPF/DKIM se for usar email transacional
 
 ### Meta Ads Manager

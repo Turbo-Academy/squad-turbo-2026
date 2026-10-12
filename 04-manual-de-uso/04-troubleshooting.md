@@ -77,17 +77,17 @@ Se não achar · pede ajuda ao Claude com:
 
 ---
 
-# 🛒 Páginas (Vercel)
+# 🛒 Páginas (Cloudflare Pages)
 
-### ❌ Domínio customizado não conecta no Vercel
-**Sintoma:** Adicionei domínio · diz "Invalid Configuration".
+### ❌ Domínio customizado não conecta no Cloudflare Pages
+**Sintoma:** Criei o CNAME · o domínio não resolve ou dá erro 522.
 
-**Por quê:** DNS Cloudflare em modo "proxy" (laranja) bloqueia o Vercel.
+**Por quê:** o CNAME foi criado antes de associar o domínio ao projeto no Cloudflare Pages.
 
 **Solução:**
-1. Em Cloudflare · DNS · encontra o subdomínio (ex: `lp`)
-2. Clica no ícone laranja · vira **cinza** (DNS only · sem proxy)
-3. Espera 1-5 min · Vercel revalida
+1. Workers & Pages → seu projeto → **Custom domains** → **Set up a domain** · digita o subdomínio (ex: `lp.{dominio}`)
+2. Só depois o CNAME `lp` → `{projeto}.pages.dev` (com a zona na Cloudflare, o próprio painel cria esse registro)
+3. HTTPS é automático depois que o domínio fica associado
 
 ---
 
@@ -149,8 +149,8 @@ Se não achar · pede ajuda ao Claude com:
 ```
 1. Olha no Network tab do navegador (DevTools)
    - Request POST /api/ficha-interesse → 200 OK?
-2. Olha logs Vercel
-   - Function logs do /api/ficha-interesse
+2. Olha o Cloudflare Pages
+   - Workers & Pages → projeto → Deployments (ou a saída do `wrangler pages deploy`)
 3. Olha logs n8n
    - Webhook /ficha-interesse-submetida foi chamado?
 ```
@@ -271,9 +271,9 @@ Se não achar · pede ajuda ao Claude com:
 **Sintoma:** Acessa `dashboard.{dominio}` · pede senha · senha não funciona.
 
 **Solução:**
-1. Vercel → Settings → Environment Variables
+1. Cloudflare → Workers & Pages → projeto → Settings → Variables and Secrets (ou `npx wrangler pages secret put DASHBOARD_PASSWORD --project-name {projeto}`)
 2. Verifica `DASHBOARD_PASSWORD` está correto
-3. Se mudou recentemente · redeploy (Vercel · Deployments · Redeploy)
+3. Se mudou recentemente · faz um novo deploy (`npx wrangler pages deploy out --project-name {projeto} --branch main`)
 
 ---
 
@@ -380,7 +380,7 @@ Se não achar · pede ajuda ao Claude com:
 |---|---|
 | Erro técnico em Meta Ads API | `developers.facebook.com/community` |
 | Erro técnico Hotmart | Suporte Hotmart (chat) |
-| Vercel quebrado | `vercel.com/help` |
+| Cloudflare Pages quebrado | `dash.cloudflare.com` (Workers & Pages) |
 | n8n self-hosted travado | Forum n8n (`community.n8n.io`) |
 | ManyChat dúvida específica | Suporte chat ManyChat |
 | WhatsApp banindo número | Suporte WhatsApp Business |

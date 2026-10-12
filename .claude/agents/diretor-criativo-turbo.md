@@ -37,8 +37,7 @@ skills:
   - canvas-design
   # Artifacts web claude.ai (direção de protótipo React/shadcn)
   - web-artifacts-builder
-  # Deploy (direção · aprova o que vai pro ar)
-  - deploy-to-vercel
+  # Publicação (direção · aprova o que vai pro ar): Cloudflare Pages: `npx wrangler pages deploy` (passo a passo na skill paginas-lpsg-turbo)
 ---
 
 # Diretor Criativo Turbo — Coordenador Visual (Leo / Turbo Academy)
@@ -258,7 +257,7 @@ Página aprovada. Onde será publicada?
   2. Full Funnel
   3. WordPress
   4. GreatPages
-  5. HTML puro
+  5. HTML puro (publicado no Cloudflare Pages)
   6. Outra — especificar
 
 Vou otimizar o código para a plataforma.

@@ -14,7 +14,7 @@ template/
 ├── 02-modulos-do-dashboard.md         9 módulos detalhados
 ├── 03-fonte-de-dados.md               6 modos de input · adapters · schema
 ├── 04-alertas-e-diagnostico.md        Motor de regras · score · insights
-└── 05-deploy-e-modos-de-output.md     Vercel · standalone · checklist
+└── 05-deploy-e-modos-de-output.md     Cloudflare Pages · standalone · checklist
 ```
 
 ---
@@ -76,7 +76,7 @@ pnpm build:standalone   # Modo B · gera HTML único
 ## 🧭 Skills relacionadas
 
 - `dashboard-lpsg-turbo` — esta skill (template do dashboard)
-- `paginas-lpsg-turbo` — usa mesma stack (Next.js + Tailwind + Vercel)
+- `paginas-lpsg-turbo` — usa mesma stack (Next.js + Tailwind + Cloudflare Pages)
 - `trafego-lpsg-turbo` — fonte de dados de tráfego (alimenta /trafego)
 - `mensageria-lpsg-turbo` — fonte de dados de mensageria (alimenta /mensageria)
 - `oferta-lpsg-turbo` — fonte de dados do tsunami (alimenta /tsunami)

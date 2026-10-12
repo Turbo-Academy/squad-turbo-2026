@@ -1,4 +1,4 @@
-# 05 · Performance & Deploy no Vercel
+# 05 · Performance & Deploy no Cloudflare Pages
 
 > Página rápida vende mais. **LCP < 1.5s** é a regra do LPSG — não os 2s padrão da web. Mobile é tudo.
 
@@ -210,7 +210,7 @@ import Script from "next/script";
 
 ---
 
-## 🌐 Vercel — configurações de produção
+## 🌐 Cloudflare Pages — configurações de produção
 
 ### `next.config.ts`
 
@@ -218,73 +218,68 @@ import Script from "next/script";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",      // `npx next build` gera a pasta out/
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true,
 
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 dias
-    deviceSizes: [375, 640, 768, 1024, 1280],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    unoptimized: true,   // export estático: imagens já sobem em WebP/AVIF otimizado
   },
 
   experimental: {
     optimizePackageImports: ["lucide-react"],  // tree-shaking automático
-  },
-
-  async redirects() {
-    return [
-      { source: "/", destination: "/v1", permanent: false },
-    ];
-  },
-
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "DENY" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        ],
-      },
-      {
-        source: "/images/(.*)",
-        headers: [
-          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        ],
-      },
-    ];
   },
 };
 
 export default nextConfig;
 ```
 
-### Vercel Edge Network
+> Em export estático o Next **não** roda `redirects()` nem `headers()`. Os dois viram arquivos em `public/` (o build copia pra `out/`):
 
-- **Edge automático:** Vercel coloca seu site em 40+ regiões globais
-- **CDN cache:** assets estáticos cached por 1 ano
-- **Brotli compression:** ativada por default (40% menor que gzip)
-- **HTTP/3:** ativado por default
+`public/_redirects`:
 
-### Vercel Speed Insights
+```
+/  /v1  302
+```
+
+`public/_headers`:
+
+```
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+```
+
+### Publicar
 
 ```bash
-pnpm add @vercel/speed-insights
+npx next build
+npx wrangler pages deploy out --project-name {projeto} --branch main
 ```
 
-```tsx
-// app/layout.tsx
-import { SpeedInsights } from "@vercel/speed-insights/next";
+Preview de uma variação antes de subir pra produção:
 
-<SpeedInsights />
+```bash
+npx wrangler pages deploy out --project-name {projeto} --branch feature-x
+# → https://feature-x.{projeto}.pages.dev
 ```
 
-Métricas reais (de usuários reais) aparecem em `Project → Speed Insights`:
-- LCP, INP, CLS por rota
-- Compara com benchmark do nicho
+### Rede da Cloudflare
+
+- **CDN global:** a pasta `out/` é servida pela rede da Cloudflare
+- **HTTPS automático** no `{projeto}.pages.dev` e no domínio customizado
+
+### Cloudflare Web Analytics (Core Web Vitals)
+
+Liga em `Workers & Pages → projeto → Metrics → Enable (Web Analytics)`. Sem pacote, sem import, sem cookie.
+
+Métricas reais (de usuários reais) aparecem no painel do Web Analytics:
+- LCP, INP, CLS (Core Web Vitals)
+- Page views por rota
 - Mostra trend ao longo do tempo
 
 ---
@@ -325,7 +320,7 @@ Ideal: **≥ 95 em mobile** (campo verde). Se < 90, **não suba tráfego ainda**
 
 ## 🔒 Segurança e SEO básicos
 
-### Headers de segurança (já no `next.config`)
+### Headers de segurança (já no `public/_headers`)
 
 - `X-Content-Type-Options: nosniff`
 - `X-Frame-Options: DENY`
@@ -418,14 +413,13 @@ export default function sitemap() {
 - [ ] CAPI configurado
 - [ ] GTM ID correto
 - [ ] GA4 ID correto
-- [ ] Variáveis de ambiente do Vercel populadas
+- [ ] Variáveis do projeto Pages populadas (`Settings → Variables and Secrets`)
 
 ### Pós-deploy
 - [ ] URL de produção respondendo
 - [ ] Domínio customizado HTTPS funcionando
-- [ ] Vercel Analytics ativo
-- [ ] Speed Insights coletando dados
-- [ ] Preview branch testado
+- [ ] Cloudflare Web Analytics ativo e coletando LCP/INP/CLS
+- [ ] Preview branch testado (`https://<branch>.{projeto}.pages.dev`)
 
 ---
 
@@ -450,8 +444,8 @@ export default function sitemap() {
 
 | Frequência | Ação |
 |---|---|
-| **Diário** | Conferir Vercel Analytics — dropdown de erros |
+| **Diário** | Conferir Cloudflare Web Analytics — visitas e Core Web Vitals por rota |
 | **Semanal** | Lighthouse nas 5 variações · comparar com semana anterior |
-| **A cada deploy** | Lighthouse + Speed Insights · não subir se piorou >5 pontos |
+| **A cada deploy** | Lighthouse + Web Analytics (Core Web Vitals) · não subir se piorou >5 pontos |
 | **Mensal** | Auditoria de bundle size · remover dependências não usadas |
 | **Trimestral** | Rever benchmarks · atualizar dependências (security patches) |

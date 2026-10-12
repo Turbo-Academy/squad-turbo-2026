@@ -20,9 +20,7 @@ skills:
   - dash-lancamento-turbo
   # Setup do Meta Ads CLI (credenciais · ambiente)
   - meta-ads-cli-setup-turbo
-  # Deploy de webhooks / serviços auxiliares na Vercel
-  - deploy-to-vercel
-  - vercel-cli-with-tokens
+  # Publicação de página/serviço auxiliar: Cloudflare Pages: `npx wrangler pages deploy` (passo a passo na skill paginas-lpsg-turbo)
 ---
 
 # automacao-turbo

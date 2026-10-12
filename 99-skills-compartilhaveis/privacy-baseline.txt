@@ -164,6 +164,7 @@ Cadastro Bloco
 Cadastro Necessário
 Cadeia Causal
 Calcular Hook
+Calibri Light
 Camada Evento
 Camada Fundacional
 Camada Ingresso
@@ -221,9 +222,11 @@ Closer Humano
 Closer Turbo
 Cloud Console
 Cloud Pro
+Cloudflare Dashboard
 Cloudflare Pages
 Cloudflare Registrar
 Cloudflare Security
+Cloudflare Web
 Cloudflare Worker
 Cola Egípcia
 Color Palettes
@@ -273,6 +276,7 @@ Conectar Google
 Conectar Hotmart
 Conector Instagram
 Conference Talk
+Conferir Cloudflare
 Conferir Vercel
 Configura Módulo
 Configurar Cloudflare
@@ -281,13 +285,14 @@ Configurar Hotmart
 Configurar Meta
 Configurar Tailwind
 Configurar Webhook
+Configuração Cloudflare
 Configuração Meta
-Configuração Vercel
 Connect Data
 Conor Bronsdon
 Consciência Turbo
 Construindo Marca
 Construir Dobra
+Conta Cloudflare
 Conta Google
 Conta Hotmart
 Conta Meta
@@ -324,6 +329,7 @@ Cormorant Garamond
 Corporate Modern
 Cost Cap
 Count Animation
+Courier New
 Create Account
 Create Edge
 Create New
@@ -344,7 +350,6 @@ Criar Pixel
 Criar Qualquer
 Criar Service
 Criar System
-Criar Vercel
 Criar Worker
 Criativo Ganhador
 Criativo Validado
@@ -388,6 +393,7 @@ Definir Big
 Delivery Checklist
 Demanda Antes
 Demonstração Visual
+Deploy Cloudflare
 Deploy Vercel
 Depoimento Pré
 Depoimentos Imediatos
@@ -429,7 +435,6 @@ Dois Gêmeos
 Domaine Display
 Domina Events
 Domina Funil
-Domínio Vercel
 Dream Outcome
 Druk Wide
 Duarte Sparkline
@@ -659,13 +664,13 @@ Inter Light
 Inter Medium
 Inter Regular
 Inter Tight
-Invalid Configuration
 Invalidação Redundante
 Inventário Aspiracional
 Investimento Imobiliário
 Iowan Old
 Iskoola Pota
 Jakub Krehel
+Javanese Text
 Jejum Metabólico
 Jhey Tompkins
 Jim Edwards
@@ -708,6 +713,7 @@ Leandro Aguiar
 Leo Tabari
 Liberação Bancária
 Library Scraper
+Ligar Cloudflare
 Light Grid
 Light List
 Light Shading
@@ -778,7 +784,9 @@ Meus Produtos
 Microsoft Clarity
 Microsoft Himalaya
 Microsoft Macintosh
+Microsoft New
 Microsoft Store
+Microsoft Tai
 Microsoft Uighur
 Midnight Emerald
 Migra Extra
@@ -798,6 +806,7 @@ Motion One
 Movimentos Psicológicos
 Mulheres Apagadas
 Music Usage
+Myanmar Text
 Mãe Produtiva
 Método Funil
 Método Raiz
@@ -864,6 +873,8 @@ Padrões Estruturais
 Padrões Universais
 Page Optimizer
 Page Patterns
+Pages Function
+Pages Functions
 Pago Semanal
 Pain Lista
 Painel Hotmart
@@ -961,6 +972,7 @@ Produção Semanal
 Progress Bar
 Projeto Google
 Projeto Next
+Projeto Pages
 Promessa Central
 Promessa Direta
 Promessa Oculta
@@ -1037,6 +1049,7 @@ Regras Priorizadas
 Regras Técnicas
 Rei Charles
 Reinicia Claude
+Relationship Type
 Renan Botelho
 Renderiza Markdown
 Repo Git
@@ -1129,6 +1142,7 @@ Sociedade Turbo
 Solicitação Externa
 Solution Overview
 Soluções Anteriores
+Source Code
 Source Sans
 Source Serif
 Space Grotesk
@@ -1142,7 +1156,6 @@ Squad Turbo
 Stack Completo
 Stack Picasso
 Stack Slide
-Stack Vercel
 Stack Vite
 Stagger Children
 Static Maps
@@ -1182,6 +1195,7 @@ Tab Troubleshooting
 Tabela Antes
 Table Grid
 Tag Applied
+Tai Lue
 Taxa Aceite
 Taxa Checkout
 Team All
@@ -1282,10 +1296,10 @@ Use Formula
 Use Hotmart
 Use Midjourney
 Use Motion
+Use Pages
 User Generated
 User Token
 Utility Meta
-Valid Configuration
 Validar Lighthouse
 Validação Emocional
 Validação Final
@@ -1298,10 +1312,8 @@ Venda Recorrente
 Vendas Funil
 Vendas Recorrente
 Vercel Analytics
-Vercel Dashboard
 Vercel Edge
 Vercel Speed
-Vercel Web
 Verificar Python
 Verify Business
 Versão Utility
@@ -1316,6 +1328,7 @@ Visão Geral
 Vitória Domingo
 Vivo Aula
 Warm Earth
+Web Analytics
 Web Vitals
 Web Worker
 Webhook Hotmart

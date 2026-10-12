@@ -1,7 +1,7 @@
 # Template — Páginas do LPSG
 
 > Template genérico de páginas de venda de ingresso do **Lançamento Pago Semanal Gravado**.
-> Stack fixo: **Next.js 14 + Tailwind + Vercel**. Mobile-first, otimizado, prontas pra publicar.
+> Stack fixo: **Next.js 14 + Tailwind + Cloudflare Pages**. Mobile-first, otimizado, prontas pra publicar.
 
 ---
 
@@ -12,7 +12,7 @@
 - ✅ **Ficha de interesse de 11 etapas** (funil de consciência com lead score automático)
 - ✅ **Mobile-first** com fonte mín 16px, botões 56px+, imagens AVIF/WebP
 - ✅ **LCP < 1.5s** out-of-the-box (mais rigoroso que padrão da web)
-- ✅ **Deploy 1-click no Vercel** com domínio customizado e HTTPS automático
+- ✅ **Deploy em 1 comando no Cloudflare Pages** (`wrangler pages deploy`) com domínio customizado e HTTPS automático
 - ✅ **Tracking integrado** (Meta Pixel + CAPI + GTM + GA4)
 - ✅ **Headline + dor + cor + CTA** variados por padrão científico
 
@@ -24,11 +24,11 @@
 template/
 ├── README.md                       ← você está aqui
 ├── 00-variaveis-globais.md         ← preencha primeiro
-├── 01-stack-e-deploy.md            ← Next.js + Tailwind + Vercel
+├── 01-stack-e-deploy.md            ← Next.js + Tailwind + Cloudflare Pages
 ├── 02-arquitetura-projeto.md       ← estrutura de pastas + rotas /v1-/v5
 ├── 03-componentes-mobile-first.md  ← 9 blocos como componentes React (com código)
 ├── 04-matriz-variacoes.md          ← os 4 eixos das 5 variações
-├── 05-performance-vercel.md        ← LCP/INP/CLS + checklist de deploy
+├── 05-performance-e-deploy.md      ← LCP/INP/CLS + checklist de deploy
 ├── 06-modos-de-output.md           ← projeto pronto vs projeto em IA
 ├── 07-brief-claude-design.md       ← briefing pra IA designar
 └── 08-ficha-interesse.md           ← funil de consciência 11 etapas + lead score
@@ -43,7 +43,7 @@ template/
 3. **Estruture o projeto** com `02-arquitetura-projeto.md`
 4. **Implemente os 9 blocos** com `03-componentes-mobile-first.md`
 5. **Configure as 5 variações** com `04-matriz-variacoes.md`
-6. **Audite e deploy** com `05-performance-vercel.md`
+6. **Audite e deploy** com `05-performance-e-deploy.md`
 7. **Sobe 5 campanhas de teste** (1 pra cada variação) — ver `trafego/template/`
 
 ---
@@ -54,7 +54,7 @@ template/
 |---|---|---|
 | 1 | **Mínimo 5 variações** | Sem comparação não há aprendizado |
 | 2 | **Mobile-first** | 70%+ do tráfego pago é mobile |
-| 3 | **Stack fixo (Next.js + Tailwind + Vercel)** | Performance + manutenção previsível |
+| 3 | **Stack fixo (Next.js + Tailwind + Cloudflare Pages)** | Performance + manutenção previsível |
 | 4 | **9 blocos em ordem fixa** | Padrão validado em 3 LPs em produção |
 | 5 | **Data do evento na 1ª dobra** | Sinaliza tempo concreto |
 | 6 | **Garantia abaixo do botão** | Texto exato: "Garantia Incondicional: Assista! Se não gostar devolvo seu dinheiro ao final do evento." |
@@ -120,8 +120,8 @@ CSS:          Tailwind CSS 4
 Componentes:  shadcn/ui (opcional)
 Ícones:       lucide-react
 Fontes:       Inter + Manrope (next/font)
-Deploy:       Vercel (1-click)
-Domínio:      Cloudflare DNS → Vercel
+Deploy:       Cloudflare Pages (`wrangler pages deploy out`)
+Domínio:      Cloudflare DNS → Cloudflare Pages
 ```
 
 ---

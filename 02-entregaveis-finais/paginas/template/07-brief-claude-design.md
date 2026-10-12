@@ -15,7 +15,7 @@
    - Conectar `data/variations.ts`
    - Religar tracking (Pixel + GTM + GA4)
    - Configurar SEO + Open Graph
-   - Deploy Vercel
+   - Deploy Cloudflare Pages
 
 ---
 
@@ -222,7 +222,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 - [ ] Instalar GTM (`src/components/tracking/GTM.tsx`)
 - [ ] Instalar GA4
 - [ ] Configurar `next/script` com `strategy="afterInteractive"`
-- [ ] Adicionar Vercel Analytics + Speed Insights
+- [ ] Ligar Cloudflare Web Analytics (projeto → Metrics → Enable) e publicar de novo
 
 ### 4. SEO + sharing
 - [ ] Metadata API por variação (`title`, `description`, `openGraph`)
@@ -247,7 +247,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
   - v5 Roxo `oklch(60% 0.20 290)`
 
 ### 7. Deploy
-- [ ] Variáveis de ambiente no Vercel
+- [ ] Variáveis do projeto no Cloudflare Pages (Settings → Variables and Secrets)
 - [ ] Domínio customizado apontado
 - [ ] Preview branch testado
 - [ ] Lighthouse rodado nas 5 variações antes do tráfego
@@ -275,7 +275,7 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 | Tracking (Pixel/GTM/GA4) | sim |
 | Open Graph image | sim |
 | Sitemap.xml | sim |
-| Configuração de Vercel | sim |
+| Configuração do Cloudflare Pages | sim |
 | Otimização final de LCP | sim |
 | Switch automático de variação | sim |
 
@@ -328,6 +328,6 @@ Depois que o Claude Design (ou v0.dev/Lovable) gerar o código, traga aqui pra C
 │ Claude Preview pra revisar                                  │
 │           │                                                 │
 │           ▼                                                 │
-│ Vercel deploy → produção                                    │
+│ Cloudflare Pages deploy → produção                          │
 └─────────────────────────────────────────────────────────────┘
 ```

@@ -341,7 +341,7 @@ export default function FichaInteresse() {
 }
 ```
 
-> **Stack:** mesma do template de páginas (Next.js + Tailwind + Vercel). Reusa `Progress`, `Button`, `Input`, `RadioCard`, `CheckboxCard`, `Textarea` de `03-componentes-mobile-first.md`.
+> **Stack:** mesma do template de páginas (Next.js + Tailwind + Cloudflare Pages). Reusa `Progress`, `Button`, `Input`, `RadioCard`, `CheckboxCard`, `Textarea` de `03-componentes-mobile-first.md`.
 
 ---
 
@@ -364,22 +364,24 @@ export default function FichaInteresse() {
 
 ### 1. Webhook na submissão (envia pra n8n)
 
-```typescript
-// app/api/ficha-interesse/route.ts
-export async function POST(req: Request) {
-  const { respostas, xcod } = await req.json();
+```javascript
+// functions/api/ficha-interesse.js  (Pages Functions · na RAIZ do projeto, fora de out/)
+// Responde em /api/ficha-interesse. Segredos: npx wrangler pages secret put WEBHOOK_FICHA_INTERESSE --project-name <projeto>
+export async function onRequest(context) {
+  if (context.request.method !== 'POST') return new Response(null, { status: 405 });
+  const { respostas, xcod } = await context.request.json();
 
   // 1. Calcula score + tier
   const lead = calcularLeadScore(respostas);
 
   // 2. Dispara webhook pro n8n
-  await fetch(process.env.WEBHOOK_FICHA_INTERESSE!, {
+  await fetch(context.env.WEBHOOK_FICHA_INTERESSE, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ...respostas, ...lead, xcod, timestamp: Date.now() })
   });
 
-  // 3. Dispara CAPI pra Meta (evento Lead qualificado)
+  // 3. Dispara CAPI pra Meta (evento Lead qualificado) · token em context.env (segredo, nunca NEXT_PUBLIC_)
   await disparaCAPILeadQualificado(respostas, lead.tier);
 
   return Response.json({ ok: true, tier: lead.tier });

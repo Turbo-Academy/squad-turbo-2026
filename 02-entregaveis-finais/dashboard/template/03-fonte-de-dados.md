@@ -284,7 +284,7 @@ export async function fetchMetaAds(adAccountId: string, token: string) {
 }
 ```
 
-> ⚠️ Sempre rodar **server-side** (API Route do Next.js). Token nunca vai pro cliente.
+> ⚠️ Sempre rodar **server-side** (Pages Function em `functions/api/`, segredo via `npx wrangler pages secret put`). Token nunca vai pro cliente.
 
 ---
 
@@ -519,20 +519,20 @@ export function useRecomendacoes(filtros?: RecomendacaoFiltros) {
 }
 ```
 
-### API Route pra escrever no Sheets
+### Pages Function pra escrever no Sheets
 
-```typescript
-// app/api/recomendacoes/[id]/marcar/route.ts
-import { google } from 'googleapis';
+```javascript
+// functions/api/recomendacoes/[id]/marcar.js  (raiz do projeto, fora de out/ · responde em /api/recomendacoes/<id>/marcar)
+import { google } from 'googleapis';  // esboço: googleapis é feita pra Node e não foi testada no runtime da Cloudflare; se não rodar, mande a escrita pro n8n por webhook
 
-export async function POST(req: Request, { params }: { params: { id: string } }) {
-  const { status, email_usuario, notas } = await req.json();
+export async function onRequest({ request, params, env }) {
+  const { status, email_usuario, notas } = await request.json();
 
   const sheets = google.sheets({ version: 'v4', auth: getServiceAccountAuth() });
 
   // Encontra a linha pelo id_sugestao
   const result = await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+    spreadsheetId: env.GOOGLE_SHEETS_ID,
     range: 'Recomendações!A:V'
   });
 
@@ -545,7 +545,7 @@ export async function POST(req: Request, { params }: { params: { id: string } })
 
   // Atualiza colunas: V (status), W (aplicada_em), X (aplicada_por)
   await sheets.spreadsheets.values.update({
-    spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+    spreadsheetId: env.GOOGLE_SHEETS_ID,
     range: `Recomendações!V${rowIndex + 1}:X${rowIndex + 1}`,
     valueInputOption: 'RAW',
     requestBody: {
@@ -741,23 +741,20 @@ export function useFichas(filtros?: FichaFiltros) {
 }
 ```
 
-### API Route — atualizar status
+### Pages Function — atualizar status
 
-```typescript
-// app/api/fichas/[email]/status/route.ts
-import { google } from 'googleapis';
+```javascript
+// functions/api/fichas/[email]/status.js  (raiz do projeto, fora de out/ · responde em /api/fichas/<email>/status)
+import { google } from 'googleapis';  // esboço: googleapis é feita pra Node e não foi testada no runtime da Cloudflare; se não rodar, mande a escrita pro n8n por webhook
 
-export async function POST(
-  req: Request,
-  { params }: { params: { email: string } }
-) {
-  const { status, data_compra } = await req.json();
+export async function onRequest({ request, params, env }) {
+  const { status, data_compra } = await request.json();
   const email = decodeURIComponent(params.email);
 
   const sheets = google.sheets({ version: 'v4', auth: getServiceAccountAuth() });
 
   const result = await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+    spreadsheetId: env.GOOGLE_SHEETS_ID,
     range: 'Fichas!A:W'
   });
 
@@ -769,7 +766,7 @@ export async function POST(
 
   // Atualiza V (status_atendimento) + W (data_compra)
   await sheets.spreadsheets.values.update({
-    spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+    spreadsheetId: env.GOOGLE_SHEETS_ID,
     range: `Fichas!V${rowIndex + 1}:W${rowIndex + 1}`,
     valueInputOption: 'RAW',
     requestBody: { values: [[status, data_compra ?? '']] }

@@ -45,7 +45,7 @@ FRAMEWORK:                "Next.js 14 (App Router)"       # FIXO
 LINGUAGEM:                "TypeScript"                    # FIXO
 CSS:                      "Tailwind CSS 4"                # FIXO
 FONTES:                   "Inter (Google Fonts) + Manrope" # Padrão LPSG
-HOSPEDAGEM:               "Vercel"                        # FIXO
+HOSPEDAGEM:               "Cloudflare Pages"              # FIXO
 NODE_VERSION:             "20.x"
 PACKAGE_MANAGER:          "pnpm"                          # ou npm/yarn
 ```

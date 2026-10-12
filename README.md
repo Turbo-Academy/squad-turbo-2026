@@ -1,4 +1,4 @@
-# LPSG 9.0 · Squad Turbo
+# LPSG 9.0.1 · Squad Turbo
 
 > **Coloque seu lançamento pago semanal no ar em menos de 1 semana.**
 >
@@ -33,7 +33,7 @@ Um método de lançamentos digitais perpétuos, em que:
 ## ⚡ Como funciona em 3 passos
 
 ```
-1. SETUP        Crie 16 contas e tokens (Meta · Hotmart · Vercel · etc)   ~6-12h
+1. SETUP        Crie 16 contas e tokens (Meta · Hotmart · Cloudflare · etc) ~6-12h
 2. CADASTRO     Preencha 1 formulário de 10 blocos                       ~30-60min
 3. EXECUÇÃO     Cole 1 comando no Claude · @lpsg-master-turbo faz o resto      6-7 dias
 ```
@@ -151,10 +151,12 @@ squad-turbo-2026/
 bash 99-skills-compartilhaveis/instalar-squad.sh
 ```
 
-Idempotente: rode de novo quando quiser — só faz o que estiver faltando. No fim, **reinicie o Claude Code** (skills aparecem em `/skills`, agentes com `@nome-do-agente`).
+Pode rodar de novo quando quiser: arquivo que você editou é copiado antes para `~/.claude/squad-turbo-backups/<data-hora>-<sufixo>/` (pasta nova a cada execução), e se a cópia falhar ele para sem mexer em nada. Falha numa etapa obrigatória termina com `INSTALAÇÃO INCOMPLETA` e código de saída diferente de zero. No fim, **reinicie o Claude Code** (skills aparecem em `/skills`, agentes com `@nome-do-agente`).
 
 <details>
 <summary>Prefere instalar à mão? (passos equivalentes)</summary>
+
+> ⚠️ À mão não há cópia de segurança: `unzip -o` e `cp` trocam, sem aviso, skill, agente ou modelo que você editou. Se já tem o squad instalado e mexeu em algo, use o instalador acima.
 
 ```bash
 # 1. Skills proprietárias (TODOS os zips — a lista canônica vive no sync-skills.sh)
@@ -254,7 +256,7 @@ Fundação documentada em `PRODUCT.md` (estratégia, anti-references, design pri
 
 ## 🛠️ Stack técnico
 
-- **Frontend:** Next.js 14 · Tailwind CSS · Vercel
+- **Frontend:** Next.js 14 · Tailwind CSS · Cloudflare Pages (export estático, `npx wrangler pages deploy`)
 - **Tracking:** Meta Pixel + CAPI · Google Tag Manager · GA4
 - **Pagamentos:** Hotmart Pro
 - **Mensageria:** WhatsApp Business API + ManyChat

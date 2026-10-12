@@ -334,7 +334,7 @@ Componentes usam `bg-accent` / `text-accent` — cor muda por variação sem tro
 1. Cria `src/app/(variations)/v6/page.tsx` (copia da v1, troca `getVariation("v1")` por `"v6"`)
 2. Adiciona entrada em `data/variations.ts`
 3. Atualiza tipo `VariationId`
-4. Deploy automático no `git push`
+4. Publica de novo: `npx next build` + `npx wrangler pages deploy out --project-name <projeto> --branch main` (ou automático no `git push`, se o repositório estiver conectado no Cloudflare Pages)
 
 > **Manutenção é trivial** porque o esqueleto da página é igual entre variações.
 
