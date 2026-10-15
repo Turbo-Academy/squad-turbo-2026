@@ -20,7 +20,7 @@ PAGES = "https://turbo-academy.github.io/squad-turbo-2026"
 E = html.escape
 
 # ---------------------------------------------------------------- textos que a pessoa cola
-INSTALAR = r'''Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote de agentes e skills de marketing digital pro Claude Code, da Turbo Academy, gratuito para alunos do Funil 8 e da Estratégia: https://github.com/Turbo-Academy/squad-turbo-2026
+INSTALAR = r'''Oi, Claude. Quero instalar o Squad Turbo neste computador. É um pacote de agentes e skills de marketing digital pro Claude Code, da Turbo Academy, gratuito para alunos do Funil 8, da Estratégia Turbo, do Acelerador Turbo e da Mentoria Turbo Master: https://github.com/Turbo-Academy/squad-turbo-2026
 
 Eu não uso o Terminal. Você faz tudo, me explica cada passo em português simples antes de rodar, e eu só aprovo. Regras:
 - Nunca me peça senha, token ou código pelo chat. Se um comando precisar da senha do computador (sudo, ou o instalador da Homebrew no Mac), não rode: me mostre a linha, eu rodo no Terminal (no Mac) ou numa segunda janela do Ubuntu (no Windows) e te aviso.
